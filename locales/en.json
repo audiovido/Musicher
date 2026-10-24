@@ -157,6 +157,8 @@
     "sourceTitle": "CONTENT SOURCE",
     "sourceCreator": "Creator",
     "sourceLicense": "License",
+    "originalContentNote": "Original MUSICHER content",
+    "continueHomeBtn": "Continue",
     "skipQuizHeader": "Quick Check: \"I know this\" ({current} of {total})",
     "skipFailedTitle": "Better take a look at this lesson",
     "skipFailedSub": "Reviewing this lesson only takes {min} minutes and builds a solid foundation.",
@@ -183,7 +185,7 @@
       "Fingers 4 and 5 feel weak",
       "I feel stuck or bored"
     ],
-    "inputPlaceholder": "Type your question or issue (e.g. My hand gets tired)...",
+    "inputPlaceholder": "Type your question...",
     "sendBtn": "Send",
     "causeLabel": "Cause:",
     "fixLabel": "Fix:",

@@ -157,6 +157,8 @@
     "sourceTitle": "منبع محتوا",
     "sourceCreator": "سازنده",
     "sourceLicense": "مجوز",
+    "originalContentNote": "محتوای اختصاصی MUSICHER",
+    "continueHomeBtn": "ادامه",
     "skipQuizHeader": "سنجش سریع «اینو بلدم» (سؤال {current} از {total})",
     "skipFailedTitle": "بهتره یه نگاه به این درس بندازی",
     "skipFailedSub": "مرور این درس فقط {min} دقیقه وقت می‌گیره و پایه‌ت رو محکم می‌کنه.",
@@ -183,7 +185,7 @@
       "انگشت ۴ و ۵ ضعیفه",
       "حوصله‌م سر رفت"
     ],
-    "inputPlaceholder": "مشکل یا سؤالت رو بنویس (مثلاً: دستم خسته می‌شه)...",
+    "inputPlaceholder": "سؤالت رو بنویس...",
     "sendBtn": "ارسال",
     "causeLabel": "علت:",
     "fixLabel": "راه‌حل:",

@@ -67,6 +67,7 @@
         --font-fa: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
         --font-heading: var(--font-fa);
         --font-body: var(--font-fa);
+        --bottom-nav-height: 68px;
         --transition: 180ms cubic-bezier(0.22, 1, 0.36, 1);
       }
 
@@ -259,7 +260,7 @@
       .screen-body {
         flex: 1;
         width: 100%;
-        padding: 12px 20px 108px;
+        padding: 12px 20px calc(var(--bottom-nav-height, 68px) + 16px + env(safe-area-inset-bottom, 0px));
         animation: fadeSlideIn 200ms ease-out;
         position: relative;
         z-index: 2;
@@ -274,7 +275,7 @@
           max-width: 720px;
         }
         .screen-body {
-          padding: 20px 28px 116px;
+          padding: 20px 28px calc(var(--bottom-nav-height, 68px) + 16px + env(safe-area-inset-bottom, 0px));
         }
       }
 
@@ -1440,6 +1441,85 @@
         }
       }
 
+      .advisor-chips-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 8px;
+        row-gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .profile-account-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .profile-account-btn {
+        min-height: 44px;
+        padding: 8px 16px;
+        font-size: 0.84rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .profile-setting-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .profile-setting-control {
+        width: auto;
+      }
+
+      .profile-lang-group {
+        display: flex;
+        gap: 6px;
+      }
+
+      @media (max-width: 767px) {
+        .advisor-chips-wrap {
+          column-gap: 6px;
+          row-gap: 5px;
+          margin-bottom: 14px;
+        }
+        .advisor-chips-wrap .chip-btn {
+          min-height: 38px;
+          padding: 6px 12px;
+          font-size: 0.84rem;
+        }
+        .profile-account-card {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .profile-account-btn {
+          width: 100%;
+          padding: 8px 14px;
+          white-space: nowrap;
+        }
+        .profile-setting-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 6px;
+        }
+        .profile-setting-control {
+          width: 100% !important;
+        }
+        .profile-lang-group {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          width: 100%;
+        }
+        .profile-lang-group .chip-btn {
+          width: 100%;
+        }
+      }
+
       .centered-800-container {
         width: 100%;
         max-width: 800px;
@@ -1540,12 +1620,13 @@
         inset-inline: 0;
         width: 100%;
         max-width: 100%;
+        min-height: var(--bottom-nav-height, 68px);
         margin: 0 auto;
         background-color: var(--bg);
         border-top: 1.5px solid var(--border-subtle);
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        padding: 6px 8px 10px;
+        padding: 6px 8px calc(10px + env(safe-area-inset-bottom, 0px));
         z-index: 40;
       }
 
@@ -1813,7 +1894,12 @@
           },
           lesson: {
             kicker: "Lesson {id}",
-            kickerOf: "Lesson {id} of {total}"
+            kickerOf: "Lesson {id} of {total}",
+            originalContentNote: "Original MUSICHER content",
+            continueHomeBtn: "Continue"
+          },
+          advisor: {
+            inputPlaceholder: "Type your question..."
           }
         },
         fa: {
@@ -1824,7 +1910,12 @@
           },
           lesson: {
             kicker: "درس {id}",
-            kickerOf: "درس {id} از {total}"
+            kickerOf: "درس {id} از {total}",
+            originalContentNote: "محتوای اختصاصی MUSICHER",
+            continueHomeBtn: "ادامه"
+          },
+          advisor: {
+            inputPlaceholder: "سؤالت رو بنویس..."
           }
         }
       };
@@ -3665,7 +3756,7 @@
                     </div>
                   </div>
 
-                  <div style="text-align:center;background:rgba(251,247,240,0.07);border:1px solid rgba(242,179,61,0.35);border-radius:16px;padding:20px 18px;margin-bottom:18px;">
+                  <div style="text-align:center;background:rgba(251,247,240,0.07);border:1px solid rgba(242,179,61,0.35);border-radius:16px;padding:20px 18px;margin-bottom:16px;">
                     <h2 class="serif-heading saffron-accent" style="font-size:clamp(1.25rem, 1.9vw, 1.5rem);margin-bottom:10px;">
                       ${escapeHtml(t("lesson.summaryBoxTitle"))}
                     </h2>
@@ -3678,28 +3769,39 @@
                     </div>
                   </div>
 
-                  <div style="background:rgba(251,247,240,0.06);border:1px solid rgba(251,247,240,0.16);border-radius:14px;margin-bottom:18px;padding:12px 16px;font-size:0.82rem;color:rgba(251,247,240,0.88);">
-                    <div class="saffron-accent" style="font-weight:700;margin-bottom:4px;">${escapeHtml(t("lesson.sourceTitle"))}</div>
-                    <div>${escapeHtml(t("lesson.sourceCreator"))}: <strong style="color:#FBF7F0;">${escapeHtml(lField(lesson.source?.creator))}</strong></div>
-                    <div>${escapeHtml(t("lesson.sourceLicense"))}: <strong style="color:#FBF7F0;">${escapeHtml(lField(lesson.source?.license))}</strong></div>
+                  <div style="margin-bottom:18px;">
+                    <button type="button" class="btn-pill btn-primary btn-block" style="min-height:54px;font-size:1.05rem;" data-action="complete-and-go-home" data-lesson-id="${lesson.id}">
+                      <span>${escapeHtml(t("lesson.continueHomeBtn"))}</span>
+                      <span class="dir-flip">→</span>
+                    </button>
                   </div>
 
                   ${
                     showL1Signup
-                      ? `<div style="background:var(--bg-elevated);color:var(--ink);border-radius:16px;padding:18px;margin-bottom:18px;border:1.5px solid var(--accent);">
-                          <h3 class="serif-heading" style="font-size:1.18rem;color:var(--ink);margin-bottom:4px;">${escapeHtml(t("lesson.l1SignupTitle"))}</h3>
-                          <p style="font-size:0.84rem;color:var(--muted);margin-bottom:12px;">${escapeHtml(t("lesson.l1SignupSub"))}</p>
-                          <div style="display:flex;flex-direction:column;gap:10px;">
-                            <input type="text" id="l1-name-input" class="m-input" placeholder="${escapeHtml(t("lesson.l1NamePlaceholder"))}" value="${escapeHtml(state.userName)}" />
-                            <input type="email" id="l1-email-input" class="m-input" placeholder="name@example.com" value="${escapeHtml(state.userEmail)}" />
+                      ? `<details style="background:rgba(251,247,240,0.08);border:1px solid rgba(242,179,61,0.4);border-radius:16px;padding:14px 18px;margin-bottom:18px;color:#FBF7F0;">
+                          <summary style="cursor:pointer;font-family:var(--font-heading);font-weight:700;font-size:1.02rem;color:#F2B33D;display:flex;align-items:center;justify-content:space-between;">
+                            <span>${escapeHtml(t("lesson.l1SignupTitle"))}</span>
+                            <span style="font-size:0.82rem;opacity:0.85;">▼</span>
+                          </summary>
+                          <div style="margin-top:12px;text-align:start;">
+                            <p style="font-size:0.84rem;color:rgba(251,247,240,0.85);margin-bottom:12px;">${escapeHtml(t("lesson.l1SignupSub"))}</p>
+                            <div style="display:flex;flex-direction:column;gap:10px;">
+                              <input type="text" id="l1-name-input" class="m-input" placeholder="${escapeHtml(t("lesson.l1NamePlaceholder"))}" value="${escapeHtml(state.userName)}" />
+                              <input type="email" id="l1-email-input" class="m-input" placeholder="name@example.com" value="${escapeHtml(state.userEmail)}" />
+                            </div>
                           </div>
-                        </div>`
+                        </details>`
                       : ""
                   }
 
+                  <div style="background:rgba(251,247,240,0.06);border:1px solid rgba(251,247,240,0.16);border-radius:14px;margin-bottom:18px;padding:12px 16px;font-size:0.82rem;color:rgba(251,247,240,0.88);">
+                    <div class="saffron-accent" style="font-weight:700;margin-bottom:4px;">${escapeHtml(t("lesson.sourceTitle"))}</div>
+                    <div style="font-weight:600;color:#FBF7F0;">${escapeHtml(t("lesson.originalContentNote"))}</div>
+                  </div>
+
                   <div style="display:flex;gap:10px;">
                     <button type="button" class="btn-pill btn-surface" data-action="lesson-prev-step">${escapeHtml(t("lesson.prevBtn"))}</button>
-                    <button type="button" class="btn-pill btn-primary" style="flex:1;" data-action="complete-and-exit-lesson" data-lesson-id="${lesson.id}">
+                    <button type="button" class="btn-pill btn-outline" style="flex:1;color:#FBF7F0;border-color:rgba(251,247,240,0.35);" data-action="complete-and-exit-lesson" data-lesson-id="${lesson.id}">
                       ✓ ${escapeHtml(t("lesson.finishBtn"))}
                     </button>
                   </div>
@@ -3885,10 +3987,10 @@
                     ${escapeHtml(t("advisor.welcomeMsg"))}
                   </div>
 
-                  <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">
+                  <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:6px;">
                     ${escapeHtml(t("advisor.chipsHint"))}
                   </p>
-                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+                  <div class="advisor-chips-wrap">
                     ${(Array.isArray(chips) ? chips : [])
                       .map(
                         (c) => `
@@ -4046,12 +4148,12 @@
               <div class="centered-800-container">
                 <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:14px;">${escapeHtml(t("profile.title"))}</h1>
 
-                <div class="m-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;">
+                <div class="m-card profile-account-card">
                   <div>
                     <div style="font-weight:700;font-size:1.05rem;">${escapeHtml(displayName)}</div>
                     <div style="font-size:0.82rem;color:var(--muted);">${escapeHtml(displaySub)}</div>
                   </div>
-                  <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;" data-action="open-modal" data-modal="account">
+                  <button type="button" class="btn-pill btn-surface profile-account-btn" data-action="open-modal" data-modal="account">
                     ${escapeHtml(state.userName ? t("profile.editAccountBtn") : t("profile.createAccountBtn"))}
                   </button>
                 </div>
@@ -4059,43 +4161,43 @@
                 <div class="m-card" style="margin-bottom:16px;display:flex;flex-direction:column;gap:14px;">
                   <h2 class="serif-heading" style="font-size:1.2rem;">${escapeHtml(t("profile.myChoicesTitle"))}</h2>
 
-                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.langLabel"))}</span>
-                    <div style="display:flex;gap:6px;">
+                    <div class="profile-lang-group profile-setting-control">
                       <button type="button" class="chip-btn ${state.lang === "fa" ? "selected" : ""}" style="padding:6px 14px;" data-action="set-lang" data-lang="fa">فارسی</button>
                       <button type="button" class="chip-btn ${state.lang === "en" ? "selected" : ""}" style="padding:6px 14px;" data-action="set-lang" data-lang="en">English</button>
                     </div>
                   </div>
 
-                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.instLabel"))}</span>
-                    <span class="badge-saffron" style="background-color:var(--secondary);color:#FFF;">${escapeHtml(t("instruments.piano"))}</span>
+                    <span class="badge-saffron profile-setting-control" style="background-color:var(--secondary);color:#FFF;justify-content:center;">${escapeHtml(t("instruments.piano"))}</span>
                   </div>
 
-                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.accessLabel"))}</span>
-                    <select class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="access">
+                    <select class="m-input profile-setting-control" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="access">
                       <option value="yes" ${state.access === "yes" ? "selected" : ""}>${escapeHtml(t("onboarding.accessYes"))}</option>
                       <option value="phone" ${state.access === "phone" ? "selected" : ""}>${escapeHtml(t("onboarding.accessPhone"))}</option>
                       <option value="no" ${state.access === "no" ? "selected" : ""}>${escapeHtml(t("onboarding.accessNo"))}</option>
                     </select>
                   </div>
 
-                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.goalLabel"))}</span>
-                    <select class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="dailyGoal">
+                    <select class="m-input profile-setting-control" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="dailyGoal">
                       <option value="5" ${Number(state.dailyGoal) === 5 ? "selected" : ""}>${escapeHtml(t("onboarding.goal5"))}</option>
                       <option value="15" ${Number(state.dailyGoal) === 15 ? "selected" : ""}>${escapeHtml(t("onboarding.goal15"))}</option>
                       <option value="30" ${Number(state.dailyGoal) === 30 ? "selected" : ""}>${escapeHtml(t("onboarding.goal30"))}</option>
                     </select>
                   </div>
 
-                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.reminderLabel"))}</span>
                     ${
                       state.lang === "fa"
-                        ? `<input type="text" dir="ltr" inputmode="numeric" placeholder="۱۹:۰۰" class="m-input" style="width:94px;min-height:44px;padding:6px 12px;font-size:0.9rem;text-align:center;direction:ltr;font-weight:700;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(toLocaleDigits(state.reminderTime || "19:00"))}" />`
-                        : `<input type="time" class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(state.reminderTime || "19:00")}" />`
+                        ? `<input type="text" dir="ltr" inputmode="numeric" placeholder="۱۹:۰۰" class="m-input profile-setting-control" style="width:94px;min-height:44px;padding:6px 12px;font-size:0.9rem;text-align:center;direction:ltr;font-weight:700;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(toLocaleDigits(state.reminderTime || "19:00"))}" />`
+                        : `<input type="time" class="m-input profile-setting-control" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(state.reminderTime || "19:00")}" />`
                     }
                   </div>
                 </div>
@@ -4468,6 +4570,24 @@
             ui.quizAnswered = true;
             ui.quizIsRight = qObj ? optIdx === Number(qObj.correctIndex) : true;
             render();
+            break;
+          }
+
+          case "complete-and-go-home": {
+            const lid = Number(btn.getAttribute("data-lesson-id"));
+            const nameInp = document.getElementById("l1-name-input");
+            const emailInp = document.getElementById("l1-email-input");
+            if (nameInp && nameInp.value.trim()) {
+              state.userName = nameInp.value.trim();
+              state.isGuest = false;
+            }
+            if (emailInp && emailInp.value.trim()) {
+              state.userEmail = emailInp.value.trim();
+            }
+            recordLessonCompletion(lid);
+            ui.screen = "home";
+            render();
+            window.scrollTo({ top: 0, behavior: "smooth" });
             break;
           }
 
