@@ -1598,20 +1598,26 @@
 
                 ${
                   imageUrl
-                    ? `<image href="${escapeHtml(imageUrl)}" x="22" y="10" width="${vbW - 44}" height="${vbH - 20}" preserveAspectRatio="xMidYMid slice" onerror="this.style.display='none'" />`
+                    ? `<foreignObject x="28" y="18" width="${vbW - 56}" height="${vbH - 28}">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;overflow:hidden;">
+                          <img src="${escapeHtml(imageUrl)}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+                        </div>
+                      </foreignObject>`
+                    : ""
+                }
+                ${
+                  safeCaption
+                    ? `<foreignObject x="32" y="${vbH - 76}" width="${vbW - 64}" height="52">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:4px 14px;background:linear-gradient(to top, rgba(245,239,228,0.96) 65%, rgba(245,239,228,0));font-family:var(--font-heading);font-size:13.5px;line-height:1.35;color:#1F1A2E;text-align:center;font-style:italic;">
+                          <span style="overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">${safeCaption}</span>
+                        </div>
+                      </foreignObject>`
                     : ""
                 }
               </g>
 
-              ${
-                safeCaption
-                  ? `<foreignObject x="46" y="${vbH - 72}" width="208" height="48">
-                      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:var(--font-heading);font-size:13.5px;line-height:1.35;color:#1F1A2E;text-align:center;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">
-                        ${safeCaption}
-                      </div>
-                    </foreignObject>`
-                  : ""
-              }
+              <!-- Crisp inner arch border drawn on top of clipped image -->
+              <path d="${innerPath}" fill="none" stroke="${innerStroke}" stroke-width="1.4" stroke-linejoin="round" />
             </svg>
           </div>
         `;
@@ -2633,9 +2639,10 @@
          ========================================================================== */
       function renderCornerOrnamentSvg(posClass) {
         return `
-          <svg class="lesson-corner-ornament ${posClass}" viewBox="0 0 60 60" fill="none" aria-hidden="true">
-            <path d="M 8 8 C 28 8, 44 18, 52 44 C 38 34, 24 38, 16 52 C 14 34, 12 20, 8 8 Z" fill="#1F6F6B" fill-opacity="0.7" stroke="var(--ink)" stroke-width="1.2" />
-            <circle cx="24" cy="18" r="2.2" fill="var(--ink)" />
+          <svg class="lesson-corner-ornament ${posClass}" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M 38 2 A 22 22 0 0 1 16 24" stroke="#1F6F6B" stroke-width="1.4" stroke-linecap="round" opacity="0.55" />
+            <path d="M 38 8 A 14 14 0 0 1 24 22" stroke="#F2B33D" stroke-width="1.6" stroke-linecap="round" opacity="0.75" />
+            <circle cx="33" cy="7" r="2.2" fill="#F2B33D" opacity="0.85" />
           </svg>
         `;
       }
