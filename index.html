@@ -1738,9 +1738,55 @@
         teacherSavedBanner: false
       };
 
-      let LOCALES = { en: {}, fa: {} };
+      const FALLBACK_LOCALES = {
+        en: {
+          home: {
+            streakBadge: "{count}-DAY STREAK",
+            streakBadgeZero: "Start your streak today",
+            streakStartHint: "Complete a lesson today to start your streak"
+          },
+          lesson: {
+            kicker: "Lesson {id}",
+            kickerOf: "Lesson {id} of {total}"
+          }
+        },
+        fa: {
+          home: {
+            streakBadge: "{count} روز استریک",
+            streakBadgeZero: "امروز استریکت رو شروع کن",
+            streakStartHint: "امروز یه درس رو کامل کن تا استریکت شروع شه"
+          },
+          lesson: {
+            kicker: "درس {id}",
+            kickerOf: "درس {id} از {total}"
+          }
+        }
+      };
+
+      let LOCALES = {
+        en: JSON.parse(JSON.stringify(FALLBACK_LOCALES.en)),
+        fa: JSON.parse(JSON.stringify(FALLBACK_LOCALES.fa))
+      };
       let LESSONS = [];
       let MISTAKES = [];
+
+      function mergeLocaleData(baseObj, loadedObj) {
+        if (!loadedObj || typeof loadedObj !== "object") return baseObj;
+        const result = { ...baseObj, ...loadedObj };
+        for (const k of Object.keys(baseObj)) {
+          if (
+            baseObj[k] &&
+            typeof baseObj[k] === "object" &&
+            !Array.isArray(baseObj[k]) &&
+            loadedObj[k] &&
+            typeof loadedObj[k] === "object" &&
+            !Array.isArray(loadedObj[k])
+          ) {
+            result[k] = { ...baseObj[k], ...loadedObj[k] };
+          }
+        }
+        return result;
+      }
 
       /* ==========================================================================
          STORAGE, DIGITS & THEME (Always Light on First Visit)
@@ -1775,16 +1821,28 @@
         return str.replace(/\d/g, (d) => FA_DIGITS[Number(d)]);
       }
 
-      function t(path, params = {}) {
-        const parts = path.split(".");
-        let cur = LOCALES[state.lang] || LOCALES.en;
+      function lookupLocalePath(obj, parts) {
+        let cur = obj;
         for (const p of parts) {
           cur = cur?.[p];
         }
-        if (cur === undefined) {
-          let fb = LOCALES.en;
-          for (const p of parts) fb = fb?.[p];
-          cur = fb !== undefined ? fb : path;
+        return cur;
+      }
+
+      function t(path, params = {}) {
+        const parts = String(path || "").split(".");
+        let cur = lookupLocalePath(LOCALES[state.lang], parts);
+        if (cur === undefined || cur === null || cur === "") {
+          cur = lookupLocalePath(LOCALES.en, parts);
+        }
+        if (cur === undefined || cur === null || cur === "") {
+          cur = lookupLocalePath(FALLBACK_LOCALES[state.lang], parts);
+        }
+        if (cur === undefined || cur === null || cur === "") {
+          cur = lookupLocalePath(FALLBACK_LOCALES.en, parts);
+        }
+        if (cur === undefined || cur === null) {
+          return "";
         }
         if (typeof cur !== "string") return cur;
         return cur.replace(/\{(\w+)\}/g, (_, k) =>
@@ -4423,12 +4481,18 @@
 
         try {
           const [enRes, faRes, mistakesRes] = await Promise.all([
-            fetch("locales/en.json"),
-            fetch("locales/fa.json"),
-            fetch("content/mistakes.json")
+            fetch("locales/en.json", { cache: "no-store" }),
+            fetch("locales/fa.json", { cache: "no-store" }),
+            fetch("content/mistakes.json", { cache: "no-store" })
           ]);
-          if (enRes.ok) LOCALES.en = await enRes.json();
-          if (faRes.ok) LOCALES.fa = await faRes.json();
+          if (enRes.ok) {
+            const enData = await enRes.json();
+            LOCALES.en = mergeLocaleData(FALLBACK_LOCALES.en, enData);
+          }
+          if (faRes.ok) {
+            const faData = await faRes.json();
+            LOCALES.fa = mergeLocaleData(FALLBACK_LOCALES.fa, faData);
+          }
           if (mistakesRes.ok) MISTAKES = await mistakesRes.json();
 
           const lessonPromises = Array.from({ length: 12 }, (_, idx) => {
