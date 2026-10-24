@@ -1056,21 +1056,28 @@
         background-color: var(--ink);
       }
 
-      /* Progress Pill Track with Teal Pill Badge Inside (Mockup 1) */
+      /* Progress Pill Track with Real Percentage Width */
+      .progress-bar-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
       .progress-pill-track {
+        flex: 1;
         width: 100%;
-        height: 26px;
+        height: 24px;
         background-color: var(--track-bg);
         border-radius: var(--pill-radius);
         padding: 2px;
         display: flex;
         align-items: center;
-        margin-top: 12px;
         overflow: hidden;
       }
 
       .progress-pill-fill {
-        min-width: 48px;
+        min-width: 0;
         height: 100%;
         background-color: var(--secondary);
         color: #FFFFFF;
@@ -1078,10 +1085,18 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.76rem;
+        font-size: 0.74rem;
         font-weight: 700;
-        padding: 0 10px;
+        padding: 0;
         transition: width 300ms ease;
+      }
+
+      .progress-pct-outside {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--ink);
+        white-space: nowrap;
+        flex-shrink: 0;
       }
 
       /* ==========================================================================
@@ -2271,9 +2286,17 @@
           `;
 
           if (showOnlyCLabel && isC) {
+            const showFaUnderC = state.lang === "fa";
+            const faCLbl = persianNotes[0] || "دو";
+            const cLabelY = showFaUnderC ? topY + wkH - 27 : topY + wkH - 18;
             whiteKeysSvg += `
-              <text x="${x + wkW / 2}" y="${topY + wkH - 18}" text-anchor="middle" fill="${INK}" font-family="var(--font-body)" font-size="14" font-weight="700" letter-spacing="0">C</text>
+              <text x="${x + wkW / 2}" y="${cLabelY}" text-anchor="middle" fill="${INK}" font-family="var(--font-body)" font-size="14" font-weight="700" letter-spacing="0">C</text>
             `;
+            if (showFaUnderC) {
+              whiteKeysSvg += `
+                <text x="${x + wkW / 2}" y="${topY + wkH - 10}" text-anchor="middle" fill="${INK}" font-family="var(--font-body)" font-size="11.5" font-weight="700" letter-spacing="0">${escapeHtml(faCLbl)}</text>
+              `;
+            }
           } else if (showAllLabels) {
             const latinLbl = latinNotes[step] || "";
             const faLbl = persianNotes[step] || "";
@@ -3007,6 +3030,18 @@
           `;
         }).join("");
 
+        const streakCount = state.streakCount || 0;
+        const hasStreak = streakCount >= 1;
+        const hasEverCompleted =
+          (Array.isArray(state.completedLessons) && state.completedLessons.length > 0) ||
+          Boolean(state.lastCompletedDate);
+        const weeklyStreakText =
+          !hasEverCompleted || !hasStreak
+            ? t("home.streakStartHint")
+            : isFreeDayUsedThisWeek()
+            ? `${t("home.freeDayUsed")} 🔥`
+            : `${t("home.freeDayAvailable")} 🔥`;
+
         return `
           <div class="mobile-shell">
             <header class="mobile-topbar">
@@ -3026,8 +3061,11 @@
                 </div>
                 <div class="streak-pill-wrap" title="Streak">
                   <div class="badge-saffron">
-                    <span>${escapeHtml(t("home.streakBadge", { count: state.streakCount || 0 }))}</span>
-                    <span>🔥</span>
+                    ${
+                      hasStreak
+                        ? `<span>${escapeHtml(t("home.streakBadge", { count: streakCount }))}</span><span>🔥</span>`
+                        : `<span>${escapeHtml(t("home.streakBadgeZero"))}</span>`
+                    }
                   </div>
                 </div>
               </div>
@@ -3097,7 +3135,7 @@
                         ${weekDotsHtml}
                       </div>
                       <p style="font-size:0.82rem;color:var(--ink);font-weight:500;">
-                        ${escapeHtml(isFreeDayUsedThisWeek() ? t("home.freeDayUsed") : t("home.freeDayAvailable"))} 🔥
+                        ${escapeHtml(weeklyStreakText)}
                       </p>
                     </div>
 
@@ -3111,10 +3149,17 @@
                           ${escapeHtml(currentChapterTitle)}
                         </p>
                       </div>
-                      <div class="progress-pill-track">
-                        <div class="progress-pill-fill" style="width:${Math.max(26, pct)}%;">
-                          ${toLocaleDigits(pct)}%
+                      <div class="progress-bar-row">
+                        <div class="progress-pill-track">
+                          ${
+                            pct > 0
+                              ? `<div class="progress-pill-fill" style="width:${pct}%;">
+                                  ${pct >= 25 ? `${toLocaleDigits(pct)}%` : ""}
+                                </div>`
+                              : ""
+                          }
                         </div>
+                        ${pct < 25 ? `<span class="progress-pct-outside">${toLocaleDigits(pct)}%</span>` : ""}
                       </div>
                     </div>
                   </div>
