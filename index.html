@@ -1,0 +1,3501 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>[نام اپ] — آموزش گام‌به‌گام موسیقی</title>
+    <meta name="description" content="پلتفرم آموزش گام‌به‌گام موسیقی به زبان فارسی؛ روزی چند دقیقه همراه با مسیر یادگیری، آزمونک و مشاور تمرینی." />
+    <meta property="og:title" content="[نام اپ] — آموزش گام‌به‌گام موسیقی" />
+    <meta property="og:description" content="پلتفرم آموزش گام‌به‌گام موسیقی به زبان فارسی؛ روزی چند دقیقه همراه با مسیر یادگیری، آزمونک و مشاور تمرینی." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      :root {
+        --bg-canvas: #F7F8FA;
+        --bg-surface: #FFFFFF;
+        --bg-subtle: #EEF1F6;
+        --bg-elevated: #FFFFFF;
+        --text-primary: #111827;
+        --text-secondary: #4B5563;
+        --text-muted: #6B7280;
+        --border-color: #E2E8F0;
+        --border-subtle: #EDF2F7;
+        --accent: #0F766E;
+        --accent-hover: #0D9488;
+        --accent-soft: #CCFBF1;
+        --accent-text: #115E59;
+        --warm: #D97706;
+        --warm-soft: #FEF3C7;
+        --success: #15803D;
+        --success-soft: #DCFCE7;
+        --danger: #B91C1C;
+        --danger-soft: #FEE2E2;
+        --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+        --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.07);
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --radius-sm: 10px;
+        --font-stack: Vazirmatn, Tahoma, "Segoe UI", sans-serif;
+      }
+
+      [data-theme="dark"] {
+        --bg-canvas: #0B111E;
+        --bg-surface: #151F32;
+        --bg-subtle: #1E293B;
+        --bg-elevated: #1E293B;
+        --text-primary: #F8FAFC;
+        --text-secondary: #CBD5E1;
+        --text-muted: #94A3B8;
+        --border-color: #26354D;
+        --border-subtle: #1E293B;
+        --accent: #14B8A6;
+        --accent-hover: #2DD4BF;
+        --accent-soft: rgba(20, 184, 166, 0.16);
+        --accent-text: #5EEAD4;
+        --warm: #F59E0B;
+        --warm-soft: rgba(245, 158, 11, 0.16);
+        --success: #22C55E;
+        --success-soft: rgba(34, 197, 94, 0.16);
+        --danger: #EF4444;
+        --danger-soft: rgba(239, 68, 68, 0.16);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html, body {
+        min-height: 100%;
+        background-color: var(--bg-canvas);
+        color: var(--text-primary);
+        font-family: var(--font-stack);
+        font-size: 16px;
+        line-height: 1.65;
+        direction: rtl;
+        text-align: right;
+        transition: background-color 0.18s ease, color 0.18s ease;
+        overflow-x: hidden;
+      }
+
+      button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: none;
+        border: none;
+      }
+
+      button {
+        cursor: pointer;
+        user-select: none;
+      }
+
+      button:focus-visible, input:focus-visible, select:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      /* Layout Shell */
+      .app-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+      }
+
+      /* Onboarding & Modal Container */
+      .flow-shell {
+        width: 100%;
+        max-width: 540px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 20px 28px;
+        margin: 0 auto;
+        animation: fadeSlide 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Main App Responsive Shell */
+      .main-layout {
+        width: 100%;
+        max-width: 1120px;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 84px;
+      }
+
+      @media (min-width: 960px) {
+        .main-layout {
+          flex-direction: row;
+          padding: 24px 32px;
+          gap: 28px;
+          align-items: flex-start;
+        }
+      }
+
+      /* Desktop Side Rail + Mobile Bottom Nav */
+      .nav-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 66px;
+        background: var(--bg-surface);
+        border-top: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        z-index: 40;
+        padding: 0 6px;
+      }
+
+      @media (min-width: 960px) {
+        .nav-bar {
+          position: sticky;
+          top: 24px;
+          width: 240px;
+          height: auto;
+          border: 1px solid var(--border-color);
+          border-radius: var(--radius-lg);
+          display: flex;
+          flex-direction: column;
+          padding: 16px 12px;
+          gap: 6px;
+          flex-shrink: 0;
+          box-shadow: var(--shadow-sm);
+        }
+      }
+
+      .nav-brand-desktop {
+        display: none;
+        padding: 8px 12px 16px;
+        border-bottom: 1px solid var(--border-subtle);
+        margin-bottom: 8px;
+        align-items: center;
+        gap: 10px;
+      }
+
+      @media (min-width: 960px) {
+        .nav-brand-desktop {
+          display: flex;
+        }
+      }
+
+      .nav-item {
+        min-height: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        color: var(--text-muted);
+        border-radius: var(--radius-sm);
+        transition: color 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+        padding: 4px 6px;
+        white-space: nowrap;
+      }
+
+      @media (min-width: 960px) {
+        .nav-item {
+          flex-direction: row;
+          justify-content: flex-start;
+          gap: 12px;
+          padding: 12px 14px;
+          font-size: 0.95rem;
+        }
+      }
+
+      .nav-item:active {
+        transform: scale(0.97);
+      }
+
+      .nav-item.active {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      @media (min-width: 960px) {
+        .nav-item.active {
+          background: var(--accent-soft);
+          color: var(--accent-text);
+        }
+      }
+
+      .nav-label {
+        font-size: 0.75rem;
+      }
+
+      @media (min-width: 960px) {
+        .nav-label {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Main Content Area */
+      .workspace-column {
+        flex: 1;
+        width: 100%;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .top-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: var(--bg-canvas);
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      @media (min-width: 960px) {
+        .top-header {
+          position: static;
+          background: var(--bg-surface);
+          border: 1px solid var(--border-color);
+          border-radius: var(--radius-lg);
+          padding: 18px 24px;
+          margin-bottom: 20px;
+          box-shadow: var(--shadow-sm);
+        }
+      }
+
+      .page-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        animation: fadeSlide 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @media (min-width: 960px) {
+        .page-body {
+          padding: 0;
+        }
+      }
+
+      .home-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      @media (min-width: 720px) {
+        .home-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .home-grid .span-full {
+          grid-column: 1 / -1;
+        }
+      }
+
+      /* Cards & Surfaces */
+      .card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .card-interactive {
+        width: 100%;
+        text-align: right;
+        background: var(--bg-surface);
+        border: 1.5px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 18px 20px;
+        transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        min-height: 64px;
+      }
+
+      .card-interactive:hover {
+        border-color: var(--accent);
+      }
+
+      .card-interactive:active {
+        transform: scale(0.99);
+      }
+
+      .card-interactive.selected {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      /* Buttons */
+      .btn {
+        min-height: 48px;
+        padding: 12px 22px;
+        border-radius: var(--radius-md);
+        font-weight: 700;
+        font-size: 0.98rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: background-color 0.15s ease, transform 0.12s ease, opacity 0.15s ease;
+        white-space: nowrap;
+      }
+
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #FFFFFF;
+        width: 100%;
+      }
+
+      .btn-primary:hover:not(:disabled) {
+        background: var(--accent-hover);
+      }
+
+      .btn-secondary {
+        background: var(--bg-subtle);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        width: 100%;
+      }
+
+      .btn-secondary:hover:not(:disabled) {
+        border-color: var(--text-muted);
+      }
+
+      .btn-ghost {
+        color: var(--text-secondary);
+        min-height: 44px;
+        padding: 8px 14px;
+        font-weight: 600;
+      }
+
+      .btn-ghost:hover {
+        color: var(--text-primary);
+      }
+
+      .btn-danger {
+        background: var(--danger-soft);
+        color: var(--danger);
+        border: 1px solid var(--danger);
+        width: 100%;
+      }
+
+      /* Top Onboarding Bar & Dots */
+      .onboard-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 44px;
+        margin-bottom: 12px;
+      }
+
+      .icon-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        background: var(--bg-surface);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        flex-shrink: 0;
+      }
+
+      .progress-dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        direction: rtl;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 99px;
+        background: var(--border-color);
+        transition: all 0.2s ease;
+      }
+
+      .dot.active {
+        width: 22px;
+        background: var(--accent);
+      }
+
+      .dot.done {
+        background: var(--accent);
+        opacity: 0.55;
+      }
+
+      /* Logo mark */
+      .logo-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 1.25rem;
+        color: var(--text-primary);
+        letter-spacing: -0.01em;
+      }
+
+      .logo-symbol {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      /* Instrument Grid */
+      .instrument-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      @media (min-width: 480px) {
+        .instrument-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .inst-card {
+        background: var(--bg-surface);
+        border: 1.5px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 16px 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 112px;
+        text-align: center;
+        transition: border-color 0.15s ease, background-color 0.15s ease;
+      }
+
+      .inst-card.active-inst {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      .inst-card.soon-inst {
+        opacity: 0.82;
+      }
+
+      .meta-quiet {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      /* Helper box */
+      .helper-banner {
+        margin-top: 12px;
+        padding: 14px 16px;
+        border-radius: var(--radius-md);
+        background: var(--bg-subtle);
+        border: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.92rem;
+      }
+
+      /* Multi-select Chips */
+      .chips-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip-btn {
+        min-height: 46px;
+        padding: 10px 18px;
+        border-radius: var(--radius-md);
+        border: 1.5px solid var(--border-color);
+        background: var(--bg-surface);
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.15s ease;
+      }
+
+      .chip-btn.selected {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+        color: var(--accent-text);
+      }
+
+      /* Progress Bar */
+      .progress-track {
+        width: 100%;
+        height: 10px;
+        background: var(--bg-subtle);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 99px;
+        transition: width 0.25s ease;
+      }
+
+      /* Form Inputs */
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-align: right;
+      }
+
+      .input-label {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .text-input {
+        min-height: 48px;
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        border: 1.5px solid var(--border-color);
+        background: var(--bg-surface);
+        color: var(--text-primary);
+        width: 100%;
+      }
+
+      .text-input:focus {
+        border-color: var(--accent);
+        outline: none;
+      }
+
+      /* Advisor Chat */
+      .chat-box {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-height: 320px;
+        max-height: 55vh;
+        overflow-y: auto;
+        padding: 4px 2px;
+      }
+
+      .msg-row {
+        display: flex;
+        flex-direction: column;
+        max-width: 88%;
+        gap: 4px;
+      }
+
+      .msg-row.user {
+        align-self: flex-start;
+      }
+
+      .msg-row.advisor {
+        align-self: flex-end;
+      }
+
+      .msg-bubble {
+        padding: 14px 16px;
+        border-radius: var(--radius-md);
+        font-size: 0.94rem;
+        line-height: 1.65;
+      }
+
+      .msg-row.user .msg-bubble {
+        background: var(--accent);
+        color: #FFFFFF;
+      }
+
+      .msg-row.advisor .msg-bubble {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+      }
+
+      /* Overlay Modal / Bottom Sheet */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(11, 17, 30, 0.55);
+        backdrop-filter: blur(3px);
+        z-index: 60;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+      }
+
+      @media (min-width: 640px) {
+        .modal-backdrop {
+          align-items: center;
+          padding: 20px;
+        }
+      }
+
+      .modal-sheet {
+        width: 100%;
+        max-width: 480px;
+        background: var(--bg-surface);
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border: 1px solid var(--border-color);
+        padding: 24px 20px 28px;
+        box-shadow: var(--shadow-md);
+        animation: fadeSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @media (min-width: 640px) {
+        .modal-sheet {
+          border-radius: 24px;
+        }
+      }
+
+      /* Media Placeholder */
+      .media-placeholder {
+        width: 100%;
+        min-height: 180px;
+        border-radius: var(--radius-md);
+        background: var(--bg-subtle);
+        border: 1.5px dashed var(--border-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+        gap: 10px;
+        color: var(--text-muted);
+      }
+
+      /* Week Row */
+      .week-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .day-cell {
+        padding: 8px 4px;
+        border-radius: var(--radius-sm);
+        background: var(--bg-subtle);
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        border: 1px solid transparent;
+      }
+
+      .day-cell.today {
+        border-color: var(--accent);
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+
+      .day-cell.done {
+        background: var(--accent-soft);
+        color: var(--accent-text);
+        font-weight: 700;
+      }
+
+      /* Segmented Control */
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background: var(--bg-subtle);
+        padding: 4px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-color);
+        gap: 4px;
+      }
+
+      .seg-btn {
+        min-height: 40px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        transition: all 0.15s ease;
+      }
+
+      .seg-btn.active {
+        background: var(--bg-surface);
+        color: var(--text-primary);
+        box-shadow: var(--shadow-sm);
+      }
+
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="app-wrapper"></div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // --- PERSIAN DIGITS & TEXT NORMALIZATION ---
+        const FA_DIGITS = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+        function toFa(input) {
+          if (input === null || input === undefined) return "";
+          return String(input).replace(/\d/g, function (d) {
+            return FA_DIGITS[Number(d)];
+          });
+        }
+
+        function normalizeFa(str) {
+          if (!str) return "";
+          return String(str)
+            .replace(/ي/g, "ی")
+            .replace(/ك/g, "ک")
+            .replace(/\u200c/g, "") // strip ZWNJ for resilient matching
+            .replace(/[«»"'،؟?.!]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+        }
+
+        function escapeHtml(str) {
+          if (str === null || str === undefined) return "";
+          return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+        }
+
+        // --- CURRICULUM & LESSONS DATA (1-12) ---
+        const CHAPTERS = [
+          { id: 1, title: "فصل ۱ «سلام کیبورد»", lessonIds: [1, 2, 3, 4] },
+          { id: 2, title: "فصل ۲ «ضرب و کشش»", lessonIds: [5, 6, 7, 8] },
+          { id: 3, title: "فصل ۳ «دست چپ و دو دست»", lessonIds: [9, 10, 11, 12] }
+        ];
+
+        const LESSONS = [
+          {
+            id: 1,
+            chapterId: 1,
+            title: "نقشه‌ی کیبورد",
+            minutes: 4,
+            goal: "امروز یاد می‌گیری روی هر کیبوردی «دو» رو پیدا کنی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "کلیدهای سیاه تو دو گروه تکرار می‌شن: دوتایی و سه‌تایی. کلید سفیدِ درست سمت چپِ هر گروه دوتایی، اسمش «دو»ئه.",
+            steps: [
+              "همه‌ی گروه‌های دوتایی رو با یه انگشت لمس کن.",
+              "همه‌ی «دو»ها رو از چپ به راست بزن.",
+              "گوش کن: «دو»های سمت چپ بم‌ترن، سمت راست زیرتر."
+            ],
+            selfCheck: [
+              "گروه‌های دوتایی سیاه رو از سه‌تایی تشخیص دادم؟",
+              "کلید سفیدِ سمت چپِ گروه دوتایی رو پیدا کردم؟"
+            ],
+            quiz: [
+              {
+                q: "«دو» کنار کدوم گروه کلید سیاهه؟",
+                options: ["دوتایی", "سه‌تایی"],
+                correctIndex: 0,
+                rightWhy: "درسته! «دو» همیشه سمت چپ گروه دوتاییه؛ سمت چپ سه‌تایی «فا»ئه.",
+                wrongWhy: "دقت کن: «دو» همیشه سمت چپ گروه دوتاییه؛ سمت چپ سه‌تایی «فا»ئه."
+              },
+              {
+                q: "«دو» سمت چپ گروهه یا راست؟",
+                options: ["چپ", "راست"],
+                correctIndex: 0,
+                rightWhy: "آفرین! کلید سفیدِ بلافاصله سمت چپِ گروه دوتایی همون «دو»ئه.",
+                wrongWhy: "یادت باشه: «دو» درست در سمت چپِ دو کلید سیاه قرار داره، نه سمت راست."
+              }
+            ],
+            summary: "حالا روی هر پیانویی «دو» رو پیدا می‌کنی.",
+            tomorrow: "اسم بقیه‌ی نت‌ها.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "آموزش آزاد درون‌برنامه‌ای"
+          },
+          {
+            id: 2,
+            chapterId: 1,
+            title: "اسم نت‌ها",
+            minutes: 5,
+            goal: "هفت اسم نت رو یاد می‌گیری و می‌فهمی چرا تکرار می‌شن.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "از «دو» به راست: دو، ر، می، فا، سل، لا، سی؛ بعد دوباره «دو». از یه «دو» تا «دو»ی بعدی رو اکتاو می‌گیم. اسم انگلیسی‌شون: C D E F G A B.",
+            steps: [
+              "از یه «دو» هفت کلید سفید بالا برو و اسمشون رو بلند بگو.",
+              "همین رو از یه «دو»ی دیگه انجام بده.",
+              "چشمت رو ببند، یه کلید سفید بزن، بعد با نگاه به گروه‌های سیاه اسمش رو بگو."
+            ],
+            selfCheck: [
+              "ترتیب هفت نت رو از «دو» تا «سی» بلند گفتم؟",
+              "جای «فا» رو کنار گروه سه‌تایی پیدا کردم؟"
+            ],
+            quiz: [
+              {
+                q: "نت بعد از «می» چیه؟",
+                options: ["فا", "سل", "ر"],
+                correctIndex: 0,
+                rightWhy: "درسته! بعد از می، فا میاد؛ بینشون کلید سیاه نیست.",
+                wrongWhy: "بعد از می، فا میاد؛ بینشون کلید سیاه نیست."
+              },
+              {
+                q: "کلید سفید سمت چپ گروه سه‌تایی؟",
+                options: ["فا", "دو", "سی"],
+                correctIndex: 0,
+                rightWhy: "عالیه! سمت چپِ گروه سه‌تایی همیشه نت «فا» قرار داره.",
+                wrongWhy: "سمت چپ گروه دوتایی «دو»ئه، اما سمت چپ گروه سه‌تایی همیشه «فا»ست."
+              },
+              {
+                q: "بین کدوم دو نت کلید سیاه نیست؟",
+                options: ["سی و دو", "دو و ر", "سل و لا"],
+                correctIndex: 0,
+                rightWhy: "دقیقاً! بین «سی و دو» و همچنین بین «می و فا» هیچ کلید سیاهی وجود نداره.",
+                wrongWhy: "به کیبورد نگاه کن: فقط بین «می و فا» و بین «سی و دو» کلید سیاه نیست."
+              }
+            ],
+            summary: "هفت اسم، کل کیبورد.",
+            tomorrow: "دست‌هات.",
+            sourceCreator: "ساخت خودمون | Open Music Theory",
+            sourceLicense: "CC BY-SA 4.0، ترجمه و بازنویسی"
+          },
+          {
+            id: 3,
+            chapterId: 1,
+            title: "نشستن و شماره‌ی انگشت‌ها",
+            minutes: 5,
+            goal: "درست می‌شینی و شماره‌ی هر انگشت رو می‌دونی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "وسط کیبورد بشین، روبه‌روی «دو»ی وسط. آرنج کمی جلوتر از بدن و هم‌ارتفاع کیبورد. پاها روی زمین. دست‌ها انگار یه پرتقال کوچیک گرفتن؛ انگشت‌ها خمیده، مچ شل. شماره‌ها در هر دو دست: شست ۱، اشاره ۲، وسط ۳، انگشتری ۴، کوچیک ۵.",
+            steps: [
+              "بشین و خودسنجی رو نگاه کن.",
+              "با هر انگشت دست راست یه کلید بزن و شماره‌ش رو بلند بگو.",
+              "همین با دست چپ.",
+              "یکی یه عدد بگه، تو با همون انگشت بزن."
+            ],
+            selfCheck: [
+              "شونه‌هام شل بودن؟",
+              "مچم پایین‌تر از کیبورد نیفتاد؟",
+              "انگشت‌هام خمیده بودن؟",
+              "با نوک انگشت زدم؟"
+            ],
+            quiz: [
+              {
+                q: "انگشت ۴ کدومه؟",
+                options: ["انگشتری", "وسط", "کوچیک"],
+                correctIndex: 0,
+                rightWhy: "درسته! از شست که ۱ حساب بشه، انگشت انگشتری شماره ۴ می‌شه.",
+                wrongWhy: "از شست بشمار: ۱ شست، ۲ اشاره، ۳ وسط، ۴ انگشتری، ۵ کوچیک."
+              },
+              {
+                q: "شست چه شماره‌ایه؟",
+                options: ["۱", "۵"],
+                correctIndex: 0,
+                rightWhy: "تو هر دو دست شست ۱ئه؛ دست‌ها آینه‌ی هم‌ان.",
+                wrongWhy: "تو هر دو دست شست ۱ئه؛ دست‌ها آینه‌ی هم‌ان."
+              }
+            ],
+            summary: "با این شماره‌ها می‌شه گفت هر نت رو با کدوم انگشت بزنی.",
+            tomorrow: "اولین پنج نت.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "آموزش آزاد درون‌برنامه‌ای"
+          },
+          {
+            id: 4,
+            chapterId: 1,
+            title: "پنج انگشت روی پنج نت",
+            minutes: 5,
+            goal: "پنج انگشت دست راست رو روی نت‌های دو تا سل قرار می‌دی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "شست دست راست (انگشت ۱) رو بذار روی «دو»ی وسط. حالا هر انگشت بعدی رو روی کلید سفید بعدی بذار: ر (۲)، می (۳)، فا (۴)، سل (۵).",
+            steps: [
+              "انگشت ۱ تا ۵ دست راست رو روی دو، ر، می، فا، سل بذار.",
+              "یکی‌یکی از ۱ تا ۵ بزن و اسم نت رو بگو.",
+              "از ۵ به ۱ برگرد بدون این‌که مچ دستت سفت بشه."
+            ],
+            selfCheck: [
+              "هر انگشت روی یک کلید سفید جداگانه قرار گرفت؟",
+              "هنگام زدن انگشت ۴ و ۵ مچم ثابت و راحت موند؟"
+            ],
+            quiz: [
+              {
+                q: "وقتی شست دست راست روی «دو» باشه، انگشت ۵ روی کدوم نته؟",
+                options: ["سل", "فا", "لا"],
+                correctIndex: 0,
+                rightWhy: "آفرین! دو (۱)، ر (۲)، می (۳)، فا (۴) و سل (۵).",
+                wrongWhy: "پنج نت سفید از دو بشمار: دو، ر، می، فا، سل."
+              },
+              {
+                q: "در این حالت، نت «می» با کدوم شماره انگشت زده می‌شه؟",
+                options: ["۳", "۲", "۴"],
+                correctIndex: 0,
+                rightWhy: "درسته! انگشت سوم (وسط) دقیقاً روی نت می قرار می‌گیره.",
+                wrongWhy: "دو با ۱، ر با ۲، و می با انگشت ۳ زده می‌شه."
+              }
+            ],
+            summary: "پوزیشن پنج‌انگشتیِ دو، پایه‌ی ده‌ها آهنگ اول توست.",
+            tomorrow: "ضرب ثابت در موسیقی.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 5,
+            chapterId: 2,
+            title: "ضرب ثابت",
+            minutes: 5,
+            goal: "نبض یکنواخت موسیقی رو حس می‌کنی و با دست نگه می‌داری.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "ضرب مثل تپش قلب آهنگه؛ تند و کند نمی‌شه بلکه با فاصله‌های مساوی جلو می‌ره. قبل از زدن هر قطعه، اول نبضش رو با شمردن «۱، ۲، ۳، ۴» حس کن.",
+            steps: [
+              "با سرعت آروم و یکنواخت از ۱ تا ۴ بشمار و تکرار کن.",
+              "روی هر عدد، کلید «دو» رو با انگشت ۱ بزن.",
+              "همین کار رو با نت‌های دو، ر، می، فا روی چهار ضرب انجام بده."
+            ],
+            selfCheck: [
+              "فاصله‌ی بین شمارش‌هام یکسان بود؟",
+              "بدون عجله کردن ضرب‌ها رو ادامه دادم؟"
+            ],
+            quiz: [
+              {
+                q: "ضرب ثابت به چه چیزی شباهت داره؟",
+                options: ["تپش منظم قلب یا تیک‌تاک ساعت", "تغییر ناگهانی سرعت"],
+                correctIndex: 0,
+                rightWhy: "دقیقاً! ضرب ثابت یعنی فاصله‌ی زمانی مساوی بین هر تپش.",
+                wrongWhy: "ضرب پایه در موسیقی باید مثل تیک‌تاک ساعت منظم و یکنواخت باشه."
+              },
+              {
+                q: "قبل از شروع نواختن یک تمرین چه کاری کمک می‌کنه؟",
+                options: ["شمردن چند ضرب یکنواخت", "زدن سریع همه کلیدها"],
+                correctIndex: 0,
+                rightWhy: "درسته! شمردن قبل از شروع باعث می‌شه با ریتم مشخص وارد بشی.",
+                wrongWhy: "همیشه اول یک میزان بشمار تا سرعت دستت تنظیم بشه."
+              }
+            ],
+            summary: "حالا می‌تونی نت‌ها رو روی یک نبض منظم بنوازی.",
+            tomorrow: "کشش نت‌های سیاه، سفید و گرد.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 6,
+            chapterId: 2,
+            title: "سیاه، سفید، گرد",
+            minutes: 6,
+            goal: "تفاوت کشش زمانی نت‌های ۱، ۲ و ۴ ضربی رو یاد می‌گیری.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "همه‌ی نت‌ها به یک اندازه کشیده نمی‌شن: نت سیاه ۱ ضرب، نت سفید ۲ ضرب، و نت گرد ۴ ضرب نگه داشته می‌شه.",
+            steps: [
+              "نت «دو» رو بزن و ۱ ضرب نگه دار (سیاه).",
+              "نت «ر» رو بزن و تا شمردن «۱، ۲» نگه دار (سفید).",
+              "نت «می» رو بزن و تا شمردن «۱، ۲، ۳، ۴» نگه دار (گرد)."
+            ],
+            selfCheck: [
+              "در نت سفید و گرد کلید رو پایین نگه داشتم تا شمارش تموم بشه؟",
+              "شمارش ضرب‌ها رو با صدای بلند انجام دادم؟"
+            ],
+            quiz: [
+              {
+                q: "نت سفید چند ضرب کشیده می‌شه؟",
+                options: ["۲ ضرب", "۱ ضرب", "۴ ضرب"],
+                correctIndex: 0,
+                rightWhy: "درسته! نت سفید به اندازه‌ی ۲ ضرب کامل صدا می‌ده.",
+                wrongWhy: "یادت باشه: سیاه ۱ ضرب، سفید ۲ ضرب، و گرد ۴ ضربه."
+              },
+              {
+                q: "کدوم نت ۴ ضرب کامل طول می‌کشه؟",
+                options: ["گرد", "سیاه", "سفید"],
+                correctIndex: 0,
+                rightWhy: "آفرین! نت گرد طولانی‌ترین این سه نته و ۴ ضرب کشش داره.",
+                wrongWhy: "نت گرد ۴ ضرب طول می‌کشه."
+              }
+            ],
+            summary: "با ترکیب نت‌های کوتاه و بلند، ملودی شکل می‌گیره.",
+            tomorrow: "پنج خط حامل و کلید سل.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 7,
+            chapterId: 2,
+            title: "حامل و کلید سل",
+            minutes: 6,
+            goal: "پنج خط حامل و جای نت «دو»ی وسط و «سل» رو می‌شناسی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "نت‌ها روی ۵ خط و ۴ فاصله‌ی بینشون نوشته می‌شن که از پایین به بالا شمرده می‌شن. کلید سل خط دوم رو در بر می‌گیره و نشون می‌ده نت روی خط دوم «سل» است.",
+            steps: [
+              "پنج خط حامل رو از خط ۱ (پایین‌ترین) تا خط ۵ بشمار.",
+              "نت «دو»ی وسط رو با خط اضافه‌ی کوچکش زیر حامل پیدا کن.",
+              "نت «سل» روی خط دوم رو با انگشت ۵ دست راست بزن."
+            ],
+            selfCheck: [
+              "خط‌های حامل رو از پایین به بالا شمردم؟",
+              "ارتباط کلید سل با خط دوم رو متوجه شدم؟"
+            ],
+            quiz: [
+              {
+                q: "خطوط حامل از کدوم جهت شمرده می‌شن؟",
+                options: ["از پایین به بالا", "از بالا به پایین"],
+                correctIndex: 0,
+                rightWhy: "درسته! خط اول همیشه پایین‌ترین خط حامله.",
+                wrongWhy: "در موسیقی، خطوط حامل همیشه از پایین (خط ۱) به بالا (خط ۵) شمرده می‌شن."
+              },
+              {
+                q: "در کلید سل، نتِ روی خط دوم چه نام داره؟",
+                options: ["سل", "دو", "فا"],
+                correctIndex: 0,
+                rightWhy: "عالیه! خمیدگی کلید سل دور خط دوم می‌چرخه و جای نت سل رو نشون می‌ده.",
+                wrongWhy: "کلید سل به همین خاطر این اسم رو داره که خط دوم رو به عنوان نت «سل» مشخص می‌کنه."
+              }
+            ],
+            summary: "حالا نقشه خواندن نت‌ها روی خط حامل رو بلدی.",
+            tomorrow: "اولین قطعه: سرود شادی.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 8,
+            chapterId: 2,
+            title: "اولین قطعه: سرود شادی",
+            minutes: 7,
+            goal: "ملودی معروف سرود شادی بتهوون رو با دست راست می‌زنی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "سرود شادی فقط از پنج نت اول (دو تا سل) استفاده می‌کنه و با انگشت ۳ (نت می) شروع می‌شه: می، می، فا، سل | سل، فا، می، ر | دو، دو، ر، می | می، ر، ر.",
+            steps: [
+              "بخش اول رو آروم بزن: می (۳)، می (۳)، فا (۴)، سل (۵).",
+              "بخش دوم رو برگرد: سل (۵)، فا (۴)، می (۳)، ر (۲).",
+              "هر دو بخش رو با ضرب ثابت پشت سر هم بنواز."
+            ],
+            selfCheck: [
+              "قطعه رو با انگشت ۳ روی نت «می» شروع کردم؟",
+              "کشش نت آخر رو ۲ ضرب نگه داشتم؟"
+            ],
+            quiz: [
+              {
+                q: "سرود شادی با کدوم نت و شماره انگشت دست راست شروع می‌شه؟",
+                options: ["نت می (انگشت ۳)", "نت دو (انگشت ۱)", "نت سل (انگشت ۵)"],
+                correctIndex: 0,
+                rightWhy: "درسته! ملودی سرود شادی از نت می با انگشت سوم آغاز می‌شه.",
+                wrongWhy: "اولین نت این ملودی «می» است که با انگشت ۳ زده می‌شه."
+              },
+              {
+                q: "در سرود شادی چند نت مختلف به کار رفته؟",
+                options: ["۵ نت (دو تا سل)", "۷ نت کامل", "فقط ۲ نت"],
+                correctIndex: 0,
+                rightWhy: "آفرین! کل این ملودی زیبا فقط با همون پنج نت زیر دستت اجرا می‌شه.",
+                wrongWhy: "سرود شادی تنها از ۵ نت دو، ر، می، فا و سل استفاده می‌کنه."
+              }
+            ],
+            summary: "تبریک! اولین قطعه‌ی کلاسیکت رو کامل نواختی.",
+            tomorrow: "آشنایی با دست چپ.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 9,
+            chapterId: 3,
+            title: "دست چپ",
+            minutes: 5,
+            goal: "پوزیشن پنج‌انگشتی دست چپ رو در اکتاو بم‌تر تمرین می‌کنی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "در دست چپ هم شست شماره ۱ و انگشت کوچیک شماره ۵ است. پس وقتی دست چپ رو روی دو تا سلِ بم‌تر می‌ذاری، انگشت ۵ روی «دو» و انگشت ۱ روی «سل» قرار می‌گیره.",
+            steps: [
+              "انگشت ۵ دست چپ رو بذار روی «دو»ی پایین‌تر از دوی وسط.",
+              "انگشت‌های ۵، ۴، ۳، ۲، ۱ رو به ترتیب روی دو، ر، می، فا، سل بزن.",
+              "حس کن چطور شماره‌ی انگشت‌های دست چپ آینه‌ی دست راسته."
+            ],
+            selfCheck: [
+              "انگشت ۵ دست چپ روی نت دو قرار گرفت؟",
+              "شست دست چپ (۱) روی نت سل قرار گرفت؟"
+            ],
+            quiz: [
+              {
+                q: "وقتی دست چپ روی دو تا سل قرار می‌گیره، کدوم انگشت روی «دو» است؟",
+                options: ["انگشت ۵ (کوچیک)", "انگشت ۱ (شست)"],
+                correctIndex: 0,
+                rightWhy: "درسته! چون دست چپ آینه‌ی دست راسته، انگشت ۵ سمت چپ (روی دو) قرار می‌گیره.",
+                wrongWhy: "در دست چپ، سمت چپ‌ترین انگشت همون انگشت ۵ (کوچیک) است که روی دو می‌شینه."
+              },
+              {
+                q: "انگشت ۱ دست چپ در این حالت کدوم نت رو می‌زنه؟",
+                options: ["سل", "دو", "می"],
+                correctIndex: 0,
+                rightWhy: "عالیه! شست دست چپ روی نت سل قرار می‌گیره.",
+                wrongWhy: "از چپ به راست: دو (۵)، ر (۴)، می (۳)، فا (۲)، سل (۱)."
+              }
+            ],
+            summary: "حالا دست چپت هم جای خودش رو روی کیبورد می‌شناسه.",
+            tomorrow: "سکوت و میزان.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 10,
+            chapterId: 3,
+            title: "سکوت و میزان",
+            minutes: 5,
+            goal: "علامت سکوت و تقسیم‌بندی میزان‌های ۴ ضربی رو یاد می‌گیری.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "سکوت در موسیقی به اندازه‌ی خود نت‌ها مهمه. وقتی به علامت سکوت می‌رسی، دستت رو از روی کلید برمی‌داری اما شمارش ضرب همچنان ادامه داره.",
+            steps: [
+              "بشمار ۱، ۲، ۳، ۴؛ روی ۱، ۲، ۳ نت «دو» رو بزن و روی ۴ دستت رو بردار (سکوت).",
+              "دو میزان ۴ ضربی پشت سر هم با سکوت روی ضرب آخر اجرا کن.",
+              "دقت کن در زمان سکوت هیچ کلیدی پایین نمونه."
+            ],
+            selfCheck: [
+              "روی ضرب سکوت دستم رو از کلید جدا کردم؟",
+              "ضرب سکوت رو هم با همون سرعت قبلی شمردم؟"
+            ],
+            quiz: [
+              {
+                q: "در زمان رسیدن به علامت سکوت چه باید کرد؟",
+                options: ["صدا قطع می‌شه ولی شمارش ضرب ادامه داره", "شمارش متوقف می‌شه"],
+                correctIndex: 0,
+                rightWhy: "دقیقاً! نبض موسیقی هرگز نمی‌ایسته، فقط در آن ضرب صدایی پخش نمی‌شه.",
+                wrongWhy: "سکوت یعنی نبودن صدا در حالی که ضرب موسیقی همچنان جلو می‌ره."
+              },
+              {
+                q: "یک میزان ۴/۴ چند ضرب سیاه ظرفیت داره؟",
+                options: ["۴ ضرب", "۲ ضرب", "۶ ضرب"],
+                correctIndex: 0,
+                rightWhy: "درسته! در میزان چهارچهارم مجموع نت‌ها و سکوت‌های هر میزان برابر ۴ ضرب سیاهه.",
+                wrongWhy: "میزان ۴/۴ یعنی ۴ ضرب در هر خانه (میزان)."
+              }
+            ],
+            summary: "سکوت‌ها به موسیقی نفس و زیبایی می‌دن.",
+            tomorrow: "همکاری دو دست، قدم اول.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 11,
+            chapterId: 3,
+            title: "دو دست، قدم اول",
+            minutes: 6,
+            goal: "دست راست و دست چپ رو به نوبت و سپس هم‌زمان هماهنگ می‌کنی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "برای شروع دو دستی، عجله نکن. اول هر دست به نوبت می‌زنه، بعد روی ضرب اول هر میزان یک نت پایه با دست چپ نگه می‌داری و ملودی رو با دست راست می‌زنی.",
+            steps: [
+              "نت «دو» رو با دست چپ (انگشت ۵) بزن و ۴ ضرب نگه دار.",
+              "هم‌زمان با نگه داشتن دست چپ، با دست راست نت‌های دو، ر، می، فا رو بزن.",
+              "این الگو رو خیلی آروم ۳ بار تکرار کن."
+            ],
+            selfCheck: [
+              "سرعت تمرین رو به اندازه‌ای کم کردم که هر دو دست راحت باشن؟",
+              "نت دست چپ تا پایان ۴ ضرب پایین موند؟"
+            ],
+            quiz: [
+              {
+                q: "بهترین روش برای یادگیری یک تمرین دو دستی چیه؟",
+                options: ["اول هر دست جداگانه، بعد با سرعت خیلی آروم با هم", "از اول با سرعت زیاد هر دو دست"],
+                correctIndex: 0,
+                rightWhy: "آفرین! تمرین جداگانه و سپس ترکیب با سرعت کم راز هماهنگی دو دسته.",
+                wrongWhy: "ذهن وقتی هر دست رو جدا یاد بگیره و بعد آروم ترکیب کنه، خیلی سریع‌تر مسلط می‌شه."
+              },
+              {
+                q: "وقتی هر دو دست نت «دو» رو با هم می‌زنن، کدوم انگشت‌ها کار می‌کنن؟",
+                options: ["انگشت ۱ راست و انگشت ۵ چپ", "انگشت ۱ در هر دو دست"],
+                correctIndex: 0,
+                rightWhy: "درسته! در پوزیشن دو، شست راست (۱) و انگشت کوچیک چپ (۵) روی نت دو هستن.",
+                wrongWhy: "یادت باشه روی نت دو، دست راست انگشت ۱ و دست چپ انگشت ۵ قرار داره."
+              }
+            ],
+            summary: "اولین هماهنگی بین دو دستت شکل گرفت!",
+            tomorrow: "قطعه‌ی دوم: Au clair de la lune.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          },
+          {
+            id: 12,
+            chapterId: 3,
+            title: "قطعه‌ی دوم: Au clair de la lune",
+            minutes: 7,
+            goal: "قطعه‌ی فرانسوی «در روشنایی مهتاب» رو با همراهی دو دست می‌نوازی.",
+            imageUrl: "",
+            audioUrl: "",
+            see: "این ملودی آرام و دلنشین فقط با سه نت «دو، ر، می» در دست راست و نت پایه‌ی «دو» و «سل» در دست چپ اجرا می‌شه: دو، دو، دو، ر | می (سفید)، ر (سفید) | دو، می، ر، ر | دو (گرد).",
+            steps: [
+              "ملودی دست راست رو به تنهایی بزن: دو، دو، دو، ر | می، ر | دو، می، ر، ر | دو.",
+              "در ابتدای هر میزان، نت «دو»ی دست چپ رو هم‌زمان اضافه کن.",
+              "کل قطعه رو با حس آرام و پیوسته اجرا کن."
+            ],
+            selfCheck: [
+              "نت‌های سفید در میزان دوم رو ۲ ضرب نگه داشتم؟",
+              "نت گرد پایانی رو ۴ ضرب کامل نگه داشتم؟"
+            ],
+            quiz: [
+              {
+                q: "ملودی اصلی Au clair de la lune در دست راست از کدوم سه نت ساخته شده؟",
+                options: ["دو، ر، می", "فا، سل، لا", "دو، فا، سی"],
+                correctIndex: 0,
+                rightWhy: "درسته! کل این ملودی با انگشت‌های ۱، ۲ و ۳ روی نت‌های دو، ر و می نواخته می‌شه.",
+                wrongWhy: "این قطعه فقط از سه نت همسایه «دو، ر، می» استفاده می‌کنه."
+              },
+              {
+                q: "نت آخر این قطعه چه کششی داره؟",
+                options: ["نت گرد (۴ ضرب)", "نت سیاه (۱ ضرب)"],
+                correctIndex: 0,
+                rightWhy: "آفرین! نت پایانی یک نت گرده که ۴ ضرب آرامش‌بخش کشیده می‌شه.",
+                wrongWhy: "در پایان قطعه، نت دو به صورت گرد (۴ ضرب) نگه داشته می‌شه."
+              }
+            ],
+            summary: "فصل سوم رو با موفقیت به پایان رسوندی و حالا دو قطعه کامل بلدی!",
+            tomorrow: "مرور آزاد قطعات و تمرین روزانه.",
+            sourceCreator: "ساخت خودمون",
+            sourceLicense: "محتوای نمونه (پیش‌نمایش)"
+          }
+        ];
+
+        // --- MISTAKES LIST FOR ADVISOR ---
+        const MISTAKES_LIST = [
+          {
+            id: "do_fa",
+            keywords: ["دو با فا", "فا قاطی", "دو رو پیدا نمیکنم", "دو را پیدا نمیکنم", "پیدا نمیکنم", "جای دو", "کدوم دو", "دو و فا"],
+            cause: "هر دو سمت چپ یه گروه سیاه‌ان و در نگاه اول شبیه به نظر می‌رسن.",
+            fix: "«دو» کنار گروه دوتاییه، «فا» کنار گروه سه‌تایی.",
+            lessonId: 1
+          },
+          {
+            id: "lost_groups",
+            keywords: ["گروهها رو گم", "گم میکنم", "کیبورد کوچیک", "کلاویه ها زیاد", "گیج میشم"],
+            cause: "وقتی به کل کیبورد یک‌جا نگاه می‌کنی، تکرار گروه‌ها چشم رو خسته می‌کنه.",
+            fix: "فقط وسط کیبورد کار کن و روی یک گروه دوتایی و سه‌تایی تمرکز کن.",
+            lessonId: 1
+          },
+          {
+            id: "note_names",
+            keywords: ["اسمها رو پیدا نمیکنم", "اسم نتها", "اسم نت", "ترتیب نتها", "حفظ نمیشم"],
+            cause: "شمردن تک‌تک کلیدها از لبه‌ی کیبورد زمان‌بره و باعث خطا می‌شه.",
+            fix: "به‌جای شمردن از لبه، همیشه از گروه‌های سیاه («دو» و «فا») شروع کن.",
+            lessonId: 2
+          },
+          {
+            id: "si_do",
+            keywords: ["سی و دو", "می و فا", "کلید سیاه نیست", "سی با دو", "سی دو"],
+            cause: "ذهن انتظار داره بین همه‌ی کلیدهای سفید یک کلید سیاه باشه.",
+            fix: "یادت باشه بین «سی و دو» و همین‌طور بین «می و فا» کلید سیاه نیست.",
+            lessonId: 2
+          },
+          {
+            id: "hand_tired",
+            keywords: ["دستم خسته", "خسته میشه", "درد", "مچم", "شونه", "تیر میکشه", "سفت"],
+            cause: "مچ یا شونه موقع زدن سفت شده و فشار اضافی داره.",
+            fix: "۱۰ ثانیه دست‌ها رو کنار بدن آویزون کن و تکون بده؛ اگه درد ادامه داشت تمرین رو قطع کن.",
+            lessonId: 3
+          },
+          {
+            id: "weak_4_5",
+            keywords: ["انگشت ۴", "انگشت ۵", "انگشت 4", "انگشت 5", "ضعیف", "انگشت کوچیک", "انگشتری"],
+            cause: "کاملاً طبیعیه؛ انگشت ۴ و ۵ در کارهای روزمره کمتر مستقل حرکت می‌کنن.",
+            fix: "تمرین آروم «۴، ۵» رو روزی ۳۰ ثانیه بدون فشار دادن زیاد انجام بده.",
+            lessonId: 3
+          },
+          {
+            id: "flat_fingers",
+            keywords: ["انگشتهام صاف", "انگشتها صاف", "صاف میشن", "صاف میشه", "خم نمیشن"],
+            cause: "فشار زیادی به کلیدها میاری و مفصل انگشت باز می‌شه.",
+            fix: "تصویر گرفتن یه پرتقال کوچیک تو دستت رو به یاد بیار و آروم‌تر بزن.",
+            lessonId: 3
+          },
+          {
+            id: "wrong_finger",
+            keywords: ["انگشت اشتباه", "شماره انگشت", "کدوم انگشت", "انگشتم قاطی"],
+            cause: "دستت قبل از این‌که ذهنت شماره رو انتخاب کنه کلید رو می‌زنه.",
+            fix: "اول شماره‌ی انگشت رو بلند بگو، بعد کلید رو بزن.",
+            lessonId: 4
+          },
+          {
+            id: "bored",
+            keywords: ["حوصلهم سر رفت", "حوصله", "پیشرفت نمیکنم", "خسته شدم", "سخته", "ناامید", "انگیزه"],
+            isDynamicProgress: true
+          }
+        ];
+
+        // --- LOCAL CALENDAR & STREAK HELPERS ---
+        function getTodayStr() {
+          const now = new Date();
+          const y = now.getFullYear();
+          const m = String(now.getMonth() + 1).padStart(2, "0");
+          const d = String(now.getDate()).padStart(2, "0");
+          return y + "-" + m + "-" + d;
+        }
+
+        function parseLocalDate(dateStr) {
+          if (!dateStr) return null;
+          const parts = dateStr.split("-").map(Number);
+          if (parts.length !== 3 || isNaN(parts[0])) return null;
+          return new Date(parts[0], parts[1] - 1, parts[2]);
+        }
+
+        function formatDateStr(dateObj) {
+          const y = dateObj.getFullYear();
+          const m = String(dateObj.getMonth() + 1).padStart(2, "0");
+          const d = String(dateObj.getDate()).padStart(2, "0");
+          return y + "-" + m + "-" + d;
+        }
+
+        function diffCalendarDays(dateStrA, dateStrB) {
+          const a = parseLocalDate(dateStrA);
+          const b = parseLocalDate(dateStrB);
+          if (!a || !b) return null;
+          const utcA = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+          const utcB = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+          return Math.round((utcB - utcA) / (1000 * 60 * 60 * 24));
+        }
+
+        // Week starts on Saturday (JS getDay(): Sunday=0 ... Saturday=6)
+        // Offset from Saturday: (day + 1) % 7 -> Sat=0, Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6
+        function getSaturdayWeekStart(dateStr) {
+          const dt = parseLocalDate(dateStr) || new Date();
+          const dayOffset = (dt.getDay() + 1) % 7;
+          const sat = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() - dayOffset);
+          return formatDateStr(sat);
+        }
+
+        function getCurrentWeekDays() {
+          const todayStr = getTodayStr();
+          const satStr = getSaturdayWeekStart(todayStr);
+          const sat = parseLocalDate(satStr);
+          const labels = ["ش", "ی", "د", "س", "چ", "پ", "ج"];
+          const result = [];
+          for (let i = 0; i < 7; i++) {
+            const d = new Date(sat.getFullYear(), sat.getMonth(), sat.getDate() + i);
+            const dStr = formatDateStr(d);
+            result.push({
+              label: labels[i],
+              dateStr: dStr,
+              isToday: dStr === todayStr
+            });
+          }
+          return result;
+        }
+
+        // --- SAFE STORAGE & STATE ---
+        const STORAGE_KEY = "persian_music_learn_state_v1";
+
+        function getDefaultState() {
+          return {
+            onboarded: false,
+            onboardStep: 1, // 1..9, or "signin"
+            user: {
+              name: "",
+              email: ""
+            },
+            preferences: {
+              instrument: "پیانو/کیبورد",
+              access: "آره، ساز دارم", // "آره، ساز دارم" | "فقط گوشی (اپ پیانو)" | "فعلاً نه"
+              experience: "اصلاً", // "اصلاً" | "یه کم" | "آره، نت هم بلدم"
+              dailyGoal: 15, // 5 | 15 | 30
+              motivations: ["برای دل خودم"],
+              reminderTime: "20:00",
+              theme: "system" // "system" | "light" | "dark"
+            },
+            progress: {
+              completedLessons: [],
+              lessonProgress: {}, // { [lessonId]: { stepIndex: 0, selfCheck: {} } }
+              lesson1SignupPromptShown: false
+            },
+            streak: {
+              count: 0,
+              lastActiveDate: null,
+              activeDates: [],
+              freeDayUsedWeek: null
+            },
+            advisorMessages: [
+              {
+                role: "advisor",
+                text: "سلام! من مشاور تمرینی توام. هر جا دستت خسته شد، نتی رو پیدا نکردی یا سؤالی داشتی، از دکمه‌های بالا انتخاب کن یا همین‌جا بنویس."
+              }
+            ]
+          };
+        }
+
+        let memoryState = getDefaultState();
+
+        function loadState() {
+          try {
+            const raw = window.localStorage.getItem(STORAGE_KEY);
+            if (!raw) return memoryState;
+            const parsed = JSON.parse(raw);
+            const def = getDefaultState();
+            memoryState = {
+              ...def,
+              ...parsed,
+              user: { ...def.user, ...(parsed.user || {}) },
+              preferences: { ...def.preferences, ...(parsed.preferences || {}) },
+              progress: {
+                ...def.progress,
+                ...(parsed.progress || {}),
+                completedLessons: Array.isArray(parsed.progress?.completedLessons)
+                  ? parsed.progress.completedLessons
+                  : [],
+                lessonProgress: parsed.progress?.lessonProgress || {}
+              },
+              streak: {
+                ...def.streak,
+                ...(parsed.streak || {}),
+                activeDates: Array.isArray(parsed.streak?.activeDates)
+                  ? parsed.streak.activeDates
+                  : []
+              },
+              advisorMessages:
+                Array.isArray(parsed.advisorMessages) && parsed.advisorMessages.length > 0
+                  ? parsed.advisorMessages
+                  : def.advisorMessages
+            };
+            return memoryState;
+          } catch (e) {
+            return memoryState;
+          }
+        }
+
+        function saveState() {
+          try {
+            window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          } catch (e) {
+            // Safe fallback if localStorage is unavailable or quota exceeded
+          }
+        }
+
+        let state = loadState();
+
+        // Reconcile Streak on App Load & Activity
+        function evaluateStreakOnLoad() {
+          const today = getTodayStr();
+          const last = state.streak.lastActiveDate;
+          if (!last) return;
+
+          const diff = diffCalendarDays(last, today);
+          if (diff === null || diff <= 1) return;
+
+          const currentWeekKey = getSaturdayWeekStart(today);
+          if (diff === 2 && state.streak.freeDayUsedWeek !== currentWeekKey) {
+            // Missed exactly 1 day and this week's free day is available: use it automatically!
+            state.streak.freeDayUsedWeek = currentWeekKey;
+            saveState();
+          } else if (diff >= 2) {
+            // Missed more than 1 day, or free day already used this week
+            if (diff > 2 || state.streak.freeDayUsedWeek !== currentWeekKey) {
+              state.streak.count = 0;
+              saveState();
+            }
+          }
+        }
+
+        function recordDailyCompletion() {
+          const today = getTodayStr();
+          const last = state.streak.lastActiveDate;
+          const currentWeekKey = getSaturdayWeekStart(today);
+
+          if (!state.streak.activeDates.includes(today)) {
+            state.streak.activeDates.push(today);
+          }
+
+          if (last === today) {
+            // Already incremented today
+            saveState();
+            return;
+          }
+
+          if (!last) {
+            state.streak.count = 1;
+            state.streak.lastActiveDate = today;
+            saveState();
+            return;
+          }
+
+          const diff = diffCalendarDays(last, today);
+          if (diff === 1) {
+            state.streak.count += 1;
+          } else if (diff === 2) {
+            if (state.streak.freeDayUsedWeek === currentWeekKey) {
+              // Free day was already auto-used on load for this week, keep streak and +1
+              state.streak.count += 1;
+            } else {
+              // Auto-use free day now and +1
+              state.streak.freeDayUsedWeek = currentWeekKey;
+              state.streak.count += 1;
+            }
+          } else {
+            // Reset and start at 1 for today
+            state.streak.count = 1;
+          }
+
+          state.streak.lastActiveDate = today;
+          saveState();
+        }
+
+        evaluateStreakOnLoad();
+
+        // --- UI RUNTIME EPHEMERAL STATE ---
+        const ui = {
+          activeTab: "home", // "home" | "path" | "advisor" | "library" | "profile"
+          soonInstrumentTapped: null,
+          librarySection: "lessons", // "lessons" | "teachers"
+          librarySearch: "",
+          activeLessonModal: null,
+          // activeLessonModal structure:
+          // { lessonId, mode: "intro" | "steps" | "skipQuiz" | "skipFailed" | "skipSuccess", stepIndex: 0, quizState: {}, skipQuizIndex: 0, skipWrong: false }
+          showLesson1SignupModal: false,
+          showAccountModal: false,
+          showAboutModal: false,
+          showResetConfirmModal: false,
+          toastMessage: null,
+          splashTimerDone: false
+        };
+
+        // --- THEME HANDLING ---
+        function applyTheme() {
+          const pref = state.preferences.theme || "system";
+          let effective = pref;
+          if (pref === "system") {
+            const isDark =
+              window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            effective = isDark ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", effective);
+        }
+
+        if (window.matchMedia) {
+          try {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+              if (state.preferences.theme === "system") applyTheme();
+            });
+          } catch (e) {}
+        }
+
+        applyTheme();
+
+        // Handle initial 1-second splash screen for first-run users
+        if (!state.onboarded && state.onboardStep === 1) {
+          setTimeout(function () {
+            if (!state.onboarded && state.onboardStep === 1) {
+              state.onboardStep = 2;
+              saveState();
+              render();
+            }
+          }, 1000);
+        }
+
+        function showToast(msg) {
+          ui.toastMessage = msg;
+          render();
+          setTimeout(function () {
+            if (ui.toastMessage === msg) {
+              ui.toastMessage = null;
+              render();
+            }
+          }, 3200);
+        }
+
+        // --- LESSON STATUS HELPERS ---
+        function isLessonCompleted(lessonId) {
+          return state.progress.completedLessons.includes(lessonId);
+        }
+
+        function getNextUnfinishedLessonId() {
+          for (let i = 0; i < LESSONS.length; i++) {
+            if (!isLessonCompleted(LESSONS[i].id)) {
+              return LESSONS[i].id;
+            }
+          }
+          return null;
+        }
+
+        function getLessonStatus(lessonId) {
+          if (isLessonCompleted(lessonId)) return "done";
+          const nextId = getNextUnfinishedLessonId();
+          if (lessonId === nextId) return "current";
+          return "locked";
+        }
+
+        function getTodayRecommendedLessons() {
+          const goal = Number(state.preferences.dailyGoal) || 15;
+          const count = goal === 5 ? 1 : goal === 15 ? 2 : 3;
+          const unfinished = LESSONS.filter(function (l) {
+            return !isLessonCompleted(l.id);
+          });
+          return unfinished.slice(0, count);
+        }
+
+        function getSavedLessonStep(lessonId) {
+          const saved = state.progress.lessonProgress[lessonId];
+          return saved && typeof saved.stepIndex === "number" ? saved.stepIndex : 0;
+        }
+
+        function setSavedLessonStep(lessonId, stepIndex) {
+          if (!state.progress.lessonProgress[lessonId]) {
+            state.progress.lessonProgress[lessonId] = { stepIndex: 0, selfCheck: {} };
+          }
+          state.progress.lessonProgress[lessonId].stepIndex = stepIndex;
+          saveState();
+        }
+
+        function toggleSelfCheckItem(lessonId, idx) {
+          if (!state.progress.lessonProgress[lessonId]) {
+            state.progress.lessonProgress[lessonId] = { stepIndex: 0, selfCheck: {} };
+          }
+          const current = !!state.progress.lessonProgress[lessonId].selfCheck[idx];
+          state.progress.lessonProgress[lessonId].selfCheck[idx] = !current;
+          saveState();
+        }
+
+        function markLessonComplete(lessonId) {
+          if (!state.progress.completedLessons.includes(lessonId)) {
+            state.progress.completedLessons.push(lessonId);
+          }
+          if (state.progress.lessonProgress[lessonId]) {
+            state.progress.lessonProgress[lessonId].stepIndex = 0;
+          }
+          recordDailyCompletion();
+
+          // Check if Lesson 1 was just finished for the first time
+          if (
+            lessonId === 1 &&
+            !state.progress.lesson1SignupPromptShown &&
+            !state.user.email
+          ) {
+            state.progress.lesson1SignupPromptShown = true;
+            ui.showLesson1SignupModal = true;
+          }
+          saveState();
+        }
+
+        // Build flat array of step descriptors for a given lesson
+        function buildLessonSteps(lesson) {
+          const steps = [
+            { type: "see", title: "ببین و بشنو" },
+            { type: "practice", title: "تمرین روی سازت" },
+            { type: "selfCheck", title: "خودسنجی" }
+          ];
+          lesson.quiz.forEach(function (qItem, idx) {
+            steps.push({
+              type: "quiz",
+              title: "آزمونک (" + toFa(idx + 1) + " از " + toFa(lesson.quiz.length) + ")",
+              quizIndex: idx,
+              quizItem: qItem
+            });
+          });
+          steps.push({ type: "summary", title: "جمع‌بندی" });
+          return steps;
+        }
+
+        // --- SVG ICONS (100% Inline) ---
+        const ICONS = {
+          arrowRight: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>',
+          close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+          check: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+          lock: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+          play: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>',
+          flame: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+          home: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+          path: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>',
+          advisor: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+          library: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>',
+          profile: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+          music: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+          clock: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+          compass: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
+          search: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>'
+        };
+
+        // --- ADVISOR MATCHER ---
+        function getAdvisorResponse(userText) {
+          const norm = normalizeFa(userText);
+          if (!norm) return null;
+
+          for (let i = 0; i < MISTAKES_LIST.length; i++) {
+            const item = MISTAKES_LIST[i];
+            const matched = item.keywords.some(function (kw) {
+              return norm.includes(normalizeFa(kw));
+            });
+            if (matched) {
+              if (item.isDynamicProgress) {
+                const doneCount = state.progress.completedLessons.length;
+                return {
+                  matched: true,
+                  isProgress: true,
+                  text:
+                    "تا اینجا " +
+                    toFa(doneCount) +
+                    " از ۱۲ درس رو جلو بردی و استریکت " +
+                    toFa(state.streak.count) +
+                    " روزه! پیشنهاد تمرین ۲ دقیقه‌ای: همین الان فقط پشت ساز بشین، چشم‌هات رو ببند و سه تا «دو» روی کیبورد پیدا کن.",
+                  lessonId: getNextUnfinishedLessonId() || 1
+                };
+              }
+              const lessonObj = LESSONS.find(function (l) {
+                return l.id === item.lessonId;
+              });
+              return {
+                matched: true,
+                cause: item.cause,
+                fix: item.fix,
+                lessonId: item.lessonId,
+                lessonTitle: lessonObj ? lessonObj.title : "درس " + toFa(item.lessonId)
+              };
+            }
+          }
+
+          return {
+            matched: false,
+            text: "این رو هنوز تو درس‌هام ندارم."
+          };
+        }
+
+        // --- RENDER FUNCTIONS ---
+        function renderProgressDots(currentStep) {
+          // Onboarding steps 3..9 -> 7 steps
+          const total = 7;
+          const idx = currentStep - 2; // 1..7
+          let html = '<div class="progress-dots" aria-label="مراحل شروع">';
+          for (let i = 1; i <= total; i++) {
+            const cls = i === idx ? "dot active" : i < idx ? "dot done" : "dot";
+            html += '<span class="' + cls + '"></span>';
+          }
+          html += "</div>";
+          return html;
+        }
+
+        function renderOnboarding() {
+          const step = state.onboardStep;
+
+          // 1) Splash Screen (1 second)
+          if (step === 1) {
+            return (
+              '<div class="flow-shell" style="justify-content:center;align-items:center;text-align:center;" data-action="skip-splash">' +
+              '  <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">' +
+              '    <div class="logo-symbol" style="width:68px;height:68px;border-radius:20px;font-size:1.8rem;">♪</div>' +
+              '    <h1 style="font-size:1.75rem;font-weight:800;">[نام اپ]</h1>' +
+              '    <p style="color:var(--text-muted);font-size:0.95rem;">همراه گام‌به‌گام یادگیری موسیقی</p>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 2) Welcome Screen
+          if (step === 2) {
+            return (
+              '<div class="flow-shell">' +
+              '  <div style="padding-top:12px;">' +
+              '    <div class="logo-box">' +
+              '      <span class="logo-symbol">♪</span>' +
+              '      <span>[نام اپ]</span>' +
+              "    </div>" +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:24px;margin:auto 0;padding:24px 0;">' +
+              '    <h1 style="font-size:1.65rem;font-weight:800;line-height:1.45;text-wrap:balance;">موسیقی رو از صفر، روزی چند دقیقه، با یه مشاور همیشه همراه</h1>' +
+              '    <div style="display:flex;flex-direction:column;gap:14px;">' +
+              '      <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">' +
+              '        <span style="color:var(--accent);flex-shrink:0;">' + ICONS.compass + "</span>" +
+              '        <span style="font-weight:600;">مسیر گام‌به‌گام و کوتاه، از پیدا کردن اولین نت</span>' +
+              "      </div>" +
+              '      <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">' +
+              '        <span style="color:var(--accent);flex-shrink:0;">' + ICONS.clock + "</span>" +
+              '        <span style="font-weight:600;">تنظیم برنامه با وقت روزانه‌ی تو (حتی روزی ۵ دقیقه)</span>' +
+              "      </div>" +
+              '      <div class="card" style="display:flex;align-items:center;gap:14px;padding:16px;">' +
+              '        <span style="color:var(--accent);flex-shrink:0;">' + ICONS.advisor + "</span>" +
+              '        <span style="font-weight:600;">مشاور تمرینی برای رفع اشکال‌های رایج موقع زدن ساز</span>' +
+              "      </div>" +
+              "    </div>" +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:10px;">' +
+              '    <button class="btn btn-primary" data-action="onboard-goto" data-step="3">شروع کن</button>' +
+              '    <button class="btn btn-ghost" data-action="onboard-goto" data-step="signin">حساب دارم؛ ورود</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // Sign-in Screen
+          if (step === "signin") {
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="2" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              '    <span style="font-weight:700;">ورود به حساب</span>' +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <form id="signin-form" style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:20px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">خوش برگشتی!</h2>' +
+              '    <p style="color:var(--text-secondary);font-size:0.92rem;">ایمیل و رمز عبورت رو وارد کن یا به‌صورت مهمان ادامه بده.</p>' +
+              '    <div class="input-group">' +
+              '      <label class="input-label" for="signin-email">ایمیل</label>' +
+              '      <input id="signin-email" name="email" type="email" class="text-input" placeholder="example@mail.com" value="' + escapeHtml(state.user.email) + '" />' +
+              "    </div>" +
+              '    <div class="input-group">' +
+              '      <label class="input-label" for="signin-pass">رمز عبور</label>' +
+              '      <input id="signin-pass" name="password" type="password" class="text-input" placeholder="••••••••" />' +
+              "    </div>" +
+              '    <button type="submit" class="btn btn-primary" style="margin-top:8px;">ورود و ادامه</button>' +
+              '    <button type="button" class="btn btn-secondary" data-action="signin-guest">فعلاً به‌صورت مهمان ادامه بده</button>' +
+              "  </form>" +
+              "  <div></div>" +
+              "</div>"
+            );
+          }
+
+          // 3) Choose Instrument
+          if (step === 3) {
+            const instruments = [
+              { name: "پیانو/کیبورد", active: true, icon: "🎹" },
+              { name: "گیتار", active: false, icon: "🎸" },
+              { name: "تار", active: false, icon: "🪕" },
+              { name: "سه‌تار", active: false, icon: "🎵" },
+              { name: "سنتور", active: false, icon: "🎼" },
+              { name: "ویولن", active: false, icon: "🎻" },
+              { name: "آواز", active: false, icon: "🎙️" }
+            ];
+            let cardsHtml = "";
+            instruments.forEach(function (inst) {
+              const isSelected = inst.active && state.preferences.instrument === inst.name;
+              const cls = inst.active
+                ? "inst-card " + (isSelected ? "active-inst" : "")
+                : "inst-card soon-inst";
+              cardsHtml +=
+                '<button type="button" class="' +
+                cls +
+                '" data-action="pick-instrument" data-inst="' +
+                escapeHtml(inst.name) +
+                '" data-active="' +
+                inst.active +
+                '">' +
+                '  <span style="font-size:1.6rem;" aria-hidden="true">' + inst.icon + "</span>" +
+                '  <span style="font-weight:700;font-size:0.95rem;">' + inst.name + "</span>" +
+                (inst.active
+                  ? '<span class="meta-quiet" style="color:var(--accent-text);font-weight:600;">آماده‌ی شروع</span>'
+                  : '<span class="meta-quiet">به‌زودی</span>') +
+                "</button>";
+            });
+
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="2" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(3) +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">دوست داری چه سازی یاد بگیری؟</h2>' +
+              '    <div class="instrument-grid">' + cardsHtml + "</div>" +
+              (ui.soonInstrumentTapped
+                ? '<div class="helper-banner" style="display:flex;flex-direction:column;gap:12px;">' +
+                  '  <p style="font-weight:600;color:var(--text-primary);">فعلاً مسیر پیانو آماده‌ست؛ پایه‌هاش به هر سازی کمک می‌کنه</p>' +
+                  '  <button type="button" class="btn btn-primary" data-action="start-with-piano">با پیانو شروع کن</button>' +
+                  "</div>"
+                : "") +
+              "  </div>" +
+              '  <div>' +
+              '    <button type="button" class="btn btn-primary" data-action="onboard-goto" data-step="4">ادامه با پیانو/کیبورد</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 4) Instrument Access
+          if (step === 4) {
+            const options = [
+              { label: "آره، ساز دارم", helper: "عالیه! تمرین‌ها رو مستقیم روی ساز خودت انجام می‌دی." },
+              { label: "فقط گوشی (اپ پیانو)", helper: "می‌تونی با یه اپ پیانوی رایگان تمرین کنی" },
+              { label: "فعلاً نه", helper: "درس‌های اول رو با دیدن و آزمونک‌ها هم می‌شه پیش برد" }
+            ];
+            let listHtml = "";
+            options.forEach(function (opt) {
+              const sel = state.preferences.access === opt.label;
+              listHtml +=
+                '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                '  <button type="button" class="card-interactive ' + (sel ? "selected" : "") + '" data-action="set-access" data-val="' + escapeHtml(opt.label) + '">' +
+                '    <span style="font-weight:700;">' + opt.label + "</span>" +
+                '    <span style="color:var(--accent);">' + (sel ? ICONS.check : "") + "</span>" +
+                "  </button>" +
+                (sel ? '<div class="helper-banner" style="margin-top:2px;">' + opt.helper + "</div>" : "") +
+                "</div>";
+            });
+
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="3" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(4) +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">به کیبورد یا پیانو دسترسی داری؟</h2>' +
+              '    <div style="display:flex;flex-direction:column;gap:12px;">' + listHtml + "</div>" +
+              "  </div>" +
+              '  <div>' +
+              '    <button type="button" class="btn btn-primary" data-action="onboard-goto" data-step="5">ادامه</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 5) Experience (Never show or store a "level" label)
+          if (step === 5) {
+            const expOptions = ["اصلاً", "یه کم", "آره، نت هم بلدم"];
+            const showHelper =
+              state.preferences.experience === "یه کم" ||
+              state.preferences.experience === "آره، نت هم بلدم";
+
+            let listHtml = "";
+            expOptions.forEach(function (label) {
+              const sel = state.preferences.experience === label;
+              listHtml +=
+                '<button type="button" class="card-interactive ' +
+                (sel ? "selected" : "") +
+                '" data-action="set-experience" data-val="' +
+                escapeHtml(label) +
+                '">' +
+                '  <span style="font-weight:700;">' + label + "</span>" +
+                '  <span style="color:var(--accent);">' + (sel ? ICONS.check : "") + "</span>" +
+                "</button>";
+            });
+
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="4" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(5) +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">تا حالا چیزی زدی؟</h2>' +
+              '    <div style="display:flex;flex-direction:column;gap:12px;">' + listHtml + "</div>" +
+              (showHelper
+                ? '<div class="helper-banner">هر درس دکمه‌ی «اینو بلدم» داره و می‌تونی سریع ردش کنی.</div>'
+                : "") +
+              "  </div>" +
+              '  <div>' +
+              '    <button type="button" class="btn btn-primary" data-action="onboard-goto" data-step="6">ادامه</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 6) Daily Goal
+          if (step === 6) {
+            const goals = [
+              { minutes: 5, label: "۵ دقیقه – سبک", desc: "روزی ۱ درس کوتاه" },
+              { minutes: 15, label: "۱۵ دقیقه – منظم", desc: "روزی ۲ درس + مرور" },
+              { minutes: 30, label: "۳۰ دقیقه – جدی", desc: "روزی ۳ درس + تمرین کامل" }
+            ];
+            let listHtml = "";
+            goals.forEach(function (g) {
+              const sel = Number(state.preferences.dailyGoal) === g.minutes;
+              listHtml +=
+                '<button type="button" class="card-interactive ' +
+                (sel ? "selected" : "") +
+                '" data-action="set-goal" data-val="' +
+                g.minutes +
+                '">' +
+                '  <div style="display:flex;flex-direction:column;gap:2px;">' +
+                '    <span style="font-weight:700;">' + g.label + "</span>" +
+                '    <span class="meta-quiet">' + g.desc + "</span>" +
+                "  </div>" +
+                '  <span style="color:var(--accent);">' + (sel ? ICONS.check : "") + "</span>" +
+                "</button>";
+            });
+
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="5" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(6) +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">هدف روزانه‌ت چقدره؟</h2>' +
+              '    <div style="display:flex;flex-direction:column;gap:12px;">' + listHtml + "</div>" +
+              "  </div>" +
+              '  <div>' +
+              '    <button type="button" class="btn btn-primary" data-action="onboard-goto" data-step="7">ادامه</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 7) Motivation (optional, «رد شو» link)
+          if (step === 7) {
+            const motives = ["برای دل خودم", "یه آهنگ خاص", "حرفه‌ای شدن", "برای بچه‌م"];
+            let chipsHtml = "";
+            motives.forEach(function (m) {
+              const sel = state.preferences.motivations.includes(m);
+              chipsHtml +=
+                '<button type="button" class="chip-btn ' +
+                (sel ? "selected" : "") +
+                '" data-action="toggle-motive" data-val="' +
+                escapeHtml(m) +
+                '">' +
+                "  <span>" + m + "</span>" +
+                (sel ? ICONS.check : "") +
+                "</button>";
+            });
+
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="6" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(7) +
+              '    <button type="button" class="btn-ghost" data-action="onboard-goto" data-step="8">رد شو</button>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">انگیزه‌ت از یادگیری موسیقی چیه؟</h2>' +
+              '    <p style="color:var(--text-secondary);font-size:0.92rem;">می‌تونی چند مورد رو انتخاب کنی.</p>' +
+              '    <div class="chips-wrap">' + chipsHtml + "</div>" +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:8px;">' +
+              '    <button type="button" class="btn btn-primary" data-action="onboard-goto" data-step="8">ادامه</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 8) Reminder (optional: «کِی یادت بندازم؟» time picker + «بعداً»)
+          if (step === 8) {
+            const currentVal = state.preferences.reminderTime || "20:00";
+            return (
+              '<div class="flow-shell">' +
+              '  <div class="onboard-top">' +
+              '    <button class="icon-btn" data-action="onboard-goto" data-step="7" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+              renderProgressDots(8) +
+              '    <span style="width:44px;"></span>' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:18px;margin:auto 0;padding:16px 0;">' +
+              '    <h2 style="font-size:1.4rem;font-weight:800;">کِی یادت بندازم؟</h2>' +
+              '    <p style="color:var(--text-secondary);font-size:0.92rem;">یه ساعت ثابت کمک می‌کنه تمرین روزانه تبدیل به عادت بشه.</p>' +
+              '    <div class="card" style="display:flex;flex-direction:column;gap:12px;">' +
+              '      <label class="input-label" for="reminder-time-input">ساعت یادآور روزانه</label>' +
+              '      <input id="reminder-time-input" type="time" class="text-input" style="font-size:1.2rem;font-weight:700;text-align:center;" value="' + escapeHtml(currentVal) + '" />' +
+              '      <span class="meta-quiet">ساعت انتخاب‌شده: ' + toFa(currentVal) + "</span>" +
+              "    </div>" +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:10px;">' +
+              '    <button type="button" class="btn btn-primary" data-action="save-reminder-next">ذخیره و ادامه</button>' +
+              '    <button type="button" class="btn btn-secondary" data-action="skip-reminder-next">بعداً</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 9) Plan Summary Screen
+          const goalFa = toFa(state.preferences.dailyGoal);
+          return (
+            '<div class="flow-shell">' +
+            '  <div class="onboard-top">' +
+            '    <button class="icon-btn" data-action="onboard-goto" data-step="8" aria-label="بازگشت">' + ICONS.arrowRight + "</button>" +
+            renderProgressDots(9) +
+            '    <span style="width:44px;"></span>' +
+            "  </div>" +
+            '  <div style="display:flex;flex-direction:column;gap:20px;margin:auto 0;padding:16px 0;">' +
+            '    <h2 style="font-size:1.45rem;font-weight:800;">برنامه‌ی یادگیری تو آماده‌ست!</h2>' +
+            '    <div class="card" style="display:flex;flex-direction:column;gap:16px;border-color:var(--accent);">' +
+            '      <p style="font-size:1.1rem;font-weight:800;color:var(--accent-text);line-height:1.6;">برنامه‌ی تو: هر روز ' +
+            goalFa +
+            ' دقیقه، شروع از درس ۱ «نقشه‌ی کیبورد»</p>' +
+            '      <div style="border-top:1px solid var(--border-color);padding-top:14px;display:flex;flex-direction:column;gap:10px;font-size:0.92rem;">' +
+            '        <div style="display:flex;justify-content:space-between;">' +
+            '          <span style="color:var(--text-muted);">ساز انتخابی:</span>' +
+            '          <span style="font-weight:700;">' + escapeHtml(state.preferences.instrument) + "</span>" +
+            "        </div>" +
+            '        <div style="display:flex;justify-content:space-between;">' +
+            '          <span style="color:var(--text-muted);">دسترسی به ساز:</span>' +
+            '          <span style="font-weight:700;">' + escapeHtml(state.preferences.access) + "</span>" +
+            "        </div>" +
+            '        <div style="display:flex;justify-content:space-between;">' +
+            '          <span style="color:var(--text-muted);">هدف روزانه:</span>' +
+            '          <span style="font-weight:700;">' + goalFa + " دقیقه در روز</span>" +
+            "        </div>" +
+            '        <div style="display:flex;justify-content:space-between;">' +
+            '          <span style="color:var(--text-muted);">یادآور تمرین:</span>' +
+            '          <span style="font-weight:700;">' +
+            (state.preferences.reminderTime ? "ساعت " + toFa(state.preferences.reminderTime) : "تنظیم نشده") +
+            "</span>" +
+            "        </div>" +
+            "      </div>" +
+            "    </div>" +
+            "  </div>" +
+            '  <div>' +
+            '    <button type="button" class="btn btn-primary" data-action="finish-onboarding">بریم به خانه</button>' +
+            "  </div>" +
+            "</div>"
+          );
+        }
+
+        // --- MAIN TABS RENDERERS ---
+        function renderHomeTab() {
+          const todayLessons = getTodayRecommendedLessons();
+          const completedCount = state.progress.completedLessons.length;
+          const totalCount = LESSONS.length;
+          const pct = Math.round((completedCount / totalCount) * 100);
+          const nextLessonId = getNextUnfinishedLessonId();
+          const currentLessonObj =
+            LESSONS.find(function (l) {
+              return l.id === (nextLessonId || 12);
+            }) || LESSONS[0];
+          const currentChapterObj =
+            CHAPTERS.find(function (c) {
+              return c.id === currentLessonObj.chapterId;
+            }) || CHAPTERS[0];
+
+          const currentWeekKey = getSaturdayWeekStart(getTodayStr());
+          const freeDayUsedThisWeek = state.streak.freeDayUsedWeek === currentWeekKey;
+          const weekDays = getCurrentWeekDays();
+
+          let weekHtml = '<div class="week-days">';
+          weekDays.forEach(function (wd) {
+            const isDone = state.streak.activeDates.includes(wd.dateStr);
+            const cls =
+              "day-cell" + (wd.isToday ? " today" : "") + (isDone ? " done" : "");
+            weekHtml +=
+              '<div class="' +
+              cls +
+              '">' +
+              "  <div>" + wd.label + "</div>" +
+              '  <div style="font-size:0.75rem;margin-top:2px;">' + (isDone ? "✓" : "·") + "</div>" +
+              "</div>";
+          });
+          weekHtml += "</div>";
+
+          let todayListHtml = "";
+          if (todayLessons.length === 0) {
+            todayListHtml =
+              '<p style="color:var(--text-secondary);">همه‌ی ۱۲ درس این مسیر رو با موفقیت تموم کردی! می‌تونی هر درسی رو برای مرور باز کنی.</p>' +
+              '<button type="button" class="btn btn-primary" style="margin-top:14px;" data-action="open-lesson" data-id="1">مرور از درس ۱</button>';
+          } else {
+            todayLessons.forEach(function (l) {
+              todayListHtml +=
+                '<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border-subtle);gap:10px;">' +
+                '  <div>' +
+                '    <div style="font-weight:700;">درس ' + toFa(l.id) + ": " + escapeHtml(l.title) + "</div>" +
+                '    <div class="meta-quiet">مدت زمان: ' + toFa(l.minutes) + " دقیقه · " + escapeHtml(l.goal) + "</div>" +
+                "  </div>" +
+                "</div>";
+            });
+            todayListHtml +=
+              '<button type="button" class="btn btn-primary" style="margin-top:14px;" data-action="open-lesson" data-id="' +
+              todayLessons[0].id +
+              '">شروع درس</button>';
+          }
+
+          return (
+            '<div class="home-grid">' +
+            '  <div class="card span-full">' +
+            '    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
+            '      <h2 style="font-size:1.15rem;font-weight:800;">برنامه‌ی امروز</h2>' +
+            '      <span class="meta-quiet">هدف روزانه: ' + toFa(state.preferences.dailyGoal) + " دقیقه</span>" +
+            "    </div>" +
+            todayListHtml +
+            "  </div>" +
+            '  <div class="card">' +
+            '    <div style="display:flex;align-items:center;justify-content:space-between;">' +
+            '      <h3 style="font-size:1.05rem;font-weight:800;">پیوستگی تمرین (استریک)</h3>' +
+            '      <span style="color:var(--warm);font-weight:800;font-size:1.1rem;">' + toFa(state.streak.count) + " روز</span>" +
+            "    </div>" +
+            '    <p class="meta-quiet" style="margin-top:6px;color:var(--text-secondary);">' +
+            (freeDayUsedThisWeek
+              ? "روز آزاد این هفته استفاده شد"
+              : "روز آزاد این هفته: ۱ روز ذخیره داری (هر هفته از شنبه)") +
+            "</p>" +
+            weekHtml +
+            "  </div>" +
+            '  <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">' +
+            '    <div>' +
+            '      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">' +
+            '        <h3 style="font-size:1.05rem;font-weight:800;">پیشرفت مسیر</h3>' +
+            '        <span style="font-weight:700;color:var(--accent-text);">' + toFa(completedCount) + " از ۱۲ درس</span>" +
+            "      </div>" +
+            '      <p class="meta-quiet" style="margin-bottom:12px;">' + escapeHtml(currentChapterObj.title) + "</p>" +
+            '      <div class="progress-track"><div class="progress-fill" style="width:' + pct + '%;"></div></div>' +
+            "    </div>" +
+            '    <button type="button" class="btn btn-secondary" data-action="switch-tab" data-tab="path">مشاهده‌ی کل مسیر</button>' +
+            "  </div>" +
+            '  <button type="button" class="card-interactive span-full" data-action="switch-tab" data-tab="advisor">' +
+            '    <div style="display:flex;align-items:center;gap:14px;">' +
+            '      <span style="color:var(--accent);">' + ICONS.advisor + "</span>" +
+            '      <div>' +
+            '        <div style="font-weight:800;">یه سؤال داری؟ از مشاورت بپرس</div>' +
+            '        <div class="meta-quiet">خستگی دست، پیدا نکردن نت‌ها یا شماره‌ی انگشت‌ها</div>' +
+            "      </div>" +
+            "    </div>" +
+            '    <span style="color:var(--accent);font-weight:700;font-size:0.9rem;">گفت‌وگو ←</span>' +
+            "  </button>" +
+            "</div>"
+          );
+        }
+
+        function renderPathTab() {
+          let html = '<div style="display:flex;flex-direction:column;gap:22px;">';
+
+          CHAPTERS.forEach(function (ch) {
+            html +=
+              '<section style="display:flex;flex-direction:column;gap:12px;">' +
+              '  <h2 style="font-size:1.1rem;font-weight:800;color:var(--text-primary);">' +
+              escapeHtml(ch.title) +
+              "</h2>" +
+              '  <div style="display:flex;flex-direction:column;gap:10px;">';
+
+            ch.lessonIds.forEach(function (lid) {
+              const lesson = LESSONS.find(function (l) {
+                return l.id === lid;
+              });
+              if (!lesson) return;
+              const status = getLessonStatus(lesson.id);
+              const isCurrent = status === "current";
+              const isDone = status === "done";
+              const statusText = isDone
+                ? "انجام‌شده"
+                : isCurrent
+                ? "درس فعلی"
+                : "قفل";
+
+              html +=
+                '<button type="button" class="card-interactive ' +
+                (isCurrent ? "selected" : "") +
+                '" style="' +
+                (status === "locked" ? "opacity:0.68;" : "") +
+                '" data-action="tap-path-lesson" data-id="' +
+                lesson.id +
+                '">' +
+                '  <div style="display:flex;align-items:center;gap:14px;">' +
+                '    <div style="width:38px;height:38px;border-radius:10px;background:' +
+                (isDone
+                  ? "var(--success-soft);color:var(--success);"
+                  : isCurrent
+                  ? "var(--accent);color:#FFF;"
+                  : "var(--bg-subtle);color:var(--text-muted);") +
+                'display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;">' +
+                (isDone ? ICONS.check : status === "locked" ? ICONS.lock : toFa(lesson.id)) +
+                "    </div>" +
+                '    <div style="display:flex;flex-direction:column;gap:2px;text-align:right;">' +
+                '      <span style="font-weight:700;font-size:0.98rem;">درس ' +
+                toFa(lesson.id) +
+                ": " +
+                escapeHtml(lesson.title) +
+                "</span>" +
+                '      <span class="meta-quiet">' +
+                toFa(lesson.minutes) +
+                " دقیقه · " +
+                statusText +
+                "</span>" +
+                "    </div>" +
+                "  </div>" +
+                '  <span style="font-size:0.85rem;font-weight:700;color:' +
+                (isCurrent ? "var(--accent-text)" : "var(--text-muted)") +
+                ';">' +
+                (status === "locked" ? "قفل" : "مشاهده") +
+                "</span>" +
+                "</button>";
+            });
+
+            html += "  </div></section>";
+          });
+
+          html += "</div>";
+          return html;
+        }
+
+        function renderAdvisorTab() {
+          const quickChips = [
+            "دستم خسته می‌شه",
+            "«دو» رو پیدا نمی‌کنم",
+            "انگشت‌هام صاف می‌شن",
+            "«سی» و «دو» قاطی می‌شه",
+            "انگشت ۴ و ۵ ضعیفه",
+            "حوصله‌م سر رفت"
+          ];
+
+          let chipsHtml = '<div class="chips-wrap">';
+          quickChips.forEach(function (q) {
+            chipsHtml +=
+              '<button type="button" class="chip-btn" style="min-height:40px;padding:8px 14px;font-size:0.86rem;" data-action="ask-chip" data-q="' +
+              escapeHtml(q) +
+              '">' +
+              escapeHtml(q) +
+              "</button>";
+          });
+          chipsHtml += "</div>";
+
+          let msgsHtml = '<div class="chat-box" id="advisor-chat-box">';
+          state.advisorMessages.forEach(function (m) {
+            if (m.role === "user") {
+              msgsHtml +=
+                '<div class="msg-row user">' +
+                '  <div class="msg-bubble">' + escapeHtml(m.text) + "</div>" +
+                "</div>";
+            } else {
+              msgsHtml +=
+                '<div class="msg-row advisor">' +
+                '  <div class="msg-bubble">' +
+                (m.cause
+                  ? '<div style="margin-bottom:6px;"><strong>علت:</strong> ' +
+                    escapeHtml(m.cause) +
+                    "</div>" +
+                    '<div style="margin-bottom:10px;"><strong>راه‌حل:</strong> ' +
+                    escapeHtml(m.fix) +
+                    "</div>"
+                  : "<div>" + escapeHtml(m.text) + "</div>") +
+                (m.lessonId
+                  ? '<button type="button" class="btn btn-secondary" style="margin-top:8px;min-height:40px;padding:8px 14px;font-size:0.86rem;" data-action="open-lesson" data-id="' +
+                    m.lessonId +
+                    '">باز کردن درس ' +
+                    toFa(m.lessonId) +
+                    "</button>"
+                  : "") +
+                "  </div>" +
+                "</div>";
+            }
+          });
+          msgsHtml += "</div>";
+
+          return (
+            '<div style="display:flex;flex-direction:column;gap:16px;">' +
+            '  <div class="card">' +
+            '    <p class="meta-quiet" style="margin-bottom:10px;">سؤال‌های پرتکرار هنرجوها (بزن روش یا پایین بنویس):</p>' +
+            chipsHtml +
+            "  </div>" +
+            msgsHtml +
+            '  <form id="advisor-form" style="display:flex;gap:10px;align-items:center;">' +
+            '    <input id="advisor-input" type="text" class="text-input" placeholder="مشکل یا سؤالت رو بنویس (مثلاً: دستم خسته می‌شه)..." autocomplete="off" />' +
+            '    <button type="submit" class="btn btn-primary" style="width:auto;min-width:96px;">ارسال</button>' +
+            "  </form>" +
+            "</div>"
+          );
+        }
+
+        function renderLibraryTab() {
+          const isLessons = ui.librarySection === "lessons";
+          const query = normalizeFa(ui.librarySearch);
+
+          let contentHtml = "";
+          if (!isLessons) {
+            contentHtml =
+              '<div class="card" style="text-align:center;padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;">' +
+              '  <div style="color:var(--accent);">' + ICONS.music + "</div>" +
+              '  <h3 style="font-size:1.15rem;font-weight:800;">بخش استادها به‌زودی</h3>' +
+              '  <p style="color:var(--text-secondary);max-width:360px;font-size:0.92rem;">در این بخش به‌زودی ویدیوهای کوتاه و نکته‌های اجرایی استادان پیانو و موسیقی قرار می‌گیره.</p>' +
+              "</div>";
+          } else {
+            const filtered = LESSONS.filter(function (l) {
+              if (!query) return true;
+              return (
+                normalizeFa(l.title).includes(query) ||
+                normalizeFa(l.goal).includes(query) ||
+                toFa(l.id).includes(query)
+              );
+            });
+
+            let listHtml = "";
+            if (filtered.length === 0) {
+              listHtml =
+                '<div class="card" style="text-align:center;color:var(--text-muted);">درسی با این عنوان پیدا نشد.</div>';
+            } else {
+              filtered.forEach(function (l) {
+                const status = getLessonStatus(l.id);
+                const statusLabel =
+                  status === "done"
+                    ? "انجام‌شده"
+                    : status === "current"
+                    ? "درس فعلی"
+                    : "قفل";
+                listHtml +=
+                  '<button type="button" class="card-interactive" data-action="tap-path-lesson" data-id="' +
+                  l.id +
+                  '">' +
+                  '  <div style="display:flex;flex-direction:column;gap:2px;text-align:right;">' +
+                  '    <span style="font-weight:700;">درس ' + toFa(l.id) + ": " + escapeHtml(l.title) + "</span>" +
+                  '    <span class="meta-quiet">' + toFa(l.minutes) + " دقیقه · " + statusLabel + "</span>" +
+                  "  </div>" +
+                  '  <span style="color:var(--accent);font-weight:700;font-size:0.88rem;">باز کردن</span>' +
+                  "</button>";
+              });
+            }
+
+            contentHtml =
+              '<div style="display:flex;flex-direction:column;gap:14px;">' +
+              '  <div style="position:relative;">' +
+              '    <input id="library-search-input" type="search" class="text-input" placeholder="جست‌وجوی نام درس..." value="' +
+              escapeHtml(ui.librarySearch) +
+              '" />' +
+              "  </div>" +
+              '  <div style="display:flex;flex-direction:column;gap:10px;">' +
+              listHtml +
+              "  </div>" +
+              "</div>";
+          }
+
+          return (
+            '<div style="display:flex;flex-direction:column;gap:16px;">' +
+            '  <div class="segmented" style="grid-template-columns:repeat(2, 1fr);">' +
+            '    <button type="button" class="seg-btn ' + (isLessons ? "active" : "") + '" data-action="lib-sec" data-sec="lessons">درس‌های من</button>' +
+            '    <button type="button" class="seg-btn ' + (!isLessons ? "active" : "") + '" data-action="lib-sec" data-sec="teachers">استادها</button>' +
+            "  </div>" +
+            contentHtml +
+            "</div>"
+          );
+        }
+
+        function renderProfileTab() {
+          const isGuest = !state.user.email;
+          const theme = state.preferences.theme || "system";
+
+          return (
+            '<div style="display:flex;flex-direction:column;gap:18px;">' +
+            '  <div class="card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">' +
+            '    <div>' +
+            '      <div style="font-weight:800;font-size:1.1rem;">' +
+            (state.user.name ? escapeHtml(state.user.name) : "کاربر مهمان") +
+            "</div>" +
+            '      <div class="meta-quiet">' +
+            (isGuest ? "مهمان (ذخیره در همین مرورگر)" : escapeHtml(state.user.email)) +
+            "</div>" +
+            "    </div>" +
+            '    <button type="button" class="btn btn-secondary" style="width:auto;" data-action="open-account-modal">' +
+            (isGuest ? "ساخت حساب" : "ویرایش مشخصات") +
+            "</button>" +
+            "  </div>" +
+            '  <div class="card" style="display:flex;flex-direction:column;gap:16px;">' +
+            '    <h3 style="font-size:1.05rem;font-weight:800;">انتخاب‌های من</h3>' +
+            '    <div class="input-group">' +
+            '      <label class="input-label" for="prof-inst">ساز</label>' +
+            '      <select id="prof-inst" class="text-input" data-action="prof-change-inst">' +
+            '        <option value="پیانو/کیبورد" selected>پیانو/کیبورد (فعال)</option>' +
+            '        <option value="soon" disabled>گیتار، تار، سه‌تار، سنتور، ویولن، آواز (به‌زودی)</option>' +
+            "      </select>" +
+            "    </div>" +
+            '    <div class="input-group">' +
+            '      <label class="input-label" for="prof-access">دسترسی به ساز</label>' +
+            '      <select id="prof-access" class="text-input">' +
+            '        <option value="آره، ساز دارم" ' + (state.preferences.access === "آره، ساز دارم" ? "selected" : "") + '>آره، ساز دارم</option>' +
+            '        <option value="فقط گوشی (اپ پیانو)" ' + (state.preferences.access === "فقط گوشی (اپ پیانو)" ? "selected" : "") + '>فقط گوشی (اپ پیانو)</option>' +
+            '        <option value="فعلاً نه" ' + (state.preferences.access === "فعلاً نه" ? "selected" : "") + '>فعلاً نه</option>' +
+            "      </select>" +
+            "    </div>" +
+            '    <div class="input-group">' +
+            '      <label class="input-label" for="prof-goal">هدف روزانه</label>' +
+            '      <select id="prof-goal" class="text-input">' +
+            '        <option value="5" ' + (Number(state.preferences.dailyGoal) === 5 ? "selected" : "") + '>۵ دقیقه – سبک</option>' +
+            '        <option value="15" ' + (Number(state.preferences.dailyGoal) === 15 ? "selected" : "") + '>۱۵ دقیقه – منظم</option>' +
+            '        <option value="30" ' + (Number(state.preferences.dailyGoal) === 30 ? "selected" : "") + '>۳۰ دقیقه – جدی</option>' +
+            "      </select>" +
+            "    </div>" +
+            '    <div class="input-group">' +
+            '      <label class="input-label" for="prof-reminder">ساعت یادآور روزانه</label>' +
+            '      <input id="prof-reminder" type="time" class="text-input" value="' + escapeHtml(state.preferences.reminderTime || "") + '" />' +
+            "    </div>" +
+            "  </div>" +
+            '  <div class="card" style="display:flex;flex-direction:column;gap:12px;">' +
+            '    <h3 style="font-size:1.05rem;font-weight:800;">پوسته‌ی نمایش (تم)</h3>' +
+            '    <div class="segmented">' +
+            '      <button type="button" class="seg-btn ' + (theme === "system" ? "active" : "") + '" data-action="set-theme" data-theme="system">سیستم</button>' +
+            '      <button type="button" class="seg-btn ' + (theme === "light" ? "active" : "") + '" data-action="set-theme" data-theme="light">روشن</button>' +
+            '      <button type="button" class="seg-btn ' + (theme === "dark" ? "active" : "") + '" data-action="set-theme" data-theme="dark">تیره</button>' +
+            "    </div>" +
+            "  </div>" +
+            '  <div style="display:flex;flex-direction:column;gap:10px;">' +
+            '    <button type="button" class="btn btn-secondary" data-action="open-about-modal">درباره‌ی ما</button>' +
+            '    <button type="button" class="btn btn-danger" data-action="open-reset-modal">شروع دوباره (پاک کردن اطلاعات)</button>' +
+            "  </div>" +
+            "</div>"
+          );
+        }
+
+        // --- LESSON MODAL / FULLSCREEN FLOW RENDERER ---
+        function renderLessonFlowModal() {
+          const modal = ui.activeLessonModal;
+          if (!modal) return "";
+
+          const lesson = LESSONS.find(function (l) {
+            return l.id === modal.lessonId;
+          });
+          if (!lesson) return "";
+
+          // 1) Intro Screen
+          if (modal.mode === "intro") {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet" style="max-width:540px;">' +
+              '    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">' +
+              '      <span class="meta-quiet" style="font-weight:700;color:var(--accent-text);">درس ' +
+              toFa(lesson.id) +
+              " از ۱۲</span>" +
+              '      <button type="button" class="icon-btn" data-action="close-lesson" aria-label="بستن">' +
+              ICONS.close +
+              "</button>" +
+              "    </div>" +
+              '    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:10px;">' +
+              escapeHtml(lesson.title) +
+              "</h2>" +
+              '    <p style="color:var(--text-secondary);font-size:1rem;margin-bottom:18px;">' +
+              escapeHtml(lesson.goal) +
+              "</p>" +
+              '    <div class="helper-banner" style="margin-bottom:24px;display:flex;align-items:center;gap:8px;">' +
+              ICONS.clock +
+              '      <span>مدت زمان تقریبی: <strong>' +
+              toFa(lesson.minutes) +
+              " دقیقه</strong></span>" +
+              "    </div>" +
+              '    <div style="display:flex;flex-direction:column;gap:10px;">' +
+              '      <button type="button" class="btn btn-primary" data-action="start-lesson-steps">شروع</button>' +
+              '      <button type="button" class="btn btn-secondary" data-action="start-skip-quiz">اینو بلدم</button>' +
+              "    </div>" +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 3) «اینو بلدم» (Skip Quiz: asks 2 of the lesson's quiz questions)
+          if (modal.mode === "skipQuiz") {
+            const skipQuestions = lesson.quiz.slice(0, 2);
+            const qIdx = modal.skipQuizIndex || 0;
+            const currentQ = skipQuestions[qIdx];
+
+            let optsHtml = "";
+            currentQ.options.forEach(function (opt, idx) {
+              optsHtml +=
+                '<button type="button" class="card-interactive" data-action="answer-skip-quiz" data-idx="' +
+                idx +
+                '">' +
+                '  <span style="font-weight:700;">' + escapeHtml(opt) + "</span>" +
+                "</button>";
+            });
+
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet" style="max-width:540px;">' +
+              '    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">' +
+              '      <span style="font-weight:700;color:var(--accent-text);">سنجش سریع «اینو بلدم» (سؤال ' +
+              toFa(qIdx + 1) +
+              " از " +
+              toFa(skipQuestions.length) +
+              ")</span>" +
+              '      <button type="button" class="icon-btn" data-action="close-lesson" aria-label="بستن">' +
+              ICONS.close +
+              "</button>" +
+              "    </div>" +
+              '    <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:16px;">' +
+              escapeHtml(currentQ.q) +
+              "</h3>" +
+              '    <div style="display:flex;flex-direction:column;gap:10px;">' +
+              optsHtml +
+              "    </div>" +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          if (modal.mode === "skipFailed") {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet" style="max-width:480px;text-align:center;">' +
+              '    <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:10px;">بهتره یه نگاه به این درس بندازی</h3>' +
+              '    <p style="color:var(--text-secondary);margin-bottom:22px;">مرور این درس فقط ' +
+              toFa(lesson.minutes) +
+              " دقیقه وقت می‌گیره و پایه‌ت رو محکم می‌کنه.</p>" +
+              '    <button type="button" class="btn btn-primary" data-action="start-lesson-steps">ورود به درس</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          if (modal.mode === "skipSuccess") {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet" style="max-width:480px;text-align:center;">' +
+              '    <div style="width:56px;height:56px;border-radius:99px;background:var(--success-soft);color:var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">' +
+              ICONS.check +
+              "    </div>" +
+              '    <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:8px;">آفرین! این درس رو کامل بلدی</h3>' +
+              '    <p style="color:var(--text-secondary);margin-bottom:22px;">درس ' +
+              toFa(lesson.id) +
+              " تیک خورد و درس بعدی برات باز شد.</p>" +
+              '    <button type="button" class="btn btn-primary" data-action="finish-skip-to-path">بازگشت به مسیر</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // 2) Step-by-step Lesson Pages
+          const steps = buildLessonSteps(lesson);
+          const sIdx = Math.min(Math.max(0, modal.stepIndex || 0), steps.length - 1);
+          const stepObj = steps[sIdx];
+          const progressPct = Math.round(((sIdx + 1) / steps.length) * 100);
+
+          let bodyHtml = "";
+
+          // a) ببین و بشنو
+          if (stepObj.type === "see") {
+            bodyHtml =
+              '<div style="display:flex;flex-direction:column;gap:16px;">' +
+              '  <div class="media-placeholder">' +
+              '    <span style="color:var(--accent);">' + ICONS.music + "</span>" +
+              '    <span style="font-weight:700;color:var(--text-primary);">تصویر/صدای این درس به‌زودی</span>' +
+              '    <span class="meta-quiet">کپشن راهنما در پایین درج شده است</span>' +
+              "  </div>" +
+              '  <div class="card" style="background:var(--bg-subtle);">' +
+              '    <p style="font-size:1.02rem;line-height:1.75;font-weight:500;">' +
+              escapeHtml(lesson.see) +
+              "</p>" +
+              "  </div>" +
+              "</div>";
+          }
+
+          // b) تمرین روی سازت
+          if (stepObj.type === "practice") {
+            let stepsList = '<div style="display:flex;flex-direction:column;gap:12px;">';
+            lesson.steps.forEach(function (st, idx) {
+              stepsList +=
+                '<div class="card" style="display:flex;align-items:flex-start;gap:12px;padding:16px;">' +
+                '  <span style="width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-text);display:inline-flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;">' +
+                toFa(idx + 1) +
+                "</span>" +
+                '  <span style="font-weight:600;line-height:1.65;">' + escapeHtml(st) + "</span>" +
+                "</div>";
+            });
+            stepsList += "</div>";
+            bodyHtml = stepsList;
+          }
+
+          // c) خودسنجی (optional checkboxes)
+          if (stepObj.type === "selfCheck") {
+            const savedChecks =
+              (state.progress.lessonProgress[lesson.id] &&
+                state.progress.lessonProgress[lesson.id].selfCheck) ||
+              {};
+            let checksHtml =
+              '<p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:8px;">موارد زیر رو حین تمرین بررسی کن (اختیاری):</p>' +
+              '<div style="display:flex;flex-direction:column;gap:10px;">';
+            lesson.selfCheck.forEach(function (item, idx) {
+              const checked = !!savedChecks[idx];
+              checksHtml +=
+                '<button type="button" class="card-interactive ' +
+                (checked ? "selected" : "") +
+                '" data-action="toggle-self-check" data-idx="' +
+                idx +
+                '">' +
+                '  <span style="font-weight:700;">' + escapeHtml(item) + "</span>" +
+                '  <span style="width:26px;height:26px;border-radius:7px;border:2px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;background:' +
+                (checked ? "var(--accent)" : "transparent") +
+                ';color:#FFF;">' +
+                (checked ? ICONS.check : "") +
+                "</span>" +
+                "</button>";
+            });
+            checksHtml += "</div>";
+            bodyHtml = checksHtml;
+          }
+
+          // d) آزمونک (one question per page + WHY feedback + retry)
+          if (stepObj.type === "quiz") {
+            const qItem = stepObj.quizItem;
+            const qKey = stepObj.quizIndex;
+            const chosenIdx =
+              modal.quizState && typeof modal.quizState[qKey] === "number"
+                ? modal.quizState[qKey]
+                : null;
+            const isAnswered = chosenIdx !== null;
+            const isRight = isAnswered && chosenIdx === qItem.correctIndex;
+
+            let optsHtml = '<div style="display:flex;flex-direction:column;gap:10px;">';
+            qItem.options.forEach(function (opt, idx) {
+              let borderStyle = "";
+              if (isAnswered && idx === chosenIdx) {
+                borderStyle = isRight
+                  ? "border-color:var(--success);background:var(--success-soft);"
+                  : "border-color:var(--danger);background:var(--danger-soft);";
+              }
+              optsHtml +=
+                '<button type="button" class="card-interactive" style="' +
+                borderStyle +
+                '" data-action="answer-step-quiz" data-qkey="' +
+                qKey +
+                '" data-idx="' +
+                idx +
+                '">' +
+                '  <span style="font-weight:700;">' + escapeHtml(opt) + "</span>" +
+                (isAnswered && idx === chosenIdx
+                  ? '<span style="font-weight:800;color:' +
+                    (isRight ? "var(--success)" : "var(--danger)") +
+                    ';">' +
+                    (isRight ? "✓ درست" : "✗ نادرست") +
+                    "</span>"
+                  : "") +
+                "</button>";
+            });
+            optsHtml += "</div>";
+
+            let feedbackHtml = "";
+            if (isAnswered) {
+              feedbackHtml =
+                '<div class="helper-banner" style="margin-top:14px;border-color:' +
+                (isRight ? "var(--success)" : "var(--danger)") +
+                ";background:" +
+                (isRight ? "var(--success-soft)" : "var(--danger-soft)") +
+                ';color:var(--text-primary);">' +
+                '  <div style="font-weight:800;margin-bottom:4px;">' +
+                (isRight ? "آفرین، پاسخت درسته!" : "نه کاملاً؛ دوباره امتحان کن:") +
+                "</div>" +
+                '  <div>' + escapeHtml(isRight ? qItem.rightWhy : qItem.wrongWhy) + "</div>" +
+                (!isRight
+                  ? '<button type="button" class="btn btn-secondary" style="margin-top:10px;min-height:40px;" data-action="retry-step-quiz" data-qkey="' +
+                    qKey +
+                    '">تلاش دوباره</button>'
+                  : "") +
+                "</div>";
+            }
+
+            bodyHtml =
+              '<div style="display:flex;flex-direction:column;gap:14px;">' +
+              '  <h3 style="font-size:1.18rem;font-weight:800;">' + escapeHtml(qItem.q) + "</h3>" +
+              optsHtml +
+              feedbackHtml +
+              "</div>";
+          }
+
+          // e) جمع‌بندی
+          if (stepObj.type === "summary") {
+            bodyHtml =
+              '<div style="display:flex;flex-direction:column;gap:16px;">' +
+              '  <div class="card" style="border-color:var(--accent);background:var(--accent-soft);">' +
+              '    <div style="font-weight:800;font-size:1.1rem;color:var(--accent-text);margin-bottom:6px;">جمع‌بندی این درس</div>' +
+              '    <p style="font-weight:600;">' + escapeHtml(lesson.summary) + "</p>" +
+              "  </div>" +
+              '  <div class="card">' +
+              '    <span class="meta-quiet">گام بعدی</span>' +
+              '    <div style="font-weight:800;margin-top:4px;">فردا: ' + escapeHtml(lesson.tomorrow) + "</div>" +
+              "  </div>" +
+              '  <div class="card" style="background:var(--bg-subtle);font-size:0.86rem;color:var(--text-secondary);">' +
+              '    <div style="font-weight:700;color:var(--text-primary);margin-bottom:4px;">منبع محتوا</div>' +
+              '    <div>سازنده: ' + escapeHtml(lesson.sourceCreator) + " | مجوز: " + escapeHtml(lesson.sourceLicense) + "</div>" +
+              "  </div>" +
+              "</div>";
+          }
+
+          const isLastStep = sIdx === steps.length - 1;
+
+          return (
+            '<div class="modal-backdrop">' +
+            '  <div class="modal-sheet" style="max-width:580px;max-height:92vh;display:flex;flex-direction:column;justify-content:space-between;overflow-y:auto;">' +
+            '    <div>' +
+            '      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">' +
+            '        <span style="font-weight:800;font-size:0.95rem;color:var(--accent-text);">' +
+            escapeHtml(stepObj.title) +
+            "</span>" +
+            '        <button type="button" class="icon-btn" data-action="close-lesson" aria-label="بستن">' +
+            ICONS.close +
+            "</button>" +
+            "      </div>" +
+            '      <div class="progress-track" style="margin-bottom:20px;">' +
+            '        <div class="progress-fill" style="width:' + progressPct + '%;"></div>' +
+            "      </div>" +
+            bodyHtml +
+            "    </div>" +
+            '    <div style="display:flex;gap:10px;margin-top:24px;padding-top:14px;border-top:1px solid var(--border-subtle);">' +
+            (sIdx > 0
+              ? '<button type="button" class="btn btn-secondary" style="flex:1;" data-action="lesson-prev-step">قبلی</button>'
+              : "") +
+            (isLastStep
+              ? '<button type="button" class="btn btn-primary" style="flex:2;" data-action="complete-lesson">تموم شد</button>'
+              : '<button type="button" class="btn btn-primary" style="flex:2;" data-action="lesson-next-step">بعدی</button>') +
+            "    </div>" +
+            "  </div>" +
+            "</div>"
+          );
+        }
+
+        function renderAuxiliaryModals() {
+          // Post-Lesson 1 Sign-up Sheet («پیشرفتت رو نگه دار»)
+          if (ui.showLesson1SignupModal) {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet">' +
+              '    <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:8px;">پیشرفتت رو نگه دار</h3>' +
+              '    <p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:18px;">درس اول رو با موفقیت تموم کردی! نام و ایمیلت رو بنویس تا پروفایلت کامل بشه.</p>' +
+              '    <form id="lesson1-signup-form" style="display:flex;flex-direction:column;gap:14px;">' +
+              '      <div class="input-group">' +
+              '        <label class="input-label" for="l1-name">نام تو</label>' +
+              '        <input id="l1-name" name="name" type="text" class="text-input" placeholder="مثلاً: سارا" value="' + escapeHtml(state.user.name) + '" />' +
+              "      </div>" +
+              '      <div class="input-group">' +
+              '        <label class="input-label" for="l1-email">ایمیل</label>' +
+              '        <input id="l1-email" name="email" type="email" class="text-input" placeholder="example@mail.com" value="' + escapeHtml(state.user.email) + '" />' +
+              "      </div>" +
+              '      <button type="submit" class="btn btn-primary" style="margin-top:6px;">ذخیره‌ی پیشرفت</button>' +
+              '      <button type="button" class="btn btn-secondary" data-action="dismiss-l1-signup">بعداً</button>' +
+              "    </form>" +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // Profile Account Modal
+          if (ui.showAccountModal) {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet">' +
+              '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">' +
+              '      <h3 style="font-size:1.25rem;font-weight:800;">حساب کاربری</h3>' +
+              '      <button type="button" class="icon-btn" data-action="close-aux-modal">' + ICONS.close + "</button>" +
+              "    </div>" +
+              '    <form id="account-form" style="display:flex;flex-direction:column;gap:14px;">' +
+              '      <div class="input-group">' +
+              '        <label class="input-label" for="acc-name">نام نمایشی</label>' +
+              '        <input id="acc-name" name="name" type="text" class="text-input" placeholder="نام تو" value="' + escapeHtml(state.user.name) + '" />' +
+              "      </div>" +
+              '      <div class="input-group">' +
+              '        <label class="input-label" for="acc-email">ایمیل</label>' +
+              '        <input id="acc-email" name="email" type="email" class="text-input" placeholder="example@mail.com" value="' + escapeHtml(state.user.email) + '" />' +
+              "      </div>" +
+              '      <button type="submit" class="btn btn-primary">ذخیره</button>' +
+              "    </form>" +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // About Modal
+          if (ui.showAboutModal) {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet">' +
+              '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">' +
+              '      <h3 style="font-size:1.25rem;font-weight:800;">درباره‌ی [نام اپ]</h3>' +
+              '      <button type="button" class="icon-btn" data-action="close-aux-modal">' + ICONS.close + "</button>" +
+              "    </div>" +
+              '    <p style="color:var(--text-secondary);margin-bottom:14px;">[نام اپ] یک پلتفرم آموزشی فارسی برای یادگیری گام‌به‌گام موسیقی از صفر مطلق است. هدف ما این است که هر کسی بتواند با روزی چند دقیقه تمرین منظم، زبان موسیقی و نواختن ساز را بدون استرس تجربه کند.</p>' +
+              '    <p class="meta-quiet" style="margin-bottom:18px;">نسخه‌ی آزمایشی · تمام اطلاعات فقط در مرورگر دستگاه خودت ذخیره می‌شود.</p>' +
+              '    <button type="button" class="btn btn-primary" data-action="close-aux-modal">بستن</button>' +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          // Reset Confirmation Modal (In-app, no browser confirm)
+          if (ui.showResetConfirmModal) {
+            return (
+              '<div class="modal-backdrop">' +
+              '  <div class="modal-sheet">' +
+              '    <h3 style="font-size:1.25rem;font-weight:800;margin-bottom:8px;">شروع دوباره از صفر؟</h3>' +
+              '    <p style="color:var(--text-secondary);margin-bottom:20px;">با این کار تمام پیشرفت درس‌ها، استریک و تنظیمات پاک می‌شه و به صفحه‌ی خوش‌آمدگویی برمی‌گردی.</p>' +
+              '    <div style="display:flex;flex-direction:column;gap:10px;">' +
+              '      <button type="button" class="btn btn-danger" data-action="confirm-reset-all">بله، همه چیز پاک بشه</button>' +
+              '      <button type="button" class="btn btn-secondary" data-action="close-aux-modal">انصراف</button>' +
+              "    </div>" +
+              "  </div>" +
+              "</div>"
+            );
+          }
+
+          return "";
+        }
+
+        function renderMainApp() {
+          const tab = ui.activeTab;
+          const titles = {
+            home: "خانه",
+            path: "مسیر یادگیری",
+            advisor: "مشاور تمرینی",
+            library: "کتابخانه",
+            profile: "پروفایل و تنظیمات"
+          };
+
+          const greetingName = state.user.name ? state.user.name : "دوست من";
+
+          let tabBody = "";
+          if (tab === "home") tabBody = renderHomeTab();
+          else if (tab === "path") tabBody = renderPathTab();
+          else if (tab === "advisor") tabBody = renderAdvisorTab();
+          else if (tab === "library") tabBody = renderLibraryTab();
+          else if (tab === "profile") tabBody = renderProfileTab();
+
+          const tabsList = [
+            { id: "home", label: "خانه", icon: ICONS.home },
+            { id: "path", label: "مسیر", icon: ICONS.path },
+            { id: "advisor", label: "مشاور", icon: ICONS.advisor },
+            { id: "library", label: "کتابخانه", icon: ICONS.library },
+            { id: "profile", label: "پروفایل", icon: ICONS.profile }
+          ];
+
+          let navItemsHtml =
+            '<div class="nav-brand-desktop">' +
+            '  <span class="logo-symbol" style="width:34px;height:34px;font-size:0.95rem;">♪</span>' +
+            '  <span style="font-weight:800;font-size:1.1rem;">[نام اپ]</span>' +
+            "</div>";
+
+          tabsList.forEach(function (t) {
+            const active = tab === t.id;
+            navItemsHtml +=
+              '<button type="button" class="nav-item ' +
+              (active ? "active" : "") +
+              '" data-action="switch-tab" data-tab="' +
+              t.id +
+              '">' +
+              "  <span>" + t.icon + "</span>" +
+              '  <span class="nav-label">' + t.label + "</span>" +
+              "</button>";
+          });
+
+          return (
+            '<div class="main-layout">' +
+            '  <nav class="nav-bar" aria-label="ناوبری اصلی">' +
+            navItemsHtml +
+            "  </nav>" +
+            '  <div class="workspace-column">' +
+            '    <header class="top-header">' +
+            '      <div>' +
+            (tab === "home"
+              ? '<h1 style="font-size:1.2rem;font-weight:800;">سلام ' + escapeHtml(greetingName) + " 👋</h1>"
+              : '<h1 style="font-size:1.2rem;font-weight:800;">' + titles[tab] + "</h1>") +
+            "      </div>" +
+            '      <div style="display:flex;align-items:center;gap:10px;">' +
+            '        <div style="display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--warm);font-size:0.95rem;" title="استریک روزانه">' +
+            ICONS.flame +
+            "          <span>" + toFa(state.streak.count) + " روز</span>" +
+            "        </div>" +
+            "      </div>" +
+            "    </header>" +
+            '    <main class="page-body">' +
+            tabBody +
+            "    </main>" +
+            "  </div>" +
+            "</div>" +
+            renderLessonFlowModal() +
+            renderAuxiliaryModals() +
+            (ui.toastMessage
+              ? '<div style="position:fixed;bottom:82px;left:50%;transform:translateX(-50%);background:var(--text-primary);color:var(--bg-surface);padding:10px 18px;border-radius:12px;font-size:0.9rem;font-weight:600;z-index:80;box-shadow:var(--shadow-md);">' +
+                escapeHtml(ui.toastMessage) +
+                "</div>"
+              : "")
+          );
+        }
+
+        function render() {
+          const root = document.getElementById("app");
+          if (!root) return;
+
+          if (!state.onboarded) {
+            root.innerHTML = renderOnboarding();
+          } else {
+            root.innerHTML = renderMainApp();
+          }
+
+          // Scroll advisor chat to bottom if active
+          const chatEl = document.getElementById("advisor-chat-box");
+          if (chatEl) {
+            chatEl.scrollTop = chatEl.scrollHeight;
+          }
+        }
+
+        // --- GLOBAL EVENT DELEGATION ---
+        document.addEventListener("click", function (e) {
+          const target = e.target.closest("[data-action]");
+          if (!target) return;
+          const action = target.getAttribute("data-action");
+
+          if (action === "skip-splash") {
+            state.onboardStep = 2;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "onboard-goto") {
+            const nextStep = target.getAttribute("data-step");
+            state.onboardStep = nextStep === "signin" ? "signin" : Number(nextStep);
+            ui.soonInstrumentTapped = null;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "signin-guest") {
+            state.onboardStep = 3;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "pick-instrument") {
+            const isActive = target.getAttribute("data-active") === "true";
+            const instName = target.getAttribute("data-inst");
+            if (isActive) {
+              state.preferences.instrument = instName;
+              ui.soonInstrumentTapped = null;
+              saveState();
+              render();
+            } else {
+              ui.soonInstrumentTapped = instName;
+              render();
+            }
+            return;
+          }
+
+          if (action === "start-with-piano") {
+            state.preferences.instrument = "پیانو/کیبورد";
+            ui.soonInstrumentTapped = null;
+            state.onboardStep = 4;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "set-access") {
+            state.preferences.access = target.getAttribute("data-val");
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "set-experience") {
+            state.preferences.experience = target.getAttribute("data-val");
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "set-goal") {
+            state.preferences.dailyGoal = Number(target.getAttribute("data-val"));
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "toggle-motive") {
+            const val = target.getAttribute("data-val");
+            const idx = state.preferences.motivations.indexOf(val);
+            if (idx >= 0) {
+              state.preferences.motivations.splice(idx, 1);
+            } else {
+              state.preferences.motivations.push(val);
+            }
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "save-reminder-next") {
+            const timeInput = document.getElementById("reminder-time-input");
+            if (timeInput && timeInput.value) {
+              state.preferences.reminderTime = timeInput.value;
+            }
+            state.onboardStep = 9;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "skip-reminder-next") {
+            state.preferences.reminderTime = "";
+            state.onboardStep = 9;
+            saveState();
+            render();
+            return;
+          }
+
+          if (action === "finish-onboarding") {
+            state.onboarded = true;
+            ui.activeTab = "home";
+            saveState();
+            render();
+            return;
+          }
+
+          // Main App Navigation
+          if (action === "switch-tab") {
+            ui.activeTab = target.getAttribute("data-tab");
+            render();
+            return;
+          }
+
+          // Open Lesson Intro
+          if (action === "open-lesson") {
+            const lid = Number(target.getAttribute("data-id"));
+            ui.activeLessonModal = {
+              lessonId: lid,
+              mode: "intro",
+              stepIndex: getSavedLessonStep(lid),
+              quizState: {},
+              skipQuizIndex: 0
+            };
+            render();
+            return;
+          }
+
+          if (action === "tap-path-lesson") {
+            const lid = Number(target.getAttribute("data-id"));
+            const status = getLessonStatus(lid);
+            if (status === "locked") {
+              showToast("اول درس قبلی رو تموم کن تا این درس باز بشه.");
+              return;
+            }
+            ui.activeLessonModal = {
+              lessonId: lid,
+              mode: "intro",
+              stepIndex: getSavedLessonStep(lid),
+              quizState: {},
+              skipQuizIndex: 0
+            };
+            render();
+            return;
+          }
+
+          if (action === "close-lesson") {
+            if (ui.activeLessonModal && ui.activeLessonModal.mode === "steps") {
+              setSavedLessonStep(ui.activeLessonModal.lessonId, ui.activeLessonModal.stepIndex);
+            }
+            ui.activeLessonModal = null;
+            render();
+            return;
+          }
+
+          if (action === "start-lesson-steps") {
+            if (!ui.activeLessonModal) return;
+            const lid = ui.activeLessonModal.lessonId;
+            ui.activeLessonModal.mode = "steps";
+            ui.activeLessonModal.stepIndex = getSavedLessonStep(lid);
+            render();
+            return;
+          }
+
+          if (action === "lesson-prev-step") {
+            if (!ui.activeLessonModal) return;
+            ui.activeLessonModal.stepIndex = Math.max(0, ui.activeLessonModal.stepIndex - 1);
+            setSavedLessonStep(ui.activeLessonModal.lessonId, ui.activeLessonModal.stepIndex);
+            render();
+            return;
+          }
+
+          if (action === "lesson-next-step") {
+            if (!ui.activeLessonModal) return;
+            ui.activeLessonModal.stepIndex += 1;
+            setSavedLessonStep(ui.activeLessonModal.lessonId, ui.activeLessonModal.stepIndex);
+            render();
+            return;
+          }
+
+          if (action === "toggle-self-check") {
+            if (!ui.activeLessonModal) return;
+            const idx = Number(target.getAttribute("data-idx"));
+            toggleSelfCheckItem(ui.activeLessonModal.lessonId, idx);
+            render();
+            return;
+          }
+
+          if (action === "answer-step-quiz") {
+            if (!ui.activeLessonModal) return;
+            const qKey = Number(target.getAttribute("data-qkey"));
+            const idx = Number(target.getAttribute("data-idx"));
+            ui.activeLessonModal.quizState[qKey] = idx;
+            render();
+            return;
+          }
+
+          if (action === "retry-step-quiz") {
+            if (!ui.activeLessonModal) return;
+            const qKey = Number(target.getAttribute("data-qkey"));
+            delete ui.activeLessonModal.quizState[qKey];
+            render();
+            return;
+          }
+
+          if (action === "complete-lesson") {
+            if (!ui.activeLessonModal) return;
+            const lid = ui.activeLessonModal.lessonId;
+            ui.activeLessonModal = null;
+            markLessonComplete(lid);
+            render();
+            return;
+          }
+
+          // «اینو بلدم» (Skip Quiz Flow)
+          if (action === "start-skip-quiz") {
+            if (!ui.activeLessonModal) return;
+            ui.activeLessonModal.mode = "skipQuiz";
+            ui.activeLessonModal.skipQuizIndex = 0;
+            render();
+            return;
+          }
+
+          if (action === "answer-skip-quiz") {
+            if (!ui.activeLessonModal) return;
+            const lesson = LESSONS.find(function (l) {
+              return l.id === ui.activeLessonModal.lessonId;
+            });
+            const skipQuestions = lesson.quiz.slice(0, 2);
+            const qIdx = ui.activeLessonModal.skipQuizIndex || 0;
+            const chosen = Number(target.getAttribute("data-idx"));
+            const currentQ = skipQuestions[qIdx];
+
+            if (chosen !== currentQ.correctIndex) {
+              // Failed -> show message «بهتره یه نگاه به این درس بندازی» and open lesson
+              ui.activeLessonModal.mode = "skipFailed";
+              render();
+              return;
+            }
+
+            if (qIdx + 1 < skipQuestions.length) {
+              ui.activeLessonModal.skipQuizIndex = qIdx + 1;
+              render();
+            } else {
+              // Both correct -> mark done, short congrats, back to Path
+              markLessonComplete(lesson.id);
+              ui.activeLessonModal.mode = "skipSuccess";
+              render();
+            }
+            return;
+          }
+
+          if (action === "finish-skip-to-path") {
+            ui.activeLessonModal = null;
+            ui.activeTab = "path";
+            render();
+            return;
+          }
+
+          // Advisor Chip
+          if (action === "ask-chip") {
+            const qText = target.getAttribute("data-q");
+            handleAdvisorQuestion(qText);
+            return;
+          }
+
+          // Library Section Switch
+          if (action === "lib-sec") {
+            ui.librarySection = target.getAttribute("data-sec");
+            render();
+            return;
+          }
+
+          // Profile Theme & Modals
+          if (action === "set-theme") {
+            state.preferences.theme = target.getAttribute("data-theme");
+            saveState();
+            applyTheme();
+            render();
+            return;
+          }
+
+          if (action === "open-account-modal") {
+            ui.showAccountModal = true;
+            render();
+            return;
+          }
+
+          if (action === "open-about-modal") {
+            ui.showAboutModal = true;
+            render();
+            return;
+          }
+
+          if (action === "open-reset-modal") {
+            ui.showResetConfirmModal = true;
+            render();
+            return;
+          }
+
+          if (action === "close-aux-modal") {
+            ui.showAccountModal = false;
+            ui.showAboutModal = false;
+            ui.showResetConfirmModal = false;
+            render();
+            return;
+          }
+
+          if (action === "dismiss-l1-signup") {
+            ui.showLesson1SignupModal = false;
+            render();
+            return;
+          }
+
+          if (action === "confirm-reset-all") {
+            try {
+              window.localStorage.removeItem(STORAGE_KEY);
+            } catch (err) {}
+            state = getDefaultState();
+            state.onboardStep = 2; // go directly to Welcome screen on reset
+            ui.showResetConfirmModal = false;
+            ui.activeLessonModal = null;
+            ui.activeTab = "home";
+            applyTheme();
+            render();
+            return;
+          }
+        });
+
+        // Handle Form Submissions
+        document.addEventListener("submit", function (e) {
+          if (e.target.id === "signin-form") {
+            e.preventDefault();
+            const emailInput = document.getElementById("signin-email");
+            if (emailInput && emailInput.value.trim()) {
+              state.user.email = emailInput.value.trim();
+            }
+            state.onboardStep = 3;
+            saveState();
+            render();
+            return;
+          }
+
+          if (e.target.id === "advisor-form") {
+            e.preventDefault();
+            const inp = document.getElementById("advisor-input");
+            if (!inp || !inp.value.trim()) return;
+            const q = inp.value.trim();
+            inp.value = "";
+            handleAdvisorQuestion(q);
+            return;
+          }
+
+          if (e.target.id === "lesson1-signup-form") {
+            e.preventDefault();
+            const n = document.getElementById("l1-name");
+            const em = document.getElementById("l1-email");
+            if (n) state.user.name = n.value.trim();
+            if (em) state.user.email = em.value.trim();
+            ui.showLesson1SignupModal = false;
+            saveState();
+            showToast("مشخصاتت ذخیره شد.");
+            render();
+            return;
+          }
+
+          if (e.target.id === "account-form") {
+            e.preventDefault();
+            const n = document.getElementById("acc-name");
+            const em = document.getElementById("acc-email");
+            if (n) state.user.name = n.value.trim();
+            if (em) state.user.email = em.value.trim();
+            ui.showAccountModal = false;
+            saveState();
+            showToast("حساب کاربری به‌روزرسانی شد.");
+            render();
+            return;
+          }
+        });
+
+        // Handle Select & Input Changes in Profile & Library
+        document.addEventListener("input", function (e) {
+          if (e.target.id === "library-search-input") {
+            ui.librarySearch = e.target.value;
+            const pos = e.target.selectionStart;
+            render();
+            const newInput = document.getElementById("library-search-input");
+            if (newInput) {
+              newInput.focus();
+              try {
+                newInput.setSelectionRange(pos, pos);
+              } catch (err) {}
+            }
+            return;
+          }
+
+          if (e.target.id === "reminder-time-input") {
+            state.preferences.reminderTime = e.target.value;
+            saveState();
+            render();
+            return;
+          }
+        });
+
+        document.addEventListener("change", function (e) {
+          if (e.target.id === "prof-access") {
+            state.preferences.access = e.target.value;
+            saveState();
+            showToast("دسترسی به ساز ذخیره شد.");
+            render();
+          } else if (e.target.id === "prof-goal") {
+            state.preferences.dailyGoal = Number(e.target.value);
+            saveState();
+            showToast("هدف روزانه به‌روز شد.");
+            render();
+          } else if (e.target.id === "prof-reminder") {
+            state.preferences.reminderTime = e.target.value;
+            saveState();
+            showToast("ساعت یادآور ذخیره شد.");
+            render();
+          }
+        });
+
+        function handleAdvisorQuestion(qText) {
+          state.advisorMessages.push({ role: "user", text: qText });
+          const reply = getAdvisorResponse(qText);
+          if (reply) {
+            if (reply.matched && !reply.isProgress) {
+              state.advisorMessages.push({
+                role: "advisor",
+                cause: reply.cause,
+                fix: reply.fix,
+                lessonId: reply.lessonId
+              });
+            } else {
+              state.advisorMessages.push({
+                role: "advisor",
+                text: reply.text,
+                lessonId: reply.lessonId || null
+              });
+            }
+          }
+          saveState();
+          render();
+        }
+
+        // Initial Render
+        render();
+      })();
+    </script>
+  </body>
+</html>

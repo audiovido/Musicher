@@ -1,0 +1,6 @@
+{
+  "name": "[نام اپ] — آموزش گام‌به‌گام موسیقی",
+  "description": "پلتفرم آموزش گام‌به‌گام موسیقی به زبان فارسی؛ روزی چند دقیقه همراه با مسیر یادگیری، آزمونک و مشاور تمرینی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
