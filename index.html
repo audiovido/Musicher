@@ -1656,7 +1656,7 @@
         font-weight: 600;
         text-align: center;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-        z-index: 100;
+        z-index: 2100;
         animation: fadeSlideIn 180ms ease-out;
       }
 
@@ -1674,10 +1674,14 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
-        z-index: 90;
+        z-index: 2000;
+        pointer-events: auto;
       }
 
       .modal-card {
+        position: relative;
+        z-index: 2001;
+        pointer-events: auto;
         width: 100%;
         max-width: 420px;
         background-color: var(--bg);
@@ -4025,8 +4029,8 @@
 
         if (ui.modal === "about") {
           return `
-            <div class="modal-backdrop" data-action="close-modal">
-              <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-backdrop" role="dialog" aria-modal="true">
+              <div class="modal-card">
                 <h2 class="serif-heading" style="font-size:1.45rem;margin-bottom:8px;">${escapeHtml(t("profile.aboutTitle"))}</h2>
                 <p style="font-size:0.92rem;margin-bottom:10px;">${escapeHtml(t("profile.aboutBody"))}</p>
                 <p style="font-size:0.8rem;color:var(--muted);margin-bottom:18px;">${escapeHtml(t("profile.aboutNote"))}</p>
@@ -4040,8 +4044,8 @@
 
         if (ui.modal === "account") {
           return `
-            <div class="modal-backdrop" data-action="close-modal">
-              <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-backdrop" role="dialog" aria-modal="true">
+              <div class="modal-card">
                 <h2 class="serif-heading" style="font-size:1.4rem;margin-bottom:12px;">${escapeHtml(t("lesson.l1SignupTitle"))}</h2>
                 <form id="modal-account-form" style="display:flex;flex-direction:column;gap:12px;">
                   <div>
@@ -4064,8 +4068,8 @@
 
         if (ui.modal === "reset") {
           return `
-            <div class="modal-backdrop" data-action="close-modal">
-              <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-backdrop" role="dialog" aria-modal="true">
+              <div class="modal-card">
                 <h2 class="serif-heading" style="font-size:1.4rem;margin-bottom:8px;">${escapeHtml(t("profile.resetTitle"))}</h2>
                 <p style="font-size:0.9rem;color:var(--muted);margin-bottom:18px;">${escapeHtml(t("profile.resetBody"))}</p>
                 <div style="display:flex;gap:8px;">
@@ -4134,7 +4138,19 @@
         root.innerHTML = screenHtml + renderModal() + toastHtml;
       }
 
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && ui.modal) {
+          ui.modal = null;
+          render();
+        }
+      });
+
       document.addEventListener("click", (e) => {
+        if (ui.modal && e.target && e.target.classList && e.target.classList.contains("modal-backdrop")) {
+          ui.modal = null;
+          render();
+          return;
+        }
         const btn = e.target.closest("[data-action]");
         if (!btn) return;
         const action = btn.getAttribute("data-action");
@@ -4448,11 +4464,49 @@
 
           case "confirm-reset": {
             const keepLang = state.lang;
-            state = { ...DEFAULT_STATE, lang: keepLang, theme: "light", userChoseTheme: false };
-            saveState();
+            try {
+              window.localStorage.removeItem(STORAGE_KEY);
+              const keysToRemove = [];
+              for (let i = 0; i < window.localStorage.length; i++) {
+                const k = window.localStorage.key(i);
+                if (k && k.toLowerCase().includes("musicher")) {
+                  keysToRemove.push(k);
+                }
+              }
+              for (const k of keysToRemove) {
+                window.localStorage.removeItem(k);
+              }
+            } catch (err) {
+              // Ignore storage error
+            }
+            state = {
+              ...DEFAULT_STATE,
+              lang: keepLang,
+              motivations: [...DEFAULT_STATE.motivations],
+              completedLessons: [],
+              activeDaysHistory: [],
+              teacherNotifyInstruments: [...DEFAULT_STATE.teacherNotifyInstruments],
+              advisorHistory: [],
+              theme: "light",
+              userChoseTheme: false
+            };
             ui.modal = null;
             ui.screen = "welcome";
+            ui.activeLessonId = 1;
+            ui.lessonStepIndex = 0;
+            ui.selfCheckState = {};
+            ui.quizSelected = null;
+            ui.quizAnswered = false;
+            ui.quizIsRight = false;
+            ui.skipQuizIndex = 0;
+            ui.skipQuizFailed = false;
+            ui.skipQuizPassed = false;
+            ui.pendingOtherInstrument = null;
+            ui.teacherSavedBanner = false;
+            ui.librarySearch = "";
+            ui.libraryTab = "lessons";
             render();
+            window.scrollTo({ top: 0, behavior: "smooth" });
             break;
           }
         }
