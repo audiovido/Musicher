@@ -165,7 +165,7 @@
       }
 
       /* ==========================================================================
-         LAYOUT SHELLS
+         RESPONSIVE LAYOUT SHELLS (Mobile < 768px | Tablet 768-1099px | Desktop >= 1100px)
          ========================================================================== */
       #app-root {
         min-height: 100vh;
@@ -186,21 +186,38 @@
         }
       }
 
-      .mobile-shell {
+      /* Onboarding & Sign-in shell: centered single column up to 520px on all viewports */
+      .onboard-shell {
         width: 100%;
-        max-width: 460px;
+        max-width: 520px;
         min-height: 100vh;
         margin: 0 auto;
         background-color: var(--bg);
         position: relative;
         display: flex;
         flex-direction: column;
-        border-inline: 1px solid var(--border-subtle);
+        padding: 8px 0 40px;
+      }
+
+      /* Main App Shell:
+         - Mobile (<768px): full width single column
+         - Tablet (768px-1099px): centered up to 720px with bottom nav
+         - Desktop (>=1100px): offset by 240px fixed sidebar, main area centered up to 1040px */
+      .mobile-shell {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        background-color: var(--bg);
+        position: relative;
+        display: flex;
+        flex-direction: column;
       }
 
       .screen-body {
         flex: 1;
-        padding: 12px 22px 104px;
+        width: 100%;
+        padding: 12px 20px 108px;
         animation: fadeSlideIn 200ms ease-out;
         position: relative;
         z-index: 2;
@@ -208,6 +225,30 @@
 
       .screen-body.no-bottom-nav {
         padding-bottom: 36px;
+      }
+
+      @media (min-width: 768px) and (max-width: 1099px) {
+        .mobile-shell {
+          max-width: 720px;
+        }
+        .screen-body {
+          padding: 20px 28px 116px;
+        }
+      }
+
+      @media (min-width: 1100px) {
+        .mobile-shell {
+          max-width: none;
+          padding-inline-start: 240px;
+        }
+        .mobile-shell > .mobile-topbar {
+          display: none;
+        }
+        .screen-body {
+          max-width: 1040px;
+          margin: 0 auto;
+          padding: 36px 40px 56px;
+        }
       }
 
       @keyframes fadeSlideIn {
@@ -383,11 +424,11 @@
 
       /* Decorative Curved 5-Line Staff Divider (Max 1 per section) */
       .staff-wave-divider {
-        width: calc(100% + 44px);
-        margin: 14px -22px;
+        width: 100%;
+        margin: 16px 0;
         height: 62px;
         display: block;
-        overflow: visible;
+        overflow: hidden;
       }
 
       /* ==========================================================================
@@ -403,12 +444,14 @@
         justify-content: center;
         margin: 0 auto;
         width: 100%;
+        flex-shrink: 0;
       }
 
       .arch-svg-container {
         width: 100%;
         height: auto;
         display: block;
+        flex-shrink: 0;
       }
 
       /* ==========================================================================
@@ -449,12 +492,14 @@
       .lang-switch-pill {
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-        padding: 6px 12px;
+        justify-content: center;
+        gap: 6px;
+        min-height: 44px;
+        padding: 8px 14px;
         border-radius: var(--pill-radius);
         border: 1.5px solid var(--border-color);
         background-color: var(--bg-elevated);
-        font-size: 0.8rem;
+        font-size: 0.84rem;
         font-weight: 700;
       }
 
@@ -756,13 +801,13 @@
       }
 
       /* ==========================================================================
-         3. MOBILE HOME SCREEN (MOCKUP 1)
+         3. HOME SCREEN (Mobile, Tablet & 2-Column Desktop)
          ========================================================================== */
       .mobile-topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 18px 22px 8px;
+        padding: 16px 20px 8px;
         position: relative;
         z-index: 3;
       }
@@ -771,28 +816,41 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 10px;
-        margin: 6px 0 18px;
+        gap: 12px;
+        margin: 6px 0 20px;
+        flex-wrap: wrap;
       }
 
       .home-greeting-title {
         font-family: var(--font-body);
-        font-size: 1.75rem;
+        font-size: clamp(1.65rem, 2.6vw, 2.25rem);
         font-weight: 800;
         letter-spacing: -0.02em;
         line-height: 1.15;
       }
 
       .home-greeting-sub {
-        font-size: 0.95rem;
+        font-size: clamp(0.92rem, 1.2vw, 1.05rem);
         color: var(--ink);
         opacity: 0.85;
         margin-top: 4px;
       }
 
+      .home-layout-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .home-col-side {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
       /* TODAY'S PLAN Card (Mockup 1) */
       .todays-plan-card {
-        padding: 20px;
+        padding: clamp(18px, 2.5vw, 28px);
         position: relative;
         overflow: hidden;
       }
@@ -800,15 +858,22 @@
       .todays-plan-body {
         display: grid;
         grid-template-columns: 1.22fr 0.78fr;
-        gap: 12px;
+        gap: 16px;
         align-items: center;
         position: relative;
         z-index: 2;
       }
 
+      @media (max-width: 380px) {
+        .todays-plan-body {
+          grid-template-columns: 1.12fr 0.88fr;
+          gap: 10px;
+        }
+      }
+
       .todays-plan-title {
         font-family: var(--font-body);
-        font-size: 1.38rem;
+        font-size: clamp(1.32rem, 2.2vw, 1.75rem);
         font-weight: 800;
         line-height: 1.24;
         margin-bottom: 8px;
@@ -818,10 +883,10 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         color: var(--ink);
         opacity: 0.85;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
       }
 
       .todays-plan-clouds {
@@ -835,23 +900,35 @@
         z-index: 0;
       }
 
-      /* 2-Column Weekly Streak & Progress Grid (Mockup 1) */
+      /* 2-Column Weekly Streak & Progress Grid on Mobile/Tablet; Stacked in Right Column on Desktop */
       .home-stats-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
-        margin-bottom: 16px;
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 380px) {
         .home-stats-grid {
           grid-template-columns: 1fr;
         }
       }
 
+      @media (min-width: 1100px) {
+        .home-layout-grid {
+          display: grid;
+          grid-template-columns: 1.35fr 0.95fr;
+          gap: 32px;
+          align-items: start;
+        }
+        .home-stats-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+
       .stat-card-title {
         font-family: var(--font-body);
-        font-size: 1.1rem;
+        font-size: clamp(1.05rem, 1.4vw, 1.2rem);
         font-weight: 800;
         margin-bottom: 10px;
       }
@@ -859,7 +936,7 @@
       .week-dots-row {
         display: flex;
         justify-content: space-between;
-        gap: 3px;
+        gap: 4px;
         margin: 6px 0 12px;
       }
 
@@ -917,25 +994,38 @@
       }
 
       /* ==========================================================================
-         4. MOBILE LEARNING PATH SCREEN (MOCKUP 4)
+         4. LEARNING PATH SCREEN (Mockup 4 — 2-Column Chapter Grids on Tablet/Desktop)
          ========================================================================== */
       .chapter-block {
-        margin-bottom: 12px;
+        margin-bottom: 20px;
       }
 
       .chapter-heading {
-        font-size: 1.12rem;
+        font-size: clamp(1.15rem, 1.8vw, 1.38rem);
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         color: var(--ink);
+      }
+
+      .chapter-lessons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      @media (min-width: 768px) {
+        .chapter-lessons-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
       }
 
       .path-lesson-card {
         display: flex;
         align-items: center;
         gap: 14px;
-        padding: 15px 18px;
-        margin-bottom: 12px;
+        padding: 16px 18px;
+        min-height: 76px;
         position: relative;
         width: 100%;
         text-align: start;
@@ -967,8 +1057,8 @@
       }
 
       .path-icon-box {
-        width: 44px;
-        height: 44px;
+        width: 56px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -977,8 +1067,8 @@
       }
 
       .path-status-circle {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1002,27 +1092,30 @@
       }
 
       /* ==========================================================================
-         5. MOBILE LESSON SCREEN (MOCKUP 5)
+         5. LESSON SCREEN (Mockup 5 — 2-Column Split on Desktop >= 1100px)
          ========================================================================== */
-      .lesson-frame-border {
-        position: absolute;
-        inset: 12px;
-        pointer-events: none;
-        z-index: 1;
-      }
-
       .lesson-topbar {
         display: flex;
         align-items: center;
         gap: 16px;
-        padding: 20px 24px 10px;
+        width: 100%;
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 18px 20px 10px;
         position: relative;
         z-index: 3;
       }
 
+      @media (min-width: 1100px) {
+        .lesson-topbar {
+          padding: 28px 40px 12px;
+        }
+      }
+
       .lesson-close-btn {
-        width: 32px;
-        height: 32px;
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1031,9 +1124,13 @@
         line-height: 1;
       }
 
+      .lesson-close-btn:hover {
+        background-color: var(--surface);
+      }
+
       .lesson-progress-track {
         flex: 1;
-        height: 7px;
+        height: 8px;
         border-radius: var(--pill-radius);
         background-color: var(--track-bg);
         overflow: hidden;
@@ -1046,11 +1143,10 @@
         transition: width 260ms ease;
       }
 
-      /* Subtle corner ornaments matching Mockup 5 */
       .lesson-corner-ornament {
         position: absolute;
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         opacity: 0.55;
         pointer-events: none;
         z-index: 1;
@@ -1069,6 +1165,48 @@
         transform: scaleX(-1);
       }
 
+      .lesson-split-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .lesson-col-arch {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+      }
+
+      .lesson-col-arch.hide-on-mobile-steps {
+        display: none;
+      }
+
+      @media (min-width: 768px) and (max-width: 1099px) {
+        .lesson-col-arch {
+          max-width: 340px;
+        }
+      }
+
+      @media (min-width: 1100px) {
+        .lesson-split-grid {
+          display: grid;
+          grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+          gap: 44px;
+          align-items: start;
+          margin-top: 12px;
+        }
+        .lesson-col-arch,
+        .lesson-col-arch.hide-on-mobile-steps {
+          display: block;
+          max-width: 420px;
+          margin: 0;
+        }
+        .lesson-corner-ornament.bottom-start,
+        .lesson-corner-ornament.bottom-end {
+          bottom: 16px;
+        }
+      }
+
       .practice-steps-list {
         list-style: none;
         display: flex;
@@ -1081,8 +1219,8 @@
         display: flex;
         align-items: flex-start;
         gap: 12px;
-        font-size: 1.02rem;
-        line-height: 1.45;
+        font-size: clamp(1rem, 1.2vw, 1.08rem);
+        line-height: 1.5;
         color: var(--ink);
       }
 
@@ -1096,13 +1234,70 @@
       }
 
       /* ==========================================================================
-         ONBOARDING, CHIPS, INPUTS, BOTTOM NAV, MODALS
+         6. ADVISOR, LIBRARY & PROFILE CONTAINERS
+         ========================================================================== */
+      .advisor-container {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 160px);
+      }
+
+      .advisor-messages-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .advisor-input-bar {
+        position: sticky;
+        bottom: 68px;
+        background-color: var(--bg);
+        padding: 12px 0 8px;
+        z-index: 10;
+      }
+
+      @media (min-width: 1100px) {
+        .advisor-container {
+          min-height: calc(100vh - 96px);
+        }
+        .advisor-input-bar {
+          bottom: 0;
+          padding-bottom: 12px;
+        }
+      }
+
+      .centered-800-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .library-lessons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      @media (min-width: 768px) {
+        .library-lessons-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+      }
+
+      /* ==========================================================================
+         7. ONBOARDING, CHIPS, INPUTS, BOTTOM NAV & DESKTOP SIDEBAR
          ========================================================================== */
       .onboard-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 18px 22px 8px;
+        padding: 18px 20px 8px;
         gap: 12px;
       }
 
@@ -1132,6 +1327,7 @@
 
       .choice-card {
         width: 100%;
+        min-height: 54px;
         text-align: start;
         display: flex;
         align-items: center;
@@ -1149,8 +1345,10 @@
       .chip-btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 6px;
-        padding: 8px 16px;
+        min-height: 44px;
+        padding: 9px 16px;
         border-radius: var(--pill-radius);
         border: 1.5px solid var(--border-color);
         background-color: var(--bg-elevated);
@@ -1165,19 +1363,34 @@
         border-color: var(--primary);
       }
 
-      /* Bottom Navigation Bar (Mockup 1 — 5 line icons) */
+      /* Bottom Navigation Bar (Mobile & Tablet < 1100px) */
       .bottom-nav {
         position: fixed;
         bottom: 0;
         inset-inline: 0;
-        max-width: 460px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
         background-color: var(--bg);
         border-top: 1.5px solid var(--border-subtle);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        padding: 8px 6px 12px;
+        padding: 6px 8px 10px;
         z-index: 40;
+      }
+
+      @media (min-width: 768px) and (max-width: 1099px) {
+        .bottom-nav {
+          max-width: 720px;
+          border-inline: 1.5px solid var(--border-subtle);
+          border-radius: 18px 18px 0 0;
+        }
+      }
+
+      @media (min-width: 1100px) {
+        .bottom-nav {
+          display: none;
+        }
       }
 
       .bottom-nav-item {
@@ -1186,9 +1399,10 @@
         align-items: center;
         justify-content: center;
         gap: 4px;
+        min-height: 50px;
         padding: 4px 2px;
         color: var(--ink);
-        font-size: 0.72rem;
+        font-size: 0.74rem;
         font-weight: 500;
         transition: color 150ms ease;
       }
@@ -1199,13 +1413,87 @@
       }
 
       .bottom-nav-item svg {
-        width: 26px;
-        height: 26px;
+        width: 25px;
+        height: 25px;
+      }
+
+      /* Fixed Desktop Sidebar (>= 1100px, Left in LTR, Right in RTL) */
+      .desktop-sidebar {
+        display: none;
+      }
+
+      @media (min-width: 1100px) {
+        .desktop-sidebar {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          inset-inline-start: 0;
+          width: 240px;
+          background-color: var(--bg-elevated);
+          border-inline-end: 1.5px solid var(--border-subtle);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 28px 18px 24px;
+          z-index: 45;
+        }
+
+        .sidebar-brand {
+          padding: 0 12px 24px;
+          border-bottom: 1px solid var(--border-subtle);
+          margin-bottom: 18px;
+        }
+
+        .sidebar-nav-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          flex: 1;
+        }
+
+        .sidebar-nav-item {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          width: 100%;
+          min-height: 48px;
+          padding: 10px 14px;
+          border-radius: 14px;
+          color: var(--ink);
+          font-size: 0.96rem;
+          font-weight: 600;
+          text-align: start;
+          border: 1.5px solid transparent;
+          transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+        }
+
+        .sidebar-nav-item:hover {
+          background-color: var(--surface);
+        }
+
+        .sidebar-nav-item.active {
+          background-color: var(--primary-soft);
+          color: var(--primary);
+          border-color: var(--primary);
+          font-weight: 700;
+        }
+
+        .sidebar-nav-item svg {
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+        }
+
+        .sidebar-footer {
+          padding-top: 16px;
+          border-top: 1px solid var(--border-subtle);
+        }
       }
 
       .m-input {
         width: 100%;
-        padding: 12px 16px;
+        min-height: 46px;
+        padding: 10px 16px;
         border-radius: 14px;
         border: 1.5px solid var(--border-color);
         background-color: var(--bg-elevated);
@@ -1235,6 +1523,12 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
         z-index: 100;
         animation: fadeSlideIn 180ms ease-out;
+      }
+
+      @media (min-width: 1100px) {
+        .toast-banner {
+          bottom: 28px;
+        }
       }
 
       .modal-backdrop {
@@ -1271,8 +1565,15 @@
         hero: "assets/hero.png",
         teachers1: "assets/teachers-1.png",
         teachers2: "assets/teachers-2.png",
-        todayPlan: "assets/lesson-01.png"
+        todayPlan: "assets/lesson-01.jpeg"
       };
+
+      function getDefaultLessonImage(lessonId) {
+        const idNum = Number(lessonId) || 1;
+        if (idNum === 2) return "assets/lesson-01.jpeg";
+        if (idNum === 3) return "assets/lesson-04.jpeg";
+        return `assets/lesson-${String(idNum).padStart(2, "0")}.jpeg`;
+      }
 
       const STORAGE_KEY = "musicher_app_state_v3";
 
@@ -1532,10 +1833,15 @@
         ratio = "tall",
         caption = "",
         onDark = false,
-        uid = "arch"
+        uid = "arch",
+        isHero = false
       }) {
         const vbW = 300;
         const vbH = ratio === "compact" ? 270 : 350;
+        const imgW = vbW - 56;
+        const imgH = vbH - 28;
+        const isHeroImg = isHero || uid === "hero" || uid === "splash";
+        const loadingAttrs = isHeroImg ? 'decoding="async"' : 'loading="lazy" decoding="async"';
 
         // Authentic shouldered Persian ogee pointed arch (matching Mockups 3 & 5)
         const outerPath =
@@ -1561,7 +1867,7 @@
 
         return `
           <div class="arch-frame-wrap">
-            <svg class="arch-svg-container" viewBox="0 0 ${vbW} ${vbH}" role="img" aria-label="MUSICHER Illustration">
+            <svg class="arch-svg-container" viewBox="0 0 ${vbW} ${vbH}" width="${vbW}" height="${vbH}" role="img" aria-label="MUSICHER Illustration">
               <defs>
                 <clipPath id="${clipId}">
                   <path d="${innerPath}" />
@@ -1598,9 +1904,9 @@
 
                 ${
                   imageUrl
-                    ? `<foreignObject x="28" y="18" width="${vbW - 56}" height="${vbH - 28}">
+                    ? `<foreignObject x="28" y="18" width="${imgW}" height="${imgH}">
                         <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;overflow:hidden;">
-                          <img src="${escapeHtml(imageUrl)}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" />
+                          <img src="${escapeHtml(imageUrl)}" alt="" width="${imgW}" height="${imgH}" ${loadingAttrs} style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" onload="if(!this.naturalWidth)this.style.display='none'" />
                         </div>
                       </foreignObject>`
                     : ""
@@ -1916,6 +2222,31 @@
         ];
 
         return `
+          <aside class="desktop-sidebar" aria-label="Primary Sidebar Navigation">
+            <div>
+              <div class="sidebar-brand">
+                <span class="brand-logo">MUSICHER</span>
+              </div>
+              <div class="sidebar-nav-list">
+                ${tabs
+                  .map(
+                    (tab) => `
+                      <button type="button" class="sidebar-nav-item ${activeTab === tab.id ? "active" : ""}" data-action="nav-tab" data-tab="${tab.id}">
+                        ${tab.icon}
+                        <span>${escapeHtml(tab.label)}</span>
+                      </button>
+                    `
+                  )
+                  .join("")}
+              </div>
+            </div>
+            <div class="sidebar-footer">
+              <button type="button" class="lang-switch-pill" style="width:100%;" data-action="toggle-lang" aria-label="Switch Language">
+                <span>🌐</span>
+                <span>${escapeHtml(t("nav.langToggle"))}</span>
+              </button>
+            </div>
+          </aside>
           <nav class="bottom-nav" aria-label="Primary Navigation">
             ${tabs
               .map(
@@ -1936,11 +2267,11 @@
          ========================================================================== */
       function renderSplashScreen() {
         return `
-          <div class="mobile-shell" style="justify-content:center;align-items:center;padding:32px;text-align:center;">
+          <div class="onboard-shell" style="justify-content:center;align-items:center;padding:32px;text-align:center;">
             <div style="width:165px;margin-bottom:20px;">
               ${renderArchPlaceholder({ imageUrl: ASSETS.hero, ratio: "compact", uid: "splash" })}
             </div>
-            <h1 class="brand-logo" style="font-size:2rem;margin-bottom:8px;">MUSICHER</h1>
+            <h1 class="brand-logo" style="font-size:clamp(1.75rem, 3vw, 2.2rem);margin-bottom:8px;">MUSICHER</h1>
             <p style="color:var(--muted);font-size:0.96rem;">${escapeHtml(t("tagline"))}</p>
           </div>
         `;
@@ -2063,9 +2394,9 @@
 
       function renderSignInScreen() {
         return `
-          <div class="mobile-shell">
+          <div class="onboard-shell">
             <div class="onboard-header">
-              <button type="button" class="btn-pill btn-surface" style="min-height:38px;padding:6px 14px;font-size:0.85rem;" data-action="back-to-welcome">
+              <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.86rem;" data-action="back-to-welcome">
                 ${escapeHtml(t("onboarding.back"))}
               </button>
               <span class="brand-logo" style="font-size:1.25rem;">MUSICHER</span>
@@ -2073,7 +2404,7 @@
             </div>
             <div class="screen-body no-bottom-nav">
               <div class="m-card" style="margin-top:16px;">
-                <h1 class="serif-heading" style="font-size:1.6rem;margin-bottom:6px;">${escapeHtml(t("signin.welcomeBack"))}</h1>
+                <h1 class="serif-heading" style="font-size:clamp(1.45rem, 2.2vw, 1.75rem);margin-bottom:6px;">${escapeHtml(t("signin.welcomeBack"))}</h1>
                 <p style="font-size:0.9rem;color:var(--muted);margin-bottom:20px;">${escapeHtml(t("signin.subtitle"))}</p>
 
                 <form id="signin-form" style="display:flex;flex-direction:column;gap:14px;">
@@ -2338,9 +2669,9 @@
         }
 
         return `
-          <div class="mobile-shell">
+          <div class="onboard-shell">
             <div class="onboard-header">
-              <button type="button" class="btn-pill btn-surface" style="min-height:36px;padding:6px 12px;font-size:0.82rem;" data-action="onboard-back">
+              <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 14px;font-size:0.84rem;" data-action="onboard-back">
                 ${escapeHtml(t("onboarding.back"))}
               </button>
               <div class="progress-dots" aria-label="Onboarding Progress">
@@ -2412,7 +2743,7 @@
             <header class="mobile-topbar">
               <div style="width:48px;"></div>
               <div class="brand-logo">MUSICHER</div>
-              <button type="button" class="lang-switch-pill" style="padding:4px 9px;font-size:0.74rem;" data-action="toggle-lang">
+              <button type="button" class="lang-switch-pill" style="min-height:44px;padding:6px 12px;font-size:0.78rem;" data-action="toggle-lang">
                 ${escapeHtml(t("nav.langToggle"))}
               </button>
             </header>
@@ -2432,94 +2763,103 @@
                 </div>
               </div>
 
-              <!-- TODAY'S PLAN Card (Mockup 1) -->
-              <section class="m-card todays-plan-card">
-                <div class="kicker-staff-row">
-                  <span class="kicker-label">${escapeHtml(t("home.todaysPlanKicker"))}</span>
-                  <div class="staff-5lines-bar"></div>
-                </div>
+              <!-- Responsive 2-Column Home Layout on Desktop (>=1100px):
+                   Left/Start: Today's plan card + Curved 5-Line Staff Divider
+                   Right/End: Weekly streak, Progress, and Quick Advisor stacked -->
+              <div class="home-layout-grid">
+                <div class="home-col-main">
+                  <!-- TODAY'S PLAN Card (Mockup 1) -->
+                  <section class="m-card todays-plan-card">
+                    <div class="kicker-staff-row">
+                      <span class="kicker-label">${escapeHtml(t("home.todaysPlanKicker"))}</span>
+                      <div class="staff-5lines-bar"></div>
+                    </div>
 
-                <!-- Subtle traditional wave/cloud watermark in bottom corner (Mockup 1) -->
-                <svg class="todays-plan-clouds" viewBox="0 0 180 80" fill="none" aria-hidden="true">
-                  <path d="M 0 80 A 28 28 0 0 1 56 80 M 8 80 A 20 20 0 0 1 48 80 M 44 80 A 32 32 0 0 1 108 80 M 54 80 A 22 22 0 0 1 98 80 M 96 80 A 26 26 0 0 1 148 80" stroke="var(--ink)" stroke-width="1.3" />
-                </svg>
+                    <!-- Subtle traditional wave/cloud watermark in bottom corner (Mockup 1) -->
+                    <svg class="todays-plan-clouds" viewBox="0 0 180 80" fill="none" aria-hidden="true">
+                      <path d="M 0 80 A 28 28 0 0 1 56 80 M 8 80 A 20 20 0 0 1 48 80 M 44 80 A 32 32 0 0 1 108 80 M 54 80 A 22 22 0 0 1 98 80 M 96 80 A 26 26 0 0 1 148 80" stroke="var(--ink)" stroke-width="1.3" />
+                    </svg>
 
-                ${
-                  nextLesson
-                    ? `<div class="todays-plan-body">
-                        <div>
-                          <h2 class="todays-plan-title">${escapeHtml(lField(nextLesson.title))}</h2>
-                          <div class="todays-plan-meta">
-                            <span>🎵</span>
-                            <span>${escapeHtml(t("home.lessonMeta", { id: nextLesson.id, min: nextLesson.minutes }))}</span>
-                          </div>
-                          <div>
-                            <button type="button" class="btn-pill btn-primary" data-action="open-lesson" data-lesson-id="${nextLesson.id}">
-                              <span>${escapeHtml(t("home.startLessonBtn"))}</span>
-                              <span class="dir-flip">▶</span>
+                    ${
+                      nextLesson
+                        ? `<div class="todays-plan-body">
+                            <div>
+                              <h2 class="todays-plan-title">${escapeHtml(lField(nextLesson.title))}</h2>
+                              <div class="todays-plan-meta">
+                                <span>🎵</span>
+                                <span>${escapeHtml(t("home.lessonMeta", { id: nextLesson.id, min: nextLesson.minutes }))}</span>
+                              </div>
+                              <div>
+                                <button type="button" class="btn-pill btn-primary" data-action="open-lesson" data-lesson-id="${nextLesson.id}">
+                                  <span>${escapeHtml(t("home.startLessonBtn"))}</span>
+                                  <span class="dir-flip">▶</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div>
+                              ${renderArchPlaceholder({
+                                imageUrl: nextLesson.imageUrl || ASSETS.todayPlan,
+                                ratio: "compact",
+                                uid: "home-today"
+                              })}
+                            </div>
+                          </div>`
+                        : `<div style="position:relative;z-index:2;">
+                            <p style="font-size:0.95rem;margin-bottom:14px;font-weight:600;">
+                              🎉 ${escapeHtml(t("home.allDoneText", { total: totalLessons }))}
+                            </p>
+                            <button type="button" class="btn-pill btn-primary" data-action="open-lesson" data-lesson-id="1">
+                              ${escapeHtml(t("home.reviewFromFirstBtn"))}
                             </button>
-                          </div>
-                        </div>
-                        <div>
-                          ${renderArchPlaceholder({
-                            imageUrl: nextLesson.imageUrl || ASSETS.todayPlan,
-                            ratio: "compact",
-                            uid: "home-today"
-                          })}
-                        </div>
-                      </div>`
-                    : `<div style="position:relative;z-index:2;">
-                        <p style="font-size:0.95rem;margin-bottom:14px;font-weight:600;">
-                          🎉 ${escapeHtml(t("home.allDoneText", { total: totalLessons }))}
-                        </p>
-                        <button type="button" class="btn-pill btn-primary" data-action="open-lesson" data-lesson-id="1">
-                          ${escapeHtml(t("home.reviewFromFirstBtn"))}
-                        </button>
-                      </div>`
-                }
-              </section>
+                          </div>`
+                    }
+                  </section>
 
-              <!-- Decorative 5-Line Curved Music Staff Divider (Mockup 1) -->
-              ${renderHomeStaffDivider()}
-
-              <!-- 2-Column Weekly Streak & Progress Grid (Mockup 1) -->
-              <div class="home-stats-grid">
-                <div class="m-card" style="padding:16px;">
-                  <h3 class="stat-card-title">${escapeHtml(t("home.weeklyStreakTitle"))}</h3>
-                  <div class="week-dots-row">
-                    ${weekDotsHtml}
-                  </div>
-                  <p style="font-size:0.82rem;color:var(--ink);font-weight:500;">
-                    ${escapeHtml(isFreeDayUsedThisWeek() ? t("home.freeDayUsed") : t("home.freeDayAvailable"))} 🔥
-                  </p>
+                  <!-- Decorative 5-Line Curved Music Staff Divider (Mockup 1) -->
+                  ${renderHomeStaffDivider()}
                 </div>
 
-                <div class="m-card" style="padding:16px;display:flex;flex-direction:column;justify-content:space-between;" data-action="nav-tab" data-tab="path">
-                  <div>
-                    <h3 class="stat-card-title">${escapeHtml(t("home.progressTitle"))}</h3>
-                    <p style="font-size:0.9rem;color:var(--ink);margin-bottom:2px;">
-                      ${escapeHtml(t("home.progressCount", { done: doneCount, total: totalLessons }))}
-                    </p>
-                    <p style="font-size:0.84rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                      ${escapeHtml(currentChapterTitle)}
-                    </p>
-                  </div>
-                  <div class="progress-pill-track">
-                    <div class="progress-pill-fill" style="width:${Math.max(26, pct)}%;">
-                      ${toLocaleDigits(pct)}%
+                <div class="home-col-side">
+                  <!-- Weekly Streak & Progress Grid (2 cols on tablet, stacked on desktop right col) -->
+                  <div class="home-stats-grid">
+                    <div class="m-card" style="padding:16px;">
+                      <h3 class="stat-card-title">${escapeHtml(t("home.weeklyStreakTitle"))}</h3>
+                      <div class="week-dots-row">
+                        ${weekDotsHtml}
+                      </div>
+                      <p style="font-size:0.82rem;color:var(--ink);font-weight:500;">
+                        ${escapeHtml(isFreeDayUsedThisWeek() ? t("home.freeDayUsed") : t("home.freeDayAvailable"))} 🔥
+                      </p>
+                    </div>
+
+                    <div class="m-card interactive" style="padding:16px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;" data-action="nav-tab" data-tab="path">
+                      <div>
+                        <h3 class="stat-card-title">${escapeHtml(t("home.progressTitle"))}</h3>
+                        <p style="font-size:0.9rem;color:var(--ink);margin-bottom:2px;">
+                          ${escapeHtml(t("home.progressCount", { done: doneCount, total: totalLessons }))}
+                        </p>
+                        <p style="font-size:0.84rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                          ${escapeHtml(currentChapterTitle)}
+                        </p>
+                      </div>
+                      <div class="progress-pill-track">
+                        <div class="progress-pill-fill" style="width:${Math.max(26, pct)}%;">
+                          ${toLocaleDigits(pct)}%
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!-- Quick Advisor Card -->
+                  <button type="button" class="m-card surface-fill interactive" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:start;padding:16px 18px;min-height:64px;" data-action="nav-tab" data-tab="advisor">
+                    <div>
+                      <div style="font-weight:800;font-size:0.95rem;">${escapeHtml(t("home.askAdvisorTitle"))}</div>
+                      <div style="font-size:0.82rem;color:var(--muted);">${escapeHtml(t("home.askAdvisorSub"))}</div>
+                    </div>
+                    <span style="font-weight:800;color:var(--secondary);white-space:nowrap;">${escapeHtml(t("home.askAdvisorAction"))}</span>
+                  </button>
                 </div>
               </div>
-
-              <!-- Quick Advisor Card -->
-              <button type="button" class="m-card surface-fill interactive" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:start;padding:14px 18px;" data-action="nav-tab" data-tab="advisor">
-                <div>
-                  <div style="font-weight:800;font-size:0.94rem;">${escapeHtml(t("home.askAdvisorTitle"))}</div>
-                  <div style="font-size:0.8rem;color:var(--muted);">${escapeHtml(t("home.askAdvisorSub"))}</div>
-                </div>
-                <span style="font-weight:800;color:var(--secondary);white-space:nowrap;">${escapeHtml(t("home.askAdvisorAction"))}</span>
-              </button>
             </main>
 
             ${renderBottomNav("home")}
@@ -2581,11 +2921,13 @@
                 return `
                   <button type="button" class="m-card path-lesson-card ${statusClass}" data-action="path-lesson-tap" data-lesson-id="${lesson.id}" data-unlocked="${isUnlocked}">
                     ${isCurrent ? `<span class="path-now-badge">${escapeHtml(t("path.statusCurrent"))}</span>` : ""}
-                    ${
-                      isUnlocked
-                        ? `<div class="path-icon-box">${getInstrumentSvg(iconKey)}</div>`
-                        : ""
-                    }
+                    <div class="path-icon-box">
+                      ${renderArchPlaceholder({
+                        imageUrl: lesson.imageUrl || getDefaultLessonImage(lesson.id),
+                        ratio: "compact",
+                        uid: `path-lesson-${lesson.id}`
+                      })}
+                    </div>
                     <div style="flex:1;min-width:0;">
                       <div class="serif-heading" style="font-size:1.14rem;font-weight:600;margin-bottom:2px;">
                         ${escapeHtml(lField(lesson.title))}
@@ -2603,7 +2945,9 @@
             return `
               <section class="chapter-block">
                 <h2 class="chapter-heading serif-heading">${escapeHtml(ch.name)}</h2>
-                ${cards}
+                <div class="chapter-lessons-grid">
+                  ${cards}
+                </div>
                 ${chIdx < chapters.length - 1 ? renderStaffDividerWithPomegranates() : ""}
               </section>
             `;
@@ -2614,12 +2958,12 @@
           <div class="mobile-shell">
             <header class="mobile-topbar">
               <div class="brand-logo">MUSICHER</div>
-              <button type="button" class="lang-switch-pill" style="padding:4px 9px;font-size:0.74rem;" data-action="toggle-lang">
+              <button type="button" class="lang-switch-pill" style="min-height:44px;padding:6px 12px;font-size:0.78rem;" data-action="toggle-lang">
                 ${escapeHtml(t("nav.langToggle"))}
               </button>
             </header>
             <main class="screen-body">
-              <h1 class="serif-heading" style="font-size:1.75rem;margin-bottom:18px;">${escapeHtml(t("path.title"))}</h1>
+              <h1 class="serif-heading" style="font-size:clamp(1.65rem, 2.5vw, 2.15rem);margin-bottom:18px;">${escapeHtml(t("path.title"))}</h1>
               ${chaptersHtml}
             </main>
             ${renderBottomNav("path")}
@@ -2659,30 +3003,11 @@
         const checksArr = lField(lesson.selfCheck) || [];
         const quizzes = lesson.quiz || [];
 
-        let bodyHtml = "";
+        let rightColHtml = "";
 
         if (stepIdx === 0) {
-          // Matches Mockup 5 layout directly
-          bodyHtml = `
-            <div style="text-align:center;margin-bottom:14px;">
-              <div class="kicker-label" style="margin-bottom:6px;letter-spacing:0.12em;">
-                ${escapeHtml(t("lesson.kicker", { id: lesson.id }))}
-              </div>
-              <h1 class="serif-heading" style="font-size:2.1rem;margin-bottom:6px;">
-                ${escapeHtml(lField(lesson.title))}
-              </h1>
-            </div>
-
-            <!-- Centered Shouldered Persian Ogee Arch Frame with Caption Inside (Mockup 5) -->
-            <div style="max-width:290px;margin:0 auto 20px;">
-              ${renderArchPlaceholder({
-                imageUrl: lesson.imageUrl || `assets/lesson-${String(lesson.id).padStart(2, "0")}.png`,
-                ratio: "tall",
-                caption: lField(lesson.goal),
-                uid: `lesson-${lesson.id}`
-              })}
-            </div>
-
+          // Step 0: Practice Steps + Next + I know this
+          rightColHtml = `
             <!-- PRACTICE STEPS Heading with 5-Line Staff Bar (Mockup 5) -->
             <div class="kicker-staff-row" style="margin-top:6px;">
               <span class="kicker-label underlined">${escapeHtml(t("lesson.stepPracticeTitle"))}</span>
@@ -2709,20 +3034,19 @@
               <span>↗</span>
             </button>
 
-            <div style="text-align:center;margin-top:16px;">
-              <button type="button" style="font-family:var(--font-heading);font-weight:600;font-size:1.02rem;color:var(--ink);padding-bottom:2px;border-bottom:1.5px solid var(--ink);" data-action="start-skip-quiz" data-lesson-id="${lesson.id}">
-                ${escapeHtml(t("lesson.skipBtn"))}
+            <div style="text-align:center;margin-top:12px;">
+              <button type="button" style="min-height:44px;display:inline-flex;align-items:center;font-family:var(--font-heading);font-weight:600;font-size:1.02rem;color:var(--ink);" data-action="start-skip-quiz" data-lesson-id="${lesson.id}">
+                <span style="padding-bottom:2px;border-bottom:1.5px solid var(--ink);">${escapeHtml(t("lesson.skipBtn"))}</span>
               </button>
             </div>
           `;
         } else if (stepIdx === 1) {
           // Step 1: See & Hear + Self-Check
-          bodyHtml = `
+          rightColHtml = `
             <div class="kicker-staff-row">
               <span class="kicker-label underlined">${escapeHtml(t("lesson.stepSeeTitle"))}</span>
               <div class="staff-5lines-bar"></div>
             </div>
-            <h2 class="serif-heading" style="font-size:1.5rem;margin-bottom:12px;">${escapeHtml(lField(lesson.title))}</h2>
 
             <div class="m-card" style="margin-bottom:20px;">
               <p style="font-size:0.98rem;line-height:1.6;">${escapeHtml(lField(lesson.see))}</p>
@@ -2762,12 +3086,12 @@
           const qText = lField(qObj.question);
           const qOptions = lField(qObj.options) || [];
 
-          bodyHtml = `
+          rightColHtml = `
             <div class="kicker-staff-row">
               <span class="kicker-label underlined">${escapeHtml(t("lesson.stepQuizTitle", { current: qIndex + 1, total: quizzes.length }))}</span>
               <div class="staff-5lines-bar"></div>
             </div>
-            <h2 class="serif-heading" style="font-size:1.45rem;margin-bottom:16px;">${escapeHtml(qText)}</h2>
+            <h2 class="serif-heading" style="font-size:clamp(1.28rem, 1.8vw, 1.5rem);margin-bottom:16px;">${escapeHtml(qText)}</h2>
 
             <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
               ${qOptions
@@ -2824,16 +3148,13 @@
           // Step 4: Summary + Tomorrow Preview + Source Box + Optional Lesson 1 Signup
           const showL1Signup = lesson.id === 1 && state.isGuest && !state.userName;
 
-          bodyHtml = `
+          rightColHtml = `
             <div class="kicker-staff-row">
               <span class="kicker-label underlined">${escapeHtml(t("lesson.stepSummaryTitle"))}</span>
               <div class="staff-5lines-bar"></div>
             </div>
             <div class="m-card" style="text-align:center;margin-bottom:16px;">
-              <div style="width:128px;margin:0 auto 10px;">
-                ${renderArchPlaceholder({ imageUrl: lesson.imageUrl, ratio: "compact", uid: "lesson-done" })}
-              </div>
-              <h2 class="serif-heading" style="font-size:1.5rem;margin-bottom:8px;">${escapeHtml(t("lesson.summaryBoxTitle"))}</h2>
+              <h2 class="serif-heading" style="font-size:clamp(1.35rem, 2vw, 1.6rem);margin-bottom:8px;">${escapeHtml(t("lesson.summaryBoxTitle"))}</h2>
               <p style="font-size:0.96rem;margin-bottom:14px;">${escapeHtml(lField(lesson.summary))}</p>
               <div class="badge-saffron">
                 <span>${escapeHtml(t("lesson.tomorrowPrefix"))}</span>
@@ -2860,9 +3181,12 @@
                 : ""
             }
 
-            <button type="button" class="btn-pill btn-primary btn-block" data-action="complete-and-exit-lesson" data-lesson-id="${lesson.id}">
-              ✓ ${escapeHtml(t("lesson.finishBtn"))}
-            </button>
+            <div style="display:flex;gap:10px;">
+              <button type="button" class="btn-pill btn-surface" data-action="lesson-prev-step">${escapeHtml(t("lesson.prevBtn"))}</button>
+              <button type="button" class="btn-pill btn-primary" style="flex:1;" data-action="complete-and-exit-lesson" data-lesson-id="${lesson.id}">
+                ✓ ${escapeHtml(t("lesson.finishBtn"))}
+              </button>
+            </div>
           `;
         }
 
@@ -2873,6 +3197,7 @@
             ${renderCornerOrnamentSvg("bottom-start")}
             ${renderCornerOrnamentSvg("bottom-end")}
 
+            <!-- Progress bar on top across full width -->
             <header class="lesson-topbar">
               <button type="button" class="lesson-close-btn" data-action="close-lesson" aria-label="Close Lesson">✕</button>
               <div class="lesson-progress-track">
@@ -2881,7 +3206,31 @@
             </header>
 
             <main class="screen-body">
-              ${bodyHtml}
+              <div style="text-align:center;margin-bottom:16px;">
+                <div class="kicker-label" style="margin-bottom:6px;letter-spacing:0.12em;">
+                  ${escapeHtml(t("lesson.kicker", { id: lesson.id }))}
+                </div>
+                <h1 class="serif-heading" style="font-size:clamp(1.75rem, 2.8vw, 2.35rem);margin-bottom:4px;">
+                  ${escapeHtml(lField(lesson.title))}
+                </h1>
+              </div>
+
+              <!-- 2-Column Split on Desktop (>=1100px):
+                   Left/Start: Arch image (max 420px wide)
+                   Right/End: Steps, self-check, quiz/summary and Previous/Next buttons -->
+              <div class="lesson-split-grid">
+                <div class="lesson-col-arch ${stepIdx > 0 ? "hide-on-mobile-steps" : ""}">
+                  ${renderArchPlaceholder({
+                    imageUrl: lesson.imageUrl || getDefaultLessonImage(lesson.id),
+                    ratio: "tall",
+                    caption: lField(lesson.goal),
+                    uid: `lesson-${lesson.id}`
+                  })}
+                </div>
+                <div class="lesson-col-content">
+                  ${rightColHtml}
+                </div>
+              </div>
             </main>
 
             ${renderBottomNav("path")}
@@ -2983,68 +3332,72 @@
           <div class="mobile-shell">
             <header class="mobile-topbar">
               <div class="brand-logo">MUSICHER</div>
-              <button type="button" class="lang-switch-pill" style="padding:4px 9px;font-size:0.74rem;" data-action="toggle-lang">
+              <button type="button" class="lang-switch-pill" style="min-height:44px;padding:6px 12px;font-size:0.78rem;" data-action="toggle-lang">
                 ${escapeHtml(t("nav.langToggle"))}
               </button>
             </header>
             <main class="screen-body">
-              <h1 class="serif-heading" style="font-size:1.65rem;margin-bottom:10px;">${escapeHtml(t("advisor.title"))}</h1>
-              <div class="m-card surface-fill" style="margin-bottom:16px;font-size:0.92rem;">
-                ${escapeHtml(t("advisor.welcomeMsg"))}
-              </div>
+              <div class="advisor-container">
+                <div>
+                  <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:10px;">${escapeHtml(t("advisor.title"))}</h1>
+                  <div class="m-card surface-fill" style="margin-bottom:16px;font-size:0.92rem;">
+                    ${escapeHtml(t("advisor.welcomeMsg"))}
+                  </div>
 
-              <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">
-                ${escapeHtml(t("advisor.chipsHint"))}
-              </p>
-              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-                ${(Array.isArray(chips) ? chips : [])
-                  .map(
-                    (c) => `
-                      <button type="button" class="chip-btn" data-action="advisor-chip" data-query="${escapeHtml(c)}">
-                        ${escapeHtml(c)}
-                      </button>
-                    `
-                  )
-                  .join("")}
-              </div>
-
-              <form id="advisor-form" style="display:flex;gap:8px;margin-bottom:20px;">
-                <input type="text" id="advisor-input" class="m-input" placeholder="${escapeHtml(t("advisor.inputPlaceholder"))}" />
-                <button type="submit" class="btn-pill btn-primary" style="padding:0 20px;">
-                  ${escapeHtml(t("advisor.sendBtn"))}
-                </button>
-              </form>
-
-              <div style="display:flex;flex-direction:column;gap:12px;">
-                ${history
-                  .slice()
-                  .reverse()
-                  .map((entry) => {
-                    if (entry.found) {
-                      return `
-                        <div class="m-card">
-                          <div style="font-weight:800;color:var(--primary);margin-bottom:6px;">«${escapeHtml(entry.query)}»</div>
-                          <p style="font-size:0.9rem;margin-bottom:6px;">
-                            <strong>${escapeHtml(t("advisor.causeLabel"))}</strong> ${escapeHtml(entry.cause)}
-                          </p>
-                          <p style="font-size:0.9rem;margin-bottom:12px;">
-                            <strong>${escapeHtml(t("advisor.fixLabel"))}</strong> ${escapeHtml(entry.fix)}
-                          </p>
-                          <button type="button" class="btn-pill btn-secondary" style="min-height:38px;padding:6px 16px;font-size:0.84rem;" data-action="open-lesson" data-lesson-id="${entry.lessonId}">
-                            ${escapeHtml(t("advisor.openLessonBtn", { id: entry.lessonId }))}
+                  <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;">
+                    ${escapeHtml(t("advisor.chipsHint"))}
+                  </p>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+                    ${(Array.isArray(chips) ? chips : [])
+                      .map(
+                        (c) => `
+                          <button type="button" class="chip-btn" data-action="advisor-chip" data-query="${escapeHtml(c)}">
+                            ${escapeHtml(c)}
                           </button>
-                        </div>
-                      `;
-                    } else {
-                      return `
-                        <div class="m-card surface-fill">
-                          <div style="font-weight:800;margin-bottom:6px;">«${escapeHtml(entry.query)}»</div>
-                          <p style="font-size:0.9rem;">${escapeHtml(t("advisor.noMatchText"))}</p>
-                        </div>
-                      `;
-                    }
-                  })
-                  .join("")}
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+
+                <div class="advisor-messages-area">
+                  ${history
+                    .slice()
+                    .reverse()
+                    .map((entry) => {
+                      if (entry.found) {
+                        return `
+                          <div class="m-card">
+                            <div style="font-weight:800;color:var(--primary);margin-bottom:6px;">«${escapeHtml(entry.query)}»</div>
+                            <p style="font-size:0.9rem;margin-bottom:6px;">
+                              <strong>${escapeHtml(t("advisor.causeLabel"))}</strong> ${escapeHtml(entry.cause)}
+                            </p>
+                            <p style="font-size:0.9rem;margin-bottom:12px;">
+                              <strong>${escapeHtml(t("advisor.fixLabel"))}</strong> ${escapeHtml(entry.fix)}
+                            </p>
+                            <button type="button" class="btn-pill btn-secondary" style="min-height:44px;padding:8px 18px;font-size:0.86rem;" data-action="open-lesson" data-lesson-id="${entry.lessonId}">
+                              ${escapeHtml(t("advisor.openLessonBtn", { id: entry.lessonId }))}
+                            </button>
+                          </div>
+                        `;
+                      } else {
+                        return `
+                          <div class="m-card surface-fill">
+                            <div style="font-weight:800;margin-bottom:6px;">«${escapeHtml(entry.query)}»</div>
+                            <p style="font-size:0.9rem;">${escapeHtml(t("advisor.noMatchText"))}</p>
+                          </div>
+                        `;
+                      }
+                    })
+                    .join("")}
+                </div>
+
+                <form id="advisor-form" class="advisor-input-bar" style="display:flex;gap:8px;">
+                  <input type="text" id="advisor-input" class="m-input" placeholder="${escapeHtml(t("advisor.inputPlaceholder"))}" />
+                  <button type="submit" class="btn-pill btn-primary" style="padding:0 22px;min-height:46px;">
+                    ${escapeHtml(t("advisor.sendBtn"))}
+                  </button>
+                </form>
               </div>
             </main>
             ${renderBottomNav("advisor")}
@@ -3068,52 +3421,56 @@
           <div class="mobile-shell">
             <header class="mobile-topbar">
               <div class="brand-logo">MUSICHER</div>
-              <button type="button" class="lang-switch-pill" style="padding:4px 9px;font-size:0.74rem;" data-action="toggle-lang">
+              <button type="button" class="lang-switch-pill" style="min-height:44px;padding:6px 12px;font-size:0.78rem;" data-action="toggle-lang">
                 ${escapeHtml(t("nav.langToggle"))}
               </button>
             </header>
             <main class="screen-body">
-              <h1 class="serif-heading" style="font-size:1.65rem;margin-bottom:14px;">${escapeHtml(t("library.title"))}</h1>
+              <div class="centered-800-container">
+                <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:14px;">${escapeHtml(t("library.title"))}</h1>
 
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
-                <button type="button" class="btn-pill ${ui.libraryTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:42px;" data-action="set-library-tab" data-tab="lessons">
-                  ${escapeHtml(t("library.tabMyLessons"))}
-                </button>
-                <button type="button" class="btn-pill ${ui.libraryTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:42px;" data-action="set-library-tab" data-tab="teachers">
-                  ${escapeHtml(t("library.tabTeachers"))}
-                </button>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
+                  <button type="button" class="btn-pill ${ui.libraryTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:44px;" data-action="set-library-tab" data-tab="lessons">
+                    ${escapeHtml(t("library.tabMyLessons"))}
+                  </button>
+                  <button type="button" class="btn-pill ${ui.libraryTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:44px;" data-action="set-library-tab" data-tab="teachers">
+                    ${escapeHtml(t("library.tabTeachers"))}
+                  </button>
+                </div>
+
+                ${
+                  ui.libraryTab === "lessons"
+                    ? `<div>
+                        <input type="search" id="library-search-input" class="m-input" style="margin-bottom:16px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
+                        ${
+                          filtered.length === 0
+                            ? `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
+                            : `<div class="library-lessons-grid">
+                                ${filtered
+                                  .map(
+                                    (l) => `
+                                      <div class="m-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                                        <div style="min-width:0;flex:1;">
+                                          <div class="serif-heading" style="font-size:1.08rem;">
+                                            ${toLocaleDigits(l.id)}. ${escapeHtml(lField(l.title))}
+                                          </div>
+                                          <div style="font-size:0.78rem;color:var(--muted);">
+                                            ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
+                                          </div>
+                                        </div>
+                                        <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;flex-shrink:0;" data-action="open-lesson" data-lesson-id="${l.id}">
+                                          ${escapeHtml(t("library.openBtn"))}
+                                        </button>
+                                      </div>
+                                    `
+                                  )
+                                  .join("")}
+                              </div>`
+                        }
+                      </div>`
+                    : renderTeachersSection()
+                }
               </div>
-
-              ${
-                ui.libraryTab === "lessons"
-                  ? `<div>
-                      <input type="search" id="library-search-input" class="m-input" style="margin-bottom:14px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
-                      ${
-                        filtered.length === 0
-                          ? `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
-                          : filtered
-                              .map(
-                                (l) => `
-                                  <div class="m-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;">
-                                    <div>
-                                      <div class="serif-heading" style="font-size:1.05rem;">
-                                        ${toLocaleDigits(l.id)}. ${escapeHtml(lField(l.title))}
-                                      </div>
-                                      <div style="font-size:0.78rem;color:var(--muted);">
-                                        ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
-                                      </div>
-                                    </div>
-                                    <button type="button" class="btn-pill btn-surface" style="min-height:36px;padding:6px 14px;font-size:0.82rem;" data-action="open-lesson" data-lesson-id="${l.id}">
-                                      ${escapeHtml(t("library.openBtn"))}
-                                    </button>
-                                  </div>
-                                `
-                              )
-                              .join("")
-                      }
-                    </div>`
-                  : renderTeachersSection()
-              }
             </main>
             ${renderBottomNav("library")}
           </div>
@@ -3131,91 +3488,93 @@
           <div class="mobile-shell">
             <header class="mobile-topbar">
               <div class="brand-logo">MUSICHER</div>
-              <button type="button" class="lang-switch-pill" style="padding:4px 9px;font-size:0.74rem;" data-action="toggle-lang">
+              <button type="button" class="lang-switch-pill" style="min-height:44px;padding:6px 12px;font-size:0.78rem;" data-action="toggle-lang">
                 ${escapeHtml(t("nav.langToggle"))}
               </button>
             </header>
             <main class="screen-body">
-              <h1 class="serif-heading" style="font-size:1.65rem;margin-bottom:14px;">${escapeHtml(t("profile.title"))}</h1>
+              <div class="centered-800-container">
+                <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:14px;">${escapeHtml(t("profile.title"))}</h1>
 
-              <div class="m-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;">
-                <div>
-                  <div style="font-weight:800;font-size:1.05rem;">${escapeHtml(displayName)}</div>
-                  <div style="font-size:0.82rem;color:var(--muted);">${escapeHtml(displaySub)}</div>
+                <div class="m-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;">
+                  <div>
+                    <div style="font-weight:800;font-size:1.05rem;">${escapeHtml(displayName)}</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">${escapeHtml(displaySub)}</div>
+                  </div>
+                  <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;" data-action="open-modal" data-modal="account">
+                    ${escapeHtml(state.userName ? t("profile.editAccountBtn") : t("profile.createAccountBtn"))}
+                  </button>
                 </div>
-                <button type="button" class="btn-pill btn-surface" style="min-height:38px;padding:6px 14px;font-size:0.82rem;" data-action="open-modal" data-modal="account">
-                  ${escapeHtml(state.userName ? t("profile.editAccountBtn") : t("profile.createAccountBtn"))}
-                </button>
-              </div>
 
-              <div class="m-card" style="margin-bottom:16px;display:flex;flex-direction:column;gap:14px;">
-                <h2 class="serif-heading" style="font-size:1.2rem;">${escapeHtml(t("profile.myChoicesTitle"))}</h2>
+                <div class="m-card" style="margin-bottom:16px;display:flex;flex-direction:column;gap:14px;">
+                  <h2 class="serif-heading" style="font-size:1.2rem;">${escapeHtml(t("profile.myChoicesTitle"))}</h2>
 
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.langLabel"))}</span>
-                  <div style="display:flex;gap:6px;">
-                    <button type="button" class="chip-btn ${state.lang === "fa" ? "selected" : ""}" style="padding:5px 12px;" data-action="set-lang" data-lang="fa">فارسی</button>
-                    <button type="button" class="chip-btn ${state.lang === "en" ? "selected" : ""}" style="padding:5px 12px;" data-action="set-lang" data-lang="en">English</button>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.langLabel"))}</span>
+                    <div style="display:flex;gap:6px;">
+                      <button type="button" class="chip-btn ${state.lang === "fa" ? "selected" : ""}" style="padding:6px 14px;" data-action="set-lang" data-lang="fa">فارسی</button>
+                      <button type="button" class="chip-btn ${state.lang === "en" ? "selected" : ""}" style="padding:6px 14px;" data-action="set-lang" data-lang="en">English</button>
+                    </div>
+                  </div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.instLabel"))}</span>
+                    <span class="badge-saffron" style="background-color:var(--secondary);color:#FFF;">${escapeHtml(t("instruments.piano"))}</span>
+                  </div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.accessLabel"))}</span>
+                    <select class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="access">
+                      <option value="yes" ${state.access === "yes" ? "selected" : ""}>${escapeHtml(t("onboarding.accessYes"))}</option>
+                      <option value="phone" ${state.access === "phone" ? "selected" : ""}>${escapeHtml(t("onboarding.accessPhone"))}</option>
+                      <option value="no" ${state.access === "no" ? "selected" : ""}>${escapeHtml(t("onboarding.accessNo"))}</option>
+                    </select>
+                  </div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.goalLabel"))}</span>
+                    <select class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="dailyGoal">
+                      <option value="5" ${Number(state.dailyGoal) === 5 ? "selected" : ""}>${escapeHtml(t("onboarding.goal5"))}</option>
+                      <option value="15" ${Number(state.dailyGoal) === 15 ? "selected" : ""}>${escapeHtml(t("onboarding.goal15"))}</option>
+                      <option value="30" ${Number(state.dailyGoal) === 30 ? "selected" : ""}>${escapeHtml(t("onboarding.goal30"))}</option>
+                    </select>
+                  </div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                    <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.reminderLabel"))}</span>
+                    <input type="time" class="m-input" style="width:auto;min-height:44px;padding:6px 12px;font-size:0.85rem;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(state.reminderTime || "19:00")}" />
                   </div>
                 </div>
 
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.instLabel"))}</span>
-                  <span class="badge-saffron" style="background-color:var(--secondary);color:#FFF;">${escapeHtml(t("instruments.piano"))}</span>
+                <div class="m-card" style="margin-bottom:16px;">
+                  <h2 class="serif-heading" style="font-size:1.15rem;margin-bottom:10px;">${escapeHtml(t("profile.themeTitle"))}</h2>
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+                    ${["light", "dark", "system"]
+                      .map((th) => {
+                        const lbl =
+                          th === "system"
+                            ? t("profile.themeSystem")
+                            : th === "light"
+                            ? t("profile.themeLight")
+                            : t("profile.themeDark");
+                        return `
+                          <button type="button" class="chip-btn ${state.theme === th ? "selected" : ""}" style="justify-content:center;" data-action="set-theme" data-theme-val="${th}">
+                            ${escapeHtml(lbl)}
+                          </button>
+                        `;
+                      })
+                      .join("")}
+                  </div>
                 </div>
 
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.accessLabel"))}</span>
-                  <select class="m-input" style="width:auto;padding:6px 10px;font-size:0.85rem;" data-action="profile-select" data-field="access">
-                    <option value="yes" ${state.access === "yes" ? "selected" : ""}>${escapeHtml(t("onboarding.accessYes"))}</option>
-                    <option value="phone" ${state.access === "phone" ? "selected" : ""}>${escapeHtml(t("onboarding.accessPhone"))}</option>
-                    <option value="no" ${state.access === "no" ? "selected" : ""}>${escapeHtml(t("onboarding.accessNo"))}</option>
-                  </select>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="button" class="btn-pill btn-surface btn-block" data-action="open-modal" data-modal="about">
+                    ${escapeHtml(t("profile.aboutBtn"))}
+                  </button>
+                  <button type="button" class="btn-pill btn-outline btn-block" style="color:var(--primary);border-color:var(--primary);" data-action="open-modal" data-modal="reset">
+                    ${escapeHtml(t("profile.resetBtn"))}
+                  </button>
                 </div>
-
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.goalLabel"))}</span>
-                  <select class="m-input" style="width:auto;padding:6px 10px;font-size:0.85rem;" data-action="profile-select" data-field="dailyGoal">
-                    <option value="5" ${Number(state.dailyGoal) === 5 ? "selected" : ""}>${escapeHtml(t("onboarding.goal5"))}</option>
-                    <option value="15" ${Number(state.dailyGoal) === 15 ? "selected" : ""}>${escapeHtml(t("onboarding.goal15"))}</option>
-                    <option value="30" ${Number(state.dailyGoal) === 30 ? "selected" : ""}>${escapeHtml(t("onboarding.goal30"))}</option>
-                  </select>
-                </div>
-
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.reminderLabel"))}</span>
-                  <input type="time" class="m-input" style="width:auto;padding:6px 10px;font-size:0.85rem;" data-action="profile-select" data-field="reminderTime" value="${escapeHtml(state.reminderTime || "19:00")}" />
-                </div>
-              </div>
-
-              <div class="m-card" style="margin-bottom:16px;">
-                <h2 class="serif-heading" style="font-size:1.15rem;margin-bottom:10px;">${escapeHtml(t("profile.themeTitle"))}</h2>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-                  ${["light", "dark", "system"]
-                    .map((th) => {
-                      const lbl =
-                        th === "system"
-                          ? t("profile.themeSystem")
-                          : th === "light"
-                          ? t("profile.themeLight")
-                          : t("profile.themeDark");
-                      return `
-                        <button type="button" class="chip-btn ${state.theme === th ? "selected" : ""}" style="justify-content:center;" data-action="set-theme" data-theme-val="${th}">
-                          ${escapeHtml(lbl)}
-                        </button>
-                      `;
-                    })
-                    .join("")}
-                </div>
-              </div>
-
-              <div style="display:flex;flex-direction:column;gap:10px;">
-                <button type="button" class="btn-pill btn-surface btn-block" data-action="open-modal" data-modal="about">
-                  ${escapeHtml(t("profile.aboutBtn"))}
-                </button>
-                <button type="button" class="btn-pill btn-outline btn-block" style="color:var(--primary);border-color:var(--primary);" data-action="open-modal" data-modal="reset">
-                  ${escapeHtml(t("profile.resetBtn"))}
-                </button>
               </div>
             </main>
             ${renderBottomNav("profile")}
