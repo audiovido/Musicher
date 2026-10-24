@@ -230,5 +230,13 @@
     "resetConfirmBtn": "Yes, clear everything",
     "cancelBtn": "Cancel",
     "savedToast": "Changes saved."
+  },
+  "diagrams": {
+    "rightHand": "Right hand",
+    "latinNotes": ["C", "D", "E", "F", "G", "A", "B"],
+    "persianNotes": ["دو", "ر", "می", "فا", "سل", "لا", "سی"],
+    "findCAria": "Piano keyboard diagram showing 14 white keys with C keys highlighted in saffron to the left of each group of two black keys",
+    "noteNamesAria": "Piano keyboard diagram showing repeating note names C D E F G A B across 14 white keys",
+    "fingerNumbersAria": "Right hand finger numbers 1 to 5 aligned over white keys C D E F G"
   }
 }
