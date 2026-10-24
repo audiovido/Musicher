@@ -129,8 +129,8 @@
     "minutesUnit": "min"
   },
   "lesson": {
-    "kicker": "LESSON {id}",
-    "kickerOf": "LESSON {id} OF {total}",
+    "kicker": "Lesson {id}",
+    "kickerOf": "Lesson {id} of {total}",
     "durationLabel": "Estimated time: {min} minutes",
     "startBtn": "Start",
     "skipBtn": "I know this",
