@@ -1,0 +1,102 @@
+{
+  "id": 5,
+  "chapter": {
+    "en": "Chapter 2: Beat & Duration",
+    "fa": "فصل ۲ «ضرب و کشش»"
+  },
+  "title": {
+    "en": "Steady Beat",
+    "fa": "ضرب ثابت"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Feel the steady pulse of music and keep it even with your hand.",
+    "fa": "نبض یکنواخت موسیقی رو حس می‌کنی و با دست نگه می‌داری."
+  },
+  "see": {
+    "en": "A beat is like the heartbeat of a song—it doesn't speed up or slow down, moving in equal intervals. Before playing any piece, feel its pulse by counting \"1, 2, 3, 4\".",
+    "fa": "ضرب مثل تپش قلب آهنگه؛ تند و کند نمی‌شه بلکه با فاصله‌های مساوی جلو می‌ره. قبل از زدن هر قطعه، اول نبضش رو با شمردن «۱، ۲، ۳، ۴» حس کن."
+  },
+  "imageUrl": "assets/lesson-05.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Count slowly and evenly from 1 to 4 and repeat.",
+      "On each count, play C (Do) with finger 1.",
+      "Do the same playing C, D, E, F across the four steady beats."
+    ],
+    "fa": [
+      "با سرعت آروم و یکنواخت از ۱ تا ۴ بشمار و تکرار کن.",
+      "روی هر عدد، کلید «دو» رو با انگشت ۱ بزن.",
+      "همین کار رو با نت‌های دو، ر، می، فا روی چهار ضرب انجام بده."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Was the spacing between my counts steady and equal?",
+      "Did I keep the beat without rushing?"
+    ],
+    "fa": [
+      "فاصله‌ی بین شمارش‌هام یکسان بود؟",
+      "بدون عجله کردن ضرب‌ها رو ادامه دادم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What is a steady beat most similar to?",
+        "fa": "ضرب ثابت به چه چیزی شباهت داره؟"
+      },
+      "options": {
+        "en": ["A steady heartbeat or ticking clock", "Sudden changes in speed"],
+        "fa": ["تپش منظم قلب یا تیک‌تاک ساعت", "تغییر ناگهانی سرعت"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! A steady beat means equal time intervals between every pulse.",
+        "fa": "دقیقاً! ضرب ثابت یعنی فاصله‌ی زمانی مساوی بین هر تپش."
+      },
+      "feedbackWrong": {
+        "en": "The underlying pulse in music should be regular and steady like a ticking clock.",
+        "fa": "ضرب پایه در موسیقی باید مثل تیک‌تاک ساعت منظم و یکنواخت باشه."
+      }
+    },
+    {
+      "question": {
+        "en": "What helps before starting to play an exercise?",
+        "fa": "قبل از شروع نواختن یک تمرین چه کاری کمک می‌کنه؟"
+      },
+      "options": {
+        "en": ["Counting a few steady beats first", "Playing all the keys as fast as possible"],
+        "fa": ["شمردن چند ضرب یکنواخت", "زدن سریع همه کلیدها"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Counting before you begin sets a clear tempo for your hands.",
+        "fa": "درسته! شمردن قبل از شروع باعث می‌شه با ریتم مشخص وارد بشی."
+      },
+      "feedbackWrong": {
+        "en": "Always count one measure first so your hand knows the pace.",
+        "fa": "همیشه اول یک میزان بشمار تا سرعت دستت تنظیم بشه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Now you can play notes over an even, steady pulse.",
+    "fa": "حالا می‌تونی نت‌ها رو روی یک نبض منظم بنوازی."
+  },
+  "tomorrow": {
+    "en": "Quarter, half, and whole note durations.",
+    "fa": "کشش نت‌های سیاه، سفید و گرد."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

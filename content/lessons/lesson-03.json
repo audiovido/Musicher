@@ -1,0 +1,108 @@
+{
+  "id": 3,
+  "chapter": {
+    "en": "Chapter 1: Hello Keyboard",
+    "fa": "فصل ۱ «سلام کیبورد»"
+  },
+  "title": {
+    "en": "Posture & Finger Numbers",
+    "fa": "نشستن و شماره‌ی انگشت‌ها"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "You will sit with comfortable posture and learn the number for each finger.",
+    "fa": "درست می‌شینی و شماره‌ی هر انگشت رو می‌دونی."
+  },
+  "see": {
+    "en": "Sit centered in front of Middle C. Keep your elbows slightly in front of your torso and level with the keyboard, feet flat on the floor. Shape your hands as if holding a small orange—fingers gently curved, wrists relaxed. Finger numbers in both hands: Thumb 1, Index 2, Middle 3, Ring 4, Pinky 5.",
+    "fa": "وسط کیبورد بشین، روبه‌روی «دو»ی وسط. آرنج کمی جلوتر از بدن و هم‌ارتفاع کیبورد. پاها روی زمین. دست‌ها انگار یه پرتقال کوچیک گرفتن؛ انگشت‌ها خمیده، مچ شل. شماره‌ها در هر دو دست: شست ۱، اشاره ۲، وسط ۳، انگشتری ۴، کوچیک ۵."
+  },
+  "imageUrl": "assets/lesson-03.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Sit at the keyboard and check your posture against the self-check list.",
+      "Play a key with each finger of your right hand and say its number out loud.",
+      "Do the same with your left hand.",
+      "Pick a random number from 1 to 5 and tap a key with that finger."
+    ],
+    "fa": [
+      "بشین و خودسنجی رو نگاه کن.",
+      "با هر انگشت دست راست یه کلید بزن و شماره‌ش رو بلند بگو.",
+      "همین با دست چپ.",
+      "یکی یه عدد بگه، تو با همون انگشت بزن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Were my shoulders relaxed?",
+      "Did my wrist stay level without dropping below the keyboard?",
+      "Were my fingers gently curved?",
+      "Did I play using the tips of my fingers?"
+    ],
+    "fa": [
+      "شونه‌هام شل بودن؟",
+      "مچم پایین‌تر از کیبورد نیفتاد؟",
+      "انگشت‌هام خمیده بودن؟",
+      "با نوک انگشت زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which finger is finger number 4?",
+        "fa": "انگشت ۴ کدومه؟"
+      },
+      "options": {
+        "en": ["Ring finger", "Middle finger", "Pinky finger"],
+        "fa": ["انگشتری", "وسط", "کوچیک"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Counting from the thumb as 1, the ring finger is number 4.",
+        "fa": "درسته! از شست که ۱ حساب بشه، انگشت انگشتری شماره ۴ می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Count from your thumb: 1 Thumb, 2 Index, 3 Middle, 4 Ring, 5 Pinky.",
+        "fa": "از شست بشمار: ۱ شست، ۲ اشاره، ۳ وسط، ۴ انگشتری، ۵ کوچیک."
+      }
+    },
+    {
+      "question": {
+        "en": "What number is the thumb in both hands?",
+        "fa": "شست چه شماره‌ایه؟"
+      },
+      "options": {
+        "en": ["1", "5"],
+        "fa": ["۱", "۵"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "In both hands, the thumb is always 1; your hands mirror each other.",
+        "fa": "تو هر دو دست شست ۱ئه؛ دست‌ها آینه‌ی هم‌ان."
+      },
+      "feedbackWrong": {
+        "en": "In both hands, the thumb is always 1; your hands mirror each other.",
+        "fa": "تو هر دو دست شست ۱ئه؛ دست‌ها آینه‌ی هم‌ان."
+      }
+    }
+  ],
+  "summary": {
+    "en": "With finger numbers, you always know which finger plays each note.",
+    "fa": "با این شماره‌ها می‌شه گفت هر نت رو با کدوم انگشت بزنی."
+  },
+  "tomorrow": {
+    "en": "Your first five notes.",
+    "fa": "اولین پنج نت."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Open In-App Curriculum",
+      "fa": "آموزش آزاد درون‌برنامه‌ای"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": 7,
+  "chapter": {
+    "en": "Chapter 2: Beat & Duration",
+    "fa": "فصل ۲ «ضرب و کشش»"
+  },
+  "title": {
+    "en": "Staff & Treble Clef",
+    "fa": "حامل و کلید سل"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Recognize the five-line staff and the positions of Middle C and G (Sol).",
+    "fa": "پنج خط حامل و جای نت «دو»ی وسط و «سل» رو می‌شناسی."
+  },
+  "see": {
+    "en": "Notes are written across 5 lines and 4 spaces counted from bottom to top. The treble clef (G clef) curls around line 2, showing that the note on the second line is G (Sol).",
+    "fa": "نت‌ها روی ۵ خط و ۴ فاصله‌ی بینشون نوشته می‌شن که از پایین به بالا شمرده می‌شن. کلید سل خط دوم رو در بر می‌گیره و نشون می‌ده نت روی خط دوم «سل» است."
+  },
+  "imageUrl": "assets/lesson-07.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Count the five staff lines from line 1 (bottom) up to line 5 (top).",
+      "Spot Middle C with its small ledger line just below the staff.",
+      "Play G (Sol) on the second line using finger 5 of your right hand."
+    ],
+    "fa": [
+      "پنج خط حامل رو از خط ۱ (پایین‌ترین) تا خط ۵ بشمار.",
+      "نت «دو»ی وسط رو با خط اضافه‌ی کوچکش زیر حامل پیدا کن.",
+      "نت «سل» روی خط دوم رو با انگشت ۵ دست راست بزن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I count the staff lines from bottom to top?",
+      "Did I see how the treble clef curls around line 2?"
+    ],
+    "fa": [
+      "خط‌های حامل رو از پایین به بالا شمردم؟",
+      "ارتباط کلید سل با خط دوم رو متوجه شدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "In which direction are the lines of the musical staff counted?",
+        "fa": "خطوط حامل از کدوم جهت شمرده می‌شن؟"
+      },
+      "options": {
+        "en": ["From bottom to top", "From top to bottom"],
+        "fa": ["از پایین به بالا", "از بالا به پایین"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Line 1 is always the lowest line of the staff.",
+        "fa": "درسته! خط اول همیشه پایین‌ترین خط حامله."
+      },
+      "feedbackWrong": {
+        "en": "In music notation, staff lines are always counted from bottom (line 1) to top (line 5).",
+        "fa": "در موسیقی، خطوط حامل همیشه از پایین (خط ۱) به بالا (خط ۵) شمرده می‌شن."
+      }
+    },
+    {
+      "question": {
+        "en": "In the treble clef, what is the name of the note on line 2?",
+        "fa": "در کلید سل، نتِ روی خط دوم چه نام داره؟"
+      },
+      "options": {
+        "en": ["G (Sol)", "C (Do)", "F (Fa)"],
+        "fa": ["سل", "دو", "فا"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Great! The curl of the treble clef wraps around line 2 to mark G (Sol).",
+        "fa": "عالیه! خمیدگی کلید سل دور خط دوم می‌چرخه و جای نت سل رو نشون می‌ده."
+      },
+      "feedbackWrong": {
+        "en": "The treble (G) clef is named that way because it marks line 2 as G (Sol).",
+        "fa": "کلید سل به همین خاطر این اسم رو داره که خط دوم رو به عنوان نت «سل» مشخص می‌کنه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You now know the map for reading notes on the staff.",
+    "fa": "حالا نقشه خواندن نت‌ها روی خط حامل رو بلدی."
+  },
+  "tomorrow": {
+    "en": "First piece: Ode to Joy.",
+    "fa": "اولین قطعه: سرود شادی."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

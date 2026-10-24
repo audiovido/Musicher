@@ -1,0 +1,102 @@
+{
+  "id": 12,
+  "chapter": {
+    "en": "Chapter 3: Left Hand & Two Hands",
+    "fa": "فصل ۳ «دست چپ و دو دست»"
+  },
+  "title": {
+    "en": "Second Piece: Au clair de la lune",
+    "fa": "قطعه‌ی دوم: Au clair de la lune"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play the French folk melody \"Au clair de la lune\" with two-hand accompaniment.",
+    "fa": "قطعه‌ی فرانسوی «در روشنایی مهتاب» رو با همراهی دو دست می‌نوازی."
+  },
+  "see": {
+    "en": "This gentle melody uses only three notes—C, D, E (Do, Re, Mi)—in the right hand, supported by C and G in the left hand: Do, Do, Do, Re | Mi (half), Re (half) | Do, Mi, Re, Re | Do (whole).",
+    "fa": "این ملودی آرام و دلنشین فقط با سه نت «دو، ر، می» در دست راست و نت پایه‌ی «دو» و «سل» در دست چپ اجرا می‌شه: دو، دو، دو، ر | می (سفید)، ر (سفید) | دو، می، ر، ر | دو (گرد)."
+  },
+  "imageUrl": "assets/lesson-12.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play the right-hand melody alone: Do, Do, Do, Re | Mi, Re | Do, Mi, Re, Re | Do.",
+      "At the start of each measure, add the left-hand C (Do) together with the melody.",
+      "Play the complete piece with a calm, connected feel."
+    ],
+    "fa": [
+      "ملودی دست راست رو به تنهایی بزن: دو، دو، دو، ر | می، ر | دو، می، ر، ر | دو.",
+      "در ابتدای هر میزان، نت «دو»ی دست چپ رو هم‌زمان اضافه کن.",
+      "کل قطعه رو با حس آرام و پیوسته اجرا کن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I hold the half notes in measure 2 for 2 beats each?",
+      "Did I hold the final whole note for all 4 beats?"
+    ],
+    "fa": [
+      "نت‌های سفید در میزان دوم رو ۲ ضرب نگه داشتم؟",
+      "نت گرد پایانی رو ۴ ضرب کامل نگه داشتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which three notes make up the right-hand melody of Au clair de la lune?",
+        "fa": "ملودی اصلی Au clair de la lune در دست راست از کدوم سه نت ساخته شده؟"
+      },
+      "options": {
+        "en": ["C, D, E (Do, Re, Mi)", "F, G, A (Fa, Sol, La)", "C, F, B (Do, Fa, Si)"],
+        "fa": ["دو، ر، می", "فا، سل، لا", "دو، فا، سی"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! The entire melody is played with fingers 1, 2, and 3 on C, D, and E.",
+        "fa": "درسته! کل این ملودی با انگشت‌های ۱، ۲ و ۳ روی نت‌های دو، ر و می نواخته می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "This piece uses only the three neighboring notes C, D, and E (Do, Re, Mi).",
+        "fa": "این قطعه فقط از سه نت همسایه «دو، ر، می» استفاده می‌کنه."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the duration of the final note in this piece?",
+        "fa": "نت آخر این قطعه چه کششی داره؟"
+      },
+      "options": {
+        "en": ["Whole note (4 beats)", "Quarter note (1 beat)"],
+        "fa": ["نت گرد (۴ ضرب)", "نت سیاه (۱ ضرب)"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! The ending note is a whole note held for 4 calm beats.",
+        "fa": "آفرین! نت پایانی یک نت گرده که ۴ ضرب آرامش‌بخش کشیده می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "At the end of the piece, C (Do) is held as a whole note for 4 beats.",
+        "fa": "در پایان قطعه، نت دو به صورت گرد (۴ ضرب) نگه داشته می‌شه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You completed Chapter 3 and can now play two full pieces!",
+    "fa": "فصل سوم رو با موفقیت به پایان رسوندی و حالا دو قطعه کامل بلدی!"
+  },
+  "tomorrow": {
+    "en": "Free review of your pieces and daily practice.",
+    "fa": "مرور آزاد قطعات و تمرین روزانه."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

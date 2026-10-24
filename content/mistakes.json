@@ -1,0 +1,213 @@
+[
+  {
+    "id": "do_fa",
+    "keywords": [
+      "دو با فا",
+      "فا قاطی",
+      "دو رو پیدا نمیکنم",
+      "دو را پیدا نمیکنم",
+      "پیدا نمیکنم",
+      "جای دو",
+      "کدوم دو",
+      "دو و فا",
+      "find c",
+      "find do",
+      "c and f",
+      "mix up c",
+      "where is c",
+      "cant find c"
+    ],
+    "cause": {
+      "en": "Both sit immediately to the left of a black-key group, so they look similar at first glance.",
+      "fa": "هر دو سمت چپ یه گروه سیاه‌ان و در نگاه اول شبیه به نظر می‌رسن."
+    },
+    "fix": {
+      "en": "C (Do) is next to the group of two black keys; F (Fa) is next to the group of three.",
+      "fa": "«دو» کنار گروه دوتاییه، «فا» کنار گروه سه‌تایی."
+    },
+    "lessonId": 1
+  },
+  {
+    "id": "lost_groups",
+    "keywords": [
+      "گروهها رو گم",
+      "گم میکنم",
+      "کیبورد کوچیک",
+      "کلاویه ها زیاد",
+      "گیج میشم",
+      "lose the groups",
+      "small keyboard",
+      "too many keys",
+      "confused by keys"
+    ],
+    "cause": {
+      "en": "Looking at the entire keyboard at once makes the repeating patterns overwhelming.",
+      "fa": "وقتی به کل کیبورد یک‌جا نگاه می‌کنی، تکرار گروه‌ها چشم رو خسته می‌کنه."
+    },
+    "fix": {
+      "en": "Work only in the middle of the keyboard and focus on one pair and one triplet of black keys.",
+      "fa": "فقط وسط کیبورد کار کن و روی یک گروه دوتایی و سه‌تایی تمرکز کن."
+    },
+    "lessonId": 1
+  },
+  {
+    "id": "note_names",
+    "keywords": [
+      "اسمها رو پیدا نمیکنم",
+      "اسم نتها",
+      "اسم نت",
+      "ترتیب نتها",
+      "حفظ نمیشم",
+      "note names",
+      "find the names",
+      "remember notes",
+      "which note"
+    ],
+    "cause": {
+      "en": "Counting white keys from the far edge of the keyboard is slow and error-prone.",
+      "fa": "شمردن تک‌تک کلیدها از لبه‌ی کیبورد زمان‌بره و باعث خطا می‌شه."
+    },
+    "fix": {
+      "en": "Instead of counting from the edge, always anchor from the black-key groups (C/Do and F/Fa).",
+      "fa": "به‌جای شمردن از لبه، همیشه از گروه‌های سیاه («دو» و «فا») شروع کن."
+    },
+    "lessonId": 2
+  },
+  {
+    "id": "si_do",
+    "keywords": [
+      "سی و دو",
+      "می و فا",
+      "کلید سیاه نیست",
+      "سی با دو",
+      "سی دو",
+      "b and c",
+      "e and f",
+      "mix up b",
+      "no black key"
+    ],
+    "cause": {
+      "en": "Your mind expects a black key between every pair of white keys.",
+      "fa": "ذهن انتظار داره بین همه‌ی کلیدهای سفید یک کلید سیاه باشه."
+    },
+    "fix": {
+      "en": "Remember that between B & C (Si & Do) and between E & F (Mi & Fa) there is no black key.",
+      "fa": "یادت باشه بین «سی و دو» و همین‌طور بین «می و فا» کلید سیاه نیست."
+    },
+    "lessonId": 2
+  },
+  {
+    "id": "hand_tired",
+    "keywords": [
+      "دستم خسته",
+      "خسته میشه",
+      "درد",
+      "مچم",
+      "شونه",
+      "تیر میکشه",
+      "سفت",
+      "hand gets tired",
+      "tired",
+      "pain",
+      "wrist",
+      "hurt",
+      "stiff"
+    ],
+    "cause": {
+      "en": "Your wrist or shoulder has tensed up while playing.",
+      "fa": "مچ یا شونه موقع زدن سفت شده و فشار اضافی داره."
+    },
+    "fix": {
+      "en": "Let your arms hang loosely at your sides and shake them gently for 10 seconds; if pain continues, stop practicing and rest.",
+      "fa": "۱۰ ثانیه دست‌ها رو کنار بدن آویزون کن و تکون بده؛ اگه درد ادامه داشت تمرین رو قطع کن."
+    },
+    "lessonId": 3
+  },
+  {
+    "id": "weak_4_5",
+    "keywords": [
+      "انگشت ۴",
+      "انگشت ۵",
+      "انگشت 4",
+      "انگشت 5",
+      "ضعیف",
+      "انگشت کوچیک",
+      "انگشتری",
+      "finger 4",
+      "finger 5",
+      "weak",
+      "pinky",
+      "ring finger"
+    ],
+    "cause": {
+      "en": "Completely normal—fingers 4 and 5 rarely move independently in everyday life.",
+      "fa": "کاملاً طبیعیه؛ انگشت ۴ و ۵ در کارهای روزمره کمتر مستقل حرکت می‌کنن."
+    },
+    "fix": {
+      "en": "Do a gentle, low-pressure \"4, 5\" tapping exercise for 30 seconds a day.",
+      "fa": "تمرین آروم «۴، ۵» رو روزی ۳۰ ثانیه بدون فشار دادن زیاد انجام بده."
+    },
+    "lessonId": 3
+  },
+  {
+    "id": "flat_fingers",
+    "keywords": [
+      "انگشتهام صاف",
+      "انگشتها صاف",
+      "صاف میشن",
+      "صاف میشه",
+      "خم نمیشن",
+      "flatten",
+      "flat fingers",
+      "fingers straight",
+      "collapse"
+    ],
+    "cause": {
+      "en": "You are pressing the keys too hard, causing your finger joints to lock flat.",
+      "fa": "فشار زیادی به کلیدها میاری و مفصل انگشت باز می‌شه."
+    },
+    "fix": {
+      "en": "Picture holding a small orange in your hand and press the keys more gently.",
+      "fa": "تصویر گرفتن یه پرتقال کوچیک تو دستت رو به یاد بیار و آروم‌تر بزن."
+    },
+    "lessonId": 3
+  },
+  {
+    "id": "wrong_finger",
+    "keywords": [
+      "انگشت اشتباه",
+      "شماره انگشت",
+      "کدوم انگشت",
+      "انگشتم قاطی",
+      "wrong finger",
+      "finger number",
+      "which finger"
+    ],
+    "cause": {
+      "en": "Your hand is pressing the key before your mind picks the finger number.",
+      "fa": "دستت قبل از این‌که ذهنت شماره رو انتخاب کنه کلید رو می‌زنه."
+    },
+    "fix": {
+      "en": "Say the finger number out loud first, then press the key.",
+      "fa": "اول شماره‌ی انگشت رو بلند بگو، بعد کلید رو بزن."
+    },
+    "lessonId": 4
+  },
+  {
+    "id": "bored",
+    "keywords": [
+      "حوصلهم سر رفت",
+      "حوصله",
+      "پیشرفت نمیکنم",
+      "خسته شدم",
+      "سخته",
+      "ناامید",
+      "انگیزه",
+      "bored",
+      "stuck",
+      "no progress",
+      "unmotivated"
+    ],
+    "isDynamicProgress": true
+  }
+]

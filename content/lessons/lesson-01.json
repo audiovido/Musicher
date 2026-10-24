@@ -1,0 +1,102 @@
+{
+  "id": 1,
+  "chapter": {
+    "en": "Chapter 1: Hello Keyboard",
+    "fa": "فصل ۱ «سلام کیبورد»"
+  },
+  "title": {
+    "en": "Keyboard Map",
+    "fa": "نقشه‌ی کیبورد"
+  },
+  "minutes": 4,
+  "goal": {
+    "en": "Today you will learn how to find \"C\" (Do) on any keyboard.",
+    "fa": "امروز یاد می‌گیری روی هر کیبوردی «دو» رو پیدا کنی."
+  },
+  "see": {
+    "en": "Black keys repeat in two groups: pairs (twos) and triplets (threes). The white key immediately to the left of every group of two black keys is called \"C\" (Do).",
+    "fa": "کلیدهای سیاه تو دو گروه تکرار می‌شن: دوتایی و سه‌تایی. کلید سفیدِ درست سمت چپِ هر گروه دوتایی، اسمش «دو»ئه."
+  },
+  "imageUrl": "assets/lesson-01.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Touch all the groups of two black keys with one finger.",
+      "Play all the \"C\" (Do) keys from left to right across the keyboard.",
+      "Listen closely: the C keys on the left sound lower, and those on the right sound higher."
+    ],
+    "fa": [
+      "همه‌ی گروه‌های دوتایی رو با یه انگشت لمس کن.",
+      "همه‌ی «دو»ها رو از چپ به راست بزن.",
+      "گوش کن: «دو»های سمت چپ بم‌ترن، سمت راست زیرتر."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I tell apart the groups of 2 and 3 black keys?",
+      "Did I find the white key just to the left of the two black keys?"
+    ],
+    "fa": [
+      "گروه‌های دوتایی سیاه رو از سه‌تایی تشخیص دادم؟",
+      "کلید سفیدِ سمت چپِ گروه دوتایی رو پیدا کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which group of black keys is \"C\" (Do) next to?",
+        "fa": "«دو» کنار کدوم گروه کلید سیاهه؟"
+      },
+      "options": {
+        "en": ["Group of two", "Group of three"],
+        "fa": ["دوتایی", "سه‌تایی"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! C (Do) is always to the left of the group of two; to the left of the group of three is F (Fa).",
+        "fa": "درسته! «دو» همیشه سمت چپ گروه دوتاییه؛ سمت چپ سه‌تایی «فا»ئه."
+      },
+      "feedbackWrong": {
+        "en": "Remember: C (Do) is always to the left of the group of two; to the left of the group of three is F (Fa).",
+        "fa": "دقت کن: «دو» همیشه سمت چپ گروه دوتاییه؛ سمت چپ سه‌تایی «فا»ئه."
+      }
+    },
+    {
+      "question": {
+        "en": "Is \"C\" (Do) on the left or right side of the two black keys?",
+        "fa": "«دو» سمت چپ گروهه یا راست؟"
+      },
+      "options": {
+        "en": ["Left", "Right"],
+        "fa": ["چپ", "راست"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! The white key immediately to the left of the two black keys is C (Do).",
+        "fa": "آفرین! کلید سفیدِ بلافاصله سمت چپِ گروه دوتایی همون «دو»ئه."
+      },
+      "feedbackWrong": {
+        "en": "Keep in mind: C (Do) sits immediately to the left of the two black keys, not the right.",
+        "fa": "یادت باشه: «دو» درست در سمت چپِ دو کلید سیاه قرار داره، نه سمت راست."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Now you can find \"C\" (Do) on any piano or keyboard.",
+    "fa": "حالا روی هر پیانویی «دو» رو پیدا می‌کنی."
+  },
+  "tomorrow": {
+    "en": "The names of the rest of the notes.",
+    "fa": "اسم بقیه‌ی نت‌ها."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Open In-App Curriculum",
+      "fa": "آموزش آزاد درون‌برنامه‌ای"
+    }
+  }
+}

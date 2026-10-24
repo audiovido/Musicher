@@ -1,0 +1,121 @@
+{
+  "id": 2,
+  "chapter": {
+    "en": "Chapter 1: Hello Keyboard",
+    "fa": "فصل ۱ «سلام کیبورد»"
+  },
+  "title": {
+    "en": "Note Names",
+    "fa": "اسم نت‌ها"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "You will learn the seven note names and understand why they repeat.",
+    "fa": "هفت اسم نت رو یاد می‌گیری و می‌فهمی چرا تکرار می‌شن."
+  },
+  "see": {
+    "en": "From C (Do) moving right: Do, Re, Mi, Fa, Sol, La, Si — then C (Do) again. From one Do to the next Do is called an octave. Their English letter names are: C D E F G A B.",
+    "fa": "از «دو» به راست: دو، ر، می، فا، سل، لا، سی؛ بعد دوباره «دو». از یه «دو» تا «دو»ی بعدی رو اکتاو می‌گیم. اسم انگلیسی‌شون: C D E F G A B."
+  },
+  "imageUrl": "assets/lesson-02.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Start on a \"C\" (Do), step up seven white keys, and say their names out loud.",
+      "Do the exact same thing starting from another \"C\" (Do) on the keyboard.",
+      "Close your eyes, play one white key, then look at the black key groups and name the note."
+    ],
+    "fa": [
+      "از یه «دو» هفت کلید سفید بالا برو و اسمشون رو بلند بگو.",
+      "همین رو از یه «دو»ی دیگه انجام بده.",
+      "چشمت رو ببند، یه کلید سفید بزن، بعد با نگاه به گروه‌های سیاه اسمش رو بگو."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I say all seven note names from Do to Si out loud?",
+      "Did I locate Fa right next to the group of three black keys?"
+    ],
+    "fa": [
+      "ترتیب هفت نت رو از «دو» تا «سی» بلند گفتم؟",
+      "جای «فا» رو کنار گروه سه‌تایی پیدا کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which note comes right after \"E\" (Mi)?",
+        "fa": "نت بعد از «می» چیه؟"
+      },
+      "options": {
+        "en": ["F (Fa)", "G (Sol)", "D (Re)"],
+        "fa": ["فا", "سل", "ر"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! After E (Mi) comes F (Fa); there is no black key between them.",
+        "fa": "درسته! بعد از می، فا میاد؛ بینشون کلید سیاه نیست."
+      },
+      "feedbackWrong": {
+        "en": "After E (Mi) comes F (Fa); there is no black key between them.",
+        "fa": "بعد از می، فا میاد؛ بینشون کلید سیاه نیست."
+      }
+    },
+    {
+      "question": {
+        "en": "Which white key sits immediately to the left of the group of three black keys?",
+        "fa": "کلید سفید سمت چپ گروه سه‌تایی؟"
+      },
+      "options": {
+        "en": ["F (Fa)", "C (Do)", "B (Si)"],
+        "fa": ["فا", "دو", "سی"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Great! To the left of every group of three black keys is always F (Fa).",
+        "fa": "عالیه! سمت چپِ گروه سه‌تایی همیشه نت «فا» قرار داره."
+      },
+      "feedbackWrong": {
+        "en": "To the left of the group of two is C (Do), while to the left of the group of three is F (Fa).",
+        "fa": "سمت چپ گروه دوتایی «دو»ئه، اما سمت چپ گروه سه‌تایی همیشه «فا»ست."
+      }
+    },
+    {
+      "question": {
+        "en": "Between which two white notes is there no black key?",
+        "fa": "بین کدوم دو نت کلید سیاه نیست؟"
+      },
+      "options": {
+        "en": ["B and C (Si & Do)", "C and D (Do & Re)", "G and A (Sol & La)"],
+        "fa": ["سی و دو", "دو و ر", "سل و لا"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! There is no black key between B and C (Si & Do) or between E and F (Mi & Fa).",
+        "fa": "دقیقاً! بین «سی و دو» و همچنین بین «می و فا» هیچ کلید سیاهی وجود نداره."
+      },
+      "feedbackWrong": {
+        "en": "Look at the keyboard: only E–F (Mi–Fa) and B–C (Si–Do) have no black key between them.",
+        "fa": "به کیبورد نگاه کن: فقط بین «می و فا» و بین «سی و دو» کلید سیاه نیست."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Seven note names unlock the entire keyboard.",
+    "fa": "هفت اسم، کل کیبورد."
+  },
+  "tomorrow": {
+    "en": "Your hands and posture.",
+    "fa": "دست‌هات."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content | Open Music Theory",
+      "fa": "ساخت خودمون | Open Music Theory"
+    },
+    "license": {
+      "en": "CC BY-SA 4.0, translated & adapted",
+      "fa": "CC BY-SA 4.0، ترجمه و بازنویسی"
+    }
+  }
+}

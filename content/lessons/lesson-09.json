@@ -1,0 +1,102 @@
+{
+  "id": 9,
+  "chapter": {
+    "en": "Chapter 3: Left Hand & Two Hands",
+    "fa": "فصل ۳ «دست چپ و دو دست»"
+  },
+  "title": {
+    "en": "The Left Hand",
+    "fa": "دست چپ"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Practice the five-finger position with your left hand in a lower octave.",
+    "fa": "پوزیشن پنج‌انگشتی دست چپ رو در اکتاو بم‌تر تمرین می‌کنی."
+  },
+  "see": {
+    "en": "In your left hand, the thumb is still 1 and the pinky is 5. So when you place your left hand on C to G below Middle C, finger 5 rests on C (Do) and finger 1 rests on G (Sol).",
+    "fa": "در دست چپ هم شست شماره ۱ و انگشت کوچیک شماره ۵ است. پس وقتی دست چپ رو روی دو تا سلِ بم‌تر می‌ذاری، انگشت ۵ روی «دو» و انگشت ۱ روی «سل» قرار می‌گیره."
+  },
+  "imageUrl": "assets/lesson-09.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place finger 5 of your left hand on the C below Middle C.",
+      "Play fingers 5, 4, 3, 2, 1 in order on C, D, E, F, and G.",
+      "Notice how your left-hand finger numbers mirror your right hand."
+    ],
+    "fa": [
+      "انگشت ۵ دست چپ رو بذار روی «دو»ی پایین‌تر از دوی وسط.",
+      "انگشت‌های ۵، ۴، ۳، ۲، ۱ رو به ترتیب روی دو، ر، می، فا، سل بزن.",
+      "حس کن چطور شماره‌ی انگشت‌های دست چپ آینه‌ی دست راسته."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did left-hand finger 5 rest on C (Do)?",
+      "Did my left thumb (1) rest on G (Sol)?"
+    ],
+    "fa": [
+      "انگشت ۵ دست چپ روی نت دو قرار گرفت؟",
+      "شست دست چپ (۱) روی نت سل قرار گرفت؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "When your left hand is placed on C to G, which finger is on C (Do)?",
+        "fa": "وقتی دست چپ روی دو تا سل قرار می‌گیره، کدوم انگشت روی «دو» است؟"
+      },
+      "options": {
+        "en": ["Finger 5 (Pinky)", "Finger 1 (Thumb)"],
+        "fa": ["انگشت ۵ (کوچیک)", "انگشت ۱ (شست)"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Because the left hand mirrors the right, finger 5 sits on the far left on C (Do).",
+        "fa": "درسته! چون دست چپ آینه‌ی دست راسته، انگشت ۵ سمت چپ (روی دو) قرار می‌گیره."
+      },
+      "feedbackWrong": {
+        "en": "In the left hand, the leftmost finger is finger 5 (pinky), which sits on C (Do).",
+        "fa": "در دست چپ، سمت چپ‌ترین انگشت همون انگشت ۵ (کوچیک) است که روی دو می‌شینه."
+      }
+    },
+    {
+      "question": {
+        "en": "Which note does left-hand finger 1 play in this position?",
+        "fa": "انگشت ۱ دست چپ در این حالت کدوم نت رو می‌زنه؟"
+      },
+      "options": {
+        "en": ["G (Sol)", "C (Do)", "E (Mi)"],
+        "fa": ["سل", "دو", "می"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Great! Your left thumb rests on G (Sol).",
+        "fa": "عالیه! شست دست چپ روی نت سل قرار می‌گیره."
+      },
+      "feedbackWrong": {
+        "en": "From left to right: C (5), D (4), E (3), F (2), G (1).",
+        "fa": "از چپ به راست: دو (۵)، ر (۴)، می (۳)، فا (۲)، سل (۱)."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Now your left hand knows its home on the keyboard too.",
+    "fa": "حالا دست چپت هم جای خودش رو روی کیبورد می‌شناسه."
+  },
+  "tomorrow": {
+    "en": "Rests and measures.",
+    "fa": "سکوت و میزان."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

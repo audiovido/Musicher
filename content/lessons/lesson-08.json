@@ -1,0 +1,102 @@
+{
+  "id": 8,
+  "chapter": {
+    "en": "Chapter 2: Beat & Duration",
+    "fa": "فصل ۲ «ضرب و کشش»"
+  },
+  "title": {
+    "en": "First Piece: Ode to Joy",
+    "fa": "اولین قطعه: سرود شادی"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play Beethoven's famous Ode to Joy melody with your right hand.",
+    "fa": "ملودی معروف سرود شادی بتهوون رو با دست راست می‌زنی."
+  },
+  "see": {
+    "en": "Ode to Joy uses only your first five notes (C to G) and starts on finger 3 (E/Mi): Mi, Mi, Fa, Sol | Sol, Fa, Mi, Re | Do, Do, Re, Mi | Mi, Re, Re.",
+    "fa": "سرود شادی فقط از پنج نت اول (دو تا سل) استفاده می‌کنه و با انگشت ۳ (نت می) شروع می‌شه: می، می، فا، سل | سل، فا، می، ر | دو، دو، ر، می | می، ر، ر."
+  },
+  "imageUrl": "assets/lesson-08.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play the first phrase slowly: E (3), E (3), F (4), G (5).",
+      "Walk back down in the second phrase: G (5), F (4), E (3), D (2).",
+      "Connect the phrases smoothly with a steady beat."
+    ],
+    "fa": [
+      "بخش اول رو آروم بزن: می (۳)، می (۳)، فا (۴)، سل (۵).",
+      "بخش دوم رو برگرد: سل (۵)، فا (۴)، می (۳)، ر (۲).",
+      "هر دو بخش رو با ضرب ثابت پشت سر هم بنواز."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I start the piece with finger 3 on E (Mi)?",
+      "Did I hold the final note for 2 beats?"
+    ],
+    "fa": [
+      "قطعه رو با انگشت ۳ روی نت «می» شروع کردم؟",
+      "کشش نت آخر رو ۲ ضرب نگه داشتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which note and finger number start Ode to Joy in the right hand?",
+        "fa": "سرود شادی با کدوم نت و شماره انگشت دست راست شروع می‌شه؟"
+      },
+      "options": {
+        "en": ["E / Mi (Finger 3)", "C / Do (Finger 1)", "G / Sol (Finger 5)"],
+        "fa": ["نت می (انگشت ۳)", "نت دو (انگشت ۱)", "نت سل (انگشت ۵)"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Ode to Joy begins on E (Mi) with your third finger.",
+        "fa": "درسته! ملودی سرود شادی از نت می با انگشت سوم آغاز می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "The opening note of this melody is E (Mi), played with finger 3.",
+        "fa": "اولین نت این ملودی «می» است که با انگشت ۳ زده می‌شه."
+      }
+    },
+    {
+      "question": {
+        "en": "How many different notes are used in Ode to Joy?",
+        "fa": "در سرود شادی چند نت مختلف به کار رفته؟"
+      },
+      "options": {
+        "en": ["5 notes (C to G)", "All 7 notes", "Only 2 notes"],
+        "fa": ["۵ نت (دو تا سل)", "۷ نت کامل", "فقط ۲ نت"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! This entire classic melody is played with just the five notes under your hand.",
+        "fa": "آفرین! کل این ملودی زیبا فقط با همون پنج نت زیر دستت اجرا می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Ode to Joy uses only the 5 notes C, D, E, F, and G.",
+        "fa": "سرود شادی تنها از ۵ نت دو، ر، می، فا و سل استفاده می‌کنه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations! You played your very first classical piece.",
+    "fa": "تبریک! اولین قطعه‌ی کلاسیکت رو کامل نواختی."
+  },
+  "tomorrow": {
+    "en": "Getting to know the left hand.",
+    "fa": "آشنایی با دست چپ."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

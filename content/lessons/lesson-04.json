@@ -1,0 +1,102 @@
+{
+  "id": 4,
+  "chapter": {
+    "en": "Chapter 1: Hello Keyboard",
+    "fa": "فصل ۱ «سلام کیبورد»"
+  },
+  "title": {
+    "en": "Five Fingers on Five Notes",
+    "fa": "پنج انگشت روی پنج نت"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Place the five fingers of your right hand on the notes C through G (Do to Sol).",
+    "fa": "پنج انگشت دست راست رو روی نت‌های دو تا سل قرار می‌دی."
+  },
+  "see": {
+    "en": "Place your right thumb (finger 1) on Middle C (Do). Let each remaining finger rest naturally on the next white key: D/Re (2), E/Mi (3), F/Fa (4), G/Sol (5).",
+    "fa": "شست دست راست (انگشت ۱) رو بذار روی «دو»ی وسط. حالا هر انگشت بعدی رو روی کلید سفید بعدی بذار: ر (۲)، می (۳)، فا (۴)، سل (۵)."
+  },
+  "imageUrl": "assets/lesson-04.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place fingers 1 to 5 of your right hand on C, D, E, F, and G.",
+      "Play one by one from 1 to 5 and say each note name out loud.",
+      "Walk back down from 5 to 1 while keeping your wrist relaxed."
+    ],
+    "fa": [
+      "انگشت ۱ تا ۵ دست راست رو روی دو، ر، می، فا، سل بذار.",
+      "یکی‌یکی از ۱ تا ۵ بزن و اسم نت رو بگو.",
+      "از ۵ به ۱ برگرد بدون این‌که مچ دستت سفت بشه."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did each finger rest on its own adjacent white key?",
+      "Did my wrist stay calm and steady when playing fingers 4 and 5?"
+    ],
+    "fa": [
+      "هر انگشت روی یک کلید سفید جداگانه قرار گرفت؟",
+      "هنگام زدن انگشت ۴ و ۵ مچم ثابت و راحت موند؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "When your right thumb is on C (Do), which note is under finger 5?",
+        "fa": "وقتی شست دست راست روی «دو» باشه، انگشت ۵ روی کدوم نته؟"
+      },
+      "options": {
+        "en": ["G (Sol)", "F (Fa)", "A (La)"],
+        "fa": ["سل", "فا", "لا"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! C (1), D (2), E (3), F (4), and G (5).",
+        "fa": "آفرین! دو (۱)، ر (۲)، می (۳)، فا (۴) و سل (۵)."
+      },
+      "feedbackWrong": {
+        "en": "Count five white keys up from C: C, D, E, F, G (Sol).",
+        "fa": "پنج نت سفید از دو بشمار: دو، ر، می، فا، سل."
+      }
+    },
+    {
+      "question": {
+        "en": "In this position, which finger number plays E (Mi)?",
+        "fa": "در این حالت، نت «می» با کدوم شماره انگشت زده می‌شه؟"
+      },
+      "options": {
+        "en": ["3", "2", "4"],
+        "fa": ["۳", "۲", "۴"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Finger 3 (middle finger) sits right over E (Mi).",
+        "fa": "درسته! انگشت سوم (وسط) دقیقاً روی نت می قرار می‌گیره."
+      },
+      "feedbackWrong": {
+        "en": "C is played with 1, D with 2, and E (Mi) with finger 3.",
+        "fa": "دو با ۱، ر با ۲، و می با انگشت ۳ زده می‌شه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "The five-finger C position is the foundation for dozens of your first songs.",
+    "fa": "پوزیشن پنج‌انگشتیِ دو، پایه‌ی ده‌ها آهنگ اول توست."
+  },
+  "tomorrow": {
+    "en": "Steady beat in music.",
+    "fa": "ضرب ثابت در موسیقی."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

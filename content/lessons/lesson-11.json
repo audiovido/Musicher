@@ -1,0 +1,102 @@
+{
+  "id": 11,
+  "chapter": {
+    "en": "Chapter 3: Left Hand & Two Hands",
+    "fa": "فصل ۳ «دست چپ و دو دست»"
+  },
+  "title": {
+    "en": "Two Hands, First Step",
+    "fa": "دو دست، قدم اول"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Coordinate your right and left hands taking turns and then playing together.",
+    "fa": "دست راست و دست چپ رو به نوبت و سپس هم‌زمان هماهنگ می‌کنی."
+  },
+  "see": {
+    "en": "Take your time when starting two-handed playing. First let each hand play in turn, then hold a single bass note in your left hand on beat 1 while your right hand plays the melody.",
+    "fa": "برای شروع دو دستی، عجله نکن. اول هر دست به نوبت می‌زنه، بعد روی ضرب اول هر میزان یک نت پایه با دست چپ نگه می‌داری و ملودی رو با دست راست می‌زنی."
+  },
+  "imageUrl": "assets/lesson-11.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play C (Do) with your left hand (finger 5) and hold it for 4 beats.",
+      "While holding the left-hand C, play C, D, E, F with your right hand.",
+      "Repeat this pattern very slowly 3 times."
+    ],
+    "fa": [
+      "نت «دو» رو با دست چپ (انگشت ۵) بزن و ۴ ضرب نگه دار.",
+      "هم‌زمان با نگه داشتن دست چپ، با دست راست نت‌های دو، ر، می، فا رو بزن.",
+      "این الگو رو خیلی آروم ۳ بار تکرار کن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I slow down enough for both hands to feel comfortable?",
+      "Did my left-hand note stay held down for all 4 beats?"
+    ],
+    "fa": [
+      "سرعت تمرین رو به اندازه‌ای کم کردم که هر دو دست راحت باشن؟",
+      "نت دست چپ تا پایان ۴ ضرب پایین موند؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What is the best way to practice a new two-handed exercise?",
+        "fa": "بهترین روش برای یادگیری یک تمرین دو دستی چیه؟"
+      },
+      "options": {
+        "en": ["Each hand separately first, then very slowly together", "Both hands at full speed right away"],
+        "fa": ["اول هر دست جداگانه، بعد با سرعت خیلی آروم با هم", "از اول با سرعت زیاد هر دو دست"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! Separate practice followed by slow combination is the secret to two-hand coordination.",
+        "fa": "آفرین! تمرین جداگانه و سپس ترکیب با سرعت کم راز هماهنگی دو دسته."
+      },
+      "feedbackWrong": {
+        "en": "Your brain masters coordination much faster when each hand learns its part before combining slowly.",
+        "fa": "ذهن وقتی هر دست رو جدا یاد بگیره و بعد آروم ترکیب کنه، خیلی سریع‌تر مسلط می‌شه."
+      }
+    },
+    {
+      "question": {
+        "en": "When both hands play C (Do) together in C position, which fingers are used?",
+        "fa": "وقتی هر دو دست نت «دو» رو با هم می‌زنن، کدوم انگشت‌ها کار می‌کنن؟"
+      },
+      "options": {
+        "en": ["Right finger 1 and Left finger 5", "Finger 1 in both hands"],
+        "fa": ["انگشت ۱ راست و انگشت ۵ چپ", "انگشت ۱ در هر دو دست"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! In C position, the right thumb (1) and left pinky (5) both sit on C (Do).",
+        "fa": "درسته! در پوزیشن دو، شست راست (۱) و انگشت کوچیک چپ (۵) روی نت دو هستن."
+      },
+      "feedbackWrong": {
+        "en": "Remember: on C (Do), the right hand uses finger 1 and the left hand uses finger 5.",
+        "fa": "یادت باشه روی نت دو، دست راست انگشت ۱ و دست چپ انگشت ۵ قرار داره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Your first two-hand coordination is in place!",
+    "fa": "اولین هماهنگی بین دو دستت شکل گرفت!"
+  },
+  "tomorrow": {
+    "en": "Second piece: Au clair de la lune.",
+    "fa": "قطعه‌ی دوم: Au clair de la lune."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

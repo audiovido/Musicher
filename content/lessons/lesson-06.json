@@ -1,0 +1,102 @@
+{
+  "id": 6,
+  "chapter": {
+    "en": "Chapter 2: Beat & Duration",
+    "fa": "فصل ۲ «ضرب و کشش»"
+  },
+  "title": {
+    "en": "Quarter, Half & Whole Notes",
+    "fa": "سیاه، سفید، گرد"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Learn the duration difference between 1-beat, 2-beat, and 4-beat notes.",
+    "fa": "تفاوت کشش زمانی نت‌های ۱، ۲ و ۴ ضربی رو یاد می‌گیری."
+  },
+  "see": {
+    "en": "Not all notes are held for the same length: a quarter note (Siah) lasts 1 beat, a half note (Sefid) is held for 2 beats, and a whole note (Gerd) is held for 4 full beats.",
+    "fa": "همه‌ی نت‌ها به یک اندازه کشیده نمی‌شن: نت سیاه ۱ ضرب، نت سفید ۲ ضرب، و نت گرد ۴ ضرب نگه داشته می‌شه."
+  },
+  "imageUrl": "assets/lesson-06.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play C (Do) and hold for 1 beat (Quarter note).",
+      "Play D (Re) and hold while counting \"1, 2\" (Half note).",
+      "Play E (Mi) and hold while counting \"1, 2, 3, 4\" (Whole note)."
+    ],
+    "fa": [
+      "نت «دو» رو بزن و ۱ ضرب نگه دار (سیاه).",
+      "نت «ر» رو بزن و تا شمردن «۱، ۲» نگه دار (سفید).",
+      "نت «می» رو بزن و تا شمردن «۱، ۲، ۳، ۴» نگه دار (گرد)."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I keep the key pressed down for the full count on half and whole notes?",
+      "Did I count the beats out loud?"
+    ],
+    "fa": [
+      "در نت سفید و گرد کلید رو پایین نگه داشتم تا شمارش تموم بشه؟",
+      "شمارش ضرب‌ها رو با صدای بلند انجام دادم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How many beats is a half note (Sefid) held?",
+        "fa": "نت سفید چند ضرب کشیده می‌شه؟"
+      },
+      "options": {
+        "en": ["2 beats", "1 beat", "4 beats"],
+        "fa": ["۲ ضرب", "۱ ضرب", "۴ ضرب"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! A half note rings for 2 full beats.",
+        "fa": "درسته! نت سفید به اندازه‌ی ۲ ضرب کامل صدا می‌ده."
+      },
+      "feedbackWrong": {
+        "en": "Remember: Quarter = 1 beat, Half = 2 beats, and Whole = 4 beats.",
+        "fa": "یادت باشه: سیاه ۱ ضرب، سفید ۲ ضرب، و گرد ۴ ضربه."
+      }
+    },
+    {
+      "question": {
+        "en": "Which note lasts for 4 full beats?",
+        "fa": "کدوم نت ۴ ضرب کامل طول می‌کشه؟"
+      },
+      "options": {
+        "en": ["Whole note (Gerd)", "Quarter note (Siah)", "Half note (Sefid)"],
+        "fa": ["گرد", "سیاه", "سفید"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! The whole note is the longest of the three and lasts 4 beats.",
+        "fa": "آفرین! نت گرد طولانی‌ترین این سه نته و ۴ ضرب کشش داره."
+      },
+      "feedbackWrong": {
+        "en": "A whole note (Gerd) lasts 4 full beats.",
+        "fa": "نت گرد ۴ ضرب طول می‌کشه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Combining short and long notes brings melody to life.",
+    "fa": "با ترکیب نت‌های کوتاه و بلند، ملودی شکل می‌گیره."
+  },
+  "tomorrow": {
+    "en": "The staff and treble clef.",
+    "fa": "پنج خط حامل و کلید سل."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}

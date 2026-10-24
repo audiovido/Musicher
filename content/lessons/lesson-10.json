@@ -1,0 +1,102 @@
+{
+  "id": 10,
+  "chapter": {
+    "en": "Chapter 3: Left Hand & Two Hands",
+    "fa": "فصل ۳ «دست چپ و دو دست»"
+  },
+  "title": {
+    "en": "Rests & Measures",
+    "fa": "سکوت و میزان"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Learn musical rest symbols and how 4-beat measures are grouped.",
+    "fa": "علامت سکوت و تقسیم‌بندی میزان‌های ۴ ضربی رو یاد می‌گیری."
+  },
+  "see": {
+    "en": "Silence in music is just as expressive as sound. When you reach a rest symbol, lift your hand off the key so no sound rings, while the steady beat keeps counting.",
+    "fa": "سکوت در موسیقی به اندازه‌ی خود نت‌ها مهمه. وقتی به علامت سکوت می‌رسی، دستت رو از روی کلید برمی‌داری اما شمارش ضرب همچنان ادامه داره."
+  },
+  "imageUrl": "assets/lesson-10.png",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Count 1, 2, 3, 4; play C (Do) on beats 1, 2, 3 and lift your hand on beat 4 (rest).",
+      "Play two 4-beat measures in a row with a rest on beat 4 of each measure.",
+      "Make sure no key stays pressed during the rest beat."
+    ],
+    "fa": [
+      "بشمار ۱، ۲، ۳، ۴؛ روی ۱، ۲، ۳ نت «دو» رو بزن و روی ۴ دستت رو بردار (سکوت).",
+      "دو میزان ۴ ضربی پشت سر هم با سکوت روی ضرب آخر اجرا کن.",
+      "دقت کن در زمان سکوت هیچ کلیدی پایین نمونه."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I lift my finger cleanly off the key on the rest beat?",
+      "Did I keep counting the rest beat at the exact same tempo?"
+    ],
+    "fa": [
+      "روی ضرب سکوت دستم رو از کلید جدا کردم؟",
+      "ضرب سکوت رو هم با همون سرعت قبلی شمردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What happens when you reach a rest symbol in music?",
+        "fa": "در زمان رسیدن به علامت سکوت چه باید کرد؟"
+      },
+      "options": {
+        "en": ["Sound stops while the beat keeps counting", "The beat stops completely"],
+        "fa": ["صدا قطع می‌شه ولی شمارش ضرب ادامه داره", "شمارش متوقف می‌شه"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! The pulse of music never stops—there is simply silence on that beat.",
+        "fa": "دقیقاً! نبض موسیقی هرگز نمی‌ایسته، فقط در آن ضرب صدایی پخش نمی‌شه."
+      },
+      "feedbackWrong": {
+        "en": "A rest means silence for that beat while the steady count continues.",
+        "fa": "سکوت یعنی نبودن صدا در حالی که ضرب موسیقی همچنان جلو می‌ره."
+      }
+    },
+    {
+      "question": {
+        "en": "How many quarter-note beats fit inside one 4/4 measure?",
+        "fa": "یک میزان ۴/۴ چند ضرب سیاه ظرفیت داره؟"
+      },
+      "options": {
+        "en": ["4 beats", "2 beats", "6 beats"],
+        "fa": ["۴ ضرب", "۲ ضرب", "۶ ضرب"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! In 4/4 time, the notes and rests in each measure add up to 4 quarter-note beats.",
+        "fa": "درسته! در میزان چهارچهارم مجموع نت‌ها و سکوت‌های هر میزان برابر ۴ ضرب سیاهه."
+      },
+      "feedbackWrong": {
+        "en": "4/4 time means 4 quarter-note beats in every measure.",
+        "fa": "میزان ۴/۴ یعنی ۴ ضرب در هر خانه (میزان)."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Rests give music breathing room and shape.",
+    "fa": "سکوت‌ها به موسیقی نفس و زیبایی می‌دن."
+  },
+  "tomorrow": {
+    "en": "Two hands together, step one.",
+    "fa": "همکاری دو دست، قدم اول."
+  },
+  "source": {
+    "creator": {
+      "en": "Original Content",
+      "fa": "ساخت خودمون"
+    },
+    "license": {
+      "en": "Preview Curriculum",
+      "fa": "محتوای نمونه (پیش‌نمایش)"
+    }
+  }
+}
