@@ -1,0 +1,108 @@
+{
+  "id": 19,
+  "chapter": {
+    "en": "Chapter 5: Rhythm, one step further",
+    "fa": "فصل ۵ «ریتم، یه پله بالاتر»"
+  },
+  "title": {
+    "en": "Ties",
+    "fa": "خط اتحاد"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Recognize a tie between two identical notes and hold the key for their combined length without replaying it.",
+    "fa": "خط اتحاد بین دو نتِ هم‌نام رو می‌شناسی و بدون دوباره زدن، کلید رو به اندازه‌ی مجموع دو نت نگه می‌داری."
+  },
+  "see": {
+    "en": "A tie is a curved line that connects two notes of the exact same pitch. It tells you: play the first note once, and keep holding the key down through the second note's beats—do not press the key a second time! Be careful not to confuse a tie with a slur: a tie connects the same note (to add time), while a slur curves over different notes (to mean smooth legato).",
+    "fa": "«خط اتحاد» یه خط منحنیه که دو تا نتِ هم‌نام و هم‌صدا رو به هم وصل می‌کنه. معنیش ساده است: نت اول رو یه بار بزن و کلید رو تا پایان زمانِ نت دوم پایین نگه دار؛ یعنی نت دوم رو دوباره نزن! حواست باشه خط اتحاد رو با خط اتصال (لگاتو) اشتباه نگیری: خط اتحاد دو تا نتِ «یکسان» رو وصل می‌کنه، ولی خط لگاتو روی نت‌های «متفاوت» کشیده می‌شه."
+  },
+  "imageUrl": "assets/lesson-19.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place your right hand (fingers 1 to 5) on C4, D4, E4, F4, G4.",
+      "Play C4, D4, E4, F4 as steady 1-beat quarter notes.",
+      "Now play G4 once and imagine two half notes tied together (2 + 2 = 4 beats): hold G4 down while counting \"1–2–3–4\" without striking it again."
+    ],
+    "fa": [
+      "انگشت ۱ تا ۵ دست راست رو بذار روی دو، ر، می، فا و سل.",
+      "نت‌های دو، ر، می و فا رو هرکدوم ۱ ضرب بزن.",
+      "حالا «سل» رو یه بار بزن و فرض کن دو تا نت سفید با خط اتحاد به هم وصل شدن (۲ + ۲ = ۴ ضرب): کلید سل رو بدون دوباره زدن، ۴ ضرب نگه دار."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "F4", "G4"]
+  },
+  "selfCheck": {
+    "en": [
+      "When two G4 notes are tied, did I press the key only once and keep holding it?",
+      "Can I tell the difference between a tie (same note) and a slur (different notes)?"
+    ],
+    "fa": [
+      "وقتی دو تا نتِ هم‌نام خط اتحاد دارن، کلید رو فقط یه بار زدم و نگه داشتم؟",
+      "فرق خط اتحاد (نت‌های یکسان) و خط لگاتو (نت‌های متفاوت) برام روشنه؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "If two quarter notes on E4 are joined by a tie, what do you do?",
+        "fa": "اگه دو تا نت سیاهِ «می» با خط اتحاد به هم وصل شده باشن، چیکار می‌کنی؟"
+      },
+      "options": {
+        "en": ["Play E4 once and hold it for 2 beats total", "Play E4 twice as fast", "Play E4 and F4 at the same time"],
+        "fa": ["«می» رو یه بار می‌زنم و ۲ ضرب نگه می‌دارم", "«می» رو دو بار تند می‌زنم", "می و فا رو با هم می‌زنم"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! A tie adds the durations together (1 + 1 = 2 beats) while you strike the key only once.",
+        "fa": "درسته! خط اتحاد زمان دو نت رو با هم جمع می‌کنه (۱ + ۱ = ۲ ضرب) و کلید رو فقط یه بار می‌زنی."
+      },
+      "feedbackWrong": {
+        "en": "When two identical notes are tied, you never replay the second note—you hold the first note for their combined beats.",
+        "fa": "وقتی دو نت هم‌نام خط اتحاد دارن، نت دوم رو دوباره نمی‌زنی؛ همون اولی رو به اندازه‌ی مجموع دو نت نگه می‌داری."
+      }
+    },
+    {
+      "question": {
+        "en": "How can you tell a tie apart from a legato slur?",
+        "fa": "از کجا بفهمیم یه خط منحنی «خط اتحاد» هست نه خط لگاتو؟"
+      },
+      "options": {
+        "en": ["A tie connects two notes of the exact same pitch; a slur connects different pitches", "A tie is only used for the left hand", "A tie means play staccato"],
+        "fa": ["خط اتحاد دو نتِ هم‌صدا رو وصل می‌کنه، ولی لگاتو نت‌های متفاوت رو", "خط اتحاد فقط مال دست چپه", "خط اتحاد یعنی کوتاه و بریده بزن"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Same note to same note is a tie (hold it); different notes under a curve is a slur (play legato).",
+        "fa": "دقیقاً! وقتی دو سرِ خط روی یه نت یکسانه، خط اتحاده؛ وقتی روی نت‌های مختلفه، لگاتوئه."
+      },
+      "feedbackWrong": {
+        "en": "Look at the notes at each end of the curve: if both notes are the same pitch, it is a tie; if they are different pitches, it is a slur.",
+        "fa": "به دو سرِ خط نگاه کن: اگه هر دو یه نت باشن خط اتحاده (نگه دار)، اگه دو نت متفاوت باشن لگاتوئه (نرم وصل کن)."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You now know how a tie joins two same-pitch notes into one longer held sound.",
+    "fa": "حالا می‌دونی خط اتحاد چطور دو تا نت هم‌صدا رو به یه صدای کشیده تبدیل می‌کنه."
+  },
+  "tomorrow": {
+    "en": "Playing \"Brahms' Lullaby\" in 3/4 time!",
+    "fa": "زدن «لالایی برامس» تو میزان ۳/۴!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

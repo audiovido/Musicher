@@ -1,0 +1,108 @@
+{
+  "id": 18,
+  "chapter": {
+    "en": "Chapter 5: Rhythm, one step further",
+    "fa": "فصل ۵ «ریتم، یه پله بالاتر»"
+  },
+  "title": {
+    "en": "Three-four time",
+    "fa": "میزان سه‌چهارم (۳/۴)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Feel the 3-beat pulse of 3/4 time and hold a dotted half note for all 3 beats.",
+    "fa": "نبض ۳ ضربیِ میزان ۳/۴ رو حس می‌کنی و نت سفید نقطه‌دار رو ۳ ضرب کامل نگه می‌داری."
+  },
+  "see": {
+    "en": "So far we have counted in 4. In 3/4 time, every measure has 3 quarter-note beats: \"1–2–3, 1–2–3\", with a gentle sway like a waltz or lullaby. To fill a whole 3/4 measure with one note, we use a dotted half note: a half note (2 beats) plus a dot that adds half its value (1 more beat) = 3 beats total.",
+    "fa": "تا الان ۴تایی می‌شمردیم. تو میزان ۳/۴ هر میزان ۳ ضرب داره: «۱–۲–۳، ۱–۲–۳»؛ درست مثل ریتم والس یا یه لالایی آروم. برای این‌که یه نت کلِ میزان ۳ ضربی رو پر کنه، از «سفید نقطه‌دار» استفاده می‌کنیم: نت سفید (۲ ضرب) + یه نقطه جلوش که نصف ارزشش (۱ ضرب) رو بهش اضافه می‌کنه = جمعاً ۳ ضرب."
+  },
+  "imageUrl": "assets/lesson-18.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Count \"1–2–3 | 1–2–3\" out loud, making beat 1 slightly warmer and stronger than beats 2 and 3.",
+      "With right-hand fingers 1, 3, 5 on C4, E4, G4, play C4 (beat 1), E4 (beat 2), G4 (beat 3) in the first measure.",
+      "In the next measure, play G4 (1), E4 (2), and finish on C4 held as a dotted half note for 3 full beats (\"1–2–3\")."
+    ],
+    "fa": [
+      "بلند بشمر «۱–۲–۳ | ۱–۲–۳» و ضرب ۱ رو یه کم قوی‌تر از ۲ و ۳ بگو.",
+      "با انگشت ۱، ۳ و ۵ دست راست روی دو، می، سل، میزان اول رو بزن: دو (ضرب ۱)، می (ضرب ۲)، سل (ضرب ۳).",
+      "تو میزان بعدی بزن سل (۱)، می (۲)، و در آخر «دو» رو به شکل سفید نقطه‌دار ۳ ضرب کامل نگه دار («۱–۲–۳»)."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "E4", "G4", "G4", "E4", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I count \"1–2–3\" per measure instead of adding a fourth beat?",
+      "Did I hold the final dotted half note on C4 for all 3 beats before letting go?"
+    ],
+    "fa": [
+      "توی هر میزان تا ۳ شمردم و ضرب چهارم اضافه نکردم؟",
+      "نت آخر روی «دو» (سفید نقطه‌دار) رو ۳ ضرب کامل نگه داشتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How many beats does a dotted half note get in 3/4 time?",
+        "fa": "نت «سفید نقطه‌دار» تو میزان ۳/۴ چند ضرب کشیده می‌شه؟"
+      },
+      "options": {
+        "en": ["3 beats", "2 beats", "4 beats"],
+        "fa": ["۳ ضرب", "۲ ضرب", "۴ ضرب"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! A half note is 2 beats, and the dot adds half of that (1 beat), giving 3 beats in total.",
+        "fa": "درسته! نت سفید ۲ ضربه و نقطه نصفش (۱ ضرب) رو اضافه می‌کنه، پس می‌شه ۳ ضرب."
+      },
+      "feedbackWrong": {
+        "en": "A plain half note is 2 beats, and a dot adds half of the note's value (2 + 1 = 3 beats).",
+        "fa": "نت سفیدِ ساده ۲ ضربه و نقطه ۱ ضرب بهش اضافه می‌کنه؛ جمعاً می‌شه ۳ ضرب."
+      }
+    },
+    {
+      "question": {
+        "en": "What does the top number 3 in a 3/4 time signature tell you?",
+        "fa": "عدد ۳ در بالای کسر میزان ۳/۴ چی رو نشون می‌ده؟"
+      },
+      "options": {
+        "en": ["There are 3 beats in each measure", "You must use only 3 fingers", "Every note is held for 3 beats"],
+        "fa": ["هر میزان ۳ ضرب داره", "فقط باید با ۳ انگشت بزنی", "هر نت ۳ ضرب نگه داشته می‌شه"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! The top number tells you how many beats are in each measure: 3 beats per measure.",
+        "fa": "کاملاً درسته! عدد بالایی می‌گه توی هر میزان چند ضرب داریم: ۳ ضرب در هر میزان."
+      },
+      "feedbackWrong": {
+        "en": "In a time signature, the top number counts the beats per measure—so 3/4 has 3 quarter-note beats in every measure.",
+        "fa": "عدد بالایی تعداد ضرب‌های هر میزان رو نشون می‌ده؛ یعنی تو ۳/۴ هر میزان ۳ ضرب داره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You can now count in 3/4 time and hold a dotted half note for 3 full beats.",
+    "fa": "حالا میزان ۳/۴ و نت سفید نقطه‌دار (۳ ضربی) رو راحت می‌شمری و می‌زنی."
+  },
+  "tomorrow": {
+    "en": "Learning how a tie holds one note across beats or barlines.",
+    "fa": "آشنایی با خط اتحاد و نگه داشتن صدای نت."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

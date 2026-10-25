@@ -1,0 +1,108 @@
+{
+  "id": 17,
+  "chapter": {
+    "en": "Chapter 5: Rhythm, one step further",
+    "fa": "فصل ۵ «ریتم، یه پله بالاتر»"
+  },
+  "title": {
+    "en": "Eighth notes",
+    "fa": "نت‌های چنگ"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Play two even eighth notes inside a single beat by counting \"1-and 2-and\".",
+    "fa": "با شمردن «۱-و ۲-و»، دو تا نت چنگِ برابر رو توی یه ضرب می‌زنی."
+  },
+  "see": {
+    "en": "A quarter note gets 1 full beat. When we split 1 beat into two equal halves, we get two eighth notes (each lasting half a beat). To keep them steady, say \"and\" halfway through each beat: \"1-and 2-and 3-and 4-and\".",
+    "fa": "نت سیاه ۱ ضرب کامله. وقتی همون ۱ ضرب رو به دو قسمتِ برابر تقسیم کنیم، می‌شه دو تا «نت چنگ» (هرکدوم نصف ضرب). برای این‌که یکدست بزنیشون، وسط هر ضرب یه «و» بگو: «۱-و ۲-و ۳-و ۴-و»."
+  },
+  "imageUrl": "assets/lesson-17.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Clap a steady pulse and count out loud: \"1-and 2-and 3-and 4-and\".",
+      "Place your right-hand fingers 1, 2, 3 on C4, D4, E4 and play two eighth notes per beat on C–C, D–D, E–E (\"1-and 2-and 3-and\").",
+      "Finish the line with steady notes on D4 and C4: C4, C4, D4, D4, E4, E4, D4, C4."
+    ],
+    "fa": [
+      "با ضرب ثابت دست بزن و بلند بشمر: «۱-و ۲-و ۳-و ۴-و».",
+      "انگشت ۱، ۲ و ۳ دست راست رو بذار رو دو، ر، می و روی هر ضرب دو تا چنگ بزن: دو–دو، ر–ر، می–می («۱-و ۲-و ۳-و»).",
+      "حالا خط رو با ر و دو کامل کن: دو، دو، ر، ر، می، می، ر، دو."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "C4", "D4", "D4", "E4", "E4", "D4", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I count \"1-and 2-and\" so both eighth notes in each beat had the exact same length?",
+      "Did I keep the main beat steady instead of speeding up on the eighth notes?"
+    ],
+    "fa": [
+      "با شمردن «۱-و ۲-و» هر دو نت چنگ رو دقیقاً هم‌اندازه زدم؟",
+      "ضرب اصلی رو ثابت نگه داشتم و سر چنگ‌ها تند نشدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How many eighth notes fit inside 1 quarter-note beat?",
+        "fa": "توی ۱ ضربِ نت سیاه، چند تا نت چنگ جا می‌شه؟"
+      },
+      "options": {
+        "en": ["2 eighth notes", "4 eighth notes", "1 eighth note"],
+        "fa": ["۲ تا نت چنگ", "۴ تا نت چنگ", "۱ نت چنگ"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Each eighth note lasts half a beat, so two eighth notes equal one full quarter-note beat.",
+        "fa": "درسته! هر چنگ نصف ضربه، پس دو تا چنگ رو هم می‌شه یه ضرب کامل."
+      },
+      "feedbackWrong": {
+        "en": "An eighth note is half of a quarter note, so two eighth notes (\"1-and\") fit into 1 beat.",
+        "fa": "هر نت چنگ نصفِ نت سیاهه، پس توی هر ۱ ضرب دو تا چنگ («۱-و») جا می‌شه."
+      }
+    },
+    {
+      "question": {
+        "en": "Why do we say \"1-and 2-and\" when counting eighth notes?",
+        "fa": "چرا موقع زدن نت‌های چنگ «۱-و ۲-و» می‌شمریم؟"
+      },
+      "options": {
+        "en": ["To place the second eighth note evenly halfway through the beat", "To make the tempo twice as slow", "To hold each note for 2 full beats"],
+        "fa": ["تا چنگ دوم دقیقاً وسط ضرب و یکدست زده بشه", "تا سرعت آهنگ نصف بشه", "تا هر نت رو ۲ ضرب نگه داریم"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Well done! Saying \"and\" marks the exact halfway point of each beat so your eighth notes stay even.",
+        "fa": "آفرین! گفتن «و» درست وسط ضرب رو نشون می‌ده تا چنگ‌هات کاملاً یکدست بشن."
+      },
+      "feedbackWrong": {
+        "en": "The word \"and\" splits each beat into two equal halves: the number is the first eighth note and \"and\" is the second.",
+        "fa": "کلمه‌ی «و» هر ضرب رو دو نصفِ برابر می‌کنه: رو عدد چنگ اول رو می‌زنی و رو «و» چنگ دوم رو."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You can now split a beat into two even eighth notes using \"1-and 2-and\".",
+    "fa": "حالا می‌تونی با «۱-و ۲-و» توی هر ضرب دو تا نت چنگِ یکدست بزنی."
+  },
+  "tomorrow": {
+    "en": "Three-four time (3/4) and the 3-beat dotted half note.",
+    "fa": "میزان ۳/۴ و نت سفید نقطه‌دار (۳ ضرب)."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

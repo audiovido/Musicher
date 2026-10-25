@@ -1,0 +1,108 @@
+{
+  "id": 20,
+  "chapter": {
+    "en": "Chapter 5: Rhythm, one step further",
+    "fa": "فصل ۵ «ریتم، یه پله بالاتر»"
+  },
+  "title": {
+    "en": "Piece: Brahms' Lullaby",
+    "fa": "قطعه: لالایی برامس (Brahms' Lullaby)"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play the opening melody of Johannes Brahms' \"Lullaby\" (Wiegenlied Op. 49 No. 4) in C and 3/4 time using one smooth hand shift.",
+    "fa": "ملودی «لالایی برامس» (Wiegenlied op. 49 no. 4) رو تو گام دو و میزان ۳/۴ با یه جابه‌جایی راحتِ دست می‌زنی."
+  },
+  "see": {
+    "en": "Brahms' famous \"Lullaby\" (Johannes Brahms, Wiegenlied Op. 49 No. 4, public domain) flows gently in 3/4 time. Start in your familiar C position with finger 3 on E4 and finger 5 on G4 for the two opening \"lullaby\" figures: E4, E4, G4 | E4, E4, G4. Then comes one easy hand shift: move your right hand up so your thumb (finger 1) sits on E4 and finger 2 plays G4. From there, your pinky (finger 5) reaches high C5 effortlessly, and fingers 4–3–2 walk smoothly down on B4–A4–A4–G4!",
+    "fa": "«لالایی برامس» (<span dir=\"ltr\">Johannes Brahms, Wiegenlied op. 49 no. 4</span>) یه ملودی خیلی آروم تو میزان ۳/۴ هست. اول تو همون پوزیشنِ دو شروع کن و دو جمله‌ی اول رو با انگشت ۳ روی می (<span dir=\"ltr\">E4</span>) و انگشت ۵ روی سل (<span dir=\"ltr\">G4</span>) بزن: می، می، سل | می، می، سل. حالا نوبتِ «یه جابه‌جایی ساده» است: دست راستت رو کمی بیار بالاتر تا شست (انگشت ۱) بشینه روی می (<span dir=\"ltr\">E4</span>) و انگشت ۲ بیفته روی سل (<span dir=\"ltr\">G4</span>). این‌طوری انگشت ۵ (کوچک) خیلی راحت می‌رسه به دوی بالا (<span dir=\"ltr\">C5</span>) و بعد با انگشت‌های ۴–۳–۲ نرم روی سی–لا–لا–سل میای پایین!"
+  },
+  "imageUrl": "assets/lesson-20.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "In the C position, play the first two waves gently with fingers 3 and 5: E4, E4, G4 (hold), then E4, E4, G4 (hold).",
+      "Shift your right hand up so thumb (1) is on E4: play E4 (1), G4 (2), and reach up to C5 with pinky (5).",
+      "Step smoothly down with the fingers already in place: B4 (finger 4), A4, A4 (finger 3), and settle on G4 (finger 2)."
+    ],
+    "fa": [
+      "تو پوزیشن دو، دو بخش اول رو آروم با انگشت ۳ و ۵ بزن: می، می، سل (نگه دار)، بعد دوباره می، می، سل (نگه دار).",
+      "حالا دست راستت رو بیار بالاتر تا شست (۱) بشینه رو می: بزن می (۱)، سل (۲) و با انگشت ۵ دوی بالا (C5) رو بزن.",
+      "با انگشت‌هایی که آماده‌ن نرم بیا پایین: سی (انگشت ۴)، لا، لا (انگشت ۳) و در آخر سل (انگشت ۲)."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["E4", "E4", "G4", "E4", "E4", "G4", "E4", "G4", "C5", "B4", "A4", "A4", "G4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I move my thumb (1) up to E4 before jumping to C5 so my hand didn't have to stretch?",
+      "Did I keep a gentle, rocking 3/4 feel throughout the melody?"
+    ],
+    "fa": [
+      "قبل از رفتن به دوی بالا (C5)، شستم (۱) رو آوردم روی «می» تا دستم کشیده نشه؟",
+      "حس آروم و گهواره‌ایِ ۳/۴ رو تو کل ملودی نگه داشتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Why do we shift the right thumb (finger 1) up to E4 before playing E4–G4–C5 in Brahms' Lullaby?",
+        "fa": "چرا تو لالایی برامس قبل از زدن «می–سل–دوی بالا (C5)»، شست دست راست (۱) رو میاریم روی می؟"
+      },
+      "options": {
+        "en": ["So pinky (5) reaches C5 comfortably and fingers 4–3–2 are ready for B4–A4–G4", "Because thumb is not allowed to play C4", "To play the melody an octave lower"],
+        "fa": ["تا انگشت ۵ راحت به C5 برسه و انگشت‌های ۴–۳–۲ آماده‌ی سی–لا–سل باشن", "چون شست اجازه نداره نت دو رو بزنه", "تا ملودی یه اکتاو بم‌تر بشه"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Bravo! Moving thumb (1) to E4 puts C5 right under finger 5 and sets up fingers 4, 3, and 2 for B4, A4, and G4.",
+        "fa": "آفرین! وقتی شست (۱) بیاد رو می، دوی بالا (C5) درست زیر انگشت ۵ می‌افته و برگشتن روی سی–لا–سل با ۴–۳–۲ خیلی راحت می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "In the C4–G4 position, C5 is too far away; shifting thumb (1) to E4 brings C5 within easy reach of finger 5.",
+        "fa": "تو پوزیشن دو تا سل، دست به C5 نمی‌رسه؛ ولی وقتی شست (۱) بیاد رو می، انگشت ۵ راحت روی C5 می‌شینه."
+      }
+    },
+    {
+      "question": {
+        "en": "After playing high C5 with finger 5, which notes walk smoothly down to finish the phrase?",
+        "fa": "بعد از زدن دوی بالا (C5) با انگشت ۵، کدوم نت‌ها به ترتیب میان پایین؟"
+      },
+      "options": {
+        "en": ["B4, A4, A4, G4", "G4, F4, E4, C4", "D4, E4, F4, G4"],
+        "fa": ["سی، لا، لا، سل (B4, A4, A4, G4)", "سل، فا، می، دو", "ر، می، فا، سل"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! From C5 (5), the melody steps gently down through B4 (4), A4–A4 (3), and rests on G4 (2).",
+        "fa": "دقیقاً! از دوی بالا (۵) قدم‌به‌قدم میایم روی سی (۴)، لا–لا (۳) و روی سل (۲) آروم می‌گیریم."
+      },
+      "feedbackWrong": {
+        "en": "Right after C5, the melody steps down through its immediate neighbors: B4, then A4 twice, and lands on G4.",
+        "fa": "بلافاصله بعد از دوی بالا، ملودی از روی کلیدهای همسایه میاد پایین: سی، بعد دو بار لا، و می‌رسه به سل."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations on completing Chapter 5! You combined eighth notes, 3/4 time, and a smooth hand shift to play \"Brahms' Lullaby\".",
+    "fa": "ایول، فصل ۵ رو هم تموم کردی! با ریتم ۳/۴ و یه جابه‌جایی نرم دست، «لالایی برامس» رو زدی."
+  },
+  "tomorrow": {
+    "en": "Enjoy playing your repertoire pieces or explore Free-Play Piano!",
+    "fa": "لذت بردن از آهنگ‌هایی که یاد گرفتی و تمرین تو پیانوی آزاد!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content; melody: Johannes Brahms, public domain",
+      "fa": "محتوای اختصاصی MUSICHER؛ ملودی: یوهانس برامس، مالکیت عمومی (Public Domain)"
+    }
+  }
+}

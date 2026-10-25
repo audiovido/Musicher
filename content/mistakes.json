@@ -291,6 +291,97 @@
     "lessonId": 16
   },
   {
+    "id": "eighth_notes_uneven",
+    "keywords": [
+      "نت چنگ",
+      "چنگ",
+      "یک و دو و",
+      "تند زدن چنگ",
+      "ریتم چنگ",
+      "eighth notes",
+      "1-and 2-and",
+      "rushing eighth notes",
+      "uneven eighth"
+    ],
+    "cause": {
+      "en": "Playing the two eighth notes as a quick burst and then waiting for the next beat instead of dividing the beat into two equal halves.",
+      "fa": "دو تا نت چنگ رو تند پشت سر هم می‌زنی و بعد تا ضرب بعدی صبر می‌کنی، به‌جای اینکه ضرب رو به دو نیمه‌ی کاملاً مساوی تقسیم کنی."
+    },
+    "fix": {
+      "en": "Count '1-and 2-and' out loud at a steady walking pace so every number and every 'and' gets the exact same time.",
+      "fa": "با سرعت قدم‌زدنِ ثابت بلند بشمار «یک-و دو-و» تا هم عددها و هم «و»ها دقیقاً به یک اندازه زمان بگیرن."
+    },
+    "lessonId": 17
+  },
+  {
+    "id": "three_four_cutting_beat_3",
+    "keywords": [
+      "سه چهارم",
+      "میزان سه چهارم",
+      "سفید نقطه دار",
+      "ضرب سوم",
+      "والس",
+      "three-four",
+      "3/4",
+      "dotted half note",
+      "waltz"
+    ],
+    "cause": {
+      "en": "Lifting the dotted half note after 2 beats out of habit from 4/4 time, or rushing straight from beat 3 back to beat 1.",
+      "fa": "از روی عادتِ چهارچهارم، نت سفید نقطه‌دار رو بعد از ۲ ضرب ول می‌کنی، یا از ضرب ۳ با عجله می‌پری روی ضرب ۱."
+    },
+    "fix": {
+      "en": "Feel the '1-2-3' waltz sway and keep your finger down on the dotted half note all the way through beat 3 before moving on.",
+      "fa": "موجِ «۱-۲-۳» رو حس کن و روی نت سفید نقطه‌دار انگشتت رو تا پایان کاملِ ضرب ۳ پایین نگه دار."
+    },
+    "lessonId": 18
+  },
+  {
+    "id": "tie_replaying_second_note",
+    "keywords": [
+      "خط اتحاد",
+      "اتحاد",
+      "فرق اتحاد و لگاتو",
+      "نت دوم اتحاد",
+      "tie",
+      "tied notes",
+      "tie vs slur"
+    ],
+    "cause": {
+      "en": "Pressing the key a second time on the tied note, or confusing a tie (same note held) with a slur (different notes played smoothly).",
+      "fa": "کلید رو روی نت دومِ خط اتحاد دوباره می‌زنی، یا خط اتحاد (نگه‌داشتنِ دو نت هم‌نام) رو با خط لگاتو (نرم زدنِ نت‌های مختلف) قاطی می‌کنی."
+    },
+    "fix": {
+      "en": "When the curved line connects two identical notes, strike the key only once and keep your finger down while counting both notes' beats together.",
+      "fa": "وقتی خط منحنی دو نتِ هم‌نام رو وصل کرده، کلید رو فقط یک بار بزن و انگشتت رو پایین نگه دار تا ضرب‌های هر دو نت رو با هم بشماری."
+    },
+    "lessonId": 19
+  },
+  {
+    "id": "brahms_shift_to_c5",
+    "keywords": [
+      "لالایی برامس",
+      "برامس",
+      "دو بالا",
+      "جابجایی دست",
+      "انگشت به دو بالا نمیرسه",
+      "brahms",
+      "lullaby",
+      "high c",
+      "hand shift",
+      "reach c5"
+    ],
+    "cause": {
+      "en": "Trying to stretch pinky 5 all the way from G4 to high C5 without moving the thumb up to E4 first.",
+      "fa": "سعی می‌کنی بدون جابه‌جا کردن شست روی می (E4)، انگشت ۵ رو از سل تا دوی بالا (C5) بکشی."
+    },
+    "fix": {
+      "en": "Before jumping to C5, move your thumb (1) onto E4 and finger 2 onto G4; your pinky (5) will then sit naturally right above C5.",
+      "fa": "قبل از پرش به دوی بالا (C5)، شست (۱) رو بذار روی می (E4) و انگشت ۲ رو روی سل (G4)؛ این‌طوری انگشت ۵ خیلی راحت دقیقاً بالای C5 قرار می‌گیره."
+    },
+    "lessonId": 20
+  },
+  {
     "id": "bored",
     "keywords": [
       "حوصلهم سر رفت",
