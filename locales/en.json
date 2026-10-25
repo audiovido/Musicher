@@ -489,13 +489,14 @@
     "scoreLoopOff": "Loop: Off",
     "scoreLoopFrom": "From bar",
     "scoreLoopTo": "To bar",
+    "scoreLoopChip": "Looping bars {from}–{to}",
     "scoreLoopClear": "Clear loop",
     "scoreBarStatus": "Bar {current} of {total}",
     "scoreUnverifiedBadge": "Unverified – under teacher review",
     "scoreLicenseLine": "Public Domain · Mutopia Project",
     "scoreLoadError": "Could not load score file. Please verify network and file location.",
     "scoreLoading": "Loading sheet music...",
-    "scoreMeasureTapHint": "Tip: Tap on any measure in the score to set your loop range.",
+    "scoreMeasureTapHint": "Tip: turn Loop on, then tap two measures to set the loop range.",
     "scoreMoreToggle": "More",
     "scoreFollowToggle": "Follow"
   }
