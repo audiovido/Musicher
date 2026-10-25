@@ -1364,6 +1364,11 @@
         display: none;
       }
 
+
+      @media (min-width: 1100px) {
+        .lesson-split-grid:has(.score-player-card) { grid-template-columns: minmax(0, 1fr); }
+        .lesson-split-grid:has(.score-player-card) .lesson-col-arch { display: none; }
+      }
       .lesson-col-content {
         width: 100%;
         min-width: 0;
@@ -9502,19 +9507,11 @@
         osmd.rules.VoiceSpacingMultiplierVexflow = 0.65;
         osmd.rules.VoiceSpacingAddendVexflow = 1.5;
 
-        if (w < 500) {
-          // Phone (~390px): zoom around 0.6–0.7 so 3–4 measures fit per system
-          osmd.Zoom = 0.65;
-          osmd.rules.RenderXMeasuresPerLineAkaSystem = 3;
-        } else if (w < 850) {
-          // Tablet: 4 measures per system
-          osmd.Zoom = 0.75;
-          osmd.rules.RenderXMeasuresPerLineAkaSystem = 4;
-        } else {
-          // Desktop (~1100px): 4–6 measures fit per system
-          osmd.Zoom = 0.85;
-          osmd.rules.RenderXMeasuresPerLineAkaSystem = 5;
-        }
+        // Zoom scales with the container width so a phone fits ~3 measures per line,
+        // a tablet ~4-5 and a desktop 5-6. (OSMD ignores RenderXMeasuresPerLineAkaSystem
+        // when measures are wider than the line, so zoom is the reliable control.)
+        osmd.rules.RenderXMeasuresPerLineAkaSystem = 0;
+        osmd.Zoom = Math.max(0.5, Math.min(0.85, 0.5 + (w - 320) / 1000));
       }
 
       async function maybeMountScorePlayer() {
@@ -9598,7 +9595,7 @@
             drawComposer: false,
             drawLyricist: false,
             drawPartNames: false,
-            drawMetronomeMarks: true,
+            drawMetronomeMarks: false,
             backend: "svg",
             followCursor: false,
             drawingParameters: "compacttight"
