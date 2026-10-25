@@ -1,0 +1,109 @@
+{
+  "id": 23,
+  "chapter": {
+    "en": "Chapter 6: Half steps and scales",
+    "fa": "فصل ۶ «نیم‌پرده و گام»"
+  },
+  "title": {
+    "en": "The C major scale",
+    "fa": "گام دو ماژور"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Play the C major scale from C4 to C5 using the major scale pattern and the smooth 1–2–3, thumb-under 1–2–3–4–5 fingering.",
+    "fa": "«گام دو ماژور» رو از C4 تا C5 با الگوی پرده و نیم‌پرده و تکنیکِ «رد کردن شست» (۱–۲–۳، بعد ۱–۲–۳–۴–۵) نرم می‌زنی."
+  },
+  "see": {
+    "en": "A major scale is a musical ladder of 8 notes built with a special step pattern: whole – whole – half – whole – whole – whole – half. When you start on C, this pattern lands on all white keys (C–D–E–F–G–A–B–C) because the two natural half steps sit right between E–F (steps 3–4) and B–C (steps 7–8)! To play 8 notes smoothly with 5 fingers, play C–D–E with fingers 1–2–3, then pass your thumb (1) gently under finger 3 to land on F, and finish F–G–A–B–C with fingers 1–2–3–4–5.",
+    "fa": "«گام ماژور» یه نردبون ۸ نتی با این الگوی ثابته: پرده – پرده – نیم‌پرده – پرده – پرده – پرده – نیم‌پرده. وقتی از نت «دو» شروع می‌کنی، همه‌ی نت‌های «گام دو ماژور» می‌افتن روی کلیدهای سفید (C–D–E–F–G–A–B–C)، چون دو تا نیم‌پرده‌ی طبیعی دقیقاً بین می–فا (E–F) و سی–دو (B–C) هستن! برای اینکه ۸ تا نت رو با ۵ تا انگشت نرم بزنی، دو–ر–می رو با انگشت ۱–۲–۳ بزن، بعد با «رد کردن شست» از زیرِ انگشت ۳، شست (۱) رو بذار روی فا (F) و فا–سل–لا–سی–دو رو با ۱–۲–۳–۴–۵ تموم کن."
+  },
+  "imageUrl": "assets/lesson-23.jpeg",
+  "audioUrl": "",
+  "diagram": "scale-c-major",
+  "steps": {
+    "en": [
+      "Play C4 (1), D4 (2), and E4 (3) with a relaxed wrist.",
+      "While finger 3 holds E4, tuck your thumb (1) smoothly underneath to play F4—keep your elbow calm, don't twist it out.",
+      "Now let your hand open into its new position and walk up G4 (2), A4 (3), B4 (4), and C5 (5)."
+    ],
+    "fa": [
+      "نت‌های دو (۱)، ر (۲) و می (۳) رو با مچِ آزاد بزن.",
+      "وقتی انگشت ۳ روی می (E4) هست، شستت (۱) رو نرم از زیرش رد کن و بذار روی فا (F4)؛ آرنجت رو به بیرون نچرخون.",
+      "حالا دستت رو تو پوزیشن جدید باز کن و سل (۲)، لا (۳)، سی (۴) و دوی بالا (۵) رو پشت سر هم بزن."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I pass my thumb (1) under finger 3 onto F4 instead of running out of fingers?",
+      "Did I hear the two half steps between E–F and B–C?"
+    ],
+    "fa": [
+      "بعد از انگشت ۳ روی می، با «رد کردن شست» نت فا رو با انگشت ۱ زدم تا انگشت کم نیارم؟",
+      "صدای دو تا نیم‌پرده رو بین می–فا و سی–دو شنیدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What is the whole-step and half-step pattern of every major scale?",
+        "fa": "الگوی پرده و نیم‌پرده تو هر گام ماژور چطوریه؟"
+      },
+      "options": {
+        "en": ["Whole – Whole – Half – Whole – Whole – Whole – Half", "Half – Whole – Half – Whole – Half – Whole – Half", "All whole steps with no half steps"],
+        "fa": ["پرده – پرده – نیم‌پرده – پرده – پرده – پرده – نیم‌پرده", "نیم‌پرده – پرده – نیم‌پرده – پرده – نیم‌پرده", "همه‌اش پرده بدون هیچ نیم‌پرده‌ای"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Every major scale follows Whole–Whole–Half–Whole–Whole–Whole–Half, with half steps between notes 3–4 and 7–8.",
+        "fa": "آفرین! هر گام ماژور الگوی «پرده–پرده–نیم‌پرده–پرده–پرده–پرده–نیم‌پرده» رو داره و نیم‌پرده‌هاش بین نت‌های ۳–۴ و ۷–۸ هستن."
+      },
+      "feedbackWrong": {
+        "en": "Look at the red brackets on the diagram: the half steps are between 3–4 (E–F) and 7–8 (B–C), giving Whole–Whole–Half–Whole–Whole–Whole–Half.",
+        "fa": "به کمانک‌های قرمزِ شکل نگاه کن: نیم‌پرده‌ها بین ۳–۴ (می–فا) و ۷–۸ (سی–دو) هستن، یعنی پرده–پرده–نیم‌پرده–پرده–پرده–پرده–نیم‌پرده."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the correct right-hand fingering going up the C major scale?",
+        "fa": "انگشت‌گذاری درستِ دست راست برای بالا رفتن تو گام دو ماژور کدومه؟"
+      },
+      "options": {
+        "en": ["1–2–3 on C–D–E, then thumb (1) passes under to F for 1–2–3–4–5", "1–2–3–4–5 on C–D–E–F–G, then pinky three times", "Only fingers 1 and 2 all the way up"],
+        "fa": ["۱–۲–۳ روی دو–ر–می، بعد رد کردن شست (۱) روی فا و ادامه‌ی ۱–۲–۳–۴–۵", "۱–۲–۳–۴–۵ تا سل، بعد سه بار با انگشت ۵", "فقط با انگشت ۱ و ۲ تا آخر"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Bravo! Playing 1–2–3 and passing thumb (1) under to F lets your 5 fingers glide across all 8 notes.",
+        "fa": "دقیقاً! با زدن ۱–۲–۳ و رد کردن شست (۱) به روی فا، ۵ انگشتت خیلی روان هر ۸ نت رو می‌زنن."
+      },
+      "feedbackWrong": {
+        "en": "If you use 1–2–3–4–5 first, you run out of fingers on G; instead, pass thumb (1) under after finger 3 so F starts 1–2–3–4–5.",
+        "fa": "اگه تا انگشت ۵ بری، روی سل انگشت کم میاری؛ به‌جاش بعد از انگشت ۳، شست (۱) رو رد کن بذار روی فا تا ۱–۲–۳–۴–۵ کامل بشه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Today you learned the major scale pattern (W–W–H–W–W–W–H) and played the full C major scale using the thumb-under technique (1–2–3, 1–2–3–4–5).",
+    "fa": "امروز الگوی گام ماژور و تکنیکِ «رد کردن شست» (۱–۲–۳، ۱–۲–۳–۴–۵) رو تو گام دو ماژور یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "The G major scale and F♯",
+    "fa": "گام سل ماژور و نت فا دیز (F♯)"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

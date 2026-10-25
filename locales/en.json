@@ -242,7 +242,13 @@
     "persianNotes": ["دو", "ر", "می", "فا", "سل", "لا", "سی"],
     "findCAria": "Piano keyboard diagram showing 14 white keys with C keys highlighted in saffron to the left of each group of two black keys",
     "noteNamesAria": "Piano keyboard diagram showing repeating note names C D E F G A B across 14 white keys",
-    "fingerNumbersAria": "Right hand finger numbers 1 to 5 aligned over white keys C D E F G"
+    "fingerNumbersAria": "Right hand finger numbers 1 to 5 aligned over white keys C D E F G",
+    "tieLabel": "tie: play once, hold 4 beats",
+    "slurLabel": "slur: smooth, different notes",
+    "halfStepShort": "½ step",
+    "tieVsSlurAria": "Notation diagram showing a five-line treble staff with two G4 half notes joined by a tie compared with a slur over C4, D4, and E4",
+    "scaleCMajorAria": "Piano keyboard diagram highlighting the C major scale notes C to C with red brackets marking the two half steps E-F and B-C",
+    "scaleGMajorAria": "Piano keyboard diagram highlighting the G major scale notes G to G including F-sharp with red brackets marking the two half steps B-C and F-sharp-G"
   },
   "piano": {
     "title": "Practice Piano",

@@ -1,0 +1,108 @@
+{
+  "id": 22,
+  "chapter": {
+    "en": "Chapter 6: Half steps and scales",
+    "fa": "فصل ۶ «نیم‌پرده و گام»"
+  },
+  "title": {
+    "en": "Sharps and flats",
+    "fa": "دیز و بمل (♯ و ♭)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Understand how sharp (♯) raises a note a half step, flat (♭) lowers a note a half step, and why each black key has two names.",
+    "fa": "یاد می‌گیری علامت دیز (♯) نت رو نیم‌پرده زیرتر می‌کنه، بمل (♭) نیم‌پرده بم‌تر می‌کنه، و چرا هر کلید سیاه دو تا اسم داره."
+  },
+  "see": {
+    "en": "A sharp sign (♯) means go one half step higher (to the right). A flat sign (♭) means go one half step lower (to the left). That is why every black key has two names! The black key between C and D is one half step above C, so it is called C♯ (C-sharp)—and it is also one half step below D, so it can be called D♭ (D-flat). Same key, two names: C♯ = D♭!",
+    "fa": "علامت «دیز» (♯) یعنی برو یک نیم‌پرده بالاتر (سمت راست). علامت «بمل» (♭) یعنی برو یک نیم‌پرده پایین‌تر (سمت چپ). به همین خاطره که هر کلید سیاه دو تا اسم داره! کلید سیاهِ بین دو (C) و ر (D)، نیم‌پرده بالاتر از «دو» هست پس اسمش می‌شه «دو دیز» (C♯)؛ از طرف دیگه نیم‌پرده پایین‌تر از «ر» هست، پس بهش «ر بمل» (D♭) هم می‌گن. یه کلید واحد، با دو تا اسم: C♯ = D♭!"
+  },
+  "imageUrl": "assets/lesson-22.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play C4, then raise it a half step to the black key C♯4 (also called D♭4).",
+      "Step up to D4, then raise it a half step to the black key D♯4 (also called E♭4).",
+      "Finish by stepping up a half step from D♯4 to the white key E4."
+    ],
+    "fa": [
+      "نت دو (C4) رو بزن، بعد نیم‌پرده ببرش بالا روی کلید سیاهِ دو دیز (C♯4 که همون ر بمل هم هست).",
+      "بیا روی ر (D4)، و بعد نیم‌پرده ببرش بالا روی کلید سیاهِ ر دیز (D♯4 یا می بمل).",
+      "در آخر از D♯4 نیم‌پرده بیا بالا روی کلید سفیدِ می (E4)."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "C#4", "D4", "D#4", "E4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I move to the right for a sharp (♯) and remember that flat (♭) moves to the left?",
+      "Can I point to C♯4 and explain why it is the exact same key as D♭4?"
+    ],
+    "fa": [
+      "حواسم بود که دیز (♯) می‌ره سمت راست (بالاتر) و بمل (♭) می‌ره سمت چپ (پایین‌تر)؟",
+      "می‌تونم کلید C♯4 رو نشون بدم و بگم چرا همون کلیدِ D♭4 هست؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What does a sharp (♯) vs. a flat (♭) do to a note?",
+        "fa": "علامت دیز (♯) و علامت بمل (♭) چه تغییری تو نت ایجاد می‌کنن؟"
+      },
+      "options": {
+        "en": ["Sharp (♯) raises it a half step; flat (♭) lowers it a half step", "Sharp makes it louder; flat makes it softer", "Sharp adds 2 beats; flat subtracts 1 beat"],
+        "fa": ["دیز (♯) نت رو نیم‌پرده بالاتر می‌بره؛ بمل (♭) نت رو نیم‌پرده پایین‌تر میاره", "دیز صدا رو بلندتر می‌کنه؛ بمل آروم‌تر می‌کنه", "دیز ۲ ضرب اضافه می‌کنه؛ بمل ۱ ضرب کم می‌کنه"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Bravo! Sharp (♯) steps one half step higher (right), and flat (♭) steps one half step lower (left).",
+        "fa": "آفرین! دیز (♯) یعنی نیم‌پرده به راست (زیرتر) و بمل (♭) یعنی نیم‌پرده به چپ (بم‌تر)."
+      },
+      "feedbackWrong": {
+        "en": "Sharps and flats change pitch by a half step: sharp (♯) goes one half step higher, and flat (♭) goes one half step lower.",
+        "fa": "دیز و بمل زیر و بمی نت رو به اندازه‌ی نیم‌پرده تغییر می‌دن: دیز (♯) نیم‌پرده بالاتر و بمل (♭) نیم‌پرده پایین‌تر."
+      }
+    },
+    {
+      "question": {
+        "en": "Which note is played on the exact same black key as C♯?",
+        "fa": "کدوم نت دقیقاً روی همون کلید سیاهِ «دو دیز» (C♯) زده می‌شه؟"
+      },
+      "options": {
+        "en": ["D♭ (one half step below D)", "F♯ (above F)", "E♭ (below E)"],
+        "fa": ["ر بمل (D♭ — نیم‌پرده پایین‌تر از ر)", "فا دیز (F♯)", "می بمل (E♭)"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! The black key between C and D is both C♯ (above C) and D♭ (below D).",
+        "fa": "دقیقاً! کلید سیاهِ بین دو و ر هم «دو دیز» (بالاتر از دو) هست و هم «ر بمل» (پایین‌تر از ر)."
+      },
+      "feedbackWrong": {
+        "en": "Since the black key sits between C and D, it is a half step above C (C♯) and a half step below D (D♭).",
+        "fa": "چون این کلید سیاه بین دو و ر هست، از دو نیم‌پرده بالاتره (C♯) و از ر نیم‌پرده پایین‌تره (D♭)."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Today you learned that sharp (♯) raises a note a half step, flat (♭) lowers a note a half step, and each black key shares two names (like C♯ = D♭).",
+    "fa": "امروز یاد گرفتی دیز (♯) نت رو نیم‌پرده بالاتر می‌بره، بمل (♭) نیم‌پرده پایین‌تر میاره، و هر کلید سیاه دو تا اسم داره (مثل C♯ = D♭)."
+  },
+  "tomorrow": {
+    "en": "The C major scale and passing the thumb under",
+    "fa": "گام دو ماژور و رد کردن شست"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

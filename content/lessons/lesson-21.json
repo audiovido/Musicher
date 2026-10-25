@@ -1,0 +1,108 @@
+{
+  "id": 21,
+  "chapter": {
+    "en": "Chapter 6: Half steps and scales",
+    "fa": "فصل ۶ «نیم‌پرده و گام»"
+  },
+  "title": {
+    "en": "Half step and whole step",
+    "fa": "نیم‌پرده و پرده"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Identify half steps and whole steps on the keyboard, including the natural half steps E–F and B–C.",
+    "fa": "فاصله‌ی «نیم‌پرده» و «پرده» رو روی کلاویه‌ها می‌شناسی و می‌دونی بین می–فا و سی–دو کلید سیاه نیست."
+  },
+  "see": {
+    "en": "A half step is the shortest distance on the piano: from any key to the very next key—whether it is white or black, with nothing in between. A whole step equals two half steps (you skip one key in between). For example, C to the black key C♯ is a half step, and C to D is a whole step. Look closely at E–F and B–C: there is no black key between them, so E to F and B to C are naturally a half step!",
+    "fa": "«نیم‌پرده» کوتاه‌ترین فاصله روی پیانوئه: یعنی از هر کلید بری سراغِ نزدیک‌ترین کلیدِ بغلش (فرقی نداره سفید باشه یا سیاه، هیچ کلیدی وسطشون نیست). «پرده» می‌شه دو تا نیم‌پرده (یعنی یه کلید وسطشون جا می‌مونه). مثلاً از دو (C) تا کلید سیاهِ دو دیز (C♯) نیم‌پرده‌ست، و از دو (C) تا ر (D) یه پرده‌ی کامله. حالا به می–فا (E–F) و سی–دو (B–C) دقت کن: بینشون هیچ کلید سیاهی نیست، پس خودشون طبیعی نیم‌پرده هستن!"
+  },
+  "imageUrl": "assets/lesson-21.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play C4 with thumb (1), then step right up to the black key C♯4 with index finger (2)—that tiny move is a half step.",
+      "Now go from C♯4 (2) to D4 (1 or 2), and feel how C4 to D4 makes one whole step (two half steps).",
+      "Play E4 and F4 right next to each other: notice there is no black key between them, so E4–F4 is also a half step!"
+    ],
+    "fa": [
+      "با شست (۱) نت دو (C4) رو بزن و بعد با انگشت ۲ کلید سیاهِ بغلش یعنی C♯4 رو بزن؛ این فاصله‌ی کوچیک یه «نیم‌پرده» است.",
+      "حالا از C♯4 برو روی ر (D4)؛ ببین چطور از دو تا ر می‌شه یه «پرده» (دو تا نیم‌پرده).",
+      "در آخر می (E4) و فا (F4) رو پشت سر هم بزن: ببین وسطشون کلید سیاه نیست، پس می تا فا هم نیم‌پرده‌ست!"
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "C#4", "D4", "E4", "F4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I check the back of the keys to see whether a black key sits between two white keys?",
+      "Could I hear how a half step sounds closer and tighter than a whole step?"
+    ],
+    "fa": [
+      "به بالای کلیدها نگاه کردم تا ببینم بین دو تا کلید سفید، کلید سیاه هست یا نه؟",
+      "شنیدم که صدای نیم‌پرده چقدر به هم نزدیک‌تر از یه پرده‌ست؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What is a half step on the piano keyboard?",
+        "fa": "«نیم‌پرده» روی کیبورد پیانو یعنی چی؟"
+      },
+      "options": {
+        "en": ["Moving from any key to the very next key (white or black) with no key in between", "Jumping over two white keys", "Only moving from a white key to another white key"],
+        "fa": ["رفتن از هر کلید به بلافاصله کلیدِ بغلش (سفید یا سیاه) بدون هیچ کلیدی در وسط", "پریدن از روی دو تا کلید سفید", "فقط رفتن از یه کلید سفید به کلید سفید بعدی"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! A half step is the very next key—white or black—with zero keys in between.",
+        "fa": "دقیقاً! نیم‌پرده یعنی نزدیک‌ترین کلیدِ بغلی، چه سفید باشه چه سیاه، طوری که هیچ کلیدی وسطشون نمونه."
+      },
+      "feedbackWrong": {
+        "en": "Remember: a half step is the shortest distance on the keyboard, moving to the very next key with nothing in between.",
+        "fa": "یادت باشه: نیم‌پرده کوتاه‌ترین فاصله‌ست و یعنی رفتن به کلیدِ بلافاصله کناری، بدون هیچ کلیدی در وسط."
+      }
+    },
+    {
+      "question": {
+        "en": "Why are E to F and B to C half steps even though both keys are white?",
+        "fa": "چرا فاصله‌ی «می تا فا» (E–F) و «سی تا دو» (B–C) با اینکه هر دو سفید هستن، نیم‌پرده حساب می‌شه؟"
+      },
+      "options": {
+        "en": ["Because there is no black key between them", "Because they are at the end of the song", "Because they sound an octave apart"],
+        "fa": ["چون هیچ کلید سیاهی بینشون نیست", "چون آخر آهنگ قرار دارن", "چون فاصله‌شون یک اکتاو هست"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Since there is no black key between E–F or B–C, they are immediate neighbors—a natural half step.",
+        "fa": "آفرین! چون بین می–فا و سی–دو کلید سیاهی نیست، بلافاصله همسایه‌ی هم هستن و فاصله‌شون نیم‌پرده‌ست."
+      },
+      "feedbackWrong": {
+        "en": "Look between E and F (and B and C) on the keyboard: there is no black key in between, making them a half step.",
+        "fa": "به بین کلیدهای می و فا (و سی و دو) نگاه کن: هیچ کلید سیاهی وسطشون نیست، پس نیم‌پرده هستن."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Today you learned half steps (the very next key), whole steps (two half steps), and the natural white-key half steps E–F and B–C.",
+    "fa": "امروز «نیم‌پرده» (کلیدِ بلافاصله کناری)، «پرده» (دو نیم‌پرده) و نیم‌پرده‌های طبیعیِ می–فا و سی–دو رو یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "Sharps and flats (♯ and ♭)",
+    "fa": "دیز و بمل (♯ و ♭)"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

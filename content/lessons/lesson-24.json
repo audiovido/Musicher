@@ -1,0 +1,109 @@
+{
+  "id": 24,
+  "chapter": {
+    "en": "Chapter 6: Half steps and scales",
+    "fa": "فصل ۶ «نیم‌پرده و گام»"
+  },
+  "title": {
+    "en": "The G major scale",
+    "fa": "گام سل ماژور"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play the G major scale from G3 to G4 with F♯ and the 1–2–3, 1–2–3–4–5 right-hand fingering.",
+    "fa": "«گام سل ماژور» رو از G3 تا G4 با کلید سیاهِ فا دیز (F♯) و انگشت‌گذاری ۱–۲–۳، ۱–۲–۳–۴–۵ می‌زنی."
+  },
+  "see": {
+    "en": "When you build the major scale pattern (whole–whole–half–whole–whole–whole–half) starting on G, the first half step falls naturally between B and C (notes 3–4). Near the top, though, E to F is only a half step—so to get a whole step after E and a final half step into G, we raise F to the black key F♯! That is why the G major scale has one sharp (F♯), which musicians write at the start of the staff as its key signature. The right-hand fingering is the exact same as C major: 1–2–3 on G–A–B, thumb (1) passes under to C, then 1–2–3–4–5 on C–D–E–F♯–G.",
+    "fa": "وقتی همون الگوی گام ماژور (پرده–پرده–نیم‌پرده–پرده–پرده–پرده–نیم‌پرده) رو از نت «سل» (G) شروع می‌کنی، نیم‌پرده‌ی اول طبیعی می‌افته بین سی و دو (B–C). اما آخر گام، فاصله‌ی می تا فا نیم‌پرده‌ست؛ پس برای اینکه از می (E) یه «پرده» بریم بالا و با یه «نیم‌پرده» برسیم به سل (G)، باید به‌جای فا سفید، کلید سیاهِ «فا دیز» (F♯) رو بزنی! به همین دلیل «گام سل ماژور» یک دیز (F♯) داره که اولِ حامل به عنوان علامت سرکلید می‌نویسن. انگشت‌گذاری دست راست دقیقاً مثل گام دو ماژوره: ۱–۲–۳ روی سل–لا–سی، رد کردن شست (۱) به روی دو (C)، و ۱–۲–۳–۴–۵ روی دو–ر–می–فا دیز–سل."
+  },
+  "imageUrl": "assets/lesson-24.jpeg",
+  "audioUrl": "",
+  "diagram": "scale-g-major",
+  "steps": {
+    "en": [
+      "Start with right thumb (1) on G3, and play G3 (1), A3 (2), B3 (3).",
+      "Pass your thumb (1) smoothly under finger 3 to play C4, then continue up D4 (2) and E4 (3).",
+      "Reach finger 4 slightly forward onto the black key F♯4, and finish on G4 with pinky (5)."
+    ],
+    "fa": [
+      "شست دست راست (۱) رو بذار روی سل بم‌تر (G3) و بزن: سل (۱)، لا (۲)، سی (۳).",
+      "با رد کردن شست (۱) از زیر انگشت ۳، نت دو (C4) رو بزن و بعد برو روی ر (۲) و می (۳).",
+      "انگشت ۴ رو کمی ببر جلو روی کلید سیاهِ فا دیز (F♯4) و در آخر سل (G4) رو با انگشت ۵ بزن."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["G3", "A3", "B3", "C4", "D4", "E4", "F#4", "G4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I pass my thumb (1) under to C4 after playing B3 with finger 3?",
+      "Did I play the black key F♯4 with finger 4 before landing on G4 with finger 5?"
+    ],
+    "fa": [
+      "بعد از زدن سی (B3) با انگشت ۳، شستم (۱) رو از زیر رد کردم روی دو (C4)؟",
+      "قبل از رسیدن به سل آخر، کلید سیاهِ فا دیز (F♯4) رو با انگشت ۴ زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which black key is needed in the G major scale (and forms its one-sharp key signature)?",
+        "fa": "کدوم کلید سیاه تو «گام سل ماژور» لازمه تا الگوی گام ماژور درست دربیاد؟"
+      },
+      "options": {
+        "en": ["F♯ (so E to F♯ is a whole step and F♯ to G is a half step)", "C♯ (right after C)", "B♭ (instead of B)"],
+        "fa": ["فا دیز — F♯ (تا از می تا فا دیز یک پرده و از فا دیز تا سل نیم‌پرده بشه)", "دو دیز — C♯", "سی بمل — B♭"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Raising F to F♯ creates a whole step from E to F♯ and a leading half step from F♯ to G.",
+        "fa": "آفرین! با زدن فا دیز (F♯)، فاصله‌ی می تا فا دیز می‌شه یک پرده و فا دیز تا سل می‌شه نیم‌پرده‌ی آخر گام."
+      },
+      "feedbackWrong": {
+        "en": "Look at the top of the G major diagram: we raise F to F♯ so that the final step from F♯ to G is a half step.",
+        "fa": "به آخرِ نمودار گام سل ماژور نگاه کن: به‌جای فا سفید، فا دیز (F♯) رو می‌زنیم تا فاصله‌اش تا سل بشه نیم‌پرده."
+      }
+    },
+    {
+      "question": {
+        "en": "When playing the G major scale with the right hand (1–2–3, 1–2–3–4–5), which note does your thumb (1) pass under to play?",
+        "fa": "تو گام سل ماژور با دست راست (۱–۲–۳، ۱–۲–۳–۴–۵)، شست (۱) از زیرِ انگشت ۳ رد می‌شه و روی کدوم نت می‌شینه؟"
+      },
+      "options": {
+        "en": ["C4 (right after playing B3 with finger 3)", "F♯4 (the black key)", "E4"],
+        "fa": ["نت دو — C4 (بلافاصله بعد از زدن سی با انگشت ۳)", "فا دیز — F♯4", "می — E4"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Fingers 1–2–3 play G–A–B, then thumb (1) tucks under to C4 so fingers 2–3–4–5 can play D–E–F♯–G.",
+        "fa": "دقیقاً! بعد از اینکه ۱–۲–۳ نت‌های سل–لا–سی رو زدن، شست (۱) می‌آد روی دو (C4) تا بقیه‌ی گام با ۲–۳–۴–۵ راحت زده بشه."
+      },
+      "feedbackWrong": {
+        "en": "Count the first three notes from G: 1 plays G, 2 plays A, 3 plays B—then thumb (1) passes under to C.",
+        "fa": "سه نت اول رو از سل بشمار: ۱ روی سل، ۲ روی لا، ۳ روی سی؛ بعد شست (۱) رد می‌شه و می‌شینه روی دو (C)."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations on completing Chapter 6! You mastered half steps, whole steps, sharps and flats, and both the C major and G major scales.",
+    "fa": "ایول، فصل ۶ رو هم تموم کردی! نیم‌پرده، پرده، دیز و بمل، و گام‌های دو ماژور و سل ماژور رو کامل یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "Practice C major and G major scales or explore Free-Play Piano!",
+    "fa": "تمرین گام‌های دو ماژور و سل ماژور و لذت بردن از پیانوی آزاد!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

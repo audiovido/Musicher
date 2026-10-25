@@ -382,6 +382,95 @@
     "lessonId": 20
   },
   {
+    "id": "half_step_missing_black_key",
+    "keywords": [
+      "نیم پرده",
+      "نیم‌پرده",
+      "پرده",
+      "می و فا",
+      "سی و دو",
+      "half step",
+      "whole step",
+      "e and f",
+      "b and c"
+    ],
+    "cause": {
+      "en": "Looking only at the front edge of the white keys and forgetting that most white-key neighbors have a black key in between (making them a whole step, except E–F and B–C).",
+      "fa": "فقط به لبه‌ی پایینیِ کلیدهای سفید نگاه می‌کنی و حواست نیست که بین بیشتر کلیدهای سفید یه کلید سیاه هست (که می‌شه یک پرده، به‌جز می–فا و سی–دو)."
+    },
+    "fix": {
+      "en": "Glance toward the back of the keyboard: if a black key sits between two white keys, the black key is the half step; only E–F and B–C have no black key between them.",
+      "fa": "به بخش بالاییِ کلیدها نگاه کن: اگه بین دو تا کلید سفید، کلید سیاه هست، نیم‌پرده همون کلید سیاهه؛ فقط بین می–فا و سی–دو کلید سیاه نیست."
+    },
+    "lessonId": 21
+  },
+  {
+    "id": "sharp_flat_direction",
+    "keywords": [
+      "دیز",
+      "بمل",
+      "جهت دیز و بمل",
+      "دو دیز",
+      "ر بمل",
+      "sharp",
+      "flat",
+      "sharps and flats",
+      "c sharp",
+      "d flat"
+    ],
+    "cause": {
+      "en": "Mixing up which direction sharp (♯) and flat (♭) move on the keyboard.",
+      "fa": "جهت حرکتِ دیز (♯) و بمل (♭) رو روی کیبورد با هم قاطی می‌کنی."
+    },
+    "fix": {
+      "en": "Remember: sharp (♯) goes one half step higher (to the right), and flat (♭) goes one half step lower (to the left).",
+      "fa": "این‌طوری یادت بمونه: دیز (♯) یعنی نیم‌پرده بالاتر (به سمت راست) و بمل (♭) یعنی نیم‌پرده پایین‌تر (به سمت چپ)."
+    },
+    "lessonId": 22
+  },
+  {
+    "id": "c_scale_thumb_under_elbow",
+    "keywords": [
+      "گام دو ماژور",
+      "رد کردن شست",
+      "چرخش آرنج",
+      "انگشت کم میارم",
+      "c major scale",
+      "thumb under",
+      "passing thumb"
+    ],
+    "cause": {
+      "en": "Waiting until finger 5 before shifting, or swinging the elbow outward when passing thumb (1) under finger 3.",
+      "fa": "تا انگشت ۵ پیش می‌ری و انگشت کم میاری، یا موقع رد کردن شست (۱) از زیر انگشت ۳، آرنجت رو به بیرون می‌چرخونی."
+    },
+    "fix": {
+      "en": "Pass thumb (1) gently under right after finger 3 on E4 while keeping your wrist level and your elbow relaxed by your side.",
+      "fa": "بلافاصله بعد از انگشت ۳ روی می (E4)، مچ و آرنجت رو آروم نگه دار و شست (۱) رو نرم از زیر رد کن بذار روی فا (F4)."
+    },
+    "lessonId": 23
+  },
+  {
+    "id": "g_scale_forgetting_f_sharp",
+    "keywords": [
+      "گام سل ماژور",
+      "فا دیز",
+      "سل ماژور",
+      "فراموش کردن فا دیز",
+      "g major scale",
+      "f sharp",
+      "g scale"
+    ],
+    "cause": {
+      "en": "Playing the white key F4 out of habit from C major instead of raising finger 4 onto the black key F♯4.",
+      "fa": "از روی عادتِ گام دو ماژور، کلید سفیدِ فا رو می‌زنی به‌جای اینکه انگشت ۴ رو ببری روی کلید سیاهِ فا دیز (F♯4)."
+    },
+    "fix": {
+      "en": "As soon as your thumb (1) lands on C4 in the G major scale, let finger 4 rest slightly forward near the black key F♯4 so it is ready.",
+      "fa": "تو گام سل ماژور به محض اینکه شست (۱) نشست روی دو (C4)، انگشت ۴ رو کمی جلوتر نزدیک کلید سیاهِ فا دیز (F♯4) آماده نگه دار."
+    },
+    "lessonId": 24
+  },
+  {
     "id": "bored",
     "keywords": [
       "حوصلهم سر رفت",
