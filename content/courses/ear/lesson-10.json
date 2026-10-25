@@ -1,0 +1,132 @@
+{
+  "id": 10,
+  "courseId": "ear",
+  "chapter": {
+    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+  },
+  "title": {
+    "en": "Ear review game",
+    "fa": "بازی مرور تربیت گوش"
+  },
+  "duration": {
+    "en": "7 minutes",
+    "fa": "۷ دقیقه"
+  },
+  "goal": {
+    "en": "Put all your ear-training skills together—high vs low, step vs skip, intervals, and chord colors—in one lively review game.",
+    "fa": "همهٔ مهارت‌های شنیداریت—زیر و بم، پله و پرش، فاصله‌ها و رنگ آکوردها—رو توی یه بازی مرور کنار هم محک بزنی."
+  },
+  "imageUrl": "",
+  "see": {
+    "en": [
+      "Look how far your musical ear has come! In just ten short lessons you learned to hear pitch direction, spot unison vs change, tell smooth steps from wide leaps, recognize specific intervals, and feel Major vs Minor chords.",
+      "In real music, all of these happen one after another. This review game lets you switch between different listening modes or play a full 8-round challenge to keep your ears sharp."
+    ],
+    "fa": [
+      "ببین گوش موسیقایی‌ت چقدر جلو اومده! توی این ده تا درس کوتاه یاد گرفتی جهت زیر و بمی، یکسان یا متفاوت بودن، پله و پرش، فاصله‌های کوچیک و بزرگ، و رنگ آکوردهای ماژور و مینور رو بشنوی.",
+      "توی موسیقی واقعی، همهٔ این‌ها پشت سر هم اتفاق می‌افتن. توی این بازی مرور می‌تونی بین حالت‌های مختلف جابه‌جا بشی و یه چالش ۸ دوری رو کامل کنی."
+    ]
+  },
+  "hear": {
+    "en": "Take a calm breath before each round, listen once with full focus, and trust your musical instinct.",
+    "fa": "قبل از هر دور یه نفس آروم بکش، با تمرکز کامل گوش بده و به حس موسیقایی خودت اعتماد کن."
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "higher-lower",
+    "subModes": [
+      "higher-lower",
+      "step-skip",
+      "major-minor",
+      "interval"
+    ],
+    "rounds": 8
+  },
+  "steps": {
+    "en": [
+      "Pick any mode chip at the top of the practice card (High/Low, Step/Skip, Major/Minor, or Intervals) or start right away.",
+      "Tap 'Play sound', hum softly if needed, and choose your answer.",
+      "Complete 8 rounds to finish the Ear Training course!"
+    ],
+    "fa": [
+      "یکی از حالت‌های بالای کارت تمرین (زیر و بم، پله یا پرش، ماژور و مینور، یا فاصله‌ها) رو انتخاب کن یا مستقیم شروع کن.",
+      "دکمهٔ پخش صدا رو بزن، اگه لازم بود آروم زمزمه کن و گزینهٔ درست رو انتخاب کن.",
+      "۸ دور رو کامل کن تا دورهٔ تربیت گوش رو با موفقیت تموم کنی!"
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did you try switching between at least two different listening modes?",
+      "Which skill feels easiest to your ear now, and which one will you revisit in the Practice Tools?"
+    ],
+    "fa": [
+      "حداقل دو تا از حالت‌های مختلف شنیداری بالای کارت رو امتحان کردی؟",
+      "کدوم مهارت الان برات از همه راحت‌تره و کدوم رو دوست داری توی «ابزارهای تمرین» بیشتر بازی کنی؟"
+    ]
+  },
+  "quiz": [
+    {
+      "q": {
+        "en": "When you hear three notes played together and the mood is bright and sunny, what are you hearing?",
+        "fa": "وقتی سه تا نت هم‌زمان پخش می‌شن و حس و حال صدا روشن و آفتابیه، چی می‌شنوی؟"
+      },
+      "options": {
+        "en": [
+          "A minor chord",
+          "A major chord",
+          "A single neighbor step",
+          "A quarter-tone rest"
+        ],
+        "fa": [
+          "آکورد مینور",
+          "آکورد ماژور",
+          "یک پلهٔ همسایه",
+          "سکوت"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Three notes sounding together with a bright, open color form a major triad.",
+        "fa": "سه نت هم‌زمان با رنگ صدایی روشن و شاد، آکورد ماژور می‌سازن."
+      }
+    },
+    {
+      "q": {
+        "en": "What is the secret to keeping your musical ear growing every week?",
+        "fa": "راز اینکه گوش موسیقایی‌ت هر هفته قوی‌تر بشه چیه؟"
+      },
+      "options": {
+        "en": [
+          "Only practicing once a year for five hours",
+          "Short 5-minute daily listening and humming sessions",
+          "Never singing out loud",
+          "Playing with the sound muted"
+        ],
+        "fa": [
+          "سالی یک بار پنج ساعت تمرین کنی",
+          "تمرین‌های کوتاه ۵ دقیقه‌ایِ روزانه همراه با گوش دادن و زمزمه کردن",
+          "هیچ‌وقت با صدای بلند زمزمه نکنی",
+          "بدون صدا تمرین کنی"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Just 5 minutes a day of active listening and humming builds lifelong ear memory.",
+        "fa": "فقط روزی ۵ دقیقه گوش دادنِ فعال و زمزمه کردن، حافظهٔ شنیداری موندگاری می‌سازه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations! You completed the Ear Training course and combined pitch, contour, intervals, and chords.",
+    "fa": "تبریک! دورهٔ تربیت گوش رو تموم کردی و تشخیص زیر و بمی، جهت ملودی، فاصله‌ها و آکوردها رو یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "Keep using the Ear Game in Practice Tools anytime, and apply your fresh ears to your instrument courses!",
+    "fa": "از این به بعد هر وقت خواستی توی بخش «ابزارهای تمرین» بازی گوش رو ادامه بده و از گوش قویت توی دوره‌های ساز استفاده کن!"
+  },
+  "source": {
+    "en": "Original MUSICHER content",
+    "fa": "محتوای اختصاصی MUSICHER"
+  }
+}

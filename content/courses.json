@@ -23,11 +23,11 @@
     "id": "rhythm",
     "order": 2,
     "group": "skills",
-    "visible": false,
+    "visible": true,
     "icon": "drum",
-    "status": "coming-soon",
+    "status": "ready",
     "review": "self",
-    "lessonCount": 0,
+    "lessonCount": 12,
     "lessonsDir": "content/courses/rhythm",
     "coverImage": "assets/course-rhythm.jpeg",
     "title": {
@@ -35,19 +35,19 @@
       "fa": "ریتم و وزن"
     },
     "subtitle": {
-      "en": "Steady pulse, 2/4, 3/4, 4/4, 6/8 & Persian rhythmic patterns",
-      "fa": "ضرب ثابت، میزان‌های ۲/۴، ۳/۴، ۴/۴، ۶/۸ و ریتم‌های ایرانی"
+      "en": "3 chapters · 12 lessons",
+      "fa": "۳ فصل · ۱۲ درس"
     }
   },
   {
     "id": "ear",
     "order": 3,
     "group": "skills",
-    "visible": false,
+    "visible": true,
     "icon": "ear",
-    "status": "coming-soon",
+    "status": "ready",
     "review": "self",
-    "lessonCount": 0,
+    "lessonCount": 10,
     "lessonsDir": "content/courses/ear",
     "coverImage": "assets/course-ear.jpeg",
     "title": {
@@ -55,8 +55,8 @@
       "fa": "تربیت گوش و نت‌خوانی"
     },
     "subtitle": {
-      "en": "High vs low, steps & skips, major vs minor, staff & koron",
-      "fa": "زیر و بم، گام و پرش، ماژور و مینور، حامل و ربع‌پرده (کرن)"
+      "en": "2 chapters · 10 lessons",
+      "fa": "۲ فصل · ۱۰ درس"
     }
   },
   {

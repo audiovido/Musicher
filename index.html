@@ -4526,65 +4526,210 @@
       window.drawKeyboard = drawKeyboard;
 
       /* ==========================================================================
-         EDUCATIONAL VIRTUAL PIANO ENGINE (Web Audio API + 2-Octave C3..C5 Keyboard)
+         EDUCATIONAL VIRTUAL PIANO ENGINE (Web Audio API + Full 88-Key A0..C8 Range)
          - Practice tool only: no recording, no saving performances, no composing, no export
-         - 2 octaves C3..C5 (15 white keys, 10 black keys in groups of 2 and 3)
-         - Web Audio API synthesized piano tone (short attack, natural decay, slight harmonics)
-         - Lesson Practice Mode: Watch, Follow me, On your own
-         - Free-Play Mode in Library -> Piano tab
+         - Full 88-key piano (A0 to C8: 52 white keys, 36 black keys)
+         - Sliding visible window: 3 octaves on desktop (22 white keys), 2 on tablet (15), 1.5 on mobile (11)
+         - Octave buttons ("◀ Octave" / "Octave ▶"), current range label (e.g. "C3–C6"), and interactive 88-key mini-map strip
+         - Desktop shortcuts: Z = octave down, X = octave up; key mapping follows the visible window
          ========================================================================== */
-      const VPIANO_WHITE_KEYS = [
-        { note: "C3", letter: "C", octave: 3, step: 0, midi: 48 },
-        { note: "D3", letter: "D", octave: 3, step: 1, midi: 50 },
-        { note: "E3", letter: "E", octave: 3, step: 2, midi: 52 },
-        { note: "F3", letter: "F", octave: 3, step: 3, midi: 53 },
-        { note: "G3", letter: "G", octave: 3, step: 4, midi: 55 },
-        { note: "A3", letter: "A", octave: 3, step: 5, midi: 57 },
-        { note: "B3", letter: "B", octave: 3, step: 6, midi: 59 },
-        { note: "C4", letter: "C", octave: 4, step: 0, midi: 60 },
-        { note: "D4", letter: "D", octave: 4, step: 1, midi: 62 },
-        { note: "E4", letter: "E", octave: 4, step: 2, midi: 64 },
-        { note: "F4", letter: "F", octave: 4, step: 3, midi: 65 },
-        { note: "G4", letter: "G", octave: 4, step: 4, midi: 67 },
-        { note: "A4", letter: "A", octave: 4, step: 5, midi: 69 },
-        { note: "B4", letter: "B", octave: 4, step: 6, midi: 71 },
-        { note: "C5", letter: "C", octave: 5, step: 0, midi: 72 }
-      ];
-
-      // Black keys placed between white keys at index afterWhiteIdx (groups of 2 and 3)
-      const VPIANO_BLACK_KEYS = [
-        { note: "C#3", label: "C#", faLabel: "دو دیز", afterWhiteIdx: 0, offsetRatio: 0.56, midi: 49 },
-        { note: "D#3", label: "D#", faLabel: "ر دیز", afterWhiteIdx: 1, offsetRatio: 0.44, midi: 51 },
-        { note: "F#3", label: "F#", faLabel: "فا دیز", afterWhiteIdx: 3, offsetRatio: 0.58, midi: 54 },
-        { note: "G#3", label: "G#", faLabel: "سل دیز", afterWhiteIdx: 4, offsetRatio: 0.50, midi: 56 },
-        { note: "A#3", label: "A#", faLabel: "لا دیز", afterWhiteIdx: 5, offsetRatio: 0.42, midi: 58 },
-        { note: "C#4", label: "C#", faLabel: "دو دیز", afterWhiteIdx: 7, offsetRatio: 0.56, midi: 61 },
-        { note: "D#4", label: "D#", faLabel: "ر دیز", afterWhiteIdx: 8, offsetRatio: 0.44, midi: 63 },
-        { note: "F#4", label: "F#", faLabel: "فا دیز", afterWhiteIdx: 10, offsetRatio: 0.58, midi: 66 },
-        { note: "G#4", label: "G#", faLabel: "سل دیز", afterWhiteIdx: 11, offsetRatio: 0.50, midi: 68 },
-        { note: "A#4", label: "A#", faLabel: "لا دیز", afterWhiteIdx: 12, offsetRatio: 0.42, midi: 70 }
-      ];
-
+      const VPIANO_WHITE_KEYS = [];
+      const VPIANO_BLACK_KEYS = [];
       const VPIANO_ALL_BY_NOTE = {};
-      for (const k of VPIANO_WHITE_KEYS) VPIANO_ALL_BY_NOTE[k.note] = k;
-      for (const k of VPIANO_BLACK_KEYS) VPIANO_ALL_BY_NOTE[k.note] = k;
 
-      // Computer keyboard mapping (A W S E D F T G Y H U J K = C4 to C5)
-      const VPIANO_COMPUTER_KEYMAP = {
-        a: "C4",
-        w: "C#4",
-        s: "D4",
-        e: "D#4",
-        d: "E4",
-        f: "F4",
-        t: "F#4",
-        g: "G4",
-        y: "G#4",
-        h: "A4",
-        u: "A#4",
-        j: "B4",
-        k: "C5"
-      };
+      (function build88KeyPianoData() {
+        const letters = ["C", "D", "E", "F", "G", "A", "B"];
+        const semitoneFromC = [0, 2, 4, 5, 7, 9, 11];
+        const blackSpecByStep = {
+          0: { sharp: "C#", flat: "Db", faLabel: "دو دیز", offsetRatio: 0.56 },
+          1: { sharp: "D#", flat: "Eb", faLabel: "ر دیز", offsetRatio: 0.44 },
+          3: { sharp: "F#", flat: "Gb", faLabel: "فا دیز", offsetRatio: 0.58 },
+          4: { sharp: "G#", flat: "Ab", faLabel: "سل دیز", offsetRatio: 0.50 },
+          5: { sharp: "A#", flat: "Bb", faLabel: "لا دیز", offsetRatio: 0.42 }
+        };
+
+        // MIDI 21 (A0) to MIDI 108 (C8)
+        let whiteIdx = 0;
+        for (let octave = 0; octave <= 8; octave++) {
+          for (let step = 0; step < 7; step++) {
+            const midi = (octave + 1) * 12 + semitoneFromC[step];
+            if (midi < 21 || midi > 108) continue;
+            const letter = letters[step];
+            const note = `${letter}${octave}`;
+            const wk = {
+              note,
+              letter,
+              octave,
+              step,
+              midi,
+              whiteIdx
+            };
+            VPIANO_WHITE_KEYS.push(wk);
+            VPIANO_ALL_BY_NOTE[note] = wk;
+
+            // Black key immediately after this white key (if within A0..C8, i.e. midi + 1 < 108)
+            const bSpec = blackSpecByStep[step];
+            if (bSpec && midi + 1 < 108) {
+              const bNote = `${bSpec.sharp}${octave}`;
+              const bk = {
+                note: bNote,
+                flatNote: `${bSpec.flat}${octave}`,
+                label: bSpec.sharp,
+                faLabel: bSpec.faLabel,
+                octave,
+                afterWhiteIdx: whiteIdx,
+                offsetRatio: bSpec.offsetRatio,
+                midi: midi + 1
+              };
+              VPIANO_BLACK_KEYS.push(bk);
+              VPIANO_ALL_BY_NOTE[bNote] = bk;
+              VPIANO_ALL_BY_NOTE[bk.flatNote] = bk;
+            }
+            whiteIdx += 1;
+          }
+        }
+      })();
+
+      // Middle C (C4) is whiteIdx 23; C3 is whiteIdx 16
+      const VPIANO_C3_WHITE_IDX = 16;
+      const VPIANO_C4_WHITE_IDX = 23;
+
+      function getPianoWindowWhiteCount() {
+        const w = typeof window !== "undefined" ? window.innerWidth : 1200;
+        if (w >= 1100) return 22; // 3 octaves (e.g. C3–C6)
+        if (w >= 700) return 15; // 2 octaves (e.g. C3–C5)
+        return 11; // 1.5 octaves (e.g. C4–F5), min 40px white key width
+      }
+
+      function getDefaultPianoWindowStart(whiteCount = getPianoWindowWhiteCount()) {
+        if (whiteCount >= 15) return VPIANO_C3_WHITE_IDX;
+        return VPIANO_C4_WHITE_IDX;
+      }
+
+      function clampPianoWindowStart(startIdx, whiteCount = getPianoWindowWhiteCount()) {
+        const maxStart = Math.max(0, VPIANO_WHITE_KEYS.length - whiteCount);
+        return Math.max(0, Math.min(maxStart, Math.round(startIdx)));
+      }
+
+      function getPianoWindowStartWhiteIdx() {
+        const count = getPianoWindowWhiteCount();
+        if (ui.pianoWindowStartWhiteIdx === null || ui.pianoWindowStartWhiteIdx === undefined) {
+          ui.pianoWindowStartWhiteIdx = getDefaultPianoWindowStart(count);
+        }
+        return clampPianoWindowStart(ui.pianoWindowStartWhiteIdx, count);
+      }
+
+      function getPianoWindowRangeLabel(startIdx = getPianoWindowStartWhiteIdx(), count = getPianoWindowWhiteCount()) {
+        const firstWk = VPIANO_WHITE_KEYS[startIdx] || VPIANO_WHITE_KEYS[0];
+        const lastWk =
+          VPIANO_WHITE_KEYS[Math.min(VPIANO_WHITE_KEYS.length - 1, startIdx + count - 1)] ||
+          VPIANO_WHITE_KEYS[VPIANO_WHITE_KEYS.length - 1];
+        return `${firstWk.note}–${lastWk.note}`;
+      }
+
+      // Dynamic computer keyboard mapping that follows the visible window
+      function getActiveComputerKeyMap() {
+        const count = getPianoWindowWhiteCount();
+        const startIdx = getPianoWindowStartWhiteIdx();
+        const anchorWhiteIdx =
+          count >= 22 && startIdx >= 9 && startIdx + 7 + 10 < VPIANO_WHITE_KEYS.length
+            ? startIdx + 7
+            : startIdx;
+
+        const whiteKeyChars = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"];
+        const blackKeyChars = ["w", "e", "r", "t", "y", "u", "i", "o", "p", "["];
+        const map = {};
+
+        for (let i = 0; i < whiteKeyChars.length; i++) {
+          const wIdx = anchorWhiteIdx + i;
+          const wk = VPIANO_WHITE_KEYS[wIdx];
+          if (!wk) break;
+          map[whiteKeyChars[i]] = wk.note;
+          if (i < blackKeyChars.length) {
+            const bk = VPIANO_BLACK_KEYS.find((b) => b.afterWhiteIdx === wIdx);
+            if (bk) {
+              map[blackKeyChars[i]] = bk.note;
+            }
+          }
+        }
+        return map;
+      }
+
+      function updatePianoWindowDOM(smooth = true) {
+        const count = getPianoWindowWhiteCount();
+        const startIdx = getPianoWindowStartWhiteIdx();
+        const maxStart = Math.max(0, VPIANO_WHITE_KEYS.length - count);
+        const rangeLabel = getPianoWindowRangeLabel(startIdx, count);
+        const stageWidthPct = (VPIANO_WHITE_KEYS.length / count) * 100;
+        const translatePct = (startIdx / VPIANO_WHITE_KEYS.length) * 100;
+
+        document.querySelectorAll(".vpiano-keys-stage").forEach((stage) => {
+          stage.style.transition = smooth ? "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)" : "none";
+          stage.style.width = `max(${stageWidthPct.toFixed(4)}%, ${VPIANO_WHITE_KEYS.length * 40}px)`;
+          stage.style.transform = `translateX(-${translatePct.toFixed(4)}%)`;
+        });
+
+        document.querySelectorAll(".vpiano-minimap-window").forEach((winEl) => {
+          winEl.style.transition = smooth
+            ? "left 0.24s cubic-bezier(0.22, 1, 0.36, 1), width 0.24s cubic-bezier(0.22, 1, 0.36, 1)"
+            : "none";
+          winEl.style.left = `${((startIdx / VPIANO_WHITE_KEYS.length) * 100).toFixed(3)}%`;
+          winEl.style.width = `${((count / VPIANO_WHITE_KEYS.length) * 100).toFixed(3)}%`;
+        });
+
+        document.querySelectorAll(".vpiano-octave-range-badge").forEach((badge) => {
+          badge.textContent = rangeLabel;
+        });
+
+        document.querySelectorAll("[data-action='vpiano-octave-down']").forEach((btn) => {
+          btn.disabled = startIdx <= 0;
+        });
+        document.querySelectorAll("[data-action='vpiano-octave-up']").forEach((btn) => {
+          btn.disabled = startIdx >= maxStart;
+        });
+      }
+
+      function setPianoWindowStartWhiteIdx(newStartIdx, smooth = true) {
+        const count = getPianoWindowWhiteCount();
+        ui.pianoWindowStartWhiteIdx = clampPianoWindowStart(newStartIdx, count);
+        updatePianoWindowDOM(smooth);
+      }
+
+      function shiftPianoOctave(deltaOctaves, smooth = true) {
+        const count = getPianoWindowWhiteCount();
+        const cur = getPianoWindowStartWhiteIdx();
+        const next = clampPianoWindowStart(cur + deltaOctaves * 7, count);
+        ui.pianoWindowStartWhiteIdx = next;
+        updatePianoWindowDOM(smooth);
+      }
+
+      function ensurePianoNoteVisible(noteName, smooth = true) {
+        if (!noteName) return;
+        const meta = VPIANO_ALL_BY_NOTE[noteName];
+        if (!meta) return;
+        const count = getPianoWindowWhiteCount();
+        const curStart = getPianoWindowStartWhiteIdx();
+        const curEnd = curStart + count - 1;
+
+        const noteMinWhite = meta.whiteIdx !== undefined ? meta.whiteIdx : meta.afterWhiteIdx;
+        const noteMaxWhite = meta.whiteIdx !== undefined ? meta.whiteIdx : meta.afterWhiteIdx + 1;
+
+        if (noteMinWhite >= curStart && noteMaxWhite <= curEnd) {
+          return;
+        }
+
+        let desiredStart = curStart;
+        if (noteMinWhite < curStart) {
+          const targetWk = VPIANO_WHITE_KEYS[noteMinWhite];
+          const cIdx = noteMinWhite - (targetWk ? targetWk.step : 0);
+          desiredStart = Math.max(0, cIdx);
+        } else if (noteMaxWhite > curEnd) {
+          const minNeeded = noteMaxWhite - count + 2;
+          const octSteps = Math.ceil((minNeeded - curStart) / 7);
+          desiredStart = curStart + Math.max(1, octSteps) * 7;
+        }
+        setPianoWindowStartWhiteIdx(desiredStart, smooth);
+      }
 
       let pianoAudioCtx = null;
 
@@ -4605,7 +4750,6 @@
           if (ctx.state === "suspended") {
             ctx.resume();
           }
-          // Play a tiny silent buffer to unlock iOS/Safari audio immediately
           const buffer = ctx.createBuffer(1, 1, 22050);
           const source = ctx.createBufferSource();
           source.buffer = buffer;
@@ -4634,25 +4778,21 @@
           const freq = 440 * Math.pow(2, (midi - 69) / 12);
           const now = ctx.currentTime;
 
-          // Master envelope with short attack (~8ms) and natural exponential decay
           const masterGain = ctx.createGain();
           masterGain.gain.setValueAtTime(0.0001, now);
           masterGain.gain.linearRampToValueAtTime(0.32, now + 0.008);
           masterGain.gain.exponentialRampToValueAtTime(0.11, now + 0.18);
           masterGain.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
 
-          // Warm low-pass filter that brightens on attack and mellows as the string decays
           const filter = ctx.createBiquadFilter();
           filter.type = "lowpass";
           filter.frequency.setValueAtTime(Math.min(9000, freq * 6.5), now);
           filter.frequency.exponentialRampToValueAtTime(Math.max(400, freq * 2.1), now + 0.45);
 
-          // Fundamental oscillator (triangle wave)
           const osc1 = ctx.createOscillator();
           osc1.type = "triangle";
           osc1.frequency.setValueAtTime(freq, now);
 
-          // 2nd harmonic (sine wave, adds body)
           const osc2 = ctx.createOscillator();
           osc2.type = "sine";
           osc2.frequency.setValueAtTime(freq * 2, now);
@@ -4660,7 +4800,6 @@
           gain2.gain.setValueAtTime(0.24, now);
           gain2.gain.exponentialRampToValueAtTime(0.01, now + durationSec * 0.75);
 
-          // 3rd harmonic (sine wave, subtle hammer overtone)
           const osc3 = ctx.createOscillator();
           osc3.type = "sine";
           osc3.frequency.setValueAtTime(freq * 3, now);
@@ -4838,6 +4977,10 @@
           pp.followDone = false;
           pp.ownPlayed = [];
           pp.ownStatus = "idle";
+          ui.pianoWindowStartWhiteIdx = getDefaultPianoWindowStart(getPianoWindowWhiteCount());
+          if (Array.isArray(lesson.practice.notes) && lesson.practice.notes[0]) {
+            ensurePianoNoteVisible(lesson.practice.notes[0], false);
+          }
         }
       }
 
@@ -4848,14 +4991,38 @@
           ? t("diagrams.persianNotes")
           : ["دو", "ر", "می", "فا", "سل", "لا", "سی"];
 
+        const totalWhite = VPIANO_WHITE_KEYS.length; // 52
+        const winCount = getPianoWindowWhiteCount();
+        const startIdx = getPianoWindowStartWhiteIdx();
+        const maxStart = Math.max(0, totalWhite - winCount);
+        const rangeLabel = getPianoWindowRangeLabel(startIdx, winCount);
+        const stageWidthPct = (totalWhite / winCount) * 100;
+        const translatePct = (startIdx / totalWhite) * 100;
+
+        // 88-key Mini-map strip (52 white keys + 36 black keys + highlighted window)
+        const miniWhitesHtml = VPIANO_WHITE_KEYS.map((wk) => {
+          const isC4 = wk.note === "C4";
+          const isTarget = mode === "follow" && targetNote === wk.note;
+          return `<div class="vpiano-minimap-wkey ${isC4 ? "is-c4" : ""} ${isTarget ? "is-target" : ""}" data-white-idx="${wk.whiteIdx}"></div>`;
+        }).join("");
+
+        const miniBlacksHtml = VPIANO_BLACK_KEYS.map((bk) => {
+          const leftPct = ((bk.afterWhiteIdx + 1) * (100 / totalWhite)) - (0.65 * (100 / totalWhite) * bk.offsetRatio);
+          return `<div class="vpiano-minimap-bkey" style="left:${leftPct.toFixed(3)}%;"></div>`;
+        }).join("");
+
+        const miniWinLeftPct = (startIdx / totalWhite) * 100;
+        const miniWinWidthPct = (winCount / totalWhite) * 100;
+
         const whiteKeysHtml = VPIANO_WHITE_KEYS.map((wk) => {
           const isTarget = mode === "follow" && targetNote === wk.note;
           const isC = wk.letter === "C";
+          const isC4 = wk.note === "C4";
           const latinText = isC ? wk.note : wk.letter;
           const faText = persianNotes[wk.step] || "";
           return `
-            <div class="vpiano-key vpiano-white-key ${isTarget ? "is-target-glow" : ""}" data-note="${wk.note}" role="button" tabindex="0" aria-label="${wk.note}">
-              ${isC ? `<span class="vpiano-C-dot"></span>` : ""}
+            <div class="vpiano-key vpiano-white-key ${isTarget ? "is-target-glow" : ""}" data-note="${wk.note}" data-white-idx="${wk.whiteIdx}" role="button" tabindex="0" aria-label="${wk.note}">
+              ${isC4 ? `<span class="vpiano-C-dot" title="Middle C (C4)"></span>` : ""}
               ${
                 showLabels
                   ? `<span class="vpiano-key-labels">
@@ -4868,12 +5035,15 @@
           `;
         }).join("");
 
+        const singleWhitePct = 100 / totalWhite;
+        const blackWidthPct = singleWhitePct * 0.64;
+
         const blackKeysHtml = VPIANO_BLACK_KEYS.map((bk) => {
-          const isTarget = mode === "follow" && targetNote === bk.note;
-          const boundaryPct = (bk.afterWhiteIdx + 1) * (100 / 15);
-          const leftStyle = `calc(${boundaryPct.toFixed(4)}% - ${(4.35 * bk.offsetRatio).toFixed(3)}%)`;
+          const isTarget = mode === "follow" && (targetNote === bk.note || targetNote === bk.flatNote);
+          const boundaryPct = (bk.afterWhiteIdx + 1) * singleWhitePct;
+          const leftPct = boundaryPct - blackWidthPct * bk.offsetRatio;
           return `
-            <div class="vpiano-key vpiano-black-key ${isTarget ? "is-target-glow" : ""}" style="left:${leftStyle};" data-note="${bk.note}" role="button" tabindex="0" aria-label="${bk.note}">
+            <div class="vpiano-key vpiano-black-key ${isTarget ? "is-target-glow" : ""}" style="left:${leftPct.toFixed(4)}%;width:${blackWidthPct.toFixed(4)}%;" data-note="${bk.note}" role="button" tabindex="0" aria-label="${bk.note}">
               ${
                 showLabels
                   ? `<span class="vpiano-key-labels">
@@ -4886,9 +5056,29 @@
         }).join("");
 
         return `
+          <div class="vpiano-minimap-wrap" dir="ltr">
+            <div class="vpiano-minimap" dir="ltr" role="slider" aria-label="${escapeHtml(t("piano.minimapAria"))}" aria-valuemin="0" aria-valuemax="${maxStart}" aria-valuenow="${startIdx}">
+              <div class="vpiano-minimap-whites">${miniWhitesHtml}</div>
+              <div class="vpiano-minimap-blacks">${miniBlacksHtml}</div>
+              <div class="vpiano-minimap-window" style="left:${miniWinLeftPct.toFixed(3)}%;width:${miniWinWidthPct.toFixed(3)}%;"></div>
+            </div>
+          </div>
+
+          <div class="vpiano-octave-bar" dir="ltr">
+            <button type="button" class="vpiano-octave-btn" data-action="vpiano-octave-down" ${startIdx <= 0 ? "disabled" : ""}>
+              <span>${escapeHtml(t("piano.octaveDownBtn"))}</span>
+            </button>
+            <div class="vpiano-octave-center" dir="ltr">
+              <span class="vpiano-octave-range-badge" dir="ltr">${escapeHtml(rangeLabel)}</span>
+            </div>
+            <button type="button" class="vpiano-octave-btn" data-action="vpiano-octave-up" ${startIdx >= maxStart ? "disabled" : ""}>
+              <span>${escapeHtml(t("piano.octaveUpBtn"))}</span>
+            </button>
+          </div>
+
           <div class="vpiano-scroll-wrap" dir="ltr">
             <div class="vpiano-keyboard" dir="ltr">
-              <div class="vpiano-keys-stage" dir="ltr">
+              <div class="vpiano-keys-stage" dir="ltr" style="width:max(${stageWidthPct.toFixed(4)}%, ${totalWhite * 40}px);transform:translateX(-${translatePct.toFixed(4)}%);">
                 ${whiteKeysHtml}
                 ${blackKeysHtml}
               </div>
@@ -4898,31 +5088,17 @@
       }
 
       function centerTargetKeyInScroll(smooth = true) {
-        const scrollWraps = document.querySelectorAll(".vpiano-scroll-wrap");
-        scrollWraps.forEach((scrollWrap) => {
-          if (scrollWrap.scrollWidth <= scrollWrap.clientWidth + 2) return;
-          const targetEl =
-            scrollWrap.querySelector(".vpiano-key.is-target-glow") ||
-            scrollWrap.querySelector(".vpiano-key.is-pressed") ||
-            scrollWrap.querySelector('.vpiano-key[data-note="C4"]');
-          if (!targetEl) return;
-
-          const wrapRect = scrollWrap.getBoundingClientRect();
-          const keyRect = targetEl.getBoundingClientRect();
-          const keyCenterOffset =
-            keyRect.left - wrapRect.left + scrollWrap.scrollLeft + keyRect.width / 2;
-          const maxScroll = Math.max(0, scrollWrap.scrollWidth - scrollWrap.clientWidth);
-          const desiredScroll = Math.max(
-            0,
-            Math.min(maxScroll, Math.round(keyCenterOffset - scrollWrap.clientWidth / 2))
-          );
-
-          if (smooth && typeof scrollWrap.scrollTo === "function") {
-            scrollWrap.scrollTo({ left: desiredScroll, behavior: "smooth" });
-          } else {
-            scrollWrap.scrollLeft = desiredScroll;
+        const lesson = getActivePracticeContextLesson();
+        if (ui.screen === "lesson" && lesson && lesson.practice && getPracticeType(lesson.practice) === "keyboard-follow") {
+          const pp = ui.pianoPractice;
+          const notes = lesson.practice.notes || [];
+          if (pp.tab === "follow" && !pp.followDone && notes[pp.followIdx]) {
+            ensurePianoNoteVisible(notes[pp.followIdx], smooth);
+          } else if (pp.tab === "watch" && pp.watchPlaying && pp.watchActiveIdx >= 0 && notes[pp.watchActiveIdx]) {
+            ensurePianoNoteVisible(notes[pp.watchActiveIdx], smooth);
           }
-        });
+        }
+        updatePianoWindowDOM(smooth);
       }
 
       function renderKeyboardFollowPracticeCard(lesson) {
@@ -4940,6 +5116,9 @@
         let targetGlowNote = null;
 
         if (activeTab === "watch") {
+          if (pp.watchPlaying && pp.watchActiveIdx >= 0 && notes[pp.watchActiveIdx]) {
+            ensurePianoNoteVisible(notes[pp.watchActiveIdx], true);
+          }
           const seqBadges = notes
             .map((n, idx) => {
               const cls = pp.watchPlaying && pp.watchActiveIdx === idx ? "current" : pp.watchPlaying && idx < pp.watchActiveIdx ? "done" : "";
@@ -4963,6 +5142,9 @@
           `;
         } else if (activeTab === "follow") {
           targetGlowNote = !pp.followDone && notes[pp.followIdx] ? notes[pp.followIdx] : null;
+          if (targetGlowNote) {
+            ensurePianoNoteVisible(targetGlowNote, true);
+          }
           const seqBadges = notes
             .map((n, idx) => {
               const cls = pp.followDone || idx < pp.followIdx ? "done" : idx === pp.followIdx ? "current" : "";
@@ -5126,21 +5308,30 @@
         if (!mount) return;
         const lesson = getActivePracticeContextLesson();
         if (!lesson || !lesson.practice) return;
+        const prevStartIdx = getPianoWindowStartWhiteIdx();
         const wrapper = document.createElement("div");
         wrapper.innerHTML = renderLessonPracticeCard(lesson);
         const newCard = wrapper.firstElementChild;
         if (newCard) {
-          const oldScroll = mount.querySelector(".vpiano-scroll-wrap");
-          const prevScrollLeft = oldScroll ? oldScroll.scrollLeft : 0;
+          const nextStartIdx = getPianoWindowStartWhiteIdx();
           mount.replaceWith(newCard);
-          const newScroll = newCard.querySelector(".vpiano-scroll-wrap");
-          if (newScroll) {
-            newScroll.style.scrollBehavior = "auto";
-            newScroll.scrollLeft = prevScrollLeft;
-            newScroll.style.scrollBehavior = "";
-          }
-          if (autoCenterSmooth) {
-            requestAnimationFrame(() => centerTargetKeyInScroll(true));
+          if (autoCenterSmooth && nextStartIdx !== prevStartIdx) {
+            const stage = newCard.querySelector(".vpiano-keys-stage");
+            const miniWin = newCard.querySelector(".vpiano-minimap-window");
+            const totalWhite = VPIANO_WHITE_KEYS.length;
+            if (stage) {
+              stage.style.transition = "none";
+              stage.style.transform = `translateX(-${((prevStartIdx / totalWhite) * 100).toFixed(4)}%)`;
+            }
+            if (miniWin) {
+              miniWin.style.transition = "none";
+              miniWin.style.left = `${((prevStartIdx / totalWhite) * 100).toFixed(3)}%`;
+            }
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => updatePianoWindowDOM(true));
+            });
+          } else {
+            updatePianoWindowDOM(autoCenterSmooth);
           }
         }
       }
@@ -5156,17 +5347,18 @@
         const pp = ui.pianoPractice;
         pp.watchPlaying = true;
         pp.watchActiveIdx = 0;
+        if (notes[0]) ensurePianoNoteVisible(notes[0], true);
         refreshLessonPianoMount(true);
 
         notes.forEach((noteName, idx) => {
           const tOn = setTimeout(() => {
             if (!pp.watchPlaying) return;
             pp.watchActiveIdx = idx;
-            refreshLessonPianoMount(false);
+            ensurePianoNoteVisible(noteName, true);
+            refreshLessonPianoMount(true);
             playPianoNoteSound(noteName, Math.min(1.2, (beatMs / 1000) * 0.92));
             const keyEl = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
             if (keyEl) keyEl.classList.add("is-pressed");
-            centerTargetKeyInScroll(true);
           }, idx * beatMs);
 
           const tOff = setTimeout(() => {
@@ -5188,8 +5380,10 @@
       }
 
       function handlePianoNoteTriggered(noteName) {
-        if (!noteName || !VPIANO_ALL_BY_NOTE[noteName]) return;
-        playPianoNoteSound(noteName);
+        const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
+        if (!noteName || !keyMeta) return;
+        const canonicalNote = keyMeta.note;
+        playPianoNoteSound(canonicalNote);
 
         if (ui.screen !== "lesson" || ui.lessonStepIndex !== 0) return;
         const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
@@ -5202,26 +5396,30 @@
           if (pp.followDone) return;
           const targetNote = notes[pp.followIdx];
           if (!targetNote) return;
+          const targetCanonical = VPIANO_ALL_BY_NOTE[targetNote]?.note || targetNote;
 
-          if (noteName === targetNote) {
+          if (canonicalNote === targetCanonical) {
             pp.followHint = "";
             pp.followIdx += 1;
             if (pp.followIdx >= notes.length) {
               pp.followDone = true;
               markLessonPracticeCompleted(lesson);
+            } else if (notes[pp.followIdx]) {
+              ensurePianoNoteVisible(notes[pp.followIdx], true);
             }
             refreshLessonPianoMount(true);
-            const pressedNow = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            const pressedNow = document.querySelector(`.vpiano-key[data-note="${canonicalNote}"]`);
             if (pressedNow) {
               pressedNow.classList.add("is-pressed");
               setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
             }
           } else {
-            const pressedMidi = VPIANO_ALL_BY_NOTE[noteName]?.midi || 60;
+            const pressedMidi = keyMeta.midi || 60;
             const targetMidi = VPIANO_ALL_BY_NOTE[targetNote]?.midi || 60;
             pp.followHint = pressedMidi < targetMidi ? "higher" : "lower";
+            ensurePianoNoteVisible(targetNote, true);
             refreshLessonPianoMount(true);
-            const wrongEl = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            const wrongEl = document.querySelector(`.vpiano-key[data-note="${canonicalNote}"]`);
             if (wrongEl) {
               wrongEl.classList.add("is-wrong-flash");
               setTimeout(() => wrongEl.classList.remove("is-wrong-flash"), 450);
@@ -5233,9 +5431,12 @@
             pp.ownPlayed = [];
             pp.ownStatus = "idle";
           }
-          pp.ownPlayed.push(noteName);
+          pp.ownPlayed.push(canonicalNote);
           if (pp.ownPlayed.length >= notes.length) {
-            const allMatch = notes.every((expected, i) => pp.ownPlayed[i] === expected);
+            const allMatch = notes.every((expected, i) => {
+              const expCanon = VPIANO_ALL_BY_NOTE[expected]?.note || expected;
+              return pp.ownPlayed[i] === expCanon;
+            });
             if (allMatch) {
               pp.ownStatus = "success";
               markLessonPracticeCompleted(lesson);
@@ -5244,7 +5445,7 @@
             }
           }
           refreshLessonPianoMount(false);
-          const pressedNow = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+          const pressedNow = document.querySelector(`.vpiano-key[data-note="${canonicalNote}"]`);
           if (pressedNow) {
             pressedNow.classList.add("is-pressed");
             setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
@@ -5587,6 +5788,12 @@
         };
       }
 
+      function formatBeatValueDisplay(beats) {
+        if (Math.abs(beats - 0.33) < 0.04) return "⅓";
+        if (Math.abs(beats - 0.5) < 0.04) return "½";
+        return String(beats);
+      }
+
       function scheduleRhythmAutoRestIfNeeded(lesson) {
         const mp = ui.multiPractice;
         if (!lesson || !lesson.practice || mp.rhythmDone) return;
@@ -5598,7 +5805,7 @@
         const beatMs = Math.round((60 / tempo) * 1000);
         const waitMs = Math.max(350, Math.round(curEv.beats * beatMs));
         const tmr = setTimeout(() => {
-          if (ui.screen !== "lesson" || mp.rhythmDone) return;
+          if ((ui.screen !== "lesson" && ui.screen !== "library") || mp.rhythmDone) return;
           const checkEv = parsed.events[mp.rhythmStepIdx];
           if (!checkEv || checkEv.kind !== "rest") return;
           playMetronomeClickSound(false);
@@ -5635,7 +5842,6 @@
         if (!curEv) return;
 
         if (curEv.kind === "rest") {
-          // Tapped during a rest: gentle reminder to stay silent on rests
           mp.rhythmFeedback = t("practice.rhythmEarly");
           mp.rhythmFeedbackType = "warn";
           refreshLessonPianoMount(false);
@@ -5741,10 +5947,11 @@
               .filter(Boolean)
               .join(" ");
             const iconSym = it.kind === "rest" ? "𝄽" : it.beats >= 2 ? "𝅗𝅥" : it.beats < 1 ? "♪" : "♩";
+            const beatStr = formatBeatValueDisplay(it.beats);
             const lbl =
               it.kind === "rest"
-                ? t("practice.rhythmRestLabel", { beats: it.beats })
-                : t("practice.rhythmBeatLabel", { beats: it.beats });
+                ? t("practice.rhythmRestLabel", { beats: beatStr })
+                : t("practice.rhythmBeatLabel", { beats: beatStr });
             return `
               <div class="${cls}">
                 <span style="font-size:1.15rem;line-height:1;">${iconSym}</span>
@@ -5825,12 +6032,12 @@
             { notes: ["F4", "C4"], answer: "lower" }
           ],
           "same-different": [
-            { notes: ["C4", "E4", "C4", "E4"], answer: "same" },
-            { notes: ["C4", "E4", "C4", "G4"], answer: "different" },
-            { notes: ["G4", "F4", "G4", "F4"], answer: "same" },
-            { notes: ["D4", "F4", "D4", "E4"], answer: "different" },
-            { notes: ["E4", "G4", "E4", "G4"], answer: "same" },
-            { notes: ["A4", "G4", "A4", "E4"], answer: "different" }
+            { notes: ["C4", "C4"], answer: "same" },
+            { notes: ["C4", "E4"], answer: "different" },
+            { notes: ["G4", "G4"], answer: "same" },
+            { notes: ["D4", "F4"], answer: "different" },
+            { notes: ["E4", "E4"], answer: "same" },
+            { notes: ["A4", "F4"], answer: "different" }
           ],
           "step-skip": [
             { notes: ["C4", "D4"], answer: "step" },
@@ -5840,6 +6047,30 @@
             { notes: ["G4", "A4"], answer: "step" },
             { notes: ["E4", "C4"], answer: "skip" }
           ],
+          "melody-direction": [
+            { notes: ["C4", "D4", "E4"], answer: "up" },
+            { notes: ["G4", "F4", "E4"], answer: "down" },
+            { notes: ["C4", "E4", "C4"], answer: "arch" },
+            { notes: ["D4", "E4", "F4"], answer: "up" },
+            { notes: ["E4", "G4", "E4"], answer: "arch" },
+            { notes: ["A4", "G4", "F4"], answer: "down" }
+          ],
+          "small-intervals": [
+            { notes: ["E4", "F4"], answer: "half" },
+            { notes: ["C4", "D4"], answer: "whole" },
+            { notes: ["C4", "E4"], answer: "third" },
+            { notes: ["B3", "C4"], answer: "half" },
+            { notes: ["F4", "G4"], answer: "whole" },
+            { notes: ["G4", "B4"], answer: "third" }
+          ],
+          "big-intervals": [
+            { notes: ["C4", "G4"], answer: "fifth" },
+            { notes: ["C4", "C5"], answer: "octave" },
+            { notes: ["D4", "A4"], answer: "fifth" },
+            { notes: ["D4", "D5"], answer: "octave" },
+            { notes: ["F4", "C5"], answer: "fifth" },
+            { notes: ["E4", "E5"], answer: "octave" }
+          ],
           "major-minor": [
             { chord: ["C4", "E4", "G4"], answer: "major" },
             { chord: ["D4", "F4", "A4"], answer: "minor" },
@@ -5847,6 +6078,14 @@
             { chord: ["A3", "C4", "E4"], answer: "minor" },
             { chord: ["F3", "A3", "C4"], answer: "major" },
             { chord: ["E3", "G3", "B3"], answer: "minor" }
+          ],
+          "semitone-koron": [
+            { notes: ["E4", "F4"], answer: "half" },
+            { notes: ["D4", "E4k"], answer: "neutral" },
+            { notes: ["C4", "D4"], answer: "whole" },
+            { notes: ["G4", "A4k"], answer: "neutral" },
+            { notes: ["B3", "C4"], answer: "half" },
+            { notes: ["F4", "G4"], answer: "whole" }
           ],
           interval: [
             { notes: ["E4", "F4"], answer: "half" },
@@ -5919,7 +6158,11 @@
           "higher-lower": "practice.earPromptHigherLower",
           "same-different": "practice.earPromptSameDifferent",
           "step-skip": "practice.earPromptStepSkip",
+          "melody-direction": "practice.earPromptMelodyDirection",
+          "small-intervals": "practice.earPromptSmallIntervals",
+          "big-intervals": "practice.earPromptBigIntervals",
           "major-minor": "practice.earPromptMajorMinor",
+          "semitone-koron": "practice.earPromptSemitoneKoron",
           interval: "practice.earPromptInterval"
         };
         const optionsByMode = {
@@ -5935,9 +6178,28 @@
             { id: "step", label: t("practice.earOptStep") },
             { id: "skip", label: t("practice.earOptSkip") }
           ],
+          "melody-direction": [
+            { id: "up", label: t("practice.earOptUp") },
+            { id: "down", label: t("practice.earOptDown") },
+            { id: "arch", label: t("practice.earOptArch") }
+          ],
+          "small-intervals": [
+            { id: "half", label: t("practice.earOptHalfStep") },
+            { id: "whole", label: t("practice.earOptWholeStep") },
+            { id: "third", label: t("practice.earOptThird") }
+          ],
+          "big-intervals": [
+            { id: "fifth", label: t("practice.earOptFifth") },
+            { id: "octave", label: t("practice.earOptOctave") }
+          ],
           "major-minor": [
             { id: "major", label: t("practice.earOptMajor") },
             { id: "minor", label: t("practice.earOptMinor") }
+          ],
+          "semitone-koron": [
+            { id: "half", label: t("practice.earOptHalfStep") },
+            { id: "neutral", label: t("practice.earOptNeutralStep") },
+            { id: "whole", label: t("practice.earOptWholeStep") }
           ],
           interval: [
             { id: "half", label: t("practice.earOptHalfStep") },
@@ -8298,7 +8560,8 @@
               found: true,
               cause: lField(item.cause),
               fix: lField(item.fix),
-              lessonId: item.lessonId
+              lessonId: item.lessonId,
+              courseId: item.courseId || "piano"
             };
           }
         }
@@ -8347,6 +8610,7 @@
                     .reverse()
                     .map((entry) => {
                       if (entry.found) {
+                        const entryCourseId = entry.courseId || "piano";
                         return `
                           <div class="m-card">
                             <div style="font-weight:700;color:var(--primary);margin-bottom:6px;">«${escapeHtml(entry.query)}»</div>
@@ -8356,7 +8620,7 @@
                             <p style="font-size:0.9rem;margin-bottom:12px;">
                               <strong>${escapeHtml(t("advisor.fixLabel"))}</strong> ${escapeHtml(entry.fix)}
                             </p>
-                            <button type="button" class="btn-pill btn-secondary" style="min-height:44px;padding:8px 18px;font-size:0.86rem;" data-action="open-lesson" data-lesson-id="${entry.lessonId}">
+                            <button type="button" class="btn-pill btn-secondary" style="min-height:44px;padding:8px 18px;font-size:0.86rem;" data-action="open-course-lesson" data-course-id="${escapeHtml(entryCourseId)}" data-lesson-id="${entry.lessonId}">
                               ${escapeHtml(t("advisor.openLessonBtn", { id: entry.lessonId }))}
                             </button>
                           </div>
@@ -8387,17 +8651,306 @@
       }
 
       /* ==========================================================================
-         LIBRARY SCREEN (My Lessons + Teachers Section)
+         LIBRARY SCREEN (My Lessons + Practice Tools + Teachers Section)
          ========================================================================== */
+      function startStandaloneMetronomeLoop() {
+        if (ui.metronomeTimerId) {
+          clearInterval(ui.metronomeTimerId);
+          ui.metronomeTimerId = null;
+        }
+        unlockPianoAudio();
+        const bpm = Math.max(40, Math.min(160, Number(ui.metronomeBpm) || 76));
+        const meterStr = String(ui.metronomeMeter || "4/4");
+        const beatsPerBar = meterStr === "3/4" ? 3 : meterStr === "2/4" ? 2 : meterStr === "6/8" ? 6 : 4;
+        const intervalMs = meterStr === "6/8" ? Math.round(30000 / bpm) : Math.round(60000 / bpm);
+
+        ui.metronomeRunning = true;
+        ui.metronomeBeatIdx = 0;
+        playMetronomeTickSound(true);
+        render();
+
+        ui.metronomeTimerId = setInterval(() => {
+          ui.metronomeBeatIdx = (ui.metronomeBeatIdx + 1) % beatsPerBar;
+          playMetronomeTickSound(ui.metronomeBeatIdx === 0);
+          const dots = document.querySelectorAll(".metronome-beat-dot");
+          dots.forEach((el, idx) => {
+            el.classList.toggle("active", idx === ui.metronomeBeatIdx);
+          });
+        }, intervalMs);
+      }
+
+      function toggleStandaloneMetronome() {
+        if (ui.metronomeRunning) {
+          if (ui.metronomeTimerId) {
+            clearInterval(ui.metronomeTimerId);
+            ui.metronomeTimerId = null;
+          }
+          ui.metronomeRunning = false;
+          ui.metronomeBeatIdx = -1;
+          render();
+        } else {
+          startStandaloneMetronomeLoop();
+        }
+      }
+
+      function renderPracticeToolsSection() {
+        const tools = [
+          {
+            id: "free-piano",
+            icon: getInstrumentSvg("piano"),
+            title: t("library.toolFreePiano"),
+            desc: t("library.toolFreePianoDesc")
+          },
+          {
+            id: "metronome",
+            icon: getInstrumentSvg("rhythm"),
+            title: t("library.toolMetronome"),
+            desc: t("library.toolMetronomeDesc")
+          },
+          {
+            id: "rhythm-tap",
+            icon: `<svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="11"/><circle cx="18" cy="18" r="4" fill="#F2B33D"/></svg>`,
+            title: t("library.toolRhythmTap"),
+            desc: t("library.toolRhythmTapDesc")
+          },
+          {
+            id: "ear-game",
+            icon: getInstrumentSvg("ear"),
+            title: t("library.toolEarGame"),
+            desc: t("library.toolEarGameDesc")
+          },
+          {
+            id: "breath-timer",
+            icon: `<svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="20" r="10"/><path d="M18 14v6l4 2"/><path d="M15 6h6"/></svg>`,
+            title: t("library.toolBreathTimer"),
+            desc: t("library.toolBreathTimerDesc")
+          }
+        ];
+
+        const activeTool = ui.activePracticeTool;
+        let activeToolHtml = "";
+
+        if (activeTool === "free-piano") {
+          activeToolHtml = `
+            <div style="margin-top:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <span class="serif-heading" style="font-size:1.18rem;font-weight:700;">🎹 ${escapeHtml(t("library.toolFreePiano"))}</span>
+                <button type="button" class="vpiano-pill-btn" data-action="close-practice-tool">✕ ${escapeHtml(t("library.toolBackToList"))}</button>
+              </div>
+              ${renderFreePlayPianoSection()}
+            </div>
+          `;
+        } else if (activeTool === "metronome") {
+          const bpm = Number(ui.metronomeBpm) || 76;
+          const meter = ui.metronomeMeter || "4/4";
+          const beatsCount = meter === "3/4" ? 3 : meter === "2/4" ? 2 : meter === "6/8" ? 6 : 4;
+          const dotsHtml = Array.from({ length: beatsCount }, (_, idx) => {
+            const isAct = ui.metronomeRunning && ui.metronomeBeatIdx === idx;
+            return `<div class="metronome-beat-dot ${idx === 0 ? "accent" : ""} ${isAct ? "active" : ""}">${toLocaleDigits(idx + 1)}</div>`;
+          }).join("");
+
+          activeToolHtml = `
+            <div class="m-card vpiano-card" style="margin-top:16px;">
+              <div class="vpiano-header-row">
+                <span class="serif-heading" style="font-size:1.18rem;font-weight:700;">⏱ ${escapeHtml(t("library.toolMetronome"))}</span>
+                <button type="button" class="vpiano-pill-btn" data-action="close-practice-tool">✕ ${escapeHtml(t("library.toolBackToList"))}</button>
+              </div>
+              <div style="text-align:center;padding:8px 0 14px;">
+                <div class="serif-heading" style="font-size:2.1rem;font-weight:700;color:var(--ink);margin-bottom:6px;">
+                  ${escapeHtml(t("library.metronomeBpmLabel", { bpm }))}
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:12px;max-width:340px;margin:0 auto 14px;">
+                  <button type="button" class="vpiano-pill-btn" data-action="metronome-step-bpm" data-delta="-4">−4</button>
+                  <input type="range" id="metronome-bpm-slider" min="40" max="160" step="2" value="${bpm}" style="flex:1;accent-color:var(--primary);" />
+                  <button type="button" class="vpiano-pill-btn" data-action="metronome-step-bpm" data-delta="4">+4</button>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;">
+                  <span style="font-size:0.84rem;font-weight:700;color:var(--muted);">${escapeHtml(t("library.metronomeMeterLabel"))}:</span>
+                  ${["2/4", "3/4", "4/4", "6/8"]
+                    .map(
+                      (m) => `
+                        <button type="button" class="vpiano-pill-btn ${meter === m ? "active" : ""}" data-action="metronome-set-meter" data-meter="${m}" dir="ltr">
+                          ${m}
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <div class="metronome-beats-row" dir="ltr">
+                  ${dotsHtml}
+                </div>
+                <div style="margin-top:12px;">
+                  <button type="button" class="btn-pill ${ui.metronomeRunning ? "btn-surface" : "btn-primary"}" style="min-width:190px;" data-action="metronome-toggle">
+                    <span>${ui.metronomeRunning ? "■" : "▶"}</span>
+                    <span>${escapeHtml(ui.metronomeRunning ? t("library.metronomeStopBtn") : t("library.metronomeStartBtn"))}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (activeTool === "rhythm-tap") {
+          const toolLesson = getActivePracticeContextLesson();
+          const presets = [
+            { id: "4/4-steady", label: "4/4 (1 · 1 · 1 · 1)" },
+            { id: "3/4-waltz", label: "3/4 (2 · 1)" },
+            { id: "4/4-eighth", label: "4/4 (0.5 × 4 · 1 · 1)" },
+            { id: "6/8-persian", label: "6/8 (1 · 0.5 · 1 · 0.5)" }
+          ];
+          activeToolHtml = `
+            <div style="margin-top:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                <div style="display:flex;gap:6px;flex-wrap:wrap;" dir="ltr">
+                  ${presets
+                    .map(
+                      (pr) => `
+                        <button type="button" class="vpiano-pill-btn ${ui.toolRhythmPreset === pr.id ? "active" : ""}" data-action="set-tool-rhythm-preset" data-preset="${pr.id}">
+                          ${escapeHtml(pr.label)}
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <button type="button" class="vpiano-pill-btn" data-action="close-practice-tool">✕ ${escapeHtml(t("library.toolBackToList"))}</button>
+              </div>
+              ${renderRhythmTapPracticeCard(toolLesson)}
+            </div>
+          `;
+        } else if (activeTool === "ear-game") {
+          const toolLesson = getActivePracticeContextLesson();
+          const modes = [
+            { id: "higher-lower", label: `${t("practice.choiceHigher")} / ${t("practice.choiceLower")}` },
+            { id: "same-different", label: `${t("practice.choiceSame")} / ${t("practice.choiceDifferent")}` },
+            { id: "step-leap", label: `${t("practice.choiceStep")} / ${t("practice.choiceLeap")}` },
+            { id: "major-minor", label: `${t("practice.choiceMajor")} / ${t("practice.choiceMinor")}` }
+          ];
+          activeToolHtml = `
+            <div style="margin-top:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  ${modes
+                    .map(
+                      (m) => `
+                        <button type="button" class="vpiano-pill-btn ${ui.toolEarMode === m.id ? "active" : ""}" data-action="set-tool-ear-mode" data-mode="${m.id}">
+                          ${escapeHtml(m.label)}
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <button type="button" class="vpiano-pill-btn" data-action="close-practice-tool">✕ ${escapeHtml(t("library.toolBackToList"))}</button>
+              </div>
+              ${renderEarChoicePracticeCard(toolLesson)}
+            </div>
+          `;
+        } else if (activeTool === "breath-timer") {
+          const toolLesson = getActivePracticeContextLesson();
+          activeToolHtml = `
+            <div style="margin-top:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                <div style="display:flex;gap:6px;">
+                  ${[30, 60, 90]
+                    .map(
+                      (s) => `
+                        <button type="button" class="vpiano-pill-btn ${Number(ui.toolTimerSeconds) === s ? "active" : ""}" data-action="set-tool-timer-sec" data-sec="${s}">
+                          ${toLocaleDigits(s)}s
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <button type="button" class="vpiano-pill-btn" data-action="close-practice-tool">✕ ${escapeHtml(t("library.toolBackToList"))}</button>
+              </div>
+              ${renderTimerPracticeCard(toolLesson)}
+            </div>
+          `;
+        }
+
+        return `
+          <div>
+            <p style="font-size:0.9rem;color:var(--muted);margin-bottom:14px;">
+              ${escapeHtml(t("library.practiceToolsSub"))}
+            </p>
+            <div class="practice-tools-grid">
+              ${tools
+                .map(
+                  (tl) => `
+                    <button type="button" class="m-card practice-tool-tile ${activeTool === tl.id ? "active" : ""}" data-action="open-practice-tool" data-tool="${tl.id}">
+                      <div class="practice-tool-icon">${tl.icon}</div>
+                      <div style="min-width:0;flex:1;">
+                        <div class="serif-heading" style="font-size:1.06rem;font-weight:700;margin-bottom:3px;">${escapeHtml(tl.title)}</div>
+                        <div style="font-size:0.82rem;color:var(--muted);line-height:1.45;">${escapeHtml(tl.desc)}</div>
+                      </div>
+                    </button>
+                  `
+                )
+                .join("")}
+            </div>
+            ${activeToolHtml}
+          </div>
+        `;
+      }
+
       function renderLibraryScreen() {
-        const activeCourse = getCourseMeta(state.activeCourseId);
         const search = (ui.librarySearch || "").trim().toLowerCase();
-        const filtered = LESSONS.filter((l) => {
-          if (!search) return true;
-          const title = String(lField(l.title)).toLowerCase();
-          const ch = String(lField(l.chapter)).toLowerCase();
-          return title.includes(search) || ch.includes(search);
-        });
+        const visibleCourses = getVisibleCourses();
+        const curTab = ui.libraryTab === "piano" ? "tools" : ui.libraryTab || "lessons";
+
+        const groupedCoursesHtml = visibleCourses
+          .map((course) => {
+            const cLessons = getCourseLessons(course.id).filter((l) => {
+              if (!search) return true;
+              const title = String(lField(l.title)).toLowerCase();
+              const ch = String(lField(l.chapter)).toLowerCase();
+              return title.includes(search) || ch.includes(search);
+            });
+            if (cLessons.length === 0) return "";
+            const doneList = state.courseProgress?.[course.id]?.completedLessons || [];
+
+            return `
+              <section style="margin-bottom:24px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;">${getInstrumentSvg(course.icon)}</span>
+                    <h2 class="serif-heading" style="font-size:1.3rem;margin:0;">${escapeHtml(lField(course.title))}</h2>
+                  </div>
+                  <span class="chapter-meta-badge">${escapeHtml(t("courses.progressShort", { done: doneList.length, total: getCourseLessons(course.id).length }))}</span>
+                </div>
+                <div class="library-lessons-grid">
+                  ${cLessons
+                    .map(
+                      (l) => `
+                        <div class="m-card" style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">
+                          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+                            <div style="min-width:0;flex:1;">
+                              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+                                <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: l.id }))}</span>
+                                <span style="font-size:0.78rem;color:var(--muted);">
+                                  ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
+                                </span>
+                                ${renderTeacherReviewBadge(l, course)}
+                              </div>
+                              <div class="serif-heading" style="font-size:1.1rem;">
+                                ${escapeHtml(lField(l.title))}
+                              </div>
+                            </div>
+                            <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;flex-shrink:0;" data-action="open-course-lesson" data-course-id="${escapeHtml(course.id)}" data-lesson-id="${l.id}">
+                              ${escapeHtml(t("library.openBtn"))}
+                            </button>
+                          </div>
+                          <div style="font-size:0.86rem;line-height:1.55;color:var(--ink);border-top:1px solid var(--border-subtle);padding-top:10px;">
+                            <p>${formatBidiText(lField(l.see))}</p>
+                            ${l.diagram ? drawKeyboard(l.diagram) : ""}
+                          </div>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
+              </section>
+            `;
+          })
+          .filter(Boolean)
+          .join("");
 
         return `
           <div class="mobile-shell">
@@ -8412,64 +8965,29 @@
                 <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:14px;">${escapeHtml(t("library.title"))}</h1>
 
                 <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:10px;margin-bottom:18px;">
-                  <button type="button" class="btn-pill ${ui.libraryTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="lessons">
+                  <button type="button" class="btn-pill ${curTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="lessons">
                     ${escapeHtml(t("library.tabMyLessons"))}
                   </button>
-                  <button type="button" class="btn-pill ${ui.libraryTab === "piano" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="piano">
-                    🎹 ${escapeHtml(t("library.tabPiano"))}
+                  <button type="button" class="btn-pill ${curTab === "tools" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="tools">
+                    🎹 ${escapeHtml(t("library.tabPracticeTools"))}
                   </button>
-                  <button type="button" class="btn-pill ${ui.libraryTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="teachers">
+                  <button type="button" class="btn-pill ${curTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="teachers">
                     ${escapeHtml(t("library.tabTeachers"))}
                   </button>
                 </div>
 
                 ${
-                  ui.libraryTab === "lessons"
+                  curTab === "lessons"
                     ? `<div>
-                        ${renderCoursePickerBar()}
+                        <input type="search" id="library-search-input" class="m-input" style="margin-bottom:18px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
                         ${
-                          LESSONS.length === 0
-                            ? renderCourseComingSoonCard(state.activeCourseId)
-                            : `<input type="search" id="library-search-input" class="m-input" style="margin-bottom:16px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
-                              ${
-                                filtered.length === 0
-                                  ? `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
-                                  : `<div class="library-lessons-grid">
-                                      ${filtered
-                                        .map(
-                                          (l) => `
-                                            <div class="m-card" style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">
-                                              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
-                                                <div style="min-width:0;flex:1;">
-                                                  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
-                                                    <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: l.id }))}</span>
-                                                    <span style="font-size:0.78rem;color:var(--muted);">
-                                                      ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
-                                                    </span>
-                                                    ${renderTeacherReviewBadge(l, activeCourse)}
-                                                  </div>
-                                                  <div class="serif-heading" style="font-size:1.1rem;">
-                                                    ${escapeHtml(lField(l.title))}
-                                                  </div>
-                                                </div>
-                                                <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;flex-shrink:0;" data-action="open-lesson" data-lesson-id="${l.id}">
-                                                  ${escapeHtml(t("library.openBtn"))}
-                                                </button>
-                                              </div>
-                                              <div style="font-size:0.86rem;line-height:1.55;color:var(--ink);border-top:1px solid var(--border-subtle);padding-top:10px;">
-                                                <p>${formatBidiText(lField(l.see))}</p>
-                                                ${l.diagram ? drawKeyboard(l.diagram) : ""}
-                                              </div>
-                                            </div>
-                                          `
-                                        )
-                                        .join("")}
-                                    </div>`
-                              }`
+                          groupedCoursesHtml
+                            ? groupedCoursesHtml
+                            : `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
                         }
                       </div>`
-                    : ui.libraryTab === "piano"
-                    ? renderFreePlayPianoSection()
+                    : curTab === "tools"
+                    ? renderPracticeToolsSection()
                     : renderTeachersSection()
                 }
               </div>
@@ -8952,6 +9470,14 @@
             playPianoNoteSound("C4", 0.5);
             break;
 
+          case "vpiano-octave-down":
+            shiftPianoOctave(-1, true);
+            break;
+
+          case "vpiano-octave-up":
+            shiftPianoOctave(1, true);
+            break;
+
           case "vpiano-toggle-labels":
             ui.pianoShowLabels = !ui.pianoShowLabels;
             if (ui.screen === "lesson" && document.getElementById("vpiano-lesson-mount")) {
@@ -9432,17 +9958,40 @@
       });
 
       /* ==========================================================================
-         VIRTUAL PIANO MULTI-TOUCH, MOUSE & COMPUTER KEYBOARD LISTENERS
+         VIRTUAL PIANO MULTI-TOUCH, MOUSE, MINI-MAP & COMPUTER KEYBOARD LISTENERS
          ========================================================================== */
       let isMouseDownOnPiano = false;
+      let isDraggingPianoMinimap = false;
+      let activeMinimapEl = null;
       let activeMousePianoNote = null;
       let lastPianoTouchTime = 0;
       const activeTouchMap = new Map();
       const activeComputerKeys = new Set();
 
+      function jumpPianoWindowFromMinimapClientX(minimapEl, clientX, animate = false) {
+        if (!minimapEl) return;
+        const rect = minimapEl.getBoundingClientRect();
+        if (!rect.width) return;
+        const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+        const winCols = getPianoVisibleWhiteCount();
+        const centerWhite = ratio * VPIANO_TOTAL_WHITE_KEYS;
+        const targetStart = Math.round(centerWhite - winCols / 2);
+        setPianoWindowStartWhiteIdx(targetStart, animate);
+      }
+
       document.addEventListener("mousedown", (e) => {
         if (Date.now() - lastPianoTouchTime < 650) return;
         if (e.button !== undefined && e.button !== 0) return;
+
+        const minimapEl = e.target.closest(".vpiano-minimap");
+        if (minimapEl) {
+          e.preventDefault();
+          isDraggingPianoMinimap = true;
+          activeMinimapEl = minimapEl;
+          jumpPianoWindowFromMinimapClientX(minimapEl, e.clientX, true);
+          return;
+        }
+
         const keyEl = e.target.closest(".vpiano-key");
         if (!keyEl) return;
         e.preventDefault();
@@ -9451,6 +10000,12 @@
         activeMousePianoNote = note;
         keyEl.classList.add("is-pressed");
         handlePianoNoteTriggered(note);
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDraggingPianoMinimap || !activeMinimapEl) return;
+        e.preventDefault();
+        jumpPianoWindowFromMinimapClientX(activeMinimapEl, e.clientX, false);
       });
 
       document.addEventListener("mouseover", (e) => {
@@ -9469,6 +10024,10 @@
       });
 
       window.addEventListener("mouseup", () => {
+        if (isDraggingPianoMinimap) {
+          isDraggingPianoMinimap = false;
+          activeMinimapEl = null;
+        }
         if (isMouseDownOnPiano) {
           isMouseDownOnPiano = false;
           activeMousePianoNote = null;
@@ -9480,6 +10039,16 @@
         if (!ui.pianoAudioUnlocked) {
           unlockPianoAudio();
         }
+        const minimapEl = e.target.closest(".vpiano-minimap");
+        if (minimapEl && e.touches.length > 0) {
+          lastPianoTouchTime = Date.now();
+          e.preventDefault();
+          isDraggingPianoMinimap = true;
+          activeMinimapEl = minimapEl;
+          jumpPianoWindowFromMinimapClientX(minimapEl, e.touches[0].clientX, true);
+          return;
+        }
+
         const keyEl = e.target.closest(".vpiano-key");
         if (!keyEl) return;
         lastPianoTouchTime = Date.now();
@@ -9498,9 +10067,15 @@
       }, { passive: false });
 
       document.addEventListener("touchmove", (e) => {
+        if (isDraggingPianoMinimap && activeMinimapEl && e.touches.length > 0) {
+          lastPianoTouchTime = Date.now();
+          e.preventDefault();
+          jumpPianoWindowFromMinimapClientX(activeMinimapEl, e.touches[0].clientX, false);
+          return;
+        }
         if (activeTouchMap.size === 0) return;
         lastPianoTouchTime = Date.now();
-        // Only glide on touchmove in free-play mode; in lesson practice mode allow horizontal scroll or discrete taps
+        // Only glide on touchmove in free-play mode; in lesson practice mode allow discrete taps
         if (ui.screen === "lesson") return;
         if (!e.target.closest(".vpiano-keyboard")) return;
         e.preventDefault();
@@ -9524,6 +10099,10 @@
       }, { passive: false });
 
       document.addEventListener("touchend", (e) => {
+        if (isDraggingPianoMinimap) {
+          isDraggingPianoMinimap = false;
+          activeMinimapEl = null;
+        }
         if (activeTouchMap.size === 0) return;
         lastPianoTouchTime = Date.now();
         for (let i = 0; i < e.changedTouches.length; i++) {
@@ -9538,8 +10117,16 @@
       }, { passive: false });
 
       document.addEventListener("touchcancel", () => {
+        isDraggingPianoMinimap = false;
+        activeMinimapEl = null;
         activeTouchMap.clear();
         document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
+      });
+
+      window.addEventListener("resize", () => {
+        if (document.querySelector(".vpiano-keyboard")) {
+          updatePianoWindowDOM(false);
+        }
       });
 
       document.addEventListener("keydown", (e) => {
@@ -9556,7 +10143,19 @@
         if (!document.querySelector(".vpiano-keyboard")) return;
 
         const k = String(e.key || "").toLowerCase();
-        const mappedNote = VPIANO_COMPUTER_KEYMAP[k];
+        if (k === "z") {
+          e.preventDefault();
+          shiftPianoOctave(-1, true);
+          return;
+        }
+        if (k === "x") {
+          e.preventDefault();
+          shiftPianoOctave(1, true);
+          return;
+        }
+
+        const keyMap = getActiveComputerKeyMap();
+        const mappedNote = keyMap[k];
         if (mappedNote && !activeComputerKeys.has(k)) {
           activeComputerKeys.add(k);
           const keyEl = document.querySelector(`.vpiano-key[data-note="${mappedNote}"]`);
@@ -9567,11 +10166,16 @@
 
       document.addEventListener("keyup", (e) => {
         const k = String(e.key || "").toLowerCase();
-        const mappedNote = VPIANO_COMPUTER_KEYMAP[k];
-        if (mappedNote) {
+        if (activeComputerKeys.has(k)) {
           activeComputerKeys.delete(k);
+        }
+        const keyMap = getActiveComputerKeyMap();
+        const mappedNote = keyMap[k];
+        if (mappedNote) {
           const keyEl = document.querySelector(`.vpiano-key[data-note="${mappedNote}"]`);
           if (keyEl) keyEl.classList.remove("is-pressed");
+        } else {
+          document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
         }
       });
 
@@ -9688,7 +10292,7 @@
           }
 
           // Load lessons for any additional course in content/courses/<courseId>/lesson-NN.json
-          const otherCourses = COURSES.filter((c) => c.id !== "piano" && (Number(c.lessonCount) > 0 || c.status === "active"));
+          const otherCourses = COURSES.filter((c) => c.id !== "piano" && (Number(c.lessonCount) > 0 || c.status === "active" || c.status === "ready"));
           for (const course of otherCourses) {
             const maxLessons = Number(course.lessonCount) || 12;
             const cPromises = Array.from({ length: maxLessons }, (_, idx) => {

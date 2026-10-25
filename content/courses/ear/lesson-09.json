@@ -1,0 +1,127 @@
+{
+  "id": 9,
+  "courseId": "ear",
+  "review": "teacher",
+  "chapter": {
+    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+  },
+  "title": {
+    "en": "Hearing a quarter tone: semitone vs koron",
+    "fa": "شنیدن ربع‌پرده: نیم‌پرده در برابر کُرُن"
+  },
+  "duration": {
+    "en": "7 minutes",
+    "fa": "۷ دقیقه"
+  },
+  "goal": {
+    "en": "Understand the concept of a quarter tone (koron) in Iranian music and hear how it sits gracefully between a natural note and a flat.",
+    "fa": "با مفهوم ربع‌پرده (کُرُن) توی موسیقی ایرانی آشنا بشی و بشنوی چطور بین نت طبیعی و نت بمل می‌شینه."
+  },
+  "imageUrl": "",
+  "see": {
+    "en": [
+      "On a piano, the smallest step between two adjacent keys is a half step (semitone), like E down to E♭. In Iranian classical and folk music—played on instruments like setar, tar, santur, violin, and voice—there is a finer shading in between.",
+      "The sign called 'koron' (کُرُن), introduced in modern notation by Ali-Naqi Vaziri, lowers a note by roughly half of a half step (a quarter tone). Instead of dropping all the way from E to E♭, E-koron rests in the sweet middle space, giving melodies like Homayoun or Shur their warm, expressive sigh."
+    ],
+    "fa": [
+      "روی پیانو، کوچیک‌ترین فاصله بین دو تا کلاویهٔ بغل‌هم «نیم‌پرده» است (مثل می تا می‌بمل). اما توی موسیقی ایرانی—روی سازهایی مثل سه‌تار، تار، سنتور، کمانچه، ویولن و آواز—یه رنگ ظریف‌تر هم بین این دو تا وجود داره.",
+      "علامت «کُرُن» که علینقی وزیری وارد نت‌نویسی کرد، صدا رو حدودِ نصفِ نیم‌پرده (یعنی حدود ربع‌پرده) بم‌تر می‌کنه. مثلاً میِ کُرُن به جای اینکه کامل بیفته روی می‌بمل، درست وسطِ راه می‌شینه و همون حس گرم و دلنشین آوازها و ملودی‌های ایرانی رو می‌سازه."
+    ]
+  },
+  "hear": {
+    "en": "Listen closely to the distance: a semitone drops firmly to the next piano key, while a koron step is gentler and closer—an intimate micro-step.",
+    "fa": "به اندازهٔ پایین اومدن صدا دقت کن: نیم‌پرده کامل می‌ره روی کلاویهٔ بعدی، اما حرکت کُرُن نرم‌تر و نزدیک‌تره—یه پلهٔ خیلی ظریف و صمیمی."
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "semitone-koron",
+    "rounds": 6
+  },
+  "steps": {
+    "en": [
+      "Tap 'Play sound' to hear two notes moving between C4 and D4.",
+      "Listen to how close the lower note is to D4: does it move a standard piano half step (semitone), or a closer, sweeter micro-step (koron)?",
+      "Choose 'Semitone (half step)' or 'Koron (quarter-tone shade)' across 6 listening rounds."
+    ],
+    "fa": [
+      "دکمهٔ پخش صدا رو بزن تا حرکت دو تا نت رو بشنوی.",
+      "ببین فاصلهٔ دو تا نت چقدره: آیا به اندازهٔ یه نیم‌پردهٔ معمولی پیانو جابه‌جا شد، یا یه فاصلهٔ نزدیک‌تر و ظریف‌ترِ ایرانی (کُرُن) بود؟",
+      "توی ۶ دور شنیداری، گزینهٔ «نیم‌پرده (معمولی)» یا «کُرُن (ربع‌پرده)» رو انتخاب کن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did the koron interval stop being 'out of tune' to your ear and start sounding like an intentional, expressive color?",
+      "Could you feel how a quarter tone is narrower than a piano half step?"
+    ],
+    "fa": [
+      "حس کردی که فاصلهٔ کُرُن «خارج زدن» نیست، بلکه یه رنگ صداییِ خاص و پرحسه؟",
+      "متوجه شدی که فاصلهٔ ربع‌پرده از نیم‌پردهٔ پیانو به هم نزدیک‌تره؟"
+    ]
+  },
+  "quiz": [
+    {
+      "q": {
+        "en": "What does the 'koron' sign do to a note in Iranian music?",
+        "fa": "علامت «کُرُن» در موسیقی ایرانی چه تغییری روی نت ایجاد می‌کنه؟"
+      },
+      "options": {
+        "en": [
+          "Raises the note by a whole step",
+          "Lowers the note by roughly a quarter tone (less than a flat)",
+          "Makes the note twice as long",
+          "Silences the note"
+        ],
+        "fa": [
+          "نت رو یک پرده زیرتر می‌کنه",
+          "نت رو حدود ربع‌پرده (کمتر از بمل) بم‌تر می‌کنه",
+          "کشش نت رو دو برابر می‌کنه",
+          "نت رو تبدیل به سکوت می‌کنه"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Koron lowers a pitch by approximately a quarter tone, sitting between the natural note and the flat.",
+        "fa": "کُرُن نت رو حدود ربع‌پرده پایین می‌آره؛ یعنی جایی بین نت طبیعی و نت بمل."
+      }
+    },
+    {
+      "q": {
+        "en": "Can a standard acoustic piano play a true koron without retuning?",
+        "fa": "آیا یه پیانوی معمولی بدون تغییر کوک می‌تونه صدای واقعی کُرُن رو بزنه؟"
+      },
+      "options": {
+        "en": [
+          "Yes, by pressing two keys at once",
+          "No, because piano keys are fixed in half steps, while koron lies between keys",
+          "Yes, by pressing the sustain pedal",
+          "Yes, on the black keys only"
+        ],
+        "fa": [
+          "بله، با زدن دو تا کلاویه با هم",
+          "نه، چون کلاویه‌های پیانو روی نیم‌پرده کوک شدن و کُرُن بین دو تا کلاویه قرار می‌گیره",
+          "بله، با گرفتن پدال",
+          "بله، فقط روی کلاویه‌های سیاه"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Standard piano keys are tuned a half step apart; quarter tones live in the space between adjacent keys.",
+        "fa": "کوچیک‌ترین فاصلهٔ روی پیانو نیم‌پرده‌ست و صدای کُرُن در فضای بین دو تا کلاویهٔ همسایه قرار داره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You explored the expressive sound of the Iranian quarter tone (koron) and compared it by ear to a standard half step.",
+    "fa": "با صدای ظریف و پرحسِ کُرُن (ربع‌پرده) آشنا شدی و تفاوتش رو با نیم‌پردهٔ معمولی شنیدی."
+  },
+  "tomorrow": {
+    "en": "Tomorrow we will celebrate finishing the course with a fun all-in-one Ear Review Game!",
+    "fa": "فردا با یه بازی مرورِ جذاب، همهٔ مهارت‌های شنیداری این دوره رو کنار هم جشن می‌گیریم!"
+  },
+  "source": {
+    "en": "Original MUSICHER content",
+    "fa": "محتوای اختصاصی MUSICHER"
+  }
+}

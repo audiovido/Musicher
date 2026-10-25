@@ -1,0 +1,126 @@
+{
+  "id": 2,
+  "courseId": "ear",
+  "chapter": {
+    "en": "Chapter 1 \"Pitch & Direction\"",
+    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+  },
+  "title": {
+    "en": "Same or different",
+    "fa": "یکسان یا متفاوت"
+  },
+  "duration": {
+    "en": "5 minutes",
+    "fa": "۵ دقیقه"
+  },
+  "goal": {
+    "en": "Tell whether two notes played one after another have the exact same pitch or a different pitch.",
+    "fa": "تشخیص بدی دو تا نتی که پشت سر هم پخش می‌شن دقیقاً یه صدا دارن یا با هم متفاوتن."
+  },
+  "imageUrl": "",
+  "see": {
+    "en": [
+      "Before you can tune an instrument or check if you hit the right key, your ear needs to answer one basic question: did the pitch change at all, or did it stay on the exact same note?",
+      "When two notes are the same (called unison), the second note feels completely calm and settled—nothing moves up or down. When they are different, you feel a tiny step or jump between them."
+    ],
+    "fa": [
+      "قبل از اینکه بتونی سازت رو کوک کنی یا بفهمی کلاویهٔ درست رو زدی یا نه، گوشت باید جواب یه سؤال ساده رو بده: آیا زیر و بمی صدا اصلاً عوض شد، یا رو همون نت قبلی موند؟",
+      "وقتی دو تا نت یکسانن (هم‌صدا)، نت دوم حس آرامش و ثبات کامل داره و هیچ حرکتی به بالا یا پایین حس نمی‌کنی. وقتی متفاوتن، یه تکون کوچیک بینشون حس می‌شه."
+    ]
+  },
+  "hear": {
+    "en": "Listen for stillness vs movement: if the second note feels like a calm repeat of the first, they are the same.",
+    "fa": "به ثبات یا حرکت صدا دقت کن: اگه نت دوم دقیقاً تکرار آروم نت اوله، یکسانن."
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "same-different",
+    "rounds": 6
+  },
+  "steps": {
+    "en": [
+      "Tap 'Play sound' and close your eyes for a moment as the two notes play.",
+      "Notice whether the second note stays completely still on the same pitch or shifts.",
+      "Select 'Same' or 'Different' across 6 rounds."
+    ],
+    "fa": [
+      "دکمهٔ پخش صدا رو بزن و موقع شنیدن دو تا نت یه لحظه چشمت رو ببند.",
+      "ببین نت دوم کاملاً ثابت روی همون صدا می‌مونه یا جابه‌جا می‌شه.",
+      "توی ۶ دور، گزینهٔ «یکسان» یا «متفاوت» رو انتخاب کن."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Could you spot even a small one-step difference between the two notes?",
+      "Did you replay the sound whenever you needed a second listen?"
+    ],
+    "fa": [
+      "تونستی حتی تفاوت‌های کوچیکِ یه پله‌ای بین دو تا نت رو تشخیص بدی؟",
+      "هر وقت لازم بود، دوباره دکمهٔ پخش رو زدی تا مطمئن بشی؟"
+    ]
+  },
+  "quiz": [
+    {
+      "q": {
+        "en": "If a pianist plays C4 and then plays C4 again right after, how do the two pitches compare?",
+        "fa": "اگه یه نوازنده نت دو (C4) رو بزنه و بلافاصله دوباره همون C4 رو بزنه، این دو تا صدا چطورن؟"
+      },
+      "options": {
+        "en": [
+          "The second is higher",
+          "They are the exact same pitch",
+          "The second is lower",
+          "They form a chord of two different notes"
+        ],
+        "fa": [
+          "نت دوم زیرتره",
+          "دقیقاً یکسان و هم‌صدا هستن",
+          "نت دوم بم‌تره",
+          "دو تا نت متفاوتن"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Playing the same key twice gives the exact same frequency and pitch.",
+        "fa": "زدن یه کلاویه برای بار دوم دقیقاً همون فرکانس و همون زیر و بمی رو تولید می‌کنه."
+      }
+    },
+    {
+      "q": {
+        "en": "Why is hearing 'same vs different' so useful when you practice an instrument?",
+        "fa": "چرا تشخیص «یکسان یا متفاوت» موقع تمرین ساز این‌قدر به درد می‌خوره؟"
+      },
+      "options": {
+        "en": [
+          "It helps you play faster",
+          "It lets you notice right away if your note matches the target note or slipped to a neighbor",
+          "It replaces reading sheet music",
+          "It makes the piano louder"
+        ],
+        "fa": [
+          "کمک می‌کنه تندتر بزنی",
+          "باعث می‌شه همون لحظه بفهمی نتت با نت هدف یکیه یا رفته روی کلاویهٔ بغلی",
+          "نیاز به نت‌خوانی رو از بین می‌بره",
+          "صدای پیانو رو بلندتر می‌کنه"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Matching pitch is the foundation of playing in tune and catching wrong notes by ear.",
+        "fa": "تشخیص هم‌صدایی پایهٔ کوک خوندن و فهمیدن نت‌های اشتباه با گوشه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You practiced listening for pitch stability to tell whether two notes are identical or different.",
+    "fa": "گوش دادن به ثبات صدا رو تمرین کردی تا تشخیص بدی دو تا نت یکسانن یا متفاوت."
+  },
+  "tomorrow": {
+    "en": "Tomorrow we will hear the difference between a smooth neighbor step and a wider skip.",
+    "fa": "فردا تفاوت بین حرکت همسایه (پله) و پرش رو با گوش تشخیص می‌دیم."
+  },
+  "source": {
+    "en": "Original MUSICHER content",
+    "fa": "محتوای اختصاصی MUSICHER"
+  }
+}

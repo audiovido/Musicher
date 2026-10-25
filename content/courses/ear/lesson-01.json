@@ -1,0 +1,126 @@
+{
+  "id": 1,
+  "courseId": "ear",
+  "chapter": {
+    "en": "Chapter 1 \"Pitch & Direction\"",
+    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+  },
+  "title": {
+    "en": "High or low",
+    "fa": "زیر یا بم"
+  },
+  "duration": {
+    "en": "5 minutes",
+    "fa": "۵ دقیقه"
+  },
+  "goal": {
+    "en": "Hear two notes and tell right away whether the second note is higher or lower than the first.",
+    "fa": "دو تا نت رو بشنوی و همون لحظه تشخیص بدی نت دوم از نت اول زیرتره یا بم‌تر."
+  },
+  "imageUrl": "",
+  "see": {
+    "en": [
+      "Pitch is how high or low a sound is. A bird chirp is high; a distant thunder rumble is low. On a piano, notes go higher as you move to the right and lower as you move to the left.",
+      "Notice in Persian we call high sounds 'zir' (زیر) and low sounds 'bam' (بم). When you compare two notes, always anchor the first note in your memory, then ask: did the second note climb up or drop down?"
+    ],
+    "fa": [
+      "زیر و بمی یعنی صدای یه نت چقدر نازک (زیر) یا کلفته (بم). صدای گنجشک زیره؛ صدای رعدوبرق بمه. روی پیانو هرچی به سمت راست می‌ری صدا زیرتر می‌شه و هرچی به چپ می‌ری بم‌تر.",
+      "وقتی می‌خوای دو تا نت رو با هم مقایسه کنی، اول نت اول رو توی ذهنت نگه دار، بعد گوش بده ببین نت دوم رفت بالا (زیرتر شد) یا اومد پایین (بم‌تر شد)."
+    ]
+  },
+  "hear": {
+    "en": "Listen to the first note, hold its sound in your head for a second, and compare the second note to that memory.",
+    "fa": "به نت اول گوش بده، صداش رو یه ثانیه توی ذهنت نگه دار و نت دوم رو با همون مقایسه کن."
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "higher-lower",
+    "rounds": 6
+  },
+  "steps": {
+    "en": [
+      "Tap 'Play sound' to hear two notes one after another.",
+      "Hum the first note softly, then notice if your voice has to go up or down to match the second note.",
+      "Choose 'Higher' or 'Lower' to complete 6 rounds."
+    ],
+    "fa": [
+      "دکمهٔ پخش صدا رو بزن تا دو تا نت رو پشت سر هم بشنوی.",
+      "نت اول رو آروم زیر لب زمزمه کن، بعد ببین برای نت دوم صدات باید بره بالا (زیرتر) یا بیاد پایین (بم‌تر).",
+      "گزینهٔ «زیرتر (بالاتر)» یا «بم‌تر (پایین‌تر)» رو انتخاب کن تا ۶ دور کامل بشه."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did you listen to both notes completely before tapping your answer?",
+      "If you were unsure, did humming the two notes help you feel the direction in your throat?"
+    ],
+    "fa": [
+      "قبل از زدن جواب، به هر دو نت کامل گوش دادی؟",
+      "اگه شک داشتی، زمزمه کردن دو تا نت کمک کرد جهت حرکت صدا رو توی گلوت حس کنی؟"
+    ]
+  },
+  "quiz": [
+    {
+      "q": {
+        "en": "Wait and listen: when the second note sounds brighter and moves to the right side of the piano, what is it?",
+        "fa": "وقتی نت دوم روشن‌تر و نازک‌تره و به سمت راست پیانو می‌ره، نسبت به نت اول چطوره؟"
+      },
+      "options": {
+        "en": [
+          "Louder",
+          "Higher in pitch",
+          "Lower in pitch",
+          "Faster in tempo"
+        ],
+        "fa": [
+          "بلندتر (قوی‌تر)",
+          "زیرتر (بالاتر)",
+          "بم‌تر (پایین‌تر)",
+          "تندتر"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Moving right on the keyboard produces faster vibrations, which we hear as a higher pitch.",
+        "fa": "حرکت به سمت راست کلاویه‌ها صدای زیرتر (بالاتر) تولید می‌کنه."
+      }
+    },
+    {
+      "q": {
+        "en": "What is the best trick when two notes sound close together and you aren't sure which is higher?",
+        "fa": "وقتی دو تا نت به هم نزدیکن و شک داری کدوم زیرتره، بهترین ترفند چیه؟"
+      },
+      "options": {
+        "en": [
+          "Guess as fast as possible",
+          "Hum both notes softly and feel which way your voice moves",
+          "Turn the volume all the way down",
+          "Count to four"
+        ],
+        "fa": [
+          "سریع و شانسی بزنی",
+          "هر دو نت رو آروم زمزمه کنی و ببینی صدات بالا می‌ره یا پایین",
+          "صدا رو کامل قطع کنی",
+          "تا چهار بشمری"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Your voice is connected to your ear—humming lets you feel pitch changes physically.",
+        "fa": "حنجره‌ت مستقیم به گوشت وصله؛ با زمزمه کردن تغییر زیر و بمی رو فیزیکی حس می‌کنی."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You trained your ear to compare two notes and hear whether the pitch moves higher or lower.",
+    "fa": "گوشت رو تمرین دادی تا دو تا نت رو مقایسه کنه و تشخیص بده صدا زیرتر شده یا بم‌تر."
+  },
+  "tomorrow": {
+    "en": "Tomorrow we will listen carefully to tell whether two notes are the exact same pitch or different.",
+    "fa": "فردا با دقت گوش می‌دیم تا تشخیص بدیم دو تا نت دقیقاً هم‌صدا هستن یا با هم فرق دارن."
+  },
+  "source": {
+    "en": "Original MUSICHER content",
+    "fa": "محتوای اختصاصی MUSICHER"
+  }
+}

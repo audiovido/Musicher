@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "chapter": {
+    "en": "Chapter 1: Pulse",
+    "fa": "فصل ۱ «ضرب و نبض»"
+  },
+  "title": {
+    "en": "Feel the pulse: steady beat",
+    "fa": "حس کردن نبض: ضرب ثابت"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Feel the steady heartbeat of music and tap 8 even beats in time with the click.",
+    "fa": "ضربان ثابت موسیقی رو حس می‌کنی و ۸ ضرب مساوی رو هم‌زمان با صدای تیک می‌زنی."
+  },
+  "see": {
+    "en": "Every piece of music has a steady, invisible heartbeat called the pulse (or beat). Just like your own heartbeat or calm footsteps when you walk, the pulse does not randomly speed up or slow down. Before we play rhythms or melodies on any instrument, our first skill is feeling this steady pulse inside our body and tapping right on each click: 1 – 2 – 3 – 4 | 1 – 2 – 3 – 4.",
+    "fa": "هر قطعه موسیقی یه ضربانِ منظم و نامرئی داره که بهش می‌گیم «نبض» یا «ضرب» (Beat). درست مثل ضربان قلب یا قدم‌های آروم موقع راه رفتن، این نبض یهو تند یا کند نمی‌شه. قبل از زدن هر ساز یا ملودی، اولین مهارت اینه که این ضربِ ثابت رو تو بدنت حس کنی و دقیقاً هم‌زمان با صدای تیک ضربه بزنی: ۱ – ۲ – ۳ – ۴ | ۱ – ۲ – ۳ – ۴."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Tap 'Play demo' and nod your head gently with the 8 steady beats across two measures.",
+      "Count '1 – 2 – 3 – 4' out loud at a calm, walking pace without rushing.",
+      "Tap the drum pad (or press Spacebar) 8 times with an even gap between every single beat."
+    ],
+    "fa": [
+      "روی «پخش نمونه» بزن و با ۸ ضربِ منظم در دو میزان، سرت رو آروم تکون بده.",
+      "با سرعتِ قدم‌زدنِ آروم و بدون عجله، بلند بشمار: «۱ – ۲ – ۳ – ۴».",
+      "۸ بار روی پد ضرب (یا کلید Space) بزن طوری که فاصله‌ی بین همه‌ی ضرب‌ها کاملاً مساوی باشه."
+    ]
+  },
+  "practice": {
+    "type": "rhythm-tap",
+    "meter": "4/4",
+    "tempo": 70,
+    "pattern": "1 1 1 1 | 1 1 1 1"
+  },
+  "selfCheck": {
+    "en": [
+      "Did I keep the space between all 8 taps steady instead of speeding up at the end?",
+      "Could I count 1–2–3–4 out loud while tapping comfortably?"
+    ],
+    "fa": [
+      "فاصله‌ی بین هر ۸ ضربه رو ثابت نگه داشتم و آخرش تند نکردم؟",
+      "تونستم هم‌زمان با ضربه زدن، راحت ۱–۲–۳–۴ رو بلند بشمارم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What is the 'pulse' (or beat) in music?",
+        "fa": "منظور از «نبض» یا «ضرب» (Beat) در موسیقی چیه؟"
+      },
+      "options": {
+        "en": [
+          "The steady, regular heartbeat that runs through the music",
+          "How loud or soft a note is played",
+          "The highest note on the keyboard"
+        ],
+        "fa": [
+          "ضربانِ ثابت و منظمی که در طول موسیقی جریان داره",
+          "قوی یا ضعیف بودن صدای یک نت",
+          "زیرترین نت روی کیبورد"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! The pulse is the steady heartbeat that keeps all notes and rhythms together in time.",
+        "fa": "دقیقاً! نبض همون ضربانِ ثابتیه که همه‌ی نت‌ها و ریتم‌ها رو سرِ جای خودشون نگه می‌داره."
+      },
+      "feedbackWrong": {
+        "en": "Think of a heartbeat or steady footsteps: the pulse is the even, regular beat underneath the music.",
+        "fa": "به ضربان قلب یا قدم‌های منظم فکر کن: نبض همون ضربِ ثابتیه که زیربنای موسیقی رو می‌سازه."
+      }
+    },
+    {
+      "question": {
+        "en": "In the pattern '1 1 1 1 | 1 1 1 1', what does the vertical line '|' between the two groups of four beats show?",
+        "fa": "تو الگوی «1 1 1 1 | 1 1 1 1»، خط عمودی «|» بین دو تا گروهِ چهارضربی نشون‌دهنده‌ی چیه؟"
+      },
+      "options": {
+        "en": [
+          "A bar line separating two measures without pausing the beat",
+          "A full stop where you must wait 5 seconds",
+          "A signal to double your speed"
+        ],
+        "fa": [
+          "خط میزان که دو میزان رو بدون توقفِ ضرب از هم جدا می‌کنه",
+          "توقف کامل به مدت ۵ ثانیه",
+          "علامت دو برابر کردن سرعت"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! A bar line organizes beats into neat measures, while the pulse flows right across it without stopping.",
+        "fa": "آفرین! خط میزان ضرب‌ها رو تو بسته‌های منظم دسته‌بندی می‌کنه، اما نبض موسیقی بدون هیچ مکثی از روش رد می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Never pause at a bar line—it simply marks the boundary between measures while the steady pulse continues.",
+        "fa": "سرِ خط میزان مکث نکن؛ خط میزان فقط مرز بین دو میزان رو نشون می‌ده و ضرب ثابت بدون توقف ادامه پیدا می‌کنه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You felt the steady musical pulse and tapped two full 4-beat measures evenly without rushing.",
+    "fa": "نبض ثابت موسیقی رو حس کردی و دو میزانِ چهارضربی کامل رو یکدست و بدون عجله ضرب گرفتی."
+  },
+  "tomorrow": {
+    "en": "We will explore tempo—how the pulse can walk slowly, moderately, or briskly while staying completely even.",
+    "fa": "با «تمپو» (سرعت موسیقی) آشنا می‌شیم و می‌بینیم چطور ضرب می‌تونه آهسته، متوسط یا تند باشه ولی کاملاً یکنواخت بمونه."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

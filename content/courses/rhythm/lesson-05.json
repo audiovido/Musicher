@@ -1,0 +1,124 @@
+{
+  "id": 5,
+  "chapter": {
+    "en": "Chapter 2: Inside the beat",
+    "fa": "فصل ۲ «درون ضرب»"
+  },
+  "title": {
+    "en": "Eighth notes: two in one beat",
+    "fa": "نت چنگ: دو نت در یک ضرب"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Divide a single beat into two equal halves (0.5 + 0.5) by counting '1-and 2-and'.",
+    "fa": "یک ضرب رو با شمردنِ «یک-و دو-و» به دو نیمه‌ی کاملاً مساوی (نت‌های چنگ) تقسیم می‌کنی."
+  },
+  "see": {
+    "en": "What happens when we slice one quarter-note beat in half? We get two eighth notes (♪, each lasting 0.5 beats)! Two eighth notes fit inside 1 single beat, often joined by a horizontal beam (♫). To keep them completely even, we count '1-and 2-and 3-and 4-and'—the number falls on the main beat, and 'and' falls halfway between beats. Look at today's pattern: '0.5 0.5 1 0.5 0.5 1'—that is '1-and 2, 3-and 4'!",
+    "fa": "اگه یک ضربِ نت سیاه رو دقیقاً از وسط نصف کنیم چی می‌شه؟ دو تا «نت چنگ» (♪، هر کدوم نیم ضرب یا 0.5) به دست می‌آد! دو تا نت چنگ توی شکمِ یک ضرب جا می‌شن و معمولاً با یه خط افقی به هم وصل می‌شن (♫). برای اینکه کاملاً مساوی باشن، می‌شماریم: «یک-و دو-و سه-و چهار-و»؛ عدد روی سرِ ضرب می‌افته و «و» دقیقاً وسطِ دو ضرب. الگوی امروز رو ببین: «0.5 0.5 1 0.5 0.5 1» یعنی «یک-و دو، سه-و چهار»!"
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Tap 'Play demo' and hear how the two 0.5-beat eighth notes flow twice as fast as the 1-beat quarter note.",
+      "Say out loud in a steady rhythm: '1-and 2, 3-and 4' (or 'ti-ti ta, ti-ti ta').",
+      "Tap '0.5 0.5 1 0.5 0.5 1' smoothly on the drum pad without rushing the eighth-note pairs."
+    ],
+    "fa": [
+      "روی «پخش نمونه» بزن و گوش کن چطور دو تا نت چنگ (0.5) دو برابر سریع‌تر از نت سیاه (1) حرکت می‌کنن.",
+      "با ریتم ثابت بلند بگو: «یک-و دو، سه-و چهار».",
+      "الگوی «0.5 0.5 1 0.5 0.5 1» رو نرم روی پد بزن و مراقب باش جفت‌نت‌های چنگ رو هول‌هولکی نزنی."
+    ]
+  },
+  "practice": {
+    "type": "rhythm-tap",
+    "meter": "4/4",
+    "tempo": 68,
+    "pattern": "0.5 0.5 1 0.5 0.5 1"
+  },
+  "selfCheck": {
+    "en": [
+      "Were my two eighth notes (0.5 + 0.5) evenly spaced instead of a quick burst?",
+      "Did I pause a full beat on the quarter notes (beats 2 and 4)?"
+    ],
+    "fa": [
+      "دو تا نت چنگ (0.5 + 0.5) رو مساوی زدم و تند به هم نچسبوندم؟",
+      "روی نت‌های سیاه (ضرب ۲ و ضرب ۴) یک ضرب کامل صبر کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How many eighth notes (0.5 beats each) equal one quarter note (1 beat)?",
+        "fa": "چند تا نت چنگ (هر کدوم نیم ضرب) برابر با یک نت سیاه (۱ ضرب) می‌شه؟"
+      },
+      "options": {
+        "en": [
+          "2 eighth notes",
+          "4 eighth notes",
+          "1 eighth note"
+        ],
+        "fa": [
+          "۲ تا نت چنگ",
+          "۴ تا نت چنگ",
+          "۱ نت چنگ"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Each eighth note is half a beat (0.5), so two of them equal 1 full beat.",
+        "fa": "درسته! هر نت چنگ نیم ضربه (0.5)، پس دو تا چنگ رو هم می‌شه ۱ ضرب کامل."
+      },
+      "feedbackWrong": {
+        "en": "0.5 + 0.5 = 1: two eighth notes fit evenly inside one quarter-note beat.",
+        "fa": "نیم به علاوه‌ی نیم می‌شه یک (0.5 + 0.5 = 1): دو تا نت چنگ توی یک ضربِ سیاه جا می‌شن."
+      }
+    },
+    {
+      "question": {
+        "en": "How do we count the pattern '0.5 0.5 1 0.5 0.5 1' in 4/4 time?",
+        "fa": "الگوی «0.5 0.5 1 0.5 0.5 1» رو تو میزان ۴/۴ چطور می‌شماریم؟"
+      },
+      "options": {
+        "en": [
+          "1-and 2, 3-and 4",
+          "1 2 3 4 5 6",
+          "1-and 2-and 3-and 4-and"
+        ],
+        "fa": [
+          "یک-و دو، سه-و چهار",
+          "۱ ۲ ۳ ۴ ۵ ۶",
+          "یک-و دو-و سه-و چهار-و"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Beats 1 and 3 are split into eighth notes ('1-and', '3-and'), while beats 2 and 4 are quarter notes.",
+        "fa": "آفرین! ضرب‌های ۱ و ۳ به دو چنگ تقسیم شدن («یک-و»، «سه-و») و ضرب‌های ۲ و ۴ نت سیاه هستن."
+      },
+      "feedbackWrong": {
+        "en": "Count '1-and' for the first two eighth notes, '2' for the quarter note, '3-and' for the next pair, and '4' for the final quarter note.",
+        "fa": "برای دو چنگ اول بگو «یک-و»، برای سیاه بگو «دو»، برای جفتِ بعدی «سه-و» و برای سیاه آخر «چهار»."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You split the beat into even eighth notes (0.5 + 0.5) and tapped '1-and 2, 3-and 4' with precision.",
+    "fa": "ضرب رو به دو نیمه‌ی مساوی (نت چنگ) تقسیم کردی و الگوی «یک-و دو، سه-و چهار» رو دقیق زدی."
+  },
+  "tomorrow": {
+    "en": "We will compare how music groups beats into measures of 2/4, 3/4, and 4/4.",
+    "fa": "یاد می‌گیریم چطور ضرب‌ها تو میزان‌های ۲/۴، ۳/۴ و ۴/۴ دسته‌بندی می‌شن."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

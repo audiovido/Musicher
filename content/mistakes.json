@@ -740,12 +740,472 @@
       "e d sharp"
     ],
     "cause": {
-      "en": "Twisting the wrist back and forth during the opening E4–D♯4–E4–D♯4–E4 alternation instead of keeping the hand quiet in the A3–E4 position.",
-      "fa": "موقع زدنِ حرکت رفت‌وبرگشتیِ E4–D♯4–E4–D♯4–E4 مچ دستت رو به چپ و راست می‌چرخونی."
+      "en": "Twisting the wrist back and forth during the opening E5–D♯5–E5–D♯5–E5 alternation instead of keeping the hand quiet in the A4–E5 position.",
+      "fa": "موقع زدنِ حرکت رفت‌وبرگشتیِ E5–D♯5–E5–D♯5–E5 مچ دستت رو به چپ و راست می‌چرخونی."
     },
     "fix": {
-      "en": "Rest your hand slightly forward over A3–E4 so finger 4 is already touching the front of the black key D♯4 and pinky 5 rests right on E4.",
-      "fa": "دستت رو روی پوزیشنِ A3 تا E4 کمی جلوتر نگه دار تا انگشت ۴ از اول نزدیکِ کلید سیاه D♯4 و انگشت ۵ روی E4 آماده باشن."
+      "en": "Rest your hand slightly forward over A4–E5 so finger 4 is already touching the front of the black key D♯5 and pinky 5 rests right on E5.",
+      "fa": "دستت رو روی پوزیشنِ A4 تا E5 کمی جلوتر نگه دار تا انگشت ۴ از اول نزدیکِ کلید سیاه D♯5 و انگشت ۵ روی E5 آماده باشن."
+    }
+  },
+  {
+    "id": "rhythm_pulse_speeding_up",
+    "courseId": "rhythm",
+    "lessonId": 1,
+    "keywords": [
+      "نبض",
+      "ضرب ثابت",
+      "تند شدن ضرب",
+      "سرعت ضرب",
+      "steady pulse",
+      "rushing the beat",
+      "keep steady beat"
+    ],
+    "cause": {
+      "en": "Tapping from a tense wrist without moving your body, which makes your taps gradually speed up.",
+      "fa": "فقط با مچِ سفت ضربه می‌زنی و بدنت بی‌حرکته؛ همین باعث می‌شه ضرب‌هات ناخودآگاه تندتر بشه."
+    },
+    "fix": {
+      "en": "Breathe calmly and nod your head or tap your foot lightly so the steady pulse lives in your whole body.",
+      "fa": "نفس آروم بکش و هم‌زمان سر یا پات رو خیلی نرم تکون بده تا نبضِ ثابت توی کل بدنت جریان داشته باشه."
+    }
+  },
+  {
+    "id": "rhythm_tempo_equals_volume",
+    "courseId": "rhythm",
+    "lessonId": 2,
+    "keywords": [
+      "تمپو",
+      "تند و کند",
+      "بلند زدن در سرعت بالا",
+      "tempo",
+      "fast and slow",
+      "loud when fast"
+    ],
+    "cause": {
+      "en": "Hitting harder and louder when the tempo gets faster, or dragging when playing softly.",
+      "fa": "وقتی سرعت (تمپو) بالاتر می‌ره ناخودآگاه محکم‌تر و بلندتر ضربه می‌زنی."
+    },
+    "fix": {
+      "en": "Use smaller, lighter hand movements at faster tempos so speed and volume stay independent.",
+      "fa": "توی سرعت‌های بالاتر حرکت دستت رو کوچیک‌تر و سبک‌تر کن تا سرعت از بلندی صدا جدا بمونه."
+    }
+  },
+  {
+    "id": "rhythm_rush_through_rest",
+    "courseId": "rhythm",
+    "lessonId": 3,
+    "keywords": [
+      "سکوت سیاه",
+      "رد کردن سکوت",
+      "عجله در سکوت",
+      "quarter rest",
+      "rushing rests",
+      "skipping silence"
+    ],
+    "cause": {
+      "en": "Treating a rest as 'nothing' and jumping straight to the next note without counting the silent beat.",
+      "fa": "سکوت رو «هیچی» فرض می‌کنی و بدون شمردنِ ضربش، مستقیم می‌پری سراغ نت بعدی."
+    },
+    "fix": {
+      "en": "Open your hands silently or whisper 'shh' on the rest beat so the silence takes up its full beat.",
+      "fa": "روی ضربِ سکوت، دست‌هات رو بی‌صدا باز کن یا توی دلت بگو «شـش» تا سکوت دقیقاً به اندازه‌ی یک ضرب کامل طول بکشه."
+    }
+  },
+  {
+    "id": "rhythm_meter_2_4_flat_beats",
+    "courseId": "rhythm",
+    "lessonId": 4,
+    "keywords": [
+      "میزان دو چهارم",
+      "ضرب قوی",
+      "مارش",
+      "two four meter",
+      "2/4 time",
+      "strong weak beat"
+    ],
+    "cause": {
+      "en": "Tapping both beats of 2/4 with the exact same heavy weight so the music loses its march groove.",
+      "fa": "هر دو ضربِ میزان ۲/۴ رو با یه وزنِ یکسان می‌زنی و حسِ «چپ، راست» مارش از بین می‌ره."
+    },
+    "fix": {
+      "en": "Lean gently into beat 1 (ONE-two, ONE-two) and let beat 2 rebound lightly.",
+      "fa": "ضرب ۱ رو کمی گرم‌تر و سنگین‌تر حس کن («یک–دو، یک–دو») و بذار ضرب ۲ سبک‌تر برگرده."
+    }
+  },
+  {
+    "id": "rhythm_meter_3_4_extra_pause",
+    "courseId": "rhythm",
+    "lessonId": 5,
+    "keywords": [
+      "میزان سه چهارم",
+      "والس",
+      "مکث آخر میزان",
+      "three four meter",
+      "3/4 waltz",
+      "turning 3/4 into 4/4"
+    ],
+    "cause": {
+      "en": "Adding an accidental pause after beat 3, which turns a 3/4 waltz into 4/4.",
+      "fa": "بعد از ضرب سوم یه مکثِ اضافه می‌ذاری و میزان ۳/۴ رو ناخودآگاه تبدیل به ۴/۴ می‌کنی."
+    },
+    "fix": {
+      "en": "Let beat 3 flow right back into beat 1 in a smooth circle: ONE-two-three, ONE-two-three.",
+      "fa": "بذار ضرب ۳ مثل یه دایره‌ی نرم، بدون مکث برگرده به ضرب ۱: «یک–دو–سه، یک–دو–سه»."
+    }
+  },
+  {
+    "id": "rhythm_meter_4_4_losing_count",
+    "courseId": "rhythm",
+    "lessonId": 6,
+    "keywords": [
+      "میزان چهار چهارم",
+      "گم کردن ضرب",
+      "چهار ضرب",
+      "four four meter",
+      "4/4 time",
+      "losing the beat in 4/4"
+    ],
+    "cause": {
+      "en": "Forgetting which beat you are on in the middle of a 4-beat bar.",
+      "fa": "وسطِ میزان چهارضربی قاطی می‌کنی که الان روی ضرب دومی یا سومی."
+    },
+    "fix": {
+      "en": "Feel beat 1 as the heavy anchor and beat 3 as a medium bounce: ONE-two-THREE-four.",
+      "fa": "ضرب ۱ رو قوی و ضرب ۳ رو نیمه‌قوی حس کن («یک–دو–سه–چهار») تا همیشه جای خودت رو تو میزان بدونی."
+    }
+  },
+  {
+    "id": "rhythm_eighth_notes_uneven",
+    "courseId": "rhythm",
+    "lessonId": 7,
+    "keywords": [
+      "نت چنگ",
+      "یک و دو و",
+      "چنگ نامنظم",
+      "eighth notes",
+      "one and two and",
+      "uneven eighths"
+    ],
+    "cause": {
+      "en": "Playing the two eighth notes like a limping gallop instead of splitting the beat into two equal halves.",
+      "fa": "دو تا نت چنگ رو به‌جای دو نیمه‌ی کاملاً مساوی، لنگان و نامساوی می‌زنی."
+    },
+    "fix": {
+      "en": "Speak '1-and 2-and' out loud like a steady ticking clock before tapping.",
+      "fa": "قبل از ضربه زدن، با صدای بلند و کاملاً یکنواخت مثل تیک‌تاک ساعت بگو: «یک-و دو-و»."
+    }
+  },
+  {
+    "id": "rhythm_dotted_quarter_early_eighth",
+    "courseId": "rhythm",
+    "lessonId": 8,
+    "keywords": [
+      "سیاه نقطه دار",
+      "ریتم نقطه دار",
+      "یک و دو و",
+      "dotted quarter",
+      "dotted rhythm",
+      "one and two and"
+    ],
+    "cause": {
+      "en": "Tapping the single eighth note on beat 2 instead of waiting for the 'and' after beat 2.",
+      "fa": "نت چنگِ بعد از سیاه نقطه‌دار رو سرِ ضرب ۲ می‌زنی، در حالی که باید روی «و» بعد از ضرب ۲ بیاد."
+    },
+    "fix": {
+      "en": "Count '1-and-2' while holding the dotted quarter, then tap right on 'and' before beat 3!",
+      "fa": "نت اول رو نگه دار و بشمر «یک-و-دو»، و درست روی «و» ضربه‌ی چنگ رو بزن!"
+    }
+  },
+  {
+    "id": "rhythm_syncopation_losing_pulse",
+    "courseId": "rhythm",
+    "lessonId": 9,
+    "keywords": [
+      "سنکوپ",
+      "ضد ضرب",
+      "بیرون افتادن از ریتم",
+      "syncopation",
+      "offbeat",
+      "losing the downbeat"
+    ],
+    "cause": {
+      "en": "Letting the accented offbeat pull your foot tap off the main beat.",
+      "fa": "وقتی روی ضدضرب تأکید می‌کنی، پات هم قاطی می‌کنه و ضرب اصلی از دستت درمی‌ره."
+    },
+    "fix": {
+      "en": "Keep the main beats (1, 2, 3, 4) softly in your feet while your hands enjoy popping the 'and' in between.",
+      "fa": "ضرب‌های اصلی (۱، ۲، ۳، ۴) رو آروم توی پات نگه دار تا دستت با خیال راحت روی «و»های وسط ضرب تاکید کنه."
+    }
+  },
+  {
+    "id": "rhythm_6_8_flat_six",
+    "courseId": "rhythm",
+    "lessonId": 10,
+    "keywords": [
+      "شش هشتم",
+      "میزان ۶/۸",
+      "ریتم ایرانی",
+      "six eight",
+      "6/8 meter",
+      "two groups of three"
+    ],
+    "cause": {
+      "en": "Counting 6/8 as six flat, mechanical clicks instead of two swinging waves of three.",
+      "fa": "میزان ۶/۸ رو مثل شیش تا ضرب خشک و جدا می‌شمری و حس موج‌دارش رو نمی‌گیری."
+    },
+    "fix": {
+      "en": "Feel two big swings per bar, each holding three quick pulses: ONE-two-three, FOUR-five-six.",
+      "fa": "هر میزان رو دو تا موجِ بزرگِ سه‌تایی حس کن: «یک-دو-سه، چهار-پنج-شش»."
+    }
+  },
+  {
+    "id": "rhythm_triplet_two_plus_one",
+    "courseId": "rhythm",
+    "lessonId": 11,
+    "keywords": [
+      "تریوله",
+      "سه بر دو",
+      "سه نت در یک ضرب",
+      "triplet",
+      "three notes in one beat",
+      "uneven triplet"
+    ],
+    "cause": {
+      "en": "Playing a triplet as two fast notes and one slow note instead of three equal thirds of a beat.",
+      "fa": "تریوله رو شبیه دو تا نت تند و یه نت کند می‌زنی، نه سه تا قسمتِ کاملاً مساوی."
+    },
+    "fix": {
+      "en": "Say a smooth 3-syllable word like 'pa-ri-sa' or 'tri-po-let' inside one single beat.",
+      "fa": "توی دلِ هر ضرب، یک کلمه‌ی سه‌بخشیِ روان مثل «پَ-ری-سا» یا «یک-دو-سه» رو کاملاً یکنواخت بگو."
+    }
+  },
+  {
+    "id": "rhythm_shirazi_rushed_gap",
+    "courseId": "rhythm",
+    "lessonId": 12,
+    "keywords": [
+      "ریتم شیرازی",
+      "شش و هشت ایرانی",
+      "دام تاک",
+      "shirazi rhythm",
+      "persian 6/8",
+      "dam tak"
+    ],
+    "cause": {
+      "en": "Rushing the longer first stroke in each 3-pulse wave of the Shirazi 6/8 groove.",
+      "fa": "ضربِ اولِ کشیده‌تر توی هر موجِ ریتم شیرازی رو زودتر از موقع تموم می‌کنی."
+    },
+    "fix": {
+      "en": "Give the first stroke full room to breathe (counts 1–2) before snapping the light stroke on count 3: DAA-am tak, DAA-am tak.",
+      "fa": "بذار ضرب اول دو شماره نفس بکشه (۱-۲) و بعد روی شماره‌ی ۳ ضربِ سبک رو بزن: «دااام-تک، دااام-تک»."
+    }
+  },
+  {
+    "id": "ear_high_low_volume_confusion",
+    "courseId": "ear",
+    "lessonId": 1,
+    "keywords": [
+      "زیر و بم",
+      "زیر یعنی بلند",
+      "تشخیص زیر و بم",
+      "high vs low",
+      "pitch vs volume",
+      "higher or lower"
+    ],
+    "cause": {
+      "en": "Confusing 'high pitch' with 'loud volume' when listening to two notes.",
+      "fa": "مفهوم «صدای زیر» رو با «صدای بلند و قوی» قاطی می‌کنی."
+    },
+    "fix": {
+      "en": "Think of a tiny bird chirp (high pitch, even when soft) vs distant thunder (low pitch)—hum both notes to feel your throat move up or down.",
+      "fa": "به صدای جیک‌جیک گنجشک (زیر و نازک) در برابر رعدوبرق (بم و کلفت) فکر کن و هر دو نت رو زمزمه کن تا بالا و پایین رفتن صدات رو حس کنی."
+    }
+  },
+  {
+    "id": "ear_same_different_fading_memory",
+    "courseId": "ear",
+    "lessonId": 2,
+    "keywords": [
+      "یکسان یا متفاوت",
+      "هم صدا",
+      "تشخیص دو نت یکسان",
+      "same or different",
+      "unison",
+      "matching pitch"
+    ],
+    "cause": {
+      "en": "Letting your attention drift after the first note so you forget its pitch by the time the second note plays.",
+      "fa": "بعد از شنیدن نت اول تمرکزت پرت می‌شه و تا نت دوم پخش بشه، صدای نت اول یادت می‌ره."
+    },
+    "fix": {
+      "en": "Hold the first note silently in your head like a laser beam—if the second note changes nothing at all, they are the same.",
+      "fa": "صدای نت اول رو مثل یه خط صاف توی ذهنت نگه دار؛ اگه نت دوم هیچ تکونی نخورد، یکسان هستن."
+    }
+  },
+  {
+    "id": "ear_step_skip_wide_neighbor",
+    "courseId": "ear",
+    "lessonId": 3,
+    "keywords": [
+      "پله یا پرش",
+      "همسایه یا پرش",
+      "فاصله کم و زیاد",
+      "step or skip",
+      "neighbor vs leap"
+    ],
+    "cause": {
+      "en": "Guessing 'skip' whenever a step moves brightly, without checking if another note could fit in between.",
+      "fa": "به محض اینکه صدا عوض می‌شه حدس می‌زنی پرشه، بدون اینکه ببینی وسطشون نتی جا می‌شه یا نه."
+    },
+    "fix": {
+      "en": "Try to sing a scale note in the middle between the two sounds—if there is no room for a middle note, it is a neighbor step.",
+      "fa": "امتحان کن ببین می‌تونی بین دو تا نت، یه نتِ وسطی بخونی؟ اگه هیچ جایی بینشون نیست، حرکت پله‌ای (همسایه) است."
+    }
+  },
+  {
+    "id": "ear_melody_direction_last_note_bias",
+    "courseId": "ear",
+    "lessonId": 4,
+    "keywords": [
+      "جهت ملودی",
+      "موجی",
+      "بالا یا پایین",
+      "melody direction",
+      "contour",
+      "up down wave"
+    ],
+    "cause": {
+      "en": "Listening only to the very last note instead of following the whole 4-note path from start to finish.",
+      "fa": "فقط به نتِ آخر گوش می‌دی و مسیر حرکتِ چهار تا نت رو از اول دنبال نمی‌کنی."
+    },
+    "fix": {
+      "en": "Draw the melody in the air with your finger as it plays so you can see whether your hand went straight up, straight down, or curved in a wave.",
+      "fa": "هم‌زمان با پخش صدا، با انگشتت توی هوا خطِ حرکت نت‌ها رو بکش تا ببینی دستت یکسره بالا رفت، پایین اومد یا موج ساخت."
+    }
+  },
+  {
+    "id": "ear_small_intervals_2nd_vs_3rd",
+    "courseId": "ear",
+    "lessonId": 5,
+    "keywords": [
+      "فاصله دوم و سوم",
+      "فاصله های کوچک",
+      "دوم یا سوم",
+      "2nd and 3rd",
+      "small intervals",
+      "second vs third"
+    ],
+    "cause": {
+      "en": "Having trouble telling a 2nd from a 3rd because both intervals are relatively close.",
+      "fa": "چون هر دو فاصله کوچیکن، فاصله‌ی دوم و سوم رو با هم اشتباه می‌گیری."
+    },
+    "fix": {
+      "en": "A 2nd sounds like walking to the very next stair (C–D); a 3rd sounds like a sweet doorbell chime or the start of Brahms' Lullaby (E–G).",
+      "fa": "فاصله‌ی دوم مثل رفتن روی پله‌ی بغل‌دستیه (دو–ر)؛ ولی فاصله‌ی سوم صدای زنگِ شیرین و باز داره، مثل شروع لالایی برامس."
+    }
+  },
+  {
+    "id": "ear_big_intervals_4th_5th_octave",
+    "courseId": "ear",
+    "lessonId": 6,
+    "keywords": [
+      "فاصله چهارم و پنجم",
+      "اکتاو",
+      "فاصله های بزرگ",
+      "4th 5th octave",
+      "big intervals",
+      "twinkle leap"
+    ],
+    "cause": {
+      "en": "Mixing up the 4th, 5th, and octave because all three sound like wide leaps.",
+      "fa": "چون هر سه پرش‌های بلندی هستن، چهارم و پنجم و اکتاو رو قاطی می‌کنی."
+    },
+    "fix": {
+      "en": "Use song anchors: the 5th is the 'Twinkle, Twinkle' leap (C–G), the 4th is a shorter fanfare call (C–F), and the octave blends like the exact same note higher up (C4–C5).",
+      "fa": "با نشونه گوش کن: پنجم همون پرشِ «ستاره‌ی کوچولو»ست (دو–سل)، چهارم کمی جمع‌تره (دو–فا)، و اکتاو انگار همون نت اوله که تو آینه‌ی زیرتر تکرار شده."
+    }
+  },
+  {
+    "id": "ear_major_minor_chord_rush",
+    "courseId": "ear",
+    "lessonId": 7,
+    "keywords": [
+      "آکورد ماژور و مینور",
+      "تشخیص آکورد با گوش",
+      "رنگ آکورد",
+      "major or minor chord",
+      "chord mood",
+      "triad ear training"
+    ],
+    "cause": {
+      "en": "Overthinking the individual notes instead of listening to the blended color of the whole chord.",
+      "fa": "به‌جای گوش دادن به حس و رنگِ کلی آکورد، سعی می‌کنی تک‌تک نت‌هاش رو جداگانه حساب کنی."
+    },
+    "fix": {
+      "en": "Close your eyes and feel the overall atmosphere: Major shines like bright morning sun, while Minor glows softly like evening candlelight.",
+      "fa": "چشمت رو ببند و به حال‌وهوای کلی صدا دقت کن: ماژور مثل آفتاب صبح روشنه و مینور مثل نور شمع، گرم و کمی غمگینه."
+    }
+  },
+  {
+    "id": "ear_echo_sing_starting_off_pitch",
+    "courseId": "ear",
+    "lessonId": 8,
+    "keywords": [
+      "تکرار با صدا",
+      "کوک خوندن",
+      "صداسازی",
+      "echo me",
+      "sing back",
+      "matching pitch with voice"
+    ],
+    "cause": {
+      "en": "Starting to sing immediately without first hearing the starting note (C4) clearly in your mind.",
+      "fa": "بدون اینکه اول صدای نت شروع (C4) رو توی ذهنت بسازی، یهویی شروع به خوندن می‌کنی."
+    },
+    "fix": {
+      "en": "Listen to the pattern, pause one second to hear the first note silently in your head, take a gentle breath, and then hum or sing.",
+      "fa": "اول گوش بده، یه ثانیه صبر کن و نت اول رو توی ذهنت بشنو، بعد با یه نفس راحت شروع به زمزمه کن."
+    }
+  },
+  {
+    "id": "ear_koron_sounds_unfamiliar",
+    "courseId": "ear",
+    "lessonId": 9,
+    "keywords": [
+      "شنیدن ربع پرده",
+      "کرن در برابر نیم پرده",
+      "تشخیص کرن",
+      "quarter tone ear",
+      "semitone vs koron",
+      "hearing koron"
+    ],
+    "cause": {
+      "en": "Expecting Western piano half steps and feeling surprised by the closer, sweeter placement of the koron.",
+      "fa": "گوشت به نیم‌پرده‌های پیانو عادت کرده و فاصله‌ی نزدیک‌ترِ کُرُن اولش برات تازگی داره."
+    },
+    "fix": {
+      "en": "Notice how the koron step sits gently halfway—it is narrower and more intimate than a standard semitone, giving Persian melodies their warm sigh.",
+      "fa": "دقت کن که پله‌ی کُرُن چقدر به نت بالایی نزدیک‌تر و صمیمی‌تره؛ همین فاصله‌ی ظریفه که به ملودی‌های ایرانی اون حس گرم و دلنشین رو می‌ده."
+    }
+  },
+  {
+    "id": "ear_review_switching_modes",
+    "courseId": "ear",
+    "lessonId": 10,
+    "keywords": [
+      "بازی مرور گوش",
+      "تمرین ترکیبی گوش",
+      "ear review game",
+      "mixed ear training"
+    ],
+    "cause": {
+      "en": "Using the same listening habit when switching from two-note intervals to three-note chords.",
+      "fa": "وقتی از تشخیص فاصله‌های دونتی می‌ری سراغ آکوردها، هنوز دنبال حرکتِ تکی می‌گردی."
+    },
+    "fix": {
+      "en": "Check the mode prompt before tapping Play: listen for movement and distance on two-note questions, and listen for overall mood on chords.",
+      "fa": "قبل از زدن پخش، به عنوان تمرین نگاه کن: توی سؤال‌های دونتی به «جهت و فاصله» گوش بده و توی آکوردها به «حس روشن یا گرم» کل صدا."
     }
   },
   {
@@ -766,3 +1226,4 @@
     "isDynamicProgress": true
   }
 ]
+

@@ -1,0 +1,130 @@
+{
+  "id": 8,
+  "courseId": "ear",
+  "chapter": {
+    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+  },
+  "title": {
+    "en": "Echo me: sing back a 3-note pattern",
+    "fa": "تکرار کن: خوندن الگوی ۳ نتی"
+  },
+  "duration": {
+    "en": "6 minutes",
+    "fa": "۶ دقیقه"
+  },
+  "goal": {
+    "en": "Listen to the 3-note stepwise pattern C4–D4–E4, imagine it clearly in your head, and sing or hum it back in tune.",
+    "fa": "به الگوی سه‌نتیِ C4–D4–E4 گوش بدی، صداش رو توی ذهنت بسازی و با صدای خودت یا زمزمه دقیق تکرارش کنی."
+  },
+  "imageUrl": "",
+  "see": {
+    "en": [
+      "The strongest way to train your ear is to use your own voice—even if you are an instrumentalist! When you can sing a short phrase, it proves your inner ear has truly captured the pitches.",
+      "Today's pattern is three smooth neighbor steps going up: C4 – D4 – E4 ('Do – Re – Mi' or 'la – la – la'). No microphone is used here—this is a calm, private listening and singing exercise between your ear and your voice."
+    ],
+    "fa": [
+      "قوی‌ترین راه برای تقویت گوش، استفاده از صدای خودته—حتی اگه ساز می‌زنی و خواننده نیستی! وقتی بتونی یه جملهٔ کوتاه رو بخونی، یعنی گوش درونیت واقعاً نت‌ها رو گرفته.",
+      "الگوی امروز سه تا پلهٔ نرم رو به بالاست: C4 – D4 – E4 («دو – ر – می» یا با «لا – لا – لا»). اینجا هیچ میکروفونی در کار نیست؛ یه تمرین راحت و خصوصی بین گوش و صدای خودته."
+    ]
+  },
+  "hear": {
+    "en": "Listen to C4 – D4 – E4 first, let it echo silently in your mind, and then sing it out smoothly.",
+    "fa": "اول به C4 – D4 – E4 گوش بده، بذار یه بار توی ذهنت تکرار بشه، و بعد راحت و نرم بخونش."
+  },
+  "practice": {
+    "type": "listen-sing",
+    "tempo": 60,
+    "notes": [
+      "C4",
+      "D4",
+      "E4"
+    ]
+  },
+  "steps": {
+    "en": [
+      "Tap '1. Listen to pattern' and hear C4 – D4 – E4 without making a sound.",
+      "Take a relaxed breath, then tap '2. I sang it back' after you hum or sing the three ascending steps.",
+      "Play the pattern one more time while singing along to verify your pitch."
+    ],
+    "fa": [
+      "دکمهٔ «۱. گوش دادن به الگو» رو بزن و بدون اینکه صدایی دربیاری فقط به C4 – D4 – E4 گوش بده.",
+      "یه نفس راحت بکش، سه تا پلهٔ رو به بالا رو زمزمه کن و بعد دکمهٔ «۲. خوندم و تکرار کردم» رو بزن.",
+      "یه بار دیگه الگو رو پخش کن و هم‌زمان باهاش بخون تا مطمئن بشی صدات دقیقاً رو نت نشسته."
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did you pause to hear the first note (C4) in your head before starting to sing?",
+      "When you sang along with the replay, did your voice blend smoothly with C4, D4, and E4?"
+    ],
+    "fa": [
+      "قبل از شروع خوندن، یه لحظه مکث کردی تا نت اول (C4) رو توی ذهنت بشنوی؟",
+      "وقتی هم‌زمان با پخش دوباره خوندی، صدات نرم و دقیق روی C4 و D4 و E4 نشست؟"
+    ]
+  },
+  "quiz": [
+    {
+      "q": {
+        "en": "How do the three notes C4 – D4 – E4 move?",
+        "fa": "سه تا نتِ C4 – D4 – E4 چطور حرکت می‌کنن؟"
+      },
+      "options": {
+        "en": [
+          "Three neighbor steps going up",
+          "Three wide skips going down",
+          "Three identical notes",
+          "A wave going down then up"
+        ],
+        "fa": [
+          "سه تا پلهٔ همسایه رو به بالا",
+          "سه تا پرش بلند رو به پایین",
+          "سه تا نت یکسان",
+          "یه حرکت موجی رو به پایین و بالا"
+        ]
+      },
+      "correct": 0,
+      "feedback": {
+        "en": "C to D and D to E are consecutive neighbor steps ascending the scale.",
+        "fa": "دو به ر و ر به می، پله‌های همسایهٔ پشت سر هم هستن که رو به بالا می‌رن."
+      }
+    },
+    {
+      "q": {
+        "en": "What is the best habit right before you sing a pattern back?",
+        "fa": "بهترین عادت درست قبل از اینکه یه الگو رو با صدات تکرار کنی چیه؟"
+      },
+      "options": {
+        "en": [
+          "Start singing while the piano is still playing the first time",
+          "Imagine the starting note in your head and take a calm breath",
+          "Shout as loud as you can",
+          "Look away and forget the first note"
+        ],
+        "fa": [
+          "همون بار اول وسط صدای پیانو شروع به خوندن کنی",
+          "نت شروع رو توی ذهنت تصور کنی و یه نفس آروم بکشی",
+          "تا جای ممکن بلند داد بزنی",
+          "نت اول رو فراموش کنی"
+        ]
+      },
+      "correct": 1,
+      "feedback": {
+        "en": "Hearing the note mentally (audiation) before singing sets your vocal cords to the right pitch automatically.",
+        "fa": "تصور کردن صدا توی ذهن قبل از خوندن، باعث می‌شه تارهای صوتیت خودبه‌خود روی کوک درست تنظیم بشن."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You practiced listening, imagining, and singing back the ascending 3-note pattern C4–D4–E4.",
+    "fa": "گوش دادن، تصور ذهنی و بازخوانی الگوی سه‌نتیِ C4–D4–E4 رو تمرین کردی."
+  },
+  "tomorrow": {
+    "en": "Tomorrow we will explore a special color of Iranian music: hearing a quarter tone (koron) compared to a standard half step.",
+    "fa": "فردا سراغ یکی از رنگ‌های خاص موسیقی ایرانی می‌ریم: شنیدن صدای ربع‌پرده (کُرُن) در مقایسه با نیم‌پرده."
+  },
+  "source": {
+    "en": "Original MUSICHER content",
+    "fa": "محتوای اختصاصی MUSICHER"
+  }
+}

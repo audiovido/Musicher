@@ -1,0 +1,124 @@
+{
+  "id": 10,
+  "chapter": {
+    "en": "Chapter 3: Rhythm of the world",
+    "fa": "فصل ۳ «ریتم‌های جهان»"
+  },
+  "title": {
+    "en": "6/8 feel: two big beats, three small",
+    "fa": "حس ۶/۸: دو ضرب بزرگ، سه نبض کوچک"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Feel the compound 6/8 groove (1-2-3, 4-5-6) and tap the classic Persian folk dance pattern '1.5 1.5 | 1 0.5 1.5'.",
+    "fa": "موجِ میزان ۶/۸ («۱-۲-۳، ۴-۵-۶») رو حس می‌کنی و الگوی معروفِ ریتم‌های شاد ایرانی («1.5 1.5 | 1 0.5 1.5») رو می‌زنی."
+  },
+  "see": {
+    "en": "Welcome to 6/8—one of the most joyful meters in the world and the heartbeat of Persian folk and dance music (such as Reng and Shirazi grooves)! In 6/8, each measure has 6 eighth-note pulses grouped into 2 big dotted-quarter beats: 'ONE-two-three, FOUR-five-six' (each big beat = 1.5 quarter-note beats). In measure 1 of today's pattern ('1.5 1.5'), you tap the two big beats ('ONE-two-three, FOUR-five-six'). In measure 2 ('1 0.5 1.5'), the first big beat splits into a long-short lilt ('ONE-two THREE, FOUR-five-six')—the signature bounce of Persian 6/8!",
+    "fa": "به میزان «۶/۸» خوش اومدی—یکی از شادترین و محبوب‌ترین وزن‌های دنیا و قلبِ تپنده‌ی موسیقی محلی و رِنگ‌های ایرانی (مثل ریتم شیرازی)! تو ۶/۸، هر میزان ۶ تا نبضِ چنگ داره که تو ۲ تا ضربِ بزرگ دسته‌بندی می‌شن: «یک-دو-سه، چهار-پنج-شش» (هر ضربِ بزرگ معادلِ ۱.۵ ضرب سیاهه). تو میزان اولِ الگوی امروز («1.5 1.5»)، سرِ دو تا ضربِ بزرگ می‌زنی («یک-دو-سه، چهار-پنج-شش»). تو میزان دوم («1 0.5 1.5»)، ضرب بزرگِ اول تبدیل به یه حرکتِ «بلند-کوتاه» می‌شه («یک-دو سه، چهار-پنج-شش»)—همون موجِ شیرین و آشنای ۶/۸ ایرانی!"
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Tap 'Play demo' and sway with the two big beats per measure: 'ONE-two-three, FOUR-five-six'.",
+      "Say out loud: 'DUM — DUM — | DUM-tak DUM —' ('1-2-3 4-5-6 | 1-2 3 4-5-6').",
+      "Tap '1.5 1.5 | 1 0.5 1.5' on the drum pad with a relaxed, dancing bounce!"
+    ],
+    "fa": [
+      "روی «پخش نمونه» بزن و با دو ضربِ بزرگِ هر میزان («یک-دو-سه، چهار-پنج-شش») موج بگیر.",
+      "با ریتم بلند بگو: «تُم — بَک — | تُم-بَک تُم —» («۱-۲-۳ ۴-۵-۶ | ۱-۲ ۳ ۴-۵-۶»).",
+      "الگوی «1.5 1.5 | 1 0.5 1.5» رو با حسِ شاد و روان روی پد ضرب بزن!"
+    ]
+  },
+  "practice": {
+    "type": "rhythm-tap",
+    "meter": "6/8",
+    "tempo": 84,
+    "pattern": "1.5 1.5 | 1 0.5 1.5"
+  },
+  "selfCheck": {
+    "en": [
+      "Did I feel 6/8 as 2 big rolling beats per measure (each subdivided into 3)?",
+      "Did I catch the 'long-short' bounce ('1 0.5') at the start of the second measure?"
+    ],
+    "fa": [
+      "میزان ۶/۸ رو به‌صورت ۲ ضربِ بزرگ در هر میزان (که هر کدوم ۳ بخش دارن) حس کردم؟",
+      "حرکتِ «بلند–کوتاه» («1 0.5») در شروع میزان دوم رو با موجِ درست زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How are the 6 eighth-note pulses in a 6/8 measure naturally grouped?",
+        "fa": "۶ نبضِ چنگ در میزان ۶/۸ به‌طور طبیعی چطور دسته‌بندی و حس می‌شن؟"
+      },
+      "options": {
+        "en": [
+          "Into 2 big beats of 3 eighth notes each (ONE-two-three, FOUR-five-six)",
+          "Into 6 slow whole notes",
+          "Into 4 equal beats like 4/4"
+        ],
+        "fa": [
+          "در ۲ ضربِ بزرگِ سه‌تایی («یک-دو-سه، چهار-پنج-شش»)",
+          "در ۶ نتِ گردِ خیلی کشیده",
+          "در ۴ ضرب مساوی مثل ۴/۴"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! 6/8 is a compound duple meter: 2 big beats, each containing 3 small eighth-note pulses.",
+        "fa": "دقیقاً! میزان ۶/۸ یک میزانِ دوضربیِ ترکیبیه: ۲ ضربِ بزرگ که توی هر کدوم ۳ نبضِ چنگ می‌تپه."
+      },
+      "feedbackWrong": {
+        "en": "In 6/8, you feel 2 big beats per measure, each split into 3 small eighth notes: 1-2-3, 4-5-6.",
+        "fa": "تو ۶/۸ هر میزان ۲ ضرب بزرگ داره که هر کدوم به ۳ چنگ تقسیم می‌شن: ۱-۲-۳، ۴-۵-۶."
+      }
+    },
+    {
+      "question": {
+        "en": "Where do you frequently hear the 6/8 'long-short' bounce ('1 0.5 1.5')?",
+        "fa": "موجِ معروفِ ۶/۸ («بلند-کوتاه بلند») رو کجا خیلی زیاد می‌شنویم؟"
+      },
+      "options": {
+        "en": [
+          "In Persian folk dance music (Reng and Shirazi rhythms) as well as jigs and ballads",
+          "Only in silent rests",
+          "Only in 4/4 military marches"
+        ],
+        "fa": [
+          "در رِنگ‌ها، ریتم شیرازی و موسیقی‌های شاد و محلی ایرانی",
+          "فقط در سکوت‌ها",
+          "فقط در مارش‌های نظامیِ چهارچهارم"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! That graceful 6/8 lilt is the signature groove of Persian Rengs and folk dances.",
+        "fa": "آفرین! این موجِ شیرینِ ۶/۸ امضایِ رِنگ‌های سنتی و موسیقی‌های شاد محلی ایرانیه."
+      },
+      "feedbackWrong": {
+        "en": "6/8 is famous across Persian folk dances (like Shirazi and Reng) for its rolling two-beat groove.",
+        "fa": "میزان ۶/۸ به خاطر موجِ دوضربیِ غلتانش تو رِنگ‌ها و موسیقی محلی ایرانی (مثل شیرازی) بسیار پرکاربرده."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You felt the 2-big-beat groove of 6/8 and tapped the classic Persian 6/8 lilt ('1.5 1.5 | 1 0.5 1.5').",
+    "fa": "موجِ دوضربیِ ۶/۸ رو حس کردی و الگوی معروف ۶/۸ ایرانی («1.5 1.5 | 1 0.5 1.5») رو اجرا کردی."
+  },
+  "tomorrow": {
+    "en": "We will discover odd meters (5/8 and 7/8) built from simple groups of 2 and 3!",
+    "fa": "با «میزان‌های لنگ» (۵/۸ و ۷/۸) آشنا می‌شیم که از ترکیبِ خیلی ساده‌ی گروه‌های ۲تایی و ۳تایی ساخته می‌شن!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}
