@@ -6557,6 +6557,7 @@
               const evEndSec = exerciseStartTime + (ev.startBeat + ev.beats) * beatSec;
 
               if (ev.kind === "note") {
+                if (i === 0 && now < exerciseStartTime + 0.2) continue;
                 if (now > evStartSec + 0.2) {
                   mp.rhythmResults[i] = { grade: "missed", errorMs: null };
                   mp.rhythmFeedback = t("practice.rhythmMissed");
@@ -6601,12 +6602,15 @@
           startRhythmExercise();
           return;
         }
-        if (mp.rhythmPhase === "countin") {
-          return;
-        }
 
         const ctx = getOrCreatePianoAudioCtx();
         if (!ctx) return;
+        if (mp.rhythmPhase === "countin") {
+          if (ctx.currentTime < mp.rhythmExerciseStartTime - 0.12) {
+            return;
+          }
+          mp.rhythmPhase = "active";
+        }
         const tapTime = ctx.currentTime;
         playRhythmDrumHitSound(mp.rhythmStepIdx === 0);
 
@@ -6929,7 +6933,7 @@
               }
             </div>
 
-            <button type="button" class="rhythm-tap-pad" data-action="mp-rhythm-tap" ${mp.rhythmPhase === "countin" ? "disabled" : ""}>
+            <button type="button" class="rhythm-tap-pad" data-action="mp-rhythm-tap">
               <span>🥁</span>
               <span>${escapeHtml(mp.rhythmPhase === "idle" ? t("practice.rhythmStartBtn") : t("practice.rhythmTapBtn"))}</span>
             </button>
