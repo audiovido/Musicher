@@ -195,6 +195,7 @@
   "library": {
     "title": "کتابخانه",
     "tabMyLessons": "درس‌های من",
+    "tabPiano": "پیانو",
     "tabTeachers": "استادها",
     "searchPlaceholder": "جست‌وجوی نام درس...",
     "noResults": "درسی با این عنوان پیدا نشد.",
@@ -242,5 +243,32 @@
     "findCAria": "نمودار کیبورد پیانو با ۱۴ کلید سفید و نمایش جای نت دو در سمت چپ هر گروه دوتایی کلید سیاه",
     "noteNamesAria": "نمودار کیبورد پیانو با نام نت‌های دو ر می فا سل لا سی (C تا B) روی ۱۴ کلید سفید",
     "fingerNumbersAria": "شماره‌ی انگشت‌های ۱ تا ۵ دست راست روی کلیدهای سفید دو تا سل"
+  },
+  "piano": {
+    "title": "پیانوی تمرینی",
+    "freePlayTitle": "پیانوی آزاد (تمرین آزاد)",
+    "freePlaySub": "کیبورد دو اکتاو (C3 تا C5) برای تمرین با لمس صفحه، ماوس یا کیبورد کامپیوتر.",
+    "openFreePlayBtn": "پیانوی آزاد",
+    "tapToEnableSound": "برای فعال شدن صدا ضربه بزن",
+    "soundEnabled": "صدا فعاله",
+    "noteLabelsToggle": "نام نت‌ها",
+    "tabWatch": "تماشا",
+    "tabFollow": "همراه من",
+    "tabOwn": "خودت بزن",
+    "watchPlayBtn": "پخش نمونه",
+    "watchStopBtn": "توقف",
+    "watchPlaying": "گوش کن و کلیدهای روشن‌شده رو ببین...",
+    "watchHint": "روی «پخش نمونه» بزن تا نت‌ها با سرعت {tempo} پخش بشن.",
+    "followInstruction": "کلید فیروزه‌ای روشن‌شده رو بزن: {note}",
+    "hintHigher": "یک کلید بالاتر ←",
+    "hintLower": "→ یک کلید پایین‌تر",
+    "wellDone": "آفرین!",
+    "practiceCounted": "تمرین این بخش انجام شد",
+    "playAgainBtn": "تمرین دوباره",
+    "ownInstruction": "این نت‌ها رو به ترتیب و بدون راهنمای نوری بزن ({current}/{total}):",
+    "ownFailHint": "ترتیب نت‌ها کمی فرق داشت — بیا از نت اول دوباره امتحان کنیم!",
+    "computerKeysHint": "کلیدهای کامپیوتر (C4 تا C5): A W S E D F T G Y H U J K",
+    "handRight": "دست راست",
+    "handLeft": "دست چپ"
   }
 }

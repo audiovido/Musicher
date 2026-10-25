@@ -32,6 +32,12 @@
       "گوش کن: «دو»های سمت چپ بم‌ترن، سمت راست زیرتر."
     ]
   },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C3", "C4", "C5"]
+  },
   "selfCheck": {
     "en": [
       "Did I tell apart the groups of 2 and 3 black keys?",

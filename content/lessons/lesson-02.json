@@ -32,6 +32,12 @@
       "چشمت رو ببند، یه کلید سفید بزن، بعد با نگاه به گروه‌های سیاه اسمش رو بگو."
     ]
   },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"]
+  },
   "selfCheck": {
     "en": [
       "Did I say all seven note names from Do to Si out loud?",

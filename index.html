@@ -1331,6 +1331,11 @@
         display: none;
       }
 
+      .lesson-col-content {
+        width: 100%;
+        min-width: 0;
+      }
+
       @media (min-width: 768px) and (max-width: 1099px) {
         .lesson-col-arch {
           max-width: 340px;
@@ -1811,6 +1816,385 @@
         box-shadow: var(--card-shadow);
         padding: 24px;
       }
+
+      /* ==========================================================================
+         EDUCATIONAL VIRTUAL PIANO (2 Octaves: C3 to C5)
+         - Never mirrors in RTL (dir="ltr", direction: ltr)
+         - Max-width 760px on desktop, full width on mobile with horizontal scroll
+           (minimum 1 octave visible at all times)
+         - Pressed key highlights in saffron #F2B33D
+         - Target key in Follow mode glows teal #1F6F6B
+         - Wrong key shows soft red flash #D9473F
+         ========================================================================== */
+      .vpiano-card {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto 20px;
+        padding: 18px 16px;
+        box-sizing: border-box;
+      }
+
+      .vpiano-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .vpiano-controls-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .vpiano-pill-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: 36px;
+        padding: 5px 12px;
+        border-radius: var(--pill-radius);
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg);
+        color: var(--ink);
+        font-size: 0.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        cursor: pointer;
+        transition: all 140ms ease;
+      }
+
+      .vpiano-pill-btn.active {
+        background-color: var(--accent);
+        color: #1F1A2E;
+        border-color: #1F1A2E;
+      }
+
+      .vpiano-sound-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        min-height: 36px;
+        padding: 5px 12px;
+        border-radius: var(--pill-radius);
+        border: 1.5px dashed var(--secondary);
+        background-color: var(--secondary-soft);
+        color: var(--secondary);
+        font-size: 0.78rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .vpiano-sound-hint.unlocked {
+        border-style: solid;
+        opacity: 0.85;
+      }
+
+      .vpiano-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .vpiano-tab-btn {
+        min-height: 42px;
+        padding: 8px 10px;
+        border-radius: var(--pill-radius);
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg);
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+        transition: all 140ms ease;
+      }
+
+      .vpiano-tab-btn.active {
+        background-color: var(--secondary);
+        color: #FFFFFF;
+        border-color: var(--secondary);
+      }
+
+      .vpiano-status-box {
+        background-color: var(--surface);
+        border: 1.5px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+      }
+
+      .vpiano-notes-seq {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+        direction: ltr;
+      }
+
+      .vpiano-seq-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        min-width: 36px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg-elevated);
+        color: var(--ink);
+        font-size: 0.82rem;
+        font-weight: 700;
+        direction: ltr;
+      }
+
+      .vpiano-seq-badge.done {
+        background-color: var(--secondary);
+        color: #FFFFFF;
+        border-color: var(--secondary);
+      }
+
+      .vpiano-seq-badge.current {
+        background-color: #F2B33D;
+        color: #1F1A2E;
+        border-color: #1F1A2E;
+        box-shadow: 0 0 0 2px rgba(242, 179, 61, 0.35);
+      }
+
+      .vpiano-hint-alert {
+        margin-top: 8px;
+        padding: 6px 12px;
+        border-radius: 10px;
+        background-color: rgba(217, 71, 63, 0.14);
+        border: 1.5px solid #D9473F;
+        color: #D9473F;
+        font-size: 0.85rem;
+        font-weight: 700;
+        display: inline-block;
+      }
+
+      .vpiano-well-done {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 8px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background-color: var(--secondary-soft);
+        border: 1.5px solid var(--secondary);
+        color: var(--secondary);
+        font-weight: 700;
+      }
+
+      /* Desktop & Tablet (>= 768px): all 15 white keys C3..C5 fit 100% of card width with no cut-off */
+      .vpiano-scroll-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+        direction: ltr;
+        text-align: left;
+        box-sizing: border-box;
+      }
+
+      .vpiano-keyboard {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: 192px;
+        display: block;
+        direction: ltr;
+        background-color: #1F1A2E;
+        border: 2px solid #1F1A2E;
+        border-radius: 14px;
+        padding: 4px 4px 6px;
+        box-shadow: 0 4px 0 rgba(31, 26, 46, 0.14);
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-x;
+      }
+
+      .vpiano-keys-stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        direction: ltr;
+        box-sizing: border-box;
+      }
+
+      .vpiano-white-key {
+        position: relative;
+        flex: 1 1 0%;
+        width: calc(100% / 15);
+        min-width: 0;
+        max-width: calc(100% / 15);
+        height: 100%;
+        background-color: #FBF7F0;
+        border: 1.2px solid #1F1A2E;
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 1px 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 1;
+        color: #1F1A2E;
+        transition: background-color 50ms ease, transform 50ms ease, box-shadow 120ms ease;
+      }
+
+      .vpiano-black-key {
+        position: absolute;
+        top: 0;
+        width: 4.35%;
+        height: 60%;
+        background-color: #1F1A2E;
+        border: 1.5px solid #1F1A2E;
+        border-radius: 0 0 6px 6px;
+        z-index: 3;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 6px;
+        box-sizing: border-box;
+        overflow: hidden;
+        color: #FBF7F0;
+        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+        transition: background-color 50ms ease, transform 50ms ease, box-shadow 120ms ease;
+      }
+
+      .vpiano-key-labels {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1px;
+        pointer-events: none;
+        line-height: 1.1;
+        width: 100%;
+        text-align: center;
+      }
+
+      .vpiano-lbl-latin {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        white-space: nowrap;
+        color: inherit;
+      }
+
+      .vpiano-lbl-fa {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        white-space: nowrap;
+        color: inherit;
+      }
+
+      .vpiano-black-key .vpiano-lbl-latin {
+        font-size: 0.58rem;
+        opacity: 0.9;
+      }
+
+      .vpiano-C-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: rgba(31, 26, 46, 0.35);
+        margin-bottom: 3px;
+        pointer-events: none;
+        flex-shrink: 0;
+      }
+
+      /* Target key glow in "Follow me" mode (Teal #1F6F6B) */
+      .vpiano-white-key.is-target-glow {
+        background-color: #DDF1EF;
+        box-shadow: inset 0 0 0 3px #1F6F6B, 0 0 14px rgba(31, 111, 107, 0.55);
+      }
+
+      .vpiano-black-key.is-target-glow {
+        background-color: #1F6F6B;
+        border-color: #1F6F6B;
+        box-shadow: 0 0 14px rgba(31, 111, 107, 0.85);
+      }
+
+      /* Pressed key highlight in Saffron #F2B33D */
+      .vpiano-white-key.is-pressed,
+      .vpiano-black-key.is-pressed {
+        background-color: #F2B33D !important;
+        color: #1F1A2E !important;
+        border-color: #1F1A2E !important;
+        transform: translateY(2px);
+      }
+
+      /* Wrong key soft red flash (#D9473F) */
+      .vpiano-white-key.is-wrong-flash,
+      .vpiano-black-key.is-wrong-flash {
+        background-color: #F7C6C3 !important;
+        color: #1F1A2E !important;
+        box-shadow: inset 0 0 0 2.5px #D9473F !important;
+      }
+
+      .vpiano-footer-hint {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      /* Mobile (< 768px): keep horizontal scroll, auto-scroll smoothly to target key, show note labels */
+      @media (max-width: 767px) {
+        .vpiano-card {
+          padding: 14px 12px;
+        }
+        .vpiano-scroll-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+          padding-bottom: 6px;
+        }
+        .vpiano-keyboard {
+          width: 540px;
+          min-width: 540px;
+          max-width: none;
+          height: 180px;
+        }
+        .vpiano-key-labels {
+          display: flex !important;
+        }
+        .vpiano-lbl-latin {
+          display: block !important;
+          font-size: 0.74rem;
+        }
+        .vpiano-lbl-fa {
+          display: block !important;
+          font-size: 0.72rem;
+        }
+        .vpiano-footer-copy-desktop {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1882,7 +2266,22 @@
         toastMessage: null,
         toastTimer: null,
         modal: null,
-        teacherSavedBanner: false
+        teacherSavedBanner: false,
+        pianoShowLabels: true,
+        pianoAudioUnlocked: false,
+        pianoPractice: {
+          lessonId: null,
+          tab: "follow",
+          watchPlaying: false,
+          watchActiveIdx: -1,
+          watchTimers: [],
+          followIdx: 0,
+          followHint: "",
+          followDone: false,
+          ownPlayed: [],
+          ownStatus: "idle",
+          completedByLesson: {}
+        }
       };
 
       const FALLBACK_LOCALES = {
@@ -1900,6 +2299,36 @@
           },
           advisor: {
             inputPlaceholder: "Type your question..."
+          },
+          library: {
+            tabPiano: "Piano"
+          },
+          piano: {
+            title: "Practice Piano",
+            freePlayTitle: "Free-Play Piano",
+            freePlaySub: "Explore the 2-octave keyboard (C3 to C5) with touch, mouse, or computer keys.",
+            openFreePlayBtn: "Free-play Piano",
+            tapToEnableSound: "Tap to enable sound",
+            soundEnabled: "Sound ready",
+            noteLabelsToggle: "Note labels",
+            tabWatch: "Watch",
+            tabFollow: "Follow me",
+            tabOwn: "On your own",
+            watchPlayBtn: "Play demo",
+            watchStopBtn: "Stop",
+            watchPlaying: "Listen and watch the highlighted keys...",
+            watchHint: "Tap \"Play demo\" to see and hear the notes at {tempo} BPM.",
+            followInstruction: "Press the glowing teal key: {note}",
+            hintHigher: "One key higher →",
+            hintLower: "← One key lower",
+            wellDone: "Well done!",
+            practiceCounted: "Practice completed",
+            playAgainBtn: "Practice again",
+            ownInstruction: "Play this sequence in order without key glow ({current}/{total}):",
+            ownFailHint: "Not quite that sequence — let's try again from the first note!",
+            computerKeysHint: "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
+            handRight: "Right hand",
+            handLeft: "Left hand"
           }
         },
         fa: {
@@ -1916,6 +2345,36 @@
           },
           advisor: {
             inputPlaceholder: "سؤالت رو بنویس..."
+          },
+          library: {
+            tabPiano: "پیانو"
+          },
+          piano: {
+            title: "پیانوی تمرینی",
+            freePlayTitle: "پیانوی آزاد (تمرین آزاد)",
+            freePlaySub: "کیبورد دو اکتاو (C3 تا C5) برای تمرین با لمس صفحه، ماوس یا کیبورد کامپیوتر.",
+            openFreePlayBtn: "پیانوی آزاد",
+            tapToEnableSound: "برای فعال شدن صدا ضربه بزن",
+            soundEnabled: "صدا فعاله",
+            noteLabelsToggle: "نام نت‌ها",
+            tabWatch: "تماشا",
+            tabFollow: "همراه من",
+            tabOwn: "خودت بزن",
+            watchPlayBtn: "پخش نمونه",
+            watchStopBtn: "توقف",
+            watchPlaying: "گوش کن و کلیدهای روشن‌شده رو ببین...",
+            watchHint: "روی «پخش نمونه» بزن تا نت‌ها با سرعت {tempo} پخش بشن.",
+            followInstruction: "کلید فیروزه‌ای روشن‌شده رو بزن: {note}",
+            hintHigher: "یک کلید بالاتر ←",
+            hintLower: "→ یک کلید پایین‌تر",
+            wellDone: "آفرین!",
+            practiceCounted: "تمرین این بخش انجام شد",
+            playAgainBtn: "تمرین دوباره",
+            ownInstruction: "این نت‌ها رو به ترتیب و بدون راهنمای نوری بزن ({current}/{total}):",
+            ownFailHint: "ترتیب نت‌ها کمی فرق داشت — بیا از نت اول دوباره امتحان کنیم!",
+            computerKeysHint: "کلیدهای کامپیوتر (C4 تا C5): A W S E D F T G Y H U J K",
+            handRight: "دست راست",
+            handLeft: "دست چپ"
           }
         }
       };
@@ -2625,6 +3084,623 @@
         `;
       }
       window.drawKeyboard = drawKeyboard;
+
+      /* ==========================================================================
+         EDUCATIONAL VIRTUAL PIANO ENGINE (Web Audio API + 2-Octave C3..C5 Keyboard)
+         - Practice tool only: no recording, no saving performances, no composing, no export
+         - 2 octaves C3..C5 (15 white keys, 10 black keys in groups of 2 and 3)
+         - Web Audio API synthesized piano tone (short attack, natural decay, slight harmonics)
+         - Lesson Practice Mode: Watch, Follow me, On your own
+         - Free-Play Mode in Library -> Piano tab
+         ========================================================================== */
+      const VPIANO_WHITE_KEYS = [
+        { note: "C3", letter: "C", octave: 3, step: 0, midi: 48 },
+        { note: "D3", letter: "D", octave: 3, step: 1, midi: 50 },
+        { note: "E3", letter: "E", octave: 3, step: 2, midi: 52 },
+        { note: "F3", letter: "F", octave: 3, step: 3, midi: 53 },
+        { note: "G3", letter: "G", octave: 3, step: 4, midi: 55 },
+        { note: "A3", letter: "A", octave: 3, step: 5, midi: 57 },
+        { note: "B3", letter: "B", octave: 3, step: 6, midi: 59 },
+        { note: "C4", letter: "C", octave: 4, step: 0, midi: 60 },
+        { note: "D4", letter: "D", octave: 4, step: 1, midi: 62 },
+        { note: "E4", letter: "E", octave: 4, step: 2, midi: 64 },
+        { note: "F4", letter: "F", octave: 4, step: 3, midi: 65 },
+        { note: "G4", letter: "G", octave: 4, step: 4, midi: 67 },
+        { note: "A4", letter: "A", octave: 4, step: 5, midi: 69 },
+        { note: "B4", letter: "B", octave: 4, step: 6, midi: 71 },
+        { note: "C5", letter: "C", octave: 5, step: 0, midi: 72 }
+      ];
+
+      // Black keys placed between white keys at index afterWhiteIdx (groups of 2 and 3)
+      const VPIANO_BLACK_KEYS = [
+        { note: "C#3", label: "C#", afterWhiteIdx: 0, offsetRatio: 0.56, midi: 49 },
+        { note: "D#3", label: "D#", afterWhiteIdx: 1, offsetRatio: 0.44, midi: 51 },
+        { note: "F#3", label: "F#", afterWhiteIdx: 3, offsetRatio: 0.58, midi: 54 },
+        { note: "G#3", label: "G#", afterWhiteIdx: 4, offsetRatio: 0.50, midi: 56 },
+        { note: "A#3", label: "A#", afterWhiteIdx: 5, offsetRatio: 0.42, midi: 58 },
+        { note: "C#4", label: "C#", afterWhiteIdx: 7, offsetRatio: 0.56, midi: 61 },
+        { note: "D#4", label: "D#", afterWhiteIdx: 8, offsetRatio: 0.44, midi: 63 },
+        { note: "F#4", label: "F#", afterWhiteIdx: 10, offsetRatio: 0.58, midi: 66 },
+        { note: "G#4", label: "G#", afterWhiteIdx: 11, offsetRatio: 0.50, midi: 68 },
+        { note: "A#4", label: "A#", afterWhiteIdx: 12, offsetRatio: 0.42, midi: 70 }
+      ];
+
+      const VPIANO_ALL_BY_NOTE = {};
+      for (const k of VPIANO_WHITE_KEYS) VPIANO_ALL_BY_NOTE[k.note] = k;
+      for (const k of VPIANO_BLACK_KEYS) VPIANO_ALL_BY_NOTE[k.note] = k;
+
+      // Computer keyboard mapping (A W S E D F T G Y H U J K = C4 to C5)
+      const VPIANO_COMPUTER_KEYMAP = {
+        a: "C4",
+        w: "C#4",
+        s: "D4",
+        e: "D#4",
+        d: "E4",
+        f: "F4",
+        t: "F#4",
+        g: "G4",
+        y: "G#4",
+        h: "A4",
+        u: "A#4",
+        j: "B4",
+        k: "C5"
+      };
+
+      let pianoAudioCtx = null;
+
+      function getOrCreatePianoAudioCtx() {
+        if (!pianoAudioCtx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            pianoAudioCtx = new AudioCtx();
+          }
+        }
+        return pianoAudioCtx;
+      }
+
+      function unlockPianoAudio() {
+        try {
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          if (ctx.state === "suspended") {
+            ctx.resume();
+          }
+          // Play a tiny silent buffer to unlock iOS/Safari audio immediately
+          const buffer = ctx.createBuffer(1, 1, 22050);
+          const source = ctx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(ctx.destination);
+          if (source.start) source.start(0);
+          if (!ui.pianoAudioUnlocked) {
+            ui.pianoAudioUnlocked = true;
+            const hintBtns = document.querySelectorAll("[data-action='vpiano-unlock-audio']");
+            hintBtns.forEach((btn) => {
+              btn.classList.add("unlocked");
+              btn.innerHTML = `<span>🔊</span><span>${escapeHtml(t("piano.soundEnabled"))}</span>`;
+            });
+          }
+        } catch (err) {
+          // Ignore audio unlock error
+        }
+      }
+
+      function playPianoNoteSound(noteName, durationSec = 1.35) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
+          const midi = keyMeta ? keyMeta.midi : 60;
+          const freq = 440 * Math.pow(2, (midi - 69) / 12);
+          const now = ctx.currentTime;
+
+          // Master envelope with short attack (~8ms) and natural exponential decay
+          const masterGain = ctx.createGain();
+          masterGain.gain.setValueAtTime(0.0001, now);
+          masterGain.gain.linearRampToValueAtTime(0.32, now + 0.008);
+          masterGain.gain.exponentialRampToValueAtTime(0.11, now + 0.18);
+          masterGain.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+
+          // Warm low-pass filter that brightens on attack and mellows as the string decays
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(Math.min(9000, freq * 6.5), now);
+          filter.frequency.exponentialRampToValueAtTime(Math.max(400, freq * 2.1), now + 0.45);
+
+          // Fundamental oscillator (triangle wave)
+          const osc1 = ctx.createOscillator();
+          osc1.type = "triangle";
+          osc1.frequency.setValueAtTime(freq, now);
+
+          // 2nd harmonic (sine wave, adds body)
+          const osc2 = ctx.createOscillator();
+          osc2.type = "sine";
+          osc2.frequency.setValueAtTime(freq * 2, now);
+          const gain2 = ctx.createGain();
+          gain2.gain.setValueAtTime(0.24, now);
+          gain2.gain.exponentialRampToValueAtTime(0.01, now + durationSec * 0.75);
+
+          // 3rd harmonic (sine wave, subtle hammer overtone)
+          const osc3 = ctx.createOscillator();
+          osc3.type = "sine";
+          osc3.frequency.setValueAtTime(freq * 3, now);
+          const gain3 = ctx.createGain();
+          gain3.gain.setValueAtTime(0.08, now);
+          gain3.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+
+          osc1.connect(filter);
+          osc2.connect(gain2);
+          gain2.connect(filter);
+          osc3.connect(gain3);
+          gain3.connect(filter);
+
+          filter.connect(masterGain);
+          masterGain.connect(ctx.destination);
+
+          osc1.start(now);
+          osc2.start(now);
+          osc3.start(now);
+
+          const stopTime = now + durationSec + 0.03;
+          osc1.stop(stopTime);
+          osc2.stop(stopTime);
+          osc3.stop(stopTime);
+        } catch (err) {
+          // Ignore synthesis error
+        }
+      }
+
+      function formatNoteWithSolfege(noteName) {
+        const meta = VPIANO_ALL_BY_NOTE[noteName];
+        if (!meta) return noteName;
+        const persianNotes = Array.isArray(t("diagrams.persianNotes"))
+          ? t("diagrams.persianNotes")
+          : ["دو", "ر", "می", "فا", "سل", "لا", "سی"];
+        if (state.lang === "fa" && meta.step !== undefined) {
+          const faName = persianNotes[meta.step] || "";
+          return `${noteName} (${faName})`;
+        }
+        return noteName;
+      }
+
+      function stopPianoWatchDemo() {
+        const pp = ui.pianoPractice;
+        if (pp.watchTimers && pp.watchTimers.length > 0) {
+          for (const tmr of pp.watchTimers) clearTimeout(tmr);
+        }
+        pp.watchTimers = [];
+        pp.watchPlaying = false;
+        pp.watchActiveIdx = -1;
+        document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => {
+          el.classList.remove("is-pressed");
+        });
+      }
+
+      function syncLessonPracticeState(lesson) {
+        if (!lesson || !lesson.practice) return;
+        const pp = ui.pianoPractice;
+        if (pp.lessonId !== lesson.id) {
+          stopPianoWatchDemo();
+          pp.lessonId = lesson.id;
+          pp.tab = lesson.practice.mode === "watch" || lesson.practice.mode === "own" ? lesson.practice.mode : "follow";
+          pp.watchPlaying = false;
+          pp.watchActiveIdx = -1;
+          pp.followIdx = 0;
+          pp.followHint = "";
+          pp.followDone = false;
+          pp.ownPlayed = [];
+          pp.ownStatus = "idle";
+        }
+      }
+
+      function renderVirtualPianoKeyboardHtml({ mode = "free", targetNote = null }) {
+        const showLabels = !!ui.pianoShowLabels;
+        const isFa = state.lang === "fa";
+        const persianNotes = Array.isArray(t("diagrams.persianNotes"))
+          ? t("diagrams.persianNotes")
+          : ["دو", "ر", "می", "فا", "سل", "لا", "سی"];
+
+        const whiteKeysHtml = VPIANO_WHITE_KEYS.map((wk) => {
+          const isTarget = mode === "follow" && targetNote === wk.note;
+          const isC = wk.letter === "C";
+          const latinText = isC ? wk.note : wk.letter;
+          const faText = persianNotes[wk.step] || "";
+          return `
+            <div class="vpiano-key vpiano-white-key ${isTarget ? "is-target-glow" : ""}" data-note="${wk.note}" role="button" tabindex="0" aria-label="${wk.note}">
+              ${isC ? `<span class="vpiano-C-dot"></span>` : ""}
+              ${
+                showLabels
+                  ? `<span class="vpiano-key-labels">
+                      <span class="vpiano-lbl-latin">${escapeHtml(latinText)}</span>
+                      ${isFa ? `<span class="vpiano-lbl-fa">${escapeHtml(faText)}</span>` : ""}
+                    </span>`
+                  : ""
+              }
+            </div>
+          `;
+        }).join("");
+
+        const blackKeysHtml = VPIANO_BLACK_KEYS.map((bk) => {
+          const isTarget = mode === "follow" && targetNote === bk.note;
+          const boundaryPct = (bk.afterWhiteIdx + 1) * (100 / 15);
+          const leftStyle = `calc(${boundaryPct.toFixed(4)}% - ${(4.35 * bk.offsetRatio).toFixed(3)}%)`;
+          return `
+            <div class="vpiano-key vpiano-black-key ${isTarget ? "is-target-glow" : ""}" style="left:${leftStyle};" data-note="${bk.note}" role="button" tabindex="0" aria-label="${bk.note}">
+              ${
+                showLabels
+                  ? `<span class="vpiano-key-labels">
+                      <span class="vpiano-lbl-latin">${escapeHtml(bk.label)}</span>
+                    </span>`
+                  : ""
+              }
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <div class="vpiano-scroll-wrap" dir="ltr">
+            <div class="vpiano-keyboard" dir="ltr">
+              <div class="vpiano-keys-stage" dir="ltr">
+                ${whiteKeysHtml}
+                ${blackKeysHtml}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function centerTargetKeyInScroll(smooth = true) {
+        const scrollWraps = document.querySelectorAll(".vpiano-scroll-wrap");
+        scrollWraps.forEach((scrollWrap) => {
+          if (scrollWrap.scrollWidth <= scrollWrap.clientWidth + 2) return;
+          const targetEl =
+            scrollWrap.querySelector(".vpiano-key.is-target-glow") ||
+            scrollWrap.querySelector(".vpiano-key.is-pressed") ||
+            scrollWrap.querySelector('.vpiano-key[data-note="C4"]');
+          if (!targetEl) return;
+
+          const wrapRect = scrollWrap.getBoundingClientRect();
+          const keyRect = targetEl.getBoundingClientRect();
+          const keyCenterOffset =
+            keyRect.left - wrapRect.left + scrollWrap.scrollLeft + keyRect.width / 2;
+          const maxScroll = Math.max(0, scrollWrap.scrollWidth - scrollWrap.clientWidth);
+          const desiredScroll = Math.max(
+            0,
+            Math.min(maxScroll, Math.round(keyCenterOffset - scrollWrap.clientWidth / 2))
+          );
+
+          if (smooth && typeof scrollWrap.scrollTo === "function") {
+            scrollWrap.scrollTo({ left: desiredScroll, behavior: "smooth" });
+          } else {
+            scrollWrap.scrollLeft = desiredScroll;
+          }
+        });
+      }
+
+      function renderLessonPracticeCard(lesson) {
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return "";
+        syncLessonPracticeState(lesson);
+
+        const practice = lesson.practice;
+        const notes = practice.notes;
+        const tempo = Number(practice.tempo) || 60;
+        const pp = ui.pianoPractice;
+        const activeTab = pp.tab || "follow";
+        const isCompleted = !!pp.completedByLesson[lesson.id];
+
+        let statusHtml = "";
+        let targetGlowNote = null;
+
+        if (activeTab === "watch") {
+          const seqBadges = notes
+            .map((n, idx) => {
+              const cls = pp.watchPlaying && pp.watchActiveIdx === idx ? "current" : pp.watchPlaying && idx < pp.watchActiveIdx ? "done" : "";
+              return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(formatNoteWithSolfege(n))}</span>`;
+            })
+            .join("");
+
+          statusHtml = `
+            <div class="vpiano-status-box">
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                <span style="font-size:0.9rem;font-weight:600;">
+                  ${escapeHtml(pp.watchPlaying ? t("piano.watchPlaying") : t("piano.watchHint", { tempo }))}
+                </span>
+                <button type="button" class="btn-pill ${pp.watchPlaying ? "btn-surface" : "btn-secondary"}" style="min-height:38px;padding:6px 16px;font-size:0.85rem;" data-action="vpiano-watch-toggle">
+                  <span>${pp.watchPlaying ? "■" : "▶"}</span>
+                  <span>${escapeHtml(pp.watchPlaying ? t("piano.watchStopBtn") : t("piano.watchPlayBtn"))}</span>
+                </button>
+              </div>
+              <div class="vpiano-notes-seq">${seqBadges}</div>
+            </div>
+          `;
+        } else if (activeTab === "follow") {
+          targetGlowNote = !pp.followDone && notes[pp.followIdx] ? notes[pp.followIdx] : null;
+          const seqBadges = notes
+            .map((n, idx) => {
+              const cls = pp.followDone || idx < pp.followIdx ? "done" : idx === pp.followIdx ? "current" : "";
+              return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(formatNoteWithSolfege(n))}</span>`;
+            })
+            .join("");
+
+          statusHtml = `
+            <div class="vpiano-status-box">
+              ${
+                pp.followDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("piano.wellDone"))} · ${escapeHtml(t("piano.practiceCounted"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="vpiano-reset-mode">
+                        ↻ ${escapeHtml(t("piano.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : `<div style="font-size:0.92rem;font-weight:700;color:var(--secondary);">
+                      ${escapeHtml(t("piano.followInstruction", { note: formatNoteWithSolfege(targetGlowNote || "") }))}
+                    </div>`
+              }
+              <div class="vpiano-notes-seq">${seqBadges}</div>
+              ${
+                !pp.followDone && pp.followHint === "higher"
+                  ? `<div class="vpiano-hint-alert">${escapeHtml(t("piano.hintHigher"))}</div>`
+                  : !pp.followDone && pp.followHint === "lower"
+                  ? `<div class="vpiano-hint-alert">${escapeHtml(t("piano.hintLower"))}</div>`
+                  : ""
+              }
+            </div>
+          `;
+        } else {
+          // "On your own": only note names are shown, no key glow; check sequence at the end
+          const playedCount = pp.ownPlayed.length;
+          const seqBadges = notes
+            .map((n, idx) => {
+              const cls = pp.ownStatus === "success" || idx < playedCount ? "done" : idx === playedCount ? "current" : "";
+              return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(formatNoteWithSolfege(n))}</span>`;
+            })
+            .join("");
+
+          statusHtml = `
+            <div class="vpiano-status-box">
+              <div style="font-size:0.9rem;font-weight:700;">
+                ${escapeHtml(t("piano.ownInstruction", { current: Math.min(playedCount, notes.length), total: notes.length }))}
+              </div>
+              <div class="vpiano-notes-seq">${seqBadges}</div>
+              ${
+                pp.ownStatus === "success"
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("piano.wellDone"))} · ${escapeHtml(t("piano.practiceCounted"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="vpiano-reset-mode">
+                        ↻ ${escapeHtml(t("piano.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : pp.ownStatus === "fail"
+                  ? `<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:8px;">
+                      <span class="vpiano-hint-alert" style="margin-top:0;">${escapeHtml(t("piano.ownFailHint"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="vpiano-reset-mode">
+                        ↻ ${escapeHtml(t("piano.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : ""
+              }
+            </div>
+          `;
+        }
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎹 ${escapeHtml(t("piano.title"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("piano.practiceCounted"))}</span>`
+                    : ""
+                }
+              </div>
+              <div class="vpiano-controls-row">
+                <button type="button" class="vpiano-sound-hint ${ui.pianoAudioUnlocked ? "unlocked" : ""}" data-action="vpiano-unlock-audio">
+                  <span>🔊</span>
+                  <span>${escapeHtml(ui.pianoAudioUnlocked ? t("piano.soundEnabled") : t("piano.tapToEnableSound"))}</span>
+                </button>
+                <button type="button" class="vpiano-pill-btn ${ui.pianoShowLabels ? "active" : ""}" data-action="vpiano-toggle-labels">
+                  <span>🔤</span>
+                  <span>${escapeHtml(t("piano.noteLabelsToggle"))}</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="vpiano-tabs" role="tablist">
+              <button type="button" class="vpiano-tab-btn ${activeTab === "watch" ? "active" : ""}" data-action="vpiano-set-tab" data-tab="watch">
+                ${escapeHtml(t("piano.tabWatch"))}
+              </button>
+              <button type="button" class="vpiano-tab-btn ${activeTab === "follow" ? "active" : ""}" data-action="vpiano-set-tab" data-tab="follow">
+                ${escapeHtml(t("piano.tabFollow"))}
+              </button>
+              <button type="button" class="vpiano-tab-btn ${activeTab === "own" ? "active" : ""}" data-action="vpiano-set-tab" data-tab="own">
+                ${escapeHtml(t("piano.tabOwn"))}
+              </button>
+            </div>
+
+            ${statusHtml}
+
+            ${renderVirtualPianoKeyboardHtml({
+              mode: activeTab === "follow" ? "follow" : "free",
+              targetNote: targetGlowNote
+            })}
+
+            <div class="vpiano-footer-hint">
+              <span class="vpiano-footer-copy-desktop" dir="ltr">${escapeHtml(t("piano.computerKeysHint"))}</span>
+              <button type="button" class="vpiano-pill-btn" data-action="open-free-piano">
+                <span>🎹</span>
+                <span>${escapeHtml(t("piano.openFreePlayBtn"))}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderFreePlayPianoSection() {
+        return `
+          <div id="vpiano-free-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div>
+                <h2 class="serif-heading" style="font-size:1.3rem;margin-bottom:4px;">🎹 ${escapeHtml(t("piano.freePlayTitle"))}</h2>
+                <p style="font-size:0.88rem;color:var(--muted);">${escapeHtml(t("piano.freePlaySub"))}</p>
+              </div>
+              <div class="vpiano-controls-row">
+                <button type="button" class="vpiano-sound-hint ${ui.pianoAudioUnlocked ? "unlocked" : ""}" data-action="vpiano-unlock-audio">
+                  <span>🔊</span>
+                  <span>${escapeHtml(ui.pianoAudioUnlocked ? t("piano.soundEnabled") : t("piano.tapToEnableSound"))}</span>
+                </button>
+                <button type="button" class="vpiano-pill-btn ${ui.pianoShowLabels ? "active" : ""}" data-action="vpiano-toggle-labels">
+                  <span>🔤</span>
+                  <span>${escapeHtml(t("piano.noteLabelsToggle"))}</span>
+                </button>
+              </div>
+            </div>
+
+            ${renderVirtualPianoKeyboardHtml({ mode: "free", targetNote: null })}
+
+            <div class="vpiano-footer-hint">
+              <span dir="ltr">${escapeHtml(t("piano.computerKeysHint"))}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      function refreshLessonPianoMount(autoCenterSmooth = true) {
+        const mount = document.getElementById("vpiano-lesson-mount");
+        if (!mount) return;
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = renderLessonPracticeCard(lesson);
+        const newCard = wrapper.firstElementChild;
+        if (newCard) {
+          const oldScroll = mount.querySelector(".vpiano-scroll-wrap");
+          const prevScrollLeft = oldScroll ? oldScroll.scrollLeft : 0;
+          mount.replaceWith(newCard);
+          const newScroll = newCard.querySelector(".vpiano-scroll-wrap");
+          if (newScroll) {
+            newScroll.style.scrollBehavior = "auto";
+            newScroll.scrollLeft = prevScrollLeft;
+            newScroll.style.scrollBehavior = "";
+          }
+          if (autoCenterSmooth) {
+            requestAnimationFrame(() => centerTargetKeyInScroll(true));
+          }
+        }
+      }
+
+      function startPianoWatchDemo() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return;
+        stopPianoWatchDemo();
+
+        const notes = lesson.practice.notes;
+        const tempo = Number(lesson.practice.tempo) || 60;
+        const beatMs = Math.max(350, Math.round((60 / tempo) * 1000));
+        const pp = ui.pianoPractice;
+        pp.watchPlaying = true;
+        pp.watchActiveIdx = 0;
+        refreshLessonPianoMount(true);
+
+        notes.forEach((noteName, idx) => {
+          const tOn = setTimeout(() => {
+            if (!pp.watchPlaying) return;
+            pp.watchActiveIdx = idx;
+            refreshLessonPianoMount(false);
+            playPianoNoteSound(noteName, Math.min(1.2, (beatMs / 1000) * 0.92));
+            const keyEl = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            if (keyEl) keyEl.classList.add("is-pressed");
+            centerTargetKeyInScroll(true);
+          }, idx * beatMs);
+
+          const tOff = setTimeout(() => {
+            const keyEl = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            if (keyEl) keyEl.classList.remove("is-pressed");
+          }, idx * beatMs + Math.round(beatMs * 0.78));
+
+          pp.watchTimers.push(tOn, tOff);
+        });
+
+        const tEnd = setTimeout(() => {
+          pp.watchPlaying = false;
+          pp.watchActiveIdx = -1;
+          pp.watchTimers = [];
+          refreshLessonPianoMount(false);
+        }, notes.length * beatMs + 80);
+
+        pp.watchTimers.push(tEnd);
+      }
+
+      function handlePianoNoteTriggered(noteName) {
+        if (!noteName || !VPIANO_ALL_BY_NOTE[noteName]) return;
+        playPianoNoteSound(noteName);
+
+        if (ui.screen !== "lesson" || ui.lessonStepIndex !== 0) return;
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return;
+
+        const notes = lesson.practice.notes;
+        const pp = ui.pianoPractice;
+
+        if (pp.tab === "follow") {
+          if (pp.followDone) return;
+          const targetNote = notes[pp.followIdx];
+          if (!targetNote) return;
+
+          if (noteName === targetNote) {
+            // Correct key pressed: hide any previous wrong-key hint immediately and move to next target key
+            pp.followHint = "";
+            pp.followIdx += 1;
+            if (pp.followIdx >= notes.length) {
+              pp.followDone = true;
+              pp.completedByLesson[lesson.id] = true;
+              ui.selfCheckState[0] = true;
+              ui.selfCheckState[1] = true;
+            }
+            refreshLessonPianoMount(true);
+            const pressedNow = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            if (pressedNow) {
+              pressedNow.classList.add("is-pressed");
+              setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
+            }
+          } else {
+            // Wrong key pressed: show "One key higher / lower" hint and soft red flash, keep current scroll
+            const pressedMidi = VPIANO_ALL_BY_NOTE[noteName]?.midi || 60;
+            const targetMidi = VPIANO_ALL_BY_NOTE[targetNote]?.midi || 60;
+            pp.followHint = pressedMidi < targetMidi ? "higher" : "lower";
+            refreshLessonPianoMount(true);
+            const wrongEl = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+            if (wrongEl) {
+              wrongEl.classList.add("is-wrong-flash");
+              setTimeout(() => wrongEl.classList.remove("is-wrong-flash"), 450);
+            }
+          }
+        } else if (pp.tab === "own") {
+          if (pp.ownStatus === "success") return;
+          if (pp.ownStatus === "fail") {
+            pp.ownPlayed = [];
+            pp.ownStatus = "idle";
+          }
+          pp.ownPlayed.push(noteName);
+          if (pp.ownPlayed.length >= notes.length) {
+            const allMatch = notes.every((expected, i) => pp.ownPlayed[i] === expected);
+            if (allMatch) {
+              pp.ownStatus = "success";
+              pp.completedByLesson[lesson.id] = true;
+              ui.selfCheckState[0] = true;
+              ui.selfCheckState[1] = true;
+            } else {
+              pp.ownStatus = "fail";
+            }
+          }
+          refreshLessonPianoMount(false);
+          const pressedNow = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
+          if (pressedNow) {
+            pressedNow.classList.add("is-pressed");
+            setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
+          }
+        }
+      }
 
       /* ==========================================================================
          TEACHERS SECTION COMPONENT (MOCKUP 2)
@@ -3588,6 +4664,18 @@
                 .join("")}
             </ol>
 
+            <!-- Interactive Virtual Piano Practice Mode (shown when lesson.practice exists) -->
+            ${
+              lesson.practice
+                ? renderLessonPracticeCard(lesson)
+                : `<div style="margin-bottom:16px;text-align:end;">
+                    <button type="button" class="vpiano-pill-btn" data-action="open-free-piano">
+                      <span>🎹</span>
+                      <span>${escapeHtml(t("piano.openFreePlayBtn"))}</span>
+                    </button>
+                  </div>`
+            }
+
             <!-- Red "Next ↗" Pill & Underlined "I know this" (Mockup 5) -->
             <button type="button" class="btn-pill btn-primary btn-block" style="min-height:54px;font-size:1.08rem;font-family:var(--font-heading);" data-action="lesson-next-step">
               <span>${escapeHtml(t("lesson.nextBtn"))}</span>
@@ -4072,11 +5160,14 @@
               <div class="centered-800-container">
                 <h1 class="serif-heading" style="font-size:clamp(1.6rem, 2.4vw, 2.05rem);margin-bottom:14px;">${escapeHtml(t("library.title"))}</h1>
 
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
-                  <button type="button" class="btn-pill ${ui.libraryTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:44px;" data-action="set-library-tab" data-tab="lessons">
+                <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:10px;margin-bottom:18px;">
+                  <button type="button" class="btn-pill ${ui.libraryTab === "lessons" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="lessons">
                     ${escapeHtml(t("library.tabMyLessons"))}
                   </button>
-                  <button type="button" class="btn-pill ${ui.libraryTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:44px;" data-action="set-library-tab" data-tab="teachers">
+                  <button type="button" class="btn-pill ${ui.libraryTab === "piano" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="piano">
+                    🎹 ${escapeHtml(t("library.tabPiano"))}
+                  </button>
+                  <button type="button" class="btn-pill ${ui.libraryTab === "teachers" ? "btn-primary" : "btn-surface"}" style="min-height:44px;padding:8px 10px;" data-action="set-library-tab" data-tab="teachers">
                     ${escapeHtml(t("library.tabTeachers"))}
                   </button>
                 </div>
@@ -4120,6 +5211,8 @@
                               </div>`
                         }
                       </div>`
+                    : ui.libraryTab === "piano"
+                    ? renderFreePlayPianoSection()
                     : renderTeachersSection()
                 }
               </div>
@@ -4354,6 +5447,7 @@
           : "";
 
         root.innerHTML = screenHtml + renderModal() + toastHtml;
+        requestAnimationFrame(() => centerTargetKeyInScroll(false));
       }
 
       document.addEventListener("keydown", (e) => {
@@ -4495,6 +5589,7 @@
             break;
 
           case "nav-tab": {
+            stopPianoWatchDemo();
             const tab = btn.getAttribute("data-tab");
             ui.screen = tab;
             render();
@@ -4503,12 +5598,14 @@
           }
 
           case "open-lesson": {
+            stopPianoWatchDemo();
             const lid = Number(btn.getAttribute("data-lesson-id")) || 1;
             ui.activeLessonId = lid;
             ui.lessonStepIndex = 0;
             ui.selfCheckState = {};
             ui.quizSelected = null;
             ui.quizAnswered = false;
+            ui.pianoPractice.lessonId = null;
             ui.screen = "lesson";
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -4522,11 +5619,13 @@
               showToast(t("path.lockedToast"));
               return;
             }
+            stopPianoWatchDemo();
             ui.activeLessonId = lid;
             ui.lessonStepIndex = 0;
             ui.selfCheckState = {};
             ui.quizSelected = null;
             ui.quizAnswered = false;
+            ui.pianoPractice.lessonId = null;
             ui.screen = "lesson";
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -4534,11 +5633,13 @@
           }
 
           case "close-lesson":
+            stopPianoWatchDemo();
             ui.screen = "home";
             render();
             break;
 
           case "lesson-next-step":
+            stopPianoWatchDemo();
             ui.lessonStepIndex = Math.min(4, ui.lessonStepIndex + 1);
             ui.quizSelected = null;
             ui.quizAnswered = false;
@@ -4547,9 +5648,67 @@
             break;
 
           case "lesson-prev-step":
+            stopPianoWatchDemo();
             ui.lessonStepIndex = Math.max(0, ui.lessonStepIndex - 1);
             ui.quizSelected = null;
             ui.quizAnswered = false;
+            render();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            break;
+
+          case "vpiano-unlock-audio":
+            unlockPianoAudio();
+            playPianoNoteSound("C4", 0.5);
+            break;
+
+          case "vpiano-toggle-labels":
+            ui.pianoShowLabels = !ui.pianoShowLabels;
+            if (ui.screen === "lesson" && document.getElementById("vpiano-lesson-mount")) {
+              refreshLessonPianoMount();
+            } else {
+              render();
+            }
+            break;
+
+          case "vpiano-set-tab": {
+            const newTab = btn.getAttribute("data-tab") || "follow";
+            stopPianoWatchDemo();
+            ui.pianoPractice.tab = newTab;
+            ui.pianoPractice.followIdx = 0;
+            ui.pianoPractice.followHint = "";
+            ui.pianoPractice.followDone = false;
+            ui.pianoPractice.ownPlayed = [];
+            ui.pianoPractice.ownStatus = "idle";
+            refreshLessonPianoMount();
+            if (newTab === "watch") {
+              startPianoWatchDemo();
+            }
+            break;
+          }
+
+          case "vpiano-watch-toggle":
+            if (ui.pianoPractice.watchPlaying) {
+              stopPianoWatchDemo();
+              refreshLessonPianoMount();
+            } else {
+              startPianoWatchDemo();
+            }
+            break;
+
+          case "vpiano-reset-mode":
+            stopPianoWatchDemo();
+            ui.pianoPractice.followIdx = 0;
+            ui.pianoPractice.followHint = "";
+            ui.pianoPractice.followDone = false;
+            ui.pianoPractice.ownPlayed = [];
+            ui.pianoPractice.ownStatus = "idle";
+            refreshLessonPianoMount();
+            break;
+
+          case "open-free-piano":
+            stopPianoWatchDemo();
+            ui.screen = "library";
+            ui.libraryTab = "piano";
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
             break;
@@ -4574,9 +5733,10 @@
           }
 
           case "complete-and-go-home": {
+            stopPianoWatchDemo();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             const nameInp = document.getElementById("l1-name-input");
-            const emailInp = document.getElementById("l1-email-input");
+            const emailInp = document.getElementById("l1-name-input") ? document.getElementById("l1-email-input") : null;
             if (nameInp && nameInp.value.trim()) {
               state.userName = nameInp.value.trim();
               state.isGuest = false;
@@ -4592,6 +5752,7 @@
           }
 
           case "complete-and-exit-lesson": {
+            stopPianoWatchDemo();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             const nameInp = document.getElementById("l1-name-input");
             const emailInp = document.getElementById("l1-email-input");
@@ -4610,6 +5771,7 @@
           }
 
           case "start-skip-quiz": {
+            stopPianoWatchDemo();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             ui.activeLessonId = lid;
             ui.skipQuizIndex = 0;
@@ -4649,6 +5811,7 @@
           }
 
           case "set-library-tab": {
+            stopPianoWatchDemo();
             ui.libraryTab = btn.getAttribute("data-tab");
             render();
             break;
@@ -4699,6 +5862,7 @@
             break;
 
           case "confirm-reset": {
+            stopPianoWatchDemo();
             const keepLang = state.lang;
             try {
               window.localStorage.removeItem(STORAGE_KEY);
@@ -4741,10 +5905,149 @@
             ui.teacherSavedBanner = false;
             ui.librarySearch = "";
             ui.libraryTab = "lessons";
+            ui.pianoPractice.lessonId = null;
+            ui.pianoPractice.completedByLesson = {};
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
             break;
           }
+        }
+      });
+
+      /* ==========================================================================
+         VIRTUAL PIANO MULTI-TOUCH, MOUSE & COMPUTER KEYBOARD LISTENERS
+         ========================================================================== */
+      let isMouseDownOnPiano = false;
+      let activeMousePianoNote = null;
+      let lastPianoTouchTime = 0;
+      const activeTouchMap = new Map();
+      const activeComputerKeys = new Set();
+
+      document.addEventListener("mousedown", (e) => {
+        if (Date.now() - lastPianoTouchTime < 650) return;
+        if (e.button !== undefined && e.button !== 0) return;
+        const keyEl = e.target.closest(".vpiano-key");
+        if (!keyEl) return;
+        e.preventDefault();
+        isMouseDownOnPiano = true;
+        const note = keyEl.getAttribute("data-note");
+        activeMousePianoNote = note;
+        keyEl.classList.add("is-pressed");
+        handlePianoNoteTriggered(note);
+      });
+
+      document.addEventListener("mouseover", (e) => {
+        if (!isMouseDownOnPiano || Date.now() - lastPianoTouchTime < 650) return;
+        // Only glide across keys in free-play mode so holding mouse during practice step transitions doesn't double-trigger
+        if (ui.screen === "lesson") return;
+        const keyEl = e.target.closest(".vpiano-key");
+        if (!keyEl) return;
+        const note = keyEl.getAttribute("data-note");
+        if (note && note !== activeMousePianoNote) {
+          document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
+          activeMousePianoNote = note;
+          keyEl.classList.add("is-pressed");
+          handlePianoNoteTriggered(note);
+        }
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (isMouseDownOnPiano) {
+          isMouseDownOnPiano = false;
+          activeMousePianoNote = null;
+          document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
+        }
+      });
+
+      document.addEventListener("touchstart", (e) => {
+        if (!ui.pianoAudioUnlocked) {
+          unlockPianoAudio();
+        }
+        const keyEl = e.target.closest(".vpiano-key");
+        if (!keyEl) return;
+        lastPianoTouchTime = Date.now();
+
+        for (let i = 0; i < e.changedTouches.length; i++) {
+          const tPoint = e.changedTouches[i];
+          const el = document.elementFromPoint(tPoint.clientX, tPoint.clientY);
+          const touchedKey = (el ? el.closest(".vpiano-key") : null) || keyEl;
+          const note = touchedKey ? touchedKey.getAttribute("data-note") : null;
+          if (note) {
+            activeTouchMap.set(tPoint.identifier, note);
+            touchedKey.classList.add("is-pressed");
+            handlePianoNoteTriggered(note);
+          }
+        }
+      }, { passive: false });
+
+      document.addEventListener("touchmove", (e) => {
+        if (activeTouchMap.size === 0) return;
+        lastPianoTouchTime = Date.now();
+        // Only glide on touchmove in free-play mode; in lesson practice mode allow horizontal scroll or discrete taps
+        if (ui.screen === "lesson") return;
+        if (!e.target.closest(".vpiano-keyboard")) return;
+        e.preventDefault();
+
+        for (let i = 0; i < e.changedTouches.length; i++) {
+          const tPoint = e.changedTouches[i];
+          const prevNote = activeTouchMap.get(tPoint.identifier);
+          const el = document.elementFromPoint(tPoint.clientX, tPoint.clientY);
+          const touchedKey = el ? el.closest(".vpiano-key") : null;
+          const nextNote = touchedKey ? touchedKey.getAttribute("data-note") : null;
+          if (nextNote && nextNote !== prevNote) {
+            if (prevNote) {
+              const oldEl = document.querySelector(`.vpiano-key[data-note="${prevNote}"]`);
+              if (oldEl) oldEl.classList.remove("is-pressed");
+            }
+            activeTouchMap.set(tPoint.identifier, nextNote);
+            touchedKey.classList.add("is-pressed");
+            handlePianoNoteTriggered(nextNote);
+          }
+        }
+      }, { passive: false });
+
+      document.addEventListener("touchend", (e) => {
+        if (activeTouchMap.size === 0) return;
+        lastPianoTouchTime = Date.now();
+        for (let i = 0; i < e.changedTouches.length; i++) {
+          const tPoint = e.changedTouches[i];
+          const note = activeTouchMap.get(tPoint.identifier);
+          activeTouchMap.delete(tPoint.identifier);
+          if (note) {
+            const oldEl = document.querySelector(`.vpiano-key[data-note="${note}"]`);
+            if (oldEl) oldEl.classList.remove("is-pressed");
+          }
+        }
+      }, { passive: false });
+
+      document.addEventListener("touchcancel", () => {
+        activeTouchMap.clear();
+        document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
+        const tag = (e.target && e.target.tagName ? e.target.tagName : "").toLowerCase();
+        if (tag === "input" || tag === "textarea" || tag === "select") return;
+        if (!document.querySelector(".vpiano-keyboard")) return;
+
+        const k = String(e.key || "").toLowerCase();
+        const mappedNote = VPIANO_COMPUTER_KEYMAP[k];
+        if (mappedNote && !activeComputerKeys.has(k)) {
+          activeComputerKeys.add(k);
+          const keyEl = document.querySelector(`.vpiano-key[data-note="${mappedNote}"]`);
+          if (keyEl) keyEl.classList.add("is-pressed");
+          handlePianoNoteTriggered(mappedNote, keyEl);
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        const k = String(e.key || "").toLowerCase();
+        const mappedNote = VPIANO_COMPUTER_KEYMAP[k];
+        if (mappedNote) {
+          activeComputerKeys.delete(k);
+          const keyEl = document.querySelector(`.vpiano-key[data-note="${mappedNote}"]`);
+          if (keyEl) keyEl.classList.remove("is-pressed");
         }
       });
 

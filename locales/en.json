@@ -195,6 +195,7 @@
   "library": {
     "title": "Library",
     "tabMyLessons": "My Lessons",
+    "tabPiano": "Piano",
     "tabTeachers": "Teachers",
     "searchPlaceholder": "Search lessons by title...",
     "noResults": "No lessons found matching your search.",
@@ -242,5 +243,32 @@
     "findCAria": "Piano keyboard diagram showing 14 white keys with C keys highlighted in saffron to the left of each group of two black keys",
     "noteNamesAria": "Piano keyboard diagram showing repeating note names C D E F G A B across 14 white keys",
     "fingerNumbersAria": "Right hand finger numbers 1 to 5 aligned over white keys C D E F G"
+  },
+  "piano": {
+    "title": "Practice Piano",
+    "freePlayTitle": "Free-Play Piano",
+    "freePlaySub": "Explore the 2-octave keyboard (C3 to C5) with touch, mouse, or computer keys.",
+    "openFreePlayBtn": "Free-play Piano",
+    "tapToEnableSound": "Tap to enable sound",
+    "soundEnabled": "Sound ready",
+    "noteLabelsToggle": "Note labels",
+    "tabWatch": "Watch",
+    "tabFollow": "Follow me",
+    "tabOwn": "On your own",
+    "watchPlayBtn": "Play demo",
+    "watchStopBtn": "Stop",
+    "watchPlaying": "Listen and watch the highlighted keys...",
+    "watchHint": "Tap \"Play demo\" to see and hear the notes at {tempo} BPM.",
+    "followInstruction": "Press the glowing teal key: {note}",
+    "hintHigher": "One key higher →",
+    "hintLower": "← One key lower",
+    "wellDone": "Well done!",
+    "practiceCounted": "Practice completed",
+    "playAgainBtn": "Practice again",
+    "ownInstruction": "Play this sequence in order without key glow ({current}/{total}):",
+    "ownFailHint": "Not quite that sequence — let's try again from the first note!",
+    "computerKeysHint": "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
+    "handRight": "Right hand",
+    "handLeft": "Left hand"
   }
 }

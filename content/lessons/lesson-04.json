@@ -31,6 +31,12 @@
       "از ۵ به ۱ برگرد بدون این‌که مچ دستت سفت بشه."
     ]
   },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "F4", "G4", "F4", "E4", "D4", "C4"]
+  },
   "selfCheck": {
     "en": [
       "Did each finger rest on its own adjacent white key?",
