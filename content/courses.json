@@ -1,0 +1,164 @@
+[
+  {
+    "id": "piano",
+    "order": 1,
+    "icon": "piano",
+    "status": "ready",
+    "review": "self",
+    "lessonCount": 24,
+    "lessonsDir": "content/lessons",
+    "coverImage": "assets/course-piano.jpeg",
+    "title": {
+      "en": "Piano & Keyboard",
+      "fa": "پیانو و کیبورد"
+    },
+    "subtitle": {
+      "en": "6 chapters · 24 lessons from finding C to scales & pieces",
+      "fa": "۶ فصل · ۲۴ درس از پیدا کردن نت دو تا گام‌ها و قطعات"
+    }
+  },
+  {
+    "id": "rhythm",
+    "order": 2,
+    "icon": "drum",
+    "status": "coming-soon",
+    "review": "self",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/rhythm",
+    "coverImage": "assets/course-rhythm.jpeg",
+    "title": {
+      "en": "Rhythm & Meter",
+      "fa": "ریتم و وزن"
+    },
+    "subtitle": {
+      "en": "Steady pulse, 2/4, 3/4, 4/4, 6/8 & Persian rhythmic patterns",
+      "fa": "ضرب ثابت، میزان‌های ۲/۴، ۳/۴، ۴/۴، ۶/۸ و ریتم‌های ایرانی"
+    }
+  },
+  {
+    "id": "ear",
+    "order": 3,
+    "icon": "ear",
+    "status": "coming-soon",
+    "review": "self",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/ear",
+    "coverImage": "assets/course-ear.jpeg",
+    "title": {
+      "en": "Ear Training & Sight-Reading",
+      "fa": "تربیت گوش و نت‌خوانی"
+    },
+    "subtitle": {
+      "en": "High vs low, steps & skips, major vs minor, staff & koron",
+      "fa": "زیر و بم، گام و پرش، ماژور و مینور، حامل و ربع‌پرده (کرن)"
+    }
+  },
+  {
+    "id": "voice",
+    "order": 4,
+    "icon": "voice",
+    "status": "coming-soon",
+    "review": "self",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/voice",
+    "coverImage": "assets/course-voice.jpeg",
+    "title": {
+      "en": "Voice & Singing",
+      "fa": "آواز و صداسازی"
+    },
+    "subtitle": {
+      "en": "Breathing, safe warmups, matching pitch, solfege & folk songs",
+      "fa": "تنفس، گرم کردن امن صدا، کوک خواندن، سلفژ و قطعات آوازی"
+    }
+  },
+  {
+    "id": "guitar",
+    "order": 5,
+    "icon": "guitar",
+    "status": "coming-soon",
+    "review": "self",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/guitar",
+    "coverImage": "assets/course-guitar.jpeg",
+    "title": {
+      "en": "Guitar",
+      "fa": "گیتار"
+    },
+    "subtitle": {
+      "en": "Open strings, first-position notes, Em/Am/C/G/D chords & strumming",
+      "fa": "سیم‌های دست‌باز، نت‌های پوزیسیون اول، آکوردهای پایه و ریتم‌نوازی"
+    }
+  },
+  {
+    "id": "setar",
+    "order": 6,
+    "icon": "setar",
+    "status": "coming-soon",
+    "review": "teacher",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/setar",
+    "coverImage": "assets/course-setar.jpeg",
+    "title": {
+      "en": "Setar",
+      "fa": "سه‌تار"
+    },
+    "subtitle": {
+      "en": "Posture, mezrab stroke, dastan frets, Dorab & Shur/Dashti",
+      "fa": "نشستن، مضراب راست و چپ، دستان‌ها، دوراب و درآمد شور و دشتی"
+    }
+  },
+  {
+    "id": "tar",
+    "order": 7,
+    "icon": "tar",
+    "status": "coming-soon",
+    "review": "teacher",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/tar",
+    "coverImage": "assets/course-tar.jpeg",
+    "title": {
+      "en": "Tar",
+      "fa": "تار"
+    },
+    "subtitle": {
+      "en": "Double resonance bowl, brass mezrab, dastans, Dorab & Chaharmezrab",
+      "fa": "کاسه و نقاره، مضراب برنجی، دستان‌بندی، دوراب و چهارمضراب ساده"
+    }
+  },
+  {
+    "id": "violin",
+    "order": 8,
+    "icon": "violin",
+    "status": "coming-soon",
+    "review": "teacher",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/violin",
+    "coverImage": "assets/course-violin.jpeg",
+    "title": {
+      "en": "Violin",
+      "fa": "ویولن"
+    },
+    "subtitle": {
+      "en": "Bow hold, open G-D-A-E strings, first-position fingers & melodies",
+      "fa": "گرفتن آرشه، سیم‌های دست‌باز، انگشت‌گذاری پوزیسیون اول و ملودی‌ها"
+    }
+  },
+  {
+    "id": "santur",
+    "order": 9,
+    "icon": "santur",
+    "status": "coming-soon",
+    "review": "teacher",
+    "lessonCount": 0,
+    "lessonsDir": "content/courses/santur",
+    "coverImage": "assets/course-santur.jpeg",
+    "title": {
+      "en": "Santur",
+      "fa": "سنتور"
+    },
+    "subtitle": {
+      "en": "Kharak bridges, holding mezrabs, Rast/Chap, Riz & folk melodies",
+      "fa": "خرک‌ها و سیم‌های زرد و سفید، مضراب‌گیری، راست و چپ، ریز و قطعات"
+    }
+  }
+]

@@ -2195,6 +2195,291 @@
           display: none;
         }
       }
+
+      /* ==========================================================================
+         MULTI-COURSE PICKER, TEACHER REVIEW BADGE & MULTI-INSTRUMENT PRACTICE WIDGETS
+         ========================================================================== */
+      .course-picker-section {
+        margin-bottom: 20px;
+      }
+
+      .course-picker-scroll {
+        display: flex;
+        align-items: stretch;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 4px 2px 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+
+      .course-picker-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 14px;
+        border-radius: 16px;
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg-elevated);
+        color: var(--ink);
+        flex-shrink: 0;
+        cursor: pointer;
+        text-align: start;
+        transition: all 140ms ease;
+      }
+
+      .course-picker-pill:hover {
+        background-color: var(--surface);
+      }
+
+      .course-picker-pill.active {
+        border: 2px solid var(--primary);
+        background-color: var(--primary-soft);
+      }
+
+      .course-picker-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background-color: var(--surface);
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .course-picker-pill.active .course-picker-icon {
+        background-color: var(--primary);
+        color: #FFFFFF;
+      }
+
+      .course-picker-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .course-picker-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .course-picker-title {
+        font-family: var(--font-heading);
+        font-size: 0.94rem;
+        font-weight: 700;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .course-picker-sub {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .badge-teacher-review {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        background-color: rgba(242, 179, 61, 0.22);
+        border: 1.2px dashed #1F1A2E;
+        color: #1F1A2E;
+        line-height: 1.25;
+      }
+
+      .coming-soon-course-card {
+        max-width: 640px;
+        margin: 8px auto 20px;
+        padding: 26px 22px;
+        text-align: center;
+      }
+
+      /* Rhythm-Tap Widget */
+      .rhythm-pattern-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 12px 0;
+        direction: ltr;
+      }
+
+      .rhythm-token-box {
+        min-width: 48px;
+        padding: 8px 10px;
+        border-radius: 12px;
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg-elevated);
+        color: var(--ink);
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        font-weight: 700;
+        font-size: 0.82rem;
+        transition: all 120ms ease;
+      }
+
+      .rhythm-token-box.is-rest {
+        border-style: dashed;
+        background-color: var(--surface);
+        color: var(--muted);
+      }
+
+      .rhythm-token-box.current {
+        background-color: #DDF1EF;
+        border-color: #1F6F6B;
+        box-shadow: 0 0 0 2.5px rgba(31, 111, 107, 0.38);
+      }
+
+      .rhythm-token-box.active-demo {
+        background-color: #F2B33D;
+        border-color: #1F1A2E;
+        color: #1F1A2E;
+        transform: translateY(-2px);
+      }
+
+      .rhythm-token-box.done {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: #FFFFFF;
+      }
+
+      .rhythm-barline {
+        width: 2.5px;
+        height: 36px;
+        background-color: var(--ink);
+        border-radius: 2px;
+        margin: 0 4px;
+        opacity: 0.65;
+      }
+
+      .rhythm-tap-pad {
+        width: 100%;
+        min-height: 76px;
+        border-radius: 18px;
+        border: 2px solid #1F1A2E;
+        background-color: #FBF7F0;
+        color: #1F1A2E;
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 4px 0 #1F1A2E;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 60ms ease, background-color 80ms ease, box-shadow 60ms ease;
+      }
+
+      .rhythm-tap-pad:active,
+      .rhythm-tap-pad.is-pressed {
+        background-color: #F2B33D;
+        transform: translateY(3px);
+        box-shadow: 0 1px 0 #1F1A2E;
+      }
+
+      /* Ear-Choice Widget */
+      .ear-options-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      @media (max-width: 480px) {
+        .ear-options-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .ear-opt-btn {
+        min-height: 50px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        border: 1.5px solid var(--border-color);
+        background-color: var(--bg-elevated);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 0.94rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 120ms ease;
+      }
+
+      .ear-opt-btn:hover {
+        background-color: var(--surface);
+      }
+
+      .ear-opt-btn.correct {
+        background-color: var(--secondary-soft);
+        border-color: var(--secondary);
+        color: var(--secondary);
+      }
+
+      .ear-opt-btn.wrong {
+        background-color: var(--primary-soft);
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      /* Fretboard, Chord-Diagram & Santur SVG Wrappers */
+      .practice-svg-scroll {
+        width: 100%;
+        overflow-x: auto;
+        direction: ltr;
+        text-align: left;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+      }
+
+      .chord-boxes-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 12px 0;
+        direction: ltr;
+      }
+
+      .chord-card-item {
+        background-color: var(--bg);
+        border: 1.5px solid var(--border-color);
+        border-radius: 16px;
+        padding: 10px 12px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 140ms ease;
+      }
+
+      .chord-card-item.active {
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 2px var(--secondary-soft);
+      }
+
+      .strum-btns-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -2212,12 +2497,156 @@
         todayPlan: "assets/lesson-01.jpeg"
       };
 
-      function getDefaultLessonImage(lessonId) {
+      function getDefaultLessonImage(lessonId, courseId = state?.activeCourseId || "piano") {
         const idNum = Number(lessonId) || 1;
+        if (courseId && courseId !== "piano") {
+          return `assets/courses/${courseId}/lesson-${String(idNum).padStart(2, "0")}.jpeg`;
+        }
         if (idNum === 2) return "assets/lesson-01.jpeg";
         if (idNum === 3) return "assets/lesson-04.jpeg";
         return `assets/lesson-${String(idNum).padStart(2, "0")}.jpeg`;
       }
+
+      const DEFAULT_COURSES = [
+        {
+          id: "piano",
+          order: 1,
+          icon: "piano",
+          status: "ready",
+          review: "self",
+          lessonCount: 24,
+          lessonsDir: "content/lessons",
+          coverImage: "assets/course-piano.jpeg",
+          title: { en: "Piano & Keyboard", fa: "پیانو و کیبورد" },
+          subtitle: {
+            en: "6 chapters · 24 lessons from finding C to scales & pieces",
+            fa: "۶ فصل · ۲۴ درس از پیدا کردن نت دو تا گام‌ها و قطعات"
+          }
+        },
+        {
+          id: "rhythm",
+          order: 2,
+          icon: "drum",
+          status: "coming-soon",
+          review: "self",
+          lessonCount: 0,
+          lessonsDir: "content/courses/rhythm",
+          coverImage: "assets/course-rhythm.jpeg",
+          title: { en: "Rhythm & Meter", fa: "ریتم و وزن" },
+          subtitle: {
+            en: "Steady pulse, 2/4, 3/4, 4/4, 6/8 & Persian rhythmic patterns",
+            fa: "ضرب ثابت، میزان‌های ۲/۴، ۳/۴، ۴/۴، ۶/۸ و ریتم‌های ایرانی"
+          }
+        },
+        {
+          id: "ear",
+          order: 3,
+          icon: "ear",
+          status: "coming-soon",
+          review: "self",
+          lessonCount: 0,
+          lessonsDir: "content/courses/ear",
+          coverImage: "assets/course-ear.jpeg",
+          title: { en: "Ear Training & Sight-Reading", fa: "تربیت گوش و نت‌خوانی" },
+          subtitle: {
+            en: "High vs low, steps & skips, major vs minor, staff & koron",
+            fa: "زیر و بم، گام و پرش، ماژور و مینور، حامل و ربع‌پرده (کرن)"
+          }
+        },
+        {
+          id: "voice",
+          order: 4,
+          icon: "voice",
+          status: "coming-soon",
+          review: "self",
+          lessonCount: 0,
+          lessonsDir: "content/courses/voice",
+          coverImage: "assets/course-voice.jpeg",
+          title: { en: "Voice & Singing", fa: "آواز و صداسازی" },
+          subtitle: {
+            en: "Breathing, safe warmups, matching pitch, solfege & folk songs",
+            fa: "تنفس، گرم کردن امن صدا، کوک خواندن، سلفژ و قطعات آوازی"
+          }
+        },
+        {
+          id: "guitar",
+          order: 5,
+          icon: "guitar",
+          status: "coming-soon",
+          review: "self",
+          lessonCount: 0,
+          lessonsDir: "content/courses/guitar",
+          coverImage: "assets/course-guitar.jpeg",
+          title: { en: "Guitar", fa: "گیتار" },
+          subtitle: {
+            en: "Open strings, first-position notes, Em/Am/C/G/D chords & strumming",
+            fa: "سیم‌های دست‌باز، نت‌های پوزیسیون اول، آکوردهای پایه و ریتم‌نوازی"
+          }
+        },
+        {
+          id: "setar",
+          order: 6,
+          icon: "setar",
+          status: "coming-soon",
+          review: "teacher",
+          lessonCount: 0,
+          lessonsDir: "content/courses/setar",
+          coverImage: "assets/course-setar.jpeg",
+          title: { en: "Setar", fa: "سه‌تار" },
+          subtitle: {
+            en: "Posture, mezrab stroke, dastan frets, Dorab & Shur/Dashti",
+            fa: "نشستن، مضراب راست و چپ، دستان‌ها، دوراب و درآمد شور و دشتی"
+          }
+        },
+        {
+          id: "tar",
+          order: 7,
+          icon: "tar",
+          status: "coming-soon",
+          review: "teacher",
+          lessonCount: 0,
+          lessonsDir: "content/courses/tar",
+          coverImage: "assets/course-tar.jpeg",
+          title: { en: "Tar", fa: "تار" },
+          subtitle: {
+            en: "Double resonance bowl, brass mezrab, dastans, Dorab & Chaharmezrab",
+            fa: "کاسه و نقاره، مضراب برنجی، دستان‌بندی، دوراب و چهارمضراب ساده"
+          }
+        },
+        {
+          id: "violin",
+          order: 8,
+          icon: "violin",
+          status: "coming-soon",
+          review: "teacher",
+          lessonCount: 0,
+          lessonsDir: "content/courses/violin",
+          coverImage: "assets/course-violin.jpeg",
+          title: { en: "Violin", fa: "ویولن" },
+          subtitle: {
+            en: "Bow hold, open G-D-A-E strings, first-position fingers & melodies",
+            fa: "گرفتن آرشه، سیم‌های دست‌باز، انگشت‌گذاری پوزیسیون اول و ملودی‌ها"
+          }
+        },
+        {
+          id: "santur",
+          order: 9,
+          icon: "santur",
+          status: "coming-soon",
+          review: "teacher",
+          lessonCount: 0,
+          lessonsDir: "content/courses/santur",
+          coverImage: "assets/course-santur.jpeg",
+          title: { en: "Santur", fa: "سنتور" },
+          subtitle: {
+            en: "Kharak bridges, holding mezrabs, Rast/Chap, Riz & folk melodies",
+            fa: "خرک‌ها و سیم‌های زرد و سفید، مضراب‌گیری، راست و چپ، ریز و قطعات"
+          }
+        }
+      ];
+
+      let COURSES = [...DEFAULT_COURSES];
+      let COURSE_LESSONS = { piano: [] };
 
       const STORAGE_KEY = "musicher_app_state_v3";
       // Flag to temporarily hide "Dark" and "System" theme buttons in Profile (keep code intact to restore later)
@@ -2228,6 +2657,7 @@
         onboardingComplete: false,
         onboardingStep: 1,
         instrument: "piano",
+        activeCourseId: "piano",
         access: "yes",
         experience: "none",
         dailyGoal: 15,
@@ -2238,6 +2668,7 @@
         lastCompletedDate: null,
         freeDayUsedWeekKey: null,
         activeDaysHistory: [],
+        courseProgress: {},
         userName: "",
         userEmail: "",
         isGuest: true,
@@ -2281,6 +2712,48 @@
           ownPlayed: [],
           ownStatus: "idle",
           completedByLesson: {}
+        },
+        multiPractice: {
+          lessonKey: null,
+          tab: "follow",
+          playingDemo: false,
+          demoIdx: -1,
+          timers: [],
+          // rhythm-tap
+          rhythmStepIdx: 0,
+          rhythmLastTapTime: 0,
+          rhythmFeedback: "",
+          rhythmFeedbackType: "",
+          rhythmDone: false,
+          // ear-choice
+          earRoundIdx: 0,
+          earChallenges: [],
+          earSelected: null,
+          earAnswered: false,
+          earIsRight: false,
+          earDone: false,
+          // listen-sing
+          singOctaveLow: false,
+          singPlayedOnce: false,
+          singDone: false,
+          // timer
+          timerTotalSec: 30,
+          timerRemainSec: 30,
+          timerRunning: false,
+          timerInterval: null,
+          timerDone: false,
+          // fretboard
+          fretIdx: 0,
+          fretHint: "",
+          fretDone: false,
+          // chord-diagram
+          chordActiveIdx: 0,
+          strumIdx: 0,
+          strumDone: false,
+          // santur-map
+          santurIdx: 0,
+          santurHint: "",
+          santurDone: false
         }
       };
 
@@ -2338,6 +2811,85 @@
             handRight: "Right hand",
             handLeft: "Left hand",
             handBoth: "Left hand for C3, right hand for C4 and C5"
+          },
+          courses: {
+            pickerLabel: "Course",
+            comingSoonBadge: "Coming soon",
+            comingSoonTitle: "Lessons for {course} are coming soon",
+            comingSoonSub: "This course path is outlined in our curriculum and lessons are on the way. Switch back to Piano & Keyboard to continue practicing today.",
+            backToPianoBtn: "Switch to Piano & Keyboard",
+            teacherReviewBadge: "Draft – under teacher review",
+            lessonsReadyCount: "{count} lessons"
+          },
+          practice: {
+            completedBadge: "Practice completed",
+            wellDone: "Well done!",
+            playAgainBtn: "Practice again",
+            watchTab: "Watch & Listen",
+            followTab: "Follow me",
+            playDemoBtn: "Play demo",
+            stopDemoBtn: "Stop",
+            rhythmTitle: "Rhythm Tap Practice",
+            rhythmMeter: "Meter {meter} · {tempo} BPM",
+            rhythmInstruction: "Listen to the demo or tap the drum pad (or press Space) in time with each beat. Stay silent on rests!",
+            rhythmTapBtn: "TAP BEAT",
+            rhythmSpaceHint: "Desktop tip: Press Spacebar to tap",
+            rhythmStartBtn: "Start tap practice",
+            rhythmRestLabel: "Rest ({beats}b)",
+            rhythmBeatLabel: "{beats}b",
+            rhythmOnTime: "On time! ✓",
+            rhythmEarly: "A little early",
+            rhythmLate: "A little late",
+            rhythmRestHold: "Rest held ✓",
+            earTitle: "Ear Training",
+            earRound: "Round {current} of {total}",
+            earPlayBtn: "Play sound",
+            earReplayBtn: "Play again",
+            earNextRoundBtn: "Next round →",
+            earPromptHigherLower: "Listen to the two notes. Is the second note higher or lower?",
+            earPromptSameDifferent: "Listen carefully. Are the two patterns the same or different?",
+            earPromptStepSkip: "Do these notes move by a neighbor step or a skip?",
+            earPromptMajorMinor: "Listen to this chord. Does it sound Major (bright) or Minor (warm)?",
+            earPromptInterval: "Listen to the distance between these two notes. Which interval do you hear?",
+            earOptHigher: "Higher ↑",
+            earOptLower: "Lower ↓",
+            earOptSame: "Same ＝",
+            earOptDifferent: "Different ≠",
+            earOptStep: "Step (neighbor)",
+            earOptSkip: "Skip (jump)",
+            earOptMajor: "Major (bright)",
+            earOptMinor: "Minor (warm)",
+            earOptHalfStep: "Half step",
+            earOptWholeStep: "Whole step",
+            earOptNeutralStep: "Neutral step (Koron)",
+            earOptFifth: "Fifth (open)",
+            earRightMsg: "Spot on! Your ear caught it.",
+            earWrongMsg: "Not quite — tap \"Play again\" and compare the sounds.",
+            singTitle: "Listen & Sing Back",
+            singInstruction: "1. Tap \"Listen to notes\" to hear the reference pitch. 2. Sing it back softly on \"La\" or solfege (no mic needed). 3. Tap confirm when done.",
+            singListenBtn: "Listen to notes",
+            singOctaveToggle: "Low voice (1 octave lower)",
+            singConfirmBtn: "I listened & sang this comfortably ✓",
+            timerTitle: "Timed Practice",
+            timerStartBtn: "Start timer",
+            timerPauseBtn: "Pause",
+            timerResetBtn: "Reset",
+            timerRunning: "Breathe calmly and keep going...",
+            timerDone: "Time complete! Great focus.",
+            fretboardTitle: "Fingerboard & Fret Guide",
+            fretboardFollowHint: "Tap the glowing teal position on the neck: String {string}, Fret {fret}",
+            fretboardOpenFret: "Open (0)",
+            fretboardStringLabel: "S{num}",
+            fretboardWrongHint: "Look for the glowing teal circle on String {string}",
+            chordTitle: "Chord & Strum Practice",
+            chordStrumBtn: "Strum {chord}",
+            chordPatternLabel: "Strum pattern:",
+            chordDownBtn: "↓ Down (D)",
+            chordUpBtn: "↑ Up (U)",
+            chordFollowInstruction: "Tap the strum buttons in order ({current}/{total}): next is {dir}",
+            santurTitle: "Santur Kharak Map",
+            santurFollowHint: "Tap the glowing teal bridge (kharak) to strike {note}",
+            santurWrongHint: "Look for the glowing teal bridge for {note}"
           }
         },
         fa: {
@@ -2393,6 +2945,85 @@
             handRight: "دست راست",
             handLeft: "دست چپ",
             handBoth: "دست چپ برای C3، دست راست برای C4 و C5"
+          },
+          courses: {
+            pickerLabel: "دوره",
+            comingSoonBadge: "به‌زودی",
+            comingSoonTitle: "درس‌های دوره‌ی {course} به‌زودی اضافه می‌شن",
+            comingSoonSub: "سرفصل‌های این مسیر آماده شده و درس‌ها به‌زودی منتشر می‌شن. فعلاً می‌تونی با دوره‌ی پیانو و کیبورد تمرین امروزت رو ادامه بدی.",
+            backToPianoBtn: "بازگشت به دوره‌ی پیانو و کیبورد",
+            teacherReviewBadge: "پیش‌نویس – در انتظار بررسی استاد",
+            lessonsReadyCount: "{count} درس"
+          },
+          practice: {
+            completedBadge: "تمرین این بخش انجام شد",
+            wellDone: "آفرین!",
+            playAgainBtn: "تمرین دوباره",
+            watchTab: "تماشا و شنیدن",
+            followTab: "همراه من",
+            playDemoBtn: "پخش نمونه",
+            stopDemoBtn: "توقف",
+            rhythmTitle: "تمرین ضرب و ریتم",
+            rhythmMeter: "کسر میزان {meter} · سرعت {tempo}",
+            rhythmInstruction: "به نمونه گوش کن یا هم‌زمان با صدای مترونوم روی دکمه‌ی ضرب (یا کلید Space) بزن. روی سکوت‌ها ضربه نزن!",
+            rhythmTapBtn: "ضربه بزن",
+            rhythmSpaceHint: "نکته: می‌تونی با کلید فاصله (Space) روی کیبورد هم ضربه بزنی",
+            rhythmStartBtn: "شروع تمرین ریتم",
+            rhythmRestLabel: "سکوت ({beats} ضرب)",
+            rhythmBeatLabel: "{beats} ضرب",
+            rhythmOnTime: "دقیق و به‌موقع! ✓",
+            rhythmEarly: "کمی زود زدی",
+            rhythmLate: "کمی دیر زدی",
+            rhythmRestHold: "سکوت رعایت شد ✓",
+            earTitle: "تربیت گوش",
+            earRound: "مرحله‌ی {current} از {total}",
+            earPlayBtn: "پخش صدا",
+            earReplayBtn: "پخش دوباره",
+            earNextRoundBtn: "مرحله‌ی بعد ←",
+            earPromptHigherLower: "به دو نت گوش کن. نت دوم زیرتر (بالاتر) بود یا بم‌تر (پایین‌تر)؟",
+            earPromptSameDifferent: "خوب گوش کن. این دو الگو یکسان بودن یا متفاوت؟",
+            earPromptStepSkip: "حرکت این دو نت به‌صورت گام (همسایه) بود یا پرش؟",
+            earPromptMajorMinor: "به این آکورد گوش کن. ماژور (روشن و شاد) بود یا مینور (گرم و غمگین)؟",
+            earPromptInterval: "به فاصله‌ی بین این دو نت گوش کن. چه فاصله‌ای رو می‌شنوی؟",
+            earOptHigher: "زیرتر (بالاتر) ↑",
+            earOptLower: "بم‌تر (پایین‌تر) ↓",
+            earOptSame: "یکسان ＝",
+            earOptDifferent: "متفاوت ≠",
+            earOptStep: "گام (نت همسایه)",
+            earOptSkip: "پرش (رد کردن نت)",
+            earOptMajor: "ماژور (روشن)",
+            earOptMinor: "مینور (گرم)",
+            earOptHalfStep: "نیم‌پرده",
+            earOptWholeStep: "پرده",
+            earOptNeutralStep: "پنج‌چهارم پرده (کرن)",
+            earOptFifth: "فاصله‌ی پنجم (باز)",
+            earRightMsg: "آفرین! گوشت کاملاً درست تشخیص داد.",
+            earWrongMsg: "دوباره روی «پخش دوباره» بزن و صداها رو با هم مقایسه کن.",
+            singTitle: "بشنو و بخوان",
+            singInstruction: "۱. روی «شنیدن نت‌ها» بزن و خوب گوش کن. ۲. با صدای راحت و بدون فشار با «لا» یا نام نت هم‌خوانی کن (نیازی به میکروفون نیست). ۳. در پایان دکمه‌ی تأیید رو بزن.",
+            singListenBtn: "شنیدن نت‌ها",
+            singOctaveToggle: "صدای بم (یک اکتاو پایین‌تر)",
+            singConfirmBtn: "شنیدم و با صدای راحت خوندم ✓",
+            timerTitle: "تمرین زمان‌دار",
+            timerStartBtn: "شروع زمان‌سنج",
+            timerPauseBtn: "مکث",
+            timerResetBtn: "از اول",
+            timerRunning: "با آرامش نفس بکش و ادامه بده...",
+            timerDone: "زمان تمرین کامل شد! عالی بود.",
+            fretboardTitle: "نقشه‌ی دسته و انگشت‌گذاری",
+            fretboardFollowHint: "روی نقطه‌ی فیروزه‌ای روشن‌شده روی دسته بزن: سیم {string}، پرده/جای {fret}",
+            fretboardOpenFret: "دست‌باز (۰)",
+            fretboardStringLabel: "سیم {num}",
+            fretboardWrongHint: "دایره‌ی فیروزه‌ای روشن‌شده روی سیم {string} رو پیدا کن",
+            chordTitle: "تمرین آکورد و ریتم گیتار",
+            chordStrumBtn: "نواختن آکورد {chord}",
+            chordPatternLabel: "الگوی ریتم:",
+            chordDownBtn: "↓ پایین (D)",
+            chordUpBtn: "↑ بالا (U)",
+            chordFollowInstruction: "دکمه‌های ریتم رو به ترتیب بزن ({current} از {total}): ضرب بعدی {dir}",
+            santurTitle: "نقشه‌ی خرک‌های سنتور",
+            santurFollowHint: "روی خرک فیروزه‌ای روشن‌شده بزن تا نت {note} نواخته بشه",
+            santurWrongHint: "خرک فیروزه‌ای روشن‌شده برای نت {note} رو پیدا کن"
           }
         }
       };
@@ -2423,6 +3054,82 @@
       }
 
       /* ==========================================================================
+         MULTI-COURSE HELPERS & PER-COURSE PROGRESS SYNC
+         ========================================================================== */
+      function getCourseMeta(courseId = state.activeCourseId || "piano") {
+        return COURSES.find((c) => c.id === courseId) || COURSES[0] || DEFAULT_COURSES[0];
+      }
+
+      function getCourseLessons(courseId = state.activeCourseId || "piano") {
+        const list = COURSE_LESSONS[courseId];
+        return Array.isArray(list) ? list : [];
+      }
+
+      function ensureCourseProgressMap() {
+        if (!state.courseProgress || typeof state.courseProgress !== "object") {
+          state.courseProgress = {};
+        }
+        if (!state.activeCourseId) {
+          state.activeCourseId = "piano";
+        }
+        // Migrate existing Piano top-level state into courseProgress.piano if not yet present
+        if (!state.courseProgress.piano) {
+          state.courseProgress.piano = {
+            completedLessons: Array.isArray(state.completedLessons) ? [...state.completedLessons] : [],
+            streakCount: Number(state.streakCount) || 0,
+            lastCompletedDate: state.lastCompletedDate || null,
+            freeDayUsedWeekKey: state.freeDayUsedWeekKey || null,
+            activeDaysHistory: Array.isArray(state.activeDaysHistory) ? [...state.activeDaysHistory] : []
+          };
+        }
+        for (const c of COURSES) {
+          if (!state.courseProgress[c.id]) {
+            state.courseProgress[c.id] = {
+              completedLessons: [],
+              streakCount: 0,
+              lastCompletedDate: null,
+              freeDayUsedWeekKey: null,
+              activeDaysHistory: []
+            };
+          }
+        }
+      }
+
+      function syncTopLevelFromActiveCourse() {
+        ensureCourseProgressMap();
+        const cid = state.activeCourseId || "piano";
+        const cp = state.courseProgress[cid];
+        state.completedLessons = Array.isArray(cp.completedLessons) ? [...cp.completedLessons] : [];
+        state.streakCount = Number(cp.streakCount) || 0;
+        state.lastCompletedDate = cp.lastCompletedDate || null;
+        state.freeDayUsedWeekKey = cp.freeDayUsedWeekKey || null;
+        state.activeDaysHistory = Array.isArray(cp.activeDaysHistory) ? [...cp.activeDaysHistory] : [];
+        LESSONS = getCourseLessons(cid);
+      }
+
+      function syncActiveCourseFromTopLevel() {
+        ensureCourseProgressMap();
+        const cid = state.activeCourseId || "piano";
+        state.courseProgress[cid] = {
+          completedLessons: Array.isArray(state.completedLessons) ? [...state.completedLessons] : [],
+          streakCount: Number(state.streakCount) || 0,
+          lastCompletedDate: state.lastCompletedDate || null,
+          freeDayUsedWeekKey: state.freeDayUsedWeekKey || null,
+          activeDaysHistory: Array.isArray(state.activeDaysHistory) ? [...state.activeDaysHistory] : []
+        };
+      }
+
+      function setActiveCourse(courseId) {
+        if (!courseId || !COURSES.some((c) => c.id === courseId)) return;
+        syncActiveCourseFromTopLevel();
+        state.activeCourseId = courseId;
+        state.instrument = courseId;
+        syncTopLevelFromActiveCourse();
+        evaluateStreakOnLoad();
+        saveState();
+      }
+
+      /* ==========================================================================
          STORAGE, DIGITS & THEME (Always Light on First Visit)
          ========================================================================== */
       function loadState() {
@@ -2438,10 +3145,13 @@
         } catch (err) {
           // Fallback to default light state
         }
+        ensureCourseProgressMap();
+        syncTopLevelFromActiveCourse();
       }
 
       function saveState() {
         try {
+          syncActiveCourseFromTopLevel();
           window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
         } catch (err) {
           // Ignore storage error
@@ -2629,19 +3339,49 @@
       }
 
       /* ==========================================================================
-         PERSIAN OGEE ARCH PLACEHOLDER (Requirement #5)
+         PERSIAN OGEE ARCH PLACEHOLDER + SECTION 2 AUTO COVER ART
          - Pointed Persian ogee arch with shoulder cusps matching Mockups 2, 3, 5
          - Double ink outline on light panels, saffron + cream outline on dark panels
-         - Inside: show image if assets/*.png exists, otherwise soft warm-beige fill
-           with subtle paper texture and a small note icon (NO brown circle!)
+         - Inside: show image if valid non-empty image exists; otherwise render
+           Section 2 Auto Cover Art: warm paper background (#FBF7F0), course instrument
+           line-art icon, subtle girih geometric corner pattern, lesson number in a
+           saffron badge (#F2B33D), and chapter color accent rotating Red/Saffron/Teal.
          ========================================================================== */
+      function getAutoCoverInstrumentPaths(iconKey) {
+        switch (iconKey) {
+          case "drum":
+          case "rhythm":
+            return `<ellipse cx="0" cy="-14" rx="18" ry="6.5"/><path d="M-18 -14c0 12 7 19 7 27l-4 10h30l-4-10c0-8 7-15 7-27"/><path d="M-15 -7l7 6 8-6 8 6 7-6"/>`;
+          case "ear":
+            return `<path d="M-8 -4a12 12 0 1 1 20 8c-3 4-5 7-6 12a6 6 0 0 1-11-2"/><path d="M-2 -4a6 6 0 0 1 10 4c-1.5 2.5-3 4-3.5 6.5"/><path d="M16 -14c4 4 4 12 0 16M21 -19c7 7 7 19 0 26"/>`;
+          case "voice":
+            return `<rect x="-8" y="-22" width="16" height="26" rx="8"/><path d="M-16 -4a16 16 0 0 0 32 0M0 12v10M-10 22h20"/><path d="M-8 -12h16M-8 -6h16"/>`;
+          case "guitar":
+            return `<path d="m18 -22-14 14M14 -24l10 10"/><path d="M-2 -6c-4-2-9-1-12 2-3 3-2 7-5 10-4 4-4 11 1 16s12 5 16 1c3-3 7-2 10-5 3-3 4-8 2-12"/><circle cx="-4" cy="4" r="4"/>`;
+          case "tar":
+            return `<path d="M0 -24v22"/><path d="M-4 -22h8M-4 -16h8"/><circle cx="0" cy="4" r="6"/><circle cx="0" cy="17" r="8.5"/><circle cx="0" cy="17" r="3"/>`;
+          case "setar":
+            return `<path d="M14 -22 -4 2"/><path d="M10 -22l8 4"/><path d="M-4 2c-6 2-10 8-8 14s8 8 14 4 8-10 4-16-6-4-10-2Z"/><circle cx="-5" cy="12" r="2.5"/>`;
+          case "santur":
+            return `<polygon points="-16 -10 16 -10 26 14 -26 14 -16 -10"/><path d="M-18 -4h36M-21 2h42M-24 8h48"/><circle cx="-9" cy="-4" r="1.6"/><circle cx="9" cy="2" r="1.6"/><circle cx="-6" cy="8" r="1.6"/>`;
+          case "violin":
+            return `<path d="m16 -22-16 16"/><path d="M-2 -6c-4-2-8 0-10 3s-2 7-5 10c-4 4-3 11 2 16s12 6 16 2c3-3 7-3 10-5s5-6 3-10"/><path d="M-10 6l8 8"/>`;
+          case "piano":
+          default:
+            return `<path d="M-20 0V-14a6 6 0 0 1 6-6h12c8 0 18 6 18 16v4H-20Z"/><rect x="-22" y="0" width="42" height="12" rx="2"/><path d="M-16 12v10M14 12v10M-14 0v6M-8 0v6M0 0v6M6 0v6M12 0v6"/>`;
+        }
+      }
+
       function renderArchPlaceholder({
         imageUrl,
         ratio = "tall",
         caption = "",
         onDark = false,
         uid = "arch",
-        isHero = false
+        isHero = false,
+        lessonId = null,
+        courseId = null,
+        chapterIndex = null
       }) {
         const vbW = 300;
         const vbH = ratio === "compact" ? 270 : 350;
@@ -2649,6 +3389,26 @@
         const imgH = vbH - 28;
         const isHeroImg = isHero || uid === "hero" || uid === "splash";
         const loadingAttrs = isHeroImg ? 'decoding="async"' : 'loading="lazy" decoding="async"';
+
+        // Infer lessonId from uid if not explicitly passed (e.g., "lesson-21", "path-lesson-21")
+        let resolvedLessonId = lessonId;
+        if (!resolvedLessonId && typeof uid === "string") {
+          const m = uid.match(/lesson-(\d+)/);
+          if (m) resolvedLessonId = Number(m[1]);
+        }
+        const resolvedCourseId = courseId || state?.activeCourseId || "piano";
+        const courseMeta = getCourseMeta(resolvedCourseId);
+        const iconKey = courseMeta ? courseMeta.icon : "piano";
+
+        // Chapter accent color rotating by chapter: Red (#D9473F) / Saffron (#F2B33D) / Teal (#1F6F6B)
+        const chIdx =
+          chapterIndex !== null && chapterIndex !== undefined
+            ? Number(chapterIndex)
+            : resolvedLessonId
+            ? Math.floor((Number(resolvedLessonId) - 1) / 4)
+            : (courseMeta?.order || 1) - 1;
+        const chapterAccents = ["#D9473F", "#F2B33D", "#1F6F6B"];
+        const chapterAccent = chapterAccents[((chIdx % 3) + 3) % 3];
 
         // Authentic shouldered Persian ogee pointed arch (matching Mockups 3 & 5)
         const outerPath =
@@ -2663,14 +3423,18 @@
 
         const outerStroke = onDark ? "#F2B33D" : "var(--arch-outer)";
         const innerStroke = onDark ? "#FBF7F0" : "var(--arch-inner)";
-        const interiorFill = onDark ? "#FBF7F0" : "var(--arch-fill)";
-        const noteColor = onDark ? "rgba(31, 26, 46, 0.35)" : "rgba(31, 26, 46, 0.32)";
-        const filigreeColor = "rgba(31, 111, 107, 0.28)";
+        const interiorFill = "#FBF7F0";
 
         const clipId = `arch-clip-${uid}`;
         const patId = `paper-tex-${uid}`;
         const safeCaption = caption ? escapeHtml(caption) : "";
-        const centerY = ratio === "compact" ? 135 : 175;
+        const centerY = ratio === "compact" ? 132 : 168;
+        const badgeY = ratio === "compact" ? 214 : 276;
+        const lessonBadgeText = resolvedLessonId
+          ? ratio === "compact"
+            ? toLocaleDigits(resolvedLessonId)
+            : t("lesson.kicker", { id: resolvedLessonId })
+          : lField(courseMeta?.title) || "MUSICHER";
 
         return `
           <div class="arch-frame-wrap">
@@ -2688,25 +3452,40 @@
               </defs>
 
               <!-- Double Outline Arch Frame -->
-              <path d="${outerPath}" fill="${ onDark ? "#1F1A2E" : "var(--bg-elevated)" }" stroke="${outerStroke}" stroke-width="2.2" stroke-linejoin="round" />
+              <path d="${outerPath}" fill="${onDark ? "#1F1A2E" : "var(--bg-elevated)"}" stroke="${outerStroke}" stroke-width="2.2" stroke-linejoin="round" />
               <path d="${innerPath}" fill="${interiorFill}" stroke="${innerStroke}" stroke-width="1.4" stroke-linejoin="round" />
 
-              <!-- Interior Content (Warm beige + subtle paper grain + small note icon + optional image) -->
+              <!-- Interior Content: Section 2 Auto Cover Art + Optional Raster Image Overlay -->
               <g clip-path="url(#${clipId})">
+                <rect x="0" y="0" width="${vbW}" height="${vbH}" fill="#FBF7F0" />
                 <rect x="0" y="0" width="${vbW}" height="${vbH}" fill="url(#${patId})" />
 
-                <!-- Delicate cloud/floral filigree inside top & bottom corners (like Mockup 5) -->
-                <g stroke="${filigreeColor}" stroke-width="1" fill="none">
-                  <path d="M 150 32 C 138 42, 126 42, 120 36 M 150 32 C 162 42, 174 42, 180 36" />
-                  <circle cx="150" cy="41" r="1.5" fill="${filigreeColor}" />
-                  <path d="M 38 ${vbH - 22} C 48 ${vbH - 36}, 62 ${vbH - 36}, 70 ${vbH - 22}" />
-                  <path d="M 262 ${vbH - 22} C 252 ${vbH - 36}, 238 ${vbH - 36}, 230 ${vbH - 22}" />
+                <!-- Chapter Accent Top Arch Band & Subtle Girih Geometric Corner Pattern -->
+                <path d="M 30 92 L 150 22 L 270 92" fill="none" stroke="${chapterAccent}" stroke-width="1.5" stroke-opacity="0.38" />
+                <g stroke="${chapterAccent}" stroke-width="1.15" stroke-opacity="0.34" fill="none">
+                  <!-- Top Girih Star Motif -->
+                  <polygon points="150,32 158,48 174,56 158,64 150,80 142,64 126,56 142,48" />
+                  <!-- Bottom-Left Girih Corner -->
+                  <polygon points="56,${vbH - 68} 68,${vbH - 46} 90,${vbH - 34} 68,${vbH - 22} 56,${vbH - 2} 44,${vbH - 22} 22,${vbH - 34} 44,${vbH - 46}" />
+                  <rect x="40" y="${vbH - 50}" width="32" height="32" transform="rotate(45 56 ${vbH - 34})" />
+                  <!-- Bottom-Right Girih Corner -->
+                  <polygon points="244,${vbH - 68} 256,${vbH - 46} 278,${vbH - 34} 256,${vbH - 22} 244,${vbH - 2} 232,${vbH - 22} 210,${vbH - 34} 232,${vbH - 46}" />
+                  <rect x="228" y="${vbH - 50}" width="32" height="32" transform="rotate(45 244 ${vbH - 34})" />
                 </g>
 
-                <!-- Small musical note icon in center when no external image is present (NO brown circle!) -->
-                <g transform="translate(150, ${centerY})" fill="${noteColor}" stroke="${noteColor}">
-                  <ellipse cx="-5" cy="8" rx="6.5" ry="4.8" transform="rotate(-18 -5 8)" stroke="none" />
-                  <path d="M 0.5 7 L 0.5 -15 C 6 -12, 11 -7, 9 1" stroke-width="2.2" fill="none" stroke-linecap="round" />
+                <!-- Chapter Color Accent Halo + Course Instrument Line-Art Icon -->
+                <g transform="translate(150, ${centerY})">
+                  <circle cx="0" cy="0" r="${ratio === "compact" ? 42 : 52}" fill="${chapterAccent}" fill-opacity="0.13" stroke="${chapterAccent}" stroke-width="1.8" />
+                  <circle cx="0" cy="0" r="${ratio === "compact" ? 35 : 44}" fill="#FBF7F0" stroke="#1F1A2E" stroke-width="1.2" stroke-dasharray="3 3" />
+                  <g transform="scale(${ratio === "compact" ? 1.12 : 1.38})" fill="none" stroke="#1F1A2E" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                    ${getAutoCoverInstrumentPaths(iconKey)}
+                  </g>
+                </g>
+
+                <!-- Saffron Lesson Number / Course Badge (#F2B33D) -->
+                <g transform="translate(150, ${badgeY})">
+                  <rect x="${ratio === "compact" ? -26 : -58}" y="-14" width="${ratio === "compact" ? 52 : 116}" height="28" rx="14" fill="#F2B33D" stroke="#1F1A2E" stroke-width="1.5" />
+                  <text x="0" y="5" text-anchor="middle" fill="#1F1A2E" font-family="var(--font-body)" font-size="${ratio === "compact" ? "13" : "12.5"}" font-weight="800">${escapeHtml(lessonBadgeText)}</text>
                 </g>
 
                 ${
@@ -2898,6 +3677,8 @@
           santur: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="8 11 24 11 29 23 3 23 8 11"/><path d="M7 14h18M5.5 17h21M4 20h24"/></svg>`,
           violin: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m24 5-8 8"/><path d="M15 13c-2-1-4 0-5 1.5S9 18 7.5 19.5c-2 2-1.5 5.5 1 8s6 3 8 1c1.5-1.5 3.5-1.5 5-2.5s2.5-3 1.5-5"/><path d="M11 19l4 4"/></svg>`,
           drum: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="8" rx="8" ry="3"/><path d="M8 8c0 6 3 9 3 13l-2 5h14l-2-5c0-4 3-7 3-13"/><path d="M9 11l3 3 4-3 4 3 3-3"/></svg>`,
+          rhythm: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="8" rx="8" ry="3"/><path d="M8 8c0 6 3 9 3 13l-2 5h14l-2-5c0-4 3-7 3-13"/><path d="M9 11l3 3 4-3 4 3 3-3"/></svg>`,
+          ear: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 13a7 7 0 1 1 12 4.8c-1.8 2.2-3 4-3.5 6.8a3.8 3.8 0 0 1-7-1.2"/><path d="M12.5 13a3.5 3.5 0 0 1 6 2.2c-1 1.4-1.8 2.4-2.2 4"/><path d="M23 9c2.2 2.4 2.2 6.8 0 9.2"/></svg>`,
           keyboard: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="24" height="18" rx="2"/><path d="M10 7v10h2V7M16 7v10h2V7M21 7v10h2V7M11 17v8M17 17v8M22 17v8"/></svg>`
         };
         return icons[key] || icons.piano;
@@ -3433,6 +4214,21 @@
         return noteName;
       }
 
+      function stopMultiPracticeTimers() {
+        const mp = ui.multiPractice;
+        if (mp.timers && mp.timers.length > 0) {
+          for (const tmr of mp.timers) clearTimeout(tmr);
+        }
+        mp.timers = [];
+        mp.playingDemo = false;
+        mp.demoIdx = -1;
+        if (mp.timerInterval) {
+          clearInterval(mp.timerInterval);
+          mp.timerInterval = null;
+        }
+        mp.timerRunning = false;
+      }
+
       function stopPianoWatchDemo() {
         const pp = ui.pianoPractice;
         if (pp.watchTimers && pp.watchTimers.length > 0) {
@@ -3444,14 +4240,45 @@
         document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => {
           el.classList.remove("is-pressed");
         });
+        stopMultiPracticeTimers();
+      }
+
+      function getPracticeLessonKey(lesson) {
+        return `${state.activeCourseId || "piano"}-${lesson ? lesson.id : 0}`;
+      }
+
+      function markLessonPracticeCompleted(lesson) {
+        if (!lesson) return;
+        const key = getPracticeLessonKey(lesson);
+        ui.pianoPractice.completedByLesson[lesson.id] = true;
+        ui.pianoPractice.completedByLesson[key] = true;
+        ui.selfCheckState[0] = true;
+        ui.selfCheckState[1] = true;
+      }
+
+      function isLessonPracticeCompleted(lesson) {
+        if (!lesson) return false;
+        const key = getPracticeLessonKey(lesson);
+        return Boolean(
+          ui.pianoPractice.completedByLesson[key] ||
+          ((state.activeCourseId || "piano") === "piano" && ui.pianoPractice.completedByLesson[lesson.id])
+        );
+      }
+
+      function getPracticeType(practice) {
+        if (!practice || typeof practice !== "object") return null;
+        if (practice.type) return String(practice.type);
+        if (Array.isArray(practice.notes)) return "keyboard-follow";
+        return null;
       }
 
       function syncLessonPracticeState(lesson) {
         if (!lesson || !lesson.practice) return;
         const pp = ui.pianoPractice;
-        if (pp.lessonId !== lesson.id) {
+        const key = getPracticeLessonKey(lesson);
+        if (pp.lessonId !== key) {
           stopPianoWatchDemo();
-          pp.lessonId = lesson.id;
+          pp.lessonId = key;
           pp.tab = lesson.practice.mode === "watch" || lesson.practice.mode === "own" ? lesson.practice.mode : "follow";
           pp.watchPlaying = false;
           pp.watchActiveIdx = -1;
@@ -3547,7 +4374,7 @@
         });
       }
 
-      function renderLessonPracticeCard(lesson) {
+      function renderKeyboardFollowPracticeCard(lesson) {
         if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return "";
         syncLessonPracticeState(lesson);
 
@@ -3556,7 +4383,7 @@
         const tempo = Number(practice.tempo) || 60;
         const pp = ui.pianoPractice;
         const activeTab = pp.tab || "follow";
-        const isCompleted = !!pp.completedByLesson[lesson.id];
+        const isCompleted = isLessonPracticeCompleted(lesson);
 
         let statusHtml = "";
         let targetGlowNote = null;
@@ -3817,7 +4644,7 @@
 
         if (ui.screen !== "lesson" || ui.lessonStepIndex !== 0) return;
         const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
-        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return;
+        if (!lesson || !lesson.practice || getPracticeType(lesson.practice) !== "keyboard-follow") return;
 
         const notes = lesson.practice.notes;
         const pp = ui.pianoPractice;
@@ -3828,14 +4655,11 @@
           if (!targetNote) return;
 
           if (noteName === targetNote) {
-            // Correct key pressed: hide any previous wrong-key hint immediately and move to next target key
             pp.followHint = "";
             pp.followIdx += 1;
             if (pp.followIdx >= notes.length) {
               pp.followDone = true;
-              pp.completedByLesson[lesson.id] = true;
-              ui.selfCheckState[0] = true;
-              ui.selfCheckState[1] = true;
+              markLessonPracticeCompleted(lesson);
             }
             refreshLessonPianoMount(true);
             const pressedNow = document.querySelector(`.vpiano-key[data-note="${noteName}"]`);
@@ -3844,7 +4668,6 @@
               setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
             }
           } else {
-            // Wrong key pressed: show "One key higher / lower" hint and soft red flash, keep current scroll
             const pressedMidi = VPIANO_ALL_BY_NOTE[noteName]?.midi || 60;
             const targetMidi = VPIANO_ALL_BY_NOTE[targetNote]?.midi || 60;
             pp.followHint = pressedMidi < targetMidi ? "higher" : "lower";
@@ -3866,9 +4689,7 @@
             const allMatch = notes.every((expected, i) => pp.ownPlayed[i] === expected);
             if (allMatch) {
               pp.ownStatus = "success";
-              pp.completedByLesson[lesson.id] = true;
-              ui.selfCheckState[0] = true;
-              ui.selfCheckState[1] = true;
+              markLessonPracticeCompleted(lesson);
             } else {
               pp.ownStatus = "fail";
             }
@@ -3880,6 +4701,1647 @@
             setTimeout(() => pressedNow.classList.remove("is-pressed"), 220);
           }
         }
+      }
+
+      /* ==========================================================================
+         SECTION 1 MULTI-COURSE PRACTICE ENGINE (Web Audio API Only, No Mic/Recording)
+         Supports:
+         - rhythm-tap
+         - ear-choice
+         - listen-sing
+         - timer
+         - fretboard (guitar | violin | setar | tar)
+         - chord-diagram (guitar)
+         - santur-map
+         ========================================================================== */
+      function noteToFreq(noteName, octaveOffset = 0, quarterToneShift = 0) {
+        if (typeof noteName === "number") return noteName;
+        const clean = String(noteName || "C4").trim();
+        // Support quarter-tone koron suffix like "E4k" or "Ak3"
+        const isKoron = /k/i.test(clean);
+        const match = clean.replace(/k/gi, "").match(/^([A-Ga-g])([#b]?)(\d)$/);
+        if (!match) return 261.63;
+        const letterMap = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+        let semitone = letterMap[match[1].toUpperCase()] ?? 0;
+        if (match[2] === "#") semitone += 1;
+        if (match[2] === "b") semitone -= 1;
+        const octave = Number(match[3]) + octaveOffset;
+        const midi = (octave + 1) * 12 + semitone + (isKoron ? -0.5 : 0) + quarterToneShift;
+        return 440 * Math.pow(2, (midi - 69) / 12);
+      }
+
+      function playMetronomeClickSound(isAccent = false) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(isAccent ? 980 : 680, now);
+          osc.frequency.exponentialRampToValueAtTime(220, now + 0.045);
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(isAccent ? 0.25 : 0.16, now + 0.004);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.055);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.06);
+        } catch (err) {}
+      }
+
+      function playRhythmDrumHitSound(accent = false) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          // Warm Tombak / Frame-drum membrane thump + crisp snap
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(accent ? 195 : 155, now);
+          osc.frequency.exponentialRampToValueAtTime(62, now + 0.14);
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(0.38, now + 0.005);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.19);
+
+          const snapOsc = ctx.createOscillator();
+          const snapGain = ctx.createGain();
+          snapOsc.type = "triangle";
+          snapOsc.frequency.setValueAtTime(420, now);
+          snapOsc.frequency.exponentialRampToValueAtTime(140, now + 0.035);
+          snapGain.gain.setValueAtTime(0.18, now);
+          snapGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+          snapOsc.connect(snapGain);
+          snapGain.connect(ctx.destination);
+          snapOsc.start(now);
+          snapOsc.stop(now + 0.045);
+        } catch (err) {}
+      }
+
+      function playVocalGuideTone(noteName, durationSec = 0.85, octaveLow = false) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const freq = noteToFreq(noteName, octaveLow ? -1 : 0);
+          const now = ctx.currentTime;
+
+          const master = ctx.createGain();
+          master.gain.setValueAtTime(0.0001, now);
+          master.gain.linearRampToValueAtTime(0.26, now + 0.06);
+          master.gain.setValueAtTime(0.24, now + Math.max(0.08, durationSec - 0.12));
+          master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+
+          const osc1 = ctx.createOscillator();
+          osc1.type = "sine";
+          osc1.frequency.setValueAtTime(freq, now);
+
+          const osc2 = ctx.createOscillator();
+          osc2.type = "triangle";
+          osc2.frequency.setValueAtTime(freq, now);
+          const g2 = ctx.createGain();
+          g2.gain.setValueAtTime(0.35, now);
+
+          // Gentle natural vocal vibrato (5.2 Hz)
+          const lfo = ctx.createOscillator();
+          const lfoGain = ctx.createGain();
+          lfo.frequency.setValueAtTime(5.2, now);
+          lfoGain.gain.setValueAtTime(2.2, now);
+          lfo.connect(lfoGain);
+          lfoGain.connect(osc1.frequency);
+          lfoGain.connect(osc2.frequency);
+
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(freq * 3.5, now);
+
+          osc1.connect(filter);
+          osc2.connect(g2);
+          g2.connect(filter);
+          filter.connect(master);
+          master.connect(ctx.destination);
+
+          osc1.start(now);
+          osc2.start(now);
+          lfo.start(now);
+          const stopAt = now + durationSec + 0.04;
+          osc1.stop(stopAt);
+          osc2.stop(stopAt);
+          lfo.stop(stopAt);
+        } catch (err) {}
+      }
+
+      function playStringInstrumentSound(instrument, freq, durationSec = 1.1) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const now = ctx.currentTime;
+          const master = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+
+          if (instrument === "violin") {
+            // Bowed string: smooth swell attack, warm harmonic sustain
+            master.gain.setValueAtTime(0.0001, now);
+            master.gain.linearRampToValueAtTime(0.24, now + 0.085);
+            master.gain.setValueAtTime(0.21, now + Math.max(0.1, durationSec - 0.15));
+            master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+
+            filter.frequency.setValueAtTime(Math.min(4800, freq * 4.8), now);
+            const osc1 = ctx.createOscillator();
+            osc1.type = "sawtooth";
+            osc1.frequency.setValueAtTime(freq, now);
+
+            const lfo = ctx.createOscillator();
+            const lfoGain = ctx.createGain();
+            lfo.frequency.setValueAtTime(5.5, now);
+            lfoGain.gain.setValueAtTime(2.4, now);
+            lfo.connect(lfoGain);
+            lfoGain.connect(osc1.frequency);
+
+            osc1.connect(filter);
+            filter.connect(master);
+            master.connect(ctx.destination);
+            osc1.start(now);
+            lfo.start(now);
+            osc1.stop(now + durationSec + 0.03);
+            lfo.stop(now + durationSec + 0.03);
+          } else {
+            // Plucked string (guitar, setar, tar): crisp attack, resonant decay
+            const isPersianLute = instrument === "setar" || instrument === "tar";
+            master.gain.setValueAtTime(0.0001, now);
+            master.gain.linearRampToValueAtTime(0.3, now + 0.006);
+            master.gain.exponentialRampToValueAtTime(0.09, now + 0.2);
+            master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+
+            filter.frequency.setValueAtTime(isPersianLute ? freq * 7.5 : freq * 5.2, now);
+            filter.frequency.exponentialRampToValueAtTime(freq * 1.8, now + 0.45);
+
+            const osc1 = ctx.createOscillator();
+            osc1.type = isPersianLute ? "sawtooth" : "triangle";
+            osc1.frequency.setValueAtTime(freq, now);
+
+            const osc2 = ctx.createOscillator();
+            osc2.type = "sine";
+            osc2.frequency.setValueAtTime(freq * 2, now);
+            const g2 = ctx.createGain();
+            g2.gain.setValueAtTime(isPersianLute ? 0.32 : 0.2, now);
+            g2.gain.exponentialRampToValueAtTime(0.005, now + durationSec * 0.65);
+
+            osc1.connect(filter);
+            osc2.connect(g2);
+            g2.connect(filter);
+            filter.connect(master);
+            master.connect(ctx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + durationSec + 0.03);
+            osc2.stop(now + durationSec + 0.03);
+          }
+        } catch (err) {}
+      }
+
+      function playSanturNoteSound(noteName, durationSec = 1.45) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const freq = noteToFreq(noteName);
+          const now = ctx.currentTime;
+
+          const master = ctx.createGain();
+          master.gain.setValueAtTime(0.0001, now);
+          master.gain.linearRampToValueAtTime(0.3, now + 0.004);
+          master.gain.exponentialRampToValueAtTime(0.12, now + 0.16);
+          master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+
+          // Dual slightly-detuned strings per kharak course + metallic mezrab ping
+          const oscA = ctx.createOscillator();
+          oscA.type = "triangle";
+          oscA.frequency.setValueAtTime(freq - 0.6, now);
+
+          const oscB = ctx.createOscillator();
+          oscB.type = "sawtooth";
+          oscB.frequency.setValueAtTime(freq + 0.6, now);
+          const gB = ctx.createGain();
+          gB.gain.setValueAtTime(0.18, now);
+          gB.gain.exponentialRampToValueAtTime(0.005, now + 0.35);
+
+          const oscPing = ctx.createOscillator();
+          oscPing.type = "sine";
+          oscPing.frequency.setValueAtTime(freq * 3, now);
+          const gPing = ctx.createGain();
+          gPing.gain.setValueAtTime(0.14, now);
+          gPing.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(Math.min(10000, freq * 8), now);
+          filter.frequency.exponentialRampToValueAtTime(freq * 2.5, now + 0.6);
+
+          oscA.connect(filter);
+          oscB.connect(gB);
+          gB.connect(filter);
+          oscPing.connect(gPing);
+          gPing.connect(filter);
+          filter.connect(master);
+          master.connect(ctx.destination);
+
+          oscA.start(now);
+          oscB.start(now);
+          oscPing.start(now);
+          const stopAt = now + durationSec + 0.04;
+          oscA.stop(stopAt);
+          oscB.stop(stopAt);
+          oscPing.stop(stopAt);
+        } catch (err) {}
+      }
+
+      function syncMultiPracticeState(lesson) {
+        if (!lesson || !lesson.practice) return;
+        const mp = ui.multiPractice;
+        const key = getPracticeLessonKey(lesson);
+        if (mp.lessonKey !== key) {
+          stopMultiPracticeTimers();
+          mp.lessonKey = key;
+          mp.tab = "follow";
+          mp.playingDemo = false;
+          mp.demoIdx = -1;
+          mp.rhythmStepIdx = 0;
+          mp.rhythmLastTapTime = 0;
+          mp.rhythmFeedback = "";
+          mp.rhythmFeedbackType = "";
+          mp.rhythmDone = false;
+          mp.earRoundIdx = 0;
+          mp.earChallenges = buildEarChallenges(lesson.practice);
+          mp.earSelected = null;
+          mp.earAnswered = false;
+          mp.earIsRight = false;
+          mp.earDone = false;
+          mp.singOctaveLow = false;
+          mp.singPlayedOnce = false;
+          mp.singDone = false;
+          const secs = Math.max(5, Number(lesson.practice.seconds) || 30);
+          mp.timerTotalSec = secs;
+          mp.timerRemainSec = secs;
+          mp.timerRunning = false;
+          mp.timerDone = false;
+          mp.fretIdx = 0;
+          mp.fretHint = "";
+          mp.fretDone = false;
+          mp.chordActiveIdx = 0;
+          mp.strumIdx = 0;
+          mp.strumDone = false;
+          mp.santurIdx = 0;
+          mp.santurHint = "";
+          mp.santurDone = false;
+        }
+      }
+
+      /* 1. RHYTHM-TAP ENGINE */
+      function parseRhythmPattern(patternStr) {
+        const rawTokens = String(patternStr || "1 1 1 1")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        const items = [];
+        let eventIdx = 0;
+        let beatCursor = 0;
+        for (const tok of rawTokens) {
+          if (tok === "|") {
+            items.push({ kind: "bar" });
+          } else if (/^r/i.test(tok)) {
+            const beats = parseFloat(tok.slice(1)) || 1;
+            items.push({ kind: "rest", beats, eventIdx, startBeat: beatCursor });
+            beatCursor += beats;
+            eventIdx += 1;
+          } else {
+            const beats = parseFloat(tok) || 1;
+            items.push({ kind: "note", beats, eventIdx, startBeat: beatCursor });
+            beatCursor += beats;
+            eventIdx += 1;
+          }
+        }
+        return {
+          items,
+          events: items.filter((it) => it.kind === "note" || it.kind === "rest"),
+          totalBeats: beatCursor
+        };
+      }
+
+      function scheduleRhythmAutoRestIfNeeded(lesson) {
+        const mp = ui.multiPractice;
+        if (!lesson || !lesson.practice || mp.rhythmDone) return;
+        const parsed = parseRhythmPattern(lesson.practice.pattern);
+        const curEv = parsed.events[mp.rhythmStepIdx];
+        if (!curEv || curEv.kind !== "rest") return;
+
+        const tempo = Number(lesson.practice.tempo) || 70;
+        const beatMs = Math.round((60 / tempo) * 1000);
+        const waitMs = Math.max(350, Math.round(curEv.beats * beatMs));
+        const tmr = setTimeout(() => {
+          if (ui.screen !== "lesson" || mp.rhythmDone) return;
+          const checkEv = parsed.events[mp.rhythmStepIdx];
+          if (!checkEv || checkEv.kind !== "rest") return;
+          playMetronomeClickSound(false);
+          mp.rhythmFeedback = t("practice.rhythmRestHold");
+          mp.rhythmFeedbackType = "good";
+          mp.rhythmStepIdx += 1;
+          mp.rhythmLastTapTime = Date.now();
+          if (mp.rhythmStepIdx >= parsed.events.length) {
+            mp.rhythmDone = true;
+            markLessonPracticeCompleted(lesson);
+          } else {
+            scheduleRhythmAutoRestIfNeeded(lesson);
+          }
+          refreshLessonPianoMount(false);
+        }, waitMs);
+        mp.timers.push(tmr);
+      }
+
+      function handleRhythmTapAction() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || getPracticeType(lesson.practice) !== "rhythm-tap") return;
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        if (mp.playingDemo) stopMultiPracticeTimers();
+        if (mp.rhythmDone) return;
+
+        const parsed = parseRhythmPattern(lesson.practice.pattern);
+        const events = parsed.events;
+        if (events.length === 0) return;
+
+        const tempo = Number(lesson.practice.tempo) || 70;
+        const beatMs = Math.round((60 / tempo) * 1000);
+        const curEv = events[mp.rhythmStepIdx];
+        if (!curEv) return;
+
+        if (curEv.kind === "rest") {
+          // Tapped during a rest: gentle reminder to stay silent on rests
+          mp.rhythmFeedback = t("practice.rhythmEarly");
+          mp.rhythmFeedbackType = "warn";
+          refreshLessonPianoMount(false);
+          return;
+        }
+
+        playRhythmDrumHitSound(mp.rhythmStepIdx === 0);
+        const now = Date.now();
+        if (mp.rhythmStepIdx > 0 && mp.rhythmLastTapTime > 0) {
+          const prevEv = events[mp.rhythmStepIdx - 1];
+          const expectedMs = (prevEv ? prevEv.beats : 1) * beatMs;
+          const actualMs = now - mp.rhythmLastTapTime;
+          const diff = actualMs - expectedMs;
+          if (Math.abs(diff) <= Math.max(220, expectedMs * 0.38)) {
+            mp.rhythmFeedback = t("practice.rhythmOnTime");
+            mp.rhythmFeedbackType = "good";
+          } else if (diff < 0) {
+            mp.rhythmFeedback = t("practice.rhythmEarly");
+            mp.rhythmFeedbackType = "warn";
+          } else {
+            mp.rhythmFeedback = t("practice.rhythmLate");
+            mp.rhythmFeedbackType = "warn";
+          }
+        } else {
+          mp.rhythmFeedback = t("practice.rhythmOnTime");
+          mp.rhythmFeedbackType = "good";
+        }
+
+        mp.rhythmLastTapTime = now;
+        mp.rhythmStepIdx += 1;
+
+        if (mp.rhythmStepIdx >= events.length) {
+          mp.rhythmDone = true;
+          markLessonPracticeCompleted(lesson);
+        } else {
+          scheduleRhythmAutoRestIfNeeded(lesson);
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function startRhythmDemo() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        stopMultiPracticeTimers();
+        const mp = ui.multiPractice;
+        const parsed = parseRhythmPattern(lesson.practice.pattern);
+        const tempo = Number(lesson.practice.tempo) || 70;
+        const beatMs = Math.max(320, Math.round((60 / tempo) * 1000));
+
+        mp.playingDemo = true;
+        mp.demoIdx = 0;
+        refreshLessonPianoMount(false);
+
+        parsed.events.forEach((ev, idx) => {
+          const delayMs = Math.round(ev.startBeat * beatMs);
+          const tmr = setTimeout(() => {
+            if (!mp.playingDemo) return;
+            mp.demoIdx = idx;
+            if (ev.kind === "rest") {
+              playMetronomeClickSound(false);
+            } else {
+              playMetronomeClickSound(idx === 0);
+              playRhythmDrumHitSound(idx === 0);
+            }
+            refreshLessonPianoMount(false);
+          }, delayMs);
+          mp.timers.push(tmr);
+        });
+
+        const endTmr = setTimeout(() => {
+          mp.playingDemo = false;
+          mp.demoIdx = -1;
+          refreshLessonPianoMount(false);
+        }, Math.round(parsed.totalBeats * beatMs) + 120);
+        mp.timers.push(endTmr);
+      }
+
+      function renderRhythmTapPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const practice = lesson.practice;
+        const tempo = Number(practice.tempo) || 70;
+        const meter = practice.meter || "4/4";
+        const parsed = parseRhythmPattern(practice.pattern);
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        const tokensHtml = parsed.items
+          .map((it) => {
+            if (it.kind === "bar") {
+              return `<span class="rhythm-barline" aria-hidden="true"></span>`;
+            }
+            const idx = it.eventIdx;
+            const isDemoActive = mp.playingDemo && mp.demoIdx === idx;
+            const isDone = mp.rhythmDone || (!mp.playingDemo && idx < mp.rhythmStepIdx);
+            const isCurrent = !mp.playingDemo && !mp.rhythmDone && idx === mp.rhythmStepIdx;
+            const cls = [
+              "rhythm-token-box",
+              it.kind === "rest" ? "is-rest" : "",
+              isDemoActive ? "active-demo" : "",
+              isDone ? "done" : "",
+              isCurrent ? "current" : ""
+            ]
+              .filter(Boolean)
+              .join(" ");
+            const iconSym = it.kind === "rest" ? "𝄽" : it.beats >= 2 ? "𝅗𝅥" : it.beats < 1 ? "♪" : "♩";
+            const lbl =
+              it.kind === "rest"
+                ? t("practice.rhythmRestLabel", { beats: it.beats })
+                : t("practice.rhythmBeatLabel", { beats: it.beats });
+            return `
+              <div class="${cls}">
+                <span style="font-size:1.15rem;line-height:1;">${iconSym}</span>
+                <span>${escapeHtml(lbl)}</span>
+              </div>
+            `;
+          })
+          .join("");
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🥁 ${escapeHtml(t("practice.rhythmTitle"))}</span>
+                <span style="font-size:0.8rem;font-weight:700;color:var(--secondary);background:var(--secondary-soft);border:1px solid rgba(31,111,107,0.28);border-radius:999px;padding:3px 10px;">
+                  ${escapeHtml(t("practice.rhythmMeter", { meter, tempo }))}
+                </span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+              <div class="vpiano-controls-row">
+                <button type="button" class="btn-pill ${mp.playingDemo ? "btn-surface" : "btn-secondary"}" style="min-height:36px;padding:5px 14px;font-size:0.82rem;" data-action="mp-rhythm-demo">
+                  <span>${mp.playingDemo ? "■" : "▶"}</span>
+                  <span>${escapeHtml(mp.playingDemo ? t("practice.stopDemoBtn") : t("practice.playDemoBtn"))}</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="vpiano-status-box">
+              <p style="font-size:0.88rem;line-height:1.5;margin-bottom:8px;">${escapeHtml(t("practice.rhythmInstruction"))}</p>
+              <div class="rhythm-pattern-row">${tokensHtml}</div>
+              ${
+                mp.rhythmFeedback
+                  ? `<div style="margin-top:6px;font-size:0.86rem;font-weight:700;color:${mp.rhythmFeedbackType === "good" ? "var(--secondary)" : "var(--primary)"};">
+                      ${escapeHtml(mp.rhythmFeedback)}
+                    </div>`
+                  : ""
+              }
+              ${
+                mp.rhythmDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : ""
+              }
+            </div>
+
+            <button type="button" class="rhythm-tap-pad" data-action="mp-rhythm-tap">
+              <span>🥁</span>
+              <span>${escapeHtml(t("practice.rhythmTapBtn"))}</span>
+            </button>
+            <div class="vpiano-footer-hint">
+              <span>${escapeHtml(t("practice.rhythmSpaceHint"))}</span>
+            </div>
+          </div>
+        `;
+      }
+
+      /* 2. EAR-CHOICE ENGINE */
+      function buildEarChallenges(practice) {
+        const mode = practice.mode || "higher-lower";
+        const rounds = Math.max(1, Number(practice.rounds) || 6);
+        const list = [];
+
+        const presets = {
+          "higher-lower": [
+            { notes: ["C4", "G4"], answer: "higher" },
+            { notes: ["G4", "D4"], answer: "lower" },
+            { notes: ["D4", "A4"], answer: "higher" },
+            { notes: ["A4", "E4"], answer: "lower" },
+            { notes: ["E4", "B4"], answer: "higher" },
+            { notes: ["F4", "C4"], answer: "lower" }
+          ],
+          "same-different": [
+            { notes: ["C4", "E4", "C4", "E4"], answer: "same" },
+            { notes: ["C4", "E4", "C4", "G4"], answer: "different" },
+            { notes: ["G4", "F4", "G4", "F4"], answer: "same" },
+            { notes: ["D4", "F4", "D4", "E4"], answer: "different" },
+            { notes: ["E4", "G4", "E4", "G4"], answer: "same" },
+            { notes: ["A4", "G4", "A4", "E4"], answer: "different" }
+          ],
+          "step-skip": [
+            { notes: ["C4", "D4"], answer: "step" },
+            { notes: ["C4", "E4"], answer: "skip" },
+            { notes: ["E4", "F4"], answer: "step" },
+            { notes: ["D4", "G4"], answer: "skip" },
+            { notes: ["G4", "A4"], answer: "step" },
+            { notes: ["E4", "C4"], answer: "skip" }
+          ],
+          "major-minor": [
+            { chord: ["C4", "E4", "G4"], answer: "major" },
+            { chord: ["D4", "F4", "A4"], answer: "minor" },
+            { chord: ["G3", "B3", "D4"], answer: "major" },
+            { chord: ["A3", "C4", "E4"], answer: "minor" },
+            { chord: ["F3", "A3", "C4"], answer: "major" },
+            { chord: ["E3", "G3", "B3"], answer: "minor" }
+          ],
+          interval: [
+            { notes: ["E4", "F4"], answer: "half" },
+            { notes: ["C4", "D4"], answer: "whole" },
+            { notes: ["D4", "E4k"], answer: "neutral" },
+            { notes: ["C4", "G4"], answer: "fifth" },
+            { notes: ["B3", "C4"], answer: "half" },
+            { notes: ["F4", "G4"], answer: "whole" }
+          ]
+        };
+
+        const pool = presets[mode] || presets["higher-lower"];
+        for (let i = 0; i < rounds; i++) {
+          list.push(pool[i % pool.length]);
+        }
+        return list;
+      }
+
+      function playCurrentEarChallenge(lesson) {
+        if (!lesson || !lesson.practice) return;
+        syncMultiPracticeState(lesson);
+        stopMultiPracticeTimers();
+        const mp = ui.multiPractice;
+        const ch = mp.earChallenges[mp.earRoundIdx];
+        if (!ch) return;
+
+        if (ch.chord) {
+          ch.chord.forEach((n, idx) => {
+            const t1 = setTimeout(() => playPianoNoteSound(n, 0.9), idx * 240);
+            mp.timers.push(t1);
+          });
+          const tAll = setTimeout(() => {
+            ch.chord.forEach((n) => playPianoNoteSound(n, 1.35));
+          }, ch.chord.length * 240 + 260);
+          mp.timers.push(tAll);
+        } else if (Array.isArray(ch.notes)) {
+          ch.notes.forEach((n, idx) => {
+            const t1 = setTimeout(() => {
+              if (/k/i.test(n)) {
+                playStringInstrumentSound("setar", noteToFreq(n), 0.95);
+              } else {
+                playPianoNoteSound(n, 0.85);
+              }
+            }, idx * 520);
+            mp.timers.push(t1);
+          });
+        }
+      }
+
+      function renderEarChoicePracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const practice = lesson.practice;
+        const mode = practice.mode || "higher-lower";
+        const total = mp.earChallenges.length || 6;
+        const curRound = Math.min(mp.earRoundIdx + 1, total);
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        const promptKeyMap = {
+          "higher-lower": "practice.earPromptHigherLower",
+          "same-different": "practice.earPromptSameDifferent",
+          "step-skip": "practice.earPromptStepSkip",
+          "major-minor": "practice.earPromptMajorMinor",
+          interval: "practice.earPromptInterval"
+        };
+        const optionsByMode = {
+          "higher-lower": [
+            { id: "higher", label: t("practice.earOptHigher") },
+            { id: "lower", label: t("practice.earOptLower") }
+          ],
+          "same-different": [
+            { id: "same", label: t("practice.earOptSame") },
+            { id: "different", label: t("practice.earOptDifferent") }
+          ],
+          "step-skip": [
+            { id: "step", label: t("practice.earOptStep") },
+            { id: "skip", label: t("practice.earOptSkip") }
+          ],
+          "major-minor": [
+            { id: "major", label: t("practice.earOptMajor") },
+            { id: "minor", label: t("practice.earOptMinor") }
+          ],
+          interval: [
+            { id: "half", label: t("practice.earOptHalfStep") },
+            { id: "whole", label: t("practice.earOptWholeStep") },
+            { id: "neutral", label: t("practice.earOptNeutralStep") },
+            { id: "fifth", label: t("practice.earOptFifth") }
+          ]
+        };
+
+        const opts = optionsByMode[mode] || optionsByMode["higher-lower"];
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">👂 ${escapeHtml(t("practice.earTitle"))}</span>
+                <span style="font-size:0.8rem;font-weight:700;color:var(--secondary);background:var(--secondary-soft);border:1px solid rgba(31,111,107,0.28);border-radius:999px;padding:3px 10px;">
+                  ${escapeHtml(t("practice.earRound", { current: curRound, total }))}
+                </span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+              <button type="button" class="btn-pill btn-secondary" style="min-height:38px;padding:6px 16px;font-size:0.86rem;" data-action="mp-ear-play">
+                <span>🔊</span>
+                <span>${escapeHtml(t("practice.earPlayBtn"))}</span>
+              </button>
+            </div>
+
+            <div class="vpiano-status-box">
+              <p style="font-size:0.92rem;font-weight:600;margin-bottom:8px;">
+                ${escapeHtml(t(promptKeyMap[mode] || "practice.earPromptHigherLower"))}
+              </p>
+
+              <div class="ear-options-grid">
+                ${opts
+                  .map((o) => {
+                    const isSel = mp.earSelected === o.id;
+                    const cls = mp.earAnswered && isSel ? (mp.earIsRight ? "correct" : "wrong") : "";
+                    return `
+                      <button type="button" class="ear-opt-btn ${cls}" data-action="mp-ear-answer" data-choice="${o.id}">
+                        <span>${escapeHtml(o.label)}</span>
+                        <span>${mp.earAnswered && isSel ? (mp.earIsRight ? "✓" : "✗") : "○"}</span>
+                      </button>
+                    `;
+                  })
+                  .join("")}
+              </div>
+
+              ${
+                mp.earAnswered && !mp.earDone
+                  ? `<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:12px;">
+                      <span style="font-size:0.88rem;font-weight:700;color:${mp.earIsRight ? "var(--secondary)" : "var(--primary)"};">
+                        ${escapeHtml(mp.earIsRight ? t("practice.earRightMsg") : t("practice.earWrongMsg"))}
+                      </span>
+                      ${
+                        mp.earIsRight
+                          ? `<button type="button" class="btn-pill btn-primary" style="min-height:38px;padding:6px 16px;font-size:0.85rem;" data-action="mp-ear-next">
+                              ${escapeHtml(t("practice.earNextRoundBtn"))}
+                            </button>`
+                          : `<button type="button" class="vpiano-pill-btn" data-action="mp-ear-play">
+                              🔊 ${escapeHtml(t("practice.earReplayBtn"))}
+                            </button>`
+                      }
+                    </div>`
+                  : ""
+              }
+
+              ${
+                mp.earDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+      }
+
+      /* 3. LISTEN-SING ENGINE */
+      function startListenSingDemo() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return;
+        stopMultiPracticeTimers();
+        const mp = ui.multiPractice;
+        const notes = lesson.practice.notes;
+        const tempo = Number(lesson.practice.tempo) || 60;
+        const beatMs = Math.max(400, Math.round((60 / tempo) * 1000));
+
+        mp.playingDemo = true;
+        mp.demoIdx = 0;
+        mp.singPlayedOnce = true;
+        refreshLessonPianoMount(false);
+
+        notes.forEach((n, idx) => {
+          const tmr = setTimeout(() => {
+            if (!mp.playingDemo) return;
+            mp.demoIdx = idx;
+            playVocalGuideTone(n, (beatMs / 1000) * 0.88, mp.singOctaveLow);
+            refreshLessonPianoMount(false);
+          }, idx * beatMs);
+          mp.timers.push(tmr);
+        });
+
+        const endTmr = setTimeout(() => {
+          mp.playingDemo = false;
+          mp.demoIdx = -1;
+          refreshLessonPianoMount(false);
+        }, notes.length * beatMs + 100);
+        mp.timers.push(endTmr);
+      }
+
+      function renderListenSingPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const notes = Array.isArray(lesson.practice.notes) ? lesson.practice.notes : ["C4", "D4", "E4"];
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        const badgesHtml = notes
+          .map((n, idx) => {
+            const cls = mp.playingDemo && mp.demoIdx === idx ? "current" : mp.singDone ? "done" : "";
+            return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(formatNoteWithSolfege(n))}</span>`;
+          })
+          .join("");
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎤 ${escapeHtml(t("practice.singTitle"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+              <div class="vpiano-controls-row">
+                <button type="button" class="vpiano-pill-btn ${mp.singOctaveLow ? "active" : ""}" data-action="mp-sing-toggle-octave">
+                  <span>↓8vb</span>
+                  <span>${escapeHtml(t("practice.singOctaveToggle"))}</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="vpiano-status-box">
+              <p style="font-size:0.88rem;line-height:1.55;margin-bottom:10px;">
+                ${escapeHtml(t("practice.singInstruction"))}
+              </p>
+              <div class="vpiano-notes-seq" style="margin-bottom:12px;">${badgesHtml}</div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:10px;">
+                <button type="button" class="btn-pill btn-secondary" style="min-height:42px;padding:8px 18px;font-size:0.88rem;" data-action="mp-sing-listen">
+                  <span>${mp.playingDemo ? "■" : "🔊"}</span>
+                  <span>${escapeHtml(mp.playingDemo ? t("practice.stopDemoBtn") : t("practice.singListenBtn"))}</span>
+                </button>
+                <button type="button" class="btn-pill ${mp.singDone ? "btn-surface" : "btn-primary"}" style="min-height:42px;padding:8px 18px;font-size:0.88rem;" data-action="mp-sing-confirm">
+                  <span>${escapeHtml(t("practice.singConfirmBtn"))}</span>
+                </button>
+              </div>
+
+              ${
+                mp.singDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+      }
+
+      /* 4. TIMER ENGINE */
+      function togglePracticeTimer() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+
+        if (mp.timerRunning) {
+          if (mp.timerInterval) clearInterval(mp.timerInterval);
+          mp.timerInterval = null;
+          mp.timerRunning = false;
+          refreshLessonPianoMount(false);
+          return;
+        }
+
+        if (mp.timerRemainSec <= 0) {
+          mp.timerRemainSec = mp.timerTotalSec;
+          mp.timerDone = false;
+        }
+
+        playPianoNoteSound("C4", 0.7);
+        mp.timerRunning = true;
+        refreshLessonPianoMount(false);
+
+        mp.timerInterval = setInterval(() => {
+          if (ui.screen !== "lesson") {
+            stopMultiPracticeTimers();
+            return;
+          }
+          mp.timerRemainSec = Math.max(0, mp.timerRemainSec - 1);
+          if (mp.timerRemainSec <= 0) {
+            clearInterval(mp.timerInterval);
+            mp.timerInterval = null;
+            mp.timerRunning = false;
+            mp.timerDone = true;
+            playPianoNoteSound("C4", 0.5);
+            setTimeout(() => playPianoNoteSound("G4", 0.9), 220);
+            markLessonPracticeCompleted(lesson);
+          }
+          refreshLessonPianoMount(false);
+        }, 1000);
+      }
+
+      function renderTimerPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const cueText = lField(lesson.practice.cue) || lField(lesson.goal) || "";
+        const total = mp.timerTotalSec || 30;
+        const remain = mp.timerRemainSec;
+        const pct = Math.round(((total - remain) / total) * 100);
+        const mins = String(Math.floor(remain / 60)).padStart(2, "0");
+        const secs = String(remain % 60).padStart(2, "0");
+        const timeStr = toLocaleDigits(`${mins}:${secs}`);
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">⏱️ ${escapeHtml(t("practice.timerTitle"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+
+            <div class="vpiano-status-box" style="text-align:center;">
+              ${cueText ? `<p style="font-size:0.95rem;font-weight:600;margin-bottom:12px;">${escapeHtml(cueText)}</p>` : ""}
+              <div style="font-family:var(--font-heading);font-size:2.2rem;font-weight:700;color:var(--ink);margin-bottom:8px;" dir="ltr">
+                ${escapeHtml(timeStr)}
+              </div>
+              <div class="lesson-progress-track" style="max-width:320px;margin:0 auto 14px;height:10px;">
+                <div class="lesson-progress-fill" style="width:${pct}%;"></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+                <button type="button" class="btn-pill ${mp.timerRunning ? "btn-surface" : "btn-primary"}" style="min-height:42px;padding:8px 22px;" data-action="mp-timer-toggle">
+                  <span>${mp.timerRunning ? "❚❚" : "▶"}</span>
+                  <span>${escapeHtml(mp.timerRunning ? t("practice.timerPauseBtn") : t("practice.timerStartBtn"))}</span>
+                </button>
+                <button type="button" class="btn-pill btn-surface" style="min-height:42px;padding:8px 16px;" data-action="mp-reset">
+                  ↻ ${escapeHtml(t("practice.timerResetBtn"))}
+                </button>
+              </div>
+              ${
+                mp.timerDone
+                  ? `<div class="vpiano-well-done" style="margin-top:12px;">
+                      <span>🎉 ${escapeHtml(t("practice.timerDone"))}</span>
+                    </div>`
+                  : mp.timerRunning
+                  ? `<p style="font-size:0.84rem;color:var(--secondary);font-weight:600;margin-top:10px;">${escapeHtml(t("practice.timerRunning"))}</p>`
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+      }
+
+      /* 5. FRETBOARD ENGINE (guitar | violin | setar | tar) */
+      const FRETBOARD_TUNINGS = {
+        guitar: [
+          { string: 1, name: "E4", midi: 64 },
+          { string: 2, name: "B3", midi: 59 },
+          { string: 3, name: "G3", midi: 55 },
+          { string: 4, name: "D3", midi: 50 },
+          { string: 5, name: "A2", midi: 45 },
+          { string: 6, name: "E2", midi: 40 }
+        ],
+        violin: [
+          { string: 1, name: "E5", midi: 76 },
+          { string: 2, name: "A4", midi: 69 },
+          { string: 3, name: "D4", midi: 62 },
+          { string: 4, name: "G3", midi: 55 }
+        ],
+        setar: [
+          { string: 1, name: "C4", midi: 60 },
+          { string: 2, name: "G3", midi: 55 },
+          { string: 3, name: "C4", midi: 60 },
+          { string: 4, name: "C3", midi: 48 }
+        ],
+        tar: [
+          { string: 1, name: "C4", midi: 60 },
+          { string: 2, name: "G3", midi: 55 },
+          { string: 3, name: "C4", midi: 60 },
+          { string: 4, name: "C3", midi: 48 }
+        ]
+      };
+
+      function getFretboardPosFreq(instrument, posStr) {
+        const [sRaw, fRaw] = String(posStr || "1:0").split(":");
+        const sNum = Math.max(1, Number(sRaw) || 1);
+        const fNum = Math.max(0, parseFloat(fRaw) || 0);
+        const tuning = FRETBOARD_TUNINGS[instrument] || FRETBOARD_TUNINGS.guitar;
+        const strMeta = tuning.find((t) => t.string === sNum) || tuning[0];
+        const midi = strMeta.midi + fNum;
+        return 440 * Math.pow(2, (midi - 69) / 12);
+      }
+
+      function startFretboardDemo() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.positions)) return;
+        stopMultiPracticeTimers();
+        const mp = ui.multiPractice;
+        const positions = lesson.practice.positions;
+        const inst = lesson.practice.instrument || state.activeCourseId || "guitar";
+        const beatMs = 700;
+
+        mp.playingDemo = true;
+        mp.demoIdx = 0;
+        refreshLessonPianoMount(false);
+
+        positions.forEach((pos, idx) => {
+          const tmr = setTimeout(() => {
+            if (!mp.playingDemo) return;
+            mp.demoIdx = idx;
+            playStringInstrumentSound(inst, getFretboardPosFreq(inst, pos), 0.9);
+            refreshLessonPianoMount(false);
+          }, idx * beatMs);
+          mp.timers.push(tmr);
+        });
+
+        const endTmr = setTimeout(() => {
+          mp.playingDemo = false;
+          mp.demoIdx = -1;
+          refreshLessonPianoMount(false);
+        }, positions.length * beatMs + 100);
+        mp.timers.push(endTmr);
+      }
+
+      function handleFretboardTap(posStr) {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const inst = lesson.practice.instrument || state.activeCourseId || "guitar";
+        playStringInstrumentSound(inst, getFretboardPosFreq(inst, posStr), 0.95);
+
+        if (mp.fretDone) return;
+        const positions = lesson.practice.positions || [];
+        const targetPos = positions[mp.fretIdx];
+        if (!targetPos) return;
+
+        if (posStr === targetPos) {
+          mp.fretHint = "";
+          mp.fretIdx += 1;
+          if (mp.fretIdx >= positions.length) {
+            mp.fretDone = true;
+            markLessonPracticeCompleted(lesson);
+          }
+        } else {
+          const [targetS] = String(targetPos).split(":");
+          mp.fretHint = t("practice.fretboardWrongHint", { string: targetS });
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function renderFretboardPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const practice = lesson.practice;
+        const inst = practice.instrument || state.activeCourseId || "guitar";
+        const positions = Array.isArray(practice.positions) ? practice.positions : ["1:0"];
+        const tuning = FRETBOARD_TUNINGS[inst] || FRETBOARD_TUNINGS.guitar;
+        const maxFret = Math.max(
+          5,
+          ...positions.map((p) => Math.ceil(parseFloat(String(p).split(":")[1]) || 0))
+        );
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        const targetPos = mp.playingDemo
+          ? positions[mp.demoIdx]
+          : !mp.fretDone
+          ? positions[mp.fretIdx]
+          : null;
+        const [targetS, targetF] = targetPos ? String(targetPos).split(":") : ["1", "0"];
+
+        const vbW = 560;
+        const padL = 72;
+        const padR = 24;
+        const topY = 28;
+        const rowGap = tuning.length <= 4 ? 32 : 24;
+        const vbH = topY * 2 + (tuning.length - 1) * rowGap + 22;
+        const neckW = vbW - padL - padR;
+        const fretW = neckW / maxFret;
+
+        let fretsSvg = `
+          <rect x="${padL}" y="${topY - 10}" width="${neckW}" height="${(tuning.length - 1) * rowGap + 20}" rx="6" fill="#F4ECDD" stroke="#1F1A2E" stroke-width="2" />
+          <line x1="${padL}" y1="${topY - 10}" x2="${padL}" y2="${topY + (tuning.length - 1) * rowGap + 10}" stroke="#1F1A2E" stroke-width="5" />
+        `;
+
+        for (let f = 1; f <= maxFret; f++) {
+          const fx = Math.round(padL + f * fretW);
+          fretsSvg += `
+            <line x1="${fx}" y1="${topY - 8}" x2="${fx}" y2="${topY + (tuning.length - 1) * rowGap + 8}" stroke="#1F1A2E" stroke-width="${inst === "violin" ? "1.2" : "1.8"}" stroke-dasharray="${inst === "violin" ? "3 3" : "none"}" opacity="0.65" />
+            <text x="${fx - fretW / 2}" y="${vbH - 6}" text-anchor="middle" fill="#6F677D" font-size="11" font-weight="700">${toLocaleDigits(f)}</text>
+          `;
+        }
+
+        let stringsSvg = "";
+        let nodesSvg = "";
+        tuning.forEach((st, sIdx) => {
+          const sy = topY + sIdx * rowGap;
+          const strokeW = 1.2 + sIdx * 0.35;
+          stringsSvg += `
+            <text x="${padL - 36}" y="${sy + 4}" text-anchor="middle" fill="#1F1A2E" font-size="11.5" font-weight="700">S${st.string} (${st.name})</text>
+            <line x1="${padL}" y1="${sy}" x2="${padL + neckW}" y2="${sy}" stroke="#1F1A2E" stroke-width="${strokeW.toFixed(2)}" />
+          `;
+
+          for (let f = 0; f <= maxFret; f++) {
+            const posKey = `${st.string}:${f}`;
+            const isTarget = targetPos === posKey;
+            const nx = f === 0 ? padL - 12 : Math.round(padL + (f - 0.5) * fretW);
+            const r = isTarget ? 11.5 : 8.5;
+            const fill = isTarget ? (mp.playingDemo ? "#F2B33D" : "#1F6F6B") : "#FBF7F0";
+            const fg = isTarget ? (mp.playingDemo ? "#1F1A2E" : "#FFFFFF") : "#1F1A2E";
+            const stroke = isTarget ? "#1F1A2E" : "rgba(31,26,46,0.35)";
+
+            nodesSvg += `
+              <g style="cursor:pointer;" data-action="mp-fret-tap" data-pos="${posKey}">
+                <circle cx="${nx}" cy="${sy}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${isTarget ? 2.2 : 1.3}" />
+                <text x="${nx}" y="${sy + 3.8}" text-anchor="middle" fill="${fg}" font-size="10" font-weight="800">${f}</text>
+              </g>
+            `;
+          }
+        });
+
+        const seqBadges = positions
+          .map((p, idx) => {
+            const cls =
+              (mp.playingDemo && mp.demoIdx === idx) || (!mp.playingDemo && !mp.fretDone && idx === mp.fretIdx)
+                ? "current"
+                : mp.fretDone || idx < mp.fretIdx
+                ? "done"
+                : "";
+            return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(p)}</span>`;
+          })
+          .join("");
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎸 ${escapeHtml(t("practice.fretboardTitle"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+              <button type="button" class="btn-pill ${mp.playingDemo ? "btn-surface" : "btn-secondary"}" style="min-height:36px;padding:5px 14px;font-size:0.82rem;" data-action="mp-fret-demo">
+                <span>${mp.playingDemo ? "■" : "▶"}</span>
+                <span>${escapeHtml(mp.playingDemo ? t("practice.stopDemoBtn") : t("practice.playDemoBtn"))}</span>
+              </button>
+            </div>
+
+            <div class="vpiano-status-box">
+              ${
+                mp.fretDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : `<div style="font-size:0.9rem;font-weight:700;color:var(--secondary);">
+                      ${escapeHtml(t("practice.fretboardFollowHint", { string: targetS, fret: targetF }))}
+                    </div>`
+              }
+              <div class="vpiano-notes-seq">${seqBadges}</div>
+              ${mp.fretHint ? `<div class="vpiano-hint-alert">${escapeHtml(mp.fretHint)}</div>` : ""}
+            </div>
+
+            <div class="practice-svg-scroll" dir="ltr">
+              <svg viewBox="0 0 ${vbW} ${vbH}" width="${vbW}" height="${vbH}" style="width:100%;min-width:460px;height:auto;display:block;" dir="ltr">
+                ${fretsSvg}
+                ${stringsSvg}
+                ${nodesSvg}
+              </svg>
+            </div>
+          </div>
+        `;
+      }
+
+      /* 6. CHORD-DIAGRAM ENGINE */
+      const GUITAR_CHORD_SHAPES = {
+        Em: { frets: [0, 2, 2, 0, 0, 0], fingers: [0, 2, 3, 0, 0, 0] },
+        Am: { frets: [-1, 0, 2, 2, 1, 0], fingers: [0, 0, 2, 3, 1, 0] },
+        C: { frets: [-1, 3, 2, 0, 1, 0], fingers: [0, 3, 2, 0, 1, 0] },
+        G: { frets: [3, 2, 0, 0, 0, 3], fingers: [2, 1, 0, 0, 0, 3] },
+        D: { frets: [-1, -1, 0, 2, 3, 2], fingers: [0, 0, 0, 1, 3, 2] },
+        Dm: { frets: [-1, -1, 0, 2, 3, 1], fingers: [0, 0, 0, 2, 3, 1] },
+        E: { frets: [0, 2, 2, 1, 0, 0], fingers: [0, 2, 3, 1, 0, 0] },
+        A: { frets: [-1, 0, 2, 2, 2, 0], fingers: [0, 0, 1, 2, 3, 0] },
+        Fmaj7: { frets: [-1, -1, 3, 2, 1, 0], fingers: [0, 0, 3, 2, 1, 0] }
+      };
+
+      function playGuitarChordStrum(chordName, direction = "D") {
+        const shape = GUITAR_CHORD_SHAPES[chordName] || GUITAR_CHORD_SHAPES.Em;
+        // Strings from low E2 (index 0 -> string 6) to high E4 (index 5 -> string 1)
+        const baseMidis = [40, 45, 50, 55, 59, 64];
+        const activeNotes = [];
+        shape.frets.forEach((f, idx) => {
+          if (f >= 0) {
+            const midi = baseMidis[idx] + f;
+            activeNotes.push(440 * Math.pow(2, (midi - 69) / 12));
+          }
+        });
+        if (direction === "U") activeNotes.reverse();
+        activeNotes.forEach((freq, idx) => {
+          setTimeout(() => playStringInstrumentSound("guitar", freq, 1.25), idx * 28);
+        });
+      }
+
+      function renderSingleChordSvg(chordName) {
+        const shape = GUITAR_CHORD_SHAPES[chordName] || GUITAR_CHORD_SHAPES.Em;
+        const w = 132;
+        const h = 152;
+        const padX = 21;
+        const topY = 30;
+        const strGap = 18;
+        const fretGap = 24;
+
+        let svg = `<rect x="${padX}" y="${topY}" width="${strGap * 5}" height="${fretGap * 4}" fill="#FBF7F0" stroke="#1F1A2E" stroke-width="1.6" />`;
+        svg += `<line x1="${padX}" y1="${topY}" x2="${padX + strGap * 5}" y2="${topY}" stroke="#1F1A2E" stroke-width="4" />`;
+
+        for (let f = 1; f <= 4; f++) {
+          const fy = topY + f * fretGap;
+          svg += `<line x1="${padX}" y1="${fy}" x2="${padX + strGap * 5}" y2="${fy}" stroke="#1F1A2E" stroke-width="1.3" />`;
+        }
+
+        for (let s = 0; s < 6; s++) {
+          const sx = padX + s * strGap;
+          svg += `<line x1="${sx}" y1="${topY}" x2="${sx}" y2="${topY + fretGap * 4}" stroke="#1F1A2E" stroke-width="1.3" />`;
+          const fret = shape.frets[s];
+          const finger = shape.fingers[s];
+          if (fret === -1) {
+            svg += `<text x="${sx}" y="${topY - 8}" text-anchor="middle" fill="#D9473F" font-size="11" font-weight="800">✕</text>`;
+          } else if (fret === 0) {
+            svg += `<circle cx="${sx}" cy="${topY - 11}" r="4.5" fill="none" stroke="#1F6F6B" stroke-width="1.6" />`;
+          } else {
+            const cy = topY + (fret - 0.5) * fretGap;
+            svg += `
+              <circle cx="${sx}" cy="${cy}" r="7.5" fill="#1F1A2E" />
+              <text x="${sx}" y="${cy + 3.5}" text-anchor="middle" fill="#FBF7F0" font-size="9.5" font-weight="800">${finger || ""}</text>
+            `;
+          }
+        }
+
+        return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="display:block;margin:0 auto;">${svg}</svg>`;
+      }
+
+      function handleChordStrumTap(dir) {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const chords = Array.isArray(lesson.practice.chords) && lesson.practice.chords.length > 0 ? lesson.practice.chords : ["Em"];
+        const curChord = chords[mp.chordActiveIdx % chords.length] || chords[0];
+        playGuitarChordStrum(curChord, dir);
+
+        const pattern = String(lesson.practice.strum || "D D D D")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        if (mp.strumDone || pattern.length === 0) return;
+
+        const expectedDir = pattern[mp.strumIdx].toUpperCase();
+        if (dir === expectedDir) {
+          mp.strumIdx += 1;
+          if (mp.strumIdx % 2 === 0 && chords.length > 1) {
+            mp.chordActiveIdx = (mp.chordActiveIdx + 1) % chords.length;
+          }
+          if (mp.strumIdx >= pattern.length) {
+            mp.strumDone = true;
+            markLessonPracticeCompleted(lesson);
+          }
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function renderChordDiagramPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const chords = Array.isArray(lesson.practice.chords) && lesson.practice.chords.length > 0 ? lesson.practice.chords : ["Em"];
+        const pattern = String(lesson.practice.strum || "D D D D")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        const isCompleted = isLessonPracticeCompleted(lesson);
+        const nextDir = pattern[mp.strumIdx] || "D";
+
+        const chordsHtml = chords
+          .map((chName, idx) => {
+            const active = mp.chordActiveIdx === idx;
+            return `
+              <div class="chord-card-item ${active ? "active" : ""}" data-action="mp-select-chord" data-index="${idx}" data-chord="${escapeHtml(chName)}">
+                <div class="serif-heading" style="font-size:1.15rem;font-weight:700;margin-bottom:2px;">${escapeHtml(chName)}</div>
+                ${renderSingleChordSvg(chName)}
+              </div>
+            `;
+          })
+          .join("");
+
+        const patternHtml = pattern
+          .map((d, idx) => {
+            const cls = mp.strumDone || idx < mp.strumIdx ? "done" : idx === mp.strumIdx ? "current" : "";
+            const arrow = d.toUpperCase() === "U" ? "↑ U" : "↓ D";
+            return `<span class="vpiano-seq-badge ${cls}">${arrow}</span>`;
+          })
+          .join("");
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎸 ${escapeHtml(t("practice.chordTitle"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+
+            <div class="chord-boxes-row">${chordsHtml}</div>
+
+            <div class="vpiano-status-box">
+              ${
+                mp.strumDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : `<div style="font-size:0.9rem;font-weight:700;color:var(--secondary);">
+                      ${escapeHtml(t("practice.chordFollowInstruction", { current: mp.strumIdx + 1, total: pattern.length, dir: nextDir }))}
+                    </div>`
+              }
+              <div class="vpiano-notes-seq">${patternHtml}</div>
+            </div>
+
+            <div class="strum-btns-row">
+              <button type="button" class="btn-pill btn-secondary" style="min-height:48px;" data-action="mp-chord-strum" data-dir="D">
+                ${escapeHtml(t("practice.chordDownBtn"))}
+              </button>
+              <button type="button" class="btn-pill btn-surface" style="min-height:48px;" data-action="mp-chord-strum" data-dir="U">
+                ${escapeHtml(t("practice.chordUpBtn"))}
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      /* 7. SANTUR-MAP ENGINE */
+      const SANTUR_KHARAKS = [
+        { note: "E4", fa: "می" },
+        { note: "F4", fa: "فا" },
+        { note: "G4", fa: "سل" },
+        { note: "A4", fa: "لا" },
+        { note: "B4", fa: "سی" },
+        { note: "C5", fa: "دو" },
+        { note: "D5", fa: "ر" },
+        { note: "E5", fa: "می" },
+        { note: "F5", fa: "فا" }
+      ];
+
+      function startSanturDemo() {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice || !Array.isArray(lesson.practice.notes)) return;
+        stopMultiPracticeTimers();
+        const mp = ui.multiPractice;
+        const notes = lesson.practice.notes;
+        const beatMs = 640;
+
+        mp.playingDemo = true;
+        mp.demoIdx = 0;
+        refreshLessonPianoMount(false);
+
+        notes.forEach((n, idx) => {
+          const tmr = setTimeout(() => {
+            if (!mp.playingDemo) return;
+            mp.demoIdx = idx;
+            playSanturNoteSound(n, 1.15);
+            refreshLessonPianoMount(false);
+          }, idx * beatMs);
+          mp.timers.push(tmr);
+        });
+
+        const endTmr = setTimeout(() => {
+          mp.playingDemo = false;
+          mp.demoIdx = -1;
+          refreshLessonPianoMount(false);
+        }, notes.length * beatMs + 100);
+        mp.timers.push(endTmr);
+      }
+
+      function handleSanturBridgeTap(noteName) {
+        const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+        if (!lesson || !lesson.practice) return;
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        playSanturNoteSound(noteName, 1.25);
+
+        if (mp.santurDone) return;
+        const notes = lesson.practice.notes || [];
+        const targetNote = notes[mp.santurIdx];
+        if (!targetNote) return;
+
+        if (noteName === targetNote) {
+          mp.santurHint = "";
+          mp.santurIdx += 1;
+          if (mp.santurIdx >= notes.length) {
+            mp.santurDone = true;
+            markLessonPracticeCompleted(lesson);
+          }
+        } else {
+          mp.santurHint = t("practice.santurWrongHint", { note: formatNoteWithSolfege(targetNote) });
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function renderSanturMapPracticeCard(lesson) {
+        syncMultiPracticeState(lesson);
+        const mp = ui.multiPractice;
+        const notes = Array.isArray(lesson.practice.notes) ? lesson.practice.notes : ["E4", "F4", "G4"];
+        const isCompleted = isLessonPracticeCompleted(lesson);
+
+        const targetNote = mp.playingDemo
+          ? notes[mp.demoIdx]
+          : !mp.santurDone
+          ? notes[mp.santurIdx]
+          : null;
+
+        // Build kharak list (include any extra note from lesson.practice.notes if outside default 9)
+        const kharaks = [...SANTUR_KHARAKS];
+        for (const n of notes) {
+          if (!kharaks.some((k) => k.note === n)) {
+            kharaks.unshift({ note: n, fa: n });
+          }
+        }
+
+        const vbW = 540;
+        const vbH = 236;
+        const topY = 22;
+        const botY = 214;
+        const rowCount = kharaks.length;
+        const rowStep = (botY - topY - 24) / Math.max(1, rowCount - 1);
+
+        let coursesSvg = "";
+        kharaks.forEach((kh, idx) => {
+          // Bottom kharak = index 0 (E4), top kharak = highest note
+          const revIdx = rowCount - 1 - idx;
+          const y = Math.round(topY + 12 + revIdx * rowStep);
+          const ratio = (y - topY) / (botY - topY);
+          const leftX = Math.round(92 - ratio * 58);
+          const rightX = Math.round(448 + ratio * 58);
+          const kharakX = Math.round(350 + ratio * 28);
+          const isTarget = targetNote === kh.note;
+          const strokeCol = isTarget ? "#1F6F6B" : "#1F1A2E";
+          const bridgeFill = isTarget ? (mp.playingDemo ? "#F2B33D" : "#1F6F6B") : "#FBF7F0";
+          const bridgeFg = isTarget ? (mp.playingDemo ? "#1F1A2E" : "#FFFFFF") : "#1F1A2E";
+
+          coursesSvg += `
+            <g style="cursor:pointer;" data-action="mp-santur-tap" data-note="${kh.note}">
+              <line x1="${leftX}" y1="${y}" x2="${rightX}" y2="${y}" stroke="${strokeCol}" stroke-width="${isTarget ? 2.6 : 1.3}" />
+              <circle cx="${kharakX}" cy="${y}" r="${isTarget ? 11 : 8.5}" fill="${bridgeFill}" stroke="#1F1A2E" stroke-width="1.6" />
+              <text x="${kharakX}" y="${y + 3.5}" text-anchor="middle" fill="${bridgeFg}" font-size="9.5" font-weight="800">${kh.note}</text>
+              <text x="${rightX + 24}" y="${y + 4}" text-anchor="middle" fill="#1F1A2E" font-size="10.5" font-weight="700">${kh.fa}</text>
+            </g>
+          `;
+        });
+
+        const seqBadges = notes
+          .map((n, idx) => {
+            const cls =
+              (mp.playingDemo && mp.demoIdx === idx) || (!mp.playingDemo && !mp.santurDone && idx === mp.santurIdx)
+                ? "current"
+                : mp.santurDone || idx < mp.santurIdx
+                ? "done"
+                : "";
+            return `<span class="vpiano-seq-badge ${cls}">${escapeHtml(formatNoteWithSolfege(n))}</span>`;
+          })
+          .join("");
+
+        return `
+          <div id="vpiano-lesson-mount" class="m-card vpiano-card">
+            <div class="vpiano-header-row">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎶 ${escapeHtml(t("practice.santurTitle"))}</span>
+                ${
+                  isCompleted
+                    ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                    : ""
+                }
+              </div>
+              <button type="button" class="btn-pill ${mp.playingDemo ? "btn-surface" : "btn-secondary"}" style="min-height:36px;padding:5px 14px;font-size:0.82rem;" data-action="mp-santur-demo">
+                <span>${mp.playingDemo ? "■" : "▶"}</span>
+                <span>${escapeHtml(mp.playingDemo ? t("practice.stopDemoBtn") : t("practice.playDemoBtn"))}</span>
+              </button>
+            </div>
+
+            <div class="vpiano-status-box">
+              ${
+                mp.santurDone
+                  ? `<div class="vpiano-well-done">
+                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : `<div style="font-size:0.9rem;font-weight:700;color:var(--secondary);">
+                      ${escapeHtml(t("practice.santurFollowHint", { note: formatNoteWithSolfege(targetNote || "") }))}
+                    </div>`
+              }
+              <div class="vpiano-notes-seq">${seqBadges}</div>
+              ${mp.santurHint ? `<div class="vpiano-hint-alert">${escapeHtml(mp.santurHint)}</div>` : ""}
+            </div>
+
+            <div class="practice-svg-scroll" dir="ltr">
+              <svg viewBox="0 0 ${vbW} ${vbH}" width="${vbW}" height="${vbH}" style="width:100%;min-width:460px;height:auto;display:block;" dir="ltr">
+                <polygon points="92,${topY} 448,${topY} 506,${botY} 34,${botY}" fill="#EFE5D4" stroke="#1F1A2E" stroke-width="2.2" stroke-linejoin="round" />
+                ${coursesSvg}
+              </svg>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderLessonPracticeCard(lesson) {
+        if (!lesson || !lesson.practice) return "";
+        const pType = getPracticeType(lesson.practice);
+        switch (pType) {
+          case "rhythm-tap":
+            return renderRhythmTapPracticeCard(lesson);
+          case "ear-choice":
+            return renderEarChoicePracticeCard(lesson);
+          case "listen-sing":
+            return renderListenSingPracticeCard(lesson);
+          case "timer":
+            return renderTimerPracticeCard(lesson);
+          case "fretboard":
+            return renderFretboardPracticeCard(lesson);
+          case "chord-diagram":
+            return renderChordDiagramPracticeCard(lesson);
+          case "santur-map":
+            return renderSanturMapPracticeCard(lesson);
+          case "keyboard-follow":
+          default:
+            return renderKeyboardFollowPracticeCard(lesson);
+        }
+      }
+
+      /* ==========================================================================
+         REUSABLE COURSE PICKER & TEACHER REVIEW BADGE
+         ========================================================================== */
+      function renderTeacherReviewBadge(item, fallbackCourse) {
+        const isTeacher =
+          (item && item.review === "teacher") ||
+          (fallbackCourse && fallbackCourse.review === "teacher");
+        if (!isTeacher) return "";
+        return `
+          <span class="badge-teacher-review">
+            <span>✎</span>
+            <span>${escapeHtml(t("courses.teacherReviewBadge"))}</span>
+          </span>
+        `;
+      }
+
+      function renderCoursePickerBar() {
+        const sorted = [...COURSES].sort((a, b) => (a.order || 99) - (b.order || 99));
+        const activeId = state.activeCourseId || "piano";
+
+        const pills = sorted
+          .map((c) => {
+            const isAct = c.id === activeId;
+            const lessons = getCourseLessons(c.id);
+            const hasLessons = lessons.length > 0;
+            const subText = hasLessons
+              ? t("courses.lessonsReadyCount", { count: lessons.length })
+              : t("courses.comingSoonBadge");
+            return `
+              <button type="button" class="course-picker-pill ${isAct ? "active" : ""}" data-action="select-course" data-course-id="${escapeHtml(c.id)}">
+                <span class="course-picker-icon">${getInstrumentSvg(c.icon)}</span>
+                <span class="course-picker-meta">
+                  <span class="course-picker-title">${escapeHtml(lField(c.title))}</span>
+                  <span class="course-picker-sub">
+                    <span>${escapeHtml(subText)}</span>
+                    ${c.review === "teacher" ? `<span style="color:#D9473F;">· ✎</span>` : ""}
+                  </span>
+                </span>
+              </button>
+            `;
+          })
+          .join("");
+
+        return `
+          <div class="course-picker-section" role="region" aria-label="${escapeHtml(t("courses.pickerLabel"))}">
+            <div class="course-picker-scroll">
+              ${pills}
+            </div>
+          </div>
+        `;
+      }
+
+      function renderCourseComingSoonCard(courseOrId) {
+        const c =
+          typeof courseOrId === "string"
+            ? getCourseMeta(courseOrId)
+            : courseOrId || getCourseMeta();
+        return `
+          <div class="m-card coming-soon-course-card">
+            <div style="width:156px;margin:0 auto 14px;">
+              ${renderArchPlaceholder({
+                imageUrl: c.coverImage || `assets/course-${c.id}.jpeg`,
+                ratio: "compact",
+                uid: `course-soon-${c.id}`,
+                courseId: c.id
+              })}
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+              <span class="badge-saffron">${escapeHtml(t("courses.comingSoonBadge"))}</span>
+              ${renderTeacherReviewBadge(c)}
+            </div>
+            <h2 class="serif-heading" style="font-size:1.38rem;margin-bottom:8px;">
+              ${escapeHtml(t("courses.comingSoonTitle", { course: lField(c.title) }))}
+            </h2>
+            ${
+              c.subtitle
+                ? `<p style="font-size:0.9rem;color:var(--secondary);font-weight:600;margin-bottom:8px;">${escapeHtml(lField(c.subtitle))}</p>`
+                : ""
+            }
+            <p style="font-size:0.9rem;color:var(--muted);line-height:1.55;margin-bottom:18px;">
+              ${escapeHtml(t("courses.comingSoonSub"))}
+            </p>
+            <button type="button" class="btn-pill btn-primary" data-action="select-course" data-course-id="piano">
+              <span>🎹</span>
+              <span>${escapeHtml(t("courses.backToPianoBtn"))}</span>
+            </button>
+          </div>
+        `;
       }
 
       /* ==========================================================================
@@ -4475,14 +6937,29 @@
         return null;
       }
 
+      function getLessonChapterIndex(lesson) {
+        if (!lesson || !Array.isArray(LESSONS) || LESSONS.length === 0) return 0;
+        const seen = [];
+        for (const l of LESSONS) {
+          const chName = lField(l.chapter);
+          if (!seen.includes(chName)) seen.push(chName);
+          if (l.id === lesson.id) return Math.max(0, seen.indexOf(chName));
+        }
+        return Math.floor(((lesson.id || 1) - 1) / 4);
+      }
+
       function renderHomeScreen() {
         const displayName = state.userName ? state.userName : t("home.defaultName");
+        const activeCourse = getCourseMeta(state.activeCourseId);
+        const courseHasLessons = LESSONS.length > 0;
         const nextLesson = getNextUnlockedLesson();
-        const totalLessons = LESSONS.length || 24;
-        const doneCount = state.completedLessons.length;
-        const pct = Math.round((doneCount / totalLessons) * 100);
+        const totalLessons = courseHasLessons ? LESSONS.length : 0;
+        const doneCount = courseHasLessons ? state.completedLessons.length : 0;
+        const pct = totalLessons > 0 ? Math.round((doneCount / totalLessons) * 100) : 0;
         const currentChapterLesson = nextLesson || LESSONS[LESSONS.length - 1];
-        const currentChapterTitle = currentChapterLesson ? lField(currentChapterLesson.chapter) : "";
+        const currentChapterTitle = currentChapterLesson
+          ? lField(currentChapterLesson.chapter)
+          : lField(activeCourse.title);
 
         // Weekly streak dots (7 days)
         const dayLabels = t("home.weekDays");
@@ -4560,7 +7037,7 @@
                   <!-- TODAY'S PLAN Card (Mockup 1) -->
                   <section class="m-card todays-plan-card">
                     <div class="kicker-staff-row">
-                      <span class="kicker-label">${escapeHtml(t("home.todaysPlanKicker"))}</span>
+                      <span class="kicker-label">${escapeHtml(t("home.todaysPlanKicker"))} · ${escapeHtml(lField(activeCourse.title))}</span>
                       <div class="staff-5lines-bar"></div>
                     </div>
 
@@ -4570,12 +7047,27 @@
                     </svg>
 
                     ${
-                      nextLesson
+                      !courseHasLessons
+                        ? `<div style="position:relative;z-index:2;">
+                            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                              <span class="badge-saffron">${escapeHtml(t("courses.comingSoonBadge"))}</span>
+                              ${renderTeacherReviewBadge(null, activeCourse)}
+                            </div>
+                            <h2 class="todays-plan-title" style="margin-bottom:8px;">${escapeHtml(lField(activeCourse.title))}</h2>
+                            <p style="font-size:0.92rem;color:var(--muted);margin-bottom:16px;">
+                              ${escapeHtml(t("courses.comingSoonDesc"))}
+                            </p>
+                            <button type="button" class="btn-pill btn-primary" data-action="select-course" data-course-id="piano">
+                              <span>${escapeHtml(t("courses.backToPianoBtn"))}</span>
+                            </button>
+                          </div>`
+                        : nextLesson
                         ? `<div class="todays-plan-body">
                             <div style="min-width:0;">
                               <div class="todays-plan-meta">
                                 <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: nextLesson.id }))}</span>
                                 <span style="font-weight:500;color:var(--muted);">· ${toLocaleDigits(nextLesson.minutes)} ${escapeHtml(t("path.minutesUnit"))}</span>
+                                ${renderTeacherReviewBadge(nextLesson, activeCourse)}
                               </div>
                               <h2 class="todays-plan-title">${escapeHtml(lField(nextLesson.title))}</h2>
                               <div>
@@ -4587,9 +7079,12 @@
                             </div>
                             <div style="min-width:0;">
                               ${renderArchPlaceholder({
-                                imageUrl: nextLesson.imageUrl || ASSETS.todayPlan,
+                                imageUrl: nextLesson.imageUrl || (state.activeCourseId === "piano" ? ASSETS.todayPlan : ""),
                                 ratio: "compact",
-                                uid: "home-today"
+                                uid: "home-today",
+                                lessonId: nextLesson.id,
+                                courseId: state.activeCourseId,
+                                chapterIndex: getLessonChapterIndex(nextLesson)
                               })}
                             </div>
                           </div>`
@@ -4665,12 +7160,14 @@
 
       /* ==========================================================================
          MOBILE LEARNING PATH SCREEN (MOCKUP 4)
+         - Course picker bar across all 9 courses
          - Chapter headings
          - Lesson cards with line-art instrument/music icons, teal checkmarks,
            pomegranate border + saffron "NOW" badge on current lesson, padlock on locked
          - Decorative 5-line staves with colored notes & pomegranates between chapters
          ========================================================================== */
       function renderPathScreen() {
+        const activeCourse = getCourseMeta(state.activeCourseId);
         const nextLesson = getNextUnlockedLesson();
         const currentLessonId = nextLesson ? nextLesson.id : -1;
 
@@ -4685,80 +7182,84 @@
           group.lessons.push(lesson);
         }
 
-        const iconCycle = ["drum", "keyboard", "setar", "piano", "tar", "santur", "violin"];
+        const chaptersHtml =
+          LESSONS.length === 0
+            ? renderCourseComingSoonCard(state.activeCourseId)
+            : chapters
+                .map((ch, chIdx) => {
+                  const cards = ch.lessons
+                    .map((lesson) => {
+                      const isDone = state.completedLessons.includes(lesson.id);
+                      const isCurrent = lesson.id === currentLessonId;
+                      const isUnlocked =
+                        isDone ||
+                        isCurrent ||
+                        state.completedLessons.includes(lesson.id - 1) ||
+                        lesson.id === 1;
+                      const statusClass = isCurrent ? "current" : !isUnlocked ? "locked" : "";
 
-        const chaptersHtml = chapters
-          .map((ch, chIdx) => {
-            const cards = ch.lessons
-              .map((lesson) => {
-                const isDone = state.completedLessons.includes(lesson.id);
-                const isCurrent = lesson.id === currentLessonId;
-                const isUnlocked =
-                  isDone ||
-                  isCurrent ||
-                  state.completedLessons.includes(lesson.id - 1) ||
-                  lesson.id === 1;
-                const statusClass = isCurrent ? "current" : !isUnlocked ? "locked" : "";
-                const iconKey = iconCycle[(lesson.id - 1) % iconCycle.length];
+                      let statusBadge = "";
+                      if (isDone) {
+                        statusBadge = `<span class="path-status-circle done" title="${escapeHtml(t("path.statusDone"))}">✓</span>`;
+                      } else if (isCurrent) {
+                        statusBadge = `<span class="path-status-circle current" title="${escapeHtml(t("path.statusCurrent"))}"><span class="dir-flip">▶</span></span>`;
+                      } else {
+                        statusBadge = `
+                          <span class="path-status-circle locked" title="${escapeHtml(t("path.statusLocked"))}">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Z"/></svg>
+                          </span>
+                        `;
+                      }
 
-                let statusBadge = "";
-                if (isDone) {
-                  statusBadge = `<span class="path-status-circle done" title="${escapeHtml(t("path.statusDone"))}">✓</span>`;
-                } else if (isCurrent) {
-                  statusBadge = `<span class="path-status-circle current" title="${escapeHtml(t("path.statusCurrent"))}"><span class="dir-flip">▶</span></span>`;
-                } else {
-                  statusBadge = `
-                    <span class="path-status-circle locked" title="${escapeHtml(t("path.statusLocked"))}">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Z"/></svg>
-                    </span>
+                      return `
+                        <button type="button" class="m-card path-lesson-card ${statusClass}" data-action="path-lesson-tap" data-lesson-id="${lesson.id}" data-unlocked="${isUnlocked}">
+                          ${
+                            isCurrent
+                              ? `<div class="panel-girih path-now-strip">
+                                  <span class="saffron-accent" aria-hidden="true">♪</span>
+                                  <span class="saffron-accent">${escapeHtml(t("path.statusCurrent"))}</span>
+                                </div>`
+                              : ""
+                          }
+                          <div class="path-icon-box">
+                            ${renderArchPlaceholder({
+                              imageUrl: lesson.imageUrl || (state.activeCourseId === "piano" ? getDefaultLessonImage(lesson.id) : ""),
+                              ratio: "compact",
+                              uid: `path-lesson-${state.activeCourseId}-${lesson.id}`,
+                              lessonId: lesson.id,
+                              courseId: state.activeCourseId,
+                              chapterIndex: chIdx
+                            })}
+                          </div>
+                          <div style="flex:1;min-width:0;">
+                            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:5px;">
+                              <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: lesson.id }))}</span>
+                              <span style="font-size:0.8rem;color:var(--muted);font-weight:500;">
+                                · ${toLocaleDigits(lesson.minutes)} ${escapeHtml(t("path.minutesUnit"))}
+                              </span>
+                              ${renderTeacherReviewBadge(lesson, activeCourse)}
+                            </div>
+                            <div class="serif-heading" style="font-size:1.12rem;font-weight:600;">
+                              ${escapeHtml(lField(lesson.title))}
+                            </div>
+                          </div>
+                          ${statusBadge}
+                        </button>
+                      `;
+                    })
+                    .join("");
+
+                  return `
+                    <section class="chapter-block">
+                      <h2 class="chapter-heading serif-heading">${escapeHtml(ch.name)}</h2>
+                      <div class="chapter-lessons-grid">
+                        ${cards}
+                      </div>
+                      ${chIdx < chapters.length - 1 ? renderStaffDividerWithPomegranates() : ""}
+                    </section>
                   `;
-                }
-
-                return `
-                  <button type="button" class="m-card path-lesson-card ${statusClass}" data-action="path-lesson-tap" data-lesson-id="${lesson.id}" data-unlocked="${isUnlocked}">
-                    ${
-                      isCurrent
-                        ? `<div class="panel-girih path-now-strip">
-                            <span class="saffron-accent" aria-hidden="true">♪</span>
-                            <span class="saffron-accent">${escapeHtml(t("path.statusCurrent"))}</span>
-                          </div>`
-                        : ""
-                    }
-                    <div class="path-icon-box">
-                      ${renderArchPlaceholder({
-                        imageUrl: lesson.imageUrl || getDefaultLessonImage(lesson.id),
-                        ratio: "compact",
-                        uid: `path-lesson-${lesson.id}`
-                      })}
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:5px;">
-                        <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: lesson.id }))}</span>
-                        <span style="font-size:0.8rem;color:var(--muted);font-weight:500;">
-                          · ${toLocaleDigits(lesson.minutes)} ${escapeHtml(t("path.minutesUnit"))}
-                        </span>
-                      </div>
-                      <div class="serif-heading" style="font-size:1.12rem;font-weight:600;">
-                        ${escapeHtml(lField(lesson.title))}
-                      </div>
-                    </div>
-                    ${statusBadge}
-                  </button>
-                `;
-              })
-              .join("");
-
-            return `
-              <section class="chapter-block">
-                <h2 class="chapter-heading serif-heading">${escapeHtml(ch.name)}</h2>
-                <div class="chapter-lessons-grid">
-                  ${cards}
-                </div>
-                ${chIdx < chapters.length - 1 ? renderStaffDividerWithPomegranates() : ""}
-              </section>
-            `;
-          })
-          .join("");
+                })
+                .join("");
 
         return `
           <div class="mobile-shell">
@@ -4769,7 +7270,11 @@
               </button>
             </header>
             <main class="screen-body">
-              <h1 class="serif-heading" style="font-size:clamp(1.65rem, 2.5vw, 2.15rem);margin-bottom:18px;">${escapeHtml(t("path.title"))}</h1>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+                <h1 class="serif-heading" style="font-size:clamp(1.65rem, 2.5vw, 2.15rem);margin:0;">${escapeHtml(t("path.title"))}</h1>
+                ${LESSONS.length > 0 ? renderTeacherReviewBadge(null, activeCourse) : ""}
+              </div>
+              ${renderCoursePickerBar()}
               ${chaptersHtml}
             </main>
             ${renderBottomNav("path")}
@@ -4800,6 +7305,8 @@
       function renderLessonScreen() {
         const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
         if (!lesson) return renderHomeScreen();
+        const activeCourse = getCourseMeta(state.activeCourseId);
+        const chapterIdx = getLessonChapterIndex(lesson);
 
         const stepIdx = ui.lessonStepIndex; // 0..4
         const totalSteps = 5;
@@ -4844,7 +7351,7 @@
                 .join("")}
             </ol>
 
-            <!-- Interactive Virtual Piano Practice Mode (shown when lesson.practice exists) -->
+            <!-- Interactive Practice Mode (shown when lesson.practice exists) -->
             ${
               lesson.practice
                 ? renderLessonPracticeCard(lesson)
@@ -5011,10 +7518,11 @@
                 <div class="panel-girih lesson-celebration-panel">
                   <div style="text-align:center;margin-bottom:20px;">
                     ${celebrationNotesSvg}
-                    <div style="margin-bottom:10px;">
+                    <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
                       <span class="lesson-num-badge">
                         ${escapeHtml(t("lesson.kicker", { id: lesson.id }))}
                       </span>
+                      ${renderTeacherReviewBadge(lesson, activeCourse)}
                     </div>
                     <h1 class="serif-heading" style="font-size:clamp(1.65rem, 2.6vw, 2.2rem);color:#FBF7F0;margin-bottom:6px;">
                       ${escapeHtml(lField(lesson.title))}
@@ -5098,10 +7606,11 @@
 
             <main class="screen-body">
               <div style="text-align:center;margin-bottom:16px;">
-                <div style="margin-bottom:8px;">
+                <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
                   <span class="lesson-num-badge">
                     ${escapeHtml(t("lesson.kicker", { id: lesson.id }))}
                   </span>
+                  ${renderTeacherReviewBadge(lesson, activeCourse)}
                 </div>
                 <h1 class="serif-heading" style="font-size:clamp(1.75rem, 2.8vw, 2.35rem);margin-bottom:4px;">
                   ${escapeHtml(lField(lesson.title))}
@@ -5114,10 +7623,13 @@
               <div class="lesson-split-grid">
                 <div class="lesson-col-arch ${stepIdx > 0 ? "hide-on-mobile-steps" : ""}">
                   ${renderArchPlaceholder({
-                    imageUrl: lesson.imageUrl || getDefaultLessonImage(lesson.id),
+                    imageUrl: lesson.imageUrl || (state.activeCourseId === "piano" ? getDefaultLessonImage(lesson.id) : ""),
                     ratio: "tall",
                     caption: lField(lesson.goal),
-                    uid: `lesson-${lesson.id}`
+                    uid: `lesson-${state.activeCourseId}-${lesson.id}`,
+                    lessonId: lesson.id,
+                    courseId: state.activeCourseId,
+                    chapterIndex: chapterIdx
                   })}
                 </div>
                 <div class="lesson-col-content">
@@ -5320,6 +7832,7 @@
          LIBRARY SCREEN (My Lessons + Teachers Section)
          ========================================================================== */
       function renderLibraryScreen() {
+        const activeCourse = getCourseMeta(state.activeCourseId);
         const search = (ui.librarySearch || "").trim().toLowerCase();
         const filtered = LESSONS.filter((l) => {
           if (!search) return true;
@@ -5355,40 +7868,46 @@
                 ${
                   ui.libraryTab === "lessons"
                     ? `<div>
-                        <input type="search" id="library-search-input" class="m-input" style="margin-bottom:16px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
+                        ${renderCoursePickerBar()}
                         ${
-                          filtered.length === 0
-                            ? `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
-                            : `<div class="library-lessons-grid">
-                                ${filtered
-                                  .map(
-                                    (l) => `
-                                      <div class="m-card" style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">
-                                        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
-                                          <div style="min-width:0;flex:1;">
-                                            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
-                                              <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: l.id }))}</span>
-                                              <span style="font-size:0.78rem;color:var(--muted);">
-                                                ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
-                                              </span>
+                          LESSONS.length === 0
+                            ? renderCourseComingSoonCard(state.activeCourseId)
+                            : `<input type="search" id="library-search-input" class="m-input" style="margin-bottom:16px;" placeholder="${escapeHtml(t("library.searchPlaceholder"))}" value="${escapeHtml(ui.librarySearch)}" />
+                              ${
+                                filtered.length === 0
+                                  ? `<div class="m-card surface-fill" style="text-align:center;">${escapeHtml(t("library.noResults"))}</div>`
+                                  : `<div class="library-lessons-grid">
+                                      ${filtered
+                                        .map(
+                                          (l) => `
+                                            <div class="m-card" style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">
+                                              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+                                                <div style="min-width:0;flex:1;">
+                                                  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+                                                    <span class="lesson-num-badge">${escapeHtml(t("lesson.kicker", { id: l.id }))}</span>
+                                                    <span style="font-size:0.78rem;color:var(--muted);">
+                                                      ${escapeHtml(lField(l.chapter))} · ${toLocaleDigits(l.minutes)} ${escapeHtml(t("path.minutesUnit"))}
+                                                    </span>
+                                                    ${renderTeacherReviewBadge(l, activeCourse)}
+                                                  </div>
+                                                  <div class="serif-heading" style="font-size:1.1rem;">
+                                                    ${escapeHtml(lField(l.title))}
+                                                  </div>
+                                                </div>
+                                                <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;flex-shrink:0;" data-action="open-lesson" data-lesson-id="${l.id}">
+                                                  ${escapeHtml(t("library.openBtn"))}
+                                                </button>
+                                              </div>
+                                              <div style="font-size:0.86rem;line-height:1.55;color:var(--ink);border-top:1px solid var(--border-subtle);padding-top:10px;">
+                                                <p>${formatBidiText(lField(l.see))}</p>
+                                                ${l.diagram ? drawKeyboard(l.diagram) : ""}
+                                              </div>
                                             </div>
-                                            <div class="serif-heading" style="font-size:1.1rem;">
-                                              ${escapeHtml(lField(l.title))}
-                                            </div>
-                                          </div>
-                                          <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.84rem;flex-shrink:0;" data-action="open-lesson" data-lesson-id="${l.id}">
-                                            ${escapeHtml(t("library.openBtn"))}
-                                          </button>
-                                        </div>
-                                        <div style="font-size:0.86rem;line-height:1.55;color:var(--ink);border-top:1px solid var(--border-subtle);padding-top:10px;">
-                                          <p>${formatBidiText(lField(l.see))}</p>
-                                          ${l.diagram ? drawKeyboard(l.diagram) : ""}
-                                        </div>
-                                      </div>
-                                    `
-                                  )
-                                  .join("")}
-                              </div>`
+                                          `
+                                        )
+                                        .join("")}
+                                    </div>`
+                              }`
                         }
                       </div>`
                     : ui.libraryTab === "piano"
@@ -5408,6 +7927,7 @@
       function renderProfileScreen() {
         const displayName = state.userName ? state.userName : t("profile.guestUser");
         const displaySub = state.userEmail ? state.userEmail : t("profile.guestSub");
+        const activeCourse = getCourseMeta(state.activeCourseId);
 
         return `
           <div class="mobile-shell">
@@ -5444,7 +7964,7 @@
 
                   <div class="profile-setting-row">
                     <span style="font-size:0.9rem;font-weight:700;">${escapeHtml(t("profile.instLabel"))}</span>
-                    <span class="badge-saffron profile-setting-control" style="background-color:var(--secondary);color:#FFF;justify-content:center;">${escapeHtml(t("instruments.piano"))}</span>
+                    <span class="badge-saffron profile-setting-control" style="background-color:var(--secondary);color:#FFF;justify-content:center;">${escapeHtml(lField(activeCourse.title) || t("instruments.piano"))}</span>
                   </div>
 
                   <div class="profile-setting-row">
@@ -5770,6 +8290,7 @@
 
           case "nav-tab": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const tab = btn.getAttribute("data-tab");
             ui.screen = tab;
             render();
@@ -5777,8 +8298,15 @@
             break;
           }
 
+          case "select-course": {
+            const cid = btn.getAttribute("data-course-id") || "piano";
+            setActiveCourse(cid, true);
+            break;
+          }
+
           case "open-lesson": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const lid = Number(btn.getAttribute("data-lesson-id")) || 1;
             ui.activeLessonId = lid;
             ui.lessonStepIndex = 0;
@@ -5786,6 +8314,7 @@
             ui.quizSelected = null;
             ui.quizAnswered = false;
             ui.pianoPractice.lessonId = null;
+            ui.multiPractice.lessonKey = null;
             ui.screen = "lesson";
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -5800,12 +8329,14 @@
               return;
             }
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.activeLessonId = lid;
             ui.lessonStepIndex = 0;
             ui.selfCheckState = {};
             ui.quizSelected = null;
             ui.quizAnswered = false;
             ui.pianoPractice.lessonId = null;
+            ui.multiPractice.lessonKey = null;
             ui.screen = "lesson";
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -5814,12 +8345,14 @@
 
           case "close-lesson":
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.screen = "home";
             render();
             break;
 
           case "lesson-next-step":
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.lessonStepIndex = Math.min(4, ui.lessonStepIndex + 1);
             ui.quizSelected = null;
             ui.quizAnswered = false;
@@ -5829,6 +8362,7 @@
 
           case "lesson-prev-step":
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.lessonStepIndex = Math.max(0, ui.lessonStepIndex - 1);
             ui.quizSelected = null;
             ui.quizAnswered = false;
@@ -5885,8 +8419,154 @@
             refreshLessonPianoMount();
             break;
 
+          case "mp-rhythm-demo": {
+            if (ui.multiPractice.playingDemo) {
+              stopMultiPracticeTimers();
+              refreshLessonPianoMount(false);
+            } else {
+              startRhythmDemo();
+            }
+            break;
+          }
+
+          case "mp-rhythm-tap": {
+            handleRhythmTapAction();
+            break;
+          }
+
+          case "mp-ear-play": {
+            const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+            if (lesson) playCurrentEarChallenge(lesson);
+            break;
+          }
+
+          case "mp-ear-answer": {
+            const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+            if (!lesson) break;
+            syncMultiPracticeState(lesson);
+            const choice = btn.getAttribute("data-choice");
+            const mp = ui.multiPractice;
+            const curChallenge = mp.earChallenges[mp.earRoundIdx];
+            if (!curChallenge) break;
+            mp.earSelected = choice;
+            mp.earAnswered = true;
+            mp.earIsRight = choice === curChallenge.answer;
+            if (mp.earIsRight && mp.earRoundIdx + 1 >= mp.earChallenges.length) {
+              mp.earDone = true;
+              markLessonPracticeCompleted(lesson);
+            }
+            refreshLessonPianoMount(false);
+            break;
+          }
+
+          case "mp-ear-next": {
+            const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+            if (!lesson) break;
+            const mp = ui.multiPractice;
+            if (mp.earRoundIdx + 1 < mp.earChallenges.length) {
+              mp.earRoundIdx += 1;
+              mp.earSelected = null;
+              mp.earAnswered = false;
+              mp.earIsRight = false;
+              refreshLessonPianoMount(false);
+              playCurrentEarChallenge(lesson);
+            } else {
+              mp.earDone = true;
+              markLessonPracticeCompleted(lesson);
+              refreshLessonPianoMount(false);
+            }
+            break;
+          }
+
+          case "mp-sing-toggle-octave": {
+            ui.multiPractice.singOctaveLow = !ui.multiPractice.singOctaveLow;
+            refreshLessonPianoMount(false);
+            break;
+          }
+
+          case "mp-sing-listen": {
+            if (ui.multiPractice.playingDemo) {
+              stopMultiPracticeTimers();
+              refreshLessonPianoMount(false);
+            } else {
+              startListenSingDemo();
+            }
+            break;
+          }
+
+          case "mp-sing-confirm": {
+            const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+            if (!lesson) break;
+            ui.multiPractice.singDone = true;
+            markLessonPracticeCompleted(lesson);
+            refreshLessonPianoMount(false);
+            break;
+          }
+
+          case "mp-timer-toggle": {
+            togglePracticeTimer();
+            break;
+          }
+
+          case "mp-fret-demo": {
+            if (ui.multiPractice.playingDemo) {
+              stopMultiPracticeTimers();
+              refreshLessonPianoMount(false);
+            } else {
+              startFretboardDemo();
+            }
+            break;
+          }
+
+          case "mp-fret-tap": {
+            const posStr = btn.getAttribute("data-pos") || "1:0";
+            handleFretboardTap(posStr);
+            break;
+          }
+
+          case "mp-select-chord": {
+            const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
+            if (!lesson) break;
+            const cIdx = Number(btn.getAttribute("data-index")) || 0;
+            const chName = btn.getAttribute("data-chord") || "Em";
+            ui.multiPractice.chordActiveIdx = cIdx;
+            playGuitarChordStrum(chName, "D");
+            refreshLessonPianoMount(false);
+            break;
+          }
+
+          case "mp-chord-strum": {
+            const dir = btn.getAttribute("data-dir") || "D";
+            handleChordStrumTap(dir);
+            break;
+          }
+
+          case "mp-santur-demo": {
+            if (ui.multiPractice.playingDemo) {
+              stopMultiPracticeTimers();
+              refreshLessonPianoMount(false);
+            } else {
+              startSanturDemo();
+            }
+            break;
+          }
+
+          case "mp-santur-tap": {
+            const note = btn.getAttribute("data-note") || "E4";
+            handleSanturBridgeTap(note);
+            break;
+          }
+
+          case "mp-reset": {
+            stopMultiPracticeTimers();
+            ui.multiPractice.lessonKey = null;
+            refreshLessonPianoMount(false);
+            break;
+          }
+
           case "open-free-piano":
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.screen = "library";
             ui.libraryTab = "piano";
             render();
@@ -5914,6 +8594,7 @@
 
           case "complete-and-go-home": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             const nameInp = document.getElementById("l1-name-input");
             const emailInp = document.getElementById("l1-name-input") ? document.getElementById("l1-email-input") : null;
@@ -5933,6 +8614,7 @@
 
           case "complete-and-exit-lesson": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             const nameInp = document.getElementById("l1-name-input");
             const emailInp = document.getElementById("l1-email-input");
@@ -5952,6 +8634,7 @@
 
           case "start-skip-quiz": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const lid = Number(btn.getAttribute("data-lesson-id"));
             ui.activeLessonId = lid;
             ui.skipQuizIndex = 0;
@@ -5992,6 +8675,7 @@
 
           case "set-library-tab": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             ui.libraryTab = btn.getAttribute("data-tab");
             render();
             break;
@@ -6043,6 +8727,7 @@
 
           case "confirm-reset": {
             stopPianoWatchDemo();
+            stopMultiPracticeTimers();
             const keepLang = state.lang;
             try {
               window.localStorage.removeItem(STORAGE_KEY);
@@ -6062,6 +8747,8 @@
             state = {
               ...DEFAULT_STATE,
               lang: keepLang,
+              activeCourseId: "piano",
+              courseProgress: {},
               motivations: [...DEFAULT_STATE.motivations],
               completedLessons: [],
               activeDaysHistory: [],
@@ -6070,6 +8757,8 @@
               theme: "light",
               userChoseTheme: false
             };
+            ensureCourseProgressMap();
+            LESSONS = getCourseLessons("piano");
             ui.modal = null;
             ui.screen = "welcome";
             ui.activeLessonId = 1;
@@ -6087,6 +8776,8 @@
             ui.libraryTab = "lessons";
             ui.pianoPractice.lessonId = null;
             ui.pianoPractice.completedByLesson = {};
+            ui.multiPractice.lessonKey = null;
+            ui.multiPractice.completedByLesson = {};
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
             break;
@@ -6209,6 +8900,13 @@
         if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
         const tag = (e.target && e.target.tagName ? e.target.tagName : "").toLowerCase();
         if (tag === "input" || tag === "textarea" || tag === "select") return;
+
+        if ((e.code === "Space" || e.key === " ") && document.querySelector(".rhythm-tap-pad")) {
+          e.preventDefault();
+          handleRhythmTapAction();
+          return;
+        }
+
         if (!document.querySelector(".vpiano-keyboard")) return;
 
         const k = String(e.key || "").toLowerCase();
@@ -6304,10 +9002,11 @@
         applyDocumentLangAndTheme();
 
         try {
-          const [enRes, faRes, mistakesRes] = await Promise.all([
+          const [enRes, faRes, mistakesRes, coursesRes] = await Promise.all([
             fetch("locales/en.json", { cache: "no-store" }),
             fetch("locales/fa.json", { cache: "no-store" }),
-            fetch("content/mistakes.json", { cache: "no-store" })
+            fetch("content/mistakes.json", { cache: "no-store" }),
+            fetch("content/courses.json", { cache: "no-store" })
           ]);
           if (enRes.ok) {
             const enData = await enRes.json();
@@ -6318,19 +9017,42 @@
             LOCALES.fa = mergeLocaleData(FALLBACK_LOCALES.fa, faData);
           }
           if (mistakesRes.ok) MISTAKES = await mistakesRes.json();
+          if (coursesRes.ok) {
+            const cData = await coursesRes.json();
+            if (Array.isArray(cData) && cData.length > 0) {
+              COURSES = cData.slice().sort((a, b) => (a.order || 99) - (b.order || 99));
+            }
+          }
 
-          const lessonPromises = Array.from({ length: 24 }, (_, idx) => {
+          const pianoCount = Number(getCourseMeta("piano")?.lessonCount) || 24;
+          const lessonPromises = Array.from({ length: pianoCount }, (_, idx) => {
             const num = String(idx + 1).padStart(2, "0");
             return fetch(`content/lessons/lesson-${num}.json`).then((r) => (r.ok ? r.json() : null));
           });
           const loadedLessons = (await Promise.all(lessonPromises)).filter(Boolean);
           if (loadedLessons.length > 0) {
-            LESSONS = loadedLessons.sort((a, b) => a.id - b.id);
+            COURSE_LESSONS.piano = loadedLessons.sort((a, b) => a.id - b.id);
+          }
+
+          // Load lessons for any additional course in content/courses/<courseId>/lesson-NN.json
+          const otherCourses = COURSES.filter((c) => c.id !== "piano" && (Number(c.lessonCount) > 0 || c.status === "active"));
+          for (const course of otherCourses) {
+            const maxLessons = Number(course.lessonCount) || 12;
+            const cPromises = Array.from({ length: maxLessons }, (_, idx) => {
+              const num = String(idx + 1).padStart(2, "0");
+              return fetch(`content/courses/${course.id}/lesson-${num}.json`)
+                .then((r) => (r.ok ? r.json() : null))
+                .catch(() => null);
+            });
+            const cLoaded = (await Promise.all(cPromises)).filter(Boolean);
+            COURSE_LESSONS[course.id] = cLoaded.sort((a, b) => a.id - b.id);
           }
         } catch (err) {
           // Offline safety
         }
 
+        ensureCourseProgressMap();
+        setActiveCourse(state.activeCourseId || "piano", false);
         evaluateStreakOnLoad();
 
         if (state.onboardingComplete) {
