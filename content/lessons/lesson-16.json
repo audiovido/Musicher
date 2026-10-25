@@ -11,11 +11,11 @@
   "minutes": 7,
   "goal": {
     "en": "Play the opening theme of \"Twinkle Little Star\" (\"Ah! vous dirai-je, maman\") with your right hand in C.",
-    "fa": "بخش اصلی ملودی «ستاره‌ی کوچولو» (آهنگ سنتی فرانسوی Ah! vous dirai-je, maman) رو با دست راست در گام دو می‌نوازی."
+    "fa": "ملودی «ستاره‌ی کوچولو» (آهنگ قدیمی فرانسوی Ah! vous dirai-je, maman) رو با دست راست تو گام دو می‌زنی."
   },
   "see": {
     "en": "This beloved 18th-century French folk melody (\"Ah! vous dirai-je, maman\", public domain) brings together everything from Chapter 4: a wide leap from C4 up to G4, a neighbor step up to A4 and back to G4, and then a smooth downward walk step by step: F4, E4, D4, C4. Start with your right thumb (finger 1) on Middle C (C4), play G4 with finger 4 and A4 with finger 5 (pinky), then walk down 4–3–2–1 on F–E–D–C.",
-    "fa": "این ملودی محبوب و سنتی قرن هجدهم فرانسه (<span dir=\"ltr\">Ah! vous dirai-je, maman</span>، مالکیت عمومی) همه‌ی مهارت‌های فصل ۴ رو کنار هم میاره: یک جهش از دوی وسط (<span dir=\"ltr\">C4</span>) به سل (<span dir=\"ltr\">G4</span>)، یک قدم به بالا روی لا (<span dir=\"ltr\">A4</span>) و برگشت به سل، و بعد پایین اومدن قدم‌به‌قدم و پیوسته روی فا، می، ر، دو. شست دست راست (انگشت ۱) رو بذار روی دوی وسط، نت سل رو با انگشت ۴ و لا رو با انگشت ۵ (کوچک) بزن، و بعد روی فا–می–ر–دو با انگشت‌های ۴–۳–۲–۱ نرم پایین بیا."
+    "fa": "این ملودی قدیمی فرانسوی (<span dir=\"ltr\">Ah! vous dirai-je, maman</span>) همه‌ی چیزایی که تو فصل ۴ یاد گرفتی رو یک‌جا داره. اول از دوی وسط (<span dir=\"ltr\">C4</span>) می‌پره به سل (<span dir=\"ltr\">G4</span>)، بعد یه قدم می‌ره بالا رو لا (<span dir=\"ltr\">A4</span>) و برمی‌گرده به سل. آخرش هم قدم‌به‌قدم روی فا، می، ر، دو میاد پایین. شست دست راست (۱) رو بذار رو دوی وسط، سل رو با انگشت ۴ و لا رو با انگشت ۵ بزن، بعد با ۴–۳–۲–۱ روی فا–می–ر–دو نرم بیا پایین."
   },
   "imageUrl": "assets/lesson-16.jpeg",
   "audioUrl": "",
@@ -26,9 +26,9 @@
       "Connect both phrases at a steady tempo of 60 BPM using the practice keyboard below."
     ],
     "fa": [
-      "جمله‌ی اول رو با دست راست بزن: دو، دو (انگشت ۱)، پرش به سل، سل (انگشت ۴)، قدم به لا، لا (انگشت ۵) و نگه داشتن سل (انگشت ۴) به اندازه‌ی ۲ ضرب.",
-      "برای جمله‌ی دوم قدم‌به‌قدم و نرم پایین بیا: فا، فا (انگشت ۴)، می، می (انگشت ۳)، ر، ر (انگشت ۲) و نگه داشتن دو (انگشت ۱) به اندازه‌ی ۲ ضرب.",
-      "حالا هر دو جمله رو با ضرب آرام و یکنواخت پشت سر هم روی کیبورد تمرینی پایین اجرا کن."
+      "بخش اول رو با دست راست بزن: دو، دو (انگشت ۱)، بپر رو سل، سل (انگشت ۴)، برو رو لا، لا (انگشت ۵) و سل (۴) رو ۲ ضرب نگه دار.",
+      "بخش دوم رو قدم‌به‌قدم و نرم بیا پایین: فا، فا (انگشت ۴)، می، می (انگشت ۳)، ر، ر (انگشت ۲) و دو (۱) رو ۲ ضرب نگه دار.",
+      "حالا هر دو بخش رو پشت سر هم با ضرب ثابت رو کیبورد پایین بزن."
     ]
   },
   "practice": {
@@ -43,57 +43,57 @@
       "Did I hold the seventh note (G4) and the final note (C4) slightly longer so the melody could breathe?"
     ],
     "fa": [
-      "نت «لا» (A4) رو راحت با انگشت ۵ (کوچک) و بدون سفت کردن شانه یا مچ زدم؟",
-      "نت هفتم (سل) و نت آخر (دو) رو کمی بیشتر نگه داشتم تا جمله‌ی موسیقی نفس بکشه؟"
+      "نت «لا» (A4) رو راحت با انگشت ۵ زدم و مچم سفت نشد؟",
+      "نت هفتم (سل) و نت آخر (دو) رو یه کم بیشتر نگه داشتم؟"
     ]
   },
   "quiz": [
     {
       "question": {
         "en": "In \"Twinkle Little Star\" starting on C4, which note comes right after the two G4 notes (\"Twinkle, twinkle, little...\")?",
-        "fa": "در ملودی «ستاره‌ی کوچولو» که از دو شروع می‌شه، بلافاصله بعد از دو بار زدن نت «سل» کدوم نت میاد؟"
+        "fa": "تو «ستاره‌ی کوچولو»، بعد از دو بار زدن «سل» کدوم نت میاد؟"
       },
       "options": {
         "en": ["A4 (La), one step higher than G4", "F4 (Fa), one step lower than G4", "C5 (Do), an octave higher"],
-        "fa": ["نت لا (A4)، یک قدم بالاتر از سل", "نت فا (F4)، یک قدم پایین‌تر از سل", "نت دوی بالا (C5)"]
+        "fa": ["لا (A4)، یه قدم بالاتر از سل", "فا (F4)، یه قدم پایین‌تر از سل", "دوی بالا (C5)"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Bravo! After C–C–G–G, the melody steps up one white key to A4 (La) twice before returning to G4.",
-        "fa": "آفرین! بعد از دو–دو–سل–سل، ملودی یک کلید سفید بالاتر می‌ره و دو بار نت «لا» (A4) رو می‌زنه و بعد به سل برمی‌گرده."
+        "fa": "دمت گرم! بعد از دو–دو–سل–سل، ملودی یه کلید سفید می‌ره بالا رو «لا» (A4) و برمی‌گرده به سل."
       },
       "feedbackWrong": {
         "en": "Listen to how the melody rises on 'little': from G4 it steps up one white key to A4 (La) before coming back to G4.",
-        "fa": "به بالا رفتن صدا در این بخش دقت کن: ملودی از نت سل یک کلید سفید بالاتر می‌ره یعنی نت «لا» (A4) و بعد به سل برمی‌گرده."
+        "fa": "گوش کن چطور صدا می‌ره بالا: از سل یه کلید سفید می‌ره بالاتر رو «لا» (A4) و بعد برمی‌گرده به سل."
       }
     },
     {
       "question": {
         "en": "How does the second half of the melody (F4–F4–E4–E4–D4–D4–C4) move back home to C4?",
-        "fa": "نیمه‌ی دوم ملودی (فا–فا–می–می–ر–ر–دو) چطور به نت پایه‌ی «دو» برمی‌گرده؟"
+        "fa": "نیمه‌ی دوم ملودی (فا–فا–می–می–ر–ر–دو) چطوری برمی‌گرده به «دو»؟"
       },
       "options": {
         "en": ["By stepping down one neighbor white key at a time", "By skipping every other white key", "By jumping straight from F4 to C4"],
-        "fa": ["با پایین اومدن قدم‌به‌قدم روی کلیدهای سفید همسایه", "با پرش یکی‌درمیان از روی کلیدهای سفید", "با پریدن مستقیم از فا به دو"]
+        "fa": ["قدم‌به‌قدم روی کلیدهای سفید همسایه میاد پایین", "یکی‌درمیون از روی کلیدها می‌پره", "یهو از فا می‌پره به دو"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Exactly right! F, E, D, and C are neighbor white keys walking smoothly down step by step.",
-        "fa": "دقیقاً درسته! نت‌های فا، می، ر و دو کلیدهای سفید همسایه هستن که قدم‌به‌قدم و نرم به سمت پایین حرکت می‌کنن."
+        "fa": "دقیقاً! فا، می، ر و دو همسایه‌ن و قدم‌به‌قدم و نرم میان پایین."
       },
       "feedbackWrong": {
         "en": "Look at the keys F4, E4, D4, C4 on the keyboard—each one is the immediate neighbor to the left, so the melody walks down in steps.",
-        "fa": "به کلیدهای فا، می، ر و دو روی کیبورد نگاه کن؛ هرکدوم دقیقاً همسایه‌ی سمت چپِ قبلیه، پس ملودی قدم‌به‌قدم پایین میاد."
+        "fa": "به فا، می، ر و دو نگاه کن؛ هرکدوم همسایه‌ی قبلیه، پس ملودی قدم‌به‌قدم میاد پایین."
       }
     }
   ],
   "summary": {
     "en": "Congratulations on finishing Chapter 4! You combined leaps, steps, and smooth phrasing to play \"Twinkle Little Star\".",
-    "fa": "تبریک! فصل چهارم رو تموم کردی و با ترکیب پرش، قدم و جمله‌بندی نرم، قطعه‌ی «ستاره‌ی کوچولو» رو نواختی."
+    "fa": "ایول، فصل ۴ هم تموم شد! حالا با ترکیب پرش و قدم، «ستاره‌ی کوچولو» رو می‌زنی."
   },
   "tomorrow": {
     "en": "Review your favorite Chapter 4 lessons or practice \"Twinkle Little Star\" in Free-Play Piano.",
-    "fa": "مرور درس‌های محبوب فصل ۴ یا تمرین آزاد «ستاره‌ی کوچولو» در پیانوی آزاد."
+    "fa": "مرور درس‌های فصل ۴ یا زدن «ستاره‌ی کوچولو» تو پیانوی آزاد."
   },
   "source": {
     "creator": {

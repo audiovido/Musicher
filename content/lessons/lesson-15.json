@@ -11,11 +11,11 @@
   "minutes": 6,
   "goal": {
     "en": "Play the same five notes smoothly connected (legato) and then short and bouncy (staccato).",
-    "fa": "پنج نت رو یک بار نرم و پیوسته (لگاتو) و یک بار کوتاه و پرانرژی (استاکاتو) می‌نوازی."
+    "fa": "پنج نت رو یه بار نرم و پیوسته (لگاتو) و یه بار کوتاه و تند (استاکاتو) می‌زنی."
   },
   "see": {
     "en": "How you release a key changes the whole character of a melody. Legato means smooth and connected: hold one key down until the moment the next finger presses its key, like walking smoothly without gaps. Staccato means short and detached: tap the key gently with your fingertip and let it bounce right back up, like raindrops.",
-    "fa": "نحوه‌ی رها کردن کلید، حس‌و‌حال کل ملودی رو عوض می‌کنه. «لگاتو» یعنی پیوسته و نرم: یک کلید رو نگه دار تا دقیقاً لحظه‌ای که انگشت بعدی کلیدش رو فشار می‌ده، مثل قدم زدن آرام و بی‌وقفه. «استاکاتو» یعنی کوتاه و بریده: با نوک انگشت ضربه‌ای نرم به کلید بزن و سریع رهاش کن، مثل قطره‌های بارون."
+    "fa": "این‌که چطور کلید رو ول کنی حس کل ملودی رو عوض می‌کنه. «لگاتو» یعنی نرم و پیوسته: یه کلید رو نگه دار تا لحظه‌ای که انگشت بعدی کلیدش رو می‌زنه، مثل راه رفتن بدون مکث. «استاکاتو» یعنی کوتاه و بریده: با نوک انگشت یه ضربه‌ی نرم بزن و زود ولش کن، مثل قطره‌های بارون."
   },
   "imageUrl": "assets/lesson-15.jpeg",
   "audioUrl": "",
@@ -26,9 +26,9 @@
       "Now play C–D–E–F–G staccato (short): give each key a quick, light tap and release immediately while keeping your wrist relaxed."
     ],
     "fa": [
-      "انگشت‌های ۱ تا ۵ دست راست رو روی دو، ر، می، فا و سل بذار.",
-      "اول نت‌های دو–ر–می–فا–سل رو «لگاتو» (پیوسته) بزن: هر نت رو بدون فاصله‌ی سکوت به نت بعدی وصل کن و کلید قبلی رو هم‌زمان با پایین رفتن کلید جدید رها کن.",
-      "حالا همون دو–ر–می–فا–سل رو «استاکاتو» (کوتاه) بزن: با مچ راحت به هر کلید یک ضربه‌ی سبک و کوتاه بزن و زود رهاش کن."
+      "انگشت ۱ تا ۵ دست راست رو بذار روی دو، ر، می، فا و سل.",
+      "اول دو تا سل رو «لگاتو» (پیوسته) بزن: نت‌ها رو بی‌وقفه به هم وصل کن و کلید قبلی رو هم‌زمان با زدن کلید جدید ول کن.",
+      "حالا همون دو تا سل رو «استاکاتو» (کوتاه) بزن: با مچ آزاد به هر کلید یه ضربه‌ی سبک بزن و زود ولش کن."
     ]
   },
   "practice": {
@@ -43,57 +43,57 @@
       "In staccato, did my fingers bounce lightly without stiffening my wrist?"
     ],
     "fa": [
-      "در حالت لگاتو، کلید قبلی رو دقیقاً هم‌زمان با زدن کلید بعدی رها کردم تا صداها قاطی نشن؟",
-      "در حالت استاکاتو، بدون سفت کردن مچ، کلیدها رو سبک و کوتاه زدم؟"
+      "تو لگاتو، کلید قبلی رو هم‌زمان با زدن کلید بعدی ول کردم تا صداها قاطی نشن؟",
+      "تو استاکاتو، بدون سفت شدن مچ، کلیدها رو سبک و کوتاه زدم؟"
     ]
   },
   "quiz": [
     {
       "question": {
         "en": "What does playing 'legato' mean in music?",
-        "fa": "نواختن به صورت «لگاتو» (Legato) در موسیقی یعنی چی؟"
+        "fa": "«لگاتو» زدن یعنی چی؟"
       },
       "options": {
         "en": ["Smooth and connected, with no gaps between notes", "Short and detached, releasing each key right away", "Playing as loud and fast as possible"],
-        "fa": ["نرم و پیوسته، بدون فاصله‌ی سکوت بین نت‌ها", "کوتاه و بریده، با رها کردن فوری هر کلید", "نواختن با بیشترین سرعت و بلندی صدا"]
+        "fa": ["نرم و پیوسته، بدون سکوت بین نت‌ها", "کوتاه و بریده، با ول کردن فوری کلید", "خیلی بلند و تند زدن"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Correct! Legato connects each note smoothly to the next without silence in between.",
-        "fa": "درسته! در لگاتو هر نت به نرمی و بدون سکوت به نت بعدی وصل می‌شه."
+        "fa": "درسته! تو لگاتو هر نت نرم و بدون سکوت به نت بعدی وصل می‌شه."
       },
       "feedbackWrong": {
         "en": "Legato comes from the Italian word for 'tied together'—it means playing smoothly with no gaps between notes.",
-        "fa": "لگاتو یعنی به هم پیوسته؛ در این حالت نت‌ها نرم و بدون فاصله‌ی سکوت به هم وصل می‌شن."
+        "fa": "لگاتو یعنی پیوسته؛ نت‌ها نرم و بدون فاصله به هم وصل می‌شن."
       }
     },
     {
       "question": {
         "en": "How do you create a 'staccato' sound on the piano?",
-        "fa": "چطور روی پیانو صدای «استاکاتو» (Staccato) تولید می‌کنی؟"
+        "fa": "چطوری صدای «استاکاتو» درمیاری؟"
       },
       "options": {
         "en": ["Tap the key lightly and release it right away so the note is short", "Hold the key down for 4 full beats", "Press two neighbor keys at the same time"],
-        "fa": ["به کلید ضربه‌ای نرم می‌زنی و سریع رهاش می‌کنی تا صدا کوتاه بشه", "کلید رو ۴ ضرب کامل پایین نگه می‌داری", "دو کلید همسایه رو هم‌زمان فشار می‌دی"]
+        "fa": ["کلید رو سبک می‌زنی و زود ول می‌کنی تا صدا کوتاه شه", "کلید رو ۴ ضرب کامل نگه می‌داری", "دو تا کلید همسایه رو با هم می‌زنی"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Well done! A quick, relaxed release gives staccato its crisp, bouncy character.",
-        "fa": "آفرین! رها کردن سریع و راحتِ کلید باعث می‌شه صدای استاکاتو کوتاه و باطراوت شنیده بشه."
+        "fa": "آفرین! وقتی کلید رو زود و راحت ول کنی، صدا کوتاه و بانمک می‌شه."
       },
       "feedbackWrong": {
         "en": "Staccato notes are detached and short—you let the key come back up immediately after playing it.",
-        "fa": "نت‌های استاکاتو کوتاه و جدا از هم هستن؛ یعنی بلافاصله بعد از زدن کلید، انگشتت رو از روش برمی‌داری."
+        "fa": "استاکاتو یعنی کوتاه و جدا؛ همین که کلید رو زدی انگشتت رو از روش برمی‌داری."
       }
     }
   ],
   "summary": {
     "en": "You now have two expressive touches in your hands: smooth legato and crisp staccato.",
-    "fa": "حالا دو تکنیک بیانگر در دستانت داری: لگاتوی نرم و پیوسته، و استاکاتوی کوتاه و بریده."
+    "fa": "حالا دو مدل زدن بلدی: لگاتوی نرم و استاکاتوی کوتاه."
   },
   "tomorrow": {
     "en": "Playing your new piece: Twinkle Little Star!",
-    "fa": "نواختن قطعه‌ی جدیدت: ستاره‌ی کوچولو (Twinkle Little Star)!"
+    "fa": "آهنگ جدیدت: ستاره‌ی کوچولو!"
   },
   "source": {
     "creator": {

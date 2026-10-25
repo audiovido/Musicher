@@ -11,11 +11,11 @@
   "minutes": 6,
   "goal": {
     "en": "Find Middle C (C4), low C (C3), and high C (C5), and understand where each hand naturally sits.",
-    "fa": "دوی وسط (C4)، دوی بم (C3) و دوی زیر (C5) رو پیدا می‌کنی و جای طبیعی هر دست رو روی کیبورد می‌شناسی."
+    "fa": "دوی وسط (C4)، دوی بم (C3) و دوی زیر (C5) رو پیدا می‌کنی و می‌فهمی هر دست کجا راحته."
   },
   "see": {
     "en": "Middle C (C4) is your home base near the center of the keyboard. Moving to the left makes notes sound deeper and lower: the C one octave below is C3, where your left hand comfortably sits. Moving to the right makes notes sound brighter and higher: the C one octave above is C5, in your right hand's higher register.",
-    "fa": "«دوی وسط» (<span dir=\"ltr\">C4</span>) نقطه‌ی مرجع تو در وسط کیبورده. هرچه به سمت چپ بری صداها بم‌تر و عمیق‌تر می‌شن: یک اکتاو پایین‌تر <span dir=\"ltr\">C3</span> قرار داره که جای راحتِ دست چپه. هرچه به سمت راست بری صداها زیرتر و روشن‌تر می‌شن: یک اکتاو بالاتر <span dir=\"ltr\">C5</span> قرار داره که در محدوده‌ی بالای دست راسته."
+    "fa": "«دوی وسط» (<span dir=\"ltr\">C4</span>) خونه‌ی اصلی تو وسط کیبورده. سمت چپ صداها بم‌ترن: یه اکتاو پایین‌تر <span dir=\"ltr\">C3</span> هست که جای راحت دست چپه. سمت راست صداها زیرترن: یه اکتاو بالاتر <span dir=\"ltr\">C5</span> هست که با دست راست می‌زنی."
   },
   "imageUrl": "assets/lesson-14.jpeg",
   "audioUrl": "",
@@ -26,15 +26,15 @@
       "Play C3, then C4, then C5, and come back to Middle C (C4), listening to how the same note sounds in three octaves."
     ],
     "fa": [
-      "سه دسته‌ی ۲تایی کلید سیاه رو پیدا کن و کلید «دو» رو درست سمت چپ هرکدوم ببین: دوی بم (C3)، دوی وسط (C4) و دوی زیر (C5).",
-      "ببین چطور دست چپ به شکل طبیعی سمت بم‌تر (C3 تا G3) و دست راست روی دوی وسط (C4) و بالاتر قرار می‌گیره.",
-      "به ترتیب C3، بعد C4، بعد C5 رو بزن و دوباره به دوی وسط (C4) برگرد و به صدای یک نت در سه اکتاو گوش بده."
+      "سه گروه دوتایی سیاه رو پیدا کن و «دو»ی سمت چپ هرکدوم رو ببین: C3 (بم)، C4 (وسط) و C5 (زیر).",
+      "ببین دست چپت چقدر راحت سمت بم (C3) می‌شینه و دست راستت روی دوی وسط (C4) و بالاتر.",
+      "به ترتیب C3، بعد C4، بعد C5 رو بزن و برگرد به C4؛ به صدای یه نت تو سه اکتاو گوش کن."
     ]
   },
   "practice": {
     "mode": "follow",
     "tempo": 60,
-    "hand": "right",
+    "hand": "both",
     "notes": ["C3", "C4", "C5", "C4"]
   },
   "selfCheck": {
@@ -43,34 +43,34 @@
       "Am I clear on which side is lower (left, C3) and which side is higher (right, C5)?"
     ],
     "fa": [
-      "آیا هر سه نت دو (C3، C4 و C5) رو سریع در سمت چپ دسته‌های دوتایی سیاه پیدا کردم؟",
-      "کاملاً مشخصه کدوم سمت بم‌تره (چپ، C3) و کدوم سمت زیرتره (راست، C5)؟"
+      "هر سه «دو» (C3 و C4 و C5) رو سریع سمت چپ گروه‌های دوتایی پیدا کردم؟",
+      "معلومه کدوم طرف بم‌تره (چپ، C3) و کدوم طرف زیرتره (راست، C5)؟"
     ]
   },
   "quiz": [
     {
       "question": {
         "en": "Which C is higher in pitch than Middle C (C4)?",
-        "fa": "کدوم نت «دو» صدای زیرتری نسبت به دوی وسط (C4) داره؟"
+        "fa": "کدوم «دو» صداش از دوی وسط (C4) زیرتره؟"
       },
       "options": {
         "en": ["C5 (to the right of Middle C)", "C3 (to the left of Middle C)", "They all have the exact same pitch"],
-        "fa": ["C5 (سمت راستِ دوی وسط)", "C3 (سمت چپِ دوی وسط)", "هر سه دقیقاً یک زیر و بمی دارن"]
+        "fa": ["C5 (سمت راستِ دوی وسط)", "C3 (سمت چپِ دوی وسط)", "صدای هر سه یکیه"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Spot on! Moving to the right on the piano always raises the pitch, so C5 is one octave higher than C4.",
-        "fa": "کاملاً درسته! حرکت به سمت راست در پیانو همیشه صدا رو زیرتر می‌کنه، پس C5 یک اکتاو بالاتر از C4 است."
+        "fa": "دقیقاً! رو پیانو هرچی بری راست صدا زیرتر می‌شه، پس C5 یه اکتاو از C4 بالاتره."
       },
       "feedbackWrong": {
         "en": "On the piano, pitch goes higher as you move right—so C5 (to the right) is higher, while C3 (to the left) is lower.",
-        "fa": "روی پیانو هرچه به سمت راست بریم صدا زیرتر می‌شه؛ بنابراین C5 (سمت راست) زیرتره و C3 (سمت چپ) بم‌تره."
+        "fa": "رو پیانو سمت راست زیرتره؛ پس C5 (راست) زیرتره و C3 (چپ) بم‌تره."
       }
     },
     {
       "question": {
         "en": "Which hand naturally sits in the lower C3 area to play bass notes?",
-        "fa": "کدوم دست به طور طبیعی در محدوده‌ی بم‌تر (C3) قرار می‌گیره تا نت‌های پایه رو بزنه؟"
+        "fa": "کدوم دست راحت رو بخش بم (C3) می‌شینه؟"
       },
       "options": {
         "en": ["Left hand", "Right hand", "Neither hand"],
@@ -79,21 +79,21 @@
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Correct! Since C3 is on the left side of Middle C, your left hand naturally plays there without crossing arms.",
-        "fa": "درسته! چون C3 در سمت چپِ دوی وسط قرار داره، دست چپ خیلی راحت و طبیعی اونجا قرار می‌گیره."
+        "fa": "درسته! C3 سمت چپ دوی وسطه، پس دست چپ راحت همون‌جا رو می‌زنه."
       },
       "feedbackWrong": {
         "en": "Low notes like C3 are on the left side of the keyboard, right in front of your left hand.",
-        "fa": "نت‌های بم مثل C3 در سمت چپ کیبورد و دقیقاً روبه‌روی دست چپ تو قرار دارن."
+        "fa": "نت‌های بم مثل C3 سمت چپ کیبوردن، درست روبه‌روی دست چپت."
       }
     }
   ],
   "summary": {
     "en": "You now know your landmarks across two octaves: low C (C3) for the left hand, Middle C (C4) in the center, and high C (C5) above.",
-    "fa": "حالا نقاط کلیدی دو اکتاو رو کامل می‌شناسی: دوی بم (C3) برای دست چپ، دوی وسط (C4) در مرکز و دوی زیر (C5) در بالا."
+    "fa": "حالا هر سه «دو» رو می‌شناسی: C3 برای دست چپ، C4 وسط، و C5 بالا."
   },
   "tomorrow": {
     "en": "Playing smooth (legato) vs. short and detached (staccato).",
-    "fa": "نواختن پیوسته (لگاتو) در برابر کوتاه و بریده (استاکاتو)."
+    "fa": "زدنِ نرم و پیوسته (لگاتو) یا کوتاه و بریده (استاکاتو)."
   },
   "source": {
     "creator": {

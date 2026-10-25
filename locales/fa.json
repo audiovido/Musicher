@@ -269,6 +269,7 @@
     "ownFailHint": "ترتیب نت‌ها کمی فرق داشت — بیا از نت اول دوباره امتحان کنیم!",
     "computerKeysHint": "کلیدهای کامپیوتر (C4 تا C5): A W S E D F T G Y H U J K",
     "handRight": "دست راست",
-    "handLeft": "دست چپ"
+    "handLeft": "دست چپ",
+    "handBoth": "دست چپ برای C3، دست راست برای C4 و C5"
   }
 }

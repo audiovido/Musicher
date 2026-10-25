@@ -11,11 +11,11 @@
   "minutes": 5,
   "goal": {
     "en": "Hear and play the difference between moving to a neighbor key (a step) and jumping over one key (a skip).",
-    "fa": "تفاوت حرکت به کلید همسایه (قدم) و پریدن از روی یک کلید (پرش) رو می‌شنوی و می‌نوازی."
+    "fa": "فرق رفتن به کلید همسایه (قدم) و پریدن از روی یه کلید (پرش) رو می‌شنوی و می‌زنی."
   },
   "see": {
     "en": "Melodies move in two main ways: a step moves from one white key to its immediate neighbor (like C to D, or D to E), while a skip jumps over one white key to the next (like C to E, skipping D, or E to G, skipping F). With your right hand in the C five-finger position, fingers 1–2–3 play steps (C–D–E) and fingers 1–3–5 play skips (C–E–G).",
-    "fa": "ملودی‌ها به دو شکل اصلی حرکت می‌کنن: «قدم» یعنی رفتن به کلید سفیدِ همسایه (مثل دو به ر، یا ر به می)، و «پرش» یعنی پریدن از روی یک کلید سفید به کلید بعدی (مثل دو به می که از روی ر می‌پره، یا می به سل که از روی فا می‌پره). وقتی دست راستت روی پوزیشن پنج‌انگشتیِ دو قرار داره، انگشت‌های ۱–۲–۳ قدم می‌زنن (دو–ر–می) و انگشت‌های ۱–۳–۵ پرش دارن (دو–می–سل)."
+    "fa": "ملودی‌ها دو جور حرکت می‌کنن. «قدم» یعنی رفتن به کلید سفیدِ همسایه (مثل دو به ر، یا ر به می). «پرش» یعنی پریدن از روی یه کلید سفید به کلید بعدی (مثل دو به می که از روی ر می‌پره، یا می به سل که از روی فا می‌پره). وقتی دست راستت روی دو تا سل هست، انگشت‌های ۱–۲–۳ قدم می‌زنن (دو–ر–می) و انگشت‌های ۱–۳–۵ پرش می‌زنن (دو–می–سل)."
   },
   "imageUrl": "assets/lesson-13.jpeg",
   "audioUrl": "",
@@ -26,9 +26,9 @@
       "Now play skips by jumping over one key and one finger: C (1), E (3), G (5), E (3), C (1)."
     ],
     "fa": [
-      "انگشت‌های ۱ تا ۵ دست راست رو روی دو، ر، می، فا و سل بذار.",
-      "با انگشت‌های همسایه قدم‌به‌قدم بالا برو و برگرد: دو (۱)، ر (۲)، می (۳)، ر (۲)، دو (۱).",
-      "حالا با جا گذاشتن یک کلید و یک انگشت، پرش‌ها رو بزن: دو (۱)، می (۳)، سل (۵)، می (۳)، دو (۱)."
+      "انگشت ۱ تا ۵ دست راست رو بذار روی دو، ر، می، فا و سل.",
+      "با انگشت‌های همسایه قدم‌به‌قدم برو بالا و برگرد: دو (۱)، ر (۲)، می (۳)، ر (۲)، دو (۱).",
+      "حالا یه کلید و یه انگشت درمیون پرش بزن: دو (۱)، می (۳)، سل (۵)، می (۳)، دو (۱)."
     ]
   },
   "practice": {
@@ -43,15 +43,15 @@
       "Could I hear how steps sound smooth and close while skips sound wider and brighter?"
     ],
     "fa": [
-      "وقتی پرش‌ها رو می‌زدم، دستم بدون جابه‌جا شدن سر جای پنج‌انگشتی خودش موند؟",
-      "تفاوت صدای نرمِ قدم‌ها و صدای بازترِ پرش‌ها رو شنیدم؟"
+      "موقع زدن پرش‌ها، دستم سر جای خودش موند؟",
+      "فرق صدای نزدیکِ قدم‌ها و صدای بازترِ پرش‌ها رو شنیدم؟"
     ]
   },
   "quiz": [
     {
       "question": {
         "en": "Moving from C (Do) directly to E (Mi) is called what kind of movement?",
-        "fa": "حرکت مستقیم از نت «دو» به «می» چه نوع حرکتیه؟"
+        "fa": "رفتن مستقیم از «دو» به «می» چه حرکتیه؟"
       },
       "options": {
         "en": ["A skip", "A step", "A repeat"],
@@ -60,40 +60,40 @@
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Correct! Moving from C to E jumps right over D, so it is a skip.",
-        "fa": "درسته! چون از روی کلید «ر» می‌پری و از دو به می می‌ری، این حرکت یک پرشه."
+        "fa": "درسته! چون از روی «ر» می‌پری و به «می» می‌ری، پرشه."
       },
       "feedbackWrong": {
         "en": "Because D sits between C and E, jumping over D makes C to E a skip rather than a neighbor step.",
-        "fa": "چون کلید «ر» بین دو و می قرار داره و از روش می‌پریم، حرکت از دو به می «پرش» حساب می‌شه نه قدم همسایه."
+        "fa": "چون «ر» بین دو و می هست و از روش می‌پری، این حرکت پرشه نه قدم."
       }
     },
     {
       "question": {
         "en": "With your right thumb (1) on C, which fingers play the skip from E (Mi) up to G (Sol)?",
-        "fa": "وقتی شست دست راست (۱) روی «دو» باشه، پرش از «می» به «سل» با کدوم شماره‌انگشت‌ها زده می‌شه؟"
+        "fa": "وقتی شست دست راست (۱) روی «دو» باشه، پرش از «می» به «سل» با کدوم انگشت‌هاست؟"
       },
       "options": {
         "en": ["Finger 3 to finger 5", "Finger 2 to finger 3", "Finger 1 to finger 2"],
-        "fa": ["انگشت ۳ به انگشت ۵", "انگشت ۲ به انگشت ۳", "انگشت ۱ به انگشت ۲"]
+        "fa": ["انگشت ۳ به ۵", "انگشت ۲ به ۳", "انگشت ۱ به ۲"]
       },
       "correctIndex": 0,
       "feedbackRight": {
         "en": "Well done! Finger 3 rests on E and finger 5 (pinky) rests on G, skipping finger 4 on F.",
-        "fa": "آفرین! انگشت ۳ روی می و انگشت ۵ (کوچک) روی سل قرار داره و از روی انگشت ۴ (فا) می‌پریم."
+        "fa": "آفرین! انگشت ۳ روی می هست و انگشت ۵ روی سل؛ از روی انگشت ۴ (فا) می‌پریم."
       },
       "feedbackWrong": {
         "en": "In the C five-finger position, E is under finger 3 and G is under finger 5 (skipping finger 4 on F).",
-        "fa": "در پوزیشن پنج‌انگشتی دو، نت می زیر انگشت ۳ و نت سل زیر انگشت ۵ قرار داره (انگشت ۴ روی فا جا گذاشته می‌شه)."
+        "fa": "تو پوزیشن دو، می زیر انگشت ۳ و سل زیر انگشت ۵ هست (انگشت ۴ روی فا زده نمی‌شه)."
       }
     }
   ],
   "summary": {
     "en": "You can now recognize and play both neighbor steps and one-key skips to make melodies move.",
-    "fa": "حالا می‌تونی هم حرکت قدم‌به‌قدم و هم پرش از روی یک کلید رو تشخیص بدی و بزنی."
+    "fa": "حالا هم قدم‌های همسایه رو می‌شناسی و می‌زنی، هم پرش‌ها رو."
   },
   "tomorrow": {
     "en": "Exploring low C, Middle C, and high C across the keyboard.",
-    "fa": "آشنایی با دوی بم، دوی وسط و دوی زیر در طول کیبورد."
+    "fa": "دوی بم، دوی وسط و دوی زیر روی کیبورد."
   },
   "source": {
     "creator": {

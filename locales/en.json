@@ -269,6 +269,7 @@
     "ownFailHint": "Not quite that sequence — let's try again from the first note!",
     "computerKeysHint": "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
     "handRight": "Right hand",
-    "handLeft": "Left hand"
+    "handLeft": "Left hand",
+    "handBoth": "Left hand for C3, right hand for C4 and C5"
   }
 }

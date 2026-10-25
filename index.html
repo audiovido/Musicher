@@ -2328,7 +2328,8 @@
             ownFailHint: "Not quite that sequence — let's try again from the first note!",
             computerKeysHint: "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
             handRight: "Right hand",
-            handLeft: "Left hand"
+            handLeft: "Left hand",
+            handBoth: "Left hand for C3, right hand for C4 and C5"
           }
         },
         fa: {
@@ -2374,7 +2375,8 @@
             ownFailHint: "ترتیب نت‌ها کمی فرق داشت — بیا از نت اول دوباره امتحان کنیم!",
             computerKeysHint: "کلیدهای کامپیوتر (C4 تا C5): A W S E D F T G Y H U J K",
             handRight: "دست راست",
-            handLeft: "دست چپ"
+            handLeft: "دست چپ",
+            handBoth: "دست چپ برای C3، دست راست برای C4 و C5"
           }
         }
       };
@@ -3483,11 +3485,21 @@
           `;
         }
 
+        const handLabel =
+          practice.hand === "both"
+            ? t("piano.handBoth")
+            : practice.hand === "left"
+            ? t("piano.handLeft")
+            : t("piano.handRight");
+
         return `
           <div id="vpiano-lesson-mount" class="m-card vpiano-card">
             <div class="vpiano-header-row">
               <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
                 <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🎹 ${escapeHtml(t("piano.title"))}</span>
+                <span style="font-size:0.8rem;font-weight:600;color:var(--secondary);background:var(--secondary-soft);border:1px solid rgba(31,111,107,0.28);border-radius:999px;padding:3px 10px;">
+                  ${formatBidiText(handLabel)}
+                </span>
                 ${
                   isCompleted
                     ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("piano.practiceCounted"))}</span>`
