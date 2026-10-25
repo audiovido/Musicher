@@ -1,126 +1,123 @@
 {
   "id": 4,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 1 \"Pitch & Direction\"",
-    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+    "en": "Chapter 1: Pitch and direction",
+    "fa": "فصل ۱ «زیر و بمی و جهت صدا»"
   },
   "title": {
-    "en": "Melody direction: up, down, wave",
-    "fa": "جهت ملودی: بالا، پایین، موجی"
+    "en": "Melody direction: up, down, or wave",
+    "fa": "جهت ملودی: رو به بالا، پایین یا موجی"
   },
-  "duration": {
-    "en": "6 minutes",
-    "fa": "۶ دقیقه"
-  },
+  "minutes": 6,
   "goal": {
-    "en": "Listen to a short 4-note melody and trace its overall shape: climbing up, going down, or curving like a wave.",
-    "fa": "به یه ملودی کوتاه ۴ نتی گوش بدی و شکل کلی حرکتش رو تشخیص بدی: رو به بالا، رو به پایین، یا موجی."
+    "en": "Follow the shape (contour) of a short melody and tell whether it climbs up, steps down, or curves in an arch/wave.",
+    "fa": "مسیر حرکت یک ملودی کوتاه رو دنبال می‌کنی و تشخیص می‌دی یکسره بالا می‌ره، پایین میاد یا حالتِ موجی داره."
+  },
+  "see": {
+    "en": "When several notes connect into a melody, they draw a shape in the air called melodic contour: 1) Going up (↗): each note climbs higher like stairs. 2) Going down (↘): each note descends lower. 3) Wave (∿): the melody rises first and then curves back down (or dips and rises) like a gentle wave!",
+    "fa": "وقتی چند تا نت پشت سر هم میان، یک خطِ حرکت توی فضا می‌کشن که بهش «مسیر ملودی» می‌گیم: ۱) رو به بالا (↗): نت‌ها پله‌پله زیرتر می‌شن. ۲) رو به پایین (↘): نت‌ها پله‌پله بم‌تر می‌شن. ۳) موجی (∿): صدا اول بالا می‌ره و بعد دوباره برمی‌گرده پایین، درست مثل یک موج!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "When notes join together into a melody, they draw a line in the air called melodic contour (shape). Even before you know the exact note names, your ear can follow that shape.",
-      "A melody can climb steadily up (like C–D–E–G), walk steadily down (like G–E–D–C), or arch up and back down like a wave (like C–E–G–E)."
+      "Tap 'Play sound' and trace the pitch height in the air with your index finger as the notes play.",
+      "Watch your hand: did it move steadily up (↗), steadily down (↘), or curve up and back in a wave (∿)?",
+      "Complete 10 rounds and score at least 70% to pass."
     ],
     "fa": [
-      "وقتی چند تا نت کنار هم ملودی می‌سازن، توی هوا یه خط و شکل می‌کشن که بهش خط ملودی می‌گیم. حتی قبل از اینکه اسم دقیق نت‌ها رو بدونی، گوشت می‌تونه این شکل رو دنبال کنه.",
-      "یه ملودی می‌تونه پله‌پله بره بالا (مثل دو–ر–می–سل)، بیاد پایین (مثل سل–می–ر–دو)، یا مثل یه موج بره بالا و برگرده پایین (مثل دو–می–سل–می)."
+      "روی «پخش صدا» بزن و هم‌زمان با پخش نت‌ها، با انگشت اشاره‌ت خطِ حرکت صدا رو توی هوا بکش.",
+      "به حرکت دستت نگاه کن: یکسره رفت بالا (↗)، یکسره اومد پایین (↘) یا رفت بالا و برگشت («موجی ∿»)؟",
+      "۱۰ مرحله رو کامل کن و حداقل ۷۰٪ امتیاز بگیر."
     ]
-  },
-  "hear": {
-    "en": "Draw the melody in the air with your finger as you listen: does your hand keep rising, keep falling, or curve up and down?",
-    "fa": "موقع گوش دادن، با انگشتت توی هوا خط صدا رو بکش: دستت یکسره می‌ره بالا، می‌آد پایین، یا بالا و پایین می‌ره؟"
   },
   "practice": {
     "type": "ear-choice",
     "mode": "melody-direction",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' to hear a 4-note pattern.",
-      "Move your hand up or down in the air along with the notes as they play.",
-      "Choose 'Going up', 'Going down', or 'Wave (up & down)' for all 6 rounds."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن تا یه الگوی ۴ نتی بشنوی.",
-      "هم‌زمان با پخش نت‌ها، دستت رو توی هوا با جهت صدا بالا و پایین ببر.",
-      "توی ۶ دور، گزینهٔ «رو به بالا»، «رو به پایین» یا «موجی (بالا و پایین)» رو انتخاب کن."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Did tracing the shape with your hand make it easier to spot the wave pattern?",
-      "Could you hear where the melody changed direction in the middle?"
+      "Did I listen to the whole phrase from first note to last note instead of only the final note?",
+      "Did drawing the contour in the air make the wave shape easy to spot?"
     ],
     "fa": [
-      "کشیدن شکل صدا با دست توی هوا، پیدا کردن حالت موجی رو راحت‌تر کرد؟",
-      "تونستی بشنوی کجای ملودی جهت حرکت عوض می‌شه؟"
+      "از نت اول تا نت آخر به کلِ مسیر گوش دادم (نه فقط به نت آخر)؟",
+      "کشیدنِ خطِ ملودی توی هوا کمک کرد شکلِ موجی رو راحت تشخیص بدم؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "If a melody plays C4 – E4 – G4 – E4, what shape does it draw?",
-        "fa": "اگه یه ملودی نت‌های C4 – E4 – G4 – E4 رو بزنه، چه شکلی می‌سازه؟"
+      "question": {
+        "en": "If a melody plays C4 – D4 – E4 – C4, what is its melodic direction (contour)?",
+        "fa": "اگه یک ملودی نت‌های C4 – D4 – E4 – C4 رو بزنه، جهتِ حرکتش چطوره؟"
       },
       "options": {
         "en": [
+          "Wave / Arch (it rises up from C4 to E4 and then curves back down to C4)",
           "Straight up",
-          "Straight down",
-          "A wave (up then down)",
-          "Staying on one note"
+          "Straight down"
         ],
         "fa": [
+          "موجی (اول از دو تا می بالا می‌ره و بعد دوباره به دو برمی‌گرده)",
           "یکسره رو به بالا",
-          "یکسره رو به پایین",
-          "موجی (اول بالا بعد پایین)",
-          "ثابت روی یک نت"
+          "یکسره رو به پایین"
         ]
       },
-      "correct": 2,
-      "feedback": {
-        "en": "It climbs from C4 up to G4 and then turns back down to E4, forming a wave.",
-        "fa": "صدا از C4 تا G4 زیرتر می‌شه و بعد به E4 برمی‌گرده پایین؛ یعنی یه شکل موجی می‌سازه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Rising and then returning creates an arch or wave contour.",
+        "fa": "درسته! بالا رفتن و برگشتن به پایین یک کمان یا موج می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Because the melody climbs from C4 to E4 first and then drops back to C4, its shape is a wave.",
+        "fa": "چون اول بالا می‌ره و بعد برمی‌گرده پایین، مسیرش موجی است."
       }
     },
     {
-      "q": {
-        "en": "Why do musicians listen for the overall shape (contour) of a melody first?",
-        "fa": "چرا نوازنده‌ها اول به شکل کلی (جهت حرکت) ملودی گوش می‌دن؟"
+      "question": {
+        "en": "Why do beginners sometimes misjudge a wave melody as 'going down'?",
+        "fa": "چرا بعضی وقت‌ها یک ملودیِ موجی رو اشتباهی «رو به پایین» تشخیص می‌دیم؟"
       },
       "options": {
         "en": [
-          "Because note names don't exist",
-          "It gives a map of where the phrase is heading before working out exact notes",
-          "It changes the tempo",
-          "It makes the song shorter"
+          "Because they only pay attention to the final downward note and forget the upward climb at the start",
+          "Because wave melodies have no pitch",
+          "Because the piano is out of tune"
         ],
         "fa": [
-          "چون نت‌ها اسم ندارن",
-          "چون قبل از پیدا کردن تک‌تک نت‌ها، نقشهٔ کلی حرکت جمله رو نشون می‌ده",
-          "چون سرعت آهنگ رو عوض می‌کنه",
-          "چون آهنگ رو کوتاه‌تر می‌کنه"
+          "چون فقط به نتِ آخر که پایین اومده توجه می‌کنن و بالا رفتنِ اولش یادشون می‌ره",
+          "چون ملودی موجی زیر و بمی نداره",
+          "چون پیانو ناکوکه"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Knowing whether a phrase rises, falls, or arches makes playing by ear and sight-reading much faster.",
-        "fa": "دونستن اینکه جمله بالا می‌ره، پایین می‌آد یا موجیه، نت‌خوانی و نواختن گوشی رو خیلی سریع‌تر می‌کنه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Tracing the melody with your hand from the very first note prevents last-note bias.",
+        "fa": "آفرین! وقتی از همون نت اول با دستت مسیر رو توی هوا بکشی، کلِ شکلِ موج رو می‌بینی."
+      },
+      "feedbackWrong": {
+        "en": "Always follow the melody from the very first note so you catch both halves of the wave.",
+        "fa": "باید از نتِ اول مسیر رو دنبال کنی تا هم بالا رفتنِ اول و هم برگشتِ آخرش رو بشنوی."
       }
     }
   ],
   "summary": {
-    "en": "You practiced following 4-note melodies and identifying ascending, descending, and wave shapes.",
-    "fa": "دنبال کردن ملودی‌های ۴ نتی و تشخیص حرکت رو به بالا، رو به پایین و موجی رو تمرین کردی."
+    "en": "Great contour tracking! You can now follow ascending, descending, and wave-shaped melodic phrases by ear.",
+    "fa": "مسیرشناسی عالی! حالا ملودی‌های صعودی (رو به بالا)، نزولی (رو به پایین) و موجی رو با گوش دنبال می‌کنی."
   },
   "tomorrow": {
-    "en": "Tomorrow we will zoom in on our first two specific intervals: the 2nd and the 3rd.",
-    "fa": "فردا روی دو تا فاصلهٔ مشخص زوم می‌کنیم: فاصلهٔ دوم و فاصلهٔ سوم."
+    "en": "Next lesson: we finish Chapter 1 by naming our first specific intervals—the 2nd (step) and the 3rd (skip)!",
+    "fa": "درس فردا: در پایان فصل اول، اولین فاصله‌های دقیق موسیقی یعنی «فاصله‌ی دوم» و «فاصله‌ی سوم» رو با گوش تشخیص می‌دیم!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

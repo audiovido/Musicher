@@ -1,126 +1,123 @@
 {
   "id": 5,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 1 \"Pitch & Direction\"",
-    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+    "en": "Chapter 1: Pitch and direction",
+    "fa": "فصل ۱ «زیر و بمی و جهت صدا»"
   },
   "title": {
     "en": "Small intervals: 2nd and 3rd",
     "fa": "فاصله‌های کوچک: دوم و سوم"
   },
-  "duration": {
-    "en": "6 minutes",
-    "fa": "۶ دقیقه"
-  },
+  "minutes": 6,
   "goal": {
-    "en": "Hear the difference between a 2nd (a close neighbor step, C–D) and a 3rd (a sweet, bright skip over one key, C–E).",
-    "fa": "تفاوت صدای فاصلهٔ دوم (پلهٔ همسایه مثل دو–ر) و فاصلهٔ سوم (پرش شیرین از روی یک نت مثل دو–می) رو بشنوی."
+    "en": "Recognize the sound of a 2nd (neighbor step) compared to a 3rd (sweet doorbell skip).",
+    "fa": "صدای «فاصله‌ی دوم» (پله‌ی همسایه) رو در برابر «فاصله‌ی سوم» (پرشِ شیرینِ سه‌نتی) تشخیص می‌دی."
+  },
+  "see": {
+    "en": "An 'interval' is the musical distance between two notes, counted by how many letter names it spans (including start and end): 1) A 2nd spans 2 letters (like C–D): it is a close neighbor step. 2) A 3rd spans 3 letters (like C–E, skipping D): it sounds like a sweet, open doorbell chime!",
+    "fa": "به فاصله‌ی بین دو نت در موسیقی «فاصله» (Interval) می‌گن و با شمردنِ نام نت‌ها از مبدا تا مقصد نام‌گذاری می‌شه: ۱) «فاصله‌ی دوم» دو نامِ همسایه رو در بر می‌گیره (مثل دو تا ر) و همون حرکتِ پله‌ایه. ۲) «فاصله‌ی سوم» سه نام رو در بر می‌گیره (مثل دو تا می، با رد کردنِ ر) و صدایی شیرین و باز مثل زنگِ در داره!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "An interval is the distance between two notes. Now let's give our step and small skip their real musical names: the 2nd and the 3rd.",
-      "A 2nd spans two adjacent letter names (like C to D). It sounds tight, expectant, and wants to keep walking. A 3rd spans three letters (like C to E, skipping D). It sounds sweet, warm, and stable—like the opening of 'Brahms' Lullaby' (E–G)."
+      "Tap 'Play sound' to hear two notes starting from a random pitch.",
+      "Listen for the character: does it step right next door (2nd) or ring with a sweet doorbell skip (3rd)?",
+      "Complete all 10 rounds with >= 70% accuracy."
     ],
     "fa": [
-      "به فاصلهٔ بین دو تا نت توی موسیقی می‌گیم «فاصله» (Interval). حالا بیا به پله و پرش کوچیک، اسم واقعیشون رو بدیم: فاصلهٔ دوم و فاصلهٔ سوم.",
-      "«فاصلهٔ دوم» یعنی دو تا نت همسایه (مثل دو به ر)؛ صداش نزدیکه و حس حرکت داره. «فاصلهٔ سوم» یعنی سه تا حرف (مثل دو به می، با پریدن از روی ر)؛ صداش شیرین، گرم و آشناست—مثل شروع لالایی برامس."
+      "روی «پخش صدا» بزن تا دو نت پخش بشن.",
+      "به حسِ فاصله دقت کن: آیا رفت روی پله‌ی بغل‌دستی («فاصلهٔ دوم») یا مثل زنگِ در یک نت از وسط جا انداخت («فاصلهٔ سوم»)؟",
+      "۱۰ مرحله رو با امتیاز حداقل ۷۰٪ کامل کن."
     ]
-  },
-  "hear": {
-    "en": "Listen for character: the 2nd feels like a close step on a staircase; the 3rd feels like a friendly, open chime.",
-    "fa": "به حس صدا دقت کن: فاصلهٔ دوم مثل یه قدم روی پله‌ست؛ فاصلهٔ سوم مثل یه زنگِ باز و خوش‌آهنگه."
   },
   "practice": {
     "type": "ear-choice",
     "mode": "small-intervals",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' to hear the interval from the bottom note to the top note.",
-      "Sing the two notes back: if they are right next door, it is a 2nd; if they skip one note and sound like a chord tone, it is a 3rd.",
-      "Pick '2nd (step)' or '3rd (skip)' for 6 rounds."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن تا فاصلهٔ بین نت بم و نت زیر رو بشنوی.",
-      "دو تا نت رو زمزمه کن: اگه دقیقاً بغل دست همن «دوم» و اگه یه نت وسطشون جا افتاده و صدای شیرین و باز داره «سوم» هست.",
-      "توی ۶ دور، گزینهٔ «فاصلهٔ دوم» یا «فاصلهٔ سوم» رو انتخاب کن."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "When you heard a 3rd, could you silently sing the missing middle note between them?",
-      "Did you recognize the warm sound of the 3rd?"
+      "Could I hear how the 2nd feels close and step-like while the 3rd feels harmonious and open?",
+      "Did I test singing the hidden middle note when checking for a 3rd?"
     ],
     "fa": [
-      "وقتی فاصلهٔ سوم رو شنیدی، تونستی اون نت وسطیِ جاافتاده رو توی دلت بخونی؟",
-      "صدای گرم و آشنای فاصلهٔ سوم رو راحت تشخیص دادی؟"
+      "فرقِ نزدیکیِ فاصله‌ی دوم با صدای باز و شیرینِ فاصله‌ی سوم رو حس کردم؟",
+      "توی فاصله‌ی سوم تونستم نتِ پنهانِ وسط رو توی ذهنم پیدا کنم؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "From C4 up to E4 (skipping D4) is which interval?",
-        "fa": "از نت C4 تا E4 (با پریدن از روی D4) چه فاصله‌ایه؟"
+      "question": {
+        "en": "Why is the distance from C to E called a '3rd'?",
+        "fa": "چرا به فاصله‌ی بین نت «دو» (C) تا «می» (E) فاصله‌ی «سوم» می‌گن؟"
       },
       "options": {
         "en": [
-          "A 2nd",
-          "A 3rd",
-          "A 5th",
-          "An octave"
+          "Because counting from the first note to the last note spans 3 letter names: C (1) – D (2) – E (3)",
+          "Because it lasts 3 beats",
+          "Because you play it 3 times"
         ],
         "fa": [
-          "فاصلهٔ دوم",
-          "فاصلهٔ سوم",
-          "فاصلهٔ پنجم",
-          "اکتاو"
+          "چون با شمردن از نت اول تا آخر، ۳ نام نت رو طی می‌کنیم: دو (۱) – ر (۲) – می (۳)",
+          "چون ۳ ضرب طول می‌کشه",
+          "چون ۳ بار نواخته می‌شه"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Counting the first and last letters (C–D–E = 1–2–3) gives a 3rd.",
-        "fa": "اگه از نت اول تا آخر بشمری (دو–ر–می = ۱–۲–۳) می‌شه فاصلهٔ سوم."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Intervals always count both the starting letter and the ending letter: C–D–E = 3rd.",
+        "fa": "کاملاً درسته! در شمارش فاصله‌ها همیشه هم نت اول و هم نت آخر شمرده می‌شن: دو، ر، می = سوم."
+      },
+      "feedbackWrong": {
+        "en": "Count the letter names inclusively: C (1), D (2), E (3) makes a 3rd.",
+        "fa": "نام نت‌ها رو از اول تا آخر بشمر: دو (۱)، ر (۲)، می (۳)؛ پس فاصله‌ی سومه."
       }
     },
     {
-      "q": {
-        "en": "How does a major 2nd (like C to D) sound compared to a 3rd (C to E)?",
-        "fa": "صدای فاصلهٔ دوم (مثل دو تا ر) در مقایسه با فاصلهٔ سوم (دو تا می) چطور به گوش می‌رسه؟"
+      "question": {
+        "en": "Which interval is the exact same thing as a neighbor 'step'?",
+        "fa": "کدوم فاصله دقیقاً معادلِ همون حرکت «پله» (همسایه) است؟"
       },
       "options": {
         "en": [
-          "Closer and more stepwise, like walking to the very next key",
-          "Much wider, like jumping across the whole piano",
-          "Identical in pitch",
-          "Like three notes played together"
+          "A 2nd (such as C to D)",
+          "A 3rd (such as C to E)",
+          "An Octave"
         ],
         "fa": [
-          "نزدیک‌تر و پله‌ای، مثل قدم گذاشتن روی کلاویهٔ بغلی",
-          "خیلی بازتر، مثل پرش از این سر پیانو به اون سر",
-          "کاملاً هم‌صدا",
-          "مثل سه تا نت هم‌زمان"
+          "فاصله‌ی دوم (مثل دو به ر)",
+          "فاصله‌ی سوم (مثل دو به می)",
+          "اکتاو"
         ]
       },
-      "correct": 0,
-      "feedback": {
-        "en": "A 2nd is the smallest scale step, so the two notes sit right next to each other.",
-        "fa": "فاصلهٔ دوم همون حرکت پله‌ای به نت همسایه‌ست و دو تا نت کاملاً به هم نزدیکن."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Every step from one letter to its immediate neighbor is a 2nd.",
+        "fa": "آفرین! هر حرکتِ پله‌ای به نت همسایه، یک «فاصله‌ی دوم» است."
+      },
+      "feedbackWrong": {
+        "en": "Moving from one note to the very next neighbor (like C to D) spans 2 letters, so it is a 2nd.",
+        "fa": "حرکت به نتِ بغل‌دستی (مثل دو به ر) دو نام داره و بهش فاصله‌ی دوم می‌گن."
       }
     }
   ],
   "summary": {
-    "en": "You trained your ear to tell apart the two most common melody building blocks: the 2nd and the 3rd.",
-    "fa": "گوشت رو تمرین دادی تا دو تا از پرکاربردترین آجرهای ساخت ملودی، یعنی فاصلهٔ دوم و سوم رو از هم تشخیص بده."
+    "en": "Chapter 1 complete! You can hear high/low, same/different, melody contour, and distinguish 2nds from 3rds.",
+    "fa": "فصل اول کامل شد! حالا زیر و بمی، یکسانی، جهت ملودی و فاصله‌های دوم و سوم رو با گوش می‌شناسی."
   },
   "tomorrow": {
-    "en": "Tomorrow we will open our ears to big, bold leaps: the 4th, the 5th, and the octave.",
-    "fa": "فردا سراغ پرش‌های بزرگ و خوش‌صدا می‌ریم: فاصلهٔ چهارم، پنجم و اکتاو."
+    "en": "Next lesson: we start Chapter 2 with wide leaps—the 4th, the 5th, and the Octave!",
+    "fa": "درس فردا: فصل دوم رو با پرش‌های بزرگ یعنی «فاصله‌ی چهارم، پنجم و اکتاو» شروع می‌کنیم!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

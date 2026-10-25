@@ -1,126 +1,123 @@
 {
   "id": 3,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 1 \"Pitch & Direction\"",
-    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+    "en": "Chapter 1: Pitch and direction",
+    "fa": "فصل ۱ «زیر و بمی و جهت صدا»"
   },
   "title": {
-    "en": "Step or skip",
-    "fa": "پله یا پرش"
+    "en": "Step or skip: neighbor vs jump",
+    "fa": "پله یا پرش: نتِ همسایه در برابر پرش"
   },
-  "duration": {
-    "en": "6 minutes",
-    "fa": "۶ دقیقه"
-  },
+  "minutes": 6,
   "goal": {
-    "en": "Hear whether two notes move by a close neighbor step or jump across keys with a wider skip.",
-    "fa": "تشخیص بدی دو تا نت مثل دو تا همسایهٔ نزدیک (پله) حرکت می‌کنن یا از روی نت‌ها می‌پرن (پرش)."
+    "en": "Distinguish smooth neighbor motion (a Step) from wider leaps that jump over one or more notes (a Skip).",
+    "fa": "حرکتِ نرم به نتِ همسایه («پله/گام») رو از حرکتِ بازتر که از روی نت‌ها رد می‌شه («پرش») تشخیص می‌دی."
+  },
+  "see": {
+    "en": "Melodies move in two main ways: Steps and Skips. A Step moves to the very next neighbor note (like walking to the next stair: C to D, or E to F), so no other scale note fits in between. A Skip jumps over at least one note (like C to E or C to G), leaving an open space in the middle!",
+    "fa": "ملودی‌ها به دو شکلِ اصلی حرکت می‌کنن: «پله» (گام) و «پرش». در حرکتِ پله‌ای، صدا می‌ره روی نتِ همسایه‌ی بغل‌دستی (مثل دو به ر، یا می به فا) و هیچ نتی وسطشون جا نمی‌شه. اما در «پرش»، صدا از روی یک یا چند نت می‌پره (مثل دو به می یا دو به سل) و بینشون فضای باز حس می‌شه!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "Melodies move in two main ways: steps and skips. A step moves to the very next neighbor note (like C to D)—it sounds smooth, close, and connected, like walking one stair at a time.",
-      "A skip jumps over one or more notes (like C to E or C to G)—it sounds open and bouncy, like hopping over a puddle."
+      "Tap 'Play sound' and listen to how close or wide the two notes feel.",
+      "Ask yourself: could I sing another scale note in the gap between them? If no = Step; if yes = Skip!",
+      "Finish 10 random rounds with at least 70% accuracy."
     ],
     "fa": [
-      "ملودی‌ها به دو شکل اصلی حرکت می‌کنن: پله و پرش. «پله» یعنی رفتن به نتِ همسایهٔ بغل‌دستی (مثل دو به ر)؛ صداش نرم و پیوسته‌ست، انگار پله‌ها رو یکی‌یکی می‌ری بالا.",
-      "«پرش» یعنی پریدن از روی یک یا چند نت (مثل دو به می یا دو به سل)؛ صداش باز و پرشیه، انگار از روی یه چاله می‌پری."
+      "روی «پخش صدا» بزن و به نزدیکی یا دوریِ دو نت دقت کن.",
+      "از خودت بپرس: آیا می‌تونم بین این دو صدا، یه نتِ دیگه وسطشون بخونم؟ اگه جا نبود یعنی «پله»، اگه جا بود یعنی «پرش»!",
+      "۱۰ مرحله رو با دقتِ حداقل ۷۰٪ کامل کن."
     ]
-  },
-  "hear": {
-    "en": "Listen for how close the two notes feel: a step feels right next door, while a skip leaves space in between.",
-    "fa": "ببین دو تا نت چقدر به هم نزدیکن: پله حس همسایهٔ دیواربه‌دیوار رو داره، ولی توی پرش بین دو تا نت فاصله خالیه."
   },
   "practice": {
     "type": "ear-choice",
     "mode": "step-skip",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' to hear the two-note move.",
-      "Ask yourself: could another scale note fit comfortably between these two notes?",
-      "If no note fits between them, tap 'Step (neighbor)'; if there is room between them, tap 'Skip (leap)'."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن تا حرکت دو تا نت رو بشنوی.",
-      "از خودت بپرس: آیا بین این دو تا نت، نت دیگه‌ای جا می‌شه؟",
-      "اگه همسایهٔ چسبیده به همن «پله (همسایه)» و اگه بینشون فاصله‌ست «پرش (فاصله‌دار)» رو بزن."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Could you hear the smooth closeness of a step compared to the open leap of a skip?",
-      "Did you complete all 6 rounds?"
+      "Could I hear the smooth closeness of a neighbor step?",
+      "Could I hear the open space inside a skip?"
     ],
     "fa": [
-      "نزدیکی و نرمیِ «پله» رو در مقایسه با باز بودنِ «پرش» حس کردی؟",
-      "هر ۶ دور تمرین رو کامل کردی؟"
+      "نزدیکی و نرمیِ دو نت همسایه (پله) رو حس کردم؟",
+      "فضای بازِ بین دو نت در حرکتِ پرشی برام مشخص بود؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "Moving from C4 directly to its neighbor D4 is called what?",
-        "fa": "حرکت از نت C4 به همسایهٔ بغل‌دستیش یعنی D4 چی نام داره؟"
+      "question": {
+        "en": "What is the difference between a melodic step and a skip?",
+        "fa": "تفاوتِ حرکت «پله» (Step) و «پرش» (Skip) در ملودی چیه؟"
       },
       "options": {
         "en": [
-          "A skip",
-          "A step",
-          "An octave",
-          "A chord"
+          "A step moves to the immediate neighbor note; a skip jumps over one or more notes",
+          "A step is always loud and a skip is always soft",
+          "A step only goes up and a skip only goes down"
         ],
         "fa": [
-          "پرش",
-          "پله (گام‌به‌گام)",
-          "اکتاو",
-          "آکورد"
+          "پله به نتِ همسایه‌ی بلافاصله می‌ره، اما پرش از روی یک یا چند نت عبور می‌کنه",
+          "پله همیشه بلنده و پرش همیشه ضعیف",
+          "پله فقط بالا می‌ره و پرش فقط پایین میاد"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Adjacent letter notes (C to D) with no letter skipped between them form a step.",
-        "fa": "حرکت به نت بغل‌دستی بدون جا انداختن هیچ نتی، «پله» است."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Both steps and skips can go up or down—the difference is whether they land on the next-door neighbor or jump across notes.",
+        "fa": "کاملاً درسته! چه رو به بالا چه رو به پایین، حرکت به نت همسایه «پله» و رد کردنِ نت «پرش» است."
+      },
+      "feedbackWrong": {
+        "en": "Steps move to the adjacent neighbor note, while skips jump over at least one note.",
+        "fa": "پله یعنی رفتن به نتِ بغل‌دستی، و پرش یعنی پریدن از روی حداقل یک نت."
       }
     },
     {
-      "q": {
-        "en": "If you hear two notes and feel that you could sing one or two missing notes in the gap between them, what did you hear?",
-        "fa": "اگه دو تا نت بشنوی و حس کنی بینشون می‌شه یکی دو تا نتِ جاافتاده رو خوند، چی شنیدی؟"
+      "question": {
+        "en": "Moving from C4 to D4 is a step. What is moving from C4 to G4?",
+        "fa": "حرکت از نت دو (C4) به ر (D4) یک «پله» است. حرکت از دو (C4) به سل (G4) چیه؟"
       },
       "options": {
         "en": [
-          "Unison (same note)",
-          "A skip (leap)",
-          "A neighbor step",
-          "A rest"
+          "A skip (it jumps over D, E, and F)",
+          "A unison",
+          "A neighbor step"
         ],
         "fa": [
-          "نت یکسان",
-          "پرش",
-          "پلهٔ همسایه",
-          "سکوت"
+          "پرش (چون از روی ر، می و فا پریده)",
+          "هم‌صدا (یکسان)",
+          "پله‌ی همسایه"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "When there is space for other notes between the two pitches, the melody jumped by a skip.",
-        "fa": "وقتی بین دو تا صدا جای خالی برای نت‌های دیگه هست، یعنی ملودی پرش کرده."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Jumping from C to G skips over three white keys in between.",
+        "fa": "آفرین! از دو تا سل از روی سه نتِ وسط پریده، پس یک پرشِ واضحه."
+      },
+      "feedbackWrong": {
+        "en": "Since D, E, and F sit between C and G, jumping from C to G is a skip.",
+        "fa": "چون بین دو و سل چند نت فاصله افتاده، این حرکت «پرش» است."
       }
     }
   ],
   "summary": {
-    "en": "You learned to distinguish smooth neighbor steps from wider skips by ear.",
-    "fa": "یاد گرفتی با گوش، حرکت نرمِ پله‌ای رو از پرش‌های بلندتر تشخیص بدی."
+    "en": "Well done! Your ear can now tell smooth neighbor steps apart from wider melodic skips.",
+    "fa": "آفرین! حالا گوشت فرقِ حرکتِ نرمِ همسایه (پله) و حرکتِ باز (پرش) رو تشخیص می‌ده."
   },
   "tomorrow": {
-    "en": "Tomorrow we will listen to short melodies of several notes and trace their shape: up, down, or wave.",
-    "fa": "فردا به ملودی‌های کوتاه چندنتی گوش می‌دیم و شکل حرکتشون رو پیدا می‌کنیم: رو به بالا، رو به پایین، یا موجی."
+    "en": "Next lesson: we listen to 4-note melodies and trace their overall contour—going up, going down, or curving in a wave!",
+    "fa": "درس فردا: به ملودی‌های ۴ نتی گوش می‌دیم و مسیرِ کلی حرکتشون (رو به بالا، رو به پایین یا موجی) رو پیدا می‌کنیم!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

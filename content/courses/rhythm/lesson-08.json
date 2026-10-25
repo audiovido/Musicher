@@ -2,114 +2,114 @@
   "id": 8,
   "chapter": {
     "en": "Chapter 2: Inside the beat",
-    "fa": "فصل ۲ «درون ضرب»"
+    "fa": "فصل ۲ «درونِ ضرب»"
   },
   "title": {
-    "en": "Ties across the bar line",
-    "fa": "خط اتحاد از روی خط میزان"
+    "en": "Ties and flowing phrases",
+    "fa": "خط اتحاد و پیوستگی میزان‌ها"
   },
-  "minutes": 6,
+  "minutes": 5,
   "goal": {
-    "en": "Understand how a tie glues two durations together across a bar line, and tap a tied rhythm without re-striking the tied beat.",
-    "fa": "یاد می‌گیری چطور خط اتحاد کشش دو نت رو از روی خط میزان به هم می‌چسبونه و بدون دوباره‌زدنِ نتِ دوم ریتم رو اجرا می‌کنی."
+    "en": "Understand how a tie merges two notes into one sustained duration and tap a balanced two-bar phrase.",
+    "fa": "می‌بینی خط اتحاد چطور دو نت رو به یک کششِ واحد تبدیل می‌کنه و یک جمله‌ی دو میزانیِ متقارن می‌زنی."
   },
   "see": {
-    "en": "What if a composer wants a sound to start near the end of measure 1 and keep ringing across the bar line into measure 2? A bar line cannot contain a 5-beat measure in 4/4 time—so we use a tie! A tie is a curved line joining two rhythmic notes into one continuous sound: you strike the first note and hold it through the second note's beats without striking again. When beat 4 of measure 1 is tied to beat 1 of measure 2, that tap on beat 4 rings for 2 full beats across the bar line, and your next tap in measure 2 happens on beat 2! This creates a lively 'syncopated' feel.",
-    "fa": "اگه بخوایم صدایی از آخرِ میزان اول شروع بشه و از روی خط میزان رد بشه و توی میزان دوم هم ادامه پیدا کنه چی؟ اینجاست که «خط اتحاد» (Tie) به کمکمون می‌آد! خط اتحاد یه کمانِ منحنیه که دو تا نت رو به هم می‌دوزه تا تبدیل به یک صدای واحد بشن: فقط نت اول رو می‌زنی و به اندازه‌ی مجموعِ هر دو نت صبر می‌کنی و نت دوم رو دوباره نمی‌زنی. وقتی ضرب ۴ِ میزان اول با خط اتحاد به ضرب ۱ِ میزان دوم وصل بشه، ضربه‌ی چهارم رو به اندازه‌ی ۲ ضرب (از روی خط میزان) نگه می‌داری و ضربه‌ی بعدی تو میزان دوم می‌افته سرِ ضرب ۲!"
+    "en": "What if a composer wants a note at the end of bar 1 to keep ringing into bar 2? Because a bar line closes bar 1, they write a note at the end of bar 1, another at the start of bar 2, and join them with a curved Tie. You strike only the first note and hold through the second! Today we practice the building blocks of long held notes across two bars: '1 1 2 | 2 1 1'.",
+    "fa": "اگه بخوایم نتی که آخرِ میزان اول شروع شده، توی میزان دوم هم بدونِ قطع شدن ادامه پیدا کنه چی؟ چون خط میزان وسطش قرار می‌گیره، دو تا نت می‌نویسن و با یک کمانِ «خط اتحاد» به هم وصلشون می‌کنن؛ یعنی فقط اولی رو می‌زنی و تا پایان دومی نگه می‌داری! امروز الگوی دو میزانیِ «1 1 2 | 2 1 1» رو تمرین می‌کنیم."
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and notice how the 2-beat tied sound bridges across the bar line before the next tap.",
-      "Count out loud: '1 – 2 – 3 – 4-(1) – 2 – 3-4', feeling how beat 1 of measure 2 is held silently inside the tie.",
-      "Tap the pattern '1 1 1 2 | 1 2' on the drum pad, letting the 2-beat tied note ring across the bar line!"
+      "Listen to the demo and feel the mirror symmetry between bar 1 ('1 1 2') and bar 2 ('2 1 1').",
+      "Tap 'Start tap practice' and hold the 2-beat half note at the end of bar 1 right up to the downbeat of bar 2.",
+      "Hold the 2-beat half note at the start of bar 2 before finishing with two crisp quarter notes on beats 3 and 4."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و گوش کن چطور نتِ ۲ ضربیِ متّحد از روی خط میزان رد می‌شه.",
-      "بلند بشمار: «۱ – ۲ – ۳ – ۴-(۱) – ۲ – ۳-۴» و حس کن چطور ضرب اولِ میزان دوم توی دلِ خط اتحاد نگه داشته می‌شه.",
-      "الگوی «1 1 1 2 | 1 2» رو روی پد بزن و بعد از ضرب چهارم، ۲ ضرب کامل صبر کن تا از خط میزان رد بشه!"
+      "به نمونه گوش بده و تقارنِ قشنگِ میزان اول («1 1 2») و میزان دوم («2 1 1») رو حس کن.",
+      "تمرین رو شروع کن و نتِ ۲ ضربیِ آخرِ میزان اول رو کامل تا سرِ میزان دوم نگه دار.",
+      "توی میزان دوم، نتِ ۲ ضربیِ اول رو صبر کن و بعد دو نت سیاه رو سرِ ضرب ۳ و ۴ بزن."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
+    "tempo": 72,
     "meter": "4/4",
-    "tempo": 70,
-    "pattern": "1 1 1 2 | 1 2"
+    "pattern": "1 1 2 | 2 1 1"
   },
   "selfCheck": {
     "en": [
-      "Did I hold the tied note for 2 full beats across the bar line without tapping again on the downbeat?",
-      "Did I finish cleanly with the 1-beat and 2-beat notes in the second measure?"
+      "Did I hold beat 4 of bar 1 without tapping early?",
+      "Did I wait through beat 2 of bar 2 so my final two taps landed on beats 3 and 4?"
     ],
     "fa": [
-      "نتِ متّحد رو ۲ ضرب کامل از روی خط میزان نگه داشتم و دوباره سرِ میزان ضربه نزدم؟",
-      "نت‌های ۱ ضربی و ۲ ضربیِ ادامه‌ی میزان دوم رو دقیق اجرا کردم؟"
+      "ضرب ۴ در میزان اول رو بدون عجله صبر کردم؟",
+      "توی میزان دوم، ضرب ۲ رو نگه داشتم تا دو ضربه‌ی آخرم دقیقاً روی ضرب ۳ و ۴ بیفته؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "When a quarter note (1 beat) before a bar line is tied to a quarter note (1 beat) right after the bar line, how do you play it?",
-        "fa": "وقتی یک نت سیاه (۱ ضرب) قبل از خط میزان با خط اتحاد به یک نت سیاه (۱ ضرب) بعد از خط میزان وصل شده، چطور اجراش می‌کنی؟"
+        "en": "When two notes of the same pitch are connected by a tie across a bar line, how do you play them?",
+        "fa": "وقتی دو نتِ هم‌نام از دو طرفِ خط میزان با «خط اتحاد» به هم وصل بشن، چطور اجراشون می‌کنی؟"
       },
       "options": {
         "en": [
-          "Tap once on the first note and hold for 2 beats total across the bar line",
-          "Tap both quarter notes separately",
-          "Stop the pulse at the bar line"
+          "Strike only the first note and hold it for the combined beats of both notes",
+          "Strike both notes extra loudly",
+          "Skip both notes"
         ],
         "fa": [
-          "فقط روی نت اول یک بار ضربه می‌زنی و در مجموع ۲ ضرب از روی خط میزان نگهش می‌داری",
-          "هر دو نت سیاه رو جداگانه می‌زنی",
-          "سرِ خط میزان نبض رو متوقف می‌کنی"
+          "فقط نت اول رو می‌زنی و به اندازه‌ی مجموعِ ضرب‌های هر دو نت نگهش می‌داری",
+          "هر دو نت رو جدا و محکم می‌زنی",
+          "از هر دو نت رد می‌شی"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! A tie adds the two lengths together (1 + 1 = 2 beats) with only one strike.",
-        "fa": "دقیقاً! خط اتحاد کششِ دو نت رو با هم جمع می‌کنه (۱ + ۱ = ۲ ضرب) و فقط یک بار ضربه می‌خوره."
+        "en": "Correct! A tie adds the two durations together into one single unbroken sound.",
+        "fa": "کاملاً درسته! خط اتحاد کششِ دو نت رو با هم جمع می‌کنه و فقط یک بار ضربه می‌زنی."
       },
       "feedbackWrong": {
-        "en": "Never re-strike the second note of a tie: tap the first note once and let it ring for both beats.",
-        "fa": "نت دومِ خط اتحاد رو دوباره نزن: فقط نت اول رو بزن و بذار به اندازه‌ی هر دو ضرب کشیده بشه."
+        "en": "Never re-strike the second note of a tie—hold the first note through the combined duration.",
+        "fa": "نتِ دوم در خط اتحاد دوباره زده نمی‌شه؛ صدای نت اول رو تا پایانِ نت دوم نگه می‌داری."
       }
     },
     {
       "question": {
-        "en": "Why do composers use a tie across a bar line instead of writing one longer note inside the first measure?",
-        "fa": "چرا آهنگسازها به‌جای نوشتنِ یه نتِ بلندتر توی همون میزان اول، از خط اتحاد روی خط میزان استفاده می‌کنن؟"
+        "en": "If a quarter note (1 beat) on beat 4 is tied across the bar line to a half note (2 beats) on beat 1, how many total beats does that sound last?",
+        "fa": "اگه یک نت سیاه (۱ ضرب) در آخر میزان با خط اتحاد به یک نت سفید (۲ ضرب) در اول میزان بعد وصل بشه، کلِ اون صدا چند ضرب طول می‌کشه؟"
       },
       "options": {
         "en": [
-          "Because each measure can only hold its exact meter count (e.g., 4 beats in 4/4), so extra beats must cross into the next measure",
-          "Because half notes are not allowed in music",
-          "To make the tempo twice as fast"
+          "3 beats total (1 + 2 = 3)",
+          "1 beat",
+          "2 beats"
         ],
         "fa": [
-          "چون هر میزان فقط گنجایشِ تعداد ضرب‌های خودش رو داره (مثلاً ۴ ضرب در ۴/۴) و ادامه‌ی کشش باید بره تو میزان بعدی",
-          "چون استفاده از نت سفید در موسیقی ممنوعه",
-          "برای اینکه سرعت قطعه دو برابر بشه"
+          "۳ ضرب کامل (۱ + ۲ = ۳)",
+          "۱ ضرب",
+          "۲ ضرب"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Once a 4/4 measure reaches 4 beats, it is full—a tie lets a note's duration continue smoothly into the next measure.",
-        "fa": "آفرین! وقتی ۴ ضربِ میزانِ ۴/۴ پر شد، خط میزان بسته می‌شه و خط اتحاد اجازه می‌ده صدای نت بدون قطع شدن وارد میزان بعدی بشه."
+        "en": "Spot on! 1 beat + 2 beats = 3 continuous beats across the bar line.",
+        "fa": "آفرین! ۱ ضرب به‌اضافه‌ی ۲ ضرب می‌شه ۳ ضربِ پیوسته از روی خط میزان."
       },
       "feedbackWrong": {
-        "en": "Each measure has a strict beat capacity; a tie lets a sound cross the bar line when the first measure is full.",
-        "fa": "ظرفیت هر میزان مشخصه؛ وقتی میزان اول پر می‌شه، خط اتحاد کمک می‌کنه کششِ صدا از روی خط میزان ادامه پیدا کنه."
+        "en": "Add the two durations together: 1 beat (quarter) + 2 beats (half) = 3 beats.",
+        "fa": "کششِ دو نت با هم جمع می‌شه: ۱ ضرب + ۲ ضرب = ۳ ضرب."
       }
     }
   ],
   "summary": {
-    "en": "You finished Chapter 2 by mastering ties across the bar line alongside eighth notes, meters, and dotted notes!",
-    "fa": "فصل ۲ رو با یادگیری خط اتحاد از روی خط میزان در کنار نت‌های چنگ، کسر میزان‌ها و نت‌های نقطه‌دار کامل کردی!"
+    "en": "Chapter 2 complete! You now know eighth notes, 2/4–3/4–4/4 meters, dotted notes, and ties across the bar line.",
+    "fa": "فصل دوم تمام شد! حالا نت چنگ، کسرهای میزان، نت نقطه‌دار و خط اتحاد رو کامل می‌شناسی."
   },
   "tomorrow": {
-    "en": "In Chapter 3 (Rhythm of the world), we will divide a single beat into three equal parts: the triplet!",
-    "fa": "تو فصل ۳ («ریتم‌های جهان») یک ضرب رو به سه قسمت مساوی تقسیم می‌کنیم: «تریوله» (سه در یک)!"
+    "en": "Next lesson: we begin Chapter 3 (Rhythm of the world) with triplets—fitting three even notes inside one single beat!",
+    "fa": "درس فردا: فصل سوم (ریتم‌های جهان) رو با «تریوله» یعنی سه نتِ مساوی در دلِ یک ضرب شروع می‌کنیم!"
   },
   "source": {
     "creator": {

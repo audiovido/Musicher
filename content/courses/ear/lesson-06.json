@@ -1,126 +1,123 @@
 {
   "id": 6,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
-    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+    "en": "Chapter 2: Intervals, chords and Persian color",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و رنگ ایرانی»"
   },
   "title": {
-    "en": "Big intervals: 4th, 5th, octave",
-    "fa": "فاصله‌های بزرگ: چهارم، پنجم، اکتاو"
+    "en": "Big intervals: 4th, 5th, and octave",
+    "fa": "فاصله‌های بزرگ: چهارم، پنجم و اکتاو"
   },
-  "duration": {
-    "en": "6 minutes",
-    "fa": "۶ دقیقه"
-  },
+  "minutes": 6,
   "goal": {
-    "en": "Recognize three big, clear leaps by ear: the 4th (C–F), the 5th (C–G), and the octave (C4–C5).",
-    "fa": "سه تا پرش بزرگ و شفاف رو با گوش بشناسی: فاصلهٔ چهارم (دو–فا)، پنجم (دو–سل) و اکتاو (دو تا دو)."
+    "en": "Tell three wide leaps apart by ear: the 4th (fanfare call), the 5th (open 'Twinkle' leap), and the Octave (mirror pitch).",
+    "fa": "سه پرشِ بزرگ رو با گوش از هم تفکیک می‌کنی: چهارم (شیپوری)، پنجم (پرشِ ستاره‌ی کوچولو) و اکتاو (نتِ هم‌نام در آینه)."
+  },
+  "see": {
+    "en": "Wide leaps give melodies heroic energy! Each of the three big intervals has its own unmistakable character: 1) Perfect 4th (5 semitones, like C–F): a bold, rising fanfare call. 2) Perfect 5th (7 semitones, like C–G): the wide, open leap of 'Twinkle, Twinkle, Little Star' (C–C–G–G). 3) Octave (12 semitones, like C4–C5): the exact same note name higher up, blending like a mirror!",
+    "fa": "پرش‌های بلند به ملودی اوج و انرژی می‌دن! هر کدوم از این سه فاصله‌ی بزرگ یک نشونه‌ی شنیداریِ واضح دارن: ۱) «فاصله‌ی چهارم» (مثل دو به فا): صدای فراخوانِ محکم و جمع‌وجور. ۲) «فاصله‌ی پنجم» (مثل دو به سل): پرشِ باز و درخشانِ اولِ آهنگ «ستاره‌ی کوچولو» (دو-دو-سل-سل). ۳) «اکتاو» (مثل C4 به C5): رسیدن به همون نت در طبقه‌ی بالاتر که انگار تصویرِ نت اول توی آینه‌ست!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "Big intervals have strong, unmistakable personalities. A 4th (C to F) sounds like a bright announcement or fanfare. A 5th (C to G) sounds wide, heroic, and rock-solid—it is the first leap in 'Twinkle, Twinkle, Little Star' (C–G).",
-      "An octave (C4 to C5, 8 letter names) jumps all the way to the next note with the same name. Because the top note vibrates exactly twice as fast, an octave sounds like the same note shining in a higher mirror."
+      "Tap 'Play sound' to hear a wide leap from a random starting note.",
+      "Compare the three characters: compact fanfare (4th), open Twinkle leap (5th), or same-note mirror (Octave).",
+      "Complete 10 random rounds and reach >= 70% to pass."
     ],
     "fa": [
-      "فاصله‌های بزرگ شخصیت خیلی مشخصی دارن. «چهارم» (دو به فا) صدای یه اعلان روشن و رسمی رو می‌ده. «پنجم» (دو به سل) صدایی باز، قوی و استوار داره—دقیقاً مثل پرش اولِ آهنگ «ستارهٔ کوچولو» (دو–سل).",
-      "«اکتاو» (C4 به C5، هشت تا نت) می‌پره به نتِ هم‌نامِ بعدی. چون فرکانس نت بالایی دقیقاً دو برابره، اکتاو طوری به گوش می‌رسه انگار همون نت اوله که توی یه آینهٔ روشن‌تر و زیرتر تکرار شده."
+      "روی «پخش صدا» بزن تا یک پرش بزرگ پخش بشه.",
+      "بین سه حس مقایسه کن: چهارم (جمع‌تر)، پنجم (باز، مثل ستاره‌ی کوچولو) یا اکتاو (هم‌نام و آینه‌ای).",
+      "۱۰ مرحله رو با دقتِ حداقل ۷۰٪ کامل کن."
     ]
-  },
-  "hear": {
-    "en": "Compare the width: the 4th is a firm call, the 5th is the 'Twinkle' star leap, and the octave blends into the same note higher up.",
-    "fa": "باز بودن صدا رو مقایسه کن: چهارم یه ندای محکمه، پنجم پرشِ «ستارهٔ کوچولو»ست، و اکتاو همون نت در ارتفاع بالاتره."
   },
   "practice": {
     "type": "ear-choice",
     "mode": "big-intervals",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' to hear a wide leap.",
-      "First check if the two notes sound like the exact same letter name low and high (Octave).",
-      "If not, listen for the 'Twinkle' openness of a 5th vs the slightly closer fanfare of a 4th."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن تا یه پرش بزرگ رو بشنوی.",
-      "اول ببین آیا دو تا نت حسِ یه نت واحد در دو ارتفاع بم و زیر رو دارن (اکتاو).",
-      "اگه نه، ببین صدای بازِ «ستارهٔ کوچولو» (پنجم) رو داره یا کمی جمع‌تره (چهارم)."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Could you spot the octave by how smoothly the two notes blend?",
-      "Did remembering 'Twinkle, Twinkle' help you lock onto the 5th?"
+      "Did singing 'Twinkle, Twinkle' in my head help me spot the 5th?",
+      "Could I hear how the Octave sounds like the exact same note higher up?"
     ],
     "fa": [
-      "تونستی اکتاو رو از روی هم‌رنگیِ دو تا نت تشخیص بدی؟",
-      "یادآوری شروع «ستارهٔ کوچولو» کمک کرد فاصلهٔ پنجم رو راحت پیدا کنی؟"
+      "یادآوریِ شروعِ «ستاره‌ی کوچولو» کمک کرد فاصله‌ی پنجم رو بشناسم؟",
+      "شنیدم که اکتاو چقدر شبیه خودِ نتِ اول در طبقه‌ی بالاتره؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "The famous opening leap of 'Twinkle, Twinkle, Little Star' (C, C, G, G) is which interval?",
-        "fa": "پرش معروف اولِ آهنگ «ستارهٔ کوچولو» (دو، دو، سل، سل) کدوم فاصله‌ست؟"
+      "question": {
+        "en": "Which interval matches the famous opening leap of 'Twinkle, Twinkle, Little Star' (C to G)?",
+        "fa": "پرشِ معروفِ اولِ آهنگ «ستاره‌ی کوچولو» (از دو به سل) کدوم فاصله‌ست؟"
       },
       "options": {
         "en": [
+          "A 5th (C–D–E–F–G spans 5 letter names)",
           "A 2nd",
-          "A 4th",
-          "A 5th",
-          "An octave"
+          "An Octave"
         ],
         "fa": [
-          "فاصلهٔ دوم",
-          "فاصلهٔ چهارم",
-          "فاصلهٔ پنجم",
+          "فاصله‌ی پنجم (دو–ر–می–فا–سل شامل ۵ نام نت)",
+          "فاصله‌ی دوم",
           "اکتاو"
         ]
       },
-      "correct": 2,
-      "feedback": {
-        "en": "From C up to G spans five letter names (C–D–E–F–G), which is a perfect 5th.",
-        "fa": "از دو تا سل پنج تا اسم نت فاصله‌ست (دو–ر–می–فا–سل)، یعنی فاصلهٔ پنجم درست."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! C to G spans five letters (C–D–E–F–G), making it a Perfect 5th.",
+        "fa": "کاملاً درسته! از دو تا سل پنج نام نت فاصله‌ست و یک «پنجم درست» می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Counting C(1)–D(2)–E(3)–F(4)–G(5) gives a 5th.",
+        "fa": "با شمردنِ دو(۱)، ر(۲)، می(۳)، فا(۴)، سل(۵) به فاصله‌ی پنجم می‌رسیم."
       }
     },
     {
-      "q": {
-        "en": "Why does an octave (like C4 to C5) sound almost like the same note?",
-        "fa": "چرا فاصلهٔ اکتاو (مثل C4 تا C5) طوری به گوش می‌رسه انگار همون نته؟"
+      "question": {
+        "en": "Why does an Octave (like C4 to C5) sound so pure and blended?",
+        "fa": "چرا فاصله‌ی «اکتاو» (مثل C4 به C5) این‌قدر یکدست و شبیه به یک نت شنیده می‌شه؟"
       },
       "options": {
         "en": [
-          "Because the piano plays only one key",
-          "Because they share the same letter name and the higher note vibrates twice as fast",
-          "Because they are neighbor keys",
-          "Because one note is silent"
+          "Because the higher note vibrates at exactly twice the frequency of the lower note, sharing the same letter name",
+          "Because both notes have the exact same frequency",
+          "Because it is only 1 semitone wide"
         ],
         "fa": [
-          "چون فقط یه کلاویه زده می‌شه",
-          "چون هم‌نامن و فرکانس نت بالایی دقیقاً دو برابر نت پایینیه",
-          "چون کلاویه‌های بغل‌دستی هستن",
-          "چون یکی از نت‌ها بی‌صداست"
+          "چون فرکانسِ نت بالایی دقیقاً دو برابرِ نت پایینیه و هر دو یک نام دارن",
+          "چون فرکانسشون کاملاً یکیه",
+          "چون فقط نیم‌پرده فاصله دارن"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Doubling the frequency creates an octave—the closest blend after unison.",
-        "fa": "دو برابر شدن فرکانس صدای اکتاو رو می‌سازه که بیشترین شباهت و هم‌رنگی رو با نت اول داره."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Doubling the frequency gives the same note name one octave higher.",
+        "fa": "آفرین! دو برابر شدنِ فرکانس باعث می‌شه همون نت در یک اکتاو بالاتر تکرار بشه."
+      },
+      "feedbackWrong": {
+        "en": "An octave spans 8 letter names (12 semitones) and doubles the sound wave frequency.",
+        "fa": "اکتاو ۸ نام نت (۱۲ نیم‌پرده) فاصله داره و فرکانس صدا در اون دو برابر می‌شه."
       }
     }
   ],
   "summary": {
-    "en": "You practiced hearing and separating three foundational wide intervals: the 4th, the 5th, and the octave.",
-    "fa": "شنیدن و تفکیک سه تا از مهم‌ترین فاصله‌های بزرگ یعنی چهارم، پنجم و اکتاو رو تمرین کردی."
+    "en": "Impressive ear! You can now distinguish the 4th, 5th, and Octave across random starting pitches.",
+    "fa": "گوشِ تیزبین! حالا فاصله‌های بزرگِ چهارم، پنجم و اکتاو رو از روی هر نتِ شروعی تشخیص می‌دی."
   },
   "tomorrow": {
-    "en": "Tomorrow we will listen to three notes played together and tell Major chords from Minor chords by their mood.",
-    "fa": "فردا به سه تا نت هم‌زمان گوش می‌دیم و آکورد ماژور و مینور رو از روی حس و رنگ صداشون تشخیص می‌دیم."
+    "en": "Next lesson: we listen to 3-note chords and hear the emotional difference between Major and Minor!",
+    "fa": "درس فردا: به آکوردهای سه‌نتی گوش می‌دیم و تفاوتِ حسِ «ماژور» و «مینور» رو کشف می‌کنیم!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

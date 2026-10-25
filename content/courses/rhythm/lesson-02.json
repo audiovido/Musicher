@@ -2,114 +2,114 @@
   "id": 2,
   "chapter": {
     "en": "Chapter 1: Pulse",
-    "fa": "فصل ۱ «ضرب و نبض»"
+    "fa": "فصل ۱ «نبض و ضرب»"
   },
   "title": {
-    "en": "Tempo: slow, medium, fast",
-    "fa": "تمپو: آهسته، متوسط، تند"
+    "en": "Tempo: slow, medium, and fast",
+    "fa": "تمپو: کند، متوسط و تند"
   },
   "minutes": 5,
   "goal": {
-    "en": "Understand tempo (BPM) and keep your beat completely even at a medium-brisk pace.",
-    "fa": "مفهوم «تمپو» (BPM) رو یاد می‌گیری و ضربت رو در سرعت متوسط رو به تند کاملاً یکنواخت نگه می‌داری."
+    "en": "Keep the beat completely even at different tempos and try the tempo slider from slow to brisk.",
+    "fa": "توی سرعت‌های مختلف ضرب رو کاملاً یکنواخت نگه می‌داری و اسلایدرِ سرعت رو از کند تا تند امتحان می‌کنی."
   },
   "see": {
-    "en": "The speed of the pulse is called tempo, measured in Beats Per Minute (BPM). At 60 BPM, there is one beat every second—like the ticking of a wall clock. At 84 BPM, the pulse walks a little more briskly; at 120 BPM, it jogs! Here is the golden rule for every musician: fast or slow, the beat stays even. A faster tempo never means getting faster and faster—it means picking one steady speed and locking into it.",
-    "fa": "به سرعتِ حرکتِ ضرب‌ها «تمپو» (Tempo) می‌گن که با واحدِ BPM (تعداد ضرب در دقیقه) اندازه گرفته می‌شه. مثلاً تمپوی ۶۰ یعنی دقیقاً هر ثانیه یک ضرب—مثل تیک‌تاک ساعت دیواری. تو تمپوی ۸۴ ضرب‌ها کمی چابک‌تر قدم برمی‌دارن و تو ۱۲۰ تندتر می‌رن! قانون طلایی برای هر نوازنده اینه: چه آهسته و چه تند، فاصله‌ی ضرب‌ها باید کاملاً مساوی بمونه. تمپوی تندتر یعنی یه سرعت ثابتِ بالاتر، نه اینکه وسط کار مدام تندتر بشی!"
+    "en": "Tempo is the speed of the pulse, measured in Beats Per Minute (BPM). At 60 BPM there is one beat every second, like a clock; at 88 BPM the pulse walks briskly. No matter the tempo, the distance between beats must stay equal—never hit harder just because the tempo is faster!",
+    "fa": "«تمپو» یعنی سرعتِ نبضِ موسیقی که با تعداد ضرب در دقیقه (BPM) سنجیده می‌شه. توی سرعت ۶۰، هر ثانیه یک ضرب داریم؛ توی سرعت ۸۸ قدم‌ها تندتر می‌شه. در هر سرعتی، فاصله‌ی بین ضرب‌ها باید کاملاً مساوی بمونه—وقتی سرعت بالاتره، محکم‌تر ضربه نزن!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' to hear the pulse at 84 BPM—notice how it is slightly brisker than Lesson 1, yet every beat is equally spaced.",
-      "Whisper '1 – 2 – 3 – 4' along with the demo to lock your internal clock to 84 BPM.",
-      "Tap the 8 beats on the pad at this steady 84 BPM pace without speeding up on the second measure."
+      "Listen to the demo at a brisk 88 BPM and notice how light and even the beats sound.",
+      "Use the tempo slider (50%–120%) if you want to warm up slower first, then try 100%.",
+      "Complete the 8-beat exercise with at least 80% Perfect or Good timing."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن تا نبض رو با سرعت ۸۴ بشنوی—ببین چطور کمی چابک‌تر از درس ۱ هست، اما فاصله‌ی ضرب‌ها کاملاً مساویه.",
-      "همراه با نمونه آروم بگو «۱ – ۲ – ۳ – ۴» تا ساعت درونی‌ت روی سرعت ۸۴ قفل بشه.",
-      "۸ ضرب رو با همین سرعت ثابتِ ۸۴ روی پد بزن و حواست باشه تو میزان دوم سرعتت بیشتر نشه."
+      "به نمونه‌ی صوتی با سرعت ۸۸ گوش بده و ببین ضرب‌ها چقدر سبک و منظم هستن.",
+      "اگه دوست داری اول با اسلایدرِ سرعت (۵۰٪ تا ۱۲۰٪) کمی کندتر گرم کن و بعد روی ۱۰۰٪ بزن.",
+      "تمرین ۸ ضربی رو با دقتِ حداقل ۸۰٪ کامل کن."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
+    "tempo": 88,
     "meter": "4/4",
-    "tempo": 84,
     "pattern": "1 1 1 1 | 1 1 1 1"
   },
   "selfCheck": {
     "en": [
-      "Did I match the 84 BPM speed from the very first tap?",
-      "Did my last four taps stay at the exact same speed as my first four taps?"
+      "Did my hand stay light without tensing up at the faster tempo?",
+      "Did I keep the spacing between beats steady instead of rushing ahead of the click?"
     ],
     "fa": [
-      "از همون ضرب اول سرعتم رو با تمپوی ۸۴ هماهنگ کردم؟",
-      "چهار ضربِ آخرم دقیقاً هم‌سرعتِ چهار ضربِ اولم موند؟"
+      "توی سرعتِ بالاتر دستم سبک و بدون انقباض موند؟",
+      "فاصله‌ی بین ضرب‌ها رو ثابت نگه داشتم و از کلیک جلو نیفتادم؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "What does '60 BPM' mean in music?",
-        "fa": "در موسیقی «تمپوی ۶۰» (60 BPM) یعنی چی؟"
+        "en": "What does BPM stand for in music?",
+        "fa": "واحد BPM در موسیقی نشان‌دهنده‌ی چیه؟"
       },
       "options": {
         "en": [
-          "60 beats per minute—one steady beat every second",
-          "The piece has 60 notes in total",
-          "You must hold every note for 60 seconds"
+          "Beats Per Minute (how many pulses happen in one minute)",
+          "Bars Per Melody",
+          "How loud you should strike the instrument"
         ],
         "fa": [
-          "۶۰ ضرب در دقیقه—یعنی هر ثانیه یک ضربِ ثابت",
-          "کل قطعه ۶۰ تا نت داره",
-          "هر نت رو باید ۶۰ ثانیه نگه داری"
+          "تعداد ضرب در دقیقه (سرعتِ نبض موسیقی)",
+          "تعداد میزان در هر آهنگ",
+          "شدت و بلندیِ صدای ساز"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Correct! BPM stands for Beats Per Minute, so 60 BPM is one beat per second.",
-        "fa": "کاملاً درسته! BPM یعنی تعداد ضرب در یک دقیقه، پس ۶۰ یعنی دقیقاً هر ثانیه یک ضرب."
+        "en": "Correct! BPM measures tempo—how many beats occur in 60 seconds.",
+        "fa": "کاملاً درسته! BPM سرعتِ نبض یا تعداد ضرب‌ها در هر دقیقه رو نشون می‌ده."
       },
       "feedbackWrong": {
-        "en": "BPM means Beats Per Minute: 60 BPM equals 60 beats in 60 seconds, or 1 beat per second.",
-        "fa": "BPM یعنی ضرب در دقیقه: تمپوی ۶۰ یعنی ۶۰ ضرب در ۶۰ ثانیه، یا هر ثانیه یک ضرب."
+        "en": "BPM means Beats Per Minute, which measures the speed (tempo) of the pulse.",
+        "fa": "BPM یعنی تعداد ضرب در دقیقه و سرعت (تمپو) رو مشخص می‌کنه."
       }
     },
     {
       "question": {
-        "en": "When a piece has a brisk tempo, what is the most common beginner mistake?",
-        "fa": "وقتی تمپوی یک قطعه کمی تنده، رایج‌ترین اشتباهِ اولِ کار چیه؟"
+        "en": "When a rhythm is tricky at full speed, what is the smartest way to practice it?",
+        "fa": "وقتی یک ریتم توی سرعتِ اصلی برات سخته، بهترین روش تمرین چیه؟"
       },
       "options": {
         "en": [
-          "Gradually speeding up (rushing) instead of keeping the beat even",
-          "Counting beats in measures",
-          "Listening to the metronome before starting"
+          "Lower the tempo slider to a comfortable slow speed, master it cleanly, then gradually speed up",
+          "Tap randomly as fast as possible",
+          "Skip the rests"
         ],
         "fa": [
-          "تندتر و تندتر شدنِ تدریجی (عجله کردن) به‌جای ثابت نگه‌داشتن فاصله‌ی ضرب‌ها",
-          "شمردن ضرب‌ها در هر میزان",
-          "گوش دادن به مترونوم قبل از شروع"
+          "اسلایدرِ سرعت رو بیاری پایین، توی سرعتِ کند دقیق بزنی و کم‌کم سرعت رو بالا ببری",
+          "با نهایت سرعت و شانسی ضربه بزنی",
+          "سکوت‌ها رو حذف کنی"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Even at a fast tempo, the distance between beats must stay locked and steady.",
-        "fa": "آفرین! حتی تو تمپوی تند هم فاصله‌ی بین ضرب‌ها باید کاملاً قفل‌شده و یکسان بمونه."
+        "en": "Spot on! Slow, accurate practice builds clean muscle memory much faster than rushing.",
+        "fa": "دقیقاً! تمرینِ آروم و دقیق، خیلی زودتر از عجله کردن دستت رو راه می‌ندازه."
       },
       "feedbackWrong": {
-        "en": "Remember: a faster tempo still requires an even beat—rushing makes the rhythm unstable.",
-        "fa": "یادت باشه: تمپوی تند هم به ضربِ یکنواخت نیاز داره و هول شدن و تندتر کردن باعث به‌هم ریختن ریتم می‌شه."
+        "en": "Slowing down the tempo until you can tap cleanly is the golden rule of rhythm practice.",
+        "fa": "کم کردنِ سرعت تا جایی که بتونی تمیز و دقیق بزنی، قانون طلایی تمرین ریتمه."
       }
     }
   ],
   "summary": {
-    "en": "You learned how tempo (BPM) sets the speed of the pulse and practiced keeping an even beat at 84 BPM.",
-    "fa": "یاد گرفتی تمپو (BPM) چطور سرعت نبض موسیقی رو مشخص می‌کنه و ضرب ثابت رو با سرعت ۸۴ تمرین کردی."
+    "en": "Well done! You practiced keeping an even pulse at a brisker tempo and learned how BPM and the tempo slider work.",
+    "fa": "آفرین! حفظِ ضربِ یکنواخت در سرعتِ بالاتر رو تمرین کردی و با مفهوم BPM آشنا شدی."
   },
   "tomorrow": {
-    "en": "We will combine short 1-beat quarter notes with long 2-beat half notes.",
-    "fa": "نت‌های ۱ ضربی (سیاه) و نت‌های کشیده‌ی ۲ ضربی (سفید) رو با هم ترکیب می‌کنیم."
+    "en": "Next lesson: we will combine short 1-beat quarter notes with longer 2-beat half notes.",
+    "fa": "درس فردا: نت‌های سیاه (۱ ضربی) رو با نت‌های کشیده‌ترِ سفید (۲ ضربی) ترکیب می‌کنیم."
   },
   "source": {
     "creator": {

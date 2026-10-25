@@ -2136,12 +2136,167 @@
         font-weight: 700;
       }
 
-      /* Desktop & Tablet (>= 768px): all 15 white keys C3..C5 fit 100% of card width with no cut-off */
+      /* Virtual Piano 88-Key Mini-Map & Octave Bar */
+      .vpiano-minimap-wrap {
+        width: 100%;
+        margin-bottom: 10px;
+        direction: ltr;
+        box-sizing: border-box;
+      }
+
+      .vpiano-minimap {
+        position: relative;
+        width: 100%;
+        height: 28px;
+        background-color: #1F1A2E;
+        border: 1.8px solid #1F1A2E;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        direction: ltr;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+        box-sizing: border-box;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .vpiano-minimap-whites {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        direction: ltr;
+      }
+
+      .vpiano-minimap-wkey {
+        flex: 1 1 0%;
+        height: 100%;
+        background-color: #FBF7F0;
+        border-right: 1px solid rgba(31, 26, 46, 0.24);
+        box-sizing: border-box;
+      }
+
+      .vpiano-minimap-wkey:last-child {
+        border-right: none;
+      }
+
+      .vpiano-minimap-wkey.is-c4 {
+        background-color: #F4E3B8;
+      }
+
+      .vpiano-minimap-wkey.is-target {
+        background-color: #1F6F6B;
+      }
+
+      .vpiano-minimap-blacks {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        direction: ltr;
+      }
+
+      .vpiano-minimap-bkey {
+        position: absolute;
+        top: 0;
+        width: 1.25%;
+        height: 58%;
+        background-color: #1F1A2E;
+        border-radius: 0 0 2px 2px;
+        z-index: 2;
+      }
+
+      .vpiano-minimap-window {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(242, 179, 61, 0.34);
+        border: 2px solid #F2B33D;
+        box-shadow: 0 0 0 1.2px #1F1A2E;
+        border-radius: 5px;
+        box-sizing: border-box;
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      .vpiano-octave-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+        direction: ltr;
+      }
+
+      .vpiano-octave-btn {
+        min-height: 44px;
+        height: 44px;
+        padding: 0 16px;
+        border-radius: 999px;
+        border: 1.8px solid #1F1A2E;
+        background-color: #FBF7F0;
+        color: #1F1A2E;
+        font-family: var(--font-body);
+        font-size: 0.86rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        box-shadow: 0 2px 0 #1F1A2E;
+        transition: background-color 120ms ease, transform 80ms ease, box-shadow 80ms ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .vpiano-octave-btn:hover:not(:disabled) {
+        background-color: #F2B33D;
+        color: #1F1A2E;
+      }
+
+      .vpiano-octave-btn:active:not(:disabled) {
+        background-color: #F2B33D;
+        transform: translateY(1px);
+        box-shadow: 0 1px 0 #1F1A2E;
+      }
+
+      .vpiano-octave-btn:disabled {
+        opacity: 0.42;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      .vpiano-octave-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .vpiano-octave-range-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 4px 14px;
+        border-radius: 999px;
+        background-color: var(--surface);
+        border: 1.5px solid #1F1A2E;
+        color: #1F1A2E;
+        font-weight: 800;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+        direction: ltr;
+        white-space: nowrap;
+      }
+
+      /* Sliding window container for the 88-key keyboard */
       .vpiano-scroll-wrap {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
-        overflow-x: hidden;
+        overflow: hidden;
         direction: ltr;
         text-align: left;
         box-sizing: border-box;
@@ -2154,6 +2309,7 @@
         max-width: 100%;
         height: 192px;
         display: block;
+        overflow: hidden;
         direction: ltr;
         background-color: #1F1A2E;
         border: 2px solid #1F1A2E;
@@ -2163,7 +2319,7 @@
         box-sizing: border-box;
         user-select: none;
         -webkit-user-select: none;
-        touch-action: pan-x;
+        touch-action: manipulation;
       }
 
       .vpiano-keys-stage {
@@ -2173,14 +2329,15 @@
         display: flex;
         direction: ltr;
         box-sizing: border-box;
+        will-change: transform;
       }
 
       .vpiano-white-key {
         position: relative;
-        flex: 1 1 0%;
-        width: calc(100% / 15);
+        flex: 0 0 calc(100% / 52);
+        width: calc(100% / 52);
         min-width: 0;
-        max-width: calc(100% / 15);
+        max-width: calc(100% / 52);
         height: 100%;
         background-color: #FBF7F0;
         border: 1.2px solid #1F1A2E;
@@ -2201,7 +2358,7 @@
       .vpiano-black-key {
         position: absolute;
         top: 0;
-        width: 4.35%;
+        width: 1.23%;
         height: 60%;
         background-color: #1F1A2E;
         border: 1.5px solid #1F1A2E;
@@ -2305,22 +2462,24 @@
         gap: 6px;
       }
 
-      /* Mobile (< 768px): keep horizontal scroll, auto-scroll smoothly to target key, show note labels */
+      /* Mobile (< 768px): keep responsive sliding window so visibleCount keys fit cleanly */
       @media (max-width: 767px) {
         .vpiano-card {
           padding: 14px 12px;
         }
         .vpiano-scroll-wrap {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          scroll-behavior: smooth;
-          padding-bottom: 6px;
+          overflow: hidden;
         }
         .vpiano-keyboard {
-          width: 540px;
-          min-width: 540px;
-          max-width: none;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
           height: 180px;
+          overflow: hidden;
+        }
+        .vpiano-octave-btn {
+          padding: 0 12px;
+          font-size: 0.8rem;
         }
         .vpiano-key-labels {
           display: flex !important;
@@ -2485,6 +2644,76 @@
       }
 
       /* Rhythm-Tap Widget */
+      .rhythm-controls-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        background-color: var(--bg-elevated);
+        border: 1.5px solid var(--border-subtle);
+      }
+
+      .rhythm-tempo-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1 1 220px;
+        min-width: 200px;
+      }
+
+      .rhythm-tempo-slider {
+        flex: 1;
+        min-width: 90px;
+        accent-color: var(--secondary);
+        cursor: pointer;
+      }
+
+      .rhythm-countin-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: rgba(242, 179, 61, 0.22);
+        border: 1.5px solid #1F1A2E;
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: #1F1A2E;
+      }
+
+      .rhythm-countin-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        direction: ltr;
+      }
+
+      .rhythm-countin-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1.5px solid #1F1A2E;
+        background-color: #FBF7F0;
+        color: #1F1A2E;
+        font-size: 0.76rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .rhythm-countin-dot.active {
+        background-color: #F2B33D;
+        transform: scale(1.1);
+      }
+
       .rhythm-pattern-row {
         display: flex;
         align-items: center;
@@ -2536,6 +2765,18 @@
         color: #FFFFFF;
       }
 
+      .rhythm-token-box.done-good {
+        background-color: #F2B33D;
+        border-color: #1F1A2E;
+        color: #1F1A2E;
+      }
+
+      .rhythm-token-box.done-bad {
+        background-color: #F7C6C3;
+        border-color: #D9473F;
+        color: #1F1A2E;
+      }
+
       .rhythm-barline {
         width: 2.5px;
         height: 36px;
@@ -2543,6 +2784,43 @@
         border-radius: 2px;
         margin: 0 4px;
         opacity: 0.65;
+      }
+
+      .rhythm-timeline-dots {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0 6px;
+        direction: ltr;
+      }
+
+      .rhythm-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1.5px solid #1F1A2E;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #FFFFFF;
+      }
+
+      .rhythm-dot.is-green {
+        background-color: #1F6F6B;
+        color: #FFFFFF;
+      }
+
+      .rhythm-dot.is-yellow {
+        background-color: #F2B33D;
+        color: #1F1A2E;
+      }
+
+      .rhythm-dot.is-red {
+        background-color: #D9473F;
+        color: #FFFFFF;
       }
 
       .rhythm-tap-pad {
@@ -2570,6 +2848,87 @@
         background-color: #F2B33D;
         transform: translateY(3px);
         box-shadow: 0 1px 0 #1F1A2E;
+      }
+
+      /* Metronome Beat Dots & Practice Tool Tiles */
+      .metronome-beats-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 12px 0;
+      }
+
+      .metronome-beat-dot {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.8px solid #1F1A2E;
+        background-color: var(--bg-elevated);
+        color: var(--ink);
+        font-weight: 800;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 80ms ease, background-color 80ms ease;
+      }
+
+      .metronome-beat-dot.active {
+        background-color: var(--secondary);
+        color: #FFFFFF;
+        transform: scale(1.12);
+      }
+
+      .metronome-beat-dot.accent.active {
+        background-color: #F2B33D;
+        color: #1F1A2E;
+      }
+
+      .practice-tools-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      @media (max-width: 640px) {
+        .practice-tools-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .practice-tool-tile {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: start;
+        cursor: pointer;
+        min-height: 92px;
+        transition: all 140ms ease;
+      }
+
+      .practice-tool-tile.active {
+        border: 2px solid #1F1A2E;
+        background-color: #F4E6C8;
+        box-shadow: 0 3px 0 #1F1A2E;
+      }
+
+      .practice-tool-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1.5px solid #1F1A2E;
+        background-color: #FBF7F0;
+        color: #1F1A2E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .practice-tool-icon svg {
+        width: 26px;
+        height: 26px;
       }
 
       /* Ear-Choice Widget */
@@ -2712,34 +3071,34 @@
           id: "rhythm",
           order: 2,
           group: "skills",
-          visible: false,
+          visible: true,
           icon: "drum",
-          status: "coming-soon",
+          status: "ready",
           review: "self",
-          lessonCount: 0,
+          lessonCount: 12,
           lessonsDir: "content/courses/rhythm",
           coverImage: "assets/course-rhythm.jpeg",
           title: { en: "Rhythm & Meter", fa: "ریتم و وزن" },
           subtitle: {
-            en: "Steady pulse, 2/4, 3/4, 4/4, 6/8 & Persian rhythmic patterns",
-            fa: "ضرب ثابت، میزان‌های ۲/۴، ۳/۴، ۴/۴، ۶/۸ و ریتم‌های ایرانی"
+            en: "3 chapters · 12 lessons",
+            fa: "۳ فصل · ۱۲ درس"
           }
         },
         {
           id: "ear",
           order: 3,
           group: "skills",
-          visible: false,
+          visible: true,
           icon: "ear",
-          status: "coming-soon",
+          status: "ready",
           review: "self",
-          lessonCount: 0,
+          lessonCount: 10,
           lessonsDir: "content/courses/ear",
           coverImage: "assets/course-ear.jpeg",
           title: { en: "Ear Training & Sight-Reading", fa: "تربیت گوش و نت‌خوانی" },
           subtitle: {
-            en: "High vs low, steps & skips, major vs minor, staff & koron",
-            fa: "زیر و بم، گام و پرش، ماژور و مینور، حامل و ربع‌پرده (کرن)"
+            en: "3 chapters · 10 lessons",
+            fa: "۳ فصل · ۱۰ درس"
           }
         },
         {
@@ -2847,7 +3206,7 @@
       ];
 
       let COURSES = [...DEFAULT_COURSES];
-      let COURSE_LESSONS = { piano: [] };
+      let COURSE_LESSONS = { piano: [], rhythm: [], ear: [] };
 
       const STORAGE_KEY = "musicher_app_state_v3";
       // Flag to temporarily hide "Dark" and "System" theme buttons in Profile (keep code intact to restore later)
@@ -2870,6 +3229,8 @@
         freeDayUsedWeekKey: null,
         activeDaysHistory: [],
         courseProgress: {},
+        rhythmTempoByLesson: {},
+        rhythmBestByLesson: {},
         userName: "",
         userEmail: "",
         isGuest: true,
@@ -2891,6 +3252,8 @@
         metronomeRunning: false,
         metronomeBeatIdx: -1,
         metronomeInterval: null,
+        metronomeTimerId: null,
+        metronomeNextBeatTime: 0,
         toolRhythmPreset: "4/4-steady",
         toolEarMode: "higher-lower",
         toolTimerSeconds: 60,
@@ -2910,6 +3273,8 @@
         teacherSavedBanner: false,
         pianoShowLabels: true,
         pianoAudioUnlocked: false,
+        pianoContainerWidth: 0,
+        pianoWindowStartWhiteIdx: null,
         pianoPractice: {
           lessonId: null,
           tab: "follow",
@@ -2929,8 +3294,27 @@
           playingDemo: false,
           demoIdx: -1,
           timers: [],
-          // rhythm-tap
+          // rhythm-tap lookahead scheduler & scoring
+          rhythmPhase: "idle", // "idle" | "countin" | "active" | "done"
+          rhythmClickEnabled: true,
+          rhythmClickOn: true,
+          rhythmTempoPct: 100,
+          rhythmCountInBeat: 0,
+          rhythmCountInTotal: 4,
           rhythmStepIdx: 0,
+          rhythmExerciseStartTime: 0,
+          rhythmBeatSec: 0.8,
+          rhythmStartTime: 0,
+          rhythmNextClickTime: 0,
+          rhythmNextClickBeat: 0,
+          rhythmSchedulerTimer: null,
+          rhythmDemoNextIdx: 0,
+          rhythmResults: [],
+          rhythmRestMistakes: 0,
+          rhythmAccuracyPct: 0,
+          rhythmBestPct: 0,
+          rhythmBestByLesson: {},
+          rhythmPassed: false,
           rhythmLastTapTime: 0,
           rhythmFeedback: "",
           rhythmFeedbackType: "",
@@ -2941,7 +3325,10 @@
           earSelected: null,
           earAnswered: false,
           earIsRight: false,
+          earScore: 0,
+          earRoundScored: false,
           earDone: false,
+          earPassed: false,
           // listen-sing
           singOctaveLow: false,
           singPlayedOnce: false,
@@ -3046,11 +3433,16 @@
           piano: {
             title: "Practice Piano",
             freePlayTitle: "Free piano",
-            freePlaySub: "Explore the 2-octave keyboard (C3 to C5) with touch, mouse, or computer keys.",
+            freePlaySub: "Explore the full 88-key piano (A0 to C8) with octave controls, mini-map, touch, mouse, or computer keys.",
             openFreePlayBtn: "Free piano",
             tapToEnableSound: "Tap to enable sound",
             soundEnabled: "Sound ready",
             noteLabelsToggle: "Note labels",
+            octaveDown: "◀ Octave",
+            octaveUp: "Octave ▶",
+            octaveDownBtn: "◀ Octave",
+            octaveUpBtn: "Octave ▶",
+            minimapAria: "88-key piano mini-map — tap or drag to move the visible keyboard window",
             tabWatch: "Watch",
             tabFollow: "Follow me",
             tabOwn: "On your own",
@@ -3066,7 +3458,7 @@
             playAgainBtn: "Practice again",
             ownInstruction: "Play this sequence in order without key glow ({current}/{total}):",
             ownFailHint: "Not quite that sequence — let's try again from the first note!",
-            computerKeysHint: "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
+            computerKeysHint: "Desktop keys ({range}): A W S E D F T G Y H U J K · Z/X: Octave",
             handRight: "Right hand",
             handLeft: "Left hand",
             handBoth: "Left hand for C3, right hand for C4 and C5",
@@ -3088,31 +3480,53 @@
             completedBadge: "Practice completed",
             wellDone: "Well done!",
             playAgainBtn: "Practice again",
+            tryAgainBtn: "Try again",
             watchTab: "Watch & Listen",
             followTab: "Follow me",
             playDemoBtn: "Play demo",
             stopDemoBtn: "Stop",
             rhythmTitle: "Rhythm Tap Practice",
             rhythmMeter: "Meter {meter} · {tempo} BPM",
-            rhythmInstruction: "Listen to the demo or tap the drum pad (or press Space) in time with each beat. Stay silent on rests!",
+            rhythmInstruction: "Tap \"Start tap practice\" to hear a 1-bar count-in, then tap the drum pad (or press Space) in time with each note. Stay silent on rests!",
             rhythmTapBtn: "TAP BEAT",
             rhythmSpaceHint: "Desktop tip: Press Spacebar to tap",
             rhythmStartBtn: "Start tap practice",
+            rhythmStopBtn: "Stop",
+            rhythmClickOn: "Click: On",
+            rhythmClickOff: "Click: Off",
+            rhythmTempoLabel: "Tempo: {pct}% ({bpm} BPM)",
+            rhythmCountInStatus: "Count-in: {beat} / {total} — get ready!",
+            rhythmActiveStatus: "Tap in time with the click ({current} / {total})",
             rhythmRestLabel: "Rest ({beats}b)",
             rhythmBeatLabel: "{beats}b",
+            rhythmPerfect: "Perfect! ({ms}ms)",
+            rhythmGood: "Good ({ms}ms)",
+            rhythmEarlyMs: "Early (−{ms}ms)",
+            rhythmLateMs: "Late (+{ms}ms)",
+            rhythmRestMistake: "Tapped on a rest! Stay silent on rests.",
+            rhythmMissedNote: "Missed beat!",
+            rhythmRestHold: "Rest held ✓",
+            rhythmResultAccuracy: "Accuracy: {pct}% (Best: {best}%)",
+            rhythmNeed80Hint: "Reach at least 80% Perfect + Good to complete this practice.",
             rhythmOnTime: "On time! ✓",
             rhythmEarly: "A little early",
             rhythmLate: "A little late",
-            rhythmRestHold: "Rest held ✓",
             earTitle: "Ear Training",
             earRound: "Round {current} of {total}",
             earPlayBtn: "Play sound",
             earReplayBtn: "Play again",
             earNextRoundBtn: "Next round →",
+            earScoreSummary: "Score: {score} / {total} ({pct}%)",
+            earPassMsg: "Great ear! You passed (≥ 70%).",
+            earFailMsg: "Score {pct}% — reach at least 70% to complete.",
             earPromptHigherLower: "Listen to the two notes. Is the second note higher or lower?",
             earPromptSameDifferent: "Listen carefully. Are the two patterns the same or different?",
             earPromptStepSkip: "Do these notes move by a neighbor step or a skip?",
+            earPromptMelodyDirection: "Listen to the 3-note phrase. Which direction does the melody move?",
+            earPromptSmallIntervals: "Listen to the two notes. Is the distance a half step, whole step, or 3rd?",
+            earPromptBigIntervals: "Listen to the leap between these two notes. Is it a 4th, 5th, or octave?",
             earPromptMajorMinor: "Listen to this chord. Does it sound Major (bright) or Minor (warm)?",
+            earPromptSemitoneKoron: "Listen closely to this step. Is it a half step, neutral 2nd (koron), or whole step?",
             earPromptInterval: "Listen to the distance between these two notes. Which interval do you hear?",
             earOptHigher: "Higher ↑",
             earOptLower: "Lower ↓",
@@ -3120,12 +3534,18 @@
             earOptDifferent: "Different ≠",
             earOptStep: "Step (neighbor)",
             earOptSkip: "Skip (jump)",
+            earOptUp: "Up ↗",
+            earOptDown: "Down ↘",
+            earOptArch: "Up-down ⌒",
             earOptMajor: "Major (bright)",
             earOptMinor: "Minor (warm)",
             earOptHalfStep: "Half step",
             earOptWholeStep: "Whole step",
+            earOptThird: "Third (3rd)",
+            earOptFourth: "Fourth (4th)",
             earOptNeutralStep: "Neutral step (Koron)",
-            earOptFifth: "Fifth (open)",
+            earOptFifth: "Fifth (5th)",
+            earOptOctave: "Octave (8ve)",
             earRightMsg: "Spot on! Your ear caught it.",
             earWrongMsg: "Not quite — tap \"Play again\" and compare the sounds.",
             singTitle: "Listen & Sing Back",
@@ -3180,15 +3600,22 @@
             tabTeachers: "استادها",
             toolsHeading: "ابزارهای تمرین",
             toolsSub: "ابزارهای مستقل برای تمرین آزاد، مترونوم، ریتم، تربیت گوش و تنفس آرام.",
+            practiceToolsSub: "ابزارهای مستقل برای تمرین آزاد، مترونوم، ریتم، تربیت گوش و تنفس آرام.",
             backToToolsBtn: "→ همه‌ی ابزارهای تمرین",
+            toolBackToList: "همه‌ی ابزارهای تمرین",
+            toolFreePiano: "پیانوی آزاد",
             toolFreePianoTitle: "پیانوی آزاد",
-            toolFreePianoDesc: "کیبورد دو اکتاو (C3 تا C5) با لمس صفحه، ماوس یا کیبورد کامپیوتر.",
+            toolFreePianoDesc: "کیبورد کامل ۸۸ کلیدی (A0 تا C8) با لمس صفحه، ماوس یا کیبورد کامپیوتر.",
+            toolMetronome: "مترونوم",
             toolMetronomeTitle: "مترونوم",
             toolMetronomeDesc: "ضرب دیداری و شنیداری دقیق از سرعت ۴۰ تا ۱۶۰.",
+            toolRhythmTap: "تمرین ریتم",
             toolRhythmTapTitle: "تمرین ریتم",
             toolRhythmTapDesc: "تمرین ضرب‌گیری در میزان‌های ۲/۴، ۳/۴، ۴/۴ و ۶/۸.",
+            toolEarGame: "بازی تربیت گوش",
             toolEarGameTitle: "بازی تربیت گوش",
             toolEarGameDesc: "تشخیص نت‌های زیر و بم، گام و پرش، و آکوردهای ماژور و مینور.",
+            toolBreathTimer: "زمان‌سنج تنفس",
             toolBreathTimerTitle: "زمان‌سنج تنفس",
             toolBreathTimerDesc: "زمان‌سنج آرام برای تنفس، رهایی شانه‌ها و گرم کردن قبل از تمرین.",
             metronomeBpmLabel: "سرعت {bpm}",
@@ -3233,11 +3660,16 @@
           piano: {
             title: "پیانوی تمرینی",
             freePlayTitle: "پیانوی آزاد",
-            freePlaySub: "کیبورد دو اکتاو (C3 تا C5) برای تمرین با لمس صفحه، ماوس یا کیبورد کامپیوتر.",
+            freePlaySub: "کیبورد کامل ۸۸ کلیدی (A0 تا C8) با جابه‌جایی اکتاو، نقشهٔ کلی، لمس صفحه، ماوس یا کیبورد کامپیوتر.",
             openFreePlayBtn: "پیانوی آزاد",
             tapToEnableSound: "برای فعال شدن صدا ضربه بزن",
             soundEnabled: "صدا فعاله",
             noteLabelsToggle: "نام نت‌ها",
+            octaveDown: "◀ اکتاو پایین",
+            octaveUp: "اکتاو بالا ▶",
+            octaveDownBtn: "◀ اکتاو پایین",
+            octaveUpBtn: "اکتاو بالا ▶",
+            minimapAria: "نقشهٔ کلی پیانوی ۸۸ کلیدی — برای جابه‌جایی پنجرهٔ کیبورد ضربه بزن یا بکش",
             tabWatch: "تماشا",
             tabFollow: "همراه من",
             tabOwn: "خودت بزن",
@@ -3253,7 +3685,7 @@
             playAgainBtn: "تمرین دوباره",
             ownInstruction: "این نت‌ها رو به ترتیب و بدون راهنمای نوری بزن ({current}/{total}):",
             ownFailHint: "ترتیب نت‌ها کمی فرق داشت — بیا از نت اول دوباره امتحان کنیم!",
-            computerKeysHint: "کلیدهای کامپیوتر (C4 تا C5): A W S E D F T G Y H U J K",
+            computerKeysHint: "کلیدهای کامپیوتر ({range}): A W S E D F T G Y H U J K · تغییر اکتاو: Z/X",
             handRight: "دست راست",
             handLeft: "دست چپ",
             handBoth: "دست چپ برای C3، دست راست برای C4 و C5",
@@ -3275,31 +3707,53 @@
             completedBadge: "تمرین این بخش انجام شد",
             wellDone: "آفرین!",
             playAgainBtn: "تمرین دوباره",
+            tryAgainBtn: "تلاش دوباره",
             watchTab: "تماشا و شنیدن",
             followTab: "همراه من",
             playDemoBtn: "پخش نمونه",
             stopDemoBtn: "توقف",
             rhythmTitle: "تمرین ضرب و ریتم",
             rhythmMeter: "کسر میزان {meter} · سرعت {tempo}",
-            rhythmInstruction: "به نمونه گوش کن یا هم‌زمان با صدای مترونوم روی دکمه‌ی ضرب (یا کلید Space) بزن. روی سکوت‌ها ضربه نزن!",
+            rhythmInstruction: "روی «شروع تمرین ریتم» بزن، به یک میزان شمارشِ اول گوش بده و بعد هم‌زمان با هر نت روی دکمه‌ی ضرب (یا کلید Space) بزن. روی سکوت‌ها ضربه نزن!",
             rhythmTapBtn: "ضربه بزن",
             rhythmSpaceHint: "نکته: می‌تونی با کلید فاصله (Space) روی کیبورد هم ضربه بزنی",
             rhythmStartBtn: "شروع تمرین ریتم",
+            rhythmStopBtn: "توقف",
+            rhythmClickOn: "صدای کلیک: روشن",
+            rhythmClickOff: "صدای کلیک: خاموش",
+            rhythmTempoLabel: "سرعت: {pct}٪ ({bpm} ضرب در دقیقه)",
+            rhythmCountInStatus: "شمارش شروع: {beat} از {total} — آماده باش!",
+            rhythmActiveStatus: "هم‌زمان با ضرب‌ها بزن ({current} از {total})",
             rhythmRestLabel: "سکوت ({beats} ضرب)",
             rhythmBeatLabel: "{beats} ضرب",
+            rhythmPerfect: "عالی! ({ms}ms)",
+            rhythmGood: "خوب ({ms}ms)",
+            rhythmEarlyMs: "زود زدی (−{ms}ms)",
+            rhythmLateMs: "دیر زدی (+{ms}ms)",
+            rhythmRestMistake: "روی سکوت ضربه زدی! روی سکوت‌ها صبر کن.",
+            rhythmMissedNote: "ضرب از دست رفت!",
+            rhythmRestHold: "سکوت رعایت شد ✓",
+            rhythmResultAccuracy: "دقت: {pct}٪ (بهترین رکورد: {best}٪)",
+            rhythmNeed80Hint: "برای تکمیل این تمرین به حداقل ۸۰٪ ضرب‌های «عالی» یا «خوب» نیاز داری.",
             rhythmOnTime: "دقیق و به‌موقع! ✓",
             rhythmEarly: "کمی زود زدی",
             rhythmLate: "کمی دیر زدی",
-            rhythmRestHold: "سکوت رعایت شد ✓",
             earTitle: "تربیت گوش",
             earRound: "مرحله‌ی {current} از {total}",
             earPlayBtn: "پخش صدا",
             earReplayBtn: "پخش دوباره",
             earNextRoundBtn: "مرحله‌ی بعد ←",
+            earScoreSummary: "امتیاز: {score} از {total} ({pct}٪)",
+            earPassMsg: "آفرین! با موفقیت قبول شدی (حداقل ۷۰٪).",
+            earFailMsg: "امتیازت {pct}٪ شد — برای تکمیل تمرین حداقل ۷۰٪ لازمه.",
             earPromptHigherLower: "به دو نت گوش کن. نت دوم زیرتر (بالاتر) بود یا بم‌تر (پایین‌تر)؟",
             earPromptSameDifferent: "خوب گوش کن. این دو الگو یکسان بودن یا متفاوت؟",
             earPromptStepSkip: "حرکت این دو نت به‌صورت گام (همسایه) بود یا پرش؟",
+            earPromptMelodyDirection: "به این عبارت ۳ نتی گوش کن. جهت حرکت ملودی چطور بود؟",
+            earPromptSmallIntervals: "به دو نت گوش کن. فاصله‌ی آن‌ها نیم‌پرده است، یک پرده یا سوم؟",
+            earPromptBigIntervals: "به پرش بین این دو نت گوش کن. فاصله‌ی چهارم است، پنجم یا اکتاو؟",
             earPromptMajorMinor: "به این آکورد گوش کن. ماژور (روشن و شاد) بود یا مینور (گرم و غمگین)؟",
+            earPromptSemitoneKoron: "با دقت به این گام گوش کن. نیم‌پرده است، ربع‌پرده (کرن) یا یک پرده؟",
             earPromptInterval: "به فاصله‌ی بین این دو نت گوش کن. چه فاصله‌ای رو می‌شنوی؟",
             earOptHigher: "زیرتر (بالاتر) ↑",
             earOptLower: "بم‌تر (پایین‌تر) ↓",
@@ -3307,12 +3761,18 @@
             earOptDifferent: "متفاوت ≠",
             earOptStep: "گام (نت همسایه)",
             earOptSkip: "پرش (رد کردن نت)",
+            earOptUp: "بالارونده ↗",
+            earOptDown: "پایین‌رونده ↘",
+            earOptArch: "کمانی (بالا و پایین) ⌒",
             earOptMajor: "ماژور (روشن)",
             earOptMinor: "مینور (گرم)",
             earOptHalfStep: "نیم‌پرده",
-            earOptWholeStep: "پرده",
+            earOptWholeStep: "یک پرده",
+            earOptThird: "فاصله‌ی سوم",
+            earOptFourth: "فاصله‌ی چهارم",
             earOptNeutralStep: "پنج‌چهارم پرده (کرن)",
-            earOptFifth: "فاصله‌ی پنجم (باز)",
+            earOptFifth: "فاصله‌ی پنجم",
+            earOptOctave: "اکتاو (هشتم)",
             earRightMsg: "آفرین! گوشت کاملاً درست تشخیص داد.",
             earWrongMsg: "دوباره روی «پخش دوباره» بزن و صداها رو با هم مقایسه کن.",
             singTitle: "بشنو و بخوان",
@@ -3537,9 +3997,11 @@
           return "";
         }
         if (typeof cur !== "string") return cur;
-        return cur.replace(/\{(\w+)\}/g, (_, k) =>
-          params[k] !== undefined ? toLocaleDigits(params[k]) : ""
-        );
+        return cur.replace(/\{(\w+)\}/g, (_, k) => {
+          if (params[k] === undefined) return "";
+          if (k === "range") return String(params[k]);
+          return toLocaleDigits(params[k]);
+        });
       }
 
       function lField(fieldObj) {
@@ -4593,12 +5055,81 @@
       // Middle C (C4) is whiteIdx 23; C3 is whiteIdx 16
       const VPIANO_C3_WHITE_IDX = 16;
       const VPIANO_C4_WHITE_IDX = 23;
+      const VPIANO_TOTAL_WHITE_KEYS = VPIANO_WHITE_KEYS.length; // 52
+
+      let pianoResizeObserver = null;
+
+      function isTouchOrMobilePianoDevice() {
+        if (typeof window === "undefined") return false;
+        const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+        return Boolean(coarse || window.innerWidth < 768);
+      }
+
+      function measurePianoContainerWidth() {
+        if (typeof document !== "undefined") {
+          const kbEl = document.querySelector(".vpiano-keyboard");
+          if (kbEl) {
+            const w = kbEl.clientWidth || Math.round(kbEl.getBoundingClientRect().width);
+            if (w > 120) {
+              ui.pianoContainerWidth = w;
+              return w;
+            }
+          }
+        }
+        if (ui.pianoContainerWidth && ui.pianoContainerWidth > 120) {
+          return ui.pianoContainerWidth;
+        }
+        const vw = typeof window !== "undefined" ? window.innerWidth : 1200;
+        return Math.max(240, Math.min(750, vw - 48));
+      }
 
       function getPianoWindowWhiteCount() {
-        const w = typeof window !== "undefined" ? window.innerWidth : 1200;
-        if (w >= 1100) return 22; // 3 octaves (e.g. C3–C6)
-        if (w >= 700) return 15; // 2 octaves (e.g. C3–C5)
-        return 11; // 1.5 octaves (e.g. C4–F5), min 40px white key width
+        const containerWidth = measurePianoContainerWidth();
+        const minKeyWidth = isTouchOrMobilePianoDevice() ? 40 : 34;
+        const rawCount = Math.floor(containerWidth / minKeyWidth);
+        return Math.max(7, Math.min(22, rawCount));
+      }
+
+      function getPianoVisibleWhiteCount() {
+        return getPianoWindowWhiteCount();
+      }
+
+      function observePianoContainers() {
+        if (typeof window === "undefined" || typeof document === "undefined") return;
+        const keyboards = document.querySelectorAll(".vpiano-keyboard");
+        if (!keyboards.length) return;
+
+        keyboards.forEach((kb) => {
+          const w = kb.clientWidth || Math.round(kb.getBoundingClientRect().width);
+          if (w > 120) {
+            ui.pianoContainerWidth = w;
+          }
+        });
+
+        if (typeof ResizeObserver !== "undefined") {
+          if (!pianoResizeObserver) {
+            pianoResizeObserver = new ResizeObserver((entries) => {
+              let changed = false;
+              for (const entry of entries) {
+                const w = Math.round(entry.contentRect?.width || entry.target.clientWidth || 0);
+                if (w > 120 && Math.abs(w - (ui.pianoContainerWidth || 0)) >= 2) {
+                  ui.pianoContainerWidth = w;
+                  changed = true;
+                }
+              }
+              if (changed) {
+                const count = getPianoWindowWhiteCount();
+                ui.pianoWindowStartWhiteIdx = clampPianoWindowStart(
+                  ui.pianoWindowStartWhiteIdx ?? getDefaultPianoWindowStart(count),
+                  count
+                );
+                updatePianoWindowDOM(false);
+              }
+            });
+          }
+          pianoResizeObserver.disconnect();
+          keyboards.forEach((kb) => pianoResizeObserver.observe(kb));
+        }
       }
 
       function getDefaultPianoWindowStart(whiteCount = getPianoWindowWhiteCount()) {
@@ -4627,28 +5158,55 @@
         return `${firstWk.note}–${lastWk.note}`;
       }
 
-      // Dynamic computer keyboard mapping that follows the visible window
+      function getFirstVisibleCWhiteIdx(startIdx = getPianoWindowStartWhiteIdx(), count = getPianoWindowWhiteCount()) {
+        const endIdx = Math.min(VPIANO_WHITE_KEYS.length - 1, startIdx + count - 1);
+        for (let i = startIdx; i <= endIdx; i++) {
+          if (VPIANO_WHITE_KEYS[i] && VPIANO_WHITE_KEYS[i].letter === "C") {
+            return i;
+          }
+        }
+        return startIdx;
+      }
+
+      function getComputerKeyMapRangeLabel(startIdx = getPianoWindowStartWhiteIdx(), count = getPianoWindowWhiteCount()) {
+        const cIdx = getFirstVisibleCWhiteIdx(startIdx, count);
+        const endVisibleIdx = Math.min(VPIANO_WHITE_KEYS.length - 1, startIdx + count - 1);
+        const mappedLastIdx = Math.min(endVisibleIdx, cIdx + 7);
+        const firstNote = VPIANO_WHITE_KEYS[cIdx]?.note || "C4";
+        const lastNote = VPIANO_WHITE_KEYS[mappedLastIdx]?.note || "C5";
+        return `${firstNote}–${lastNote}`;
+      }
+
+      // Dynamic computer keyboard mapping starting at the first visible C of the window (A = C, W = C#, S = D, E = D#, D = E, F = F, T = F#, G = G, Y = G#, H = A, U = A#, J = B, K = next C...)
       function getActiveComputerKeyMap() {
         const count = getPianoWindowWhiteCount();
         const startIdx = getPianoWindowStartWhiteIdx();
-        const anchorWhiteIdx =
-          count >= 22 && startIdx >= 9 && startIdx + 7 + 10 < VPIANO_WHITE_KEYS.length
-            ? startIdx + 7
-            : startIdx;
+        const endVisibleIdx = Math.min(VPIANO_WHITE_KEYS.length - 1, startIdx + count - 1);
+        const anchorWhiteIdx = getFirstVisibleCWhiteIdx(startIdx, count);
 
         const whiteKeyChars = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"];
-        const blackKeyChars = ["w", "e", "r", "t", "y", "u", "i", "o", "p", "["];
+        const blackByOffset = {
+          0: "w", // C#
+          1: "e", // D#
+          3: "t", // F#
+          4: "y", // G#
+          5: "u", // A#
+          7: "o", // next C#
+          8: "p"  // next D#
+        };
         const map = {};
 
         for (let i = 0; i < whiteKeyChars.length; i++) {
           const wIdx = anchorWhiteIdx + i;
+          if (wIdx > endVisibleIdx) break;
           const wk = VPIANO_WHITE_KEYS[wIdx];
           if (!wk) break;
           map[whiteKeyChars[i]] = wk.note;
-          if (i < blackKeyChars.length) {
+          const bChar = blackByOffset[i];
+          if (bChar) {
             const bk = VPIANO_BLACK_KEYS.find((b) => b.afterWhiteIdx === wIdx);
             if (bk) {
-              map[blackKeyChars[i]] = bk.note;
+              map[bChar] = bk.note;
             }
           }
         }
@@ -4660,12 +5218,13 @@
         const startIdx = getPianoWindowStartWhiteIdx();
         const maxStart = Math.max(0, VPIANO_WHITE_KEYS.length - count);
         const rangeLabel = getPianoWindowRangeLabel(startIdx, count);
+        const keyMapRange = getComputerKeyMapRangeLabel(startIdx, count);
         const stageWidthPct = (VPIANO_WHITE_KEYS.length / count) * 100;
         const translatePct = (startIdx / VPIANO_WHITE_KEYS.length) * 100;
 
         document.querySelectorAll(".vpiano-keys-stage").forEach((stage) => {
           stage.style.transition = smooth ? "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)" : "none";
-          stage.style.width = `max(${stageWidthPct.toFixed(4)}%, ${VPIANO_WHITE_KEYS.length * 40}px)`;
+          stage.style.width = `${stageWidthPct.toFixed(4)}%`;
           stage.style.transform = `translateX(-${translatePct.toFixed(4)}%)`;
         });
 
@@ -4679,6 +5238,10 @@
 
         document.querySelectorAll(".vpiano-octave-range-badge").forEach((badge) => {
           badge.textContent = rangeLabel;
+        });
+
+        document.querySelectorAll(".vpiano-computer-hint").forEach((hintEl) => {
+          hintEl.textContent = t("piano.computerKeysHint", { range: keyMapRange });
         });
 
         document.querySelectorAll("[data-action='vpiano-octave-down']").forEach((btn) => {
@@ -4855,6 +5418,13 @@
         mp.timers = [];
         mp.playingDemo = false;
         mp.demoIdx = -1;
+        if (mp.rhythmSchedulerTimer) {
+          clearInterval(mp.rhythmSchedulerTimer);
+          mp.rhythmSchedulerTimer = null;
+        }
+        if (mp.rhythmPhase === "countin" || mp.rhythmPhase === "active") {
+          mp.rhythmPhase = "idle";
+        }
         if (mp.timerInterval) {
           clearInterval(mp.timerInterval);
           mp.timerInterval = null;
@@ -4864,9 +5434,15 @@
           clearInterval(ui.metronomeInterval);
           ui.metronomeInterval = null;
         }
+        if (ui.metronomeTimerId) {
+          clearInterval(ui.metronomeTimerId);
+          ui.metronomeTimerId = null;
+        }
         ui.metronomeRunning = false;
         ui.metronomeBeatIdx = -1;
       }
+
+      const stopAllMultiPracticeTimers = stopMultiPracticeTimers;
 
       function stopPianoWatchDemo() {
         const pp = ui.pianoPractice;
@@ -4886,7 +5462,9 @@
         "4/4-steady": { meter: "4/4", tempo: 72, pattern: "1 1 1 1 | 1 1 2" },
         "3/4-waltz": { meter: "3/4", tempo: 76, pattern: "1 1 1 | 2 1" },
         "4/4-rests": { meter: "4/4", tempo: 70, pattern: "1 1 r1 1 | 1 r1 2" },
-        "6/8-shirazi": { meter: "6/8", tempo: 84, pattern: "1.5 1.5 | 1 0.5 1.5" }
+        "4/4-eighth": { meter: "4/4", tempo: 72, pattern: "0.5 0.5 0.5 0.5 1 1" },
+        "6/8-shirazi": { meter: "6/8", tempo: 84, pattern: "1.5 1.5 | 1 0.5 1.5" },
+        "6/8-persian": { meter: "6/8", tempo: 84, pattern: "1 0.5 1 0.5 | 1.5 1.5" }
       };
 
       function getActivePracticeContextLesson() {
@@ -4909,7 +5487,7 @@
               practice: {
                 type: "ear-choice",
                 mode: ui.toolEarMode || "higher-lower",
-                rounds: 6
+                rounds: 10
               }
             };
           }
@@ -5078,7 +5656,7 @@
 
           <div class="vpiano-scroll-wrap" dir="ltr">
             <div class="vpiano-keyboard" dir="ltr">
-              <div class="vpiano-keys-stage" dir="ltr" style="width:max(${stageWidthPct.toFixed(4)}%, ${totalWhite * 40}px);transform:translateX(-${translatePct.toFixed(4)}%);">
+              <div class="vpiano-keys-stage" dir="ltr" style="width:${stageWidthPct.toFixed(4)}%;transform:translateX(-${translatePct.toFixed(4)}%);">
                 ${whiteKeysHtml}
                 ${blackKeysHtml}
               </div>
@@ -5088,6 +5666,7 @@
       }
 
       function centerTargetKeyInScroll(smooth = true) {
+        observePianoContainers();
         const lesson = getActivePracticeContextLesson();
         if (ui.screen === "lesson" && lesson && lesson.practice && getPracticeType(lesson.practice) === "keyboard-follow") {
           const pp = ui.pianoPractice;
@@ -5222,6 +5801,8 @@
             ? t("piano.handLeft")
             : t("piano.handRight");
 
+        const keyMapRange = getComputerKeyMapRangeLabel();
+
         return `
           <div id="vpiano-lesson-mount" class="m-card vpiano-card">
             <div class="vpiano-header-row">
@@ -5268,13 +5849,14 @@
             })}
 
             <div class="vpiano-footer-hint">
-              <span class="vpiano-footer-copy-desktop" dir="ltr">${escapeHtml(t("piano.computerKeysHint"))}</span>
+              <span class="vpiano-footer-copy-desktop vpiano-computer-hint" dir="ltr">${escapeHtml(t("piano.computerKeysHint", { range: keyMapRange }))}</span>
             </div>
           </div>
         `;
       }
 
       function renderFreePlayPianoSection() {
+        const keyMapRange = getComputerKeyMapRangeLabel();
         return `
           <div id="vpiano-free-mount" class="m-card vpiano-card">
             <div class="vpiano-header-row">
@@ -5297,7 +5879,7 @@
             ${renderVirtualPianoKeyboardHtml({ mode: "free", targetNote: null })}
 
             <div class="vpiano-footer-hint">
-              <span dir="ltr">${escapeHtml(t("piano.computerKeysHint"))}</span>
+              <span class="vpiano-computer-hint" dir="ltr">${escapeHtml(t("piano.computerKeysHint", { range: keyMapRange }))}</span>
             </div>
           </div>
         `;
@@ -5315,6 +5897,7 @@
         if (newCard) {
           const nextStartIdx = getPianoWindowStartWhiteIdx();
           mount.replaceWith(newCard);
+          observePianoContainers();
           if (autoCenterSmooth && nextStartIdx !== prevStartIdx) {
             const stage = newCard.querySelector(".vpiano-keys-stage");
             const miniWin = newCard.querySelector(".vpiano-minimap-window");
@@ -5480,12 +6063,12 @@
         return 440 * Math.pow(2, (midi - 69) / 12);
       }
 
-      function playMetronomeClickSound(isAccent = false) {
+      function playMetronomeClickSound(isAccent = false, whenTime = null) {
         try {
           unlockPianoAudio();
           const ctx = getOrCreatePianoAudioCtx();
           if (!ctx) return;
-          const now = ctx.currentTime;
+          const now = typeof whenTime === "number" ? Math.max(ctx.currentTime, whenTime) : ctx.currentTime;
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = "triangle";
@@ -5501,13 +6084,12 @@
         } catch (err) {}
       }
 
-      function playRhythmDrumHitSound(accent = false) {
+      function playRhythmDrumHitSound(accent = false, whenTime = null) {
         try {
           unlockPianoAudio();
           const ctx = getOrCreatePianoAudioCtx();
           if (!ctx) return;
-          const now = ctx.currentTime;
-          // Warm Tombak / Frame-drum membrane thump + crisp snap
+          const now = typeof whenTime === "number" ? Math.max(ctx.currentTime, whenTime) : ctx.currentTime;
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = "sine";
@@ -5559,7 +6141,6 @@
           const g2 = ctx.createGain();
           g2.gain.setValueAtTime(0.35, now);
 
-          // Gentle natural vocal vibrato (5.2 Hz)
           const lfo = ctx.createOscillator();
           const lfoGain = ctx.createGain();
           lfo.frequency.setValueAtTime(5.2, now);
@@ -5599,7 +6180,6 @@
           filter.type = "lowpass";
 
           if (instrument === "violin") {
-            // Bowed string: smooth swell attack, warm harmonic sustain
             master.gain.setValueAtTime(0.0001, now);
             master.gain.linearRampToValueAtTime(0.24, now + 0.085);
             master.gain.setValueAtTime(0.21, now + Math.max(0.1, durationSec - 0.15));
@@ -5625,7 +6205,6 @@
             osc1.stop(now + durationSec + 0.03);
             lfo.stop(now + durationSec + 0.03);
           } else {
-            // Plucked string (guitar, setar, tar): crisp attack, resonant decay
             const isPersianLute = instrument === "setar" || instrument === "tar";
             master.gain.setValueAtTime(0.0001, now);
             master.gain.linearRampToValueAtTime(0.3, now + 0.006);
@@ -5674,7 +6253,6 @@
           master.gain.exponentialRampToValueAtTime(0.12, now + 0.16);
           master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
 
-          // Dual slightly-detuned strings per kharak course + metallic mezrab ping
           const oscA = ctx.createOscillator();
           oscA.type = "triangle";
           oscA.frequency.setValueAtTime(freq - 0.6, now);
@@ -5731,12 +6309,22 @@
           mp.rhythmFeedback = "";
           mp.rhythmFeedbackType = "";
           mp.rhythmDone = false;
+          mp.rhythmPhase = "idle";
+          mp.rhythmCountInBeat = 0;
+          mp.rhythmCountInTotal = 4;
+          mp.rhythmExerciseStartTime = 0;
+          mp.rhythmBeatSec = 0.8;
+          mp.rhythmResults = [];
+          mp.rhythmAccuracyPct = 0;
+          mp.rhythmPassed = false;
           mp.earRoundIdx = 0;
-          mp.earChallenges = buildEarChallenges(lesson.practice);
+          mp.earChallenges = buildEarChallenges(lesson.practice, lesson);
           mp.earSelected = null;
           mp.earAnswered = false;
           mp.earIsRight = false;
           mp.earDone = false;
+          mp.earScore = 0;
+          mp.earPassed = false;
           mp.singOctaveLow = false;
           mp.singPlayedOnce = false;
           mp.singDone = false;
@@ -5757,7 +6345,7 @@
         }
       }
 
-      /* 1. RHYTHM-TAP ENGINE */
+      /* 1. RHYTHM-TAP ENGINE (Web Audio Lookahead Scheduler + Absolute Timing Evaluation) */
       function parseRhythmPattern(patternStr) {
         const rawTokens = String(patternStr || "1 1 1 1")
           .trim()
@@ -5788,40 +6376,217 @@
         };
       }
 
+      function getRhythmMeterConfig(meterStr) {
+        const clean = String(meterStr || "4/4").trim();
+        if (clean === "3/4") return { countInClicks: 3, clickStepBeats: 1, clicksPerBar: 3 };
+        if (clean === "2/4") return { countInClicks: 2, clickStepBeats: 1, clicksPerBar: 2 };
+        if (clean === "6/8") return { countInClicks: 6, clickStepBeats: 0.5, clicksPerBar: 6 };
+        if (clean === "5/8") return { countInClicks: 5, clickStepBeats: 0.5, clicksPerBar: 5 };
+        if (clean === "7/8") return { countInClicks: 7, clickStepBeats: 0.5, clicksPerBar: 7 };
+        return { countInClicks: 4, clickStepBeats: 1, clicksPerBar: 4 };
+      }
+
+      function getRhythmLessonTempoPct(lesson) {
+        if (!lesson) return 100;
+        const key = getPracticeLessonKey(lesson);
+        const saved = state.rhythmTempoByLesson && state.rhythmTempoByLesson[key];
+        const pct = Number(saved);
+        if (Number.isFinite(pct) && pct >= 50 && pct <= 120) return Math.round(pct);
+        return 100;
+      }
+
+      function setRhythmLessonTempoPct(lesson, pct) {
+        if (!lesson) return;
+        const clamped = Math.max(50, Math.min(120, Math.round(Number(pct) || 100)));
+        const key = getPracticeLessonKey(lesson);
+        if (!state.rhythmTempoByLesson || typeof state.rhythmTempoByLesson !== "object") {
+          state.rhythmTempoByLesson = {};
+        }
+        state.rhythmTempoByLesson[key] = clamped;
+        saveState();
+      }
+
+      function getEffectiveRhythmBpm(lesson) {
+        const baseBpm = Number(lesson?.practice?.tempo) || 70;
+        const pct = getRhythmLessonTempoPct(lesson);
+        return Math.max(24, Math.round((baseBpm * pct) / 100));
+      }
+
       function formatBeatValueDisplay(beats) {
         if (Math.abs(beats - 0.33) < 0.04) return "⅓";
         if (Math.abs(beats - 0.5) < 0.04) return "½";
         return String(beats);
       }
 
-      function scheduleRhythmAutoRestIfNeeded(lesson) {
+      function finalizeRhythmExercise(lesson) {
         const mp = ui.multiPractice;
-        if (!lesson || !lesson.practice || mp.rhythmDone) return;
-        const parsed = parseRhythmPattern(lesson.practice.pattern);
-        const curEv = parsed.events[mp.rhythmStepIdx];
-        if (!curEv || curEv.kind !== "rest") return;
+        if (mp.rhythmSchedulerTimer) {
+          clearInterval(mp.rhythmSchedulerTimer);
+          mp.rhythmSchedulerTimer = null;
+        }
+        const parsed = parseRhythmPattern(lesson?.practice?.pattern);
+        const events = parsed.events;
 
-        const tempo = Number(lesson.practice.tempo) || 70;
-        const beatMs = Math.round((60 / tempo) * 1000);
-        const waitMs = Math.max(350, Math.round(curEv.beats * beatMs));
-        const tmr = setTimeout(() => {
-          if ((ui.screen !== "lesson" && ui.screen !== "library") || mp.rhythmDone) return;
-          const checkEv = parsed.events[mp.rhythmStepIdx];
-          if (!checkEv || checkEv.kind !== "rest") return;
-          playMetronomeClickSound(false);
-          mp.rhythmFeedback = t("practice.rhythmRestHold");
-          mp.rhythmFeedbackType = "good";
-          mp.rhythmStepIdx += 1;
-          mp.rhythmLastTapTime = Date.now();
-          if (mp.rhythmStepIdx >= parsed.events.length) {
-            mp.rhythmDone = true;
-            markLessonPracticeCompleted(lesson);
-          } else {
-            scheduleRhythmAutoRestIfNeeded(lesson);
+        let totalMeasurable = 0;
+        let goodOrPerfect = 0;
+        for (let i = 0; i < events.length; i++) {
+          const ev = events[i];
+          if (!mp.rhythmResults[i]) {
+            if (ev.kind === "rest") {
+              mp.rhythmResults[i] = { grade: "rest-ok", errorMs: 0 };
+            } else {
+              mp.rhythmResults[i] = { grade: "missed", errorMs: null };
+            }
           }
-          refreshLessonPianoMount(false);
-        }, waitMs);
-        mp.timers.push(tmr);
+          const res = mp.rhythmResults[i];
+          if (ev.kind === "note") {
+            totalMeasurable += 1;
+            if (res.grade === "perfect" || res.grade === "good") {
+              goodOrPerfect += 1;
+            }
+          } else if (ev.kind === "rest" && res.grade === "rest-mistake") {
+            totalMeasurable += 1;
+          }
+        }
+
+        const pct = totalMeasurable > 0 ? Math.round((goodOrPerfect / totalMeasurable) * 100) : 100;
+        mp.rhythmAccuracyPct = pct;
+        mp.rhythmPassed = pct >= 80;
+        mp.rhythmDone = true;
+        mp.rhythmPhase = "done";
+
+        const key = getPracticeLessonKey(lesson);
+        const prevBest = Number(mp.rhythmBestByLesson[key]) || 0;
+        if (pct > prevBest) {
+          mp.rhythmBestByLesson[key] = pct;
+        }
+
+        if (mp.rhythmPassed) {
+          markLessonPracticeCompleted(lesson);
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function startRhythmExercise() {
+        const lesson = getActivePracticeContextLesson();
+        if (!lesson || !lesson.practice || getPracticeType(lesson.practice) !== "rhythm-tap") return;
+        syncMultiPracticeState(lesson);
+        stopMultiPracticeTimers();
+        unlockPianoAudio();
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+
+        const mp = ui.multiPractice;
+        const parsed = parseRhythmPattern(lesson.practice.pattern);
+        const meterCfg = getRhythmMeterConfig(lesson.practice.meter);
+        const bpm = getEffectiveRhythmBpm(lesson);
+        const beatSec = 60 / bpm;
+        const clickIntervalSec = beatSec * meterCfg.clickStepBeats;
+        const countInClicks = meterCfg.countInClicks;
+
+        mp.rhythmPhase = "countin";
+        mp.rhythmDone = false;
+        mp.rhythmPassed = false;
+        mp.rhythmAccuracyPct = 0;
+        mp.rhythmStepIdx = 0;
+        mp.rhythmCountInTotal = countInClicks;
+        mp.rhythmCountInBeat = 1;
+        mp.rhythmBeatSec = beatSec;
+        mp.rhythmFeedback = "";
+        mp.rhythmFeedbackType = "";
+        mp.rhythmResults = new Array(parsed.events.length).fill(null);
+
+        const startAudioTime = ctx.currentTime + 0.06;
+        const exerciseStartTime = startAudioTime + countInClicks * clickIntervalSec;
+        mp.rhythmExerciseStartTime = exerciseStartTime;
+
+        const totalExerciseClicks = Math.ceil(parsed.totalBeats / meterCfg.clickStepBeats) + 1;
+        const totalClicks = countInClicks + totalExerciseClicks;
+        let nextClickIdx = 0;
+        let lastUiCountInBeat = 1;
+
+        refreshLessonPianoMount(false);
+
+        const LOOKAHEAD_SEC = 0.1;
+        const SCHEDULER_MS = 25;
+
+        mp.rhythmSchedulerTimer = setInterval(() => {
+          if ((ui.screen !== "lesson" && ui.screen !== "library") || mp.rhythmDone) {
+            clearInterval(mp.rhythmSchedulerTimer);
+            mp.rhythmSchedulerTimer = null;
+            return;
+          }
+          const now = ctx.currentTime;
+
+          while (nextClickIdx < totalClicks) {
+            const clickTime = startAudioTime + nextClickIdx * clickIntervalSec;
+            if (clickTime > now + LOOKAHEAD_SEC) break;
+
+            const isCountIn = nextClickIdx < countInClicks;
+            const barClickIdx = isCountIn
+              ? nextClickIdx
+              : (nextClickIdx - countInClicks) % meterCfg.clicksPerBar;
+            const isAccent = barClickIdx === 0;
+
+            if (isCountIn || mp.rhythmClickEnabled) {
+              playMetronomeClickSound(isAccent, clickTime);
+            }
+            nextClickIdx += 1;
+          }
+
+          let needsUiRefresh = false;
+
+          if (now < exerciseStartTime) {
+            const elapsedCountIn = Math.max(0, now - startAudioTime);
+            const curBeat = Math.min(countInClicks, Math.floor(elapsedCountIn / clickIntervalSec) + 1);
+            if (curBeat !== lastUiCountInBeat) {
+              lastUiCountInBeat = curBeat;
+              mp.rhythmCountInBeat = curBeat;
+              needsUiRefresh = true;
+            }
+          } else {
+            if (mp.rhythmPhase === "countin") {
+              mp.rhythmPhase = "active";
+              needsUiRefresh = true;
+            }
+
+            for (let i = 0; i < parsed.events.length; i++) {
+              if (mp.rhythmResults[i]) continue;
+              const ev = parsed.events[i];
+              const evStartSec = exerciseStartTime + ev.startBeat * beatSec;
+              const evEndSec = exerciseStartTime + (ev.startBeat + ev.beats) * beatSec;
+
+              if (ev.kind === "note") {
+                if (now > evStartSec + 0.2) {
+                  mp.rhythmResults[i] = { grade: "missed", errorMs: null };
+                  mp.rhythmFeedback = t("practice.rhythmMissed");
+                  mp.rhythmFeedbackType = "bad";
+                  if (mp.rhythmStepIdx <= i) mp.rhythmStepIdx = i + 1;
+                  needsUiRefresh = true;
+                }
+              } else if (ev.kind === "rest") {
+                if (now >= evEndSec - 0.02) {
+                  mp.rhythmResults[i] = { grade: "rest-ok", errorMs: 0 };
+                  mp.rhythmFeedback = t("practice.rhythmRestHold");
+                  mp.rhythmFeedbackType = "good";
+                  if (mp.rhythmStepIdx <= i) mp.rhythmStepIdx = i + 1;
+                  needsUiRefresh = true;
+                }
+              }
+            }
+
+            const exerciseEndSec = exerciseStartTime + parsed.totalBeats * beatSec;
+            const allResolved = parsed.events.every((_, idx) => Boolean(mp.rhythmResults[idx]));
+            if (allResolved || now > exerciseEndSec + 0.22) {
+              finalizeRhythmExercise(lesson);
+              return;
+            }
+          }
+
+          if (needsUiRefresh) {
+            refreshLessonPianoMount(false);
+          }
+        }, SCHEDULER_MS);
       }
 
       function handleRhythmTapAction() {
@@ -5832,101 +6597,184 @@
         if (mp.playingDemo) stopMultiPracticeTimers();
         if (mp.rhythmDone) return;
 
-        const parsed = parseRhythmPattern(lesson.practice.pattern);
-        const events = parsed.events;
-        if (events.length === 0) return;
-
-        const tempo = Number(lesson.practice.tempo) || 70;
-        const beatMs = Math.round((60 / tempo) * 1000);
-        const curEv = events[mp.rhythmStepIdx];
-        if (!curEv) return;
-
-        if (curEv.kind === "rest") {
-          mp.rhythmFeedback = t("practice.rhythmEarly");
-          mp.rhythmFeedbackType = "warn";
-          refreshLessonPianoMount(false);
+        if (mp.rhythmPhase === "idle") {
+          startRhythmExercise();
+          return;
+        }
+        if (mp.rhythmPhase === "countin") {
           return;
         }
 
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+        const tapTime = ctx.currentTime;
         playRhythmDrumHitSound(mp.rhythmStepIdx === 0);
-        const now = Date.now();
-        if (mp.rhythmStepIdx > 0 && mp.rhythmLastTapTime > 0) {
-          const prevEv = events[mp.rhythmStepIdx - 1];
-          const expectedMs = (prevEv ? prevEv.beats : 1) * beatMs;
-          const actualMs = now - mp.rhythmLastTapTime;
-          const diff = actualMs - expectedMs;
-          if (Math.abs(diff) <= Math.max(220, expectedMs * 0.38)) {
-            mp.rhythmFeedback = t("practice.rhythmOnTime");
-            mp.rhythmFeedbackType = "good";
-          } else if (diff < 0) {
-            mp.rhythmFeedback = t("practice.rhythmEarly");
-            mp.rhythmFeedbackType = "warn";
-          } else {
-            mp.rhythmFeedback = t("practice.rhythmLate");
-            mp.rhythmFeedbackType = "warn";
+
+        const parsed = parseRhythmPattern(lesson.practice.pattern);
+        const events = parsed.events;
+        if (events.length === 0) return;
+        const beatSec = mp.rhythmBeatSec || 60 / getEffectiveRhythmBpm(lesson);
+        const exStart = mp.rhythmExerciseStartTime;
+
+        for (let i = 0; i < events.length; i++) {
+          const ev = events[i];
+          if (ev.kind !== "rest" || mp.rhythmResults[i]) continue;
+          const restStart = exStart + ev.startBeat * beatSec;
+          const restEnd = exStart + (ev.startBeat + ev.beats) * beatSec;
+          if (tapTime >= restStart - 0.05 && tapTime < restEnd - 0.05) {
+            mp.rhythmResults[i] = { grade: "rest-mistake", errorMs: 0 };
+            mp.rhythmFeedback = t("practice.rhythmRestMistake");
+            mp.rhythmFeedbackType = "bad";
+            if (mp.rhythmStepIdx <= i) mp.rhythmStepIdx = i + 1;
+            refreshLessonPianoMount(false);
+            return;
           }
-        } else {
-          mp.rhythmFeedback = t("practice.rhythmOnTime");
+        }
+
+        let targetIdx = -1;
+        let bestAbsDiff = Infinity;
+        for (let i = 0; i < events.length; i++) {
+          const ev = events[i];
+          if (ev.kind !== "note" || mp.rhythmResults[i]) continue;
+          const expectedSec = exStart + ev.startBeat * beatSec;
+          const absDiff = Math.abs(tapTime - expectedSec);
+          if (absDiff < bestAbsDiff) {
+            bestAbsDiff = absDiff;
+            targetIdx = i;
+          }
+        }
+
+        if (targetIdx === -1) return;
+
+        const targetEv = events[targetIdx];
+        const expectedSec = exStart + targetEv.startBeat * beatSec;
+        const errorMs = Math.round((tapTime - expectedSec) * 1000);
+        const absErrorMs = Math.abs(errorMs);
+
+        let grade = "perfect";
+        if (absErrorMs <= 60) {
+          grade = "perfect";
+          mp.rhythmFeedback = `${t("practice.rhythmPerfect")} (${errorMs >= 0 ? "+" : ""}${errorMs} ms)`;
           mp.rhythmFeedbackType = "good";
-        }
-
-        mp.rhythmLastTapTime = now;
-        mp.rhythmStepIdx += 1;
-
-        if (mp.rhythmStepIdx >= events.length) {
-          mp.rhythmDone = true;
-          markLessonPracticeCompleted(lesson);
+        } else if (absErrorMs <= 120) {
+          grade = "good";
+          mp.rhythmFeedback = `${t("practice.rhythmGood")} (${errorMs >= 0 ? "+" : ""}${errorMs} ms)`;
+          mp.rhythmFeedbackType = "good";
+        } else if (errorMs < 0) {
+          grade = "early";
+          mp.rhythmFeedback = t("practice.rhythmEarlyMs", { ms: absErrorMs });
+          mp.rhythmFeedbackType = "bad";
         } else {
-          scheduleRhythmAutoRestIfNeeded(lesson);
+          grade = "late";
+          mp.rhythmFeedback = t("practice.rhythmLateMs", { ms: absErrorMs });
+          mp.rhythmFeedbackType = "bad";
         }
-        refreshLessonPianoMount(false);
+
+        mp.rhythmResults[targetIdx] = { grade, errorMs };
+        mp.rhythmLastTapTime = Date.now();
+        if (mp.rhythmStepIdx <= targetIdx) {
+          mp.rhythmStepIdx = targetIdx + 1;
+        }
+
+        const allDone = events.every((_, idx) => Boolean(mp.rhythmResults[idx]));
+        if (allDone) {
+          finalizeRhythmExercise(lesson);
+        } else {
+          refreshLessonPianoMount(false);
+        }
       }
 
       function startRhythmDemo() {
         const lesson = getActivePracticeContextLesson();
         if (!lesson || !lesson.practice) return;
         stopMultiPracticeTimers();
+        unlockPianoAudio();
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+
         const mp = ui.multiPractice;
         const parsed = parseRhythmPattern(lesson.practice.pattern);
-        const tempo = Number(lesson.practice.tempo) || 70;
-        const beatMs = Math.max(320, Math.round((60 / tempo) * 1000));
+        const meterCfg = getRhythmMeterConfig(lesson.practice.meter);
+        const bpm = getEffectiveRhythmBpm(lesson);
+        const beatSec = 60 / bpm;
+        const clickIntervalSec = beatSec * meterCfg.clickStepBeats;
 
         mp.playingDemo = true;
         mp.demoIdx = 0;
         refreshLessonPianoMount(false);
 
-        parsed.events.forEach((ev, idx) => {
-          const delayMs = Math.round(ev.startBeat * beatMs);
-          const tmr = setTimeout(() => {
-            if (!mp.playingDemo) return;
-            mp.demoIdx = idx;
-            if (ev.kind === "rest") {
-              playMetronomeClickSound(false);
-            } else {
-              playMetronomeClickSound(idx === 0);
-              playRhythmDrumHitSound(idx === 0);
-            }
-            refreshLessonPianoMount(false);
-          }, delayMs);
-          mp.timers.push(tmr);
-        });
+        const startAudioTime = ctx.currentTime + 0.05;
+        const totalClicks = Math.ceil(parsed.totalBeats / meterCfg.clickStepBeats);
+        let nextClickIdx = 0;
+        let nextEventAudioIdx = 0;
+        let lastUiDemoIdx = -1;
 
-        const endTmr = setTimeout(() => {
-          mp.playingDemo = false;
-          mp.demoIdx = -1;
-          refreshLessonPianoMount(false);
-        }, Math.round(parsed.totalBeats * beatMs) + 120);
-        mp.timers.push(endTmr);
+        const LOOKAHEAD_SEC = 0.1;
+        const SCHEDULER_MS = 25;
+
+        mp.rhythmSchedulerTimer = setInterval(() => {
+          if (!mp.playingDemo) {
+            clearInterval(mp.rhythmSchedulerTimer);
+            mp.rhythmSchedulerTimer = null;
+            return;
+          }
+          const now = ctx.currentTime;
+
+          while (nextClickIdx < totalClicks) {
+            const clickTime = startAudioTime + nextClickIdx * clickIntervalSec;
+            if (clickTime > now + LOOKAHEAD_SEC) break;
+            const isAccent = nextClickIdx % meterCfg.clicksPerBar === 0;
+            playMetronomeClickSound(isAccent, clickTime);
+            nextClickIdx += 1;
+          }
+
+          while (nextEventAudioIdx < parsed.events.length) {
+            const ev = parsed.events[nextEventAudioIdx];
+            const evTime = startAudioTime + ev.startBeat * beatSec;
+            if (evTime > now + LOOKAHEAD_SEC) break;
+            if (ev.kind === "note") {
+              playRhythmDrumHitSound(nextEventAudioIdx === 0, evTime);
+            }
+            nextEventAudioIdx += 1;
+          }
+
+          let activeIdx = -1;
+          for (let i = 0; i < parsed.events.length; i++) {
+            const ev = parsed.events[i];
+            const evStart = startAudioTime + ev.startBeat * beatSec;
+            const evEnd = startAudioTime + (ev.startBeat + ev.beats) * beatSec;
+            if (now >= evStart - 0.02 && now < evEnd) {
+              activeIdx = i;
+              break;
+            }
+          }
+          if (activeIdx !== -1 && activeIdx !== lastUiDemoIdx) {
+            lastUiDemoIdx = activeIdx;
+            mp.demoIdx = activeIdx;
+            refreshLessonPianoMount(false);
+          }
+
+          if (now >= startAudioTime + parsed.totalBeats * beatSec + 0.1) {
+            clearInterval(mp.rhythmSchedulerTimer);
+            mp.rhythmSchedulerTimer = null;
+            mp.playingDemo = false;
+            mp.demoIdx = -1;
+            refreshLessonPianoMount(false);
+          }
+        }, SCHEDULER_MS);
       }
 
       function renderRhythmTapPracticeCard(lesson) {
         syncMultiPracticeState(lesson);
         const mp = ui.multiPractice;
         const practice = lesson.practice;
-        const tempo = Number(practice.tempo) || 70;
+        const tempoPct = getRhythmLessonTempoPct(lesson);
+        const effectiveBpm = getEffectiveRhythmBpm(lesson);
         const meter = practice.meter || "4/4";
         const parsed = parseRhythmPattern(practice.pattern);
         const isCompleted = isLessonPracticeCompleted(lesson);
+        const key = getPracticeLessonKey(lesson);
+        const bestPct = mp.rhythmBestByLesson[key];
 
         const tokensHtml = parsed.items
           .map((it) => {
@@ -5935,8 +6783,9 @@
             }
             const idx = it.eventIdx;
             const isDemoActive = mp.playingDemo && mp.demoIdx === idx;
-            const isDone = mp.rhythmDone || (!mp.playingDemo && idx < mp.rhythmStepIdx);
-            const isCurrent = !mp.playingDemo && !mp.rhythmDone && idx === mp.rhythmStepIdx;
+            const res = mp.rhythmResults && mp.rhythmResults[idx];
+            const isDone = Boolean(res) || mp.rhythmDone;
+            const isCurrent = mp.rhythmPhase === "active" && !mp.rhythmDone && idx === mp.rhythmStepIdx;
             const cls = [
               "rhythm-token-box",
               it.kind === "rest" ? "is-rest" : "",
@@ -5961,14 +6810,53 @@
           })
           .join("");
 
+        const timelineDotsHtml = parsed.events
+          .map((ev, idx) => {
+            const res = mp.rhythmResults && mp.rhythmResults[idx];
+            let dotCls = "";
+            let sym = idx + 1;
+            let titleTxt = "";
+            if (res) {
+              if (res.grade === "perfect" || res.grade === "rest-ok") {
+                dotCls = "is-green";
+                sym = "✓";
+                titleTxt = res.grade === "perfect" ? t("practice.rhythmPerfect") : t("practice.rhythmRestHold");
+              } else if (res.grade === "good") {
+                dotCls = "is-yellow";
+                sym = "~";
+                titleTxt = t("practice.rhythmGood");
+              } else {
+                dotCls = "is-red";
+                sym = "✗";
+                titleTxt =
+                  res.grade === "missed"
+                    ? t("practice.rhythmMissed")
+                    : res.grade === "rest-mistake"
+                    ? t("practice.rhythmRestMistake")
+                    : res.errorMs < 0
+                    ? t("practice.rhythmEarlyMs", { ms: Math.abs(res.errorMs) })
+                    : t("practice.rhythmLateMs", { ms: Math.abs(res.errorMs) });
+              }
+            }
+            return `<span class="rhythm-dot ${dotCls}" title="${escapeHtml(titleTxt)}">${escapeHtml(String(sym))}</span>`;
+          })
+          .join("");
+
         return `
           <div id="vpiano-lesson-mount" class="m-card vpiano-card">
             <div class="vpiano-header-row">
               <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
                 <span class="serif-heading" style="font-size:1.12rem;font-weight:700;">🥁 ${escapeHtml(t("practice.rhythmTitle"))}</span>
                 <span style="font-size:0.8rem;font-weight:700;color:var(--secondary);background:var(--secondary-soft);border:1px solid rgba(31,111,107,0.28);border-radius:999px;padding:3px 10px;">
-                  ${escapeHtml(t("practice.rhythmMeter", { meter, tempo }))}
+                  ${escapeHtml(t("practice.rhythmMeter", { meter, tempo: effectiveBpm }))}
                 </span>
+                ${
+                  typeof bestPct === "number"
+                    ? `<span style="font-size:0.76rem;font-weight:700;color:var(--ink);background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:2px 9px;">
+                        ${escapeHtml(t("practice.rhythmBestScore", { pct: bestPct }))}
+                      </span>`
+                    : ""
+                }
                 ${
                   isCompleted
                     ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
@@ -5976,6 +6864,10 @@
                 }
               </div>
               <div class="vpiano-controls-row">
+                <button type="button" class="vpiano-pill-btn ${mp.rhythmClickEnabled ? "active" : ""}" data-action="mp-rhythm-toggle-click">
+                  <span>⏱️</span>
+                  <span>${escapeHtml(mp.rhythmClickEnabled ? t("practice.rhythmClickOn") : t("practice.rhythmClickOff"))}</span>
+                </button>
                 <button type="button" class="btn-pill ${mp.playingDemo ? "btn-surface" : "btn-secondary"}" style="min-height:36px;padding:5px 14px;font-size:0.82rem;" data-action="mp-rhythm-demo">
                   <span>${mp.playingDemo ? "■" : "▶"}</span>
                   <span>${escapeHtml(mp.playingDemo ? t("practice.stopDemoBtn") : t("practice.playDemoBtn"))}</span>
@@ -5983,31 +6875,63 @@
               </div>
             </div>
 
+            <div class="rhythm-controls-bar">
+              <div class="rhythm-tempo-row">
+                <label for="rhythm-tempo-slider">${escapeHtml(t("practice.rhythmTempoLabel", { pct: tempoPct, bpm: effectiveBpm }))}</label>
+                <input id="rhythm-tempo-slider" type="range" min="50" max="120" step="5" value="${tempoPct}" data-action="mp-rhythm-tempo" />
+              </div>
+              <button type="button" class="btn-pill btn-primary" style="min-height:38px;padding:6px 16px;font-size:0.85rem;" data-action="mp-rhythm-start">
+                <span>${mp.rhythmPhase === "countin" || mp.rhythmPhase === "active" ? "↻" : "▶"}</span>
+                <span>${escapeHtml(mp.rhythmDone ? t("practice.rhythmTryAgainBtn") : t("practice.rhythmStartBtn"))}</span>
+              </button>
+            </div>
+
             <div class="vpiano-status-box">
               <p style="font-size:0.88rem;line-height:1.5;margin-bottom:8px;">${escapeHtml(t("practice.rhythmInstruction"))}</p>
+              ${
+                mp.rhythmPhase === "countin"
+                  ? `<div class="rhythm-countin-banner">
+                      ⏱️ ${escapeHtml(t("practice.rhythmCountIn", { beat: mp.rhythmCountInBeat, total: mp.rhythmCountInTotal }))}
+                    </div>`
+                  : mp.rhythmPhase === "active"
+                  ? `<div class="rhythm-countin-banner" style="background:var(--secondary-soft);color:var(--secondary);border-color:var(--secondary);">
+                      🥁 ${escapeHtml(t("practice.rhythmGo"))}
+                    </div>`
+                  : ""
+              }
               <div class="rhythm-pattern-row">${tokensHtml}</div>
+
+              <div class="rhythm-timeline-dots" aria-label="Rhythm note accuracy timeline">
+                ${timelineDotsHtml}
+              </div>
+
               ${
                 mp.rhythmFeedback
-                  ? `<div style="margin-top:6px;font-size:0.86rem;font-weight:700;color:${mp.rhythmFeedbackType === "good" ? "var(--secondary)" : "var(--primary)"};">
+                  ? `<div style="margin-top:8px;font-size:0.86rem;font-weight:700;color:${mp.rhythmFeedbackType === "good" ? "var(--secondary)" : "var(--primary)"};">
                       ${escapeHtml(mp.rhythmFeedback)}
                     </div>`
                   : ""
               }
               ${
                 mp.rhythmDone
-                  ? `<div class="vpiano-well-done">
-                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
-                      <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
-                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                  ? `<div class="vpiano-well-done" style="${mp.rhythmPassed ? "" : "background:var(--primary-soft);border-color:var(--primary);color:var(--ink);"}">
+                      <span>
+                        ${mp.rhythmPassed ? "🎉" : "🥁"}
+                        ${escapeHtml(t("practice.rhythmAccuracyResult", { pct: mp.rhythmAccuracyPct }))}
+                        ·
+                        ${escapeHtml(mp.rhythmPassed ? t("practice.completedBadge") : t("practice.rhythmNeed80Hint"))}
+                      </span>
+                      <button type="button" class="vpiano-pill-btn" data-action="mp-rhythm-start">
+                        ↻ ${escapeHtml(mp.rhythmPassed ? t("practice.playAgainBtn") : t("practice.rhythmTryAgainBtn"))}
                       </button>
                     </div>`
                   : ""
               }
             </div>
 
-            <button type="button" class="rhythm-tap-pad" data-action="mp-rhythm-tap">
+            <button type="button" class="rhythm-tap-pad" data-action="mp-rhythm-tap" ${mp.rhythmPhase === "countin" ? "disabled" : ""}>
               <span>🥁</span>
-              <span>${escapeHtml(t("practice.rhythmTapBtn"))}</span>
+              <span>${escapeHtml(mp.rhythmPhase === "idle" ? t("practice.rhythmStartBtn") : t("practice.rhythmTapBtn"))}</span>
             </button>
             <div class="vpiano-footer-hint">
               <span>${escapeHtml(t("practice.rhythmSpaceHint"))}</span>
@@ -6016,99 +6940,204 @@
         `;
       }
 
-      /* 2. EAR-CHOICE ENGINE */
-      function buildEarChallenges(practice) {
-        const mode = practice.mode || "higher-lower";
-        const rounds = Math.max(1, Number(practice.rounds) || 6);
-        const list = [];
+      /* 2. EAR-CHOICE ENGINE (Randomized 10-Round Generator, C3–C5, Mixed Review Mode) */
+      function midiToCanonicalNoteName(midi) {
+        const names = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+        const clamped = Math.max(48, Math.min(76, Math.round(midi)));
+        const semi = ((clamped % 12) + 12) % 12;
+        const oct = Math.floor(clamped / 12) - 1;
+        return `${names[semi]}${oct}`;
+      }
 
-        const presets = {
-          "higher-lower": [
-            { notes: ["C4", "G4"], answer: "higher" },
-            { notes: ["G4", "D4"], answer: "lower" },
-            { notes: ["D4", "A4"], answer: "higher" },
-            { notes: ["A4", "E4"], answer: "lower" },
-            { notes: ["E4", "B4"], answer: "higher" },
-            { notes: ["F4", "C4"], answer: "lower" }
-          ],
-          "same-different": [
-            { notes: ["C4", "C4"], answer: "same" },
-            { notes: ["C4", "E4"], answer: "different" },
-            { notes: ["G4", "G4"], answer: "same" },
-            { notes: ["D4", "F4"], answer: "different" },
-            { notes: ["E4", "E4"], answer: "same" },
-            { notes: ["A4", "F4"], answer: "different" }
-          ],
-          "step-skip": [
-            { notes: ["C4", "D4"], answer: "step" },
-            { notes: ["C4", "E4"], answer: "skip" },
-            { notes: ["E4", "F4"], answer: "step" },
-            { notes: ["D4", "G4"], answer: "skip" },
-            { notes: ["G4", "A4"], answer: "step" },
-            { notes: ["E4", "C4"], answer: "skip" }
-          ],
-          "melody-direction": [
-            { notes: ["C4", "D4", "E4"], answer: "up" },
-            { notes: ["G4", "F4", "E4"], answer: "down" },
-            { notes: ["C4", "E4", "C4"], answer: "arch" },
-            { notes: ["D4", "E4", "F4"], answer: "up" },
-            { notes: ["E4", "G4", "E4"], answer: "arch" },
-            { notes: ["A4", "G4", "F4"], answer: "down" }
-          ],
-          "small-intervals": [
-            { notes: ["E4", "F4"], answer: "half" },
-            { notes: ["C4", "D4"], answer: "whole" },
-            { notes: ["C4", "E4"], answer: "third" },
-            { notes: ["B3", "C4"], answer: "half" },
-            { notes: ["F4", "G4"], answer: "whole" },
-            { notes: ["G4", "B4"], answer: "third" }
-          ],
-          "big-intervals": [
-            { notes: ["C4", "G4"], answer: "fifth" },
-            { notes: ["C4", "C5"], answer: "octave" },
-            { notes: ["D4", "A4"], answer: "fifth" },
-            { notes: ["D4", "D5"], answer: "octave" },
-            { notes: ["F4", "C5"], answer: "fifth" },
-            { notes: ["E4", "E5"], answer: "octave" }
-          ],
-          "major-minor": [
-            { chord: ["C4", "E4", "G4"], answer: "major" },
-            { chord: ["D4", "F4", "A4"], answer: "minor" },
-            { chord: ["G3", "B3", "D4"], answer: "major" },
-            { chord: ["A3", "C4", "E4"], answer: "minor" },
-            { chord: ["F3", "A3", "C4"], answer: "major" },
-            { chord: ["E3", "G3", "B3"], answer: "minor" }
-          ],
-          "semitone-koron": [
-            { notes: ["E4", "F4"], answer: "half" },
-            { notes: ["D4", "E4k"], answer: "neutral" },
-            { notes: ["C4", "D4"], answer: "whole" },
-            { notes: ["G4", "A4k"], answer: "neutral" },
-            { notes: ["B3", "C4"], answer: "half" },
-            { notes: ["F4", "G4"], answer: "whole" }
-          ],
-          interval: [
-            { notes: ["E4", "F4"], answer: "half" },
-            { notes: ["C4", "D4"], answer: "whole" },
-            { notes: ["D4", "E4k"], answer: "neutral" },
-            { notes: ["C4", "G4"], answer: "fifth" },
-            { notes: ["B3", "C4"], answer: "half" },
-            { notes: ["F4", "G4"], answer: "whole" }
-          ]
-        };
+      function shuffleArrayCopy(arr) {
+        const copy = arr.slice();
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = copy[i];
+          copy[i] = copy[j];
+          copy[j] = tmp;
+        }
+        return copy;
+      }
 
-        if (Array.isArray(practice.subModes) && practice.subModes.length > 0) {
-          for (let i = 0; i < rounds; i++) {
-            const subMode = practice.subModes[Math.floor((i / rounds) * practice.subModes.length)] || practice.subModes[0];
-            const subPool = presets[subMode] || presets["higher-lower"];
-            list.push({ ...subPool[i % subPool.length], subMode });
-          }
-          return list;
+      function generateSingleEarChallenge(subMode, forcedAnswer = null) {
+        const mode = subMode || "higher-lower";
+        const randMidi = (minM, maxM) => minM + Math.floor(Math.random() * (maxM - minM + 1));
+
+        if (mode === "higher-lower") {
+          const ans = forcedAnswer || (Math.random() < 0.5 ? "higher" : "lower");
+          const stepSemis = 2 + Math.floor(Math.random() * 6); // 2..7 semitones
+          const startMidi = ans === "higher" ? randMidi(48, 72 - stepSemis) : randMidi(48 + stepSemis, 72);
+          const endMidi = ans === "higher" ? startMidi + stepSemis : startMidi - stepSemis;
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(endMidi);
+          return { subMode: mode, notes: [n1, n2], answer: ans, sig: `${mode}:${n1}-${n2}` };
         }
 
-        const pool = presets[mode] || presets["higher-lower"];
+        if (mode === "same-different") {
+          const ans = forcedAnswer || (Math.random() < 0.5 ? "same" : "different");
+          const startMidi = randMidi(48, 69);
+          let endMidi = startMidi;
+          if (ans === "different") {
+            const delta = (1 + Math.floor(Math.random() * 5)) * (Math.random() < 0.5 ? 1 : -1);
+            endMidi = Math.max(48, Math.min(72, startMidi + delta));
+            if (endMidi === startMidi) endMidi = startMidi + 2;
+          }
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(endMidi);
+          return { subMode: mode, notes: [n1, n2], answer: ans, sig: `${mode}:${n1}-${n2}` };
+        }
+
+        if (mode === "step-skip") {
+          const ans = forcedAnswer || (Math.random() < 0.5 ? "step" : "skip");
+          const startMidi = randMidi(50, 67);
+          const delta = ans === "step" ? (Math.random() < 0.5 ? 1 : 2) : 3 + Math.floor(Math.random() * 5);
+          const dir = Math.random() < 0.65 ? 1 : -1;
+          const endMidi = Math.max(48, Math.min(72, startMidi + dir * delta));
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(endMidi);
+          return { subMode: mode, notes: [n1, n2], answer: ans, sig: `${mode}:${n1}-${n2}` };
+        }
+
+        if (mode === "melody-direction") {
+          const choices = ["up", "down", "arch"];
+          const ans = forcedAnswer || choices[Math.floor(Math.random() * choices.length)];
+          const startMidi = randMidi(50, 65);
+          const s1 = 2;
+          const s2 = 4;
+          let m2 = startMidi + s1;
+          let m3 = startMidi + s2;
+          if (ans === "down") {
+            m2 = startMidi - s1;
+            m3 = startMidi - s2;
+          } else if (ans === "arch") {
+            m2 = startMidi + 3;
+            m3 = startMidi;
+          }
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(m2);
+          const n3 = midiToCanonicalNoteName(m3);
+          return { subMode: mode, notes: [n1, n2, n3], answer: ans, sig: `${mode}:${n1}-${n2}-${n3}` };
+        }
+
+        if (mode === "small-intervals") {
+          const choices = ["half", "whole", "third"];
+          const ans = forcedAnswer || choices[Math.floor(Math.random() * choices.length)];
+          const semiMap = { half: 1, whole: 2, third: 4 };
+          const semis = semiMap[ans] || 2;
+          const startMidi = randMidi(48, 72 - semis);
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(startMidi + semis);
+          return { subMode: mode, notes: [n1, n2], answer: ans, sig: `${mode}:${n1}-${n2}` };
+        }
+
+        if (mode === "big-intervals") {
+          const choices = ["fourth", "fifth", "octave"];
+          const ans = forcedAnswer || choices[Math.floor(Math.random() * choices.length)];
+          const semiMap = { fourth: 5, fifth: 7, octave: 12 };
+          const semis = semiMap[ans] || 7;
+          const startMidi = randMidi(48, 72 - semis);
+          const n1 = midiToCanonicalNoteName(startMidi);
+          const n2 = midiToCanonicalNoteName(startMidi + semis);
+          return { subMode: mode, notes: [n1, n2], answer: ans, sig: `${mode}:${n1}-${n2}` };
+        }
+
+        if (mode === "major-minor") {
+          const ans = forcedAnswer || (Math.random() < 0.5 ? "major" : "minor");
+          const startMidi = randMidi(48, 65);
+          const thirdSemi = ans === "major" ? 4 : 3;
+          const c1 = midiToCanonicalNoteName(startMidi);
+          const c2 = midiToCanonicalNoteName(startMidi + thirdSemi);
+          const c3 = midiToCanonicalNoteName(startMidi + 7);
+          return { subMode: mode, chord: [c1, c2, c3], answer: ans, sig: `${mode}:${c1}-${c2}-${c3}` };
+        }
+
+        if (mode === "semitone-koron" || mode === "interval") {
+          const koronRoots = [
+            { n1: "D4", koron: "E4k", whole: "E4", half: "D#4", fifth: "A4" },
+            { n1: "G4", koron: "A4k", whole: "A4", half: "G#4", fifth: "D5" },
+            { n1: "C4", koron: "D4k", whole: "D4", half: "C#4", fifth: "G4" },
+            { n1: "F4", koron: "G4k", whole: "G4", half: "F#4", fifth: "C5" },
+            { n1: "A3", koron: "B3k", whole: "B3", half: "A#3", fifth: "E4" }
+          ];
+          const root = koronRoots[Math.floor(Math.random() * koronRoots.length)];
+          const choices = mode === "interval" ? ["half", "whole", "neutral", "fifth"] : ["half", "neutral", "whole"];
+          const ans = forcedAnswer || choices[Math.floor(Math.random() * choices.length)];
+          const n2 =
+            ans === "neutral"
+              ? root.koron
+              : ans === "half"
+              ? root.half
+              : ans === "fifth"
+              ? root.fifth
+              : root.whole;
+          return { subMode: mode, notes: [root.n1, n2], answer: ans, sig: `${mode}:${root.n1}-${n2}` };
+        }
+
+        return generateSingleEarChallenge("higher-lower", forcedAnswer);
+      }
+
+      function buildEarChallenges(practice, lesson = null) {
+        const rounds = 10;
+        const mode = (practice && practice.mode) || "higher-lower";
+        const isEarLesson10 =
+          (state.activeCourseId === "ear" && lesson && Number(lesson.id) === 10) ||
+          (Array.isArray(practice?.subModes) && practice.subModes.length > 0);
+
+        const allReviewModes = [
+          "higher-lower",
+          "same-different",
+          "step-skip",
+          "small-intervals",
+          "big-intervals",
+          "major-minor"
+        ];
+
+        const answerPoolByMode = {
+          "higher-lower": ["higher", "lower"],
+          "same-different": ["same", "different"],
+          "step-skip": ["step", "skip"],
+          "melody-direction": ["up", "down", "arch"],
+          "small-intervals": ["half", "whole", "third"],
+          "big-intervals": ["fourth", "fifth", "octave"],
+          "major-minor": ["major", "minor"],
+          "semitone-koron": ["half", "neutral", "whole"],
+          interval: ["half", "whole", "neutral", "fifth"]
+        };
+
+        const modeSchedule = [];
+        if (isEarLesson10) {
+          const baseModes = shuffleArrayCopy(allReviewModes);
+          const extraModes = shuffleArrayCopy(allReviewModes).slice(0, rounds - baseModes.length);
+          modeSchedule.push(... shuffleArrayCopy(baseModes.concat(extraModes)));
+        } else {
+          for (let i = 0; i < rounds; i++) modeSchedule.push(mode);
+        }
+
+        const plannedAnswers = [];
+        if (!isEarLesson10) {
+          const ansOptions = answerPoolByMode[mode] || ["higher", "lower"];
+          for (let i = 0; i < rounds; i++) {
+            plannedAnswers.push(ansOptions[i % ansOptions.length]);
+          }
+          const shuffledAns = shuffleArrayCopy(plannedAnswers);
+          plannedAnswers.length = 0;
+          plannedAnswers.push(...shuffledAns);
+        }
+
+        const list = [];
+        let prevSig = "";
         for (let i = 0; i < rounds; i++) {
-          list.push({ ...pool[i % pool.length], subMode: mode });
+          const roundMode = modeSchedule[i] || mode;
+          const ansHint = !isEarLesson10 ? plannedAnswers[i] : null;
+          let candidate = generateSingleEarChallenge(roundMode, ansHint);
+          let guard = 0;
+          while (candidate.sig === prevSig && guard < 12) {
+            candidate = generateSingleEarChallenge(roundMode, null);
+            guard += 1;
+          }
+          prevSig = candidate.sig;
+          list.push(candidate);
         }
         return list;
       }
@@ -6150,9 +7179,10 @@
         const practice = lesson.practice;
         const curCh = mp.earChallenges[mp.earRoundIdx];
         const mode = (curCh && curCh.subMode) || practice.mode || "higher-lower";
-        const total = mp.earChallenges.length || 6;
+        const total = mp.earChallenges.length || 10;
         const curRound = Math.min(mp.earRoundIdx + 1, total);
         const isCompleted = isLessonPracticeCompleted(lesson);
+        const scorePct = total > 0 ? Math.round((mp.earScore / total) * 100) : 0;
 
         const promptKeyMap = {
           "higher-lower": "practice.earPromptHigherLower",
@@ -6189,6 +7219,7 @@
             { id: "third", label: t("practice.earOptThird") }
           ],
           "big-intervals": [
+            { id: "fourth", label: t("practice.earOptFourth") },
             { id: "fifth", label: t("practice.earOptFifth") },
             { id: "octave", label: t("practice.earOptOctave") }
           ],
@@ -6219,6 +7250,9 @@
                 <span style="font-size:0.8rem;font-weight:700;color:var(--secondary);background:var(--secondary-soft);border:1px solid rgba(31,111,107,0.28);border-radius:999px;padding:3px 10px;">
                   ${escapeHtml(t("practice.earRound", { current: curRound, total }))}
                 </span>
+                <span style="font-size:0.76rem;font-weight:700;color:var(--ink);background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:2px 9px;">
+                  ${escapeHtml(`${mp.earScore}/${total}`)}
+                </span>
                 ${
                   isCompleted
                     ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
@@ -6227,7 +7261,7 @@
               </div>
               <button type="button" class="btn-pill btn-secondary" style="min-height:38px;padding:6px 16px;font-size:0.86rem;" data-action="mp-ear-play">
                 <span>🔊</span>
-                <span>${escapeHtml(t("practice.earPlayBtn"))}</span>
+                <span>${escapeHtml(mp.earAnswered ? t("practice.earReplayBtn") : t("practice.earPlayBtn"))}</span>
               </button>
             </div>
 
@@ -6240,11 +7274,20 @@
                 ${opts
                   .map((o) => {
                     const isSel = mp.earSelected === o.id;
-                    const cls = mp.earAnswered && isSel ? (mp.earIsRight ? "correct" : "wrong") : "";
+                    const isCorrectOpt = mp.earAnswered && curCh && curCh.answer === o.id;
+                    const cls = mp.earAnswered
+                      ? isSel
+                        ? mp.earIsRight
+                          ? "correct"
+                          : "wrong"
+                        : isCorrectOpt
+                        ? "correct"
+                        : ""
+                      : "";
                     return `
-                      <button type="button" class="ear-opt-btn ${cls}" data-action="mp-ear-answer" data-choice="${o.id}">
+                      <button type="button" class="ear-opt-btn ${cls}" data-action="mp-ear-answer" data-choice="${o.id}" ${mp.earAnswered || mp.earDone ? "disabled" : ""}>
                         <span>${escapeHtml(o.label)}</span>
-                        <span>${mp.earAnswered && isSel ? (mp.earIsRight ? "✓" : "✗") : "○"}</span>
+                        <span>${mp.earAnswered && isSel ? (mp.earIsRight ? "✓" : "✗") : isCorrectOpt ? "✓" : "○"}</span>
                       </button>
                     `;
                   })
@@ -6257,25 +7300,29 @@
                       <span style="font-size:0.88rem;font-weight:700;color:${mp.earIsRight ? "var(--secondary)" : "var(--primary)"};">
                         ${escapeHtml(mp.earIsRight ? t("practice.earRightMsg") : t("practice.earWrongMsg"))}
                       </span>
-                      ${
-                        mp.earIsRight
-                          ? `<button type="button" class="btn-pill btn-primary" style="min-height:38px;padding:6px 16px;font-size:0.85rem;" data-action="mp-ear-next">
-                              ${escapeHtml(t("practice.earNextRoundBtn"))}
-                            </button>`
-                          : `<button type="button" class="vpiano-pill-btn" data-action="mp-ear-play">
-                              🔊 ${escapeHtml(t("practice.earReplayBtn"))}
-                            </button>`
-                      }
+                      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                        <button type="button" class="vpiano-pill-btn" data-action="mp-ear-play">
+                          🔊 ${escapeHtml(t("practice.earReplayBtn"))}
+                        </button>
+                        <button type="button" class="btn-pill btn-primary" style="min-height:38px;padding:6px 16px;font-size:0.85rem;" data-action="mp-ear-next">
+                          ${escapeHtml(t("practice.earNextRoundBtn"))}
+                        </button>
+                      </div>
                     </div>`
                   : ""
               }
 
               ${
                 mp.earDone
-                  ? `<div class="vpiano-well-done">
-                      <span>🎉 ${escapeHtml(t("practice.wellDone"))} · ${escapeHtml(t("practice.completedBadge"))}</span>
+                  ? `<div class="vpiano-well-done" style="${mp.earPassed ? "" : "background:var(--primary-soft);border-color:var(--primary);color:var(--ink);"}">
+                      <span>
+                        ${mp.earPassed ? "🎉" : "👂"}
+                        ${escapeHtml(t("practice.earScoreResult", { score: mp.earScore, total, pct: scorePct }))}
+                        ·
+                        ${escapeHtml(mp.earPassed ? t("practice.completedBadge") : t("practice.earNeed70Hint"))}
+                      </span>
                       <button type="button" class="vpiano-pill-btn" data-action="mp-reset">
-                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                        ↻ ${escapeHtml(mp.earPassed ? t("practice.playAgainBtn") : t("practice.rhythmTryAgainBtn"))}
                       </button>
                     </div>`
                   : ""
@@ -8658,25 +9705,56 @@
           clearInterval(ui.metronomeTimerId);
           ui.metronomeTimerId = null;
         }
+        if (ui.metronomeInterval) {
+          clearInterval(ui.metronomeInterval);
+          ui.metronomeInterval = null;
+        }
         unlockPianoAudio();
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+
         const bpm = Math.max(40, Math.min(160, Number(ui.metronomeBpm) || 76));
         const meterStr = String(ui.metronomeMeter || "4/4");
         const beatsPerBar = meterStr === "3/4" ? 3 : meterStr === "2/4" ? 2 : meterStr === "6/8" ? 6 : 4;
-        const intervalMs = meterStr === "6/8" ? Math.round(30000 / bpm) : Math.round(60000 / bpm);
+        const clickStepSec = meterStr === "6/8" ? 30 / bpm : 60 / bpm;
 
         ui.metronomeRunning = true;
         ui.metronomeBeatIdx = 0;
-        playMetronomeTickSound(true);
         render();
 
+        const startAudioTime = ctx.currentTime + 0.04;
+        let nextClickIdx = 0;
+        let lastVisualBeatIdx = -1;
+        const LOOKAHEAD_SEC = 0.1;
+        const SCHEDULER_MS = 25;
+
         ui.metronomeTimerId = setInterval(() => {
-          ui.metronomeBeatIdx = (ui.metronomeBeatIdx + 1) % beatsPerBar;
-          playMetronomeTickSound(ui.metronomeBeatIdx === 0);
-          const dots = document.querySelectorAll(".metronome-beat-dot");
-          dots.forEach((el, idx) => {
-            el.classList.toggle("active", idx === ui.metronomeBeatIdx);
-          });
-        }, intervalMs);
+          if (!ui.metronomeRunning) {
+            clearInterval(ui.metronomeTimerId);
+            ui.metronomeTimerId = null;
+            return;
+          }
+          const now = ctx.currentTime;
+          while (startAudioTime + nextClickIdx * clickStepSec <= now + LOOKAHEAD_SEC) {
+            const clickTime = startAudioTime + nextClickIdx * clickStepSec;
+            const beatInBar = nextClickIdx % beatsPerBar;
+            playMetronomeClickSound(beatInBar === 0, clickTime);
+            nextClickIdx += 1;
+          }
+
+          if (now >= startAudioTime) {
+            const curTotalBeats = Math.floor((now - startAudioTime) / clickStepSec);
+            const curBeatInBar = ((curTotalBeats % beatsPerBar) + beatsPerBar) % beatsPerBar;
+            if (curBeatInBar !== lastVisualBeatIdx) {
+              lastVisualBeatIdx = curBeatInBar;
+              ui.metronomeBeatIdx = curBeatInBar;
+              const dots = document.querySelectorAll(".metronome-beat-dot");
+              dots.forEach((el, idx) => {
+                el.classList.toggle("active", idx === ui.metronomeBeatIdx);
+              });
+            }
+          }
+        }, SCHEDULER_MS);
       }
 
       function toggleStandaloneMetronome() {
@@ -8684,6 +9762,10 @@
           if (ui.metronomeTimerId) {
             clearInterval(ui.metronomeTimerId);
             ui.metronomeTimerId = null;
+          }
+          if (ui.metronomeInterval) {
+            clearInterval(ui.metronomeInterval);
+            ui.metronomeInterval = null;
           }
           ui.metronomeRunning = false;
           ui.metronomeBeatIdx = -1;
@@ -9532,6 +10614,17 @@
             break;
           }
 
+          case "mp-rhythm-start": {
+            startRhythmExercise();
+            break;
+          }
+
+          case "mp-rhythm-toggle-click": {
+            ui.multiPractice.rhythmClickEnabled = !ui.multiPractice.rhythmClickEnabled;
+            refreshLessonPianoMount(false);
+            break;
+          }
+
           case "mp-rhythm-tap": {
             handleRhythmTapAction();
             break;
@@ -9549,14 +10642,23 @@
             syncMultiPracticeState(lesson);
             const choice = btn.getAttribute("data-choice");
             const mp = ui.multiPractice;
+            if (mp.earAnswered || mp.earDone) break;
             const curChallenge = mp.earChallenges[mp.earRoundIdx];
             if (!curChallenge) break;
             mp.earSelected = choice;
             mp.earAnswered = true;
             mp.earIsRight = choice === curChallenge.answer;
-            if (mp.earIsRight && mp.earRoundIdx + 1 >= mp.earChallenges.length) {
+            if (mp.earIsRight) {
+              mp.earScore = (Number(mp.earScore) || 0) + 1;
+            }
+            if (mp.earRoundIdx + 1 >= mp.earChallenges.length) {
+              const total = mp.earChallenges.length || 10;
+              const pct = Math.round((mp.earScore / total) * 100);
+              mp.earPassed = pct >= 70;
               mp.earDone = true;
-              markLessonPracticeCompleted(lesson);
+              if (mp.earPassed) {
+                markLessonPracticeCompleted(lesson);
+              }
             }
             refreshLessonPianoMount(false);
             break;
@@ -9574,8 +10676,13 @@
               refreshLessonPianoMount(false);
               playCurrentEarChallenge(lesson);
             } else {
+              const total = mp.earChallenges.length || 10;
+              const pct = Math.round((mp.earScore / total) * 100);
+              mp.earPassed = pct >= 70;
               mp.earDone = true;
-              markLessonPracticeCompleted(lesson);
+              if (mp.earPassed) {
+                markLessonPracticeCompleted(lesson);
+              }
               refreshLessonPianoMount(false);
             }
             break;
@@ -9926,6 +11033,7 @@
               activeDaysHistory: [],
               teacherNotifyInstruments: [...DEFAULT_STATE.teacherNotifyInstruments],
               advisorHistory: [],
+              rhythmTempoByLesson: {},
               theme: "light",
               userChoseTheme: false
             };
@@ -9950,6 +11058,7 @@
             ui.pianoPractice.completedByLesson = {};
             ui.multiPractice.lessonKey = null;
             ui.multiPractice.completedByLesson = {};
+            ui.multiPractice.rhythmBestByLesson = {};
             render();
             window.scrollTo({ top: 0, behavior: "smooth" });
             break;
@@ -10216,6 +11325,13 @@
             startStandaloneMetronomeLoop();
           } else {
             render();
+          }
+        } else if (e.target.id === "rhythm-tempo-slider") {
+          const lesson = getActivePracticeContextLesson();
+          if (lesson) {
+            stopMultiPracticeTimers();
+            setRhythmLessonTempoPct(lesson, Number(e.target.value) || 100);
+            refreshLessonPianoMount(false);
           }
         }
       });

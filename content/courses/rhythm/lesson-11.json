@@ -5,111 +5,111 @@
     "fa": "فصل ۳ «ریتم‌های جهان»"
   },
   "title": {
-    "en": "Odd meters: 5/8 and 7/8 as groups of 2 and 3",
-    "fa": "میزان‌های لنگ: ۵/۸ و ۷/۸ با گروه‌های ۲ و ۳"
+    "en": "Odd meters: 5/8 and 7/8 as 2 + 3",
+    "fa": "میزان‌های لنگ: ۵/۸ و ۷/۸ با ترکیب ۲ و ۳"
   },
   "minutes": 6,
   "goal": {
-    "en": "Count 5/8 and 7/8 effortlessly by breaking them into short (2) and long (3) groups, and tap a 5/8 groove.",
-    "fa": "میزان‌های ۵/۸ و ۷/۸ رو با تقسیم به گروه‌های ۲ و ۳ خیلی راحت می‌شماری و یه الگوی ۵/۸ می‌زنی."
+    "en": "Feel asymmetrical meters (5/8 and 7/8) effortlessly by breaking them into short building blocks of 2 and 3 pulses.",
+    "fa": "میزان‌های لنگ (۵/۸ و ۷/۸) رو خیلی راحت با شکستن به دسته‌های کوچکِ ۲ تایی و ۳ تایی حس و اجرا می‌کنی."
   },
   "see": {
-    "en": "Meters like 5/8 and 7/8—often called odd or asymmetrical meters (and known as 'Reng-e Lang' in Persian and Eastern traditions)—sound exotic at first, but the secret is simple: every odd meter is just a combination of 2s and 3s! In 5/8, 5 eighth notes are grouped as 2 + 3 ('1-2, 1-2-3'—a short beat of 1 followed by a long beat of 1.5). In 7/8, 7 eighth notes are grouped as 2 + 2 + 3 ('1-2, 1-2, 1-2-3') or 3 + 2 + 2. Instead of counting to 5 or 7 swiftly, just feel 'Short – Long' ('1-2, 1-2-3')!",
-    "fa": "میزان‌هایی مثل ۵/۸ و ۷/۸—که بهشون «میزان‌های لنگ» یا نامتقارن می‌گن و تو موسیقی ایرانی، کردی، خراسانی و شرقی خیلی محبوبن—اولش پیچیده به نظر میان، اما رازشون فوق‌العاده ساده‌ست: هر میزانِ لنگ فقط از کنار هم گذاشتنِ گروه‌های ۲تایی و ۳تایی ساخته می‌شه! تو میزان ۵/۸، پنج تا چنگ به صورتِ «۲ + ۳» دسته‌بندی می‌شن: «یک-دو، یک-دو-سه» (یک ضربِ کوتاهِ ۱ ضربی + یک ضربِ کشیده‌ترِ ۱.۵ ضربی). تو ۷/۸ هم هفت تا چنگ می‌شن «۲ + ۲ + ۳» («یک-دو، یک-دو، یک-دو-سه»). پس به‌جای اینکه تند تا ۵ یا ۷ بشماری، فقط حسِ «کوتاه – بلند» («یک-دو، یک-دو-سه») رو بگیر!"
+    "en": "In Persian, Kurdish, Turkish, and Balkan music, you often hear lively meters like 5/8 and 7/8. The secret is simple: never count to 5 or 7 in one breath! Instead, feel them as short groups of 2 and 3: 5/8 is '1-2, 1-2-3' (2 + 3), and 7/8 is '1-2, 1-2, 1-2-3' (2 + 2 + 3). In our 5/8 practice today ('1 1.5 | 1 0.5 1'), the first wave lasts 2 eighth pulses (1 beat) and the second wave lasts 3 eighth pulses (1.5 beats)!",
+    "fa": "توی موسیقی ایرانی، کردی، خراسانی و شمالی، میزان‌های جذابِ ۵/۸ و ۷/۸ (میزان‌های لنگ) خیلی شنیده می‌شن. رازش خیلی ساده‌ست: هیچ‌وقت یک‌نفس تا ۵ یا ۷ نشمر! به‌جاش اون‌ها رو به دسته‌های کوچکِ ۲ و ۳ تایی تقسیم کن: ۵/۸ می‌شه «یک-دو، یک-دو-سه» (۲ + ۳)، و ۷/۸ می‌شه «یک-دو، یک-دو، یک-دو-سه» (۲ + ۲ + ۳). توی تمرین ۵/۸ امروز، بخش اول ۲ پالس (۱ ضرب) و بخش دوم ۳ پالس (۱.۵ ضرب) داره!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' to hear two measures of 5/8 ('1 1.5 | 1 1.5')—listen to the 'Short – Long' (2 + 3) lilt.",
-      "Say out loud: '1-2, 1-2-3 | 1-2, 1-2-3' ('TA-ka, TA-ka-ti | TA-ka, TA-ka-ti').",
-      "Tap '1 1.5 | 1 1.5' on the drum pad, giving the second beat of each measure that extra half-beat length!"
+      "Play the demo and say 'ONE-two, ONE-two-three' along with the 5 quick pulses of each bar.",
+      "Listen to the 5-click count-in ('1-2, 1-2-3') and tap bar 1 ('1 1.5'): short wave (2 pulses) + long wave (3 pulses).",
+      "In bar 2 ('1 0.5 1'), tap the first group of 2, then split the group of 3 into 'short + long' (1 + 2 pulses)!"
     ],
     "fa": [
-      "روی «پخش نمونه» بزن تا دو میزانِ ۵/۸ («1 1.5 | 1 1.5») رو بشنوی و موجِ «کوتاه – بلند» (۲ + ۳) رو حس کنی.",
-      "بلند بگو: «یک-دو، یک-دو-سه | یک-دو، یک-دو-سه».",
-      "الگوی «1 1.5 | 1 1.5» رو روی پد بزن و به ضربِ دومِ هر میزان، اون نیم‌ضرب کششِ بیشتر رو بده!"
+      "نمونه رو پخش کن و همراه با ۵ پالسِ هر میزان بگو: «یک-دو، یک-دو-سه».",
+      "به ۵ کلیکِ شمارشِ اول گوش بده و میزان اول («1 1.5») رو بزن: موجِ کوتاه (۲ پالس) + موجِ کشیده (۳ پالس).",
+      "در میزان دوم («1 0.5 1»)، اول دسته‌ی ۲ تایی رو بزن و بعد دسته‌ی ۳ تایی رو با دو ضربه پر کن!"
     ]
   },
   "practice": {
     "type": "rhythm-tap",
+    "tempo": 76,
     "meter": "5/8",
-    "tempo": 80,
-    "pattern": "1 1.5 | 1 1.5"
+    "pattern": "1 1.5 | 1 0.5 1"
   },
   "selfCheck": {
     "en": [
-      "Did I count '1-2, 1-2-3' (2 + 3) instead of making the two beats equal?",
-      "Did I hold the second beat (1.5) slightly longer than the first beat (1) in both measures?"
+      "Did counting '1-2, 1-2-3' make the 5/8 bar feel natural and predictable?",
+      "Did I land cleanly on beat 1 of the second measure after the 3-pulse group?"
     ],
     "fa": [
-      "به‌جای مساوی زدنِ دو ضرب، الگوی «یک-دو، یک-دو-سه» (۲ + ۳) رو شمردم؟",
-      "تو هر دو میزان، ضرب دوم (1.5) رو کمی کشیده‌تر از ضرب اول (1) نگه داشتم؟"
+      "شمردنِ «یک-دو، یک-دو-سه» باعث شد میزان ۵/۸ برات روان و قابل‌پیش‌بینی بشه؟",
+      "بعد از دسته‌ی سه‌تاییِ آخرِ میزان اول، دقیق سرِ ضربِ اولِ میزان دوم فرود اومدم؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "How do musicians easily feel and count odd meters like 5/8 and 7/8?",
-        "fa": "نوازنده‌ها چطور میزان‌های لنگ مثل ۵/۸ و ۷/۸ رو خیلی راحت حس می‌کنن و می‌شمارن؟"
+        "en": "How do musicians naturally feel a 5/8 measure?",
+        "fa": "نوازنده‌ها یک میزان ۵/۸ رو چطور در ذهن و بدنشون دسته‌بندی می‌کنن؟"
       },
       "options": {
         "en": [
-          "By breaking them into small groups of 2 and 3 (e.g., 5/8 = 2+3, 7/8 = 2+2+3)",
-          "By ignoring the bar lines completely",
-          "By changing the tempo on every note"
+          "As a combination of one group of 2 and one group of 3 (2 + 3 or 3 + 2)",
+          "As 5 slow whole notes",
+          "By ignoring the bar line"
         ],
         "fa": [
-          "با تقسیم کردنشون به دسته‌های کوچیکِ ۲تایی و ۳تایی (مثلاً ۵/۸ = ۲+۳ و ۷/۸ = ۲+۲+۳)",
-          "با نادیده گرفتنِ کاملِ خط میزان",
-          "با تغییر دادنِ سرعت روی هر نت"
+          "به‌صورت ترکیبِ یک دسته‌ی ۲ تایی و یک دسته‌ی ۳ تایی (۲+۳ یا ۳+۲)",
+          "به‌صورت ۵ نت گرد",
+          "با حذف کردن خط میزان"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! Grouping into 2s ('Short') and 3s ('Long') makes 5/8 and 7/8 natural and groovy.",
-        "fa": "دقیقاً! دسته‌بندی کردن به ۲تایی («کوتاه») و ۳تایی («بلند») باعث می‌شه ۵/۸ و ۷/۸ کاملاً طبیعی و روان حس بشن."
+        "en": "Correct! Every asymmetrical meter is built from simple building blocks of 2s and 3s.",
+        "fa": "کاملاً درسته! تمام میزان‌های لنگ از کنار هم قرار گرفتنِ دسته‌های سادهٔ ۲ تایی و ۳ تایی ساخته می‌شن."
       },
       "feedbackWrong": {
-        "en": "Every odd meter is built from groups of 2 and 3 eighth notes: 5/8 is 2+3, and 7/8 is 2+2+3.",
-        "fa": "هر میزان لنگی از ترکیبِ دسته‌های ۲ و ۳ ساخته می‌شه: ۵/۸ یعنی ۲+۳ و ۷/۸ یعنی ۲+۲+۳."
+        "en": "5/8 is felt by grouping the five eighth-note pulses into 2 + 3 (or 3 + 2).",
+        "fa": "پنج پالسِ میزان ۵/۸ به‌صورت ۲ + ۳ (یا ۳ + ۲) حس و شمرده می‌شه."
       }
     },
     {
       "question": {
-        "en": "In our 5/8 pattern '1 1.5', why is the first beat 1 and the second beat 1.5?",
-        "fa": "تو الگوی ۵/۸ امروز («1 1.5»)، چرا ضرب اول ۱ و ضرب دوم ۱.۵ هست؟"
+        "en": "How is a 7/8 measure broken down into simple pulse groups?",
+        "fa": "میزانِ ۷/۸ از ترکیبِ چه دسته‌های ساده‌ای ساخته می‌شه؟"
       },
       "options": {
         "en": [
-          "Because 2 eighth notes equal 1 beat, and 3 eighth notes equal 1.5 beats (total = 5 eighth notes)",
-          "Because the metronome is broken",
-          "Because 5/8 has 5 whole notes"
+          "Two groups of 2 and one group of 3 (such as 2 + 2 + 3 or 3 + 2 + 2)",
+          "Seven groups of 4",
+          "One group of 10"
         ],
         "fa": [
-          "چون ۲ تا چنگ می‌شه ۱ ضرب، و ۳ تا چنگ می‌شه ۱.۵ ضرب (که جمعشون می‌شه ۵ تا چنگ)",
-          "چون سرعت مترونوم نامنظمه",
-          "چون ۵/۸ پنج تا نت گرد داره"
+          "دو دسته‌ی ۲ تایی و یک دسته‌ی ۳ تایی (مثل ۲ + ۲ + ۳ یا ۳ + ۲ + ۲)",
+          "هفت دسته‌ی ۴ تایی",
+          "یک دسته‌ی ۱۰ تایی"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! 2 eighth notes (0.5 + 0.5 = 1) plus 3 eighth notes (0.5 + 0.5 + 0.5 = 1.5) gives the unmistakable 2+3 lilt of 5/8.",
-        "fa": "آفرین! ۲ تا چنگ (۱ ضرب) به علاوه‌ی ۳ تا چنگ (۱.۵ ضرب) دقیقاً همون موجِ ۲+۳ در میزان ۵/۸ رو می‌سازه."
+        "en": "Spot on! 2 + 2 + 3 = 7 quick pulses, giving 7/8 its infectious forward drive.",
+        "fa": "آفرین! ترکیبِ ۲ + ۲ + ۳ جمعاً ۷ پالس می‌سازه و حسِ پرانرژیِ ۷/۸ رو شکل می‌ده."
       },
       "feedbackWrong": {
-        "en": "Remember: each eighth note is 0.5 beats, so a group of 2 is 1 beat and a group of 3 is 1.5 beats.",
-        "fa": "یادت باشه: هر چنگ ۰.۵ ضربه؛ پس دسته‌ی ۲تایی می‌شه ۱ ضرب و دسته‌ی ۳تایی می‌شه ۱.۵ ضرب."
+        "en": "7/8 combines two groups of 2 and one group of 3 (2 + 2 + 3 = 7).",
+        "fa": "میزان ۷/۸ از دو دسته‌ی ۲ تایی و یک دسته‌ی ۳ تایی (۲+۲+۳=۷) تشکیل می‌شه."
       }
     }
   ],
   "summary": {
-    "en": "You unlocked the secret of 5/8 and 7/8 odd meters as groups of 2 and 3 and tapped a 5/8 groove!",
-    "fa": "راز میزان‌های لنگِ ۵/۸ و ۷/۸ رو با دسته‌های ۲ و ۳ یاد گرفتی و یک ریتم ۵/۸ رو اجرا کردی!"
+    "en": "Bravo! Odd meters like 5/8 and 7/8 are no longer mysterious once you feel their 2 + 3 building blocks.",
+    "fa": "دمت گرم! حالا که رازِ دسته‌های ۲ و ۳ تایی رو بلدی، میزان‌های ۵/۸ و ۷/۸ برات کاملاً آشنا هستن."
   },
   "tomorrow": {
-    "en": "Our final Lesson 12 brings everything together in the ultimate Rhythm Challenge!",
-    "fa": "تو درس ۱۲ (ایستگاه پایانیِ دوره‌ی ریتم)، همه‌ی الگوهایی که یاد گرفتیم رو تو یک چالشِ جذاب مرور می‌کنیم!"
+    "en": "Next lesson: our final Rhythm Challenge combining quarter notes, eighths, rests, dotted notes, and half notes!",
+    "fa": "درس فردا: چالشِ پایانیِ دوره‌ی ریتم با ترکیبِ نت سیاه، چنگ، سکوت، نقطه‌دار و سفید!"
   },
   "source": {
     "creator": {

@@ -5,111 +5,111 @@
     "fa": "فصل ۳ «ریتم‌های جهان»"
   },
   "title": {
-    "en": "Triplets: three in one beat",
-    "fa": "تریوله (سهتایی): سه نت در یک ضرب"
+    "en": "Triplets: three inside one beat",
+    "fa": "تریوله: سه نت در دلِ یک ضرب"
   },
   "minutes": 6,
   "goal": {
-    "en": "Divide 1 beat into three equal triplet subdivisions and alternate triplets with steady quarter notes.",
-    "fa": "یک ضرب رو به سه قسمتِ کاملاً مساوی (تریوله) تقسیم می‌کنی و در کنار نت‌های سیاه می‌زنی."
+    "en": "Divide a single beat into three equal thirds (⅓ + ⅓ + ⅓) and switch smoothly between quarter notes and a triplet.",
+    "fa": "یک ضرب رو به سه قسمتِ کاملاً مساوی (⅓ + ⅓ + ⅓) تقسیم می‌کنی و بین نت سیاه و تریوله روان جابه‌جا می‌شی."
   },
   "see": {
-    "en": "In Lesson 5 we split 1 beat into 2 equal eighth notes. What if we split 1 beat into 3 equal parts instead? That is called a triplet (written with a small '3' above three beamed notes, each ~0.33 beats)! Triplets give music a rolling, flowing energy heard in classical music, jazz, and Persian instrumental ornamentations. A great trick to feel an even triplet is to say a 3-syllable word like 'PINE-ap-ple' or count '1-la-li' inside a single beat!",
-    "fa": "تو درس ۵ یک ضرب رو به ۲ قسمت مساوی (دو تا چنگ) تقسیم کردیم. حالا اگه یک ضرب رو به ۳ قسمتِ کاملاً مساوی تقسیم کنیم چی می‌شه؟ بهش می‌گن «تریوله» یا «سه‌تایی» (که با یه عددِ ۳ کوچیک بالای سه نتِ به هم وصل‌شده نوشته می‌شه و هر کدوم حدود یک‌سومِ ضرب هستن)! تریوله یه حسِ غلتان و روان به موسیقی می‌ده که هم تو موسیقی کلاسیک و جز و هم تو تزیینات موسیقی ایرانی زیاد شنیده می‌شه. بهترین راه برای مساوی زدن تریوله اینه که توی دلِ یک ضرب بگی «یک-دو-سه» (سه‌سیلابی و یکنواخت) و بعد روی ضرب بعدی بگی «چهار»!"
+    "en": "Eighth notes split a beat into 2 halves, while a Triplet splits a single beat into 3 equal thirds (⅓ beat each, marked with a small '3'). To feel a triplet naturally, say a smooth 3-syllable word like 'tri-po-let' or 'pa-ri-sa' inside one beat: 'ONE, TWO-pa-ri, THREE, FOUR'!",
+    "fa": "نت‌های چنگ هر ضرب رو به ۲ نیمه تقسیم می‌کردن، اما «تریوله» (سه بر دو) یک ضربِ واحد رو به ۳ قسمتِ کاملاً مساوی (هر کدوم یک‌سوم ضرب) تقسیم می‌کنه. برای اینکه تریوله رو راحت حس کنی، توی دلِ ضربِ دوم یک کلمه‌ی سه‌بخشیِ روان مثل «پَ-ری-سا» یا «یک-دو-سه» بگو: «یک، پَ-ری-سا، سه، چهار»!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' to hear a 3-note triplet on beat 1 followed by a 1-beat quarter note on beat 2, repeated in measure 2.",
-      "Say out loud at a steady pace: '1-la-li 2 | 1-la-li 2' so all three triplet syllables share 1 beat evenly.",
-      "Tap '0.33 0.33 0.34 1 | 0.33 0.33 0.34 1' on the drum pad with a smooth rolling motion!"
+      "Play the demo and hear how beat 2 rolls smoothly with three equal taps ('0.33 0.33 0.34') before landing right on beat 3.",
+      "Use the tempo slider to slow down to 80% first if you want extra room to feel the three equal thirds.",
+      "Tap beat 1, the 3-note triplet across beat 2, then steady quarter notes on beats 3 and 4."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن تا یک تریوله‌ی سه‌تایی روی ضرب اول و یک نت سیاه روی ضرب دوم رو در دو میزان بشنوی.",
-      "با سرعت ثابت بلند بگو: «یک-دو-سه دو | یک-دو-سه دو» طوری که سه سیلابِ اول دقیقاً توی یک ضرب جا بشن.",
-      "الگوی «0.33 0.33 0.34 1 | 0.33 0.33 0.34 1» رو نرم و یکدست روی پد ضرب اجرا کن!"
+      "به نمونه گوش بده و ببین چطور توی ضربِ دوم، سه ضربه‌ی مساوی («⅓ ⅓ ⅓») نرم می‌چرخن و درست به ضرب ۳ می‌رسن.",
+      "اگه دوست داری اول با اسلایدر سرعت رو بذار روی ۸۰٪ تا سه قسمتِ مساویِ تریوله راحت توی دستت بشینه.",
+      "ضرب ۱، تریوله‌ی سه‌تایی روی ضرب ۲، و بعد دو نت سیاه روی ضرب ۳ و ۴ رو بزن."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
-    "meter": "2/4",
-    "tempo": 60,
-    "pattern": "0.33 0.33 0.34 1 | 0.33 0.33 0.34 1"
+    "tempo": 64,
+    "meter": "4/4",
+    "pattern": "1 0.33 0.33 0.34 1 1"
   },
   "selfCheck": {
     "en": [
-      "Were all 3 notes of my triplet equally spaced inside 1 beat?",
-      "Did I land cleanly on beat 2 for the quarter note right after the triplet?"
+      "Were all three taps of the triplet spaced evenly (instead of two fast + one slow)?",
+      "Did the note after the triplet land right on the 3rd metronome click?"
     ],
     "fa": [
-      "هر ۳ ضربه‌ی تریوله رو با فاصله‌ی مساوی توی یک ضرب جا دادم؟",
-      "بلافاصله بعد از تریوله، نت سیاه رو دقیقاً سرِ ضرب ۲ فرود آوردم؟"
+      "هر سه ضربه‌ی تریوله با فاصله‌ی کاملاً مساوی زده شدن (نه دو تا تند و یکی کند)؟",
+      "نتِ بعد از تریوله دقیقاً روی کلیکِ سوم مترونوم نشست؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "How many equal notes fit inside 1 single beat in an eighth-note triplet?",
-        "fa": "در یک «تریوله» (Triplet)، چند نتِ مساوی داخلِ ۱ ضرب جا می‌گیرن؟"
+        "en": "How many equal notes make up an eighth-note triplet inside a single quarter-note beat?",
+        "fa": "در یک «تریوله»، چند نتِ مساوی در دلِ یک ضربِ سیاه جا می‌گیرن؟"
       },
       "options": {
         "en": [
-          "3 equal notes inside 1 beat",
-          "2 equal notes inside 1 beat",
-          "3 beats for 1 single note"
+          "3 equal notes (each lasting ⅓ of a beat)",
+          "2 notes",
+          "6 notes"
         ],
         "fa": [
-          "۳ نتِ مساوی در ۱ ضرب",
-          "۲ نتِ مساوی در ۱ ضرب",
-          "۳ ضرب برای ۱ نت"
+          "۳ نتِ کاملاً مساوی (هر کدوم یک‌سومِ ضرب)",
+          "۲ نت",
+          "۶ نت"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! A triplet divides 1 beat into 3 equal thirds (⅓ + ⅓ + ⅓ = 1 beat).",
-        "fa": "دقیقاً! تریوله یک ضرب رو به ۳ قسمتِ یک‌سومِ کاملاً مساوی تقسیم می‌کنه."
+        "en": "Correct! A triplet divides one beat into three equal thirds.",
+        "fa": "درسته! تریوله یک ضرب رو به سه بخشِ کاملاً مساوی تقسیم می‌کنه."
       },
       "feedbackWrong": {
-        "en": "'Tri-' means three: a triplet fits 3 evenly spaced notes inside a single beat.",
-        "fa": "تریوله یعنی سه‌تایی: ۳ نت با فاصله‌ی کاملاً مساوی توی یک ضرب قرار می‌گیرن."
+        "en": "'Tri-plet' means three equal notes sharing one beat.",
+        "fa": "تریوله یعنی سه نتِ برابر که در زمانِ یک ضرب اجرا می‌شن."
       }
     },
     {
       "question": {
-        "en": "What is the key difference between two eighth notes and a triplet on a single beat?",
-        "fa": "تفاوت اصلیِ بین «دو نت چنگ» و «یک تریوله» روی یک ضرب چیه؟"
+        "en": "What is the most common mistake beginners make when tapping a triplet?",
+        "fa": "رایج‌ترین اشتباه موقع زدنِ تریوله چیه؟"
       },
       "options": {
         "en": [
-          "Two eighth notes divide the beat into 2 halves; a triplet divides the same beat into 3 thirds",
-          "A triplet is played three times louder",
-          "Two eighth notes take 2 beats while a triplet takes 3 beats"
+          "Rushing the first two notes so it sounds uneven instead of three equal syllables",
+          "Playing softly",
+          "Using the spacebar"
         ],
         "fa": [
-          "دو چنگ ضرب رو به ۲ نیمه تقسیم می‌کنن، اما تریوله همون یک ضرب رو به ۳ بخش مساوی تقسیم می‌کنه",
-          "تریوله سه برابر بلندتر نواخته می‌شه",
-          "دو چنگ ۲ ضرب طول می‌کشه و تریوله ۳ ضرب"
+          "دو نت اول رو تند زدن و نت سوم رو جدا کردن، به‌جای سه قسمتِ کاملاً یکنواخت",
+          "آروم ضربه زدن",
+          "استفاده از کلید فاصله"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Both take 1 beat total, but eighth notes split it in 2 while a triplet splits it in 3.",
-        "fa": "آفرین! هر دو در مجموع ۱ ضرب زمان می‌گیرن، اما چنگ‌ها ضرب رو ۲ قسمت می‌کنن و تریوله ۳ قسمت."
+        "en": "Spot on! Speaking a smooth 3-syllable word keeps all three notes evenly spaced.",
+        "fa": "آفرین! گفتنِ یک کلمه‌ی سه‌بخشیِ روان کمک می‌کنه هر سه نت کاملاً هم‌اندازه بمونن."
       },
       "feedbackWrong": {
-        "en": "Both fit in 1 beat: eighth notes divide the beat into 2 equal parts, while a triplet divides it into 3 equal parts.",
-        "fa": "هر دو توی ۱ ضرب جا می‌شن: جفت‌چنگ ضرب رو ۲ قسمت مساوی می‌کنه و تریوله ۳ قسمت مساوی."
+        "en": "Rushing the first two notes turns a triplet into two sixteenth notes and an eighth; keep all three thirds equal.",
+        "fa": "تند زدنِ دو نت اول تعادل تریوله رو به هم می‌زنه؛ هر سه بخش باید کاملاً مساوی باشن."
       }
     }
   ],
   "summary": {
-    "en": "You learned how a triplet divides 1 beat into 3 equal parts and tapped rolling triplet measures.",
-    "fa": "یاد گرفتی تریوله چطور ۱ ضرب رو به ۳ قسمت مساوی تقسیم می‌کنه و الگوی تریوله رو اجرا کردی."
+    "en": "Smooth rolling triplets! You can now divide a beat into both 2 (eighths) and 3 (triplets).",
+    "fa": "تریوله‌های روان و عالی! حالا بلدی هر ضرب رو هم به ۲ قسمت و هم به ۳ قسمتِ مساوی تقسیم کنی."
   },
   "tomorrow": {
-    "en": "We will explore the lively 6/8 meter—felt as two big beats each holding three small pulses, beloved in Persian music!",
-    "fa": "با میزان پرانرژیِ ۶/۸ آشنا می‌شیم: دو ضربِ بزرگ که هر کدوم سه نبضِ کوچیک دارن و در موسیقی ایرانی بسیار محبوبه!"
+    "en": "Next lesson: we dive into 6/8 meter—the swinging two-wave groove heard across Persian folk and dance music!",
+    "fa": "درس فردا: وارد میزانِ شیرینِ ۶/۸ می‌شیم؛ ریتمِ موج‌دار و محبوبِ موسیقی محلی و شاد ایرانی!"
   },
   "source": {
     "creator": {

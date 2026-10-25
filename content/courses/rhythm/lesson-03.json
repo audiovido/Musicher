@@ -2,114 +2,114 @@
   "id": 3,
   "chapter": {
     "en": "Chapter 1: Pulse",
-    "fa": "فصل ۱ «ضرب و نبض»"
+    "fa": "فصل ۱ «نبض و ضرب»"
   },
   "title": {
     "en": "Long and short: quarter and half notes",
-    "fa": "کوتاه و کشیده: نت سیاه و سفید"
+    "fa": "کشیده و کوتاه: نت سیاه و نت سفید"
   },
   "minutes": 6,
   "goal": {
-    "en": "Tap a rhythm mixing 1-beat quarter notes (♩) and 2-beat half notes (𝅗𝅥) while letting the 2-beat notes ring full length.",
-    "fa": "الگوی ترکیبیِ نت سیاه (۱ ضرب) و نت سفید (۲ ضرب) رو اجرا می‌کنی و به نت‌های ۲ ضربی زمان کامل می‌دی."
+    "en": "Tap 1-beat quarter notes (♩) and let 2-beat half notes (𝅗𝅥) ring across two clicks before tapping again.",
+    "fa": "نت‌های سیاه (۱ ضربی) و سفید (۲ ضربی) رو اجرا می‌کنی و روی نتِ سفید دو کلیک صبر می‌کنی."
   },
   "see": {
-    "en": "Music becomes interesting when we mix short and long sounds over the steady pulse! A quarter note (♩, filled black head) lasts 1 beat. A half note (𝅗𝅥, hollow head with a stem) lasts 2 full beats—you strike it on its first beat and let it ring through its second beat before tapping again. Look at today's pattern: '1 1 2 | 2 2'. In measure 1, tap on beats 1, 2, and 3 (holding beat 3 through beat 4). In measure 2, tap on beat 1 (hold through 2) and beat 3 (hold through 4)!",
-    "fa": "موسیقی وقتی جذاب می‌شه که روی نبضِ ثابت، صداهای کوتاه و کشیده رو کنار هم بذاریم! «نت سیاه» (♩، با سرِ توپُر) ۱ ضرب کشش داره. «نت سفید» (𝅗𝅥، با سرِ توخالی و دسته) ۲ ضربِ کامل طول می‌کشه؛ یعنی سرِ ضرب اول ضربه می‌زنی و صبر می‌کنی ضرب دومش هم بگذره و بعد می‌ری سراغ نت بعدی. به الگوی امروز نگاه کن: «1 1 2 | 2 2». تو میزان اول روی ضرب‌های ۱، ۲ و ۳ ضربه بزن (و ضرب ۳ رو به اندازه‌ی ۲ ضرب نگه دار). تو میزان دوم هم روی ضرب ۱ و ضرب ۳ ضربه بزن و هر کدوم رو ۲ ضرب بشمار!"
+    "en": "Not every note happens on every single click! A quarter note (♩, 1b) lasts 1 beat. A half note (𝅗𝅥, 2b) lasts 2 full beats: you tap on its first beat and let it ring while the next metronome click passes underneath.",
+    "fa": "قرار نیست روی تک‌تکِ کلیک‌ها ضربه بزنیم! نت سیاه (♩، ۱ ضرب) به اندازه‌ی یک کلیک طول می‌کشه. اما نت سفید (𝅗𝅥، ۲ ضرب) دو ضرب کامل کشش داره: سرِ ضرب اولش می‌زنی و می‌ذاری صدای کلیکِ دوم از زیرش رد بشه."
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and listen to how the 2-beat half notes (𝅗𝅥) leave twice as much space before the next tap.",
-      "Clap or tap while counting out loud: '1 – 2 – 3-4 | 1-2 – 3-4'.",
-      "Perform the pattern '1 1 2 | 2 2' on the drum pad, waiting the full 2 beats after every half note."
+      "Tap 'Play demo' and notice how bar 1 goes 'tap, tap, hold-2' (1 1 2) and bar 2 goes 'hold-2, hold-2' (2 2).",
+      "Start the tap practice, listen to the 4 count-in clicks, and tap only when each note starts.",
+      "During each 2-beat half note, let the second click pass without tapping early!"
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و گوش بده چطور نت‌های سفیدِ ۲ ضربی (𝅗𝅥) تا ضربه‌ی بعدی دو برابر زمان می‌گیرن.",
-      "همراه با شمردنِ بلند دست بزن: «۱ – ۲ – ۳-۴ | ۱-۲ – ۳-۴».",
-      "الگوی «1 1 2 | 2 2» رو روی پد اجرا کن و بعد از هر نت سفید، ۲ ضرب کامل صبر کن."
+      "روی «پخش نمونه» بزن و گوش کن که میزان اول «یک، دو، سه-چهار» (1 1 2) و میزان دوم دو تا نتِ ۲ ضربی (2 2) است.",
+      "تمرین رو شروع کن، بعد از ۴ کلیک شمارش، فقط سرِ شروع هر نت ضربه بزن.",
+      "توی هر نتِ ۲ ضربی، صبر کن کلیکِ دوم رد بشه و زودتر از موقع نزن!"
     ]
   },
   "practice": {
     "type": "rhythm-tap",
+    "tempo": 72,
     "meter": "4/4",
-    "tempo": 70,
     "pattern": "1 1 2 | 2 2"
   },
   "selfCheck": {
     "en": [
-      "Did I wait 2 full beats on the half note at the end of measure 1 before tapping measure 2?",
-      "Did I count all four beats in both measures (1+1+2 = 4 and 2+2 = 4)?"
+      "Did I wait through both beats of each half note before tapping the next note?",
+      "Did the two bars each add up to 4 steady clicks?"
     ],
     "fa": [
-      "روی نت سفیدِ آخرِ میزان اول، ۲ ضرب کامل صبر کردم و بعد رفتم سراغ میزان دوم؟",
-      "تو هر دو میزان هر ۴ ضرب رو کامل شمردم (۱+۱+۲ = ۴ و ۲+۲ = ۴)؟"
+      "توی هر نت سفید، هر دو ضربش رو کامل صبر کردم و بعد نت بعدی رو زدم؟",
+      "مجموع ضرب‌های هر کدوم از دو میزان دقیقاً ۴ کلیک شد؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "How many beats does a half note (𝅗𝅥) last compared to a quarter note (♩)?",
-        "fa": "کشش «نت سفید» (𝅗𝅥) در مقایسه با «نت سیاه» (♩) چند ضربه؟"
+        "en": "How many beats does a half note (𝅗𝅥) last in 4/4 time?",
+        "fa": "در میزان ۴/۴، هر نت سفید (𝅗𝅥) چند ضرب طول می‌کشه؟"
       },
       "options": {
         "en": [
-          "Half note = 2 beats, Quarter note = 1 beat",
-          "Half note = 1 beat, Quarter note = 2 beats",
-          "Both last 4 beats"
+          "2 beats (tap on the first beat, hold through the second beat)",
+          "1 beat",
+          "4 beats"
         ],
         "fa": [
-          "نت سفید = ۲ ضرب، نت سیاه = ۱ ضرب",
-          "نت سفید = ۱ ضرب، نت سیاه = ۲ ضرب",
-          "هر دو ۴ ضرب هستن"
+          "۲ ضرب (سرِ ضرب اول می‌زنی و تا پایان ضرب دوم نگه می‌داری)",
+          "۱ ضرب",
+          "۴ ضرب"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! One 2-beat half note takes the same time as two 1-beat quarter notes.",
-        "fa": "دقیقاً! یک نت سفیدِ ۲ ضربی هم‌اندازه‌ی دو تا نت سیاهِ ۱ ضربی زمان می‌بره."
+        "en": "Correct! A half note lasts 2 beats—equal to two quarter notes.",
+        "fa": "درسته! نت سفید ۲ ضرب کشش داره، یعنی هم‌اندازه‌ی دو تا نت سیاه."
       },
       "feedbackWrong": {
-        "en": "Remember: a quarter note (♩) is 1 beat, and a hollow half note (𝅗𝅥) is 2 beats.",
-        "fa": "یادت باشه: نت سیاه (♩) ۱ ضربه و نت سفیدِ توخالی (𝅗𝅥) ۲ ضرب."
+        "en": "A quarter note is 1 beat and a whole note is 4 beats; a half note is 2 beats.",
+        "fa": "نت سیاه ۱ ضرب و نت گرد ۴ ضربه؛ نت سفید دقیقاً ۲ ضرب طول می‌کشه."
       }
     },
     {
       "question": {
-        "en": "In the measure '2 2' (two half notes in 4/4 time), on which beats do you strike the drum?",
-        "fa": "تو میزانِ «2 2» (دو تا نت سفید در میزان ۴/۴)، سرِ کدوم ضرب‌ها ضربه می‌زنی؟"
+        "en": "In the pattern '1 1 2', on which beats of the 4-beat measure do you tap?",
+        "fa": "در الگوی «1 1 2» توی یک میزان چهارضربی، سرِ کدوم ضرب‌ها ضربه می‌زنی؟"
       },
       "options": {
         "en": [
-          "On beat 1 and beat 3 (letting beats 2 and 4 ring)",
-          "On beats 1, 2, 3, and 4",
-          "Only on beat 4"
+          "Beats 1, 2, and 3 (and hold through beat 4)",
+          "Beats 1, 2, 3, and 4",
+          "Only beat 1"
         ],
         "fa": [
-          "سرِ ضرب ۱ و ضرب ۳ (و روی ضرب‌های ۲ و ۴ کشش نت ادامه داره)",
-          "سرِ هر چهار ضرب ۱، ۲، ۳ و ۴",
-          "فقط سرِ ضرب ۴"
+          "ضرب‌های ۱، ۲ و ۳ (و روی ضرب ۴ نگه می‌داری)",
+          "هر چهار ضرب ۱، ۲، ۳ و ۴",
+          "فقط ضرب ۱"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! The first half note covers beats 1–2, and the second half note covers beats 3–4.",
-        "fa": "آفرین! نت سفید اول ضرب‌های ۱ و ۲ رو پر می‌کنه و نت سفید دوم ضرب‌های ۳ و ۴ رو."
+        "en": "Spot on! You tap on beats 1, 2, and 3, and let the half note ring through beat 4.",
+        "fa": "آفرین! سرِ ضرب‌های ۱ و ۲ و ۳ ضربه می‌زنی و ضرب ۴ ادامه‌ی همون نت سفیده."
       },
       "feedbackWrong": {
-        "en": "Each half note lasts 2 beats: strike on beat 1 (hold through 2), then strike on beat 3 (hold through 4).",
-        "fa": "هر نت سفید ۲ ضرب طول می‌کشه: سرِ ضرب ۱ بزن (تا پایان ۲ صبر کن) و بعد سرِ ضرب ۳ بزن (تا پایان ۴ صبر کن)."
+        "en": "The two quarter notes land on beats 1 and 2, and the 2-beat half note starts on beat 3 and holds through beat 4.",
+        "fa": "دو تا نت سیاه روی ضرب ۱ و ۲ می‌افتن و نت سفید روی ضرب ۳ شروع می‌شه و ضرب ۴ رو هم پر می‌کنه."
       }
     }
   ],
   "summary": {
-    "en": "You mastered combining 1-beat quarter notes and 2-beat half notes in the pattern '1 1 2 | 2 2'.",
-    "fa": "ترکیب نت‌های سیاه (۱ ضرب) و سفید (۲ ضرب) رو در الگوی «1 1 2 | 2 2» یاد گرفتی و اجرا کردی."
+    "en": "Nice control! You combined 1-beat quarter notes and 2-beat half notes without rushing the longer durations.",
+    "fa": "کنترل عالی! نت‌های ۱ ضربی و ۲ ضربی رو با هم زدی و کششِ نت‌های سفید رو کامل رعایت کردی."
   },
   "tomorrow": {
-    "en": "We will learn how silence is measured in music using quarter rests and half rests.",
-    "fa": "یاد می‌گیریم چطور سکوت‌ها هم مثل نت‌ها شمرده می‌شن (سکوت سیاه و سکوت سفید)."
+    "en": "Next lesson: we will discover rests—why measured silence is just as important as sound.",
+    "fa": "درس فردا: با «سکوت‌ها» آشنا می‌شیم و می‌بینیم چرا سکوتِ زمان‌دار به اندازه‌ی خودِ نت مهمه."
   },
   "source": {
     "creator": {

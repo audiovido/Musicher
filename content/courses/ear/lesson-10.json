@@ -1,132 +1,131 @@
 {
   "id": 10,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
-    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+    "en": "Chapter 2: Intervals, chords and Persian color",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و رنگ ایرانی»"
   },
   "title": {
-    "en": "Ear review game",
-    "fa": "بازی مرور تربیت گوش"
+    "en": "Ear review game: all skills combined",
+    "fa": "بازی مرور گوش: ترکیبِ همه‌ی مهارت‌ها"
   },
-  "duration": {
-    "en": "7 minutes",
-    "fa": "۷ دقیقه"
-  },
+  "minutes": 7,
   "goal": {
-    "en": "Put all your ear-training skills together—high vs low, step vs skip, intervals, and chord colors—in one lively review game.",
-    "fa": "همهٔ مهارت‌های شنیداریت—زیر و بم، پله و پرش، فاصله‌ها و رنگ آکوردها—رو توی یه بازی مرور کنار هم محک بزنی."
+    "en": "Complete a 10-round randomized ear challenge mixing Higher/Lower, Same/Different, Step/Skip, Small Intervals, Big Intervals, and Major/Minor chords.",
+    "fa": "یک چالشِ ۱۰ مرحله‌ایِ تصادفی از ترکیبِ زیر و بمی، یکسانی، پله و پرش، فاصله‌های کوچک و بزرگ، و آکوردهای ماژور و مینور رو با موفقیت می‌گذرونی."
+  },
+  "see": {
+    "en": "Welcome to the finale of Ear Training & Sight-Reading! In this 10-round review game, every round switches dynamically between the six core listening skills you learned: Higher vs Lower, Same vs Different, Step vs Skip, Small Intervals (2nd/3rd), Big Intervals (4th/5th/Octave), and Major vs Minor Chords. Glance at the question prompt each round before tapping Play!",
+    "fa": "به ایستگاه پایانیِ دوره‌ی «تربیت گوش» خوش اومدی! توی این بازیِ ۱۰ مرحله‌ای، هر مرحله به‌طور تصادفی یکی از ۶ مهارتِ اصلی این دوره رو ازت می‌پرسه: زیرتر یا بم‌تر، یکسان یا متفاوت، پله یا پرش، فاصله‌های کوچک (دوم/سوم)، فاصله‌های بزرگ (چهارم/پنجم/اکتاو) و آکورد ماژور یا مینور. در هر مرحله اول صورتِ سؤال رو بخون و بعد روی پخش صدا بزن!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "Look how far your musical ear has come! In just ten short lessons you learned to hear pitch direction, spot unison vs change, tell smooth steps from wide leaps, recognize specific intervals, and feel Major vs Minor chords.",
-      "In real music, all of these happen one after another. This review game lets you switch between different listening modes or play a full 8-round challenge to keep your ears sharp."
+      "Read the prompt at the top of each round so your ear knows whether it is listening for direction, interval size, or chord mood.",
+      "Tap 'Play sound' (and 'Play again' whenever you want to compare the notes).",
+      "Score at least 7 out of 10 (70%) across the 10 random rounds to complete the course!"
     ],
     "fa": [
-      "ببین گوش موسیقایی‌ت چقدر جلو اومده! توی این ده تا درس کوتاه یاد گرفتی جهت زیر و بمی، یکسان یا متفاوت بودن، پله و پرش، فاصله‌های کوچیک و بزرگ، و رنگ آکوردهای ماژور و مینور رو بشنوی.",
-      "توی موسیقی واقعی، همهٔ این‌ها پشت سر هم اتفاق می‌افتن. توی این بازی مرور می‌تونی بین حالت‌های مختلف جابه‌جا بشی و یه چالش ۸ دوری رو کامل کنی."
+      "اولِ هر مرحله به صورتِ سؤال نگاه کن تا بدونی قراره به جهت، اندازهٔ فاصله یا رنگِ آکورد گوش بدی.",
+      "روی «پخش صدا» بزن (و هر وقت خواستی با «پخش دوباره» نت‌ها رو دوباره مقایسه کن).",
+      "توی این ۱۰ مرحله‌ی تصادفی حداقل ۷ امتیاز از ۱۰ (۷۰٪) بگیر تا دوره کامل بشه!"
     ]
-  },
-  "hear": {
-    "en": "Take a calm breath before each round, listen once with full focus, and trust your musical instinct.",
-    "fa": "قبل از هر دور یه نفس آروم بکش، با تمرکز کامل گوش بده و به حس موسیقایی خودت اعتماد کن."
   },
   "practice": {
     "type": "ear-choice",
-    "mode": "higher-lower",
+    "mode": "review-all",
     "subModes": [
       "higher-lower",
+      "same-different",
       "step-skip",
-      "major-minor",
-      "interval"
+      "small-intervals",
+      "big-intervals",
+      "major-minor"
     ],
-    "rounds": 8
-  },
-  "steps": {
-    "en": [
-      "Pick any mode chip at the top of the practice card (High/Low, Step/Skip, Major/Minor, or Intervals) or start right away.",
-      "Tap 'Play sound', hum softly if needed, and choose your answer.",
-      "Complete 8 rounds to finish the Ear Training course!"
-    ],
-    "fa": [
-      "یکی از حالت‌های بالای کارت تمرین (زیر و بم، پله یا پرش، ماژور و مینور، یا فاصله‌ها) رو انتخاب کن یا مستقیم شروع کن.",
-      "دکمهٔ پخش صدا رو بزن، اگه لازم بود آروم زمزمه کن و گزینهٔ درست رو انتخاب کن.",
-      "۸ دور رو کامل کن تا دورهٔ تربیت گوش رو با موفقیت تموم کنی!"
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Did you try switching between at least two different listening modes?",
-      "Which skill feels easiest to your ear now, and which one will you revisit in the Practice Tools?"
+      "Did I check the question prompt on each round before choosing my answer?",
+      "Did I score at least 70% (7/10) across the mixed review game?"
     ],
     "fa": [
-      "حداقل دو تا از حالت‌های مختلف شنیداری بالای کارت رو امتحان کردی؟",
-      "کدوم مهارت الان برات از همه راحت‌تره و کدوم رو دوست داری توی «ابزارهای تمرین» بیشتر بازی کنی؟"
+      "توی هر مرحله قبل از انتخاب گزینه به نوع سؤال توجه کردم؟",
+      "در پایانِ بازیِ ترکیبی حداقل ۷۰٪ (۷ از ۱۰) امتیاز گرفتم؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "When you hear three notes played together and the mood is bright and sunny, what are you hearing?",
-        "fa": "وقتی سه تا نت هم‌زمان پخش می‌شن و حس و حال صدا روشن و آفتابیه، چی می‌شنوی؟"
+      "question": {
+        "en": "When switching from a two-note interval question to a Major/Minor chord question, how should your listening focus shift?",
+        "fa": "وقتی از سؤالِ فاصله‌ی دو نت می‌ری سراغ سؤالِ آکورد ماژور و مینور، تمرکزِ گوشت باید چطور عوض بشه؟"
       },
       "options": {
         "en": [
-          "A minor chord",
-          "A major chord",
-          "A single neighbor step",
-          "A quarter-tone rest"
+          "On two notes, listen for pitch direction and distance; on a chord, listen for the middle note and overall bright vs warm color",
+          "Only listen to how loud the notes are",
+          "Count how many bars are in the song"
         ],
         "fa": [
-          "آکورد مینور",
-          "آکورد ماژور",
-          "یک پلهٔ همسایه",
-          "سکوت"
+          "توی دو نت به جهت و فاصله‌ی بینشون دقت کنی، و توی آکورد به نتِ وسط و رنگِ روشن یا گرمِ کل صدا گوش بدی",
+          "فقط به بلندی صدا فکر کنی",
+          "تعداد میزان‌ها رو بشمری"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Three notes sounding together with a bright, open color form a major triad.",
-        "fa": "سه نت هم‌زمان با رنگ صدایی روشن و شاد، آکورد ماژور می‌سازن."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Knowing what feature to listen for makes every ear challenge clear and approachable.",
+        "fa": "کاملاً درسته! وقتی بدونی در هر سؤال دنبال چه نشونه‌ای بگردی، تشخیص صدا خیلی راحت می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Intervals measure distance between two pitches, while chords blend three pitches into a Major or Minor mood.",
+        "fa": "در فاصله‌ها دوری و نزدیکیِ دو نت مهمه و در آکوردها رنگ و حسِ کلیِ سه نت."
       }
     },
     {
-      "q": {
-        "en": "What is the secret to keeping your musical ear growing every week?",
-        "fa": "راز اینکه گوش موسیقایی‌ت هر هفته قوی‌تر بشه چیه؟"
+      "question": {
+        "en": "Which three wide intervals are grouped together in our Big Intervals training?",
+        "fa": "کدوم سه فاصله در بخش «فاصله‌های بزرگ» کنار هم قرار دارن؟"
       },
       "options": {
         "en": [
-          "Only practicing once a year for five hours",
-          "Short 5-minute daily listening and humming sessions",
-          "Never singing out loud",
-          "Playing with the sound muted"
+          "4th, 5th, and Octave",
+          "Unison and 2nd",
+          "Quarter rest and half rest"
         ],
         "fa": [
-          "سالی یک بار پنج ساعت تمرین کنی",
-          "تمرین‌های کوتاه ۵ دقیقه‌ایِ روزانه همراه با گوش دادن و زمزمه کردن",
-          "هیچ‌وقت با صدای بلند زمزمه نکنی",
-          "بدون صدا تمرین کنی"
+          "فاصله‌ی چهارم، پنجم و اکتاو",
+          "هم‌صدا و فاصله‌ی دوم",
+          "سکوت سیاه و سکوت سفید"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Just 5 minutes a day of active listening and humming builds lifelong ear memory.",
-        "fa": "فقط روزی ۵ دقیقه گوش دادنِ فعال و زمزمه کردن، حافظهٔ شنیداری موندگاری می‌سازه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! You have completed all 10 lessons of Ear Training & Sight-Reading!",
+        "fa": "آفرین! تمام ۱۰ درسِ دوره‌ی «تربیت گوش و نت‌خوانی» رو با موفقیت به پایان رسوندی!"
+      },
+      "feedbackWrong": {
+        "en": "The three big leaps are the 4th, the 5th, and the Octave.",
+        "fa": "سه پرشِ بزرگ شامل فاصله‌ی چهارم، پنجم و اکتاو هستن."
       }
     }
   ],
   "summary": {
-    "en": "Congratulations! You completed the Ear Training course and combined pitch, contour, intervals, and chords.",
-    "fa": "تبریک! دورهٔ تربیت گوش رو تموم کردی و تشخیص زیر و بمی، جهت ملودی، فاصله‌ها و آکوردها رو یاد گرفتی."
+    "en": "Congratulations! You finished all 10 lessons of Ear Training & Sight-Reading and tested your ear across every core skill.",
+    "fa": "تبریک! هر ۱۰ درسِ دوره‌ی «تربیت گوش و نت‌خوانی» رو تموم کردی و گوشت رو در تمام مهارت‌های پایه محک زدی."
   },
   "tomorrow": {
-    "en": "Keep using the Ear Game in Practice Tools anytime, and apply your fresh ears to your instrument courses!",
-    "fa": "از این به بعد هر وقت خواستی توی بخش «ابزارهای تمرین» بازی گوش رو ادامه بده و از گوش قویت توی دوره‌های ساز استفاده کن!"
+    "en": "Keep sharpening your ear anytime in Library → Practice tools → Ear game, or bring your trained ear back to the Piano course!",
+    "fa": "هر وقت خواستی از بخش «کتابخانه ← ابزارهای تمرین ← بازی تربیت گوش» تمرین رو ادامه بده یا با گوشِ آماده‌ات به دوره‌ی پیانو برگرد!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

@@ -5,111 +5,111 @@
     "fa": "فصل ۳ «ریتم‌های جهان»"
   },
   "title": {
-    "en": "Rhythm challenge: review all patterns",
-    "fa": "چالش ریتم: مرور همه‌ی الگوها"
+    "en": "Rhythm challenge: full course review",
+    "fa": "چالش ریتم: مرورِ کامل دوره"
   },
   "minutes": 7,
   "goal": {
-    "en": "Combine quarter notes, eighth notes, half notes, dotted quarter notes, and rests in one complete two-measure challenge.",
-    "fa": "نت سیاه، چنگ، سفید، سیاه نقطه‌دار و سکوت رو در یک چالشِ کاملِ دو میزانی کنار هم اجرا می‌کنی."
+    "en": "Combine quarter notes, eighth notes, a silent rest, a dotted quarter, and a half note in one complete two-bar challenge.",
+    "fa": "نت سیاه، دو چنگ، سکوت، سیاه نقطه‌دار و نت سفید رو توی یک چالشِ دو میزانی با دقتِ بالا اجرا می‌کنی."
   },
   "see": {
-    "en": "Welcome to Lesson 12—the finale of the Rhythm & Meter course! Look how many rhythmic building blocks you now command: steady pulse and tempo (Ch 1), quarter & half notes, active rests, eighth-note subdivisions, meters, dotted notes, and ties (Ch 2), plus triplets, 6/8 Persian grooves, and 5/8–7/8 odd meters (Ch 3). Today's final challenge puts your inner clock to the test across two rich measures of 4/4: '1 0.5 0.5 2 | 1.5 0.5 1 r1'. Measure 1 has a quarter note, two eighth notes, and a half note ('1, 2-and, 3-4'). Measure 2 has a dotted quarter + eighth, a quarter note, and a 1-beat rest ('1-and-2 AND 3, rest')!",
-    "fa": "به درس ۱۲ و ایستگاه پایانیِ دوره‌ی «ریتم و وزن» خوش اومدی! ببین الان چه جعبه‌ابزارِ کاملی از ریتم تو دستته: نبض ثابت و تمپو (فصل ۱)، نت سیاه و سفید، سکوت‌های فعال، نت‌های چنگ، کسر میزان‌ها، نت‌های نقطه‌دار و خط اتحاد (فصل ۲)، و تریوله، ۶/۸ ایرانی و میزان‌های لنگ ۵/۸ و ۷/۸ (فصل ۳). چالش پایانیِ امروز همه‌ی این مهارت‌ها رو تو دو میزانِ ۴/۴ کنار هم می‌ذاره: «1 0.5 0.5 2 | 1.5 0.5 1 r1». میزان اول شامل یک سیاه، دو چنگ و یک سفیده («یک، دو-و، سه-چهار»). میزان دوم شامل یک سیاه نقطه‌دار + چنگ، یک سیاه و یک سکوت سیاهه («یک-و-دو و، سه، سکوت»)!"
+    "en": "Congratulations on reaching the finale of Rhythm & Meter! Look at the two-bar challenge below: Bar 1 ('1 0.5 0.5 1 r1') tests your steady pulse, eighth-note subdivision on beat 2, quarter note on beat 3, and silent rest on beat 4. Bar 2 ('1.5 0.5 2') tests your dotted-quarter groove on beats 1–2 and a smooth 2-beat half note on beats 3–4!",
+    "fa": "تبریک! به ایستگاه پایانیِ دوره‌ی «ریتم و وزن» رسیدی. به الگوی دو میزانیِ پایین نگاه کن: میزان اول («1 0.5 0.5 1 r1») نبضِ ثابت در ضرب ۱، دو نت چنگ در ضرب ۲، نت سیاه در ضرب ۳ و سکوتِ سیاه در ضرب ۴ رو می‌سنجه. میزان دوم («1.5 0.5 2») الگوی سیاه نقطه‌دار و چنگ و در پایان یک نت سفیدِ ۲ ضربی رو ترکیب می‌کنه!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and follow each box across both measures: '1, 2-and, 3-4 | 1-and-2 AND, 3, rest'.",
-      "Speak the rhythm out loud twice before touching the pad so every transition feels familiar.",
-      "Perform the full challenge '1 0.5 0.5 2 | 1.5 0.5 1 r1' on the drum pad and hold the final rest!"
+      "Listen to the demo once or twice while reading each token from left to right.",
+      "Warm up at 85% tempo if you like, then take the full-speed challenge and aim for >= 80% Perfect + Good.",
+      "Notice the green/yellow/red timeline dots at the end to see your exact timing across every beat!"
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و خونه‌ها رو تو هر دو میزان دنبال کن: «یک، دو-و، سه-چهار | یک-و-دو و، سه، سکوت».",
-      "قبل از زدن روی پد، دو بار ریتم رو با صدای بلند بگو تا ترتیبش کاملاً تو ذهنت بشینه.",
-      "چالش کامل «1 0.5 0.5 2 | 1.5 0.5 1 r1» رو روی پد ضرب بزن و سکوت آخر رو هم کامل نگه دار!"
+      "یک یا دو بار به نمونه گوش بده و هم‌زمان جعبه‌های ریتم رو از چپ به راست دنبال کن.",
+      "اگه دوست داری اول با سرعتِ ۸۵٪ گرم کن و بعد چالش اصلی رو بزن تا بالای ۸۰٪ امتیاز بگیری.",
+      "در پایان به ردیفِ نقطه‌های سبز/زرد/قرمز نگاه کن تا دقتِ ضرب‌هات رو روی تک‌تک نت‌ها ببینی!"
     ]
   },
   "practice": {
     "type": "rhythm-tap",
+    "tempo": 76,
     "meter": "4/4",
-    "tempo": 72,
-    "pattern": "1 0.5 0.5 2 | 1.5 0.5 1 r1"
+    "pattern": "1 0.5 0.5 1 r1 | 1.5 0.5 2"
   },
   "selfCheck": {
     "en": [
-      "Did I hold the 2-beat half note at the end of measure 1 before starting the dotted quarter in measure 2?",
-      "Did I stay silent on the final 1-beat rest (r1) at the end of measure 2?"
+      "Did I stay completely silent on beat 4 of bar 1 ('r1') before starting bar 2 right on beat 1?",
+      "Did I achieve at least 80% Perfect + Good on the final timeline?"
     ],
     "fa": [
-      "نت سفیدِ ۲ ضربیِ آخرِ میزان اول رو کامل نگه داشتم و بعد وارد میزان دوم شدم؟",
-      "روی سکوتِ ۱ ضربیِ پایانِ میزان دوم (r1) ضربه نزدم و سکوت رو رعایت کردم؟"
+      "روی ضرب ۴ میزان اول («r1») کاملاً سکوت کردم و بعد دقیق سرِ ضرب ۱ میزان دوم وارد شدم؟",
+      "توی جدولِ پایانی حداقل ۸۰٪ ضرب‌هام سبز (عالی) یا زرد (خوب) شد؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "Let's check the beat math of measure 1 ('1 0.5 0.5 2'): how many beats does it add up to?",
-        "fa": "بیا حسابِ ضرب‌های میزان اول («1 0.5 0.5 2») رو چک کنیم: مجموعِ ضرب‌هاش چند تا می‌شه؟"
+        "en": "In Bar 1 ('1 0.5 0.5 1 r1'), how many total beats are inside the measure?",
+        "fa": "در میزان اول («1 0.5 0.5 1 r1»)، مجموعاً چند ضرب در داخلِ میزان وجود داره؟"
       },
       "options": {
         "en": [
-          "1 + 0.5 + 0.5 + 2 = 4 beats (a complete 4/4 measure)",
+          "4 beats total (1 + 0.5 + 0.5 + 1 + 1 rest = 4)",
           "5 beats",
           "3 beats"
         ],
         "fa": [
-          "۱ + ۰.۵ + ۰.۵ + ۲ = ۴ ضرب (یک میزانِ کاملِ ۴/۴)",
+          "۴ ضرب کامل (۱ + ۰.۵ + ۰.۵ + ۱ + ۱ ضرب سکوت = ۴)",
           "۵ ضرب",
           "۳ ضرب"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! Quarter (1) + two eighths (0.5 + 0.5) + half (2) equals 4 full beats.",
-        "fa": "دقیقاً! یک سیاه (۱) + دو تا چنگ (۰.۵ + ۰.۵) + یک سفید (۲) دقیقاً ۴ ضرب کامل می‌شه."
+        "en": "Correct! The two eighth notes share beat 2, and the quarter rest fills beat 4, totaling 4 beats.",
+        "fa": "کاملاً درسته! دو نت چنگ با هم ۱ ضرب می‌شن و با سکوتِ آخر، جمعِ میزان دقیقاً ۴ ضربه."
       },
       "feedbackWrong": {
-        "en": "Add the durations: 1 + 0.5 + 0.5 = 2, plus the 2-beat half note = 4 beats.",
-        "fa": "کشش‌ها رو با هم جمع کن: ۱ + ۰.۵ + ۰.۵ می‌شه ۲، به علاوه‌ی نت سفیدِ ۲ ضربی می‌شه ۴ ضرب."
+        "en": "Add the durations: 1 + (0.5 + 0.5) + 1 + 1 rest = 4 beats in 4/4 time.",
+        "fa": "کشش‌ها رو جمع بزن: ۱ + (۰.۵ + ۰.۵) + ۱ + ۱ سکوت = ۴ ضرب در کسر ۴/۴."
       }
     },
     {
       "question": {
-        "en": "Let's check measure 2 ('1.5 0.5 1 r1'): why does the rest at the end still count toward the 4 beats?",
-        "fa": "حالا میزان دوم («1.5 0.5 1 r1»): چرا سکوتِ آخر (r1) هم جزوِ ۴ ضربِ میزان حساب می‌شه؟"
+        "en": "In Bar 2 ('1.5 0.5 2'), why do these three notes also add up to 4 beats?",
+        "fa": "چرا در میزان دوم («1.5 0.5 2»)، این سه نت هم جمعاً ۴ ضرب کامل می‌شن؟"
       },
       "options": {
         "en": [
-          "Because 1.5 + 0.5 + 1 = 3 beats of sound, and the 1-beat rest completes the 4th beat of the 4/4 measure",
-          "Rests never count as beats",
-          "Because a rest makes the previous note louder"
+          "Because 1.5 (dotted quarter) + 0.5 (eighth) = 2 beats, plus the 2-beat half note = 4 beats",
+          "Because rests are hidden",
+          "Because it is in 3/4 time"
         ],
         "fa": [
-          "چون ۱.۵ + ۰.۵ + ۱ می‌شه ۳ ضرب صدا، و سکوتِ ۱ ضربی ضربِ چهارمِ میزان ۴/۴ رو کامل می‌کنه",
-          "سکوت‌ها هیچ‌وقت جزو ضرب‌های میزان حساب نمی‌شن",
-          "چون سکوت باعث قوی‌تر شدن صدای نت قبلی می‌شه"
+          "چون سیاه نقطه‌دار (۱.۵) + چنگ (۰.۵) روی هم ۲ ضرب می‌شن و با نت سفید (۲ ضرب) جمعاً ۴ ضرب می‌سازن",
+          "چون سکوتِ پنهان داره",
+          "چون میزان ۳/۴ است"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Sound and silence work together to fill every measure's exact beat count.",
-        "fa": "آفرین! صدا و سکوت در کنار هم ظرفیتِ دقیقِ ضرب‌های هر میزان رو پر می‌کنن."
+        "en": "Spot on! You have mastered the core building blocks of musical rhythm.",
+        "fa": "آفرین! حالا تمام پایه‌های اصلیِ ریتم‌خوانی و ضرب‌شناسی رو کامل بلدی."
       },
       "feedbackWrong": {
-        "en": "Every rest takes up real time in the measure: 3 beats of notes + 1 beat of rest = 4 beats.",
-        "fa": "هر سکوت زمانِ واقعی توی میزان می‌گیره: ۳ ضرب نت + ۱ ضرب سکوت = ۴ ضرب کامل."
+        "en": "1.5 + 0.5 = 2 beats (covering beats 1 and 2), and the half note covers beats 3 and 4.",
+        "fa": "۱.۵ به‌اضافه‌ی ۰.۵ می‌شه ۲ ضرب، و نت سفیدِ آخر هم ۲ ضربه که جمعاً ۴ ضرب می‌شه."
       }
     }
   ],
   "summary": {
-    "en": "Bravo! You completed all 12 lessons of the MUSICHER Rhythm & Meter course—your internal clock is now ready for any instrument!",
-    "fa": "دست‌مریزاد! هر ۱۲ درسِ دوره‌ی «ریتم و وزن» MUSICHER رو با موفقیت تموم کردی و ساعتِ ریتمِ درونی‌ت آماده‌ی نواختنِ هر سازیه!"
+    "en": "Congratulations! You have completed all 12 lessons of the Rhythm & Meter course—a foundation that will support every instrument you play.",
+    "fa": "تبریک! هر ۱۲ درسِ دوره‌ی «ریتم و وزن» رو با موفقیت تموم کردی؛ مهارتی که توی نواختنِ هر سازی همراهته."
   },
   "tomorrow": {
-    "en": "Keep sharpening your timing with the Rhythm Tap and Metronome in Practice Tools, or jump into Ear Training and Piano!",
-    "fa": "هر زمان خواستی با «تمرین ریتم» و «مترونوم» تو بخش ابزارهای تمرین دستت رو گرم نگه دار، یا به دوره‌ی تربیت گوش و پیانو سر بزن!"
+    "en": "Next step: continue to Ear Training & Sight-Reading or apply your steady rhythm on Piano & Keyboard!",
+    "fa": "گام بعدی: به سراغِ دوره‌ی «تربیت گوش» برو یا ریتمِ دقیقت رو روی پیانو و کیبورد به کار بگیر!"
   },
   "source": {
     "creator": {

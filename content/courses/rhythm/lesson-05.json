@@ -2,114 +2,114 @@
   "id": 5,
   "chapter": {
     "en": "Chapter 2: Inside the beat",
-    "fa": "فصل ۲ «درون ضرب»"
+    "fa": "فصل ۲ «درونِ ضرب»"
   },
   "title": {
-    "en": "Eighth notes: two in one beat",
-    "fa": "نت چنگ: دو نت در یک ضرب"
+    "en": "Eighth notes: two equal halves",
+    "fa": "نت‌های چنگ: دو نیمه‌ی مساوی"
   },
   "minutes": 6,
   "goal": {
-    "en": "Divide a single beat into two equal halves (0.5 + 0.5) by counting '1-and 2-and'.",
-    "fa": "یک ضرب رو با شمردنِ «یک-و دو-و» به دو نیمه‌ی کاملاً مساوی (نت‌های چنگ) تقسیم می‌کنی."
+    "en": "Subdivide one beat into two equal eighth notes (♪ = ½ beat) by counting '1-and 2-and'.",
+    "fa": "هر ضرب رو با شمردنِ «یک-و دو-و» به دو نتِ چنگِ کاملاً مساوی (♪ = نیم ضرب) تقسیم می‌کنی."
   },
   "see": {
-    "en": "What happens when we slice one quarter-note beat in half? We get two eighth notes (♪, each lasting 0.5 beats)! Two eighth notes fit inside 1 single beat, often joined by a horizontal beam (♫). To keep them completely even, we count '1-and 2-and 3-and 4-and'—the number falls on the main beat, and 'and' falls halfway between beats. Look at today's pattern: '0.5 0.5 1 0.5 0.5 1'—that is '1-and 2, 3-and 4'!",
-    "fa": "اگه یک ضربِ نت سیاه رو دقیقاً از وسط نصف کنیم چی می‌شه؟ دو تا «نت چنگ» (♪، هر کدوم نیم ضرب یا 0.5) به دست می‌آد! دو تا نت چنگ توی شکمِ یک ضرب جا می‌شن و معمولاً با یه خط افقی به هم وصل می‌شن (♫). برای اینکه کاملاً مساوی باشن، می‌شماریم: «یک-و دو-و سه-و چهار-و»؛ عدد روی سرِ ضرب می‌افته و «و» دقیقاً وسطِ دو ضرب. الگوی امروز رو ببین: «0.5 0.5 1 0.5 0.5 1» یعنی «یک-و دو، سه-و چهار»!"
+    "en": "When we split one quarter-note beat into two equal halves, we get two eighth notes (♪, 0.5b each). Count them out loud as '1-and, 2, 3-and, 4': the number lands right on the metronome click, and the word 'and' lands halfway between two clicks!",
+    "fa": "وقتی یک ضربِ سیاه رو به دو قسمتِ کاملاً مساوی نصف کنیم، دو تا «نت چنگ» (♪، هر کدوم نیم ضرب) ساخته می‌شه. با صدای بلند بشمر: «یک-و، دو، سه-و، چهار»؛ خودِ عددها دقیقاً روی کلیکِ مترونوم می‌افتن و کلمه‌ی «و» درست وسطِ فاصله‌ی دو تا کلیک میاد!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and hear how the two 0.5-beat eighth notes flow twice as fast as the 1-beat quarter note.",
-      "Say out loud in a steady rhythm: '1-and 2, 3-and 4' (or 'ti-ti ta, ti-ti ta').",
-      "Tap '0.5 0.5 1 0.5 0.5 1' smoothly on the drum pad without rushing the eighth-note pairs."
+      "Play the demo and hear how the two eighth notes ('0.5 0.5') fit evenly inside beat 1 and beat 3.",
+      "Speak '1-and, 2, 3-and, 4' with the count-in so the 'and' feels relaxed and even.",
+      "Tap the pattern cleanly: two eighths, one quarter, two eighths, one quarter."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و گوش کن چطور دو تا نت چنگ (0.5) دو برابر سریع‌تر از نت سیاه (1) حرکت می‌کنن.",
-      "با ریتم ثابت بلند بگو: «یک-و دو، سه-و چهار».",
-      "الگوی «0.5 0.5 1 0.5 0.5 1» رو نرم روی پد بزن و مراقب باش جفت‌نت‌های چنگ رو هول‌هولکی نزنی."
+      "نمونه رو پخش کن و گوش بده چطور دو تا چنگ (نیم‌ضربی) نرم و مساوی توی ضرب ۱ و ضرب ۳ جا می‌گیرن.",
+      "همراه با شمارشِ اول بگو «یک-و، دو، سه-و، چهار» تا جایِ «و» دقیق دستت بیاد.",
+      "الگو رو تمیز بزن: دو تا چنگ، یک سیاه، دو تا چنگ، یک سیاه."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
-    "meter": "4/4",
     "tempo": 68,
+    "meter": "4/4",
     "pattern": "0.5 0.5 1 0.5 0.5 1"
   },
   "selfCheck": {
     "en": [
-      "Were my two eighth notes (0.5 + 0.5) evenly spaced instead of a quick burst?",
-      "Did I pause a full beat on the quarter notes (beats 2 and 4)?"
+      "Did the second eighth note land smoothly halfway between clicks instead of rushing?",
+      "Did my quarter notes on beats 2 and 4 land squarely on the click?"
     ],
     "fa": [
-      "دو تا نت چنگ (0.5 + 0.5) رو مساوی زدم و تند به هم نچسبوندم؟",
-      "روی نت‌های سیاه (ضرب ۲ و ضرب ۴) یک ضرب کامل صبر کردم؟"
+      "نت چنگِ دوم بدون عجله دقیقاً وسطِ دو تا کلیک افتاد؟",
+      "نت‌های سیاه روی ضرب ۲ و ۴ دقیقاً سرِ کلیکِ مترونوم نشستن؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "How many eighth notes (0.5 beats each) equal one quarter note (1 beat)?",
-        "fa": "چند تا نت چنگ (هر کدوم نیم ضرب) برابر با یک نت سیاه (۱ ضرب) می‌شه؟"
+        "en": "How many eighth notes (♪) equal one quarter note (♩)?",
+        "fa": "چند تا نت چنگ (♪) برابر با یک نت سیاه (♩) می‌شه؟"
       },
       "options": {
         "en": [
-          "2 eighth notes",
+          "2 equal eighth notes (½ beat + ½ beat = 1 beat)",
           "4 eighth notes",
-          "1 eighth note"
+          "3 eighth notes"
         ],
         "fa": [
-          "۲ تا نت چنگ",
-          "۴ تا نت چنگ",
-          "۱ نت چنگ"
+          "۲ نت چنگِ مساوی (نیم ضرب + نیم ضرب = ۱ ضرب)",
+          "۴ نت چنگ",
+          "۳ نت چنگ"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Correct! Each eighth note is half a beat (0.5), so two of them equal 1 full beat.",
-        "fa": "درسته! هر نت چنگ نیم ضربه (0.5)، پس دو تا چنگ رو هم می‌شه ۱ ضرب کامل."
+        "en": "Correct! Two eighth notes divide one quarter-note beat into two equal halves.",
+        "fa": "درسته! دو تا نت چنگ، یک ضربِ سیاه رو به دو نیمه‌ی مساوی تقسیم می‌کنن."
       },
       "feedbackWrong": {
-        "en": "0.5 + 0.5 = 1: two eighth notes fit evenly inside one quarter-note beat.",
-        "fa": "نیم به علاوه‌ی نیم می‌شه یک (0.5 + 0.5 = 1): دو تا نت چنگ توی یک ضربِ سیاه جا می‌شن."
+        "en": "Each eighth note lasts half a beat (½), so 2 eighth notes equal 1 quarter-note beat.",
+        "fa": "هر نت چنگ نیم ضربه، پس ۲ تا نت چنگ با هم ۱ ضربِ سیاه می‌شن."
       }
     },
     {
       "question": {
-        "en": "How do we count the pattern '0.5 0.5 1 0.5 0.5 1' in 4/4 time?",
-        "fa": "الگوی «0.5 0.5 1 0.5 0.5 1» رو تو میزان ۴/۴ چطور می‌شماریم؟"
+        "en": "When counting '1-and 2-and' with a metronome clicking quarter-note beats, where does 'and' happen?",
+        "fa": "وقتی همراه با کلیکِ مترونوم می‌شمری «یک-و دو-و»، کلمه‌ی «و» کجا قرار می‌گیره؟"
       },
       "options": {
         "en": [
-          "1-and 2, 3-and 4",
-          "1 2 3 4 5 6",
-          "1-and 2-and 3-and 4-and"
+          "Exactly halfway between two metronome clicks",
+          "At the exact same time as the click",
+          "Only during rests"
         ],
         "fa": [
-          "یک-و دو، سه-و چهار",
-          "۱ ۲ ۳ ۴ ۵ ۶",
-          "یک-و دو-و سه-و چهار-و"
+          "دقیقاً وسطِ فاصله‌ی بین دو کلیکِ مترونوم",
+          "هم‌زمان با خودِ کلیک",
+          "فقط موقع سکوت‌ها"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Beats 1 and 3 are split into eighth notes ('1-and', '3-and'), while beats 2 and 4 are quarter notes.",
-        "fa": "آفرین! ضرب‌های ۱ و ۳ به دو چنگ تقسیم شدن («یک-و»، «سه-و») و ضرب‌های ۲ و ۴ نت سیاه هستن."
+        "en": "Spot on! The numbers land on the clicks and the 'ands' split the space halfway in between.",
+        "fa": "آفرین! عددها روی کلیک می‌افتن و «و» دقیقاً نیمه‌ی راهِ بین دو کلیک رو نشون می‌ده."
       },
       "feedbackWrong": {
-        "en": "Count '1-and' for the first two eighth notes, '2' for the quarter note, '3-and' for the next pair, and '4' for the final quarter note.",
-        "fa": "برای دو چنگ اول بگو «یک-و»، برای سیاه بگو «دو»، برای جفتِ بعدی «سه-و» و برای سیاه آخر «چهار»."
+        "en": "'And' marks the second half of the beat, right in the middle between two clicks.",
+        "fa": "کلمه‌ی «و» نیمه‌ی دومِ ضربه و درست وسطِ دو تا کلیک قرار می‌گیره."
       }
     }
   ],
   "summary": {
-    "en": "You split the beat into even eighth notes (0.5 + 0.5) and tapped '1-and 2, 3-and 4' with precision.",
-    "fa": "ضرب رو به دو نیمه‌ی مساوی (نت چنگ) تقسیم کردی و الگوی «یک-و دو، سه-و چهار» رو دقیق زدی."
+    "en": "Great subdivision! You split the beat into even eighth notes and kept your main beats anchored to the click.",
+    "fa": "عالی بود! ضرب رو به دو نیمه‌ی مساوی (چنگ) تقسیم کردی و سرِ ضرب‌ها رو هم دقیق نگه داشتی."
   },
   "tomorrow": {
-    "en": "We will compare how music groups beats into measures of 2/4, 3/4, and 4/4.",
-    "fa": "یاد می‌گیریم چطور ضرب‌ها تو میزان‌های ۲/۴، ۳/۴ و ۴/۴ دسته‌بندی می‌شن."
+    "en": "Next lesson: we compare measures and meters—how 2/4, 3/4, and 4/4 group beats differently.",
+    "fa": "درس فردا: کسرهای میزان ۲/۴، ۳/۴ و ۴/۴ رو با هم مقایسه می‌کنیم و حسِ والس رو می‌زنیم."
   },
   "source": {
     "creator": {

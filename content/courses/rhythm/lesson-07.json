@@ -2,114 +2,114 @@
   "id": 7,
   "chapter": {
     "en": "Chapter 2: Inside the beat",
-    "fa": "فصل ۲ «درون ضرب»"
+    "fa": "فصل ۲ «درونِ ضرب»"
   },
   "title": {
-    "en": "Dotted notes: dotted half and dotted quarter",
-    "fa": "نت‌های نقطه‌دار: سفید نقطه‌دار و سیاه نقطه‌دار"
+    "en": "Dotted notes: 1.5 beats + half beat",
+    "fa": "نت‌های نقطه‌دار: یک‌ونیم ضرب + نیم ضرب"
   },
   "minutes": 6,
   "goal": {
-    "en": "Understand how a dot adds half of a note's value, and tap the dotted-quarter pattern '1.5 0.5 1 1'.",
-    "fa": "یاد می‌گیری نقطه چطور نصف ارزش نت رو بهش اضافه می‌کنه و الگوی «1.5 0.5 1 1» رو اجرا می‌کنی."
+    "en": "Tap the classic dotted-quarter + eighth-note pattern (1.5 + 0.5 + 1 + 1) by counting '1-and-2, and, 3, 4'.",
+    "fa": "الگوی معروفِ «سیاه نقطه‌دار + چنگ» (1.5 0.5 1 1) رو با شمردنِ «یک-و-دو، و، سه، چهار» دقیق می‌زنی."
   },
   "see": {
-    "en": "A small dot placed to the right of a notehead has one simple rule: it adds half of the note's original length! A half note is 2 beats, so a dotted half note (𝅗𝅥.) is 2 + 1 = 3 beats. A quarter note is 1 beat, so a dotted quarter note (♩.) is 1 + 0.5 = 1.5 beats! Because a dotted quarter note lasts 1.5 beats ('1-and-2'), it is almost always followed by a single eighth note (0.5 beats, on the 'and' of beat 2) to complete two full beats. Look at today's pattern: '1.5 0.5 1 1'—counted '1-and-2 AND 3 4'!",
-    "fa": "یه نقطه‌ی کوچیک که سمت راستِ سرِ نت قرار می‌گیره یه قانونِ خیلی ساده داره: نصفِ کششِ خودِ نت رو بهش اضافه می‌کنه! نت سفید ۲ ضربه، پس «نت سفید نقطه‌دار» (𝅗𝅥.) می‌شه ۲ + ۱ = ۳ ضرب. نت سیاه ۱ ضربه، پس «نت سیاه نقطه‌دار» (♩.) می‌شه ۱ + ۰.۵ = ۱.۵ ضرب! از اونجایی که نت سیاه نقطه‌دار ۱.۵ ضرب طول می‌کشه («یک-و-دو»)، معمولاً بلافاصله بعدش یک نت چنگ (۰.۵ ضرب، رویِ «و»ِ ضربِ دو) می‌آد تا روی هم ۲ ضرب کامل بشن. الگوی امروز رو ببین: «1.5 0.5 1 1» که می‌شماریمش: «یک-و-دو و سه چهار»!"
+    "en": "A dot placed after a note adds half of that note's duration. So a dotted half note lasts 2 + 1 = 3 beats, and a dotted quarter note lasts 1 + 0.5 = 1.5 beats! In '1.5 0.5 1 1', you tap on beat 1, hold past the click of beat 2, tap the eighth note on the 'and' after beat 2, then tap beats 3 and 4.",
+    "fa": "نقطه‌ای که جلوی یک نت قرار می‌گیره، کششِ اون نت رو به اندازه‌ی نصفِ خودش زیاد می‌کنه. پس سفیدِ نقطه‌دار می‌شه ۳ ضرب (۲+۱) و سیاهِ نقطه‌دار می‌شه ۱.۵ ضرب (۱ + نیم)! در الگوی «1.5 0.5 1 1»، سرِ ضرب ۱ می‌زنی، می‌ذاری کلیکِ ضرب ۲ رد بشه، درست روی «و» بعد از ضرب ۲ چنگ رو می‌زنی و بعد ضرب ۳ و ۴ رو می‌زنی."
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and listen closely to the 'long-short' feel of '1.5 0.5' followed by '1 1'.",
-      "Count out loud in eighth-note subdivisions: '1-and-2 AND 3-and 4-and', clapping on '1', the 'AND' after 2, '3', and '4'.",
-      "Tap '1.5 0.5 1 1' on the drum pad, waiting through beat 2 before tapping the quick 0.5 eighth note!"
+      "Listen to the demo and hear how the second note jumps in right after the 2nd click (on '2-and').",
+      "Count out loud: 'ONE - and - two - AND - THREE - FOUR'.",
+      "Tap the pattern in practice mode and aim for >= 80% accuracy."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و به حسِ «کشیده–کوتاه» در «1.5 0.5» و دو ضربِ سیاهِ بعدش گوش کن.",
-      "با تقسیمِ چنگ بلند بشمار: «یک-و-دو و، سه-و چهار-و» و سرِ «یک»، «و»ِ بعد از دو، «سه» و «چهار» دست بزن.",
-      "الگوی «1.5 0.5 1 1» رو روی پد بزن: نت اول رو تا گذشتنِ سرِ ضرب ۲ نگه دار و نتِ چنگ (0.5) رو رویِ «و»ِ ضرب ۲ بزن!"
+      "به نمونه گوش بده و ببین نت دوم چطور کمی بعد از کلیکِ دوم (روی «دو-و») وارد می‌شه.",
+      "با صدای بلند بشمر: «یک - و - دو - و - سه - چهار» و روی یک، «و»ی دوم، سه و چهار ضربه بزن.",
+      "الگو رو توی بخش تمرین بزن و دقتِ بالای ۸۰٪ بگیر."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
-    "meter": "4/4",
     "tempo": 68,
+    "meter": "4/4",
     "pattern": "1.5 0.5 1 1"
   },
   "selfCheck": {
     "en": [
-      "Did I wait until after beat 2 (the 'and' of 2) before tapping the 0.5-beat eighth note?",
-      "Did I land right on beat 3 for the third tap?"
+      "Did I let click 2 sound before tapping the 0.5-beat eighth note?",
+      "Did the third tap land right on beat 3?"
     ],
     "fa": [
-      "برای زدنِ نت دوم (0.5)، صبر کردم تا سرِ ضرب ۲ رد بشه و روی «و»ِ ضرب ۲ ضربه زدم؟",
-      "ضربه‌ی سوم رو دقیقاً سرِ ضرب ۳ فرود آوردم؟"
+      "صبر کردم صدای کلیکِ ضرب ۲ بیاد و بعد نت چنگ (نیم‌ضربی) رو زدم؟",
+      "ضربه‌ی سومم دقیقاً سرِ ضرب ۳ فرود اومد؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "How many beats do a dotted half note (𝅗𝅥.) and a dotted quarter note (♩.) each receive?",
-        "fa": "«نت سفید نقطه‌دار» (𝅗𝅥.) و «نت سیاه نقطه‌دار» (♩.) هر کدوم چند ضرب کشش دارن؟"
+        "en": "How long is a dotted quarter note (♩.)?",
+        "fa": "یک نتِ «سیاه نقطه‌دار» چند ضرب کشش داره؟"
       },
       "options": {
         "en": [
-          "Dotted half = 3 beats, Dotted quarter = 1.5 beats",
-          "Dotted half = 4 beats, Dotted quarter = 2 beats",
-          "Dotted half = 2.5 beats, Dotted quarter = 0.5 beats"
+          "1.5 beats (1 beat + ½ beat)",
+          "2 beats",
+          "3 beats"
         ],
         "fa": [
-          "سفید نقطه‌دار = ۳ ضرب، سیاه نقطه‌دار = ۱.۵ ضرب",
-          "سفید نقطه‌دار = ۴ ضرب، سیاه نقطه‌دار = ۲ ضرب",
-          "سفید نقطه‌دار = ۲.۵ ضرب، سیاه نقطه‌دار = ۰.۵ ضرب"
+          "۱.۵ ضرب (یک ضربِ کامل به‌اضافه‌ی نیم ضرب)",
+          "۲ ضرب",
+          "۳ ضرب"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! The dot adds half of the note's value: 2 + 1 = 3 beats, and 1 + 0.5 = 1.5 beats.",
-        "fa": "دقیقاً! نقطه نصفِ ارزش نت رو بهش اضافه می‌کنه: ۲ + ۱ = ۳ ضرب، و ۱ + ۰.۵ = ۱.۵ ضرب."
+        "en": "Correct! A quarter note is 1 beat, and the dot adds half of that (0.5), making 1.5 beats.",
+        "fa": "درسته! نت سیاه ۱ ضربه و نقطه‌اش نیم ضرب اضافه می‌کنه که روی هم ۱.۵ ضرب می‌شه."
       },
       "feedbackWrong": {
-        "en": "Add half of the original note: a 2-beat half note becomes 3 beats, and a 1-beat quarter note becomes 1.5 beats.",
-        "fa": "نصفِ کشش خود نت رو بهش اضافه کن: سفیدِ ۲ ضربی می‌شه ۳ ضرب، و سیاهِ ۱ ضربی می‌شه ۱.۵ ضرب."
+        "en": "A dot adds half the note's value: 1 + 0.5 = 1.5 beats (whereas a dotted half note is 2 + 1 = 3 beats).",
+        "fa": "نقطه نصفِ ارزش نت رو اضافه می‌کنه: ۱ به‌اضافه‌ی ۰.۵ می‌شه ۱.۵ ضرب."
       }
     },
     {
       "question": {
-        "en": "In the 4/4 pattern '1.5 0.5 1 1', when do you tap the second note (0.5)?",
-        "fa": "تو الگوی چهارچهارمِ «1.5 0.5 1 1»، نتِ دوم (0.5) رو دقیقاً کِی می‌زنی؟"
+        "en": "In a 4/4 measure starting with a dotted quarter note (1.5 beats) followed by an eighth note (0.5 beat), when do you tap that eighth note?",
+        "fa": "وقتی میزان با یک سیاه نقطه‌دار (۱.۵ ضرب) و یک چنگ (۰.۵ ضرب) شروع می‌شه، نتِ چنگ رو کی می‌زنی؟"
       },
       "options": {
         "en": [
-          "On the 'and' after beat 2 (halfway between beat 2 and beat 3)",
+          "On the 'and' halfway between beat 2 and beat 3",
           "Right on beat 2",
-          "Right on beat 4"
+          "Right on beat 3"
         ],
         "fa": [
-          "روی «و»ِ بعد از ضرب ۲ (دقیقاً وسطِ ضرب ۲ و ضرب ۳)",
+          "روی «و» بعد از ضرب ۲ (وسطِ فاصله‌ی ضرب ۲ و ۳)",
           "دقیقاً سرِ ضرب ۲",
-          "دقیقاً سرِ ضرب ۴"
+          "دقیقاً سرِ ضرب ۳"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! The 1.5-beat dotted quarter note lasts through '1-and-2', so the eighth note falls on the 'and' of 2!",
-        "fa": "آفرین! نت سیاه نقطه‌دار (1.5) تا سرِ ضرب ۲ کشیده می‌شه («یک-و-دو»)، پس نت چنگ می‌افته روی «و»ِ ضرب ۲!"
+        "en": "Spot on! The dotted quarter covers beat 1 and the first half of beat 2, so the eighth note lands on the 'and' of beat 2.",
+        "fa": "آفرین! سیاه نقطه‌دار تا نیمه‌ی اول ضرب ۲ کشیده می‌شه، پس چنگ درست روی «و» بعد از ضرب ۲ می‌افته."
       },
       "feedbackWrong": {
-        "en": "Since the first note lasts 1.5 beats, beat 2 is still part of the first note; the second note lands on the 'and' of beat 2.",
-        "fa": "چون نت اول ۱.۵ ضرب طول می‌کشه، سرِ ضرب ۲ هنوز جزو نت اوله؛ پس نت دوم روی «و»ِ بعد از ضرب ۲ زده می‌شه."
+        "en": "1.5 beats takes you past beat 2 to the halfway point ('2-and') before beat 3.",
+        "fa": "۱.۵ ضرب از سرِ ضرب ۲ رد می‌شه و نت بعدی درست وسطِ ضرب ۲ و ۳ («دو-و») قرار می‌گیره."
       }
     }
   ],
   "summary": {
-    "en": "You learned the dotted half note (3 beats) and dotted quarter note (1.5 beats) and tapped '1.5 0.5 1 1'.",
-    "fa": "نت سفید نقطه‌دار (۳ ضرب) و سیاه نقطه‌دار (۱.۵ ضرب) رو یاد گرفتی و الگوی «1.5 0.5 1 1» رو اجرا کردی."
+    "en": "Awesome job! The dotted quarter + eighth pattern is one of the most expressive rhythms in both Western and Persian music.",
+    "fa": "عالی بود! الگوی سیاه نقطه‌دار و چنگ یکی از پرکاربردترین ریتم‌ها در موسیقی جهانی و ایرانیه."
   },
   "tomorrow": {
-    "en": "We will learn how a tie can connect a note across a bar line into the next measure.",
-    "fa": "یاد می‌گیریم چطور «خط اتحاد» می‌تونه یک نت رو از روی خط میزان به میزان بعدی وصل کنه."
+    "en": "Next lesson: we finish Chapter 2 by learning how ties connect durations smoothly across beats and bar lines.",
+    "fa": "درس فردا: در پایان فصل دوم یاد می‌گیریم خط اتحاد چطور کششِ نت‌ها رو از روی خط میزان به هم وصل می‌کنه."
   },
   "source": {
     "creator": {

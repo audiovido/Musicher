@@ -2,114 +2,114 @@
   "id": 4,
   "chapter": {
     "en": "Chapter 1: Pulse",
-    "fa": "فصل ۱ «ضرب و نبض»"
+    "fa": "فصل ۱ «نبض و ضرب»"
   },
   "title": {
-    "en": "Silence counts: rests",
-    "fa": "سکوت هم شمرده می‌شه: سکوت‌ها"
+    "en": "Silence counts: quarter and half rests",
+    "fa": "سکوت هم شمرده می‌شه: سکوت سیاه و سفید"
   },
   "minutes": 6,
   "goal": {
-    "en": "Count active silence on 1-beat quarter rests (r1) and 2-beat half rests (r2) without losing the pulse.",
-    "fa": "سکوت‌های ۱ ضربی و ۲ ضربی رو فعالانه می‌شماری و نبض موسیقی رو دقیق نگه می‌داری."
+    "en": "Count silent beats accurately and stay completely silent on 1-beat and 2-beat rests.",
+    "fa": "ضرب‌های سکوت رو دقیق می‌شمری و روی سکوت‌های ۱ ضربی و ۲ ضربی هیچ ضربه‌ای نمی‌زنی."
   },
   "see": {
-    "en": "In music, silence is not 'nothing'—it has exact rhythmic length called a rest! A quarter rest (𝄽, written as r1 in our pattern) means 1 beat of silence, and a half rest (r2) means 2 beats of silence. The pulse keeps ticking right through every rest. In today's pattern '1 r1 1 r1 | 2 r2', you tap on beat 1, stay silent on beat 2, tap on beat 3, stay silent on beat 4; then in measure 2, tap a 2-beat half note on beats 1–2 and hold 2 beats of silence on beats 3–4!",
-    "fa": "تو موسیقی، سکوت یعنی «حساب‌شده صدا ندادن»! هر سکوت دقیقاً مثل نت‌ها زمان مشخصی داره. «سکوت سیاه» (𝄽 یا r1) یعنی ۱ ضرب سکوت، و «سکوت سفید» (r2) یعنی ۲ ضرب سکوت. موقع سکوت، نبض موسیقی متوقف نمی‌شه و توی دلت به شمردن ادامه می‌دی. تو الگوی امروز یعنی «1 r1 1 r1 | 2 r2»، ضرب ۱ رو بزن، ضرب ۲ سکوت کن، ضرب ۳ رو بزن، ضرب ۴ سکوت کن؛ بعد تو میزان دوم یک نت سفیدِ ۲ ضربی بزن (ضرب ۱ و ۲) و ضرب‌های ۳ و ۴ رو سکوت نگه دار!"
+    "en": "Music is made of both sound and silence. A rest means 'play nothing for this many beats while the pulse keeps moving.' A 1-beat rest (r1) is one silent click; a 2-beat rest (r2) is two silent clicks. Remember: tapping during a rest counts as a mistake!",
+    "fa": "موسیقی از ترکیبِ صدا و سکوت ساخته می‌شه. «سکوت» یعنی نبضِ آهنگ ادامه داره، اما تو به اندازه‌ی اون ضرب هیچ صدایی درنمیاری. سکوتِ ۱ ضربی (r1) یعنی یک کلیکِ بی‌صدا و سکوتِ ۲ ضربی (r2) یعنی دو کلیکِ بی‌صدا. یادت باشه ضربه زدن وسطِ سکوت خطا محسوب می‌شه!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' and notice how the drum stays silent on the dashed rest boxes while the metronome click keeps counting.",
-      "Whisper 'Tap – shh – Tap – shh | Tap-hold – shh-shh' in steady time.",
-      "Tap the pattern '1 r1 1 r1 | 2 r2': tap the note boxes and let the rest boxes pass automatically in silence!"
+      "Play the demo and whisper 'shh' on each dashed rest box while the metronome clicks.",
+      "Start the exercise: in bar 1 tap on beats 1 and 3 while staying silent on beats 2 and 4.",
+      "In bar 2 tap the 2-beat half note on beat 1, then stay silent for the 2-beat rest on beats 3 and 4."
     ],
     "fa": [
-      "روی «پخش نمونه» بزن و ببین چطور روی خونه‌های خط‌چینِ سکوت، صدای طبل قطع می‌شه اما تیکِ مترونوم ادامه داره.",
-      "با ضرب ثابت زمزمه کن: «بزن – هیس – بزن – هیس | بزن-نگه‌دار – هیس-هیس».",
-      "الگوی «1 r1 1 r1 | 2 r2» رو اجرا کن: روی نت‌ها ضربه بزن و روی خونه‌های سکوت صبر کن تا زمانِ سکوت بگذره!"
+      "نمونه رو پخش کن و روی هر جعبه‌ی نقطه‌چینِ سکوت، هم‌زمان با کلیک مترونوم آروم بگو «شـش».",
+      "تمرین رو شروع کن: توی میزان اول روی ضرب ۱ و ۳ بزن و روی ضرب ۲ و ۴ کاملاً سکوت کن.",
+      "توی میزان دوم سرِ ضرب ۱ بزن و بعد روی ضرب‌های ۳ و ۴ به اندازه‌ی دو ضرب سکوت کن."
     ]
   },
   "practice": {
     "type": "rhythm-tap",
-    "meter": "4/4",
     "tempo": 70,
+    "meter": "4/4",
     "pattern": "1 r1 1 r1 | 2 r2"
   },
   "selfCheck": {
     "en": [
-      "Did I resist tapping during the quarter rests (beats 2 and 4 of measure 1)?",
-      "Did I enter right on time on beat 3 after holding the first 1-beat rest?"
+      "Did I keep my hands completely quiet during every rest?",
+      "Did I come back in right on time after the 1-beat rest?"
     ],
     "fa": [
-      "روی سکوت‌های سیاه (ضرب ۲ و ۴ میزان اول) دستم رو نگه داشتم و ضربه نزدم؟",
-      "بعد از سکوتِ ضرب ۲، دقیقاً سرِ ضرب ۳ وارد شدم؟"
+      "توی همه‌ی سکوت‌ها دستم رو کاملاً بی‌صدا نگه داشتم؟",
+      "بعد از سکوتِ اول، نت بعدی رو دقیقاً سرِ ضربِ ۳ زدم؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "What happens to the underlying pulse (beat) during a rest?",
-        "fa": "موقع رسیدن به علامت سکوت، چه اتفاقی برای نبض (ضرب) موسیقی می‌افته؟"
+        "en": "What happens to the underlying pulse during a rest?",
+        "fa": "موقع اجرای یک «سکوت»، چه اتفاقی برای نبضِ اصلی موسیقی می‌افته؟"
       },
       "options": {
         "en": [
-          "The pulse keeps moving steadily while the instrument stays silent",
-          "The pulse stops until you decide to play again",
-          "You skip the rest and jump immediately to the next note"
+          "The pulse keeps ticking steadily at the exact same speed while you stay silent",
+          "The pulse stops and waits until you feel like playing again",
+          "The tempo doubles"
         ],
         "fa": [
-          "نبض موسیقی با همون سرعت ثابت ادامه پیدا می‌کنه و فقط ساز صدا نمی‌ده",
-          "نبض موسیقی متوقف می‌شه تا هر وقت خواستی دوباره بزنی",
-          "سکوت رو نادیده می‌گیری و فوراً می‌پری روی نت بعدی"
+          "نبضِ موسیقی با همون سرعتِ ثابت ادامه پیدا می‌کنه و فقط تو صدایی تولید نمی‌کنی",
+          "نبض متوقف می‌شه تا هر وقت خواستی دوباره بزنی",
+          "سرعت دو برابر می‌شه"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! Rests are measured silence—the clock keeps ticking even when no sound is played.",
-        "fa": "آفرین! سکوت یعنی زمانِ بی‌صدا؛ ساعتِ ریتم همچنان تیک‌تاک می‌کنه حتی وقتی صدایی درنمی‌آد."
+        "en": "Correct! Silence in music is measured—the beat keeps moving underneath every rest.",
+        "fa": "کاملاً درسته! سکوت در موسیقی زمانِ دقیق داره و نبض زیرِ پات بدون توقف ادامه داره."
       },
       "feedbackWrong": {
-        "en": "Never skip a rest: the beat keeps ticking steadily while you stay silent for the rest's exact length.",
-        "fa": "هیچ‌وقت از روی سکوت نپر: ضرب موسیقی ثابت جلو می‌ره و تو دقیقاً به اندازه‌ی کشش سکوت صبر می‌کنی."
+        "en": "The beat never stops during a rest; you simply count the beat silently.",
+        "fa": "ضربِ موسیقی توی سکوت متوقف نمی‌شه؛ باید ضرب رو توی دلت بشمری و سکوت کنی."
       }
     },
     {
       "question": {
-        "en": "How many beats of silence are in '2 r2' (a half note followed by a half rest)?",
-        "fa": "تو الگوی «2 r2» (یک نت سفید و بعد یک سکوت سفید)، چند ضرب سکوت وجود داره؟"
+        "en": "In the pattern '1 r1 1 r1', how many times do you actually tap in that 4-beat bar?",
+        "fa": "در الگوی «1 r1 1 r1»، توی کلِ اون میزانِ چهارضربی چند بار ضربه می‌زنی؟"
       },
       "options": {
         "en": [
-          "2 beats of sound followed by 2 beats of silence",
-          "4 beats of sound and no silence",
-          "1 beat of sound and 3 beats of silence"
+          "2 times (on beats 1 and 3, with silent rests on beats 2 and 4)",
+          "4 times",
+          "1 time"
         ],
         "fa": [
-          "۲ ضرب صدا و بعدش ۲ ضرب سکوت",
-          "۴ ضرب صدا بدون سکوت",
-          "۱ ضرب صدا و ۳ ضرب سکوت"
+          "۲ بار (روی ضرب‌های ۱ و ۳ می‌زنی و ضرب‌های ۲ و ۴ سکوته)",
+          "۴ بار",
+          "۱ بار"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! The half note (2) fills beats 1–2, and the half rest (r2) fills beats 3–4 with silence.",
-        "fa": "دقیقاً! نت سفید (2) ضرب‌های ۱ و ۲ رو پر می‌کنه و سکوت سفید (r2) ضرب‌های ۳ و ۴ رو به سکوت اختصاص می‌ده."
+        "en": "Spot on! Beats 1 and 3 are notes, and beats 2 and 4 are 1-beat rests.",
+        "fa": "آفرین! فقط روی ضرب‌های ۱ و ۳ ضربه می‌زنی و ضرب‌های ۲ و ۴ سکوت هستن."
       },
       "feedbackWrong": {
-        "en": "'2' is a 2-beat half note and 'r2' is a 2-beat half rest, making 4 beats in total.",
-        "fa": "«2» یعنی ۲ ضرب صدا (نت سفید) و «r2» یعنی ۲ ضرب سکوت (سکوت سفید) که روی هم ۴ ضرب می‌شن."
+        "en": "Each 'r1' is a 1-beat rest where you stay silent, so you only tap on the two '1' notes.",
+        "fa": "هر «r1» یک ضرب سکوته که نباید روش بزنی، پس فقط ۲ بار ضربه می‌زنی."
       }
     }
   ],
   "summary": {
-    "en": "You completed Chapter 1 by counting 1-beat and 2-beat rests accurately inside a 4/4 pulse!",
-    "fa": "فصل ۱ رو با شمردنِ دقیق سکوت‌های ۱ ضربی و ۲ ضربی در دلِ میزان ۴/۴ با موفقیت تموم کردی!"
+    "en": "Chapter 1 complete! You can feel the pulse, control tempo, hold long notes, and count silent rests accurately.",
+    "fa": "فصل اول کامل شد! حالا نبض، سرعت، نت‌های کشیده و سکوت‌های زمان‌دار رو دقیق اجرا می‌کنی."
   },
   "tomorrow": {
-    "en": "In Chapter 2, we will step inside the beat and split 1 beat into two equal eighth notes (0.5 + 0.5).",
-    "fa": "تو فصل ۲ می‌ریم به درونِ ضرب و یک ضرب رو به دو نیمه‌ی مساوی یعنی «نت‌های چنگ» (0.5 + 0.5) تقسیم می‌کنیم."
+    "en": "Next lesson: we start Chapter 2 by splitting a single beat into two equal halves—eighth notes!",
+    "fa": "درس فردا: فصل دوم رو با نصف کردنِ هر ضرب به دو قسمتِ مساوی یعنی «نت‌های چنگ» شروع می‌کنیم!"
   },
   "source": {
     "creator": {

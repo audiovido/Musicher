@@ -1,126 +1,123 @@
 {
   "id": 2,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 1 \"Pitch & Direction\"",
-    "fa": "فصل ۱ «زیر و بم و جهت ملودی»"
+    "en": "Chapter 1: Pitch and direction",
+    "fa": "فصل ۱ «زیر و بمی و جهت صدا»"
   },
   "title": {
-    "en": "Same or different",
-    "fa": "یکسان یا متفاوت"
+    "en": "Same or different: pitch memory",
+    "fa": "یکسان یا متفاوت: حافظه‌ی صدا"
   },
-  "duration": {
-    "en": "5 minutes",
-    "fa": "۵ دقیقه"
-  },
+  "minutes": 5,
   "goal": {
-    "en": "Tell whether two notes played one after another have the exact same pitch or a different pitch.",
-    "fa": "تشخیص بدی دو تا نتی که پشت سر هم پخش می‌شن دقیقاً یه صدا دارن یا با هم متفاوتن."
+    "en": "Hold the first note in your mind's ear and decide whether the second note is the exact same pitch (unison) or different.",
+    "fa": "صدای نتِ اول رو توی ذهنت نگه می‌داری و تشخیص می‌دی نتِ دوم دقیقاً همون صداست (هم‌صدا) یا تغییر کرده."
+  },
+  "see": {
+    "en": "When two notes have the exact same pitch, musicians call it a unison (Same ＝). To spot whether the second note changed, hold the first note silently in your head like a steady laser beam. If the second note blends right into that beam without moving up or down, choose Same!",
+    "fa": "وقتی دو نت دقیقاً یک فرکانس و زیر و بمی دارن، بهش می‌گن «هم‌صدا» یا یکسان (＝). برای اینکه بفهمی نت دوم عوض شده یا نه، صدای نت اول رو مثل یک خطِ صاف توی ذهنت نگه دار؛ اگه نت دوم هیچ تکونی به بالا یا پایین نخورد، گزینهٔ «یکسان» رو بزن!"
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "Before you can tune an instrument or check if you hit the right key, your ear needs to answer one basic question: did the pitch change at all, or did it stay on the exact same note?",
-      "When two notes are the same (called unison), the second note feels completely calm and settled—nothing moves up or down. When they are different, you feel a tiny step or jump between them."
+      "Tap 'Play sound' and lock the first note into your memory.",
+      "Compare the second note: did it stay on the exact same pitch (Same ＝) or move to a new pitch (Different ≠)?",
+      "Complete 10 random rounds and reach at least 70% to pass."
     ],
     "fa": [
-      "قبل از اینکه بتونی سازت رو کوک کنی یا بفهمی کلاویهٔ درست رو زدی یا نه، گوشت باید جواب یه سؤال ساده رو بده: آیا زیر و بمی صدا اصلاً عوض شد، یا رو همون نت قبلی موند؟",
-      "وقتی دو تا نت یکسانن (هم‌صدا)، نت دوم حس آرامش و ثبات کامل داره و هیچ حرکتی به بالا یا پایین حس نمی‌کنی. وقتی متفاوتن، یه تکون کوچیک بینشون حس می‌شه."
+      "روی «پخش صدا» بزن و صدای نت اول رو توی ذهنت قفل کن.",
+      "نت دوم رو باهاش مقایسه کن: آیا دقیقاً همون نت موند («یکسان ＝») یا جا‌به‌جا شد («متفاوت ≠»)؟",
+      "۱۰ مرحله‌ی تصادفی رو کامل کن و حداقل ۷۰٪ امتیاز بگیر."
     ]
-  },
-  "hear": {
-    "en": "Listen for stillness vs movement: if the second note feels like a calm repeat of the first, they are the same.",
-    "fa": "به ثبات یا حرکت صدا دقت کن: اگه نت دوم دقیقاً تکرار آروم نت اوله، یکسانن."
   },
   "practice": {
     "type": "ear-choice",
     "mode": "same-different",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' and close your eyes for a moment as the two notes play.",
-      "Notice whether the second note stays completely still on the same pitch or shifts.",
-      "Select 'Same' or 'Different' across 6 rounds."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن و موقع شنیدن دو تا نت یه لحظه چشمت رو ببند.",
-      "ببین نت دوم کاملاً ثابت روی همون صدا می‌مونه یا جابه‌جا می‌شه.",
-      "توی ۶ دور، گزینهٔ «یکسان» یا «متفاوت» رو انتخاب کن."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Could you spot even a small one-step difference between the two notes?",
-      "Did you replay the sound whenever you needed a second listen?"
+      "Did I keep hearing the first note in my mind while waiting for the second note?",
+      "Did I use 'Play again' whenever I wanted a second listen?"
     ],
     "fa": [
-      "تونستی حتی تفاوت‌های کوچیکِ یه پله‌ای بین دو تا نت رو تشخیص بدی؟",
-      "هر وقت لازم بود، دوباره دکمهٔ پخش رو زدی تا مطمئن بشی؟"
+      "تا وقتی نت دوم پخش بشه، صدای نت اول رو توی ذهنم نگه داشتم؟",
+      "هر جا شک داشتم از دکمه‌ی «پخش دوباره» استفاده کردم؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "If a pianist plays C4 and then plays C4 again right after, how do the two pitches compare?",
-        "fa": "اگه یه نوازنده نت دو (C4) رو بزنه و بلافاصله دوباره همون C4 رو بزنه، این دو تا صدا چطورن؟"
+      "question": {
+        "en": "What do musicians call two notes that have the exact same pitch?",
+        "fa": "در موسیقی به دو نتی که دقیقاً یک صدا و زیر و بمی دارن چی می‌گن؟"
       },
       "options": {
         "en": [
-          "The second is higher",
-          "They are the exact same pitch",
-          "The second is lower",
-          "They form a chord of two different notes"
+          "Unison (the exact same pitch)",
+          "An octave leap",
+          "A minor chord"
         ],
         "fa": [
-          "نت دوم زیرتره",
-          "دقیقاً یکسان و هم‌صدا هستن",
-          "نت دوم بم‌تره",
-          "دو تا نت متفاوتن"
+          "هم‌صدا یا یونیژن (Unison)",
+          "پرش اکتاو",
+          "آکورد مینور"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Playing the same key twice gives the exact same frequency and pitch.",
-        "fa": "زدن یه کلاویه برای بار دوم دقیقاً همون فرکانس و همون زیر و بمی رو تولید می‌کنه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Unison means 'one sound'—two notes sharing the exact same pitch.",
+        "fa": "درسته! هم‌صدا (Unison) یعنی دو نت که دقیقاً روی یک درجه و فرکانس قرار دارن."
+      },
+      "feedbackWrong": {
+        "en": "When two notes share the exact same pitch with zero distance between them, it is called unison.",
+        "fa": "وقتی بین دو نت هیچ فاصله‌ای نباشه و کاملاً یکسان باشن، بهش هم‌صدا (Unison) می‌گن."
       }
     },
     {
-      "q": {
-        "en": "Why is hearing 'same vs different' so useful when you practice an instrument?",
-        "fa": "چرا تشخیص «یکسان یا متفاوت» موقع تمرین ساز این‌قدر به درد می‌خوره؟"
+      "question": {
+        "en": "Why is holding the first note in your memory so important for ear training?",
+        "fa": "چرا نگه داشتنِ صدای نت اول در ذهن، کلیدِ اصلیِ تربیت گوشه؟"
       },
       "options": {
         "en": [
-          "It helps you play faster",
-          "It lets you notice right away if your note matches the target note or slipped to a neighbor",
-          "It replaces reading sheet music",
-          "It makes the piano louder"
+          "Because you can only judge the second note by comparing it against your memory of the first note",
+          "Because the first note is always C4",
+          "Because the second note is silent"
         ],
         "fa": [
-          "کمک می‌کنه تندتر بزنی",
-          "باعث می‌شه همون لحظه بفهمی نتت با نت هدف یکیه یا رفته روی کلاویهٔ بغلی",
-          "نیاز به نت‌خوانی رو از بین می‌بره",
-          "صدای پیانو رو بلندتر می‌کنه"
+          "چون فقط با مقایسه‌ی نت دوم با خاطره‌ی نت اول می‌تونی فاصله و تغییرش رو بسنجی",
+          "چون نت اول همیشه دوی وسطه",
+          "چون نت دوم بی‌صداست"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Matching pitch is the foundation of playing in tune and catching wrong notes by ear.",
-        "fa": "تشخیص هم‌صدایی پایهٔ کوک خوندن و فهمیدن نت‌های اشتباه با گوشه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Musical listening is all about comparing what you hear now with what you heard a moment ago.",
+        "fa": "آفرین! تربیت گوش یعنی مقایسه‌ی صدایی که الان می‌شنوی با صدایی که یک لحظه قبل شنیدی."
+      },
+      "feedbackWrong": {
+        "en": "Remembering the first pitch gives your ear the reference point to measure the second pitch.",
+        "fa": "نگه داشتن نت اول توی ذهن، نقطه‌ی مرجع رو بهت می‌ده تا نت دوم رو باهاش مقایسه کنی."
       }
     }
   ],
   "summary": {
-    "en": "You practiced listening for pitch stability to tell whether two notes are identical or different.",
-    "fa": "گوش دادن به ثبات صدا رو تمرین کردی تا تشخیص بدی دو تا نت یکسانن یا متفاوت."
+    "en": "Sharp pitch memory! You practiced locking a reference pitch into your mind and spotting whether the next note stayed the same or changed.",
+    "fa": "حافظه‌ی شنیداری عالی! یاد گرفتی نتِ مرجع رو توی ذهنت نگه داری و یکسان یا متفاوت بودنِ نت دوم رو تشخیص بدی."
   },
   "tomorrow": {
-    "en": "Tomorrow we will hear the difference between a smooth neighbor step and a wider skip.",
-    "fa": "فردا تفاوت بین حرکت همسایه (پله) و پرش رو با گوش تشخیص می‌دیم."
+    "en": "Next lesson: when two notes ARE different, did they move by a close neighbor Step or a wider Skip?",
+    "fa": "درس فردا: وقتی دو نت متفاوت هستن، آیا به نتِ همسایه رفتن («پله») یا از روی نت پریدن («پرش»)؟"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

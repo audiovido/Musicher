@@ -1,126 +1,123 @@
 {
   "id": 7,
-  "courseId": "ear",
   "chapter": {
-    "en": "Chapter 2 \"Intervals, Chords & Voice\"",
-    "fa": "فصل ۲ «فاصله‌ها، آکوردها و صداسازی»"
+    "en": "Chapter 2: Intervals, chords and Persian color",
+    "fa": "فصل ۲ «فاصله‌ها، آکوردها و رنگ ایرانی»"
   },
   "title": {
-    "en": "Major or minor chord",
-    "fa": "آکورد ماژور یا مینور"
+    "en": "Major or minor chord: bright vs warm",
+    "fa": "آکورد ماژور یا مینور: روشن در برابر گرم"
   },
-  "duration": {
-    "en": "6 minutes",
-    "fa": "۶ دقیقه"
-  },
+  "minutes": 6,
   "goal": {
-    "en": "Listen to a three-note chord and tell whether its color is Major (bright and sunny) or Minor (warm, thoughtful, and wistful).",
-    "fa": "به یه آکورد سه‌نتی گوش بدی و تشخیص بدی رنگ صداش ماژوره (روشن و شاد) یا مینور (گرم، عمیق و کمی غمگین)."
+    "en": "Listen to three-note triads and distinguish the bright, sunny color of Major from the warm, thoughtful color of Minor.",
+    "fa": "به آکوردهای سه‌نتی گوش می‌دی و رنگِ روشن و شادِ «ماژور» رو از رنگِ گرم و عمیقِ «مینور» تشخیص می‌دی."
+  },
+  "see": {
+    "en": "A three-note chord (triad) stacks a root, a middle note (the 3rd), and a top note (the 5th). The outer notes are identical in both chords—only the middle note shifts by a single half step! In a Major chord the middle note is 4 semitones above the root, shining like morning sunlight. In a Minor chord it is 3 semitones above the root, glowing like warm evening candlelight.",
+    "fa": "آکوردِ سه‌نتی از سه نتِ پایه، وسط (سوم) و بالا (پنجم) ساخته می‌شه. نت اول و آخر توی هر دو یکیه و فقط نتِ وسط نیم‌پرده جابه‌جا می‌شه! در آکورد «ماژور» نت وسط ۴ نیم‌پرده بالاتره و صدایی روشن و آفتابی داره؛ در آکورد «مینور» نت وسط ۳ نیم‌پرده بالاتره و حسی گرم، لطیف و کمی غمگین می‌سازه."
   },
   "imageUrl": "",
-  "see": {
+  "audioUrl": "",
+  "steps": {
     "en": [
-      "When three notes sound together, they form a triad (chord). The outer notes (root and 5th, like C and G) build a sturdy frame, while the middle note (the 3rd) paints the emotional color.",
-      "In a Major chord (C–E–G), the middle note is a half step higher, creating a bright, sunny, open sound. In a Minor chord (C–E♭–G), the middle note is lowered by just one half step, turning the mood soft, thoughtful, or nostalgic."
+      "Tap 'Play sound': the app plays the three notes one by one (arpeggio) and then plays all three together.",
+      "Listen closely to the middle (second) note and the overall mood: bright/sunny (Major) or warm/wistful (Minor)?",
+      "Complete 10 random rounds and score >= 70% to pass."
     ],
     "fa": [
-      "وقتی سه تا نت با هم صدا می‌دن، یه «آکورد» سه‌صدایی می‌سازن. نت اول و آخر (پایه و پنجم، مثل دو و سل) چارچوب آکورد رو نگه می‌دارن، و نتِ وسطی (سوم) رنگ و حس آکورد رو تعیین می‌کنه.",
-      "توی «آکورد ماژور» (C–E–G)، نت وسطی نیم‌پرده بالاتره و صدایی روشن، آفتابی و شاد می‌سازه. توی «آکورد مینور» (C–E♭–G)، نت وسطی فقط نیم‌پرده می‌آد پایین و حس صدا رو نرم، عمیق و خیال‌انگیز می‌کنه."
+      "روی «پخش صدا» بزن: اول سه نت تک‌تک پخش می‌شن و بعد هر سه با هم به صدا درمیان.",
+      "به نتِ دوم (وسط) و حال‌وهوای کلی آکورد دقت کن: روشن و شاد («ماژور») یا گرم و عمیق («مینور»)؟",
+      "۱۰ مرحله رو کامل کن و حداقل ۷۰٪ امتیاز بگیر."
     ]
-  },
-  "hear": {
-    "en": "Focus on the mood right as the chord rings out: does it shine like morning sunlight (Major) or glow like evening candlelight (Minor)?",
-    "fa": "همون لحظه که آکورد طنین می‌اندازه به حسش دقت کن: مثل آفتاب صبح روشنه (ماژور) یا مثل نور شمع در شب، گرم و غمگینه (مینور)؟"
   },
   "practice": {
     "type": "ear-choice",
     "mode": "major-minor",
-    "rounds": 6
-  },
-  "steps": {
-    "en": [
-      "Tap 'Play sound' to hear the chord.",
-      "Let the chord ring for a second and notice your first emotional impression.",
-      "Choose 'Major (bright)' or 'Minor (warm/sad)' for all 6 rounds."
-    ],
-    "fa": [
-      "دکمهٔ پخش صدا رو بزن تا آکورد رو بشنوی.",
-      "بذار صدای آکورد یه ثانیه توی گوشت بمونه و به اولین حسی که بهت می‌ده توجه کن.",
-      "توی ۶ دور، گزینهٔ «ماژور (روشن/شاد)» یا «مینور (گرم/غمگین)» رو انتخاب کن."
-    ]
+    "rounds": 10
   },
   "selfCheck": {
     "en": [
-      "Did you trust your first impression of the chord's color?",
-      "Could you hear how the middle note shifts the mood between bright and wistful?"
+      "Did I pay attention to the second note of the broken chord as well as the blended sound at the end?",
+      "Could I feel the emotional contrast between Major and Minor even when the starting root note changed?"
     ],
     "fa": [
-      "به حس اولیه‌ای که از رنگ آکورد گرفتی اعتماد کردی؟",
-      "شنیدی چطور تغییر نت وسطی، حال‌وهوای صدا رو بین روشن و غمگین عوض می‌کنه؟"
+      "هم به نتِ وسط و هم به صدای هم‌زمانِ آخرِ آکورد دقت کردم؟",
+      "وقتی نتِ پایه عوض می‌شد باز هم تفاوتِ رنگِ ماژور و مینور رو حس کردم؟"
     ]
   },
   "quiz": [
     {
-      "q": {
-        "en": "Which note inside a 3-note triad changes to turn a Major chord into a Minor chord?",
-        "fa": "کدوم نت توی یه آکورد سه‌نتی تغییر می‌کنه تا آکورد ماژور تبدیل به مینور بشه؟"
+      "question": {
+        "en": "Which note inside a three-note triad determines whether the chord sounds Major or Minor?",
+        "fa": "کدوم نت در یک آکوردِ سه‌نتی مشخص می‌کنه که صدای آکورد ماژور باشه یا مینور؟"
       },
       "options": {
         "en": [
-          "The bottom note (root)",
-          "The middle note (the 3rd), lowered by a half step",
+          "The middle note (the 3rd of the chord)",
           "The top note (the 5th)",
-          "All three notes move up an octave"
+          "How loud you press the keys"
         ],
         "fa": [
-          "نت پایینی (پایه)",
-          "نت وسطی (سوم آکورد) که نیم‌پرده بم‌تر می‌شه",
-          "نت بالایی (پنجم)",
-          "هر سه نت یک اکتاو بالا می‌رن"
+          "نتِ وسط (فاصله‌ی سومِ آکورد)",
+          "نتِ بالایی (پنجمِ آکورد)",
+          "بلندیِ صدای کلیدها"
         ]
       },
-      "correct": 1,
-      "feedback": {
-        "en": "Lowering the middle note (the 3rd) by one half step transforms a major triad into a minor triad.",
-        "fa": "کافیه نت وسطی (سوم آکورد) نیم‌پرده پایین بیاد تا آکورد ماژور به مینور تبدیل بشه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Lowering the middle note by one half step turns a bright Major triad into a warm Minor triad.",
+        "fa": "کاملاً درسته! فقط با نیم‌پرده پایین آوردنِ نتِ وسط، آکورد ماژور تبدیل به مینور می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "The root and 5th stay the same; the middle note (the 3rd) sets the Major or Minor color.",
+        "fa": "نت پایه و پنجم ثابت می‌مونن؛ این نتِ وسطه که رنگ ماژور یا مینور رو تعیین می‌کنه."
       }
     },
     {
-      "q": {
-        "en": "How do listeners usually describe the sound of a Major chord compared to a Minor chord?",
-        "fa": "معمولاً صدای آکورد ماژور در مقایسه با مینور چطور توصیف می‌شه؟"
+      "question": {
+        "en": "How do musicians usually describe the sound color of a Major triad compared to a Minor triad?",
+        "fa": "معمولاً حس و رنگِ آکورد ماژور در مقایسه با مینور چطور توصیف می‌شه؟"
       },
       "options": {
         "en": [
-          "Brighter and more cheerful",
-          "Faster in tempo",
-          "Completely silent",
-          "Darker and heavier"
+          "Major sounds bright and sunny; Minor sounds warm, soft, or nostalgic",
+          "Major is fast and Minor is slow",
+          "They sound completely identical"
         ],
         "fa": [
-          "روشن‌تر و شادتر",
-          "تندتر از نظر سرعت",
-          "کاملاً بی‌صدا",
-          "تاریک‌تر و غمگین‌تر"
+          "ماژور روشن و شاده؛ مینور گرم، لطیف و کمی خیال‌انگیز یا غمگینه",
+          "ماژور تنده و مینور کنده",
+          "هیچ فرقی با هم ندارن"
         ]
       },
-      "correct": 0,
-      "feedback": {
-        "en": "Major triads have a bright, open quality, while minor triads sound warmer and more reflective.",
-        "fa": "آکورد ماژور صدایی روشن و باز داره، در حالی که مینور گرم‌تر و کمی غمگین‌تر به گوش می‌رسه."
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Composers weave Major and Minor chords together like light and shadow in a painting.",
+        "fa": "آفرین! آهنگسازها از کنار هم گذاشتنِ ماژور و مینور مثل نور و سایه در نقاشی استفاده می‌کنن."
+      },
+      "feedbackWrong": {
+        "en": "Major and Minor describe harmonic color (bright vs warm/wistful), not speed.",
+        "fa": "ماژور و مینور رنگِ هماهنگی صدا (روشن در برابر گرم/غمگین) رو نشون می‌دن، نه سرعت رو."
       }
     }
   ],
   "summary": {
-    "en": "You learned to hear the emotional color of harmony by distinguishing Major and Minor chords.",
-    "fa": "یاد گرفتی رنگ و حس هارمونی رو بشنوی و آکوردهای ماژور و مینور رو از هم تشخیص بدی."
+    "en": "Wonderful harmonic ear! You can now recognize Major and Minor triads across the keyboard.",
+    "fa": "گوشِ هارمونیکِ عالی! حالا آکوردهای ماژور و مینور رو در هر منطقه‌ای از کیبورد تشخیص می‌دی."
   },
   "tomorrow": {
-    "en": "Tomorrow we will connect ear and voice directly by listening to a 3-note pattern and singing it back.",
-    "fa": "فردا گوش و حنجره رو مستقیم به هم وصل می‌کنیم: یه الگوی ۳ نتی رو می‌شنویم و با صدای خودمون تکرارش می‌کنیم."
+    "en": "Next lesson: we connect ear to voice in 'Echo me'—listening to a 3-note pattern and singing it back comfortably!",
+    "fa": "درس فردا: در تمرین «بشنو و بخوان»، یک الگوی سه‌نتی رو می‌شنویم و با صدای راحت تکرارش می‌کنیم!"
   },
   "source": {
-    "en": "Original MUSICHER content",
-    "fa": "محتوای اختصاصی MUSICHER"
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "id": 6,
   "chapter": {
     "en": "Chapter 2: Inside the beat",
-    "fa": "فصل ۲ «درون ضرب»"
+    "fa": "فصل ۲ «درونِ ضرب»"
   },
   "title": {
     "en": "Measures and meters: 2/4, 3/4, 4/4",
@@ -10,106 +10,106 @@
   },
   "minutes": 6,
   "goal": {
-    "en": "Understand how the top number of a meter groups beats into 2s, 3s, or 4s, and tap a 3/4 waltz pattern.",
-    "fa": "یاد می‌گیری عدد بالای کسر میزان چطور ضرب‌ها رو ۲تایی، ۳تایی یا ۴تایی دسته‌بندی می‌کنه و یه الگوی ۳/۴ می‌زنی."
+    "en": "Understand how bar lines group beats into 2/4, 3/4, and 4/4 meters, and tap a 3/4 waltz pattern.",
+    "fa": "می‌بینی خط میزان چطور ضرب‌ها رو توی قالب‌های ۲/۴، ۳/۴ و ۴/۴ دسته‌بندی می‌کنه و یک الگوی ۳/۴ والس می‌زنی."
   },
   "see": {
-    "en": "At the start of a rhythm, two stacked numbers show the meter (time signature). The bottom number 4 tells us the quarter note (♩) is 1 beat; the top number tells us how many beats fit in each measure! 2/4 has 2 beats per measure ('ONE-two', like a march). 4/4 has 4 beats per measure ('ONE-two-three-four', common in pop and rock). And 3/4 has 3 beats per measure ('ONE-two-three', a graceful waltz sway). Beat 1 always gets a natural gentle accent so your ear feels the start of every measure!",
-    "fa": "اولِ هر خط موسیقی، دو تا عدد روی هم نوشته می‌شن که بهش «کسر میزان» می‌گن. عددِ پایین (۴) می‌گه واحدِ ضرب ما نت سیاهه؛ و عددِ بالا می‌گه تو هر میزان چند تا ضرب جا می‌شه! میزان ۲/۴ یعنی ۲ ضرب در هر میزان («یک-دو»، مثل ریتم مارش و قدم‌رو). میزان ۴/۴ یعنی ۴ ضرب در هر میزان («یک-دو-سه-چهار»). و میزان ۳/۴ یعنی ۳ ضرب در هر میزان («یک-دو-سه»، مثل موجِ نرم والس). ضرب اولِ هر میزان همیشه یه تاکیدِ کوچیک داره تا گوشمون شروع میزان رو حس کنه!"
+    "en": "Bar lines (|) organize pulses into recurring groups called measures (bars). In 2/4 time we feel a 2-beat march (ONE-two). In 3/4 time we feel a 3-beat waltz circle (ONE-two-three). In 4/4 time we feel 4 beats per bar. Notice how the count-in in 3/4 gives you 3 clicks before you start!",
+    "fa": "خط‌های میزان (|) نبض‌ها رو توی جعبه‌های منظم دسته‌بندی می‌کنن. در ۲/۴ حسِ مارشِ دوضربی («یک–دو»)، در ۳/۴ حسِ چرخشِ سه‌ضربیِ والس («یک–دو–سه») و در ۴/۴ چهار ضرب در هر میزان داریم. دقت کن که توی ۳/۴، شمارشِ اول هم ۳ تا کلیک داره!"
   },
   "imageUrl": "",
   "audioUrl": "",
   "steps": {
     "en": [
-      "Tap 'Play demo' to hear two measures of 3/4 ('1 1 1 | 2 1')—notice how beat 1 has a slightly brighter click.",
-      "Count 'ONE – two – three | ONE-two – three' out loud with a gentle sway on 'ONE'.",
-      "Tap '1 1 1 | 2 1' on the pad: three 1-beat taps in measure 1, then a 2-beat half note plus a 1-beat tap in measure 2."
+      "Listen to the demo in 3/4 time and hear the accented first beat of each 3-beat measure.",
+      "Tap 'Start tap practice': listen to the 3-click count-in ('1, 2, 3'), then tap bar 1 ('1 1 1') and bar 2 ('2 1').",
+      "In bar 2, hold the half note across beats 1 and 2, then tap the quarter note on beat 3!"
     ],
     "fa": [
-      "روی «پخش نمونه» بزن تا دو میزانِ ۳/۴ («1 1 1 | 2 1») رو بشنوی—ببین چطور ضرب اول صدای واضح‌تری داره.",
-      "بلند بشمار: «یک – دو – سه | یک-دو – سه» و روی «یک» یه موجِ نرم حس کن.",
-      "الگوی «1 1 1 | 2 1» رو روی پد بزن: سه تا ضربِ ۱ ضربی تو میزان اول، و بعد یک نت ۲ ضربی و یک نت ۱ ضربی تو میزان دوم."
+      "به نمونه‌ی ۳/۴ گوش بده و صدای قوی‌ترِ ضربِ اولِ هر میزان سه‌ضربی رو بشنو.",
+      "تمرین رو شروع کن: به ۳ کلیکِ شمارشِ اول («۱، ۲، ۳») گوش بده و بعد میزان اول (سه تا سیاه) و میزان دوم (سفید + سیاه) رو بزن.",
+      "توی میزان دوم، نت سفید رو روی ضرب ۱ و ۲ نگه دار و نت سیاه رو درست سرِ ضرب ۳ بزن!"
     ]
   },
   "practice": {
     "type": "rhythm-tap",
-    "meter": "3/4",
     "tempo": 74,
+    "meter": "3/4",
     "pattern": "1 1 1 | 2 1"
   },
   "selfCheck": {
     "en": [
-      "Did I feel 3 beats in each measure instead of waiting for a 4th beat?",
-      "Did I hold the 2-beat note in measure 2 across beats 1 and 2 before tapping beat 3?"
+      "Did I start right after the 3rd count-in click (instead of waiting for a 4th click)?",
+      "In bar 2 ('2 1'), did I tap on beat 1 and beat 3?"
     ],
     "fa": [
-      "تو هر میزان ۳ ضرب حس کردم و منتظر ضرب چهارم نموندم؟",
-      "نتِ ۲ ضربیِ میزان دوم رو روی ضرب‌های ۱ و ۲ نگه داشتم و سرِ ضرب ۳ ضربه‌ی آخر رو زدم؟"
+      "بلافاصله بعد از کلیکِ سومِ شمارش شروع کردم (و منتظر کلیک چهارم نموندم)؟",
+      "توی میزان دوم («2 1»)، دقیقاً سرِ ضرب ۱ و ضرب ۳ ضربه زدم؟"
     ]
   },
   "quiz": [
     {
       "question": {
-        "en": "What does the top number in the meters 2/4, 3/4, and 4/4 tell you?",
-        "fa": "عددِ بالایی در کسر میزان‌های ۲/۴، ۳/۴ و ۴/۴ چه چیزی رو مشخص می‌کنه؟"
+        "en": "What does the top number in the meter 3/4 tell you?",
+        "fa": "عددِ بالایی در کسر میزان ۳/۴ چه چیزی رو به ما نشون می‌ده؟"
       },
       "options": {
         "en": [
-          "How many beats are in each measure (2, 3, or 4)",
-          "How many fingers to use",
-          "How many minutes the song lasts"
+          "There are 3 beats in every measure (bar)",
+          "You must play with 3 fingers",
+          "The song lasts 3 minutes"
         ],
         "fa": [
-          "تعداد ضرب‌ها در هر میزان (۲، ۳ یا ۴ ضرب)",
-          "تعداد انگشت‌هایی که باید استفاده کنی",
-          "مدت زمان قطعه به دقیقه"
+          "در هر میزان دقیقاً ۳ ضرب وجود داره",
+          "باید با ۳ انگشت بنوازی",
+          "قطعه ۳ دقیقه طول می‌کشه"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Exactly! The top number counts how many quarter-note beats fit inside each measure.",
-        "fa": "دقیقاً! عدد بالا نشون می‌ده توی هر میزان چند تا ضربِ سیاه جا می‌گیره."
+        "en": "Correct! In 3/4 time, every measure contains 3 quarter-note beats.",
+        "fa": "کاملاً درسته! در کسر میزان ۳/۴، هر میزان ۳ ضربِ سیاه جا داره."
       },
       "feedbackWrong": {
-        "en": "The top number of a time signature always tells you the number of beats per measure.",
-        "fa": "عددِ بالای کسر میزان همیشه تعداد ضرب‌های داخلِ هر میزان رو بهت می‌گه."
+        "en": "The top number of a time signature tells you how many beats are grouped into each measure.",
+        "fa": "عدد بالایی در کسر میزان، تعداد ضرب‌های داخلِ هر میزان رو مشخص می‌کنه."
       }
     },
     {
       "question": {
-        "en": "In a 3/4 measure containing '2 1' (a half note followed by a quarter note), on which beat do you tap the second note?",
-        "fa": "تو یه میزان ۳/۴ با الگوی «2 1» (یک نت سفید و یک نت سیاه)، نتِ دوم رو سرِ کدوم ضرب می‌زنی؟"
+        "en": "Which beat is naturally felt as the strongest anchor in 2/4, 3/4, and 4/4 meters?",
+        "fa": "در میزان‌های ۲/۴، ۳/۴ و ۴/۴ کدوم ضرب همیشه قوی‌ترین تکیه‌گاهِ میزان حس می‌شه؟"
       },
       "options": {
         "en": [
-          "Beat 3 (because the half note takes beats 1 and 2)",
-          "Beat 2",
-          "Beat 4"
+          "Beat 1 (the downbeat right after the bar line)",
+          "The very last beat of the bar",
+          "None of them"
         ],
         "fa": [
-          "سرِ ضرب ۳ (چون نت سفید ضرب‌های ۱ و ۲ رو پر کرده)",
-          "سرِ ضرب ۲",
-          "سرِ ضرب ۴"
+          "ضربِ اولِ هر میزان (بلافاصله بعد از خط میزان)",
+          "ضربِ آخرِ میزان",
+          "هیچ‌کدوم"
         ]
       },
       "correctIndex": 0,
       "feedbackRight": {
-        "en": "Spot on! The 2-beat half note lasts through beats 1 and 2, so the final quarter note lands right on beat 3.",
-        "fa": "آفرین! نت سفید ضرب‌های ۱ و ۲ رو به خودش اختصاص می‌ده، پس نت سیاه آخر دقیقاً سرِ ضرب ۳ زده می‌شه."
+        "en": "Spot on! Beat 1 is the downbeat that gives every meter its clear shape.",
+        "fa": "آفرین! ضرب اول تکیه‌گاهِ اصلیه و باعث می‌شه سه‌ضربی یا چهارضربی بودنِ آهنگ رو حس کنیم."
       },
       "feedbackWrong": {
-        "en": "Count '1-2' for the 2-beat half note, then tap the 1-beat quarter note on beat 3!",
-        "fa": "برای نت سفید بشمار «۱-۲»، و بعد نت سیاه رو سرِ ضرب «۳» بزن!"
+        "en": "Beat 1 (right after the bar line) carries the primary accent in standard meters.",
+        "fa": "ضرب اول (بعد از خط میزان) همیشه ضربِ قویِ اصلی در میزان‌های استاندارده."
       }
     }
   ],
   "summary": {
-    "en": "You compared 2/4, 3/4, and 4/4 meters and tapped a two-measure 3/4 waltz rhythm accurately.",
-    "fa": "تفاوت میزان‌های ۲/۴، ۳/۴ و ۴/۴ رو یاد گرفتی و یک ریتم دو میزانی در ۳/۴ رو دقیق اجرا کردی."
+    "en": "Wonderful waltz feel! You counted a 3-beat count-in and tapped cleanly in 3/4 time.",
+    "fa": "حسِ سه‌ضربی عالی! با شمارشِ ۳ ضربی همراه شدی و الگوی ۳/۴ رو دقیق اجرا کردی."
   },
   "tomorrow": {
-    "en": "We will learn what a rhythmic dot does to a note: the dotted half note (3 beats) and dotted quarter note (1.5 beats).",
-    "fa": "کاربرد «نقطه» جلوی نت‌ها رو یاد می‌گیریم: نت سفید نقطه‌دار (۳ ضرب) و نت سیاه نقطه‌دار (۱.۵ ضرب)."
+    "en": "Next lesson: we learn what a rhythmic dot does—stretching a note by half of its own value.",
+    "fa": "درس فردا: با «نت نقطه‌دار» آشنا می‌شیم که کششِ نت رو به اندازه‌ی نصفِ خودش بیشتر می‌کنه."
   },
   "source": {
     "creator": {
