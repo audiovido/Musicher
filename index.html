@@ -3144,13 +3144,18 @@
       }
 
       .score-controls-panel {
+        position: sticky;
+        bottom: 0;
+        z-index: 45;
         display: flex;
         flex-direction: column;
         gap: 12px;
-        padding: 16px;
-        background-color: var(--bg);
-        border: 1.5px solid rgba(31, 26, 46, 0.15);
+        padding: 14px 18px;
+        padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+        background-color: var(--surface);
+        border: 2px solid #1F1A2E;
         border-radius: 16px;
+        box-shadow: 0 -4px 20px rgba(31, 26, 46, 0.16);
       }
 
       .score-controls-row {
@@ -3358,10 +3363,14 @@
         }
         .score-controls-panel {
           padding: 12px 10px;
+          padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
           gap: 10px;
+          border-radius: 16px 16px 0 0;
+          margin-inline: -12px;
+          margin-bottom: -14px;
         }
         .score-canvas-container {
-          padding: 10px 4px;
+          padding: 10px 0;
         }
       }
     </style>
@@ -3733,7 +3742,11 @@
           playheadStartBeat: 0,
           nextNoteIdx: 0,
           nextClickBeat: 0,
-          completed: false
+          completed: false,
+          followEnabled: true,
+          followSuspended: false,
+          followResumeTimer: null,
+          lastFollowedMeasure: 0
         }
       };
 
@@ -8782,6 +8795,13 @@
           sp.osmdReady = false;
           sp.osmdWaitAttempts = 0;
           sp.completed = isLessonPracticeCompleted(lesson);
+          sp.followEnabled = true;
+          sp.followSuspended = false;
+          if (sp.followResumeTimer) {
+            clearTimeout(sp.followResumeTimer);
+            sp.followResumeTimer = null;
+          }
+          sp.lastFollowedMeasure = 0;
         }
       }
 
@@ -8791,6 +8811,12 @@
           clearInterval(sp.schedulerTimer);
           sp.schedulerTimer = null;
         }
+        if (sp.followResumeTimer) {
+          clearTimeout(sp.followResumeTimer);
+          sp.followResumeTimer = null;
+        }
+        sp.followSuspended = false;
+        sp.lastFollowedMeasure = 0;
         sp.isPlaying = false;
         sp.isPaused = false;
         sp.countInPhase = false;
@@ -8900,6 +8926,37 @@
         if (barInd) {
           barInd.textContent = t("practice.scoreBarStatus", { current: sp.currentBar || 1, total: sp.totalMeasures || 23 });
         }
+
+        // 9. Follow button
+        const followBtn = mount.querySelector("[data-action='score-toggle-follow']");
+        if (followBtn) {
+          followBtn.classList.toggle("active", !!sp.followEnabled);
+          followBtn.innerHTML = `<span>👁️ ${escapeHtml(t("practice.scoreFollowToggle") || "Follow")}</span>`;
+        }
+      }
+
+      function toggleScoreFollow() {
+        const sp = ui.scorePlayer;
+        sp.followEnabled = !sp.followEnabled;
+        sp.followSuspended = false;
+        if (sp.followResumeTimer) {
+          clearTimeout(sp.followResumeTimer);
+          sp.followResumeTimer = null;
+        }
+        updateScoreControlsDOM();
+      }
+
+      function suspendScoreAutoFollow() {
+        const sp = ui.scorePlayer;
+        if (!sp || !sp.isPlaying) return;
+        sp.followSuspended = true;
+        if (sp.followResumeTimer) {
+          clearTimeout(sp.followResumeTimer);
+        }
+        sp.followResumeTimer = setTimeout(() => {
+          sp.followSuspended = false;
+          sp.followResumeTimer = null;
+        }, 4000);
       }
 
       function setScoreBpm(newBpm, updateInputField = true) {
@@ -9150,21 +9207,26 @@
 
             const stepObj = sp.cursorSteps[sp.currentCursorStep];
             if (stepObj && stepObj.measure !== sp.currentBar) {
+              const barChanged = sp.currentBar !== stepObj.measure;
               sp.currentBar = stepObj.measure;
               const barInd = document.getElementById("score-bar-indicator");
               if (barInd) {
                 barInd.textContent = t("practice.scoreBarStatus", { current: sp.currentBar, total: sp.totalMeasures });
               }
-            }
 
-            // Auto-scroll container to keep cursor in view
-            if (sp.osmdInstance && sp.osmdInstance.cursor && sp.osmdInstance.cursor.cursorElement) {
-              const container = document.getElementById("score-render-area");
-              if (container) {
-                const curRect = sp.osmdInstance.cursor.cursorElement.getBoundingClientRect();
-                const contRect = container.getBoundingClientRect();
-                if (curRect.bottom > contRect.bottom - 24 || curRect.top < contRect.top + 20) {
-                  sp.osmdInstance.cursor.cursorElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+              // Auto-follow: scroll window at most once per measure change only if cursor is outside viewport (120px margin)
+              if (sp.followEnabled && !sp.followSuspended && barChanged && sp.currentBar !== sp.lastFollowedMeasure) {
+                sp.lastFollowedMeasure = sp.currentBar;
+                const curEl = sp.osmdInstance?.cursor?.cursorElement;
+                if (curEl) {
+                  const rect = curEl.getBoundingClientRect();
+                  const margin = 120;
+                  const isOutside = rect.top < margin || rect.bottom > (window.innerHeight - margin);
+                  if (isOutside) {
+                    const currentScrollY = window.scrollY || window.pageYOffset || 0;
+                    const targetScrollY = Math.max(0, currentScrollY + rect.top - (window.innerHeight / 2));
+                    window.scrollTo({ top: targetScrollY, behavior: "smooth" });
+                  }
                 }
               }
             }
@@ -9223,6 +9285,11 @@
 
         sp.isPlaying = true;
         sp.isPaused = false;
+        sp.followSuspended = false;
+        if (sp.followResumeTimer) {
+          clearTimeout(sp.followResumeTimer);
+          sp.followResumeTimer = null;
+        }
         sp.playheadStartBeat = startBeat;
         sp.currentBeat = startBeat;
         sp.nextNoteIdx = sp.notes.findIndex((n) => n.startBeat >= startBeat - 0.05);
@@ -9400,19 +9467,43 @@
 
       function applyScoreResponsiveLayout(osmd, containerWidth) {
         if (!osmd || !osmd.rules) return;
-        const w = containerWidth || window.innerWidth;
+        const container = document.getElementById("score-render-area");
+        const w = containerWidth || (container ? container.clientWidth : 0) || window.innerWidth;
+
+        // Make render width equal to container width (container.clientWidth)
+        if (container) {
+          container.style.width = "100%";
+        }
+
+        // Disable any fixed minimum measure width (rules.MinMeasureToDrawWidth / compacttight)
+        if ("MinMeasureToDrawWidth" in osmd.rules) {
+          osmd.rules.MinMeasureToDrawWidth = 0;
+        }
+        osmd.rules.FixedMeasureWidth = false;
+        osmd.rules.FixedMeasureWidthFixedValue = 0;
+
+        // Compact EngravingRules margins & spacing
+        osmd.rules.PageLeftMargin = 2;
+        osmd.rules.PageRightMargin = 2;
+        osmd.rules.SystemLeftMargin = 0;
+        osmd.rules.SystemRightMargin = 0;
+        osmd.rules.MeasureLeftMargin = 0.5;
+        osmd.rules.MeasureRightMargin = 0;
+        osmd.rules.VoiceSpacingMultiplierVexflow = 0.65;
+        osmd.rules.VoiceSpacingAddendVexflow = 1.5;
+
         if (w < 500) {
-          // Phone (~390px): 3 to 4 measures per line
+          // Phone (~390px): zoom around 0.6–0.7 so 3–4 measures fit per system
+          osmd.Zoom = 0.65;
           osmd.rules.RenderXMeasuresPerLineAkaSystem = 3;
-          osmd.Zoom = 0.68;
         } else if (w < 850) {
-          // Tablet: 4 measures per line
+          // Tablet: 4 measures per system
+          osmd.Zoom = 0.75;
           osmd.rules.RenderXMeasuresPerLineAkaSystem = 4;
-          osmd.Zoom = 0.78;
         } else {
-          // Desktop: 5 measures per line (4–6 range)
+          // Desktop (~1100px): 4–6 measures fit per system
+          osmd.Zoom = 0.85;
           osmd.rules.RenderXMeasuresPerLineAkaSystem = 5;
-          osmd.Zoom = 0.88;
         }
       }
 
@@ -9499,20 +9590,16 @@
             drawPartNames: false,
             drawMetronomeMarks: true,
             backend: "svg",
-            followCursor: true,
+            followCursor: false,
             drawingParameters: "compacttight"
           });
 
-          if (osmd.rules) {
-            osmd.rules.VoiceSpacingMultiplierVexflow = 0.78;
-            osmd.rules.VoiceSpacingAddendVexflow = 2.0;
-          }
+          await osmd.load(xmlText);
 
-          // Apply responsive layout: 3-4 measures on mobile, 4-6 on desktop
+          // Apply responsive layout AFTER osmd.load() so zoom and rules are not reset by load()
           const containerWidth = container.clientWidth || window.innerWidth;
           applyScoreResponsiveLayout(osmd, containerWidth);
 
-          await osmd.load(xmlText);
           osmd.render();
 
           sp.osmdInstance = osmd;
@@ -9678,6 +9765,9 @@
                   </button>
                   <button type="button" class="vpiano-pill-btn ${sp.countInEnabled ? "active" : ""}" data-action="score-toggle-countin">
                     <span>⏱ ${escapeHtml(t("practice.scoreCountInToggle"))}</span>
+                  </button>
+                  <button type="button" class="vpiano-pill-btn ${sp.followEnabled ? "active" : ""}" data-action="score-toggle-follow">
+                    <span>👁️ ${escapeHtml(t("practice.scoreFollowToggle") || "Follow")}</span>
                   </button>
                 </div>
               </div>
@@ -12471,6 +12561,10 @@
             toggleScoreCountIn();
             break;
 
+          case "score-toggle-follow":
+            toggleScoreFollow();
+            break;
+
           case "score-toggle-loop":
             toggleScoreLoop();
             break;
@@ -12802,6 +12896,21 @@
       window.addEventListener("pointerup", clearBpmHold);
       window.addEventListener("pointercancel", clearBpmHold);
 
+      // User scroll gesture detection to immediately suspend auto-follow
+      window.addEventListener("wheel", () => suspendScoreAutoFollow(), { passive: true });
+      window.addEventListener("touchstart", (e) => {
+        if (e.target && e.target.closest && e.target.closest(".score-controls-panel")) return;
+        suspendScoreAutoFollow();
+      }, { passive: true });
+      window.addEventListener("touchmove", (e) => {
+        if (e.target && e.target.closest && e.target.closest(".score-controls-panel")) return;
+        suspendScoreAutoFollow();
+      }, { passive: true });
+      document.addEventListener("pointerdown", (e) => {
+        if (e.target && e.target.closest && (e.target.closest(".score-controls-panel") || e.target.closest("button") || e.target.closest("input"))) return;
+        suspendScoreAutoFollow();
+      }, { passive: true });
+
       /* ==========================================================================
          VIRTUAL PIANO MULTI-TOUCH, MOUSE, MINI-MAP & COMPUTER KEYBOARD LISTENERS
          ========================================================================== */
@@ -13002,6 +13111,11 @@
         if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
         const tag = (e.target && e.target.tagName ? e.target.tagName : "").toLowerCase();
         if (tag === "input" || tag === "textarea" || tag === "select") return;
+
+        const scrollKeys = ["PageUp", "PageDown", "ArrowUp", "ArrowDown", "Home", "End", " "];
+        if (scrollKeys.includes(e.key)) {
+          suspendScoreAutoFollow();
+        }
 
         if ((e.code === "Space" || e.key === " ") && document.querySelector(".rhythm-tap-pad")) {
           e.preventDefault();
