@@ -9,7 +9,7 @@
     <meta property="og:description" content="Learn music from scratch, a few minutes a day, with an always-there practice advisor." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" src="/src/score-bundle.ts"></script>
+    <script type="module" src="./src/score-bundle.ts"></script>
     <style>
       /* ==========================================================================
          MUSICHER — BRAND DESIGN TOKENS & TYPOGRAPHY
@@ -3260,6 +3260,88 @@
         direction: ltr;
       }
 
+      .score-bpm-stepper-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .score-bpm-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid #1F1A2E;
+        background-color: var(--surface);
+        color: #1F1A2E;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 800;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        transition: all 120ms ease;
+      }
+
+      .score-bpm-btn:hover {
+        background-color: var(--accent);
+      }
+
+      .score-bpm-btn:active {
+        transform: scale(0.92);
+      }
+
+      .score-bpm-input-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background-color: #FFFFFF;
+        border: 1.5px solid #1F1A2E;
+        border-radius: 10px;
+        padding: 2px 8px;
+      }
+
+      .score-bpm-number-input {
+        width: 52px;
+        height: 32px;
+        font-size: 1.05rem;
+        font-weight: 800;
+        text-align: center;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #1F1A2E;
+        font-family: inherit;
+        -moz-appearance: textfield;
+      }
+
+      .score-bpm-number-input::-webkit-outer-spin-button,
+      .score-bpm-number-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .score-bpm-unit {
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--muted);
+      }
+
+      .score-current-bpm-badge {
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: var(--secondary);
+        padding: 4px 10px;
+        background-color: var(--surface);
+        border-radius: 999px;
+        border: 1.2px solid rgba(31, 26, 46, 0.18);
+        direction: ltr;
+        display: inline-flex;
+        align-items: center;
+      }
+
       .score-footer-tip {
         font-size: 0.78rem;
         color: var(--muted);
@@ -3628,8 +3710,10 @@
           totalMeasures: 1,
           measureStartBeats: {},
           measureEndBeats: {},
-          baseTempo: 100,
+          baseTempo: 80,
           speedPct: 75,
+          bpm: 60,
+          loopSelectingEnd: false,
           activeHand: "both",
           isPlaying: false,
           isPaused: false,
@@ -8411,10 +8495,14 @@
          - Multi-part & 2-staff piano grand staff support
          - Web Audio lookahead scheduler on AudioContext clock (no setTimeout audio drift)
          - High-precision cursor synchronization & auto-scroll
-         - Speed control: 50%, 75% (default), 100% (tempo only, never alters pitch)
+         - Live BPM control: large +/- buttons, number input (20-200), live tempo change without pitch alteration
+         - Speed presets: 50%, 75% (default), 100% with BPM display
+         - Stop button live state management (enabled during play/pause/offset)
          - Hand isolation: Both / Right only / Left only (audio muting & visual staff dimming)
-         - Gapless measure looping (tap on measure in score, or stepper buttons)
-         - Metronome click & 1-bar count-in
+         - Gapless measure looping with exact audio-time loop wrapping
+         - Tap score measure to set loop (tap once = start, tap again = end)
+         - Responsive layout: 3–4 measures/line on phone (~390px), 4–6 on desktop
+         - Safe loading with 10s fetch timeout and missing-OSMD error handling
          - LTR sheet music rendering within RTL Persian UI
          ========================================================================== */
       let SCORES_CATALOG = [
@@ -8425,7 +8513,7 @@
           composer: "J. F. F. Burgmüller",
           work: "25 Easy and Progressive Studies, Op.100 No.1",
           level: 1,
-          tempo: 112,
+          tempo: 80,
           source: "Mutopia Project",
           license: "Public Domain",
           verified: false
@@ -8449,7 +8537,7 @@
         return SCORES_CATALOG[0];
       }
 
-      function parseMusicXmlNotes(xmlText, defaultTempo = 100) {
+      function parseMusicXmlNotes(xmlText, defaultTempo = 80) {
         try {
           const parser = new DOMParser();
           const doc = parser.parseFromString(xmlText, "application/xml");
@@ -8662,8 +8750,18 @@
           sp.lessonKey = key;
           sp.file = lesson.practice.file || "content/scores/burgmuller-op100-01.musicxml";
           sp.scoreMeta = getScoreMeta(lesson.practice.scoreId || lesson.practice.file);
-          sp.baseTempo = Number(lesson.practice.tempo) || sp.scoreMeta?.tempo || 100;
+
+          // ONE RULE: lesson practice.tempo if present, else index.json tempo, else the file
+          let resolvedTempo = 80;
+          if (lesson.practice.tempo !== undefined && lesson.practice.tempo !== null && Number(lesson.practice.tempo) > 0) {
+            resolvedTempo = Number(lesson.practice.tempo);
+          } else if (sp.scoreMeta && sp.scoreMeta.tempo && Number(sp.scoreMeta.tempo) > 0) {
+            resolvedTempo = Number(sp.scoreMeta.tempo);
+          }
+
+          sp.baseTempo = resolvedTempo;
           sp.speedPct = 75;
+          sp.bpm = Math.round(sp.baseTempo * 0.75); // 60 BPM default for 80 base
           sp.activeHand = "both";
           sp.isPlaying = false;
           sp.isPaused = false;
@@ -8676,11 +8774,13 @@
           sp.countInBeat = 0;
           sp.countInTotal = 4;
           sp.loopEnabled = false;
+          sp.loopSelectingEnd = false;
           sp.loopStartBar = 1;
           sp.loopEndBar = 4;
           sp.loadError = null;
           sp.loading = false;
           sp.osmdReady = false;
+          sp.osmdWaitAttempts = 0;
           sp.completed = isLessonPracticeCompleted(lesson);
         }
       }
@@ -8708,14 +8808,164 @@
           sp.lessonKey = null;
           sp.notes = [];
           sp.cursorSteps = [];
+          sp.osmdWaitAttempts = 0;
         }
       }
 
-      function getScoreEffectiveBpm() {
+      function updateScoreControlsDOM(updateInputField = true) {
         const sp = ui.scorePlayer;
-        const base = Number(sp.baseTempo) || 100;
-        const pct = Number(sp.speedPct) || 75;
-        return Math.max(30, Math.round((base * pct) / 100));
+        const mount = document.getElementById("score-lesson-mount");
+        if (!mount) return;
+
+        // 1. Play / Pause button
+        const playBtn = mount.querySelector("[data-action='score-play']");
+        if (playBtn) {
+          if (sp.isPlaying) {
+            playBtn.className = "btn-pill btn-surface";
+            playBtn.innerHTML = `<span>⏸ ${escapeHtml(t("practice.scorePause"))}</span>`;
+          } else {
+            playBtn.className = "btn-pill btn-primary";
+            playBtn.innerHTML = `<span>▶ ${escapeHtml(t("practice.scorePlay"))}</span>`;
+          }
+        }
+
+        // 2. Stop button (enabled whenever playing, paused, or currentBeat > 0.05)
+        const stopBtn = mount.querySelector("[data-action='score-stop']");
+        if (stopBtn) {
+          const canStop = sp.isPlaying || sp.isPaused || sp.currentBeat > 0.05;
+          stopBtn.disabled = !canStop;
+        }
+
+        // 3. BPM input & display
+        const curBpm = Math.max(20, Math.min(200, Number(sp.bpm) || 80));
+        if (updateInputField) {
+          const bpmInput = document.getElementById("score-bpm-input");
+          if (bpmInput && document.activeElement !== bpmInput) {
+            bpmInput.value = curBpm;
+          }
+        }
+        const bpmBadge = document.getElementById("score-current-bpm-display");
+        if (bpmBadge) {
+          bpmBadge.textContent = `♩ = ${curBpm} BPM`;
+        }
+
+        // 4. Preset speed buttons 50% / 75% / 100%
+        const b50 = Math.round((sp.baseTempo || 80) * 0.5);
+        const b75 = Math.round((sp.baseTempo || 80) * 0.75);
+        const b100 = Math.round((sp.baseTempo || 80) * 1.0);
+        mount.querySelectorAll("[data-action='score-speed-preset']").forEach((btn) => {
+          const pct = Number(btn.getAttribute("data-pct"));
+          const targetBpm = pct === 50 ? b50 : pct === 75 ? b75 : b100;
+          if (curBpm === targetBpm) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+
+        // 5. Hand isolation buttons
+        mount.querySelectorAll("[data-action='score-hand']").forEach((btn) => {
+          const h = btn.getAttribute("data-hand");
+          if (sp.activeHand === h) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+
+        // 6. Click & Count-in
+        const clickBtn = mount.querySelector("[data-action='score-toggle-click']");
+        if (clickBtn) {
+          clickBtn.classList.toggle("active", !!sp.clickEnabled);
+          clickBtn.innerHTML = `<span>🔔 ${escapeHtml(sp.clickEnabled ? t("practice.scoreClickOn") : t("practice.scoreClickOff"))}</span>`;
+        }
+        const countInBtn = mount.querySelector("[data-action='score-toggle-countin']");
+        if (countInBtn) {
+          countInBtn.classList.toggle("active", !!sp.countInEnabled);
+        }
+
+        // 7. Loop button & indicators
+        const loopBtn = mount.querySelector("[data-action='score-toggle-loop']");
+        if (loopBtn) {
+          loopBtn.classList.toggle("active", !!sp.loopEnabled);
+          loopBtn.innerHTML = `<span>🔁 ${escapeHtml(sp.loopEnabled ? t("practice.scoreLoopOn") : t("practice.scoreLoopOff"))}</span>`;
+        }
+        const loopStartVal = mount.querySelector(".score-loop-start-val");
+        if (loopStartVal) loopStartVal.textContent = sp.loopStartBar || 1;
+        const loopEndVal = mount.querySelector(".score-loop-end-val");
+        if (loopEndVal) loopEndVal.textContent = sp.loopEndBar || Math.min(4, sp.totalMeasures || 23);
+
+        // 8. Bar status badge
+        const barInd = document.getElementById("score-bar-indicator");
+        if (barInd) {
+          barInd.textContent = t("practice.scoreBarStatus", { current: sp.currentBar || 1, total: sp.totalMeasures || 23 });
+        }
+      }
+
+      function setScoreBpm(newBpm, updateInputField = true) {
+        const sp = ui.scorePlayer;
+        const clamped = Math.max(20, Math.min(200, Math.round(Number(newBpm) || 80)));
+        if (sp.bpm === clamped) {
+          updateScoreControlsDOM(updateInputField);
+          return;
+        }
+        sp.bpm = clamped;
+
+        // LIVE TEMPO CHANGE: When BPM changes during play, re-base audio clock without jump
+        if (sp.isPlaying) {
+          const ctx = getOrCreatePianoAudioCtx();
+          if (ctx) {
+            sp.playheadStartBeat = sp.currentBeat;
+            sp.playbackStartAudioTime = ctx.currentTime;
+            sp.nextClickBeat = Math.ceil(sp.currentBeat);
+          }
+        }
+        updateScoreControlsDOM(updateInputField);
+      }
+
+      function changeScoreBpm(delta) {
+        const sp = ui.scorePlayer;
+        setScoreBpm((sp.bpm || 80) + delta, true);
+      }
+
+      let bpmHoldTimer = null;
+      let bpmHoldStepCount = 0;
+      let lastBpmStepTime = 0;
+
+      function startBpmHold(delta) {
+        clearBpmHold();
+        changeScoreBpm(delta);
+        lastBpmStepTime = Date.now();
+        bpmHoldStepCount = 0;
+
+        function scheduleNextRepeat(delayMs) {
+          bpmHoldTimer = setTimeout(() => {
+            changeScoreBpm(delta);
+            lastBpmStepTime = Date.now();
+            bpmHoldStepCount++;
+            let nextDelay = 120;
+            if (bpmHoldStepCount > 15) nextDelay = 35;
+            else if (bpmHoldStepCount > 6) nextDelay = 70;
+            scheduleNextRepeat(nextDelay);
+          }, delayMs);
+        }
+
+        scheduleNextRepeat(340);
+      }
+
+      function clearBpmHold() {
+        if (bpmHoldTimer) {
+          clearTimeout(bpmHoldTimer);
+          bpmHoldTimer = null;
+        }
+      }
+
+      function setScorePresetSpeed(pct) {
+        const sp = ui.scorePlayer;
+        const base = Number(sp.baseTempo) || 80;
+        const targetBpm = Math.round(base * (pct / 100));
+        sp.speedPct = pct;
+        setScoreBpm(targetBpm, true);
       }
 
       function updateScoreStavesHandDimming(activeHand) {
@@ -8800,15 +9050,16 @@
         const ctx = getOrCreatePianoAudioCtx();
         if (!ctx) return;
 
-        const effectiveBpm = getScoreEffectiveBpm();
-        const beatSec = 60 / effectiveBpm;
-
         sp.schedulerTimer = setInterval(() => {
           if (ui.screen !== "lesson" || !sp.isPlaying) {
             stopScorePlayer(false);
+            updateScoreControlsDOM();
             return;
           }
 
+          // LIVE TEMPO: recompute beatSec from current BPM on every single tick
+          const currentBpm = Math.max(20, Math.min(200, Number(sp.bpm) || 80));
+          const beatSec = 60 / currentBpm;
           const now = ctx.currentTime;
 
           // 1. Count-in phase
@@ -8839,6 +9090,15 @@
 
           const lookaheadBeatEnd = sp.playheadStartBeat + ((audioElapsed + 0.110) / beatSec);
 
+          const loopEndBeat = sp.loopEnabled
+            ? (sp.measureEndBeats[sp.loopEndBar] || sp.totalBeats)
+            : sp.totalBeats;
+
+          // Do NOT schedule notes whose startBeat is beyond the loop end
+          const maxScheduleBeat = sp.loopEnabled
+            ? Math.min(lookaheadBeatEnd, loopEndBeat - 0.0001)
+            : lookaheadBeatEnd;
+
           // Schedule Notes within lookahead window
           while (sp.nextNoteIdx < sp.notes.length) {
             const n = sp.notes[sp.nextNoteIdx];
@@ -8846,7 +9106,7 @@
               sp.nextNoteIdx++;
               continue;
             }
-            if (n.startBeat > lookaheadBeatEnd) {
+            if (n.startBeat >= maxScheduleBeat) {
               break;
             }
 
@@ -8864,7 +9124,7 @@
 
           // Schedule Metronome Click if enabled
           if (sp.clickEnabled) {
-            while (sp.nextClickBeat <= lookaheadBeatEnd) {
+            while (sp.nextClickBeat <= maxScheduleBeat) {
               if (sp.nextClickBeat >= sp.playheadStartBeat - 0.05) {
                 const clickAudioTime = sp.playbackStartAudioTime + ((sp.nextClickBeat - sp.playheadStartBeat) * beatSec);
                 const isAccent = Math.round(sp.nextClickBeat) % 4 === 0;
@@ -8911,15 +9171,13 @@
           }
 
           // Loop or Finish boundary check
-          const loopEndBeat = sp.loopEnabled
-            ? (sp.measureEndBeats[sp.loopEndBar] || sp.totalBeats)
-            : sp.totalBeats;
-
           if (currentBeat >= loopEndBeat) {
             if (sp.loopEnabled) {
               const loopStartBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+              // Set playbackStartAudioTime to the EXACT audio time of the loop end (not now)
+              const exactLoopEndTime = sp.playbackStartAudioTime + ((loopEndBeat - sp.playheadStartBeat) * beatSec);
+              sp.playbackStartAudioTime = exactLoopEndTime;
               sp.playheadStartBeat = loopStartBeat;
-              sp.playbackStartAudioTime = now;
               sp.currentBeat = loopStartBeat;
               sp.nextNoteIdx = sp.notes.findIndex((n) => n.startBeat >= loopStartBeat - 0.05);
               if (sp.nextNoteIdx === -1) sp.nextNoteIdx = 0;
@@ -8930,7 +9188,7 @@
               sp.completed = true;
               const lesson = getActivePracticeContextLesson();
               if (lesson) markLessonPracticeCompleted(lesson);
-              refreshLessonPianoMount(false);
+              updateScoreControlsDOM();
             }
           }
         }, 25);
@@ -8948,13 +9206,13 @@
           sp.schedulerTimer = null;
           sp.isPlaying = false;
           sp.isPaused = true;
-          refreshLessonPianoMount(false);
+          updateScoreControlsDOM();
           return;
         }
 
         // Start / Resume
-        const effectiveBpm = getScoreEffectiveBpm();
-        const beatSec = 60 / effectiveBpm;
+        const currentBpm = Math.max(20, Math.min(200, Number(sp.bpm) || 80));
+        const beatSec = 60 / currentBpm;
 
         let startBeat = 0;
         if (sp.isPaused && sp.currentBeat > 0) {
@@ -8989,7 +9247,7 @@
         }
 
         runScoreLookaheadScheduler();
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function stopScorePlaybackAction() {
@@ -8999,29 +9257,14 @@
         sp.currentBeat = resetBeat;
         sp.currentBar = sp.loopEnabled ? sp.loopStartBar : 1;
         advanceScoreCursorToBeat(resetBeat);
-        refreshLessonPianoMount(false);
-      }
-
-      function setScoreSpeed(speedPct) {
-        const sp = ui.scorePlayer;
-        const oldBpm = getScoreEffectiveBpm();
-        sp.speedPct = Math.max(50, Math.min(120, Number(speedPct) || 75));
-        if (sp.isPlaying) {
-          const ctx = getOrCreatePianoAudioCtx();
-          if (ctx) {
-            sp.playheadStartBeat = sp.currentBeat;
-            sp.playbackStartAudioTime = ctx.currentTime;
-            sp.nextClickBeat = Math.ceil(sp.currentBeat);
-          }
-        }
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function setScoreActiveHand(hand) {
         const sp = ui.scorePlayer;
         sp.activeHand = hand === "right" || hand === "left" ? hand : "both";
         updateScoreStavesHandDimming(sp.activeHand);
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function toggleScoreMetronomeClick() {
@@ -9030,18 +9273,19 @@
         if (sp.isPlaying) {
           sp.nextClickBeat = Math.ceil(sp.currentBeat);
         }
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function toggleScoreCountIn() {
         const sp = ui.scorePlayer;
         sp.countInEnabled = !sp.countInEnabled;
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function toggleScoreLoop() {
         const sp = ui.scorePlayer;
         sp.loopEnabled = !sp.loopEnabled;
+        sp.loopSelectingEnd = false;
         if (sp.loopEnabled) {
           if (!sp.loopStartBar || sp.loopStartBar < 1) sp.loopStartBar = 1;
           if (!sp.loopEndBar || sp.loopEndBar < sp.loopStartBar) sp.loopEndBar = Math.min(4, sp.totalMeasures || 4);
@@ -9050,13 +9294,14 @@
             advanceScoreCursorToBeat(startBeat);
           }
         }
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function stepScoreLoop(which, delta) {
         const sp = ui.scorePlayer;
         const total = sp.totalMeasures || 23;
         sp.loopEnabled = true;
+        sp.loopSelectingEnd = false;
 
         if (which === "start") {
           const nextVal = Math.max(1, Math.min(sp.loopEndBar || total, (sp.loopStartBar || 1) + delta));
@@ -9070,13 +9315,14 @@
           const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
           advanceScoreCursorToBeat(startBeat);
         }
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
       }
 
       function clearScoreLoop() {
         const sp = ui.scorePlayer;
         sp.loopEnabled = false;
-        refreshLessonPianoMount(false);
+        sp.loopSelectingEnd = false;
+        updateScoreControlsDOM();
       }
 
       function getScoreMeasureAtClientPoint(clientX, clientY) {
@@ -9093,7 +9339,6 @@
           const gMeasure = mList[0];
           const mNum = mIdx + 1;
 
-          // Check first and last note SVG elements in this measure
           if (Array.isArray(gMeasure.staffEntries) && gMeasure.staffEntries.length > 0) {
             for (const se of gMeasure.staffEntries) {
               if (se && Array.isArray(se.graphicalVoiceEntries)) {
@@ -9104,7 +9349,6 @@
                         const el = gn.getSVGGElement();
                         if (el) {
                           const rect = el.getBoundingClientRect();
-                          // Horizontal and vertical distance
                           const dx = Math.max(0, Math.max(rect.left - clientX, clientX - rect.right));
                           const dy = Math.max(0, Math.max(rect.top - clientY, clientY - rect.bottom));
                           const dist = Math.hypot(dx, dy);
@@ -9131,34 +9375,45 @@
         const total = sp.totalMeasures || 23;
         const m = Math.min(total, Math.max(1, measureNum));
 
-        if (!sp.loopEnabled) {
+        // Tap once = start, tap again = end
+        if (!sp.loopEnabled || !sp.loopSelectingEnd) {
           sp.loopStartBar = m;
           sp.loopEndBar = m;
           sp.loopEnabled = true;
-        } else if (sp.loopStartBar === sp.loopEndBar) {
-          if (m < sp.loopStartBar) {
-            sp.loopStartBar = m;
-          } else {
-            sp.loopEndBar = m;
-          }
+          sp.loopSelectingEnd = true;
         } else {
-          if (m === sp.loopStartBar || m === sp.loopEndBar) {
-            sp.loopEnabled = false;
-          } else if (m < sp.loopStartBar) {
-            sp.loopStartBar = m;
-          } else if (m > sp.loopEndBar) {
+          if (m >= sp.loopStartBar) {
             sp.loopEndBar = m;
           } else {
+            sp.loopEndBar = sp.loopStartBar;
             sp.loopStartBar = m;
-            sp.loopEndBar = m;
           }
+          sp.loopSelectingEnd = false;
         }
 
         if (!sp.isPlaying && !sp.isPaused && sp.loopEnabled) {
           const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
           advanceScoreCursorToBeat(startBeat);
         }
-        refreshLessonPianoMount(false);
+        updateScoreControlsDOM();
+      }
+
+      function applyScoreResponsiveLayout(osmd, containerWidth) {
+        if (!osmd || !osmd.rules) return;
+        const w = containerWidth || window.innerWidth;
+        if (w < 500) {
+          // Phone (~390px): 3 to 4 measures per line
+          osmd.rules.RenderXMeasuresPerLineAkaSystem = 3;
+          osmd.Zoom = 0.68;
+        } else if (w < 850) {
+          // Tablet: 4 measures per line
+          osmd.rules.RenderXMeasuresPerLineAkaSystem = 4;
+          osmd.Zoom = 0.78;
+        } else {
+          // Desktop: 5 measures per line (4–6 range)
+          osmd.rules.RenderXMeasuresPerLineAkaSystem = 5;
+          osmd.Zoom = 0.88;
+        }
       }
 
       async function maybeMountScorePlayer() {
@@ -9170,44 +9425,73 @@
         const sp = ui.scorePlayer;
         syncScorePlayerState(lesson);
 
-        // If OSMD is already rendered in this container, just ensure dimming
+        // If OSMD is already rendered in this container, just ensure dimming & controls
         if (sp.osmdReady && sp.osmdInstance && container.querySelector("svg")) {
           updateScoreStavesHandDimming(sp.activeHand);
+          updateScoreControlsDOM();
           return;
         }
 
-        // Check if OpenSheetMusicDisplay is available
+        // Check if OpenSheetMusicDisplay is available with retry window (up to 1.5s)
         const OSMDClass = window.OpenSheetMusicDisplay || window.opensheetmusicdisplay?.OpenSheetMusicDisplay;
         if (!OSMDClass) {
-          setTimeout(() => maybeMountScorePlayer(), 50);
-          return;
+          sp.osmdWaitAttempts = (sp.osmdWaitAttempts || 0) + 1;
+          if (sp.osmdWaitAttempts < 15) {
+            setTimeout(() => maybeMountScorePlayer(), 100);
+            return;
+          } else {
+            // Missing OSMD bundle -> show friendly error with Retry button instead of hanging
+            sp.loading = false;
+            sp.loadError = t("practice.scoreLoadError");
+            sp.osmdReady = false;
+            refreshLessonPianoMount(false);
+            return;
+          }
         }
+        sp.osmdWaitAttempts = 0;
 
         if (sp.loading) return;
         sp.loading = true;
 
         try {
           const filePath = lesson.practice.file || "content/scores/burgmuller-op100-01.musicxml";
-          const res = await fetch(filePath);
+
+          // 10-second fetch timeout using AbortController
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+          const res = await fetch(filePath, { signal: controller.signal });
+          clearTimeout(timeoutId);
+
           if (!res.ok) {
             throw new Error(`HTTP ${res.status}: ${res.statusText}`);
           }
           const xmlText = await res.text();
 
-          // Parse notes for Web Audio synthesis
-          const parsed = parseMusicXmlNotes(xmlText, Number(lesson.practice.tempo) || 100);
+          // ONE RULE for base tempo: lesson practice.tempo if present, else index.json tempo, else the file
+          let chosenBaseTempo = null;
+          if (lesson.practice.tempo !== undefined && lesson.practice.tempo !== null && Number(lesson.practice.tempo) > 0) {
+            chosenBaseTempo = Number(lesson.practice.tempo);
+          } else if (sp.scoreMeta && sp.scoreMeta.tempo && Number(sp.scoreMeta.tempo) > 0) {
+            chosenBaseTempo = Number(sp.scoreMeta.tempo);
+          }
+
+          const parsed = parseMusicXmlNotes(xmlText, chosenBaseTempo || 80);
           sp.notes = parsed.notes;
           sp.totalMeasures = parsed.totalMeasures;
           sp.totalBeats = parsed.totalBeats;
           sp.measureStartBeats = parsed.measureStartBeats;
           sp.measureEndBeats = parsed.measureEndBeats;
-          sp.baseTempo = parsed.baseTempo;
+          sp.baseTempo = chosenBaseTempo || parsed.baseTempo || 80;
+          if (!sp.bpm) {
+            sp.bpm = Math.round(sp.baseTempo * 0.75); // 60 BPM default
+          }
 
           container.innerHTML = "";
 
           // Instantiate OSMD
           const osmd = new OSMDClass(container, {
-            autoResize: true,
+            autoResize: false, // We control layout manually with applyScoreResponsiveLayout
             drawTitle: false,
             drawSubtitle: false,
             drawComposer: false,
@@ -9218,6 +9502,15 @@
             followCursor: true,
             drawingParameters: "compacttight"
           });
+
+          if (osmd.rules) {
+            osmd.rules.VoiceSpacingMultiplierVexflow = 0.78;
+            osmd.rules.VoiceSpacingAddendVexflow = 2.0;
+          }
+
+          // Apply responsive layout: 3-4 measures on mobile, 4-6 on desktop
+          const containerWidth = container.clientWidth || window.innerWidth;
+          applyScoreResponsiveLayout(osmd, containerWidth);
 
           await osmd.load(xmlText);
           osmd.render();
@@ -9266,7 +9559,8 @@
             if (mNum) handleScoreMeasureClick(mNum);
           };
 
-          // Re-render UI frame with live bar count
+          // Update UI frame
+          updateScoreControlsDOM();
           refreshLessonPianoMount(false);
         } catch (err) {
           console.error("Score Player load error:", err);
@@ -9291,11 +9585,17 @@
         const currentBar = sp.currentBar || 1;
         const totalBars = sp.totalMeasures || 23;
 
-        const speed = sp.speedPct || 75;
+        const currentBpm = Math.max(20, Math.min(200, Number(sp.bpm) || 80));
+        const baseTempo = Number(sp.baseTempo) || 80;
+        const bpm50 = Math.round(baseTempo * 0.5);
+        const bpm75 = Math.round(baseTempo * 0.75);
+        const bpm100 = Math.round(baseTempo * 1.0);
+
         const hand = sp.activeHand || "both";
         const loopActive = sp.loopEnabled;
         const loopFrom = sp.loopStartBar || 1;
         const loopTo = sp.loopEndBar || Math.min(4, totalBars);
+        const canStop = sp.isPlaying || sp.isPaused || sp.currentBeat > 0.05;
 
         return `
           <div id="score-lesson-mount" class="m-card score-player-card">
@@ -9367,7 +9667,7 @@
                   <button type="button" class="btn-pill ${sp.isPlaying ? "btn-surface" : "btn-primary"}" style="min-height:44px;min-width:112px;font-weight:800;font-size:0.94rem;" data-action="score-play">
                     <span>${sp.isPlaying ? "⏸ " + escapeHtml(t("practice.scorePause")) : "▶ " + escapeHtml(t("practice.scorePlay"))}</span>
                   </button>
-                  <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.88rem;" data-action="score-stop" ${!sp.isPlaying && !sp.isPaused && sp.currentBeat === 0 ? "disabled" : ""}>
+                  <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.88rem;" data-action="score-stop" ${canStop ? "" : "disabled"}>
                     <span>⏹ ${escapeHtml(t("practice.scoreStop"))}</span>
                   </button>
                 </div>
@@ -9382,15 +9682,30 @@
                 </div>
               </div>
 
-              <!-- Row 2: Speed and Hand Selection -->
+              <!-- Row 2: BPM Control & Speed Presets -->
               <div class="score-controls-row">
                 <div class="score-controls-group">
-                  <span class="score-group-label">${escapeHtml(t("practice.scoreSpeedLabel"))}:</span>
-                  <button type="button" class="vpiano-pill-btn ${speed === 50 ? "active" : ""}" data-action="score-speed" data-speed="50">50%</button>
-                  <button type="button" class="vpiano-pill-btn ${speed === 75 ? "active" : ""}" data-action="score-speed" data-speed="75">75%</button>
-                  <button type="button" class="vpiano-pill-btn ${speed === 100 ? "active" : ""}" data-action="score-speed" data-speed="100">100%</button>
+                  <span class="score-group-label">${escapeHtml(t("practice.scoreTempoLabel") || "Tempo")}:</span>
+                  <div class="score-bpm-stepper-wrap">
+                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="-1" aria-label="Decrease BPM">−</button>
+                    <div class="score-bpm-input-wrap">
+                      <input type="number" id="score-bpm-input" min="20" max="200" step="1" value="${currentBpm}" class="score-bpm-number-input" />
+                      <span class="score-bpm-unit">BPM</span>
+                    </div>
+                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="1" aria-label="Increase BPM">+</button>
+                  </div>
                 </div>
 
+                <div class="score-controls-group">
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm50 ? "active" : ""}" data-action="score-speed-preset" data-pct="50">50%</button>
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm75 ? "active" : ""}" data-action="score-speed-preset" data-pct="75">75%</button>
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm100 ? "active" : ""}" data-action="score-speed-preset" data-pct="100">100%</button>
+                  <span id="score-current-bpm-display" class="score-current-bpm-badge">♩ = ${currentBpm} BPM</span>
+                </div>
+              </div>
+
+              <!-- Row 3: Hand Isolation -->
+              <div class="score-controls-row">
                 <div class="score-controls-group">
                   <span class="score-group-label">${escapeHtml(t("practice.scoreHandsLabel"))}:</span>
                   <button type="button" class="vpiano-pill-btn ${hand === "both" ? "active" : ""}" data-action="score-hand" data-hand="both">
@@ -9405,7 +9720,7 @@
                 </div>
               </div>
 
-              <!-- Row 3: Loop Controls -->
+              <!-- Row 4: Loop Controls -->
               <div class="score-loop-row">
                 <button type="button" class="vpiano-pill-btn ${loopActive ? "active" : ""}" data-action="score-toggle-loop">
                   <span>🔁 ${escapeHtml(loopActive ? t("practice.scoreLoopOn") : t("practice.scoreLoopOff"))}</span>
@@ -9415,7 +9730,7 @@
                   <span style="font-size:0.84rem;font-weight:700;">${escapeHtml(t("practice.scoreLoopFrom"))}:</span>
                   <div class="score-bar-stepper">
                     <button type="button" class="score-stepper-btn" data-action="score-step-loop-start" data-delta="-1" ${loopFrom <= 1 ? "disabled" : ""}>−</button>
-                    <span class="score-stepper-val">${loopFrom}</span>
+                    <span class="score-stepper-val score-loop-start-val">${loopFrom}</span>
                     <button type="button" class="score-stepper-btn" data-action="score-step-loop-start" data-delta="1" ${loopFrom >= loopTo ? "disabled" : ""}>+</button>
                   </div>
                 </div>
@@ -9424,7 +9739,7 @@
                   <span style="font-size:0.84rem;font-weight:700;">${escapeHtml(t("practice.scoreLoopTo"))}:</span>
                   <div class="score-bar-stepper">
                     <button type="button" class="score-stepper-btn" data-action="score-step-loop-end" data-delta="-1" ${loopTo <= loopFrom ? "disabled" : ""}>−</button>
-                    <span class="score-stepper-val">${loopTo}</span>
+                    <span class="score-stepper-val score-loop-end-val">${loopTo}</span>
                     <button type="button" class="score-stepper-btn" data-action="score-step-loop-end" data-delta="1" ${loopTo >= totalBars ? "disabled" : ""}>+</button>
                   </div>
                 </div>
@@ -12129,9 +12444,16 @@
             stopScorePlaybackAction();
             break;
 
-          case "score-speed": {
-            const spd = btn.getAttribute("data-speed");
-            setScoreSpeed(spd);
+          case "score-bpm-step": {
+            if (Date.now() - lastBpmStepTime < 120) break;
+            const delta = Number(btn.getAttribute("data-delta")) || 0;
+            changeScoreBpm(delta);
+            break;
+          }
+
+          case "score-speed-preset": {
+            const pct = Number(btn.getAttribute("data-pct")) || 75;
+            setScorePresetSpeed(pct);
             break;
           }
 
@@ -12467,6 +12789,19 @@
         }
       });
 
+      // Score BPM stepper pointer press-and-hold listener with acceleration
+      document.addEventListener("pointerdown", (e) => {
+        const btn = e.target.closest("[data-action='score-bpm-step']");
+        if (!btn) return;
+        const delta = Number(btn.getAttribute("data-delta")) || 0;
+        if (!delta) return;
+        e.preventDefault();
+        startBpmHold(delta);
+      });
+
+      window.addEventListener("pointerup", clearBpmHold);
+      window.addEventListener("pointercancel", clearBpmHold);
+
       /* ==========================================================================
          VIRTUAL PIANO MULTI-TOUCH, MOUSE, MINI-MAP & COMPUTER KEYBOARD LISTENERS
          ========================================================================== */
@@ -12635,8 +12970,11 @@
 
       function handleScoreResize() {
         const sp = ui.scorePlayer;
-        if (sp && sp.osmdInstance && document.getElementById("score-render-area")) {
+        const container = document.getElementById("score-render-area");
+        if (sp && sp.osmdInstance && container) {
           try {
+            const containerWidth = container.clientWidth || window.innerWidth;
+            applyScoreResponsiveLayout(sp.osmdInstance, containerWidth);
             sp.osmdInstance.render();
             advanceScoreCursorToBeat(sp.currentBeat || 0);
             updateScoreStavesHandDimming(sp.activeHand);
@@ -12711,6 +13049,12 @@
       });
 
       document.addEventListener("change", (e) => {
+        if (e.target.id === "score-bpm-input") {
+          const val = Number(e.target.value);
+          const clamped = Math.max(20, Math.min(200, Number.isFinite(val) ? val : 80));
+          setScoreBpm(clamped, true);
+          return;
+        }
         const sel = e.target.closest("[data-action='profile-select']");
         if (!sel) return;
         const field = sel.getAttribute("data-field");
@@ -12733,7 +13077,12 @@
       });
 
       document.addEventListener("input", (e) => {
-        if (e.target.id === "library-search-input") {
+        if (e.target.id === "score-bpm-input") {
+          const val = Number(e.target.value);
+          if (Number.isFinite(val) && val >= 20 && val <= 200) {
+            setScoreBpm(val, false);
+          }
+        } else if (e.target.id === "library-search-input") {
           ui.librarySearch = e.target.value;
           render();
           const inp = document.getElementById("library-search-input");
