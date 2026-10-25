@@ -2,6 +2,8 @@
   {
     "id": "piano",
     "order": 1,
+    "group": "instruments",
+    "visible": true,
     "icon": "piano",
     "status": "ready",
     "review": "self",
@@ -20,6 +22,8 @@
   {
     "id": "rhythm",
     "order": 2,
+    "group": "skills",
+    "visible": false,
     "icon": "drum",
     "status": "coming-soon",
     "review": "self",
@@ -38,6 +42,8 @@
   {
     "id": "ear",
     "order": 3,
+    "group": "skills",
+    "visible": false,
     "icon": "ear",
     "status": "coming-soon",
     "review": "self",
@@ -56,6 +62,8 @@
   {
     "id": "voice",
     "order": 4,
+    "group": "instruments",
+    "visible": false,
     "icon": "voice",
     "status": "coming-soon",
     "review": "self",
@@ -74,6 +82,8 @@
   {
     "id": "guitar",
     "order": 5,
+    "group": "instruments",
+    "visible": false,
     "icon": "guitar",
     "status": "coming-soon",
     "review": "self",
@@ -92,6 +102,8 @@
   {
     "id": "setar",
     "order": 6,
+    "group": "instruments",
+    "visible": false,
     "icon": "setar",
     "status": "coming-soon",
     "review": "teacher",
@@ -110,6 +122,8 @@
   {
     "id": "tar",
     "order": 7,
+    "group": "instruments",
+    "visible": false,
     "icon": "tar",
     "status": "coming-soon",
     "review": "teacher",
@@ -128,6 +142,8 @@
   {
     "id": "violin",
     "order": 8,
+    "group": "instruments",
+    "visible": false,
     "icon": "violin",
     "status": "coming-soon",
     "review": "teacher",
@@ -146,6 +162,8 @@
   {
     "id": "santur",
     "order": 9,
+    "group": "instruments",
+    "visible": false,
     "icon": "santur",
     "status": "coming-soon",
     "review": "teacher",
