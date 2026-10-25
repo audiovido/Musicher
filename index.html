@@ -3158,6 +3158,15 @@
         box-shadow: 0 -4px 20px rgba(31, 26, 46, 0.16);
       }
 
+
+      /* Score controls: stay reachable while scrolling */
+      html, body { overflow-x: clip !important; }
+      .mobile-shell { overflow: clip !important; }
+      .score-controls-panel { gap: 8px; padding: 10px 14px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); bottom: calc(var(--bottom-nav-height, 68px) + env(safe-area-inset-bottom, 0px)); max-height: 60vh; overflow-y: auto; }
+      @media (min-width: 1100px) { .score-controls-panel { bottom: 0; } }
+      .score-controls-more { display: flex; flex-direction: column; gap: 10px; }
+      .score-controls-more[hidden] { display: none; }
+      .score-more-btn { min-height: 44px; }
       .score-controls-row {
         display: flex;
         align-items: center;
@@ -3744,6 +3753,7 @@
           nextClickBeat: 0,
           completed: false,
           followEnabled: true,
+          moreOpen: false,
           followSuspended: false,
           followResumeTimer: null,
           lastFollowedMeasure: 0
@@ -9759,6 +9769,30 @@
                   </button>
                 </div>
 
+                <div class="score-controls-group score-primary-tempo">
+                  <div class="score-bpm-stepper-wrap">
+                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="-1" aria-label="Decrease BPM">−</button>
+                    <div class="score-bpm-input-wrap">
+                      <input type="number" id="score-bpm-input" min="20" max="200" step="1" value="${currentBpm}" class="score-bpm-number-input" />
+                      <span class="score-bpm-unit">BPM</span>
+                    </div>
+                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="1" aria-label="Increase BPM">+</button>
+                  </div>
+                </div>
+                <button type="button" class="vpiano-pill-btn score-more-btn ${sp.moreOpen ? "active" : ""}" data-action="score-toggle-more" aria-expanded="${sp.moreOpen ? "true" : "false"}">
+                  <span>${sp.moreOpen ? "▾" : "▸"} ${escapeHtml(t("practice.scoreMoreToggle") || "More")}</span>
+                </button>
+              </div>
+
+              <div class="score-controls-more" ${sp.moreOpen ? "" : "hidden"}>
+              <!-- Row 2: Speed presets + options -->
+              <div class="score-controls-row">
+                <div class="score-controls-group">
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm50 ? "active" : ""}" data-action="score-speed-preset" data-pct="50">50%</button>
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm75 ? "active" : ""}" data-action="score-speed-preset" data-pct="75">75%</button>
+                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm100 ? "active" : ""}" data-action="score-speed-preset" data-pct="100">100%</button>
+                  <span id="score-current-bpm-display" class="score-current-bpm-badge">♩ = ${currentBpm} BPM</span>
+                </div>
                 <div class="score-controls-group">
                   <button type="button" class="vpiano-pill-btn ${sp.clickEnabled ? "active" : ""}" data-action="score-toggle-click">
                     <span>🔔 ${escapeHtml(sp.clickEnabled ? t("practice.scoreClickOn") : t("practice.scoreClickOff"))}</span>
@@ -9769,28 +9803,6 @@
                   <button type="button" class="vpiano-pill-btn ${sp.followEnabled ? "active" : ""}" data-action="score-toggle-follow">
                     <span>👁️ ${escapeHtml(t("practice.scoreFollowToggle") || "Follow")}</span>
                   </button>
-                </div>
-              </div>
-
-              <!-- Row 2: BPM Control & Speed Presets -->
-              <div class="score-controls-row">
-                <div class="score-controls-group">
-                  <span class="score-group-label">${escapeHtml(t("practice.scoreTempoLabel") || "Tempo")}:</span>
-                  <div class="score-bpm-stepper-wrap">
-                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="-1" aria-label="Decrease BPM">−</button>
-                    <div class="score-bpm-input-wrap">
-                      <input type="number" id="score-bpm-input" min="20" max="200" step="1" value="${currentBpm}" class="score-bpm-number-input" />
-                      <span class="score-bpm-unit">BPM</span>
-                    </div>
-                    <button type="button" class="score-bpm-btn" data-action="score-bpm-step" data-delta="1" aria-label="Increase BPM">+</button>
-                  </div>
-                </div>
-
-                <div class="score-controls-group">
-                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm50 ? "active" : ""}" data-action="score-speed-preset" data-pct="50">50%</button>
-                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm75 ? "active" : ""}" data-action="score-speed-preset" data-pct="75">75%</button>
-                  <button type="button" class="vpiano-pill-btn ${currentBpm === bpm100 ? "active" : ""}" data-action="score-speed-preset" data-pct="100">100%</button>
-                  <span id="score-current-bpm-display" class="score-current-bpm-badge">♩ = ${currentBpm} BPM</span>
                 </div>
               </div>
 
@@ -9842,6 +9854,7 @@
                     : ""
                 }
               </div>
+              </div><!-- /score-controls-more -->
             </div>
           </div>
         `;
@@ -12563,6 +12576,19 @@
 
           case "score-toggle-follow":
             toggleScoreFollow();
+            break;
+
+          case "score-toggle-more":
+            ui.scorePlayer.moreOpen = !ui.scorePlayer.moreOpen;
+            {
+              const moreOpen = ui.scorePlayer.moreOpen;
+              const panelMore = document.querySelector(".score-controls-more");
+              if (panelMore) panelMore.hidden = !moreOpen;
+              btn.classList.toggle("active", moreOpen);
+              btn.setAttribute("aria-expanded", moreOpen ? "true" : "false");
+              const lbl = btn.querySelector("span");
+              if (lbl) lbl.textContent = (moreOpen ? "▾ " : "▸ ") + (t("practice.scoreMoreToggle") || "More");
+            }
             break;
 
           case "score-toggle-loop":
