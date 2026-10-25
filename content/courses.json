@@ -7,7 +7,7 @@
     "icon": "piano",
     "status": "ready",
     "review": "self",
-    "lessonCount": 36,
+    "lessonCount": 37,
     "lessonsDir": "content/lessons",
     "coverImage": "assets/course-piano.jpeg",
     "title": {
@@ -15,8 +15,8 @@
       "fa": "پیانو و کیبورد"
     },
     "subtitle": {
-      "en": "9 chapters · 36 lessons",
-      "fa": "۹ فصل · ۳۶ درس"
+      "en": "10 chapters · 37 lessons",
+      "fa": "۱۰ فصل · ۳۷ درس"
     }
   },
   {

@@ -1,0 +1,125 @@
+{
+  "id": 37,
+  "chapter": {
+    "en": "Test",
+    "fa": "آزمایشی"
+  },
+  "title": {
+    "en": "Burgmüller – La Candeur (test)",
+    "fa": "بورگمولر – صداقت (آزمایشی)"
+  },
+  "minutes": 5,
+  "goal": {
+    "en": "Listen to and follow the full sheet music for Burgmüller's 'La Candeur' (Op. 100 No. 1) with real-time score cursor, tempo control, and hand isolation.",
+    "fa": "نت‌خوانی و شنیدن قطعه‌ی دلنشین «صداقت» اثر بورگمولر (اپوس ۱۰۰ شماره ۱) رو با دنبال کردن خط نت در زمان واقعی، کنترل سرعت و جداسازی دست‌ها تجربه می‌کنی."
+  },
+  "see": {
+    "en": "Johann Friedrich Franz Burgmüller (1806–1874) composed 25 Easy and Progressive Studies (Op. 100) to help pianists build graceful phrasing, steady pulse, and clear touch. 'La Candeur' (Sincerity / Candor) is the very first study in C major. Notice how the right hand weaves a flowing melody of descending eighth notes (G5–E5–D5–C5) while the left hand supports it with warm, sustained chords (C3–E3–G3). With this interactive score player, you can adjust the speed (50%, 75%, 100%), isolate either the right hand or left hand, set loop points between any measures, and turn on the metronome click to hear how both staves fit together perfectly.",
+    "fa": "یوهان فریدریش فرانتس بورگمولر (۱۸۰۶–۱۸۷۴) مجموعه‌ی ۲۵ اتود آسان و پیشرونده (اپوس ۱۰۰) رو برای تسلط بر موزیکالیته، ریتم یکدست و نرمی لمس کلاویه‌ها نوشت. «صداقت» (La Candeur) اولین اتود این مجموعه در گام دو ماژور هست. دست راست با حرکت‌های روانِ چنگ (سل–می–ر–دو) ملودی رو به پرواز درمیاره و دست چپ با آکوردهای کشیده و گرم (C3–E3–G3) پایه‌ریزی می‌کنه. با این نت‌خوان تعاملی می‌تونی سرعت رو تغییر بدی (۵۰٪، ۷۵٪، ۱۰۰٪)، فقط دست راست یا فقط دست چپ رو تمرین کنی، روی میزان‌های دلخواه حلقه (لوپ) بذاری و با مترونوم ضرب رو دنبال کنی."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Review the Grand Staff layout: the upper staff (treble clef) contains the right-hand melody, and the lower staff (bass clef) contains the left-hand chords.",
+      "Press Play to watch the cursor glide across each measure as the notes sound in real time.",
+      "Try switching the Hands setting to 'Right only' or 'Left only' to focus on each part separately, or select a measure loop (e.g. Bars 1–4) to practice a phrase."
+    ],
+    "fa": [
+      "چیدمان حامل بزرگ رو نگاه کن: حامل بالایی (کلید سل) ملودی دست راست و حامل پایینی (کلید فا) آکوردهای دست چپ رو نشون می‌ده.",
+      "دکمه‌ی پخش رو بزن تا حرکت هم‌زمان خط نت رو هم‌گام با صدای هر نت در زمان واقعی ببینی و بشنوی.",
+      "گزینه‌ی دست‌ها رو روی «فقط دست راست» یا «فقط دست چپ» بذار تا هر بخش رو جداگانه گوش بدی، یا یک حلقه‌ی میزانی (مثلاً میزان‌های ۱ تا ۴) انتخاب کن."
+    ]
+  },
+  "practice": {
+    "type": "score",
+    "file": "content/scores/burgmuller-op100-01.musicxml",
+    "scoreId": "burgmuller-op100-01",
+    "tempo": 100,
+    "verified": false
+  },
+  "selfCheck": {
+    "en": [
+      "Did I follow the cursor across the Grand Staff as the right hand and left hand played together?",
+      "Did I test changing the speed to 50% and 75% to hear the notes with extra clarity?"
+    ],
+    "fa": [
+      "آیا تونستم حرکت خط نت رو روی حامل بزرگ همراه با صدای دست راست و چپ دنبال کنم؟",
+      "آیا سرعت‌های ۵۰٪ و ۷۵٪ رو برای شنیدن دقیق‌تر و شفاف‌تر نت‌ها امتحان کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "In Burgmüller's 'La Candeur' (Op. 100 No. 1), which clef and staff does the right-hand melody use?",
+        "fa": "در اتود «صداقت» اثر بورگمولر (اپوس ۱۰۰ شماره ۱)، ملودی دست راست روی کدوم کلید و حامل نوشته شده؟"
+      },
+      "options": {
+        "en": [
+          "Treble clef (G clef) on the upper staff",
+          "Bass clef (F clef) on the lower staff",
+          "Alto clef in the center"
+        ],
+        "fa": [
+          "کلید سل (Treble) روی حامل بالایی",
+          "کلید فا (Bass) روی حامل پایینی",
+          "کلید دو (Alto) در وسط"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! The right hand plays in the treble clef on the upper staff, beginning with G5 and descending gracefully to C5.",
+        "fa": "دقیقاً! دست راست روی حامل بالایی با کلید سل قرار داره و با نت‌های روانِ چنگ ملودی رو پیش می‌بره."
+      },
+      "feedbackWrong": {
+        "en": "Look at the clef at the start of Part 1: the treble clef (G clef) on top is for the right hand, while the bass clef below is for the left hand.",
+        "fa": "به شروع حامل بالایی نگاه کن: کلید سل برای ملودی دست راست اختصاص داده شده و حامل پایینی با کلید فا برای آکوردهای دست چپه."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the key signature of 'La Candeur'?",
+        "fa": "سرکلید و گام اصلی قطعه‌ی «صداقت» بورگمولر چیه؟"
+      },
+      "options": {
+        "en": [
+          "C major (no sharps or flats)",
+          "F# major (six sharps)",
+          "Eb minor (six flats)"
+        ],
+        "fa": [
+          "دو ماژور (بدون هیچ دیز یا بمل)",
+          "فا دیز ماژور (شش دیز)",
+          "می بمل مینور (شش بمل)"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! There are no sharps or flats in the key signature, and the piece begins and ends with bright C major harmony.",
+        "fa": "آفرین! هیچ علامتی در سرکلید نیست و قطعه با آکورد و ملودی شفاف دو ماژور (C major) شروع می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Notice that neither staff has any accidentals at the key signature—that indicates natural C major.",
+        "fa": "به ابتدای پنج خط حامل نگاه کن: هیچ دیز یا بملی در سرکلید نیست، یعنی در گام دو ماژور طبیعی هستیم."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You explored interactive sheet music playback for Burgmüller's 'La Candeur' (Op. 100 No. 1) with real-time cursor tracking, tempo adjustments, and hand isolation!",
+    "fa": "نت‌خوانی و شنیدن تعاملی قطعه‌ی «صداقت» بورگمولر (اپوس ۱۰۰ شماره ۱) رو با حرکت پیوسته‌ی خط نت، تنظیم سرعت و تفکیک دست‌ها با موفقیت تجربه کردی!"
+  },
+  "tomorrow": {
+    "en": "Revisit any section using loop mode, or explore other practice tools in your Library!",
+    "fa": "می‌تونی هر میزان رو با ابزار لوپ تکرار کنی یا ابزارهای تمرینی متنوع کتابخانه رو کشف کنی!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content · melody: J. F. F. Burgmüller, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: یوهان فردریش بورگمولر، مالکیت عمومی"
+    },
+    "license": {
+      "en": "Original MUSICHER content · melody: J. F. F. Burgmüller, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: یوهان فردریش بورگمولر، مالکیت عمومی"
+    }
+  }
+}

@@ -1209,6 +1209,31 @@
     }
   },
   {
+    "id": "burgmuller_hand_coordination",
+    "courseId": "piano",
+    "lessonId": 37,
+    "keywords": [
+      "بورگمولر",
+      "صداقت",
+      "نت‌خوانی بورگمولر",
+      "هماهنگی دستها در نت",
+      "خط نت گم میشه",
+      "burgmuller",
+      "la candeur",
+      "score reading",
+      "hand coordination score",
+      "cursor too fast"
+    ],
+    "cause": {
+      "en": "Trying to read both staves at full speed before getting familiar with the right-hand melody shape.",
+      "fa": "تلاش برای خواندن هم‌زمان هر دو حامل با سرعت کامل، قبل از آشنا شدن با شکل ملودی دست راست."
+    },
+    "fix": {
+      "en": "Select 'Right only' and reduce the speed to 50% or 75% first, then use Loop on Bars 1–4 to master the phrase before playing both hands together.",
+      "fa": "ابتدا دست‌ها را روی «فقط دست راست» بگذار و سرعت را به ۵۰٪ یا ۷۵٪ کاهش بده؛ سپس با تکرار میزان‌های ۱ تا ۴ جمله را در ذهن جا بینداز و بعد هر دو دست را بشنو."
+    }
+  },
+  {
     "id": "bored",
     "keywords": [
       "حوصلهم سر رفت",

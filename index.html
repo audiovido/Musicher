@@ -9,6 +9,7 @@
     <meta property="og:description" content="Learn music from scratch, a few minutes a day, with an always-there practice advisor." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="module" src="/src/score-bundle.ts"></script>
     <style>
       /* ==========================================================================
          MUSICHER — BRAND DESIGN TOKENS & TYPOGRAPHY
@@ -3019,6 +3020,268 @@
         gap: 10px;
         margin-top: 10px;
       }
+
+      /* ==========================================================================
+         SHEET-MUSIC PLAYER (OpenSheetMusicDisplay + Web Audio Lookahead Engine)
+         ========================================================================== */
+      .score-player-card {
+        background-color: #FFFFFF;
+        border: 2px solid var(--border-color);
+        border-radius: var(--card-radius);
+        box-shadow: var(--card-shadow);
+        padding: 20px 22px;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        color: #1F1A2E;
+      }
+
+      .score-header-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-bottom: 14px;
+        border-bottom: 1.5px solid rgba(31, 26, 46, 0.12);
+        margin-bottom: 16px;
+      }
+
+      .score-meta-block {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 220px;
+        flex: 1 1 auto;
+      }
+
+      .score-title-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .score-piece-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1F1A2E;
+        line-height: 1.25;
+      }
+
+      .score-badge-unverified {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 0.74rem;
+        font-weight: 700;
+        background-color: var(--surface);
+        border: 1.2px solid rgba(31, 26, 46, 0.22);
+        color: var(--muted);
+      }
+
+      .score-piece-sub {
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .score-license-line {
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--muted);
+        opacity: 0.85;
+      }
+
+      .score-viewport-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        background-color: #FFFFFF;
+        border-radius: 14px;
+        border: 1.5px solid rgba(31, 26, 46, 0.16);
+        overflow: hidden;
+        margin-bottom: 18px;
+        box-sizing: border-box;
+      }
+
+      .score-canvas-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        min-height: 240px;
+        padding: 14px 8px;
+        background-color: #FFFFFF;
+        direction: ltr !important;
+        text-align: left !important;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: crosshair;
+      }
+
+      .score-canvas-container svg {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto;
+      }
+
+      .score-loading-overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 48px 16px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .score-controls-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        background-color: var(--bg);
+        border: 1.5px solid rgba(31, 26, 46, 0.15);
+        border-radius: 16px;
+      }
+
+      .score-controls-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .score-controls-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .score-group-label {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-inline-end: 2px;
+      }
+
+      html[lang="fa"] .score-group-label {
+        letter-spacing: 0;
+        font-size: 0.86rem;
+      }
+
+      .score-bar-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background-color: var(--surface);
+        border: 1.5px solid #1F1A2E;
+        font-weight: 800;
+        font-size: 0.84rem;
+        color: #1F1A2E;
+        direction: ltr;
+      }
+
+      .score-countin-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background-color: rgba(242, 179, 61, 0.25);
+        border: 1.5px solid #1F1A2E;
+        font-weight: 800;
+        font-size: 0.92rem;
+        color: #1F1A2E;
+      }
+
+      .score-loop-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 14px;
+        background-color: var(--surface);
+        border: 1.2px solid rgba(31, 26, 46, 0.16);
+        border-radius: 12px;
+      }
+
+      .score-bar-stepper {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        border-radius: 999px;
+        border: 1.2px solid #1F1A2E;
+        background-color: #FBF7F0;
+        padding: 2px 6px;
+      }
+
+      .score-stepper-btn {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #1F1A2E;
+        background-color: #F2ECE2;
+        color: #1F1A2E;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 120ms ease;
+      }
+
+      .score-stepper-btn:hover {
+        background-color: #F2B33D;
+      }
+
+      .score-stepper-val {
+        min-width: 26px;
+        text-align: center;
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: #1F1A2E;
+        direction: ltr;
+      }
+
+      .score-footer-tip {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.4;
+        margin-top: 2px;
+      }
+
+      @media (max-width: 767px) {
+        .score-player-card {
+          padding: 14px 12px;
+        }
+        .score-piece-title {
+          font-size: 1.1rem;
+        }
+        .score-controls-panel {
+          padding: 12px 10px;
+          gap: 10px;
+        }
+        .score-canvas-container {
+          padding: 10px 4px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -3058,13 +3321,13 @@
           icon: "piano",
           status: "ready",
           review: "self",
-          lessonCount: 36,
+          lessonCount: 37,
           lessonsDir: "content/lessons",
           coverImage: "assets/course-piano.jpeg",
           title: { en: "Piano & Keyboard", fa: "پیانو و کیبورد" },
           subtitle: {
-            en: "9 chapters · 36 lessons",
-            fa: "۹ فصل · ۳۶ درس"
+            en: "10 chapters · 37 lessons",
+            fa: "۱۰ فصل · ۳۷ درس"
           }
         },
         {
@@ -3351,6 +3614,42 @@
           santurIdx: 0,
           santurHint: "",
           santurDone: false
+        },
+        scorePlayer: {
+          lessonKey: null,
+          file: null,
+          scoreMeta: null,
+          osmdInstance: null,
+          osmdReady: false,
+          loading: false,
+          loadError: null,
+          notes: [],
+          cursorSteps: [],
+          totalMeasures: 1,
+          measureStartBeats: {},
+          measureEndBeats: {},
+          baseTempo: 100,
+          speedPct: 75,
+          activeHand: "both",
+          isPlaying: false,
+          isPaused: false,
+          currentBeat: 0,
+          currentBar: 1,
+          currentCursorStep: 0,
+          clickEnabled: false,
+          countInEnabled: false,
+          countInPhase: false,
+          countInBeat: 0,
+          countInTotal: 4,
+          loopEnabled: false,
+          loopStartBar: 1,
+          loopEndBar: 4,
+          schedulerTimer: null,
+          playbackStartAudioTime: 0,
+          playheadStartBeat: 0,
+          nextNoteIdx: 0,
+          nextClickBeat: 0,
+          completed: false
         }
       };
 
@@ -5331,15 +5630,15 @@
         }
       }
 
-      function playPianoNoteSound(noteName, durationSec = 1.35) {
+      function playPianoNoteSound(noteName, durationSec = 1.35, whenTime = null) {
         try {
           unlockPianoAudio();
           const ctx = getOrCreatePianoAudioCtx();
           if (!ctx) return;
           const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
           const midi = keyMeta ? keyMeta.midi : 60;
-          const freq = 440 * Math.pow(2, (midi - 69) / 12);
-          const now = ctx.currentTime;
+          const freq = keyMeta ? (440 * Math.pow(2, (midi - 69) / 12)) : noteToFreq(noteName);
+          const now = typeof whenTime === "number" ? Math.max(ctx.currentTime, whenTime) : ctx.currentTime;
 
           const masterGain = ctx.createGain();
           masterGain.gain.setValueAtTime(0.0001, now);
@@ -5440,6 +5739,9 @@
         }
         ui.metronomeRunning = false;
         ui.metronomeBeatIdx = -1;
+        if (typeof stopScorePlayer === "function") {
+          stopScorePlayer(false);
+        }
       }
 
       const stopAllMultiPracticeTimers = stopMultiPracticeTimers;
@@ -8102,10 +8404,1050 @@
         `;
       }
 
+      /* ==========================================================================
+         SHEET-MUSIC PLAYER ENGINE (OpenSheetMusicDisplay + Web Audio Scheduler)
+         Features:
+         - OpenSheetMusicDisplay rendering (pure SVG, responsive, auto-wrap)
+         - Multi-part & 2-staff piano grand staff support
+         - Web Audio lookahead scheduler on AudioContext clock (no setTimeout audio drift)
+         - High-precision cursor synchronization & auto-scroll
+         - Speed control: 50%, 75% (default), 100% (tempo only, never alters pitch)
+         - Hand isolation: Both / Right only / Left only (audio muting & visual staff dimming)
+         - Gapless measure looping (tap on measure in score, or stepper buttons)
+         - Metronome click & 1-bar count-in
+         - LTR sheet music rendering within RTL Persian UI
+         ========================================================================== */
+      let SCORES_CATALOG = [
+        {
+          id: "burgmuller-op100-01",
+          file: "burgmuller-op100-01.musicxml",
+          title: { en: "La Candeur", fa: "صراحت" },
+          composer: "J. F. F. Burgmüller",
+          work: "25 Easy and Progressive Studies, Op.100 No.1",
+          level: 1,
+          tempo: 112,
+          source: "Mutopia Project",
+          license: "Public Domain",
+          verified: false
+        }
+      ];
+
+      function getScoreMeta(scoreIdOrFile) {
+        if (!scoreIdOrFile) return null;
+        const clean = String(scoreIdOrFile).toLowerCase();
+        for (const item of SCORES_CATALOG) {
+          if (
+            item.id.toLowerCase() === clean ||
+            item.file.toLowerCase() === clean ||
+            ("content/scores/" + item.file.toLowerCase()) === clean ||
+            clean.includes(item.id.toLowerCase()) ||
+            clean.includes("burgmuller")
+          ) {
+            return item;
+          }
+        }
+        return SCORES_CATALOG[0];
+      }
+
+      function parseMusicXmlNotes(xmlText, defaultTempo = 100) {
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(xmlText, "application/xml");
+          const parseError = doc.querySelector("parsererror");
+          if (parseError) {
+            console.warn("MusicXML parse error:", parseError.textContent);
+            return {
+              notes: [],
+              totalMeasures: 1,
+              totalBeats: 4,
+              measureStartBeats: { 1: 0 },
+              measureEndBeats: { 1: 4 },
+              baseTempo: defaultTempo
+            };
+          }
+
+          let scoreTempo = defaultTempo;
+          const soundTempo = doc.querySelector("sound[tempo]");
+          if (soundTempo && soundTempo.getAttribute("tempo")) {
+            const parsed = parseFloat(soundTempo.getAttribute("tempo"));
+            if (Number.isFinite(parsed) && parsed > 20 && parsed < 320) scoreTempo = parsed;
+          } else {
+            const perMin = doc.querySelector("metronome per-minute");
+            if (perMin && perMin.textContent) {
+              const parsed = parseFloat(perMin.textContent.trim());
+              if (Number.isFinite(parsed) && parsed > 20 && parsed < 320) scoreTempo = parsed;
+            }
+          }
+
+          const parts = Array.from(doc.querySelectorAll("part"));
+          const multiPart = parts.length > 1;
+
+          const measureNumbers = [];
+          const measureStartBeats = {};
+          const measureEndBeats = {};
+          let cumBeat = 0;
+          let currentBeats = 4;
+          let currentBeatType = 4;
+
+          const primaryPart = parts[0] || doc;
+          const primaryMeasures = Array.from(primaryPart.querySelectorAll("measure"));
+          primaryMeasures.forEach((mEl, idx) => {
+            const mNum = parseInt(mEl.getAttribute("number") || String(idx + 1), 10);
+            measureNumbers.push(mNum);
+
+            const bEl = mEl.querySelector("attributes time beats");
+            const btEl = mEl.querySelector("attributes time beat-type");
+            if (bEl && btEl) {
+              const b = parseFloat(bEl.textContent.trim());
+              const bt = parseFloat(btEl.textContent.trim());
+              if (b > 0 && bt > 0) {
+                currentBeats = b;
+                currentBeatType = bt;
+              }
+            }
+
+            const mLenBeats = (currentBeats / currentBeatType) * 4;
+            measureStartBeats[mNum] = cumBeat;
+            cumBeat += mLenBeats;
+            measureEndBeats[mNum] = cumBeat;
+          });
+
+          const totalMeasures = measureNumbers.length > 0 ? Math.max(...measureNumbers) : 1;
+          const totalBeats = cumBeat > 0 ? cumBeat : totalMeasures * 4;
+
+          const allNotes = [];
+
+          parts.forEach((partEl, partIdx) => {
+            const defaultHand = multiPart ? (partIdx === 0 ? "right" : partIdx === 1 ? "left" : "both") : "both";
+            const pMeasures = Array.from(partEl.querySelectorAll("measure"));
+            let divisions = 1;
+
+            pMeasures.forEach((mEl, mIdx) => {
+              const mNum = parseInt(mEl.getAttribute("number") || String(mIdx + 1), 10);
+              const mStartBeat = measureStartBeats[mNum] !== undefined ? measureStartBeats[mNum] : mIdx * 4;
+
+              const divEl = mEl.querySelector("attributes divisions");
+              if (divEl && parseFloat(divEl.textContent.trim()) > 0) {
+                divisions = parseFloat(divEl.textContent.trim());
+              }
+
+              const voiceBeatCursor = {};
+              let lastNonChordBeat = 0;
+
+              const children = Array.from(mEl.children);
+              children.forEach((child) => {
+                if (child.tagName === "attributes") {
+                  const d = child.querySelector("divisions");
+                  if (d && parseFloat(d.textContent.trim()) > 0) {
+                    divisions = parseFloat(d.textContent.trim());
+                  }
+                } else if (child.tagName === "note") {
+                  const isRest = child.querySelector("rest") !== null;
+                  const isChord = child.querySelector("chord") !== null;
+                  const voiceEl = child.querySelector("voice");
+                  const voiceId = voiceEl ? voiceEl.textContent.trim() : "1";
+
+                  const staffEl = child.querySelector("staff");
+                  let hand = defaultHand;
+                  if (!multiPart && staffEl) {
+                    const sNum = staffEl.textContent.trim();
+                    if (sNum === "1") hand = "right";
+                    else if (sNum === "2") hand = "left";
+                  }
+
+                  const durEl = child.querySelector("duration");
+                  const durVal = durEl ? parseFloat(durEl.textContent.trim()) || 0 : 0;
+                  const durationBeats = divisions > 0 ? durVal / divisions : 1;
+
+                  if (voiceBeatCursor[voiceId] === undefined) {
+                    voiceBeatCursor[voiceId] = 0;
+                  }
+
+                  let noteBeatInMeasure;
+                  if (isChord) {
+                    noteBeatInMeasure = lastNonChordBeat;
+                  } else {
+                    noteBeatInMeasure = voiceBeatCursor[voiceId];
+                    lastNonChordBeat = noteBeatInMeasure;
+                    voiceBeatCursor[voiceId] += durationBeats;
+                  }
+
+                  if (!isRest) {
+                    const pitchEl = child.querySelector("pitch");
+                    if (pitchEl) {
+                      const step = pitchEl.querySelector("step")?.textContent.trim() || "C";
+                      const alter = parseFloat(pitchEl.querySelector("alter")?.textContent.trim() || "0");
+                      const octave = pitchEl.querySelector("octave")?.textContent.trim() || "4";
+
+                      let accidental = "";
+                      if (alter === 1) accidental = "#";
+                      else if (alter === -1) accidental = "b";
+                      else if (alter === 2) accidental = "##";
+                      else if (alter === -2) accidental = "bb";
+
+                      const pitchName = `${step.toUpperCase()}${accidental}${octave}`;
+                      const tieStop = child.querySelector("tie[type='stop'], tied[type='stop']");
+                      const tieStart = child.querySelector("tie[type='start'], tied[type='start']");
+
+                      allNotes.push({
+                        pitch: pitchName,
+                        step: step.toUpperCase(),
+                        octave: parseInt(octave, 10),
+                        alter,
+                        startBeat: mStartBeat + noteBeatInMeasure,
+                        durationBeats: Math.max(0.2, durationBeats),
+                        measure: mNum,
+                        hand,
+                        tieStop: !!tieStop,
+                        tieStart: !!tieStart
+                      });
+                    }
+                  }
+                }
+              });
+            });
+          });
+
+          // Sort chronologically
+          allNotes.sort((a, b) => a.startBeat - b.startBeat);
+
+          // Handle tie continuations
+          for (let i = 0; i < allNotes.length; i++) {
+            const note = allNotes[i];
+            if (note.tieStop) {
+              for (let j = i - 1; j >= 0; j--) {
+                const prev = allNotes[j];
+                if (
+                  prev.pitch === note.pitch &&
+                  prev.hand === note.hand &&
+                  Math.abs((prev.startBeat + prev.durationBeats) - note.startBeat) < 0.08
+                ) {
+                  prev.durationBeats += note.durationBeats;
+                  note.isTiedContinuation = true;
+                  break;
+                }
+              }
+            }
+          }
+
+          const playableNotes = allNotes.filter((n) => !n.isTiedContinuation);
+
+          return {
+            notes: playableNotes,
+            totalMeasures,
+            totalBeats,
+            measureStartBeats,
+            measureEndBeats,
+            baseTempo: scoreTempo
+          };
+        } catch (err) {
+          console.error("Failed to parse MusicXML:", err);
+          return {
+            notes: [],
+            totalMeasures: 1,
+            totalBeats: 4,
+            measureStartBeats: { 1: 0 },
+            measureEndBeats: { 1: 4 },
+            baseTempo: defaultTempo
+          };
+        }
+      }
+
+      function syncScorePlayerState(lesson) {
+        if (!lesson || !lesson.practice) return;
+        const sp = ui.scorePlayer;
+        const key = getPracticeLessonKey(lesson);
+        if (sp.lessonKey !== key) {
+          stopScorePlayer(true);
+          sp.lessonKey = key;
+          sp.file = lesson.practice.file || "content/scores/burgmuller-op100-01.musicxml";
+          sp.scoreMeta = getScoreMeta(lesson.practice.scoreId || lesson.practice.file);
+          sp.baseTempo = Number(lesson.practice.tempo) || sp.scoreMeta?.tempo || 100;
+          sp.speedPct = 75;
+          sp.activeHand = "both";
+          sp.isPlaying = false;
+          sp.isPaused = false;
+          sp.currentBeat = 0;
+          sp.currentBar = 1;
+          sp.currentCursorStep = 0;
+          sp.clickEnabled = false;
+          sp.countInEnabled = false;
+          sp.countInPhase = false;
+          sp.countInBeat = 0;
+          sp.countInTotal = 4;
+          sp.loopEnabled = false;
+          sp.loopStartBar = 1;
+          sp.loopEndBar = 4;
+          sp.loadError = null;
+          sp.loading = false;
+          sp.osmdReady = false;
+          sp.completed = isLessonPracticeCompleted(lesson);
+        }
+      }
+
+      function stopScorePlayer(releaseOsmd = false) {
+        const sp = ui.scorePlayer;
+        if (sp.schedulerTimer) {
+          clearInterval(sp.schedulerTimer);
+          sp.schedulerTimer = null;
+        }
+        sp.isPlaying = false;
+        sp.isPaused = false;
+        sp.countInPhase = false;
+        sp.countInBeat = 0;
+
+        if (releaseOsmd && sp.osmdInstance) {
+          try {
+            if (typeof sp.osmdInstance.clear === "function") sp.osmdInstance.clear();
+            if (sp.osmdInstance.cursor && typeof sp.osmdInstance.cursor.hide === "function") {
+              sp.osmdInstance.cursor.hide();
+            }
+          } catch (e) {}
+          sp.osmdInstance = null;
+          sp.osmdReady = false;
+          sp.lessonKey = null;
+          sp.notes = [];
+          sp.cursorSteps = [];
+        }
+      }
+
+      function getScoreEffectiveBpm() {
+        const sp = ui.scorePlayer;
+        const base = Number(sp.baseTempo) || 100;
+        const pct = Number(sp.speedPct) || 75;
+        return Math.max(30, Math.round((base * pct) / 100));
+      }
+
+      function updateScoreStavesHandDimming(activeHand) {
+        const sp = ui.scorePlayer;
+        if (!sp.osmdInstance || !sp.osmdInstance.GraphicSheet) return;
+        const sheet = sp.osmdInstance.GraphicSheet;
+        if (!sheet.MeasureList) return;
+
+        sheet.MeasureList.forEach((mList) => {
+          if (!Array.isArray(mList)) return;
+          mList.forEach((gMeasure, staffIdx) => {
+            let isRight = staffIdx === 0;
+            let isLeft = staffIdx > 0;
+            if (typeof gMeasure.isPianoRightHand === "boolean") {
+              isRight = gMeasure.isPianoRightHand;
+              isLeft = gMeasure.isPianoLeftHand;
+            } else if (typeof gMeasure.isUpperStaffOfInstrument === "boolean") {
+              isRight = gMeasure.isUpperStaffOfInstrument;
+              isLeft = gMeasure.isLowerStaffOfInstrument;
+            }
+
+            let shouldDim = false;
+            if (activeHand === "right" && isLeft) shouldDim = true;
+            if (activeHand === "left" && isRight) shouldDim = true;
+            const opacity = shouldDim ? "0.22" : "1";
+
+            if (Array.isArray(gMeasure.staffEntries)) {
+              gMeasure.staffEntries.forEach((se) => {
+                if (se && Array.isArray(se.graphicalVoiceEntries)) {
+                  se.graphicalVoiceEntries.forEach((gve) => {
+                    if (gve && Array.isArray(gve.notes)) {
+                      gve.notes.forEach((gn) => {
+                        if (typeof gn.getSVGGElement === "function") {
+                          const el = gn.getSVGGElement();
+                          if (el) el.style.opacity = opacity;
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            }
+          });
+        });
+      }
+
+      function advanceScoreCursorToBeat(targetBeat) {
+        const sp = ui.scorePlayer;
+        if (!sp.osmdInstance || !sp.osmdInstance.cursor || !Array.isArray(sp.cursorSteps) || sp.cursorSteps.length === 0) return;
+        const cursor = sp.osmdInstance.cursor;
+        try {
+          cursor.reset();
+          cursor.show();
+          let matchedStepIdx = 0;
+          for (let i = 0; i < sp.cursorSteps.length; i++) {
+            const nextStep = sp.cursorSteps[i + 1];
+            if (!nextStep || nextStep.beat > targetBeat + 0.001) {
+              matchedStepIdx = i;
+              break;
+            }
+          }
+          for (let step = 0; step < matchedStepIdx; step++) {
+            cursor.next();
+          }
+          sp.currentCursorStep = matchedStepIdx;
+          sp.currentBar = sp.cursorSteps[matchedStepIdx]?.measure || 1;
+
+          const barInd = document.getElementById("score-bar-indicator");
+          if (barInd) {
+            barInd.textContent = t("practice.scoreBarStatus", { current: sp.currentBar, total: sp.totalMeasures });
+          }
+        } catch (e) {
+          // Cursor safety
+        }
+      }
+
+      function runScoreLookaheadScheduler() {
+        const sp = ui.scorePlayer;
+        if (sp.schedulerTimer) clearInterval(sp.schedulerTimer);
+
+        unlockPianoAudio();
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+
+        const effectiveBpm = getScoreEffectiveBpm();
+        const beatSec = 60 / effectiveBpm;
+
+        sp.schedulerTimer = setInterval(() => {
+          if (ui.screen !== "lesson" || !sp.isPlaying) {
+            stopScorePlayer(false);
+            return;
+          }
+
+          const now = ctx.currentTime;
+
+          // 1. Count-in phase
+          if (sp.countInPhase) {
+            const countInElapsed = now - sp.countInStartTime;
+            const currentCountBeat = Math.floor(countInElapsed / beatSec) + 1;
+            if (currentCountBeat !== sp.countInBeat && currentCountBeat <= sp.countInTotal) {
+              sp.countInBeat = currentCountBeat;
+              const countInBanner = document.getElementById("score-countin-banner");
+              if (countInBanner) {
+                countInBanner.textContent = `⏳ ${t("practice.scoreCountInStatus", { beat: sp.countInBeat, total: sp.countInTotal })}`;
+              }
+            }
+            if (countInElapsed >= sp.countInTotal * beatSec) {
+              sp.countInPhase = false;
+              sp.playbackStartAudioTime = sp.countInStartTime + (sp.countInTotal * beatSec);
+              const countInBanner = document.getElementById("score-countin-banner");
+              if (countInBanner) countInBanner.remove();
+            } else {
+              return;
+            }
+          }
+
+          // 2. Main Playback phase
+          const audioElapsed = now - sp.playbackStartAudioTime;
+          const currentBeat = sp.playheadStartBeat + (audioElapsed / beatSec);
+          sp.currentBeat = currentBeat;
+
+          const lookaheadBeatEnd = sp.playheadStartBeat + ((audioElapsed + 0.110) / beatSec);
+
+          // Schedule Notes within lookahead window
+          while (sp.nextNoteIdx < sp.notes.length) {
+            const n = sp.notes[sp.nextNoteIdx];
+            if (n.startBeat < currentBeat - 0.4) {
+              sp.nextNoteIdx++;
+              continue;
+            }
+            if (n.startBeat > lookaheadBeatEnd) {
+              break;
+            }
+
+            let soundNote = true;
+            if (sp.activeHand === "right" && n.hand === "left") soundNote = false;
+            if (sp.activeHand === "left" && n.hand === "right") soundNote = false;
+
+            if (soundNote) {
+              const noteAudioTime = sp.playbackStartAudioTime + ((n.startBeat - sp.playheadStartBeat) * beatSec);
+              const durSec = Math.max(0.18, n.durationBeats * beatSec);
+              playPianoNoteSound(n.pitch, durSec, noteAudioTime);
+            }
+            sp.nextNoteIdx++;
+          }
+
+          // Schedule Metronome Click if enabled
+          if (sp.clickEnabled) {
+            while (sp.nextClickBeat <= lookaheadBeatEnd) {
+              if (sp.nextClickBeat >= sp.playheadStartBeat - 0.05) {
+                const clickAudioTime = sp.playbackStartAudioTime + ((sp.nextClickBeat - sp.playheadStartBeat) * beatSec);
+                const isAccent = Math.round(sp.nextClickBeat) % 4 === 0;
+                playMetronomeClickSound(isAccent, clickAudioTime);
+              }
+              sp.nextClickBeat += 1;
+            }
+          }
+
+          // Advance Cursor
+          if (Array.isArray(sp.cursorSteps) && sp.cursorSteps.length > 0) {
+            while (
+              sp.currentCursorStep + 1 < sp.cursorSteps.length &&
+              currentBeat >= sp.cursorSteps[sp.currentCursorStep + 1].beat
+            ) {
+              sp.currentCursorStep++;
+              if (sp.osmdInstance && sp.osmdInstance.cursor) {
+                try {
+                  sp.osmdInstance.cursor.next();
+                } catch (e) {}
+              }
+            }
+
+            const stepObj = sp.cursorSteps[sp.currentCursorStep];
+            if (stepObj && stepObj.measure !== sp.currentBar) {
+              sp.currentBar = stepObj.measure;
+              const barInd = document.getElementById("score-bar-indicator");
+              if (barInd) {
+                barInd.textContent = t("practice.scoreBarStatus", { current: sp.currentBar, total: sp.totalMeasures });
+              }
+            }
+
+            // Auto-scroll container to keep cursor in view
+            if (sp.osmdInstance && sp.osmdInstance.cursor && sp.osmdInstance.cursor.cursorElement) {
+              const container = document.getElementById("score-render-area");
+              if (container) {
+                const curRect = sp.osmdInstance.cursor.cursorElement.getBoundingClientRect();
+                const contRect = container.getBoundingClientRect();
+                if (curRect.bottom > contRect.bottom - 24 || curRect.top < contRect.top + 20) {
+                  sp.osmdInstance.cursor.cursorElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                }
+              }
+            }
+          }
+
+          // Loop or Finish boundary check
+          const loopEndBeat = sp.loopEnabled
+            ? (sp.measureEndBeats[sp.loopEndBar] || sp.totalBeats)
+            : sp.totalBeats;
+
+          if (currentBeat >= loopEndBeat) {
+            if (sp.loopEnabled) {
+              const loopStartBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+              sp.playheadStartBeat = loopStartBeat;
+              sp.playbackStartAudioTime = now;
+              sp.currentBeat = loopStartBeat;
+              sp.nextNoteIdx = sp.notes.findIndex((n) => n.startBeat >= loopStartBeat - 0.05);
+              if (sp.nextNoteIdx === -1) sp.nextNoteIdx = 0;
+              sp.nextClickBeat = Math.ceil(loopStartBeat);
+              advanceScoreCursorToBeat(loopStartBeat);
+            } else {
+              stopScorePlayer(false);
+              sp.completed = true;
+              const lesson = getActivePracticeContextLesson();
+              if (lesson) markLessonPracticeCompleted(lesson);
+              refreshLessonPianoMount(false);
+            }
+          }
+        }, 25);
+      }
+
+      function toggleScorePlayback() {
+        unlockPianoAudio();
+        const ctx = getOrCreatePianoAudioCtx();
+        if (!ctx) return;
+        const sp = ui.scorePlayer;
+
+        if (sp.isPlaying) {
+          // Pause
+          if (sp.schedulerTimer) clearInterval(sp.schedulerTimer);
+          sp.schedulerTimer = null;
+          sp.isPlaying = false;
+          sp.isPaused = true;
+          refreshLessonPianoMount(false);
+          return;
+        }
+
+        // Start / Resume
+        const effectiveBpm = getScoreEffectiveBpm();
+        const beatSec = 60 / effectiveBpm;
+
+        let startBeat = 0;
+        if (sp.isPaused && sp.currentBeat > 0) {
+          startBeat = sp.currentBeat;
+        } else if (sp.loopEnabled) {
+          startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+        }
+
+        sp.isPlaying = true;
+        sp.isPaused = false;
+        sp.playheadStartBeat = startBeat;
+        sp.currentBeat = startBeat;
+        sp.nextNoteIdx = sp.notes.findIndex((n) => n.startBeat >= startBeat - 0.05);
+        if (sp.nextNoteIdx === -1) sp.nextNoteIdx = 0;
+        sp.nextClickBeat = Math.ceil(startBeat);
+
+        advanceScoreCursorToBeat(startBeat);
+
+        if (sp.countInEnabled && !sp.isPaused) {
+          sp.countInPhase = true;
+          sp.countInStartTime = ctx.currentTime + 0.05;
+          sp.countInTotal = 4;
+          sp.countInBeat = 1;
+
+          // Schedule 4 count-in clicks
+          for (let b = 0; b < sp.countInTotal; b++) {
+            playMetronomeClickSound(b === 0, sp.countInStartTime + (b * beatSec));
+          }
+        } else {
+          sp.countInPhase = false;
+          sp.playbackStartAudioTime = ctx.currentTime + 0.04;
+        }
+
+        runScoreLookaheadScheduler();
+        refreshLessonPianoMount(false);
+      }
+
+      function stopScorePlaybackAction() {
+        const sp = ui.scorePlayer;
+        stopScorePlayer(false);
+        const resetBeat = sp.loopEnabled ? (sp.measureStartBeats[sp.loopStartBar] || 0) : 0;
+        sp.currentBeat = resetBeat;
+        sp.currentBar = sp.loopEnabled ? sp.loopStartBar : 1;
+        advanceScoreCursorToBeat(resetBeat);
+        refreshLessonPianoMount(false);
+      }
+
+      function setScoreSpeed(speedPct) {
+        const sp = ui.scorePlayer;
+        const oldBpm = getScoreEffectiveBpm();
+        sp.speedPct = Math.max(50, Math.min(120, Number(speedPct) || 75));
+        if (sp.isPlaying) {
+          const ctx = getOrCreatePianoAudioCtx();
+          if (ctx) {
+            sp.playheadStartBeat = sp.currentBeat;
+            sp.playbackStartAudioTime = ctx.currentTime;
+            sp.nextClickBeat = Math.ceil(sp.currentBeat);
+          }
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function setScoreActiveHand(hand) {
+        const sp = ui.scorePlayer;
+        sp.activeHand = hand === "right" || hand === "left" ? hand : "both";
+        updateScoreStavesHandDimming(sp.activeHand);
+        refreshLessonPianoMount(false);
+      }
+
+      function toggleScoreMetronomeClick() {
+        const sp = ui.scorePlayer;
+        sp.clickEnabled = !sp.clickEnabled;
+        if (sp.isPlaying) {
+          sp.nextClickBeat = Math.ceil(sp.currentBeat);
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function toggleScoreCountIn() {
+        const sp = ui.scorePlayer;
+        sp.countInEnabled = !sp.countInEnabled;
+        refreshLessonPianoMount(false);
+      }
+
+      function toggleScoreLoop() {
+        const sp = ui.scorePlayer;
+        sp.loopEnabled = !sp.loopEnabled;
+        if (sp.loopEnabled) {
+          if (!sp.loopStartBar || sp.loopStartBar < 1) sp.loopStartBar = 1;
+          if (!sp.loopEndBar || sp.loopEndBar < sp.loopStartBar) sp.loopEndBar = Math.min(4, sp.totalMeasures || 4);
+          if (!sp.isPlaying && !sp.isPaused) {
+            const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+            advanceScoreCursorToBeat(startBeat);
+          }
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function stepScoreLoop(which, delta) {
+        const sp = ui.scorePlayer;
+        const total = sp.totalMeasures || 23;
+        sp.loopEnabled = true;
+
+        if (which === "start") {
+          const nextVal = Math.max(1, Math.min(sp.loopEndBar || total, (sp.loopStartBar || 1) + delta));
+          sp.loopStartBar = nextVal;
+        } else if (which === "end") {
+          const nextVal = Math.max(sp.loopStartBar || 1, Math.min(total, (sp.loopEndBar || 4) + delta));
+          sp.loopEndBar = nextVal;
+        }
+
+        if (!sp.isPlaying && !sp.isPaused) {
+          const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+          advanceScoreCursorToBeat(startBeat);
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      function clearScoreLoop() {
+        const sp = ui.scorePlayer;
+        sp.loopEnabled = false;
+        refreshLessonPianoMount(false);
+      }
+
+      function getScoreMeasureAtClientPoint(clientX, clientY) {
+        const sp = ui.scorePlayer;
+        if (!sp.osmdInstance || !sp.osmdInstance.GraphicSheet) return null;
+        const sheet = sp.osmdInstance.GraphicSheet;
+        if (!sheet.MeasureList) return null;
+
+        let bestMeasure = null;
+        let minDistance = Infinity;
+
+        sheet.MeasureList.forEach((mList, mIdx) => {
+          if (!Array.isArray(mList) || mList.length === 0) return;
+          const gMeasure = mList[0];
+          const mNum = mIdx + 1;
+
+          // Check first and last note SVG elements in this measure
+          if (Array.isArray(gMeasure.staffEntries) && gMeasure.staffEntries.length > 0) {
+            for (const se of gMeasure.staffEntries) {
+              if (se && Array.isArray(se.graphicalVoiceEntries)) {
+                for (const gve of se.graphicalVoiceEntries) {
+                  if (gve && Array.isArray(gve.notes)) {
+                    for (const gn of gve.notes) {
+                      if (typeof gn.getSVGGElement === "function") {
+                        const el = gn.getSVGGElement();
+                        if (el) {
+                          const rect = el.getBoundingClientRect();
+                          // Horizontal and vertical distance
+                          const dx = Math.max(0, Math.max(rect.left - clientX, clientX - rect.right));
+                          const dy = Math.max(0, Math.max(rect.top - clientY, clientY - rect.bottom));
+                          const dist = Math.hypot(dx, dy);
+                          if (dist < minDistance) {
+                            minDistance = dist;
+                            bestMeasure = mNum;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        });
+
+        return bestMeasure;
+      }
+
+      function handleScoreMeasureClick(measureNum) {
+        if (!measureNum || measureNum < 1) return;
+        const sp = ui.scorePlayer;
+        const total = sp.totalMeasures || 23;
+        const m = Math.min(total, Math.max(1, measureNum));
+
+        if (!sp.loopEnabled) {
+          sp.loopStartBar = m;
+          sp.loopEndBar = m;
+          sp.loopEnabled = true;
+        } else if (sp.loopStartBar === sp.loopEndBar) {
+          if (m < sp.loopStartBar) {
+            sp.loopStartBar = m;
+          } else {
+            sp.loopEndBar = m;
+          }
+        } else {
+          if (m === sp.loopStartBar || m === sp.loopEndBar) {
+            sp.loopEnabled = false;
+          } else if (m < sp.loopStartBar) {
+            sp.loopStartBar = m;
+          } else if (m > sp.loopEndBar) {
+            sp.loopEndBar = m;
+          } else {
+            sp.loopStartBar = m;
+            sp.loopEndBar = m;
+          }
+        }
+
+        if (!sp.isPlaying && !sp.isPaused && sp.loopEnabled) {
+          const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
+          advanceScoreCursorToBeat(startBeat);
+        }
+        refreshLessonPianoMount(false);
+      }
+
+      async function maybeMountScorePlayer() {
+        const lesson = getActivePracticeContextLesson();
+        if (!lesson || !lesson.practice || getPracticeType(lesson.practice) !== "score") return;
+        const container = document.getElementById("score-render-area");
+        if (!container) return;
+
+        const sp = ui.scorePlayer;
+        syncScorePlayerState(lesson);
+
+        // If OSMD is already rendered in this container, just ensure dimming
+        if (sp.osmdReady && sp.osmdInstance && container.querySelector("svg")) {
+          updateScoreStavesHandDimming(sp.activeHand);
+          return;
+        }
+
+        // Check if OpenSheetMusicDisplay is available
+        const OSMDClass = window.OpenSheetMusicDisplay || window.opensheetmusicdisplay?.OpenSheetMusicDisplay;
+        if (!OSMDClass) {
+          setTimeout(() => maybeMountScorePlayer(), 50);
+          return;
+        }
+
+        if (sp.loading) return;
+        sp.loading = true;
+
+        try {
+          const filePath = lesson.practice.file || "content/scores/burgmuller-op100-01.musicxml";
+          const res = await fetch(filePath);
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+          }
+          const xmlText = await res.text();
+
+          // Parse notes for Web Audio synthesis
+          const parsed = parseMusicXmlNotes(xmlText, Number(lesson.practice.tempo) || 100);
+          sp.notes = parsed.notes;
+          sp.totalMeasures = parsed.totalMeasures;
+          sp.totalBeats = parsed.totalBeats;
+          sp.measureStartBeats = parsed.measureStartBeats;
+          sp.measureEndBeats = parsed.measureEndBeats;
+          sp.baseTempo = parsed.baseTempo;
+
+          container.innerHTML = "";
+
+          // Instantiate OSMD
+          const osmd = new OSMDClass(container, {
+            autoResize: true,
+            drawTitle: false,
+            drawSubtitle: false,
+            drawComposer: false,
+            drawLyricist: false,
+            drawPartNames: false,
+            drawMetronomeMarks: true,
+            backend: "svg",
+            followCursor: true,
+            drawingParameters: "compacttight"
+          });
+
+          await osmd.load(xmlText);
+          osmd.render();
+
+          sp.osmdInstance = osmd;
+          sp.osmdReady = true;
+          sp.loading = false;
+          sp.loadError = null;
+
+          // Pre-compute cursor steps for gapless sync
+          const steps = [];
+          const cursor = osmd.cursor;
+          cursor.reset();
+          cursor.show();
+          let stepIdx = 0;
+          while (stepIdx < 2000) {
+            const it = cursor.Iterator || cursor.iterator;
+            if (!it) break;
+            const isEnd = it.EndReached || it.endReached;
+            const mIndex = (it.CurrentMeasureIndex !== undefined ? it.CurrentMeasureIndex : it.currentMeasureIndex) ?? 0;
+            const ts = it.CurrentEnrolledTimestamp || it.CurrentSourceTimestamp || it.currentTimeStamp;
+            const fractionVal = ts && ts.RealValue !== undefined ? ts.RealValue : ts ? ts.numerator / ts.denominator : 0;
+            const beat = fractionVal * 4;
+
+            steps.push({
+              stepIdx,
+              measure: mIndex + 1,
+              beat
+            });
+
+            if (isEnd) break;
+            cursor.next();
+            stepIdx++;
+          }
+          sp.cursorSteps = steps;
+
+          // Reset cursor back to start
+          advanceScoreCursorToBeat(sp.currentBeat || 0);
+
+          // Apply initial hand dimming
+          updateScoreStavesHandDimming(sp.activeHand);
+
+          // Setup measure click on score area
+          container.onclick = (e) => {
+            const mNum = getScoreMeasureAtClientPoint(e.clientX, e.clientY);
+            if (mNum) handleScoreMeasureClick(mNum);
+          };
+
+          // Re-render UI frame with live bar count
+          refreshLessonPianoMount(false);
+        } catch (err) {
+          console.error("Score Player load error:", err);
+          sp.loading = false;
+          sp.loadError = t("practice.scoreLoadError");
+          sp.osmdReady = false;
+          refreshLessonPianoMount(false);
+        }
+      }
+
+      function renderScorePlayerPracticeCard(lesson) {
+        syncScorePlayerState(lesson);
+        const sp = ui.scorePlayer;
+        const isCompleted = isLessonPracticeCompleted(lesson);
+        const practice = lesson.practice || {};
+        const isVerified = practice.verified === true;
+        const meta = sp.scoreMeta || {};
+        const title = (meta.title && lField(meta.title)) || lField(lesson.title);
+        const composer = meta.composer || "J. F. F. Burgmüller";
+        const work = meta.work || "25 Easy and Progressive Studies, Op.100 No.1";
+
+        const currentBar = sp.currentBar || 1;
+        const totalBars = sp.totalMeasures || 23;
+
+        const speed = sp.speedPct || 75;
+        const hand = sp.activeHand || "both";
+        const loopActive = sp.loopEnabled;
+        const loopFrom = sp.loopStartBar || 1;
+        const loopTo = sp.loopEndBar || Math.min(4, totalBars);
+
+        return `
+          <div id="score-lesson-mount" class="m-card score-player-card">
+            <!-- Header -->
+            <div class="score-header-top">
+              <div class="score-meta-block">
+                <div class="score-title-row">
+                  <span class="score-piece-title">🎼 ${escapeHtml(title)}</span>
+                  ${
+                    !isVerified
+                      ? `<span class="score-badge-unverified">⚠ ${escapeHtml(t("practice.scoreUnverifiedBadge"))}</span>`
+                      : ""
+                  }
+                  ${
+                    isCompleted
+                      ? `<span class="badge-saffron" style="padding:3px 10px;font-size:0.74rem;background-color:var(--secondary);color:#FFF;">✓ ${escapeHtml(t("practice.completedBadge"))}</span>`
+                      : ""
+                  }
+                </div>
+                <div class="score-piece-sub">
+                  <span>${escapeHtml(composer)}</span> · <span>${escapeHtml(work)}</span>
+                </div>
+                <div class="score-license-line">
+                  ${escapeHtml(t("practice.scoreLicenseLine"))}
+                </div>
+              </div>
+
+              <div class="score-controls-group">
+                <span id="score-bar-indicator" class="score-bar-badge">
+                  ${escapeHtml(t("practice.scoreBarStatus", { current: currentBar, total: totalBars }))}
+                </span>
+                ${
+                  sp.countInPhase
+                    ? `<span id="score-countin-banner" class="score-countin-banner">⏳ ${escapeHtml(t("practice.scoreCountInStatus", { beat: sp.countInBeat, total: sp.countInTotal }))}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+
+            <!-- Score Viewport (Always LTR) -->
+            <div class="score-viewport-wrap" dir="ltr">
+              ${
+                sp.loadError
+                  ? `<div style="padding:28px 16px;text-align:center;color:#D9473F;font-weight:600;" dir="${state.lang === "fa" ? "rtl" : "ltr"}">
+                      <p>⚠️ ${escapeHtml(sp.loadError)}</p>
+                      <button type="button" class="btn-pill btn-secondary" style="margin-top:12px;min-height:36px;padding:6px 16px;" data-action="score-reload">
+                        ↻ ${escapeHtml(t("practice.playAgainBtn"))}
+                      </button>
+                    </div>`
+                  : `<div id="score-render-area" class="score-canvas-container" dir="ltr">
+                      ${
+                        !sp.osmdReady
+                          ? `<div class="score-loading-overlay">
+                              <span style="font-size:1.6rem;">⏳</span>
+                              <span>${escapeHtml(t("practice.scoreLoading"))}</span>
+                            </div>`
+                          : ""
+                      }
+                    </div>`
+              }
+            </div>
+            <div class="score-footer-tip">${escapeHtml(t("practice.scoreMeasureTapHint"))}</div>
+
+            <!-- Controls Panel -->
+            <div class="score-controls-panel">
+              <!-- Row 1: Play / Pause / Stop / Metronome / Count-in -->
+              <div class="score-controls-row">
+                <div class="score-controls-group">
+                  <button type="button" class="btn-pill ${sp.isPlaying ? "btn-surface" : "btn-primary"}" style="min-height:44px;min-width:112px;font-weight:800;font-size:0.94rem;" data-action="score-play">
+                    <span>${sp.isPlaying ? "⏸ " + escapeHtml(t("practice.scorePause")) : "▶ " + escapeHtml(t("practice.scorePlay"))}</span>
+                  </button>
+                  <button type="button" class="btn-pill btn-surface" style="min-height:44px;padding:8px 16px;font-size:0.88rem;" data-action="score-stop" ${!sp.isPlaying && !sp.isPaused && sp.currentBeat === 0 ? "disabled" : ""}>
+                    <span>⏹ ${escapeHtml(t("practice.scoreStop"))}</span>
+                  </button>
+                </div>
+
+                <div class="score-controls-group">
+                  <button type="button" class="vpiano-pill-btn ${sp.clickEnabled ? "active" : ""}" data-action="score-toggle-click">
+                    <span>🔔 ${escapeHtml(sp.clickEnabled ? t("practice.scoreClickOn") : t("practice.scoreClickOff"))}</span>
+                  </button>
+                  <button type="button" class="vpiano-pill-btn ${sp.countInEnabled ? "active" : ""}" data-action="score-toggle-countin">
+                    <span>⏱ ${escapeHtml(t("practice.scoreCountInToggle"))}</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Row 2: Speed and Hand Selection -->
+              <div class="score-controls-row">
+                <div class="score-controls-group">
+                  <span class="score-group-label">${escapeHtml(t("practice.scoreSpeedLabel"))}:</span>
+                  <button type="button" class="vpiano-pill-btn ${speed === 50 ? "active" : ""}" data-action="score-speed" data-speed="50">50%</button>
+                  <button type="button" class="vpiano-pill-btn ${speed === 75 ? "active" : ""}" data-action="score-speed" data-speed="75">75%</button>
+                  <button type="button" class="vpiano-pill-btn ${speed === 100 ? "active" : ""}" data-action="score-speed" data-speed="100">100%</button>
+                </div>
+
+                <div class="score-controls-group">
+                  <span class="score-group-label">${escapeHtml(t("practice.scoreHandsLabel"))}:</span>
+                  <button type="button" class="vpiano-pill-btn ${hand === "both" ? "active" : ""}" data-action="score-hand" data-hand="both">
+                    ${escapeHtml(t("practice.scoreHandBoth"))}
+                  </button>
+                  <button type="button" class="vpiano-pill-btn ${hand === "right" ? "active" : ""}" data-action="score-hand" data-hand="right">
+                    ${escapeHtml(t("practice.scoreHandRight"))}
+                  </button>
+                  <button type="button" class="vpiano-pill-btn ${hand === "left" ? "active" : ""}" data-action="score-hand" data-hand="left">
+                    ${escapeHtml(t("practice.scoreHandLeft"))}
+                  </button>
+                </div>
+              </div>
+
+              <!-- Row 3: Loop Controls -->
+              <div class="score-loop-row">
+                <button type="button" class="vpiano-pill-btn ${loopActive ? "active" : ""}" data-action="score-toggle-loop">
+                  <span>🔁 ${escapeHtml(loopActive ? t("practice.scoreLoopOn") : t("practice.scoreLoopOff"))}</span>
+                </button>
+
+                <div class="score-controls-group" style="gap:6px;">
+                  <span style="font-size:0.84rem;font-weight:700;">${escapeHtml(t("practice.scoreLoopFrom"))}:</span>
+                  <div class="score-bar-stepper">
+                    <button type="button" class="score-stepper-btn" data-action="score-step-loop-start" data-delta="-1" ${loopFrom <= 1 ? "disabled" : ""}>−</button>
+                    <span class="score-stepper-val">${loopFrom}</span>
+                    <button type="button" class="score-stepper-btn" data-action="score-step-loop-start" data-delta="1" ${loopFrom >= loopTo ? "disabled" : ""}>+</button>
+                  </div>
+                </div>
+
+                <div class="score-controls-group" style="gap:6px;">
+                  <span style="font-size:0.84rem;font-weight:700;">${escapeHtml(t("practice.scoreLoopTo"))}:</span>
+                  <div class="score-bar-stepper">
+                    <button type="button" class="score-stepper-btn" data-action="score-step-loop-end" data-delta="-1" ${loopTo <= loopFrom ? "disabled" : ""}>−</button>
+                    <span class="score-stepper-val">${loopTo}</span>
+                    <button type="button" class="score-stepper-btn" data-action="score-step-loop-end" data-delta="1" ${loopTo >= totalBars ? "disabled" : ""}>+</button>
+                  </div>
+                </div>
+
+                ${
+                  loopActive
+                    ? `<button type="button" class="vpiano-pill-btn" style="font-size:0.76rem;padding:4px 10px;" data-action="score-clear-loop">
+                        ✕ ${escapeHtml(t("practice.scoreLoopClear"))}
+                      </button>`
+                    : ""
+                }
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       function renderLessonPracticeCard(lesson) {
         if (!lesson || !lesson.practice) return "";
         const pType = getPracticeType(lesson.practice);
         switch (pType) {
+          case "score":
+            return renderScorePlayerPracticeCard(lesson);
           case "rhythm-tap":
             return renderRhythmTapPracticeCard(lesson);
           case "ear-choice":
@@ -10310,6 +11652,7 @@
 
         root.innerHTML = screenHtml + renderModal() + toastHtml;
         requestAnimationFrame(() => centerTargetKeyInScroll(false));
+        requestAnimationFrame(() => maybeMountScorePlayer());
       }
 
       document.addEventListener("keydown", (e) => {
@@ -10778,6 +12121,60 @@
             break;
           }
 
+          case "score-play":
+            toggleScorePlayback();
+            break;
+
+          case "score-stop":
+            stopScorePlaybackAction();
+            break;
+
+          case "score-speed": {
+            const spd = btn.getAttribute("data-speed");
+            setScoreSpeed(spd);
+            break;
+          }
+
+          case "score-hand": {
+            const hnd = btn.getAttribute("data-hand");
+            setScoreActiveHand(hnd);
+            break;
+          }
+
+          case "score-toggle-click":
+            toggleScoreMetronomeClick();
+            break;
+
+          case "score-toggle-countin":
+            toggleScoreCountIn();
+            break;
+
+          case "score-toggle-loop":
+            toggleScoreLoop();
+            break;
+
+          case "score-step-loop-start": {
+            const delta = Number(btn.getAttribute("data-delta")) || 1;
+            stepScoreLoop("start", delta);
+            break;
+          }
+
+          case "score-step-loop-end": {
+            const delta = Number(btn.getAttribute("data-delta")) || 1;
+            stepScoreLoop("end", delta);
+            break;
+          }
+
+          case "score-clear-loop":
+            clearScoreLoop();
+            break;
+
+          case "score-reload":
+            ui.scorePlayer.osmdReady = false;
+            ui.scorePlayer.loadError = null;
+            maybeMountScorePlayer();
+            break;
+
           case "open-free-piano":
             stopPianoWatchDemo();
             stopMultiPracticeTimers();
@@ -11236,10 +12633,31 @@
         document.querySelectorAll(".vpiano-key.is-pressed").forEach((el) => el.classList.remove("is-pressed"));
       });
 
+      function handleScoreResize() {
+        const sp = ui.scorePlayer;
+        if (sp && sp.osmdInstance && document.getElementById("score-render-area")) {
+          try {
+            sp.osmdInstance.render();
+            advanceScoreCursorToBeat(sp.currentBeat || 0);
+            updateScoreStavesHandDimming(sp.activeHand);
+          } catch (e) {}
+        }
+      }
+
       window.addEventListener("resize", () => {
         if (document.querySelector(".vpiano-keyboard")) {
           updatePianoWindowDOM(false);
         }
+        handleScoreResize();
+      });
+
+      window.addEventListener("orientationchange", () => {
+        setTimeout(() => {
+          if (document.querySelector(".vpiano-keyboard")) {
+            updatePianoWindowDOM(false);
+          }
+          handleScoreResize();
+        }, 150);
       });
 
       document.addEventListener("keydown", (e) => {
@@ -11401,7 +12819,17 @@
             }
           }
 
-          const pianoCount = Number(getCourseMeta("piano")?.lessonCount) || 36;
+          try {
+            const scoresRes = await fetch("content/scores/index.json");
+            if (scoresRes.ok) {
+              const sData = await scoresRes.json();
+              if (Array.isArray(sData) && sData.length > 0) {
+                SCORES_CATALOG = sData;
+              }
+            }
+          } catch (e) {}
+
+          const pianoCount = Number(getCourseMeta("piano")?.lessonCount) || 37;
           const lessonPromises = Array.from({ length: pianoCount }, (_, idx) => {
             const num = String(idx + 1).padStart(2, "0");
             return fetch(`content/lessons/lesson-${num}.json`).then((r) => (r.ok ? r.json() : null));
