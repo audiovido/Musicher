@@ -1,0 +1,126 @@
+{
+  "id": 35,
+  "review": "teacher",
+  "chapter": {
+    "en": "Chapter 9: Ear and next steps",
+    "fa": "فصل ۹ «تربیت گوش و گام‌های بعدی»"
+  },
+  "title": {
+    "en": "What the piano cannot play",
+    "fa": "نت‌هایی که پیانو نمی‌تونه بزنه"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Understand why a standard piano can only play half steps and whole steps, while Persian music also uses microtonal intervals (koron and sori) that sit between the keys.",
+    "fa": "یاد می‌گیری چرا پیانوی استاندارد فقط نیم‌پرده و پرده داره، اما تو موسیقی ایرانی فواصلی مثل «کرن» و «سری» هم داریم که صداشون دقیقاً بین دو کلید پیانو قرار می‌گیره."
+  },
+  "see": {
+    "en": "In Chapter 6 you learned that the smallest distance on the piano keyboard—from any key to its immediate neighbor (like D to E♭, or E♭ to E)—is one half step (semitone). Because an acoustic piano has fixed strings and hammers tuned in equal half steps, you cannot play a pitch that lives in the crack between two neighbor keys! Traditional Persian music, however, uses delicate microtonal intervals smaller than a half step—often called quarter tones. Two special signs invented by master Ali-Naqi Vaziri mark them: 'koron' lowers a note by roughly a quarter tone (about half of a half step), and 'sori' raises a note by roughly a quarter tone. For example, E-koron sounds right between E♭ (D♯) and E! Instruments like the voice, violin, setar, and tar can play it easily, while a standard piano cannot without special retuning or a digital pitch-scale setting.",
+    "fa": "تو فصل ۶ دیدی که کوچک‌ترین فاصله روی پیانو—یعنی از هر کلید تا همسایه‌ی بغلش (مثل ر تا می بمل، یا می بمل تا می)—یک «نیم‌پرده» است. چون سیم‌ها و چکش‌های پیانوی آکوستیک روی همین نیم‌پرده‌ها کوک و ثابت شدن، هیچ کلیدی وجود نداره که صدایی «بین» دو کلید همسایه رو دربیاره! اما در موسیقی دستگاهی و محلی ایران، فواصلی ظریف‌تر از نیم‌پرده وجود داره که بهشون «ربع‌پرده» (یا فواصل ریزپرده‌ای) می‌گن. استاد علینقی وزیری دو علامت معروف براشون ابداع کرد: «کُرُن» نت رو حدودِ ربع‌پرده بم‌تر می‌کنه و «سُری» نت رو حدودِ ربع‌پرده زیرتر می‌کنه. مثلاً صدای «می کُرُن» دقیقاً جایی بین کلید سیاهِ می بمل (D♯/E♭) و کلید سفیدِ می (E) قرار می‌گیره! سازهایی مثل آواز، ویولن، سه‌تار و تار به‌راحتی این نت رو اجرا می‌کنن، اما پیانوی معمولی بدون تغییر کوک یا تنظیمِ دیجیتالِ کیبورد نمی‌تونه اون رو بزنه."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "On the practice keyboard below, play D4, then the black key D♯4 (E♭4), and then the white key E4.",
+      "Notice that D♯4 (E♭4) and E4 sit right next to each other—on the piano there is no key in between them where E-koron would sound.",
+      "Continue up to F4 and walk back down E4 – D♯4 – D4 to hear the piano's fixed half-step grid."
+    ],
+    "fa": [
+      "روی کیبورد تمرین پایین، اول نت ر (D4)، بعد کلید سیاهِ می بمل (D♯4/E♭4) و بعد کلید سفیدِ می (E4) رو بزن.",
+      "دقت کن که کلید سیاهِ می بمل و کلید سفیدِ می دقیقاً چسبیده به هم هستن—روی پیانو هیچ کلیدی بینشون نیست که صدای «می کرن» رو بده.",
+      "حالا برو روی فا (F4) و برگرد روی E4 – D♯4 – D4 تا پله‌های نیم‌پرده‌ایِ ثابت پیانو رو واضح بشنوی."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["D4", "D#4", "E4", "F4", "E4", "D#4", "D4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Do I understand why a standard piano cannot play a pitch between E♭ (D♯) and E without retuning?",
+      "Do I know the general concept of 'koron' (slightly lower than a natural note, higher than a flat) and 'sori' (slightly higher)?"
+    ],
+    "fa": [
+      "متوجه شدم چرا پیانوی استاندارد بدون تغییر کوک نمی‌تونه نتی بین می بمل (D♯) و می (E) رو اجرا کنه؟",
+      "مفهوم کلیِ «کرن» (کمی بم‌تر از نت طبیعی، اما بالاتر از بمل) و «سری» (کمی زیرتر) رو یاد گرفتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Why can't a standard acoustic piano play quarter-tone notes like E-koron out of the box?",
+        "fa": "چرا پیانوی استاندارد نمی‌تونه نت‌های ربع‌پرده‌ای (مثل می کرن) رو به صورت عادی بزنه؟"
+      },
+      "options": {
+        "en": [
+          "Its keys are tuned in fixed half steps (semitones), so there is no key between E♭ and E",
+          "Because the piano only has 5 white keys",
+          "Because the piano cannot play loud and soft"
+        ],
+        "fa": [
+          "چون کلیدهای پیانو با فاصله‌ی ثابتِ نیم‌پرده کوک شدن و کلیدی بین می بمل و می وجود نداره",
+          "چون پیانو فقط ۵ کلید سفید داره",
+          "چون پیانو نمی‌تونه صدای قوی و ضعیف تولید کنه"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! The smallest step on a standard keyboard is a half step, while a koron pitch sits between two adjacent half-step keys.",
+        "fa": "دقیقاً! کوچک‌ترین پله روی پیانو نیم‌پرده‌ست، در حالی که نتِ کرن صدایی بین دو کلید همسایه داره."
+      },
+      "feedbackWrong": {
+        "en": "Look at E♭ (D♯) and E on the keyboard: they are adjacent half steps with no extra key between them for a quarter tone.",
+        "fa": "به کلید سیاهِ می بمل (D♯) و کلید سفید می (E) نگاه کن: هیچ کلیدی بینشون نیست تا فاصله‌ی کوچک‌تر از نیم‌پرده رو بزنه."
+      }
+    },
+    {
+      "question": {
+        "en": "In Persian music notation, what does the 'koron' sign do to a note?",
+        "fa": "تو نت‌نویسی موسیقی ایرانی، علامت «کُرُن» چه تغییری روی نت ایجاد می‌کنه؟"
+      },
+      "options": {
+        "en": [
+          "It lowers the note by roughly a quarter tone (less than a full flat)",
+          "It raises the note by a whole octave",
+          "It makes the note twice as long"
+        ],
+        "fa": [
+          "نت رو حدود ربع‌پرده بم‌تر (پایین‌تر) می‌کنه؛ یعنی کمتر از یک بملِ کامل",
+          "نت رو یک اکتاو کامل می‌بره بالا",
+          "کشش زمانیِ نت رو دو برابر می‌کنه"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! While a flat (♭) lowers a note by a full half step, a koron lowers it by roughly half of that—sitting between the natural note and the flat.",
+        "fa": "آفرین! بمل (♭) نت رو یک نیم‌پرده‌ی کامل بم می‌کنه، اما کرن نت رو حدود ربع‌پرده پایین میاره (بین نت طبیعی و بمل)."
+      },
+      "feedbackWrong": {
+        "en": "Remember: flat (♭) lowers by a half step, while koron lowers by roughly a quarter tone.",
+        "fa": "یادت باشه: بمل (♭) نت رو نیم‌پرده بم می‌کنه، ولی کرن نت رو حدود ربع‌پرده پایین میاره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You now understand how the piano's half-step keyboard compares with the microtonal intervals (koron and sori) of Persian music!",
+    "fa": "حالا می‌دونی ساختار نیم‌پرده‌ایِ کیبورد پیانو چه تفاوتی با فواصل ظریفِ ربع‌پرده‌ای (کرن و سری) در موسیقی ایرانی داره!"
+  },
+  "tomorrow": {
+    "en": "In Lesson 36—our final lesson—you will play Beethoven's famous Für Elise opening theme and review your complete piano journey!",
+    "fa": "تو درس ۳۶ (درس پایانی دوره)، تمِ معروف آغازینِ «فور الیز» اثر بتهوون رو می‌زنی و کل مسیر پیانوت رو جمع‌بندی می‌کنیم!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

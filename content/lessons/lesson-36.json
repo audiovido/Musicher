@@ -1,0 +1,125 @@
+{
+  "id": 36,
+  "chapter": {
+    "en": "Chapter 9: Ear and next steps",
+    "fa": "فصل ۹ «تربیت گوش و گام‌های بعدی»"
+  },
+  "title": {
+    "en": "Final piece and report: Für Elise",
+    "fa": "قطعه پایانی و کارنامه: فور الیز"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play Beethoven's iconic Für Elise opening theme with your right hand, review your 9-chapter piano journey, and plan your next musical steps.",
+    "fa": "ملودی آغازین و معروف «فور الیز» اثر بتهوون رو با دست راست می‌زنی، ۹ فصلِ دوره‌ی پیانو رو مرور می‌کنی و قدم‌های بعدی تمرینت رو می‌چینی."
+  },
+  "see": {
+    "en": "Welcome to Lesson 36—the finale of your Piano & Keyboard course! To celebrate, you will play one of the most beloved piano melodies ever written: the opening theme of Ludwig van Beethoven's 'Für Elise' (1810, public domain). It begins with a gentle half-step rock between E and D♯ (E4–D♯4–E4–D♯4–E4) before stepping and skipping down through B3–D4–C4 to land warmly on A3 (an A minor color!). Look how far you have come across 9 chapters: from finding C (Ch 1), steady rhythm & meters (Ch 2 & 5), reading the staff & Grand Staff (Ch 3 & 8), expressive melodies (Ch 4), scales & half steps (Ch 6), Major/Minor chords & two-hand playing (Ch 7), to ear training (Ch 9). Advisor report & what is next: keep a 10–15 minute daily habit—2 minutes of scales (C & G major), 3 minutes of chords (C–F–G), and 5–10 minutes on pieces like Ode to Joy, Twinkle, Brahms' Lullaby, and Für Elise!",
+    "fa": "به درس ۳۶ و ایستگاه پایانیِ دوره‌ی پیانو و کیبورد خوش اومدی! برای جشن گرفتن این مسیر، یکی از محبوب‌ترین ملودی‌های تاریخ پیانو یعنی تمِ آغازین «فور الیز» (Für Elise) اثر لودویگ فان بتهوون رو می‌زنی. این ملودی با یک حرکتِ نیم‌پرده‌ایِ لطیف بین می و ر دیز (E4–D♯4–E4–D♯4–E4) شروع می‌شه و بعد با عبور از B3–D4–C4 آروم روی نت لا (A3، با حسِ گرمِ لا مینور) می‌شینه! ببین تو این ۹ فصل چقدر جلو اومدی: از پیدا کردن نت دو و فرم دست (فصل ۱)، ریتم و میزان‌های ۴/۴ و ۳/۴ و چنگ (فصل ۲ و ۵)، نت‌خوانی در کلید سل، کلید فا و حامل بزرگ (فصل ۳ و ۸)، لگاتو و استاکاتو و دینامیک (فصل ۴ و ۸)، نیم‌پرده و گام‌های دو و سل ماژور (فصل ۶)، آکوردها و اجرای دودستی (فصل ۷) تا تربیت گوش (فصل ۹). گزارش مشاور و قدم بعدی: روزی ۱۰ تا ۱۵ دقیقه تمرینِ منظم داشته باش—۲ دقیقه گام، ۳ دقیقه آکوردهای C و F و G، و ۵ تا ۱۰ دقیقه مرور قطعاتی که یاد گرفتی!"
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place your right hand in the A3–E4 position: thumb (1) on A3, index (2) on B3, middle (3) on C4, ring (4) ready for D4 and the black key D♯4, and pinky (5) on E4.",
+      "Play the famous 5-note opening rock gently: E4 (5) – D♯4 (4) – E4 (5) – D♯4 (4) – E4 (5).",
+      "Finish the phrase smoothly: B3 (2) – D4 (4) – C4 (3) – A3 (1), holding the final A3 warmly."
+    ],
+    "fa": [
+      "دست راستت رو بذار روی پوزیشنِ A3 تا E4: شست (۱) روی لا (A3)، اشاره (۲) روی سی (B3)، وسط (۳) روی دو (C4)، انگشت ۴ آماده برای ر (D4) و کلید سیاهِ ر دیز (D♯4)، و انگشت ۵ روی می (E4).",
+      "پنج نتِ معروفِ اول رو نرم و پیوسته بزن: E4 (۵) – D♯4 (۴) – E4 (۵) – D♯4 (۴) – E4 (۵).",
+      "حالا جمله رو کامل کن: B3 (۲) – D4 (۴) – C4 (۳) – A3 (۱) و نت لا (A3) آخر رو با حس نگه دار."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["E4", "D#4", "E4", "D#4", "E4", "B3", "D4", "C4", "A3"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I play the E4–D♯4 half-step rock smoothly with fingers 5 and 4 without twisting my wrist?",
+      "Did I land cleanly on B3 (2) – D4 (4) – C4 (3) – A3 (1) to complete the Für Elise opening phrase?"
+    ],
+    "fa": [
+      "حرکتِ نیم‌پرده‌ایِ E4–D♯4 رو با انگشت‌های ۵ و ۴ نرم و بدون چرخوندن مچ زدم؟",
+      "پایان جمله یعنی B3 (۲) – D4 (۴) – C4 (۳) – A3 (۱) رو پیوسته و دقیق اجرا کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "In the opening motif of Für Elise (E4–D♯4–E4–D♯4–E4), what interval connects E4 and the black key D♯4?",
+        "fa": "تو شروع ملودی «فور الیز» (E4–D♯4–E4–D♯4–E4)، فاصله‌ی بین کلید سفیدِ می (E4) و کلید سیاهِ ر دیز (D♯4) چقدره؟"
+      },
+      "options": {
+        "en": [
+          "A half step (they are immediate neighbor keys)",
+          "A whole octave",
+          "A three-note chord"
+        ],
+        "fa": [
+          "یک نیم‌پرده (دو کلیدِ دقیقاً همسایه هستن)",
+          "یک اکتاو کامل",
+          "یک آکورد سه‌نتی"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! E4 and D♯4 sit right next to each other with no key in between, creating that unmistakable half-step shimmer.",
+        "fa": "دقیقاً! کلید سفید می (E4) و کلید سیاه ر دیز (D♯4) همسایه‌ی بلافاصله‌ی هم هستن و همین نیم‌پرده صدای جادوییِ اول فور الیز رو می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Look at E4 and the black key D♯4 just to its left: they are immediate neighbors, which is a half step.",
+        "fa": "به کلید سفید E4 و کلید سیاه D♯4 سمت چپش نگاه کن: هیچ کلیدی بینشون نیست، پس فاصله‌شون یک نیم‌پرده‌ست."
+      }
+    },
+    {
+      "question": {
+        "en": "According to the Advisor Report, what is the best way to keep progressing after finishing Lesson 36?",
+        "fa": "طبق توصیه‌ی مشاور تمرین، بعد از تموم کردن این ۳۶ درس بهترین روش برای ادامه‌ی پیشرفت چیه؟"
+      },
+      "options": {
+        "en": [
+          "A short, consistent 10–15 minute daily routine combining scales (C & G), chords (C–F–G), and favorite pieces",
+          "Practicing once a month for three hours",
+          "Skipping warm-ups and playing with tense wrists"
+        ],
+        "fa": [
+          "روزانه ۱۰ تا ۱۵ دقیقه تمرینِ منظم شامل گام‌ها (دو و سل)، آکوردهای اصلی (C–F–G) و مرور قطعات",
+          "ماهی یک بار به مدت سه ساعت تمرین کردن",
+          "حذف کردن گرم‌کردن دست و سفت گرفتن مچ"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Short, steady daily practice builds lasting muscle memory and musical joy.",
+        "fa": "آفرین! تمرین روزانه و پیوسته (حتی ۱۰ تا ۱۵ دقیقه) حافظه‌ی حرکتی دست و لذتِ موسیقی رو ماندگار می‌کنه."
+      },
+      "feedbackWrong": {
+        "en": "Consistency beats marathon sessions: 10–15 calm minutes a day of scales, chords, and pieces keeps your skills growing.",
+        "fa": "تداوم روزانه خیلی مؤثرتر از تمرین‌های طولانیِ گاه‌به‌گاهه: روزی ۱۰ تا ۱۵ دقیقه مرور گام، آکورد و قطعه عالیه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Bravo! You completed all 9 chapters and 36 lessons of the MUSICHER Piano & Keyboard course—from your very first C to scales, two-hand chords, the Grand Staff, ear training, and Beethoven's Für Elise!",
+    "fa": "هورا و دست‌مریزاد! هر ۹ فصل و ۳۶ درسِ دوره‌ی پیانو و کیبورد MUSICHER رو با موفقیت تموم کردی—از پیدا کردن اولین نت دو تا گام‌ها، آکوردهای دودستی، حامل بزرگ، تربیت گوش و «فور الیز» بتهوون!"
+  },
+  "tomorrow": {
+    "en": "Keep your daily streak alive with the Practice Tools in Library, revisit your favorite pieces, or ask the Practice Advisor anytime!",
+    "fa": "هر روز با «ابزارهای تمرین» تو بخش کتابخانه دستت رو گرم نگه دار، قطعات محبوبت رو مرور کن و هر وقت سؤالی داشتی از مشاور تمرین بپرس!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content · melody: Ludwig van Beethoven, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: لودویگ فان بتهوون، مالکیت عمومی"
+    },
+    "license": {
+      "en": "Original MUSICHER content · melody: Ludwig van Beethoven, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: لودویگ فان بتهوون، مالکیت عمومی"
+    }
+  }
+}

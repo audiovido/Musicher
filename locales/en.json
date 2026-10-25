@@ -285,7 +285,15 @@
     "halfStepShort": "½ step",
     "tieVsSlurAria": "Notation diagram showing a five-line treble staff with two G4 half notes joined by a tie compared with a slur over C4, D4, and E4",
     "scaleCMajorAria": "Piano keyboard diagram highlighting the C major scale notes C to C with red brackets marking the two half steps E-F and B-C",
-    "scaleGMajorAria": "Piano keyboard diagram highlighting the G major scale notes G to G including F-sharp with red brackets marking the two half steps B-C and F-sharp-G"
+    "scaleGMajorAria": "Piano keyboard diagram highlighting the G major scale notes G to G including F-sharp with red brackets marking the two half steps B-C and F-sharp-G",
+    "bassClefCaption": "Bass clef (F clef): two dots surround line 4 (F3) · Left-hand notes",
+    "bassClefDotsLabel": "Line 4 = F3",
+    "bassClefAria": "Bass clef five-line staff diagram showing the two dots surrounding line 4 (F3) and landmark notes C3, F3, G3, and Middle C (C4)",
+    "grandStaffCaption": "Grand Staff: Treble (right hand) + Bass (left hand) joined at Middle C (C4)",
+    "grandStaffTrebleLabel": "Treble · Right hand",
+    "grandStaffBassLabel": "Bass · Left hand",
+    "grandStaffMiddleCLabel": "Middle C (C4)",
+    "grandStaffAria": "Piano Grand Staff diagram showing the treble staff on top, bass staff on bottom, and Middle C (C4) on a ledger line between them"
   },
   "piano": {
     "title": "Practice Piano",
@@ -313,7 +321,8 @@
     "computerKeysHint": "Desktop keys (C4–C5): A W S E D F T G Y H U J K",
     "handRight": "Right hand",
     "handLeft": "Left hand",
-    "handBoth": "Left hand for C3, right hand for C4 and C5"
+    "handBoth": "Left hand for C3, right hand for C4 and C5",
+    "handBothGeneral": "Both hands (Left + Right)"
   },
   "courses": {
     "pickerLabel": "Course",

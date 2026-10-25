@@ -1,0 +1,125 @@
+{
+  "id": 25,
+  "chapter": {
+    "en": "Chapter 7: Chords",
+    "fa": "فصل ۷ «آکوردها»"
+  },
+  "title": {
+    "en": "What is a chord",
+    "fa": "آکورد چیه؟"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Build your first three-note chord (C–E–G) using skips and play it with fingers 1–3–5.",
+    "fa": "اولین آکورد سه‌نتی خودت (دو–می–سل / C–E–G) رو با پرش‌های یکی‌درمیون می‌سازی و با انگشت‌های ۱–۳–۵ می‌زنی."
+  },
+  "see": {
+    "en": "Up to now, you have played melodies—one note after another. A chord happens when you sound three or more notes together to create harmony! The most common three-note chord is called a triad. To build the C major chord, start on C4 with your thumb (1), skip D to play E4 with your middle finger (3), and skip F to play G4 with your pinky (5). You can play C–E–G one by one to check each note, and then press all three keys down at the exact same time for a rich, full sound.",
+    "fa": "تا اینجا ملودی می‌زدی، یعنی نت‌ها رو یکی‌یکی پشت سر هم اجرا می‌کردی. وقتی سه تا نت (یا بیشتر) رو هم‌زمان با هم می‌زنی تا صدای پر و هماهنگ بسازی، بهش می‌گن «آکورد»! ساده‌ترین آکورد سه‌نتی با پرش‌های یکی‌درمیون ساخته می‌شه: شست (۱) رو بذار روی دو (C4)، نت ر رو رد کن و با انگشت وسط (۳) می (E4) رو بزن، بعد فا رو رد کن و با انگشت کوچیک (۵) سل (G4) رو بزن. اول این سه نت رو یکی‌یکی بزن تا صداشون رو بشنوی و بعد هر سه کلید رو با هم پایین ببر."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place your right hand in C position (fingers 1 to 5 resting on C4 to G4).",
+      "Play C4 (finger 1), E4 (finger 3), and G4 (finger 5) one by one in the practice keyboard below.",
+      "Now press C4, E4, and G4 down together at the same time while keeping fingers 2 and 4 relaxed."
+    ],
+    "fa": [
+      "دست راستت رو بذار روی پوزیشن دو (انگشت‌های ۱ تا ۵ روی C4 تا G4).",
+      "نت‌های دو (انگشت ۱)، می (انگشت ۳) و سل (انگشت ۵) رو یکی‌یکی روی کیبورد تمرین پایین بزن.",
+      "حالا هر سه کلید C4 و E4 و G4 رو هم‌زمان با هم فشار بده و انگشت‌های ۲ و ۴ رو کاملاً آزاد نگه دار."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "E4", "G4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I use fingers 1, 3, and 5 on C4, E4, and G4 (skipping D4 and F4)?",
+      "When pressing all three keys together, did my wrist and fingers 2 and 4 stay soft and relaxed?"
+    ],
+    "fa": [
+      "برای زدن دو، می و سل از انگشت‌های ۱، ۳ و ۵ استفاده کردم (و ر و فا رو رد کردم)؟",
+      "موقع زدن هر سه کلید با هم، مچ دستم و انگشت‌های ۲ و ۴ نرم و رها موندن؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which three notes make up the C major chord?",
+        "fa": "کدوم سه نت، آکورد «دو ماژور» (C) رو می‌سازن؟"
+      },
+      "options": {
+        "en": [
+          "C – E – G (built by skipping every other white key)",
+          "C – D – E (three neighbor steps)",
+          "C – F – G"
+        ],
+        "fa": [
+          "دو – می – سل (C – E – G، با پرش یکی‌درمیون)",
+          "دو – ر – می (سه نت همسایه)",
+          "دو – فا – سل"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! A basic three-note chord (triad) stacks two skips: C to E, and E to G.",
+        "fa": "دقیقاً! یه آکورد سه‌نتی پایه با دو تا پرش ساخته می‌شه: از دو به می، و از می به سل."
+      },
+      "feedbackWrong": {
+        "en": "Remember the skip pattern: start on C, skip D to E, and skip F to G.",
+        "fa": "الگوی یکی‌درمیون رو یادت بیار: از دو شروع کن، ر رو رد کن برو روی می، فا رو هم رد کن برو روی سل."
+      }
+    },
+    {
+      "question": {
+        "en": "Which right-hand fingers play the C–E–G chord in C position?",
+        "fa": "تو پوزیشن دو، با کدوم انگشت‌های دست راست آکورد دو–می–سل رو می‌زنی؟"
+      },
+      "options": {
+        "en": [
+          "Fingers 1 – 3 – 5 (thumb, middle, pinky)",
+          "Fingers 1 – 2 – 3",
+          "Fingers 2 – 3 – 4"
+        ],
+        "fa": [
+          "انگشت‌های ۱ – ۳ – ۵ (شست، وسط، کوچیک)",
+          "انگشت‌های ۱ – ۲ – ۳",
+          "انگشت‌های ۲ – ۳ – ۴"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Because the chord skips every other key, you use every other finger: 1, 3, and 5.",
+        "fa": "آفرین! چون کلیدها یکی‌درمیون هستن، انگشت‌ها هم یکی‌درمیون انتخاب می‌شن: ۱، ۳ و ۵."
+      },
+      "feedbackWrong": {
+        "en": "Since you skip D (finger 2) and F (finger 4), your chord uses fingers 1, 3, and 5.",
+        "fa": "چون نت ر (انگشت ۲) و فا (انگشت ۴) رو نمی‌زنی، آکورد با انگشت‌های ۱، ۳ و ۵ زده می‌شه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You built your first chord! By stacking skips on C–E–G with fingers 1–3–5, you can play harmony instead of single notes.",
+    "fa": "اولین آکوردت رو ساختی! با چیدن پرش‌های دو–می–سل زیر انگشت‌های ۱–۳–۵، حالا می‌تونی به‌جای تک‌نت، هارمونی بزنی."
+  },
+  "tomorrow": {
+    "en": "We will compare Major and Minor chords and hear how changing just one middle note transforms the mood.",
+    "fa": "آکورد ماژور و مینور رو مقایسه می‌کنیم و می‌شنویم چطور تغییر فقط یک نت وسط، حس آکورد رو عوض می‌کنه."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

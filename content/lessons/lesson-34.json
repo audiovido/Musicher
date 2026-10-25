@@ -1,0 +1,123 @@
+{
+  "id": 34,
+  "chapter": {
+    "en": "Chapter 9: Ear and next steps",
+    "fa": "فصل ۹ «تربیت گوش و گام‌های بعدی»"
+  },
+  "title": {
+    "en": "Ear 2: Major or minor",
+    "fa": "تربیت گوش ۲: ماژور یا مینور"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Recognize Major (bright) and Minor (warm/wistful) chords by ear across 6 listening rounds.",
+    "fa": "در ۶ مرحله‌ی شنیداری، آکوردهای «ماژور» (روشن و شاد) و «مینور» (گرم و غمگین‌تر) رو با گوش تشخیص می‌دی."
+  },
+  "see": {
+    "en": "In Lesson 26 you played C major (C–E–G) and C minor (C–E♭–G) on the keys. Now let's recognize that harmonic color purely by ear! In each round below, the app plays a chord's three notes one by one (arpeggiated) and then together. Listen especially to the middle note (the 3rd of the chord): if it sounds bright, sunny, and open, choose Major. If it sounds warm, introspective, or slightly sad, choose Minor.",
+    "fa": "تو درس ۲۶ آکورد دو ماژور (C–E–G) و دو مینور (C–E♭–G) رو روی کلیدها زدی. حالا می‌خوایم همون رنگ هارمونی رو فقط با گوش تشخیص بدیم! تو هر مرحله‌ی پایین، برنامه اول سه نتِ آکورد رو یکی‌یکی می‌زنه و بعد هر سه رو با هم پخش می‌کنه. به‌خصوص به نتِ دوم (نت وسط آکورد) دقت کن: اگه حسِ روشن، آفتابی و شاد می‌ده، «ماژور» رو انتخاب کن؛ و اگه حسِ گرم، عمیق یا کمی غمگین داره، «مینور» رو بزن."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Tap 'Play sound' in the Ear Training card to hear the broken notes followed by the full three-note chord.",
+      "Focus on the overall mood and the middle note of the chord—does it feel bright (Major) or warm/sad (Minor)?",
+      "Complete all 6 listening rounds, using 'Play again' whenever you want a second listen."
+    ],
+    "fa": [
+      "توی کارت «تربیت گوش» روی «پخش صدا» بزن تا اول تک‌نت‌ها و بعد صدای کاملِ آکورد سه‌نتی رو بشنوی.",
+      "به حس کلی آکورد و نتِ وسطش دقت کن—آیا روشن و بازه (ماژور) یا گرم و غمگین‌تر (مینور)؟",
+      "هر ۶ مرحله رو کامل کن و هر جا لازم بود روی «پخش دوباره» بزن تا مطمئن بشی."
+    ]
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "major-minor",
+    "rounds": 6
+  },
+  "selfCheck": {
+    "en": [
+      "Did I listen to both the one-by-one notes and the simultaneous chord before answering?",
+      "Can I hear how the middle note gives a Major chord its bright lift and a Minor chord its softer, warmer color?"
+    ],
+    "fa": [
+      "قبل از زدن گزینه، هم به نت‌های تک‌تک و هم به صدای هم‌زمانِ آکورد گوش دادم؟",
+      "متوجه شدم چطور نتِ وسط به آکورد ماژور درخشش و به آکورد مینور حسِ گرم و نرم می‌ده؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "When listening to a three-note triad, which note of the chord determines whether it sounds Major or Minor?",
+        "fa": "وقتی به یک آکورد سه‌نتی گوش می‌دی، کدوم نتِ آکورد مشخص می‌کنه که صداش ماژوره یا مینور؟"
+      },
+      "options": {
+        "en": [
+          "The middle note (the third of the chord)",
+          "Only the lowest bass note",
+          "How long the chord is held"
+        ],
+        "fa": [
+          "نت وسط (سومِ آکورد)",
+          "فقط بم‌ترین نت",
+          "مدت زمان نگه داشتن کلیدها"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! The outer fifth stays the same; the middle note (major third vs minor third) creates the bright or warm color.",
+        "fa": "دقیقاً! نت اول و آخر فاصله‌شون ثابته؛ این نتِ وسطه که رنگِ روشنِ ماژور یا رنگِ گرمِ مینور رو می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Remember Lesson 26: C and G stay the same, while the middle note (E vs E♭) changes Major to Minor.",
+        "fa": "درس ۲۶ رو یادت بیار: دو و سل ثابت بودن و فقط نت وسط (می در برابر می بمل) ماژور و مینور رو از هم جدا می‌کرد."
+      }
+    },
+    {
+      "question": {
+        "en": "Why does the ear-training player play the three notes one by one before playing them together?",
+        "fa": "چرا تو تمرین تربیت گوش، اول سه نت آکورد یکی‌یکی پخش می‌شن و بعد با هم؟"
+      },
+      "options": {
+        "en": [
+          "Hearing the notes separately lets your ear catch the middle note clearly before hearing the blended harmony",
+          "Because pianos cannot play three notes at once",
+          "To change the tempo of the song"
+        ],
+        "fa": [
+          "چون شنیدنِ جداگانه‌ی نت‌ها کمک می‌کنه گوشت نت وسط رو واضح بشنوه و بعد رنگِ ترکیب‌شده‌ی آکورد رو حس کنه",
+          "چون پیانو نمی‌تونه سه نت رو هم‌زمان بزنه",
+          "برای اینکه سرعت قطعه عوض بشه"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Hearing the broken triad first trains your ear to notice the individual pitches inside the blended chord.",
+        "fa": "آفرین! وقتی اول نت‌ها رو جدا می‌شنوی، گوشت یاد می‌گیره صدای نت وسط رو داخلِ آکوردِ هم‌زمان هم تشخیص بده."
+      },
+      "feedbackWrong": {
+        "en": "Playing the notes one by one (arpeggiated) helps your ear isolate the middle note before hearing all three together.",
+        "fa": "پخش تک‌به‌تک نت‌ها به گوشت کمک می‌کنه نت وسط رو قبل از ترکیب شدنِ هر سه صدا به‌خوبی بشناسه."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Great ear work! You can now distinguish Major and Minor chords both on the keyboard and by listening.",
+    "fa": "دمت گرم! حالا می‌تونی آکوردهای ماژور و مینور رو هم روی کلیدهای پیانو و هم با شنیدن تشخیص بدی."
+  },
+  "tomorrow": {
+    "en": "We will explore a fascinating musical question: what notes exist in Persian music that a standard piano cannot play?",
+    "fa": "به یک سؤال جذاب در موسیقی ایرانی می‌پردازیم: چه نت‌هایی تو موسیقی ایرانی هستن که پیانوی استاندارد نمی‌تونه بزنه؟"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

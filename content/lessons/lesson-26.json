@@ -1,0 +1,125 @@
+{
+  "id": 26,
+  "chapter": {
+    "en": "Chapter 7: Chords",
+    "fa": "فصل ۷ «آکوردها»"
+  },
+  "title": {
+    "en": "Major and minor",
+    "fa": "ماژور و مینور"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Play C major (C–E–G) and C minor (C–E♭–G) and hear the difference between bright major and warm minor harmony.",
+    "fa": "آکورد «دو ماژور» (C–E–G) و «دو مینور» (C–E♭–G) رو می‌زنی و تفاوت صدای روشنِ ماژور و صدای غمگین‌ترِ مینور رو می‌شنوی."
+  },
+  "see": {
+    "en": "Chords have two main emotional colors: Major (often described as bright, open, or happy) and Minor (often described as warm, thoughtful, or sad). The amazing part is that only the middle note changes! In C major, you play C4–E4–G4. To turn it into C minor, keep C4 (thumb 1) and G4 (pinky 5) where they are, and move finger 3 one half step lower from white key E4 to the black key E♭4 (labeled D♯4/E♭4 on the keyboard).",
+    "fa": "آکوردها دو تا رنگ و حسِ اصلی دارن: «ماژور» (روشن، باز و شاد) و «مینور» (گرم، عمیق یا کمی غمگین). نکته‌ی جالب اینه که فقط نتِ وسط فرق می‌کنه! تو آکورد دو ماژور، نت‌های دو–می–سل (C4–E4–G4) رو می‌زنی. برای اینکه تبدیلش کنی به «دو مینور»، شست (۱) روی دو و انگشت ۵ روی سل ثابت می‌مونن و فقط انگشت ۳ رو نیم‌پرده میاری پایین‌تر روی کلید سیاهِ «می بمل» (E♭4 که روی کیبورد با D♯4 هم‌مکانه)."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play the C major chord notes C4 (1), E4 (3), G4 (5) and listen to its bright sound.",
+      "Now move finger 3 one half step left onto the black key E♭4 (D♯4) and play C4 (1), E♭4 (3), G4 (5).",
+      "Press C–E–G together, then C–E♭–G together, and notice how that single middle note changes the whole mood."
+    ],
+    "fa": [
+      "اول نت‌های آکورد دو ماژور یعنی C4 (۱)، E4 (۳) و G4 (۵) رو بزن و به صدای روشنش گوش بده.",
+      "حالا انگشت ۳ رو نیم‌پرده بیار چپ روی کلید سیاهِ می بمل (D♯4/E♭4) و بزن: C4 (۱)، E♭4 (۳)، G4 (۵).",
+      "یک بار دو–می–سل رو هم‌زمان بزن و بعد دو–می‌بمل–سل رو بزن تا ببینی چطور همون نت وسط حس آکورد رو عوض می‌کنه."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "E4", "G4", "C4", "D#4", "G4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I keep C4 and G4 the same in both chords and only lower the middle note from E4 to the black key E♭4 (D♯4)?",
+      "Could I clearly hear the mood shift from bright (major) to warm/wistful (minor)?"
+    ],
+    "fa": [
+      "نت اول (C4) و آخر (G4) رو ثابت نگه داشتم و فقط نت وسط رو از می سفید به کلید سیاه می بمل (D♯4/E♭4) آوردم؟",
+      "تغییر حس صدا از روشن (ماژور) به گرم و غمگین‌تر (مینور) رو واضح شنیدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "How do you change a C major chord (C–E–G) into a C minor chord?",
+        "fa": "چطور آکورد «دو ماژور» (C–E–G) رو تبدیل به «دو مینور» می‌کنی؟"
+      },
+      "options": {
+        "en": [
+          "Lower the middle note (E) by one half step to the black key E♭ (D♯)",
+          "Lower the bottom note C to B",
+          "Raise the top note G to G♯"
+        ],
+        "fa": [
+          "نت وسط (می) رو نیم‌پرده میاری پایین روی کلید سیاهِ می بمل (E♭ / D♯)",
+          "نت اول (دو) رو میاری روی سی",
+          "نت آخر (سل) رو می‌بری روی سل دیز"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Lowering the middle note (the third of the chord) by one half step turns a major triad into a minor triad.",
+        "fa": "کاملاً درسته! وقتی نت وسط آکورد رو نیم‌پرده پایین میاری، آکورد ماژور تبدیل به مینور می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Keep the outer notes C and G in place—only the middle note moves down a half step from E to E♭.",
+        "fa": "نت‌های دو و سل سر جاشون می‌مونن؛ فقط نت وسط نیم‌پرده می‌آد پایین روی کلید سیاهِ می بمل."
+      }
+    },
+    {
+      "question": {
+        "en": "How do musicians usually describe the sound of a Major chord compared to a Minor chord?",
+        "fa": "معمولاً تفاوت حسِ آکورد ماژور و مینور رو چطور توصیف می‌کنن؟"
+      },
+      "options": {
+        "en": [
+          "Major sounds bright and happy; Minor sounds warm, thoughtful, or sad",
+          "Major is always played fast; Minor is always played slow",
+          "Major uses only black keys; Minor uses only white keys"
+        ],
+        "fa": [
+          "ماژور روشن و شاده؛ مینور گرم، متفکرانه یا کمی غمگینه",
+          "ماژور همیشه تند زده می‌شه و مینور همیشه کند",
+          "ماژور فقط کلید سیاه داره و مینور فقط کلید سفید"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Right! The slightly larger bottom interval in a major chord gives it a bright color, while the smaller bottom interval in minor sounds warmer or sadder.",
+        "fa": "آفرین! فاصله‌ی نت وسط در ماژور صدای روشن و شاد می‌ده و در مینور رنگِ گرم یا غمگین‌تر می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Major and minor describe the harmonic color (bright/happy vs warm/sad), not the speed of the music.",
+        "fa": "ماژور و مینور رنگ و حس صدا (روشن و شاد در برابر گرم و غمگین) رو نشون می‌دن، نه سرعت قطعه رو."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You now know the secret between Major and Minor chords: lowering the middle note by one half step shifts the harmony from bright to warm!",
+    "fa": "حالا رازِ تفاوت آکورد ماژور و مینور رو می‌دونی: با نیم‌پرده پایین آوردن نت وسط، رنگ صدا از شاد و روشن به گرم و عمیق تغییر می‌کنه!"
+  },
+  "tomorrow": {
+    "en": "Your left hand will learn the three main chords in C major: C, F, and G.",
+    "fa": "با دست چپ سه آکورد اصلی در گام دو ماژور (آکوردهای دو، فا و سل) رو یاد می‌گیریم."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

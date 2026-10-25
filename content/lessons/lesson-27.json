@@ -1,0 +1,125 @@
+{
+  "id": 27,
+  "chapter": {
+    "en": "Chapter 7: Chords",
+    "fa": "فصل ۷ «آکوردها»"
+  },
+  "title": {
+    "en": "Three main chords",
+    "fa": "سه آکورد اصلی"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play the three primary chords C, F, and G (I–IV–V) with your left hand using fingers 5–3–1.",
+    "fa": "سه آکورد اصلیِ دو (C)، فا (F) و سل (G) رو با دست چپ و انگشت‌های ۵–۳–۱ می‌زنی."
+  },
+  "see": {
+    "en": "Hundreds of songs can be accompanied with just three chords built on the 1st, 4th, and 5th notes of the scale (called I, IV, and V). In C major, those three chords are C major (C3–E3–G3), F major (F3–A3–C4), and G major (G3–B3–D4). Because the left hand usually plays accompaniment in the lower octave, you build each chord from the bottom up using pinky (5), middle finger (3), and thumb (1)—all on white keys!",
+    "fa": "صدها آهنگ معروف رو می‌شه فقط با سه تا آکورد همراهی کرد؛ آکوردهایی که روی نت اول، چهارم و پنجم گام ساخته می‌شن (بهشون درجات I و IV و V می‌گن). تو گام دو ماژور، این سه آکورد عبارت‌اند از: آکورد دو (C3–E3–G3)، آکورد فا (F3–A3–C4) و آکورد سل (G3–B3–D4). چون دست چپ معمولاً همراهی رو تو بخش بم‌تر می‌زنه، هر آکورد رو از پایین به بالا با انگشت کوچیک (۵)، انگشت وسط (۳) و شست (۱) روی کلیدهای سفید می‌گیری."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "With your left hand, play the C chord notes C3 (5), E3 (3), G3 (1).",
+      "Move your left hand up so pinky (5) lands on F3, and play the F chord: F3 (5), A3 (3), C4 (1).",
+      "Shift one white key higher so pinky (5) lands on G3, and play the G chord: G3 (5), B3 (3), D4 (1)."
+    ],
+    "fa": [
+      "با دست چپ، نت‌های آکورد دو رو بزن: C3 (با انگشت ۵)، E3 (انگشت ۳) و G3 (شست ۱).",
+      "دست چپت رو بیار بالاتر تا انگشت ۵ بشینه روی فا (F3) و آکورد فا رو بزن: F3 (۵)، A3 (۳)، C4 (۱).",
+      "حالا دست چپ رو فقط یک کلید سفید ببر بالاتر تا انگشت ۵ بشینه روی سل (G3) و آکورد سل رو بزن: G3 (۵)، B3 (۳)، D4 (۱)."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "left",
+    "notes": ["C3", "E3", "G3", "F3", "A3", "C4", "G3", "B3", "D4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I use left-hand fingers 5–3–1 (pinky on the bottom root note, thumb on the top note) for all three chords?",
+      "Did I keep the same comfortable hand shape as I shifted from C (C3) to F (F3) to G (G3)?"
+    ],
+    "fa": [
+      "برای هر سه آکورد با دست چپ از انگشت‌های ۵–۳–۱ (انگشت ۵ روی نتِ بمِ اول و شست ۱ روی نتِ آخر) استفاده کردم؟",
+      "موقع جابه‌جا شدن از آکورد دو (C3) به فا (F3) و سل (G3)، فرم گرد دستم رو حفظ کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Which three chords are the main I–IV–V chords in the key of C major?",
+        "fa": "سه آکورد اصلی (I–IV–V) در گام دو ماژور کدوم آکوردها هستن؟"
+      },
+      "options": {
+        "en": [
+          "C major (C–E–G), F major (F–A–C), and G major (G–B–D)",
+          "C major, D major, and E major",
+          "A minor, B diminished, and C major"
+        ],
+        "fa": [
+          "دو ماژور (C–E–G)، فا ماژور (F–A–C) و سل ماژور (G–B–D)",
+          "دو ماژور، ر ماژور و می ماژور",
+          "لا مینور، سی و دو ماژور"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! C (the 1st note), F (the 4th note), and G (the 5th note) form the three primary chords of C major.",
+        "fa": "دقیقاً! نت اول (دو)، نت چهارم (فا) و نت پنجم (سل) پایه‌ی سه آکورد اصلی در گام دو ماژور هستن."
+      },
+      "feedbackWrong": {
+        "en": "Count up from C: 1 is C, 4 is F, and 5 is G—giving the C, F, and G chords.",
+        "fa": "از نت دو بشمار: نت اول دو (C)، نت چهارم فا (F) و نت پنجم سل (G) هستن."
+      }
+    },
+    {
+      "question": {
+        "en": "When your left hand plays a root-position C chord (C3–E3–G3), which finger plays the lowest note C3?",
+        "fa": "وقتی با دست چپ آکورد دو (C3–E3–G3) رو می‌گیری، کدوم انگشت نت بمِ اول (C3) رو می‌زنه؟"
+      },
+      "options": {
+        "en": [
+          "Finger 5 (left pinky), because the left pinky sits on the lowest key",
+          "Finger 1 (left thumb)",
+          "Finger 2"
+        ],
+        "fa": [
+          "انگشت ۵ (انگشت کوچیک دست چپ)، چون سمت چپ‌ترین انگشته",
+          "انگشت ۱ (شست دست چپ)",
+          "انگشت ۲"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! On the left hand, pinky (5) is on the left (lowest note C3), middle (3) is on E3, and thumb (1) is on G3.",
+        "fa": "آفرین! تو دست چپ، انگشت ۵ سمت چپ قرار می‌گیره و نت بمِ اول (C3) رو می‌زنه و شست (۱) روی G3 می‌شینه."
+      },
+      "feedbackWrong": {
+        "en": "Look at your left hand over the keys: your pinky (5) is on the left side (C3) and your thumb (1) is on the right side (G3).",
+        "fa": "دست چپت رو روی کیبورد ببین: انگشت کوچیک (۵) سمت چپ (روی C3) و شست (۱) سمت راست (روی G3) قرار می‌گیره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Great work! Your left hand now knows the three foundational chords of C major—C, F, and G—using the 5–3–1 chord shape.",
+    "fa": "عالی بود! حالا دست چپت سه آکورد پایه‌ی گام دو ماژور یعنی دو (C)، فا (F) و سل (G) رو با الگوی ۵–۳–۱ بلده."
+  },
+  "tomorrow": {
+    "en": "We will combine your right-hand Ode to Joy melody with left-hand C and G chords!",
+    "fa": "ملودی «سرود شادی» در دست راست رو با آکوردهای دو و سل در دست چپ ترکیب می‌کنیم!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

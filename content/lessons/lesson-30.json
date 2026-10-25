@@ -1,0 +1,126 @@
+{
+  "id": 30,
+  "chapter": {
+    "en": "Chapter 8: Fluent reading",
+    "fa": "فصل ۸ «نت‌خوانی روان»"
+  },
+  "title": {
+    "en": "Grand staff",
+    "fa": "حامل بزرگ (دو حامل پیانو)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Understand how the treble staff and bass staff join to form the Grand Staff, with Middle C (C4) sitting right between them.",
+    "fa": "یاد می‌گیری چطور حامل کلید سل و کلید فا با هم «حامل بزرگ» پیانو رو می‌سازن و دوی وسط (C4) دقیقاً بین اون‌ها می‌شینه."
+  },
+  "see": {
+    "en": "Piano sheet music uses two staves joined on the left by a curved brace: this is called the Grand Staff. The top staff has the Treble Clef (usually played by your right hand) and the bottom staff has the Bass Clef (usually played by your left hand). Best of all, the two staves meet in the middle at Middle C (C4)! As you can see in the diagram below, C4 sits on its own short ledger line right between the bottom of the treble staff and the top of the bass staff.",
+    "fa": "نت‌های پیانو روی دو تا حامل نوشته می‌شن که سمت چپشون با یک خط و آکولاد (کمان) به هم وصل شده؛ به این مجموعه می‌گن «حامل بزرگ» (Grand Staff). حامل بالایی کلید سل داره (معمولاً برای دست راست) و حامل پایینی کلید فا داره (معمولاً برای دست چپ). قشنگ‌ترین نکته‌اش اینه که این دو حامل تو مرکز به «دوی وسط» (C4) می‌رسن! همون‌طور که تو شکل پایین می‌بینی، C4 روی یک خط تیره‌ی کوتاه دقیقاً بین حامل بالا و حامل پایین نشسته."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "diagram": "grand-staff",
+  "steps": {
+    "en": [
+      "Look at the Grand Staff diagram above and trace the landmark notes from low to high: C3 and F3 in the bass, C4 in the middle, and G4 and C5 in the treble.",
+      "With your left hand, play C3 (2nd space in bass) and F3 (4th line in bass).",
+      "Now play Middle C (C4) in the center, followed by right-hand G4 (2nd line in treble) and C5 (3rd space in treble)."
+    ],
+    "fa": [
+      "به نمودار «حامل بزرگ» بالا نگاه کن و نت‌های راهنما رو از بم به زیر دنبال کن: C3 و F3 تو کلید فا، C4 وسطِ دو حامل، و G4 و C5 تو کلید سل.",
+      "با دست چپ، اول C3 (فاصله‌ی دوم کلید فا) و بعد F3 (خط چهارم کلید فا) رو بزن.",
+      "حالا دوی وسط (C4) رو بزن و بعد با دست راست G4 (خط دوم کلید سل) و C5 (فاصله‌ی سوم کلید سل) رو اجرا کن."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "both",
+    "notes": ["C3", "F3", "C4", "G4", "C5"]
+  },
+  "selfCheck": {
+    "en": [
+      "Can I see how Middle C (C4) bridges the top of the bass staff and the bottom of the treble staff?",
+      "Did I play all five landmark notes (C3, F3, C4, G4, C5) across the two octaves?"
+    ],
+    "fa": [
+      "دیدم چطور دوی وسط (C4) مثل یه پل، بالای کلید فا رو به پایینِ کلید سل وصل می‌کنه؟",
+      "هر پنج نتِ راهنما (C3، F3، C4، G4 و C5) رو در طول دو اکتاو زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Where is Middle C (C4) located on the piano Grand Staff?",
+        "fa": "جای «دوی وسط» (C4) روی حامل بزرگ پیانو کجاست؟"
+      },
+      "options": {
+        "en": [
+          "On a short ledger line right between the treble staff and the bass staff",
+          "Above the top line of the treble staff",
+          "Below the bottom line of the bass staff"
+        ],
+        "fa": [
+          "روی یک خط تیره‌ی کوتاه، دقیقاً بین حاملِ کلید سل و حاملِ کلید فا",
+          "بالای خط پنجمِ کلید سل",
+          "زیر خط اولِ کلید فا"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Middle C gets its name because it sits right in the middle between the treble and bass staves.",
+        "fa": "دقیقاً! اصلاً به همین خاطر بهش «دوی وسط» می‌گن چون وسطِ دو حاملِ کلید سل و کلید فا قرار داره."
+      },
+      "feedbackWrong": {
+        "en": "Check the Grand Staff diagram: Middle C (C4) is the note on a short ledger line right in the middle gap between the two staves.",
+        "fa": "به نمودار حامل بزرگ نگاه کن: دوی وسط (C4) همون نتیه که روی خط کوتاهِ بین دو حامل نشسته."
+      }
+    },
+    {
+      "question": {
+        "en": "In the Grand Staff, how are the two staves usually divided between your hands?",
+        "fa": "تو حامل بزرگ پیانو، دو حامل معمولاً چطور بین دست‌ها تقسیم می‌شن؟"
+      },
+      "options": {
+        "en": [
+          "Top staff (treble clef) for the right hand; bottom staff (bass clef) for the left hand",
+          "Top staff for the left hand; bottom staff for the right hand",
+          "Both staves are played only with the right thumb"
+        ],
+        "fa": [
+          "حامل بالا (کلید سل) برای دست راست، و حامل پایین (کلید فا) برای دست چپ",
+          "حامل بالا برای دست چپ و حامل پایین برای دست راست",
+          "هر دو حامل فقط با شست دست راست زده می‌شن"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! The higher notes on the top treble staff go to the right hand, and the lower notes on the bottom bass staff go to the left hand.",
+        "fa": "آفرین! نت‌های زیرتر روی حامل بالایی (کلید سل) با دست راست و نت‌های بم‌تر روی حامل پایینی (کلید فا) با دست چپ زده می‌شن."
+      },
+      "feedbackWrong": {
+        "en": "Remember: right hand plays the higher treble staff on top, and left hand plays the lower bass staff on the bottom.",
+        "fa": "یادت باشه: دست راست سمتِ راست و نت‌های زیرتر (حامل بالا) رو می‌زنه و دست چپ نت‌های بم‌تر (حامل پایین) رو."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Now you can see the whole map of piano notation! The Grand Staff links Bass (left hand) and Treble (right hand) through Middle C in the center.",
+    "fa": "حالا کل نقشه‌ی نت‌نویسی پیانو رو می‌بینی! حامل بزرگ، کلید فا (دست چپ) و کلید سل (دست راست) رو از طریق دوی وسط به هم وصل می‌کنه."
+  },
+  "tomorrow": {
+    "en": "We will learn how to read musical patterns and shapes so your eyes read faster without spelling every letter!",
+    "fa": "یاد می‌گیریم چطور الگوها و شکل حرکت نت‌ها رو بخونیم تا چشمت بدون هجی کردن تک‌تک نت‌ها، خیلی سریع‌تر نت‌خوانی کنه!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

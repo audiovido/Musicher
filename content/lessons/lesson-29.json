@@ -1,0 +1,126 @@
+{
+  "id": 29,
+  "chapter": {
+    "en": "Chapter 8: Fluent reading",
+    "fa": "فصل ۸ «نت‌خوانی روان»"
+  },
+  "title": {
+    "en": "Bass clef",
+    "fa": "کلید فا (نت‌های دست چپ)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Read left-hand landmark notes on the bass clef staff—especially F3 between the two dots and C3 in the second space.",
+    "fa": "نت‌های کلیدیِ دست چپ رو روی حامل «کلید فا» می‌خونی؛ به‌خصوص فا (F3) بین دو نقطه و دو بم (C3) تو فاصله‌ی دوم."
+  },
+  "see": {
+    "en": "The treble clef (𝄞) is great for higher right-hand notes, but low left-hand notes would need too many ledger lines below it. That is why the left hand reads the Bass Clef (𝄢), also called the F clef! Look at its two dots in the diagram below: they sit right above and below the 4th line from the bottom. Those two dots lock line 4 as F3 ( the F below Middle C). From F3, you can step up to G3 in the top space, or count down to find C3 in the 2nd space from the bottom!",
+    "fa": "کلید سل (𝄞) برای نت‌های زیرِ دست راست عالیه، اما برای نت‌های بمِ دست چپ نیازمند کلی خط اضافی زیر حامل می‌شدیم. به همین خاطر دست چپ از «کلید فا» (𝄢) استفاده می‌کنه! به دو تا نقطه‌ی جلوی کلید فا تو شکل پایین نگاه کن: این دو نقطه دقیقاً بالا و پایینِ «خط چهارم» (از پایین) نشستن و نشون می‌دن که خط چهارم همون نت «فا» (F3، پایین‌تر از دوی وسط) است! از F3 که یه پله بری بالا می‌رسی به سل (G3) تو فاصله‌ی چهارم، و تو فاصله‌ی دوم از پایین هم نت «دو بم» (C3) نشسته."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "diagram": "bass-clef",
+  "steps": {
+    "en": [
+      "Look at the bass-clef diagram above: find F3 on the 4th line (between the two red dots) and C3 in the 2nd space from the bottom.",
+      "Place your left pinky (5) on C3 and walk up the white keys C3–D3–E3–F3–G3 (fingers 5–4–3–2–1).",
+      "Continue up A3–B3–C4 so you see how the bass staff leads right up to Middle C (C4) on its top ledger line."
+    ],
+    "fa": [
+      "به شکل کلید فا بالا نگاه کن: نت فا (F3) روی خط چهارم (بین دو نقطه) و نت دو بم (C3) تو فاصله‌ی دوم از پایین رو پیدا کن.",
+      "انگشت کوچیک دست چپ (۵) رو بذار روی C3 و روی کلیدهای سفید برو بالا: C3–D3–E3–F3–G3.",
+      "ادامه بده روی A3–B3–C4 تا ببینی چطور بالای حاملِ کلید فا با یک خط تیره می‌رسه به دوی وسط (C4)."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "left",
+    "notes": ["C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Can I point to the 4th line of the bass staff (between the two dots) and name it F3 right away?",
+      "Did I find C3 in the 2nd space from the bottom and play C3 up to C4 with my left hand?"
+    ],
+    "fa": [
+      "می‌تونم خط چهارمِ کلید فا (بین دو نقطه) رو نشون بدم و فوری بگم نت فا (F3) است؟",
+      "جای نت دو بم (C3) رو تو فاصله‌ی دوم از پایین یاد گرفتم و از C3 تا C4 رو با دست چپ زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "Why is the bass clef (𝄢) also called the F clef?",
+        "fa": "چرا به کلیدِ دست چپ (𝄢) «کلید فا» می‌گن؟"
+      },
+      "options": {
+        "en": [
+          "Its two dots surround the 4th line from the bottom, marking that line as the note F3",
+          "Every note on the staff is played with finger 4",
+          "It is only used when playing forte (loud)"
+        ],
+        "fa": [
+          "چون دو نقطه‌ی اون بالا و پایینِ خط چهارم قرار می‌گیرن و نشون می‌دن خط چهارم نت «فا» (F3) است",
+          "چون فقط چهار خط داره",
+          "چون فقط برای صدای قوی (Forte) استفاده می‌شه"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Just as the treble clef curls around G4, the bass clef's two dots frame the 4th line as F3.",
+        "fa": "دقیقاً! همون‌طور که کلید سل خط دوم (سل) رو نشون می‌ده، دو نقطه‌ی کلید فا خط چهارم (F3) رو مشخص می‌کنن."
+      },
+      "feedbackWrong": {
+        "en": "Look at the two dots next to the bass clef symbol: they sit on either side of line 4, which is the note F3.",
+        "fa": "به دو نقطه‌ی کنار علامت کلید فا نگاه کن: بالا و پایینِ خط چهارم نشستن که جای نت فا (F3) است."
+      }
+    },
+    {
+      "question": {
+        "en": "Where does low C (C3) sit on the bass clef staff?",
+        "fa": "نت «دو بم» (C3) کجای حاملِ کلید فا قرار می‌گیره؟"
+      },
+      "options": {
+        "en": [
+          "In the 2nd space from the bottom",
+          "On a ledger line below the entire staff",
+          "On the top line"
+        ],
+        "fa": [
+          "تو فاصله‌ی دوم از پایین",
+          "روی خط اضافیِ زیر حامل",
+          "روی خط پنجم (بالاترین خط)"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Counting down from F3 on line 4 (E3 space 3 → D3 line 3 → C3 space 2) puts C3 right in the 2nd space.",
+        "fa": "آفرین! تو کلید فا، نت دو بم (C3) دقیقاً تو فاصله‌ی دوم از پایین می‌شینه."
+      },
+      "feedbackWrong": {
+        "en": "Check the bass-clef diagram: C3 sits comfortably inside the staff in the 2nd space from the bottom.",
+        "fa": "به نمودار کلید فا نگاه کن: نت C3 داخل حامل و تو فاصله‌ی دوم از پایین قرار داره."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You unlocked the bass clef! With F3 between the two dots on line 4 and C3 in the 2nd space, you can read left-hand notes with confidence.",
+    "fa": "کلید فا رو هم یاد گرفتی! با شناختن F3 بین دو نقطه روی خط چهارم و C3 تو فاصله‌ی دوم، حالا می‌تونی نت‌های دست چپ رو راحت بخونی."
+  },
+  "tomorrow": {
+    "en": "We will connect the treble and bass staves together into the Grand Staff with Middle C right in between!",
+    "fa": "حامل کلید سل و کلید فا رو به هم وصل می‌کنیم تا «حامل بزرگ» پیانو و جای دوی وسط بین اون‌ها رو ببینیم!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

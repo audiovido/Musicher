@@ -471,6 +471,284 @@
     "lessonId": 24
   },
   {
+    "id": "chord_extra_fingers_down",
+    "courseId": "piano",
+    "lessonId": 25,
+    "keywords": [
+      "آکورد",
+      "آکورد دو",
+      "سه نت با هم",
+      "انگشت ۲ و ۴",
+      "کلیدهای وسط",
+      "chord",
+      "triad",
+      "c chord",
+      "play together",
+      "fingers 2 and 4"
+    ],
+    "cause": {
+      "en": "Fingers 2 and 4 tense up or accidentally press D and F when you try to press fingers 1, 3, and 5 together.",
+      "fa": "موقع پایین بردنِ هم‌زمان انگشت‌های ۱، ۳ و ۵، انگشت‌های ۲ و ۴ سفت می‌شن یا ناخواسته کلیدهای ر و فا رو هم فشار می‌دن."
+    },
+    "fix": {
+      "en": "Play C–E–G one note at a time with 1–3–5 first, then let your gently curved hand drop straight down using arm weight while fingers 2 and 4 float lightly above the keys.",
+      "fa": "اول نت‌های دو–می–سل رو یکی‌یکی با ۱–۳–۵ بزن، بعد با وزن آزاد دست هر سه رو با هم پایین ببر و بذار انگشت‌های ۲ و ۴ خیلی نرم بالای کلیدها آزاد بمونن."
+    }
+  },
+  {
+    "id": "major_minor_middle_note_slip",
+    "courseId": "piano",
+    "lessonId": 26,
+    "keywords": [
+      "ماژور و مینور",
+      "آکورد مینور",
+      "دو مینور",
+      "می بمل",
+      "major and minor",
+      "minor chord",
+      "c minor",
+      "e flat"
+    ],
+    "cause": {
+      "en": "Reaching for the black key E♭4 with finger 3 pulls your thumb (1) off C4 or your pinky (5) off G4.",
+      "fa": "وقتی انگشت ۳ رو می‌بری روی کلید سیاهِ می بمل (E♭4)، شست از روی دو یا انگشت ۵ از روی سل سر می‌خوره."
+    },
+    "fix": {
+      "en": "Slide your whole hand slightly forward toward the black keys so thumb (1) and pinky (5) rest deeper on C4 and G4 while finger 3 sits comfortably on E♭4.",
+      "fa": "کل دستت رو فقط یک سانتی‌متر ببر جلوتر به سمت کلیدهای سیاه تا شست و انگشت ۵ راحت روی C4 و G4 بمونن و انگشت ۳ بدون کشش روی E♭4 بشینه."
+    }
+  },
+  {
+    "id": "left_hand_chords_thumb_pinky_flip",
+    "courseId": "piano",
+    "lessonId": 27,
+    "keywords": [
+      "سه آکورد اصلی",
+      "آکورد دست چپ",
+      "آکورد فا",
+      "آکورد سل",
+      "انگشت گذاری دست چپ",
+      "left hand chords",
+      "c f g chords",
+      "three main chords",
+      "5 3 1"
+    ],
+    "cause": {
+      "en": "Mixing up left-hand finger numbers and trying to put thumb (1) on the bottom root note instead of pinky (5).",
+      "fa": "شماره‌ی انگشت‌های دست چپ رو با دست راست قاطی می‌کنی و می‌خوای شست (۱) رو بذاری روی نتِ بمِ اول."
+    },
+    "fix": {
+      "en": "Remember that your hands mirror each other: in the left hand, pinky (5) always plays the lowest root note (C3, F3, or G3) and thumb (1) plays the highest note of the triad.",
+      "fa": "یادت باشه دو دست آینه‌ی هم هستن: تو دست چپ همیشه انگشت کوچیک (۵) بم‌ترین نتِ آکورد (C3، F3 یا G3) رو می‌زنه و شست (۱) بالاترین نتِ آکورد رو."
+    }
+  },
+  {
+    "id": "ode_to_joy_two_hands_sync",
+    "courseId": "piano",
+    "lessonId": 28,
+    "keywords": [
+      "سرود شادی با آکورد",
+      "اجرای دو دستی",
+      "هماهنگی دو دست",
+      "چپ و راست",
+      "ode to joy chords",
+      "both hands",
+      "hands together",
+      "two hands"
+    ],
+    "cause": {
+      "en": "Pausing the melody at the start of every measure while looking down to find the left-hand C3 or G3 chord.",
+      "fa": "اولِ هر میزان ملودیِ دست راست متوقف می‌شه چون چشمت دنبال پیدا کردنِ کلید دست چپ (C3 یا G3) می‌گرده."
+    },
+    "fix": {
+      "en": "Keep your left pinky (5) resting directly on C3 and left thumb (1) on G3 the entire time so your left hand never has to search or jump!",
+      "fa": "از همون اول، انگشت ۵ دست چپ رو روی C3 و شست دست چپ (۱) رو روی G3 آماده نگه دار تا دست چپت اصلاً نیازی به گشتن یا پرش نداشته باشه!"
+    }
+  },
+  {
+    "id": "bass_clef_reading_as_treble",
+    "courseId": "piano",
+    "lessonId": 29,
+    "keywords": [
+      "کلید فا",
+      "نت های دست چپ",
+      "خط چهارم کلید فا",
+      "قاطی کردن کلید فا و سل",
+      "bass clef",
+      "f clef",
+      "left hand notes",
+      "line 4 f3"
+    ],
+    "cause": {
+      "en": "Reading bass-clef lines and spaces using treble-clef note names out of habit.",
+      "fa": "از روی عادتِ کلید سل، خط‌ها و فاصله‌های کلید فا رو با اسم نت‌های کلید سل می‌خونی."
+    },
+    "fix": {
+      "en": "Always spot the two bass-clef dots first: they lock the 4th line from the bottom as F3, and the 2nd space from the bottom is low C (C3).",
+      "fa": "اول از همه به دو نقطه‌ی کلید فا نگاه کن: اون دو نقطه خط چهارم رو به عنوان «فا» (F3) قفل می‌کنن و فاصله‌ی دوم از پایین هم «دو بم» (C3) است."
+    }
+  },
+  {
+    "id": "grand_staff_middle_c_gap",
+    "courseId": "piano",
+    "lessonId": 30,
+    "keywords": [
+      "حامل بزرگ",
+      "دو حامل",
+      "دوی وسط بین دو حامل",
+      "grand staff",
+      "two staves",
+      "middle c ledger line"
+    ],
+    "cause": {
+      "en": "Thinking the wide blank space between the treble and bass staves means the notes are far apart on the keyboard.",
+      "fa": "فکر می‌کنی چون بین حامل بالا و پایین روی کاغذ فاصله‌ی سفید هست، روی کیبورد هم بینشون کلیدهای زیادی فاصله‌ست."
+    },
+    "fix": {
+      "en": "The gap on paper is only for visual clarity—Middle C (C4) sits on one single ledger line right between the two staves, connecting them seamlessly!",
+      "fa": "فاصله‌ی بین دو حامل فقط برای خواناییِ چشمه؛ در واقع دوی وسط (C4) دقیقاً روی تنها یک خطِ کوتاه بین دو حامل نشسته و اون‌ها رو مستقیم به هم وصل می‌کنه!"
+    }
+  },
+  {
+    "id": "reading_letter_by_letter_pause",
+    "courseId": "piano",
+    "lessonId": 31,
+    "keywords": [
+      "خواندن الگوها",
+      "کند خواندن نت",
+      "تند نت خوانی",
+      "خط به خط",
+      "reading patterns",
+      "sight reading",
+      "read shapes",
+      "line to line"
+    ],
+    "cause": {
+      "en": "Stopping on every single notehead to translate its letter name before moving your finger.",
+      "fa": "سرِ تک‌تک نت‌ها مکث می‌کنی تا اسم حرفی‌ش رو یادت بیاری و رشتهکار از دستت درمی‌ره."
+    },
+    "fix": {
+      "en": "Find the first note, then read the shape: line-to-space means play the next finger (step); line-to-line or space-to-space means skip one finger (skip).",
+      "fa": "فقط نت اول رو پیدا کن و بعد شکل حرکت رو بخون: از خط به فاصله یعنی انگشتِ بغلی (قدم)؛ از خط به خط یا فاصله به فاصله یعنی یک انگشت درمیون (پرش)."
+    }
+  },
+  {
+    "id": "dynamics_banging_forte",
+    "courseId": "piano",
+    "lessonId": 32,
+    "keywords": [
+      "قوی و ضعیف",
+      "دینامیک",
+      "فورته",
+      "پیانو",
+      "کرشندو",
+      "دیمینوئندو",
+      "loud and soft",
+      "dynamics",
+      "forte",
+      "crescendo",
+      "diminuendo"
+    ],
+    "cause": {
+      "en": "Slamming the keys from high up with a stiff wrist when trying to play forte (loud), or rushing the tempo during a crescendo.",
+      "fa": "وقتی می‌خوای قوی (f) بزنی مچت رو سفت می‌کنی و از بالا روی کلید می‌کوبی، یا موقع کرشندو ناخودآگاه سرعت رو تندتر می‌کنی."
+    },
+    "fix": {
+      "en": "Keep your fingertips close to the keys and lean gently with warm arm weight for forte; keep the beat steady while swelling the volume in a crescendo.",
+      "fa": "نوک انگشت‌ها رو نزدیک کلیدها نگه دار و برای صدای قوی از وزنِ نرم بازو کمک بگیر؛ موقع کرشندو هم فقط حجم صدا رو بیشتر کن، نه سرعت ضرب رو."
+    }
+  },
+  {
+    "id": "ear_step_vs_skip_guess",
+    "courseId": "piano",
+    "lessonId": 33,
+    "keywords": [
+      "تربیت گوش ۱",
+      "تشخیص گام و پرش",
+      "زیرتر یا بم تر",
+      "گوشم تشخیص نمیده",
+      "ear 1",
+      "higher or lower",
+      "step or skip by ear",
+      "ear training"
+    ],
+    "cause": {
+      "en": "Answering right after the first note before letting the second note ring in your ear and humming the connection.",
+      "fa": "هنوز صدای نت دوم کامل تو گوشت ننشسته گزینه رو می‌زنی و ارتباط بین دو نت رو زمزمه نمی‌کنی."
+    },
+    "fix": {
+      "en": "Listen to both notes, hum them softly on 'la', and feel whether they touch like neighbors (step) or leave a gap in between (skip).",
+      "fa": "به هر دو نت کامل گوش بده، آروم با «لا» زمزمه‌شون کن و ببین آیا چسبیده به هم هستن (گام) یا بینشون جای خالی حس می‌شه (پرش)."
+    }
+  },
+  {
+    "id": "ear_major_minor_chord_confusion",
+    "courseId": "piano",
+    "lessonId": 34,
+    "keywords": [
+      "تربیت گوش ۲",
+      "تشخیص ماژور و مینور",
+      "صدای ماژور و مینور",
+      "ear 2",
+      "major or minor by ear",
+      "hear major minor"
+    ],
+    "cause": {
+      "en": "Focusing only on the highest or lowest note of the chord, which are identical in parallel major and minor triads.",
+      "fa": "موقع شنیدن آکورد، حواست فقط به نت اول یا نت آخر می‌ره که تو ماژور و مینورِ هم‌پایه یکسان هستن."
+    },
+    "fix": {
+      "en": "Listen closely to the second note played during the broken-chord preview: that middle note carries the sunny major or warm minor color!",
+      "fa": "وقتی اولش نت‌های آکورد تک‌تک پخش می‌شن، حواست رو بده به نتِ دوم (نت وسط)؛ همون نت رنگِ شادِ ماژور یا گرمِ مینور رو لو می‌ده!"
+    }
+  },
+  {
+    "id": "quarter_tone_koron_on_piano",
+    "courseId": "piano",
+    "lessonId": 35,
+    "keywords": [
+      "ربع پرده",
+      "کرن",
+      "سری",
+      "موسیقی ایرانی با پیانو",
+      "quarter tone",
+      "koron",
+      "sori",
+      "persian intervals on piano"
+    ],
+    "cause": {
+      "en": "Thinking a koron is the exact same pitch as a flat (♭) black key on the piano.",
+      "fa": "تصور می‌کنی علامت «کُرُن» دقیقاً همون کلید سیاهِ بمل (♭) روی پیانوست."
+    },
+    "fix": {
+      "en": "A flat (♭) lowers a note by a full half step (100 cents), whereas a koron lowers it by roughly a quarter tone—a pitch that sits in between two adjacent piano keys.",
+      "fa": "بمل (♭) نت رو یک نیم‌پرده‌ی کامل پایین میاره، اما کُرُن نت رو حدودِ ربع‌پرده بم‌تر می‌کنه؛ یعنی صدایی که بین کلید سفید و کلید سیاهِ همسایه‌اش قرار داره."
+    }
+  },
+  {
+    "id": "fur_elise_d_sharp_rock",
+    "courseId": "piano",
+    "lessonId": 36,
+    "keywords": [
+      "فور الیز",
+      "بتهوون",
+      "می ر دیز",
+      "قطعه پایانی",
+      "fur elise",
+      "für elise",
+      "beethoven",
+      "e d sharp"
+    ],
+    "cause": {
+      "en": "Twisting the wrist back and forth during the opening E4–D♯4–E4–D♯4–E4 alternation instead of keeping the hand quiet in the A3–E4 position.",
+      "fa": "موقع زدنِ حرکت رفت‌وبرگشتیِ E4–D♯4–E4–D♯4–E4 مچ دستت رو به چپ و راست می‌چرخونی."
+    },
+    "fix": {
+      "en": "Rest your hand slightly forward over A3–E4 so finger 4 is already touching the front of the black key D♯4 and pinky 5 rests right on E4.",
+      "fa": "دستت رو روی پوزیشنِ A3 تا E4 کمی جلوتر نگه دار تا انگشت ۴ از اول نزدیکِ کلید سیاه D♯4 و انگشت ۵ روی E4 آماده باشن."
+    }
+  },
+  {
     "id": "bored",
     "keywords": [
       "حوصلهم سر رفت",

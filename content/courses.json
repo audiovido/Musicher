@@ -7,7 +7,7 @@
     "icon": "piano",
     "status": "ready",
     "review": "self",
-    "lessonCount": 24,
+    "lessonCount": 36,
     "lessonsDir": "content/lessons",
     "coverImage": "assets/course-piano.jpeg",
     "title": {
@@ -15,8 +15,8 @@
       "fa": "پیانو و کیبورد"
     },
     "subtitle": {
-      "en": "6 chapters · 24 lessons from finding C to scales & pieces",
-      "fa": "۶ فصل · ۲۴ درس از پیدا کردن نت دو تا گام‌ها و قطعات"
+      "en": "9 chapters · 36 lessons",
+      "fa": "۹ فصل · ۳۶ درس"
     }
   },
   {

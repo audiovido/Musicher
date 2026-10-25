@@ -1,0 +1,145 @@
+{
+  "id": 28,
+  "chapter": {
+    "en": "Chapter 7: Chords",
+    "fa": "فصل ۷ «آکوردها»"
+  },
+  "title": {
+    "en": "Piece: Ode to Joy with chords",
+    "fa": "قطعه: سرود شادی با آکورد"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Combine Beethoven's Ode to Joy melody in the right hand with C and G chord accompaniment in the left hand.",
+    "fa": "ملودی «سرود شادی» بتهوون رو با دست راست و همراهیِ آکوردهای دو (C) و سل (G) در دست چپ اجرا می‌کنی."
+  },
+  "see": {
+    "en": "In Lesson 12 you played Beethoven's Ode to Joy with your right hand alone. Now you can make it sound like a complete piano arrangement by adding your left hand! Your right hand stays in C position (C4–G4) for the melody, while your left hand plays the C anchor (C3 or C–E–G chord) at the start of measures 1 and 3, and the G anchor (G3 or G–B–D chord) at the start of measures 2 and 4. In the practice guide below, play the left-hand bass/chord cue (C3 or G3) right before each measure's right-hand melody notes.",
+    "fa": "تو درس ۱۲ ملودی «سرود شادی» بتهوون رو با دست راست تنها زدی. حالا می‌خوایم با اضافه کردن دست چپ، صدای یه اجرای کامل پیانو رو بسازیم! دست راستت روی پوزیشن دو (C4 تا G4) ملودی رو می‌زنه و دست چپت اولِ میزان‌های ۱ و ۳ پایه‌ی آکورد دو (C3 یا آکورد C–E–G) و اولِ میزان‌های ۲ و ۴ پایه‌ی آکورد سل (G3 یا آکورد G–B–D) رو می‌گیره. تو کیبورد تمرین پایین، اول نتِ پایه دست چپ (C3 یا G3) و بلافاصله نت‌های ملودی دست راست رو بزن."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place your right hand on C4–G4 (1–5) and your left hand ready on C3 (pinky 5) and G3 (thumb 1).",
+      "Measure 1–2: Play left-hand C3, then right-hand E4–E4–F4–G4; next play left-hand G3, then right-hand G4–F4–E4–D4.",
+      "Measure 3–4: Play left-hand C3, then right-hand C4–C4–D4–E4–E4; finish with left-hand G3 and right-hand D4–D4."
+    ],
+    "fa": [
+      "دست راستت رو بذار روی C4 تا G4 (انگشت ۱ تا ۵) و دست چپت رو آماده بذار روی C3 (انگشت ۵) و G3 (شست ۱).",
+      "میزان ۱ و ۲: با دست چپ C3 رو بزن و با دست راست E4–E4–F4–G4؛ بعد با دست چپ G3 رو بزن و با دست راست G4–F4–E4–D4.",
+      "میزان ۳ و ۴: با دست چپ C3 رو بزن و با دست راست C4–C4–D4–E4–E4؛ در آخر با دست چپ G3 و با دست راست D4–D4 رو بزن."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "both",
+    "notes": [
+      "C3",
+      "E4",
+      "E4",
+      "F4",
+      "G4",
+      "G3",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C3",
+      "C4",
+      "C4",
+      "D4",
+      "E4",
+      "E4",
+      "G3",
+      "D4",
+      "D4"
+    ]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I play C3 and G3 with my left hand and the melody notes (C4–G4) with my right hand?",
+      "Did I keep a steady beat when switching attention between my left-hand chord cue and right-hand melody?"
+    ],
+    "fa": [
+      "نت‌های بمِ C3 و G3 رو با دست چپ و نت‌های ملودی (C4 تا G4) رو با دست راست زدم؟",
+      "موقع هماهنگ کردن دست چپ و ملودی دست راست، ضرب آهنگ رو منظم و بدون عجله نگه داشتم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "In our two-hand arrangement of Ode to Joy, what is each hand's job?",
+        "fa": "تو اجرای دودستیِ «سرود شادی»، وظیفه‌ی هر دست چیه؟"
+      },
+      "options": {
+        "en": [
+          "The right hand plays the melody (C4–G4) while the left hand plays the C and G chord accompaniment in the lower octave",
+          "Both hands play the exact same keys in the middle octave",
+          "The left hand plays the high melody and the right hand plays the low bass"
+        ],
+        "fa": [
+          "دست راست ملودی (C4–G4) رو می‌زنه و دست چپ همراهیِ آکورد دو و سل رو در اکتاو بم‌تر اجرا می‌کنه",
+          "هر دو دست روی یک کلید مشترک می‌زنن",
+          "دست چپ ملودی زیر رو می‌زنه و دست راست نت‌های بم رو"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! On the piano, the right hand usually sings the higher melody while the left hand supports it with bass notes and chords.",
+        "fa": "دقیقاً! روی پیانو معمولاً دست راست ملودیِ بالاتر رو می‌خونه و دست چپ با نت‌های بم و آکوردها همراهی‌اش می‌کنه."
+      },
+      "feedbackWrong": {
+        "en": "Remember: right hand stays on C4–G4 for the melody, and left hand plays the C3/G3 chord support.",
+        "fa": "یادت باشه: دست راست روی C4 تا G4 ملودی رو می‌زنه و دست چپ روی C3 و G3 پایه و آکورد رو نگه می‌داره."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the best way to practice when putting both hands together for the first time?",
+        "fa": "وقتی برای اولین بار می‌خوای دو دست رو با هم هماهنگ کنی، بهترین روش تمرین چیه؟"
+      },
+      "options": {
+        "en": [
+          "Slow the tempo down so your brain has time to prepare each measure's chord change smoothly",
+          "Play as fast as possible right away",
+          "Stiffen both wrists to press harder"
+        ],
+        "fa": [
+          "سرعت رو کم کنی تا ذهنت فرصت داشته باشه اولِ هر میزان تغییر دست چپ و راست رو راحت هماهنگ کنه",
+          "از همون بار اول با بیشترین سرعت ممکن بزنی",
+          "مچ هر دو دست رو سفت کنی"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Slow, calm practice builds coordination between both hands without tension.",
+        "fa": "آفرین! تمرین آروم و با سرعت پایین، هماهنگی بین دو دست رو بدون استرس و خستگی می‌سازه."
+      },
+      "feedbackWrong": {
+        "en": "Playing slowly gives your hands time to coordinate the left-hand chord cue with the right-hand melody.",
+        "fa": "آروم زدن به دست‌هات فرصت می‌ده ورود دست چپ و ملودی دست راست رو دقیق با هم جفت کنن."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations on finishing Chapter 7! You learned how chords work, Major vs Minor colors, the I–IV–V chords (C, F, G), and played Ode to Joy with both hands.",
+    "fa": "تبریک، فصل ۷ رو هم تموم کردی! ساختار آکورد، تفاوت ماژور و مینور، سه آکورد اصلی (دو، فا، سل) و اجرای دودستیِ «سرود شادی» رو یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "In Chapter 8, we will learn the Bass Clef so you can read left-hand notes on the staff!",
+    "fa": "تو فصل ۸، «کلید فا» رو یاد می‌گیریم تا بتونی نت‌های دست چپ رو هم از روی خطوط حامل بخونی!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content · melody: Ludwig van Beethoven, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: لودویگ فان بتهوون، مالکیت عمومی"
+    },
+    "license": {
+      "en": "Original MUSICHER content · melody: Ludwig van Beethoven, public domain",
+      "fa": "محتوای اختصاصی MUSICHER · ملودی: لودویگ فان بتهوون، مالکیت عمومی"
+    }
+  }
+}

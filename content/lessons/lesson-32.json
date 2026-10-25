@@ -1,0 +1,125 @@
+{
+  "id": 32,
+  "chapter": {
+    "en": "Chapter 8: Fluent reading",
+    "fa": "فصل ۸ «نت‌خوانی روان»"
+  },
+  "title": {
+    "en": "Loud and soft",
+    "fa": "قوی و ضعیف (دینامیک)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Understand the four main dynamic markings—p (soft), f (loud), crescendo, and diminuendo—and shape a musical phrase.",
+    "fa": "چهار علامت اصلیِ حجم صدا (دینامیک) یعنی p (آرام)، f (قوی)، کرشندو و دیمینوئندو رو می‌شناسی و جمله‌ی موسیقی رو با حس اجرا می‌کنی."
+  },
+  "see": {
+    "en": "The instrument you play is actually named the 'pianoforte'—which in Italian literally means 'soft-loud'! Composers write Italian dynamic signs under the staff to show how soft or loud to play: 'p' stands for piano (soft and gentle), and 'f' stands for forte (strong and full). A widening hairpin (<) or 'cresc.' means crescendo: gradually get louder. A narrowing hairpin (>) or 'dim.' means diminuendo: gradually get softer. On an acoustic piano or touch-sensitive keyboard, pressing a key faster with natural arm weight makes a fuller sound, while a slower, lighter key drop makes a softer sound.",
+    "fa": "جالبه بدونی اسم کاملِ ساز پیانو در اصل «پیانوفورته» بوده که تو زبان ایتالیایی یعنی «ضعیف و قوی»! آهنگ‌سازها زیر حامل علامت‌های «دینامیک» می‌ذارن تا حجم صدا معلوم بشه: حرف «p» (مخفف piano) یعنی آرام و لطیف، و حرف «f» (مخفف forte) یعنی قوی و پرصدا. علامتِ بازشونده (<) یعنی «کرشندو» (کم‌کم قوی‌تر شدن صدا) و علامتِ بسته‌شونده (>) یعنی «دیمینوئندو» (کم‌کم آرام‌تر شدن صدا). روی پیانوی واقعی، وزن آزادِ دست و سرعت پایین رفتن کلید حجم صدا رو می‌سازه، بدون اینکه مچت رو سفت کنی."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Place your right hand on C4–G4 and imagine a swell (<) going up and a fade (>) coming back down.",
+      "Play C4–D4–E4–F4–G4 starting gently (p) on C4 and building up to a strong peak (f) on G4 (crescendo).",
+      "Now walk back down F4–E4–D4–C4, gradually softening (diminuendo) until the final C4 feels like a calm whisper."
+    ],
+    "fa": [
+      "دست راستت رو بذار روی C4 تا G4 و یه موج صوتی رو تصور کن که موقع بالا رفتن اوج می‌گیره (<) و موقع برگشتن آروم می‌شه (>).",
+      "نت‌های C4–D4–E4–F4–G4 رو بزن: از C4 خیلی نرم (p) شروع کن و پله‌پله تا G4 پرانرژی‌تر (f) شو (کرشندو).",
+      "حالا روی F4–E4–D4–C4 برگرد پایین و کم‌کم لمس کلیدها رو لطیف‌تر کن (دیمینوئندو) تا C4 آخر کاملاً آرام باشه."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "F4", "G4", "F4", "E4", "D4", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Do I know what p (soft), f (loud), crescendo (<), and diminuendo (>) mean when I see them in sheet music?",
+      "When imagining or playing louder (forte), did I use relaxed arm weight rather than stiffening my wrist?"
+    ],
+    "fa": [
+      "معنی چهار علامت p (آرام)، f (قوی)، کرشندو (<) و دیمینوئندو (>) رو روی نت‌ها کامل یاد گرفتم؟",
+      "موقع زدن نت‌های قوی‌تر (f)، به‌جای کوبیدن و سفت کردن مچ، از وزن راحتِ دستم استفاده کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "What do the dynamic markings 'p' (piano) and 'f' (forte) tell you to do?",
+        "fa": "علامت‌های «p» و «f» زیر خطوط حامل بهت چی می‌گن؟"
+      },
+      "options": {
+        "en": [
+          "'p' means play softly, and 'f' means play loudly",
+          "'p' means play with the pinky, and 'f' means play the note F",
+          "'p' means pause, and 'f' means play fast"
+        ],
+        "fa": [
+          "«p» یعنی آرام (ضعیف) بزن و «f» یعنی قوی (بلند) بزن",
+          "«p» یعنی با انگشت کوچیک بزن و «f» یعنی نت فا رو بزن",
+          "«p» یعنی توقف کن و «f» یعنی تند بزن"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! In Italian musical terms, piano (p) means soft and forte (f) means loud/strong.",
+        "fa": "کاملاً درسته! تو اصطلاحات موسیقی، p (پیانو) یعنی صدای آرام و f (فورته) یعنی صدای قوی."
+      },
+      "feedbackWrong": {
+        "en": "Remember that dynamics control volume: p (piano) = soft, and f (forte) = loud.",
+        "fa": "یادت باشه این علامت‌ها مربوط به حجم صدا هستن: p یعنی آرام و f یعنی قوی."
+      }
+    },
+    {
+      "question": {
+        "en": "What does a crescendo sign (<) mean in music?",
+        "fa": "علامت «کرشندو» (<) در موسیقی چه معنایی داره؟"
+      },
+      "options": {
+        "en": [
+          "Gradually get louder from note to note",
+          "Gradually get softer",
+          "Stop playing immediately"
+        ],
+        "fa": [
+          "صدا رو کم‌کم و تدریجی قوی‌تر کن",
+          "صدا رو کم‌کم ضعیف‌تر کن",
+          "ناگهانی دست از زدن بکش"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Just like the lines of the '<' symbol open wider, a crescendo means the sound grows wider and louder.",
+        "fa": "آفرین! همون‌طور که دهانه‌ی علامت «<» بازتر می‌شه، تو کرشندو هم صدا کم‌کم اوج می‌گیره و قوی‌تر می‌شه."
+      },
+      "feedbackWrong": {
+        "en": "Look at the shape of '<': it starts narrow (soft) and opens wide (loud), meaning gradually get louder.",
+        "fa": "به شکلِ علامت «<» نگاه کن: از باریک (آرام) شروع می‌شه و بازتر (قوی) می‌شه، یعنی کم‌کم قوی‌تر شدن صدا."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations on completing Chapter 8! You learned the bass clef, the Grand Staff, pattern reading, and expressive dynamics (p, f, crescendo, diminuendo).",
+    "fa": "ایول، فصل ۸ رو هم تموم کردی! کلید فا، حامل بزرگ، خواندن الگوهای نت و علامت‌های دینامیک (p، f، کرشندو و دیمینوئندو) رو کامل یاد گرفتی."
+  },
+  "tomorrow": {
+    "en": "In Chapter 9, we will train your musical ear to recognize pitch direction, steps, skips, and chord colors!",
+    "fa": "تو فصل ۹، گوش موسیقایی‌ت رو تمرین می‌دیم تا جهت نت‌ها، گام و پرش، و رنگ آکوردها رو با شنیدن تشخیص بدی!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

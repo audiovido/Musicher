@@ -1,0 +1,125 @@
+{
+  "id": 31,
+  "chapter": {
+    "en": "Chapter 8: Fluent reading",
+    "fa": "فصل ۸ «نت‌خوانی روان»"
+  },
+  "title": {
+    "en": "Reading patterns",
+    "fa": "خواندن الگوها (نه تک‌نت‌ها)"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Read music by spotting shapes—stepping up, stepping down, and skipping (line-to-line or space-to-space)—instead of naming every single note.",
+    "fa": "به‌جای اسم بردن تک‌تک نت‌ها، با دیدن شکل حرکت نت‌ها (قدم به بالا، قدم به پایین و پرش از خط به خط) روان نت‌خوانی می‌کنی."
+  },
+  "see": {
+    "en": "When you read a book, you don't spell out every single letter—you recognize whole words and shapes! Music reading works the same way. Find your starting note using a landmark (like C4 or G4), and then watch how the notes move: if a note moves from a line to the very next space (or space to next line), it is a Step—just play the neighbor finger! If a note jumps from a line to the next line (or space to next space), it is a Skip—skip one key and one finger (like 1–3–5).",
+    "fa": "وقتی کتاب می‌خونی، تک‌تک حرف‌ها رو هجی نمی‌کنی، بلکه شکل کلمه‌ها رو یک‌جا می‌بینی! نت‌خوانیِ روان هم دقیقاً همینه. اول نتِ شروع رو با یکی از نت‌های راهنما (مثل C4 یا G4) پیدا کن، بعد فقط به شکل حرکت نت‌ها نگاه کن: اگه نت از خط بره تو فاصله‌ی بغلش (یا از فاصله بره روی خط بعدی)، یعنی «قدم» (گام) برداشته—پس انگشت همسایه رو بزن! اگه نت از یک خط بپره روی خط بعدی (یا از یک فاصله به فاصله‌ی بعدی)، یعنی «پرش» کرده—پس یک کلید و یک انگشت رو رد کن (مثل ۱–۳–۵)."
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Pattern 1 (Stepping up): Start on C4 (1) and play 3 neighbor steps up: C4 – D4 – E4 (fingers 1–2–3).",
+      "Pattern 2 (Skipping up, line-to-line): Start on C4 (1) and play 3 skips up: C4 – E4 – G4 (fingers 1–3–5).",
+      "Pattern 3 (Stepping down): Start on G4 (5) and walk smoothly down step by step: G4 – F4 – E4 – D4 – C4 (fingers 5–4–3–2–1)."
+    ],
+    "fa": [
+      "الگوی اول (قدم به بالا): از دو (C4 با انگشت ۱) شروع کن و ۳ نت همسایه برو بالا: C4 – D4 – E4 (انگشت‌های ۱–۲–۳).",
+      "الگوی دوم (پرش به بالا، خط به خط): دوباره از C4 شروع کن و با پرش‌های یکی‌درمیون بزن: C4 – E4 – G4 (انگشت‌های ۱–۳–۵).",
+      "الگوی سوم (قدم به پایین): از سل (G4 با انگشت ۵) شروع کن و پله‌پله بیا پایین: G4 – F4 – E4 – D4 – C4 (انگشت‌های ۵–۴–۳–۲–۱)."
+    ]
+  },
+  "practice": {
+    "type": "keyboard-follow",
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "D4", "E4", "C4", "E4", "G4", "G4", "F4", "E4", "D4", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I feel the difference in my hand between Pattern 1 (neighbor fingers 1–2–3) and Pattern 2 (skipping fingers 1–3–5)?",
+      "Did I play the descending 5-note pattern (G4 down to C4) as one smooth downward shape?"
+    ],
+    "fa": [
+      "تفاوت حسِ دستم بین الگوی اول (انگشت‌های همسایه ۱–۲–۳) و الگوی دوم (پرش انگشت‌های ۱–۳–۵) رو خوب حس کردم؟",
+      "الگوی سوم (پایین اومدن از سل به دو) رو یک‌دست و پیوسته زدم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "On the staff, if the first note is on line 1 (E4) and the next note is on line 2 (G4), how did the music move?",
+        "fa": "روی خطوط حامل، اگه نت اول روی خط اول (E4) باشه و نت بعدی روی خط دوم (G4)، حرکت نت‌ها چطوریه؟"
+      },
+      "options": {
+        "en": [
+          "By a skip up (line to next line, skipping the space F4 in between)",
+          "By a neighbor step up",
+          "The same note repeated"
+        ],
+        "fa": [
+          "یک پرش به بالا (از خط به خط بعدی، با رد کردنِ فاصله‌ی فا در وسط)",
+          "یک قدم همسایه به بالا",
+          "تکرار همون نت"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly! Line-to-line (or space-to-space) is always a skip because you jump over the space (or line) in between.",
+        "fa": "دقیقاً! حرکت از خط به خط (یا از فاصله به فاصله) همیشه یک «پرش» است چون نتِ بینشون رو رد کردی."
+      },
+      "feedbackWrong": {
+        "en": "A step goes from a line to the adjacent space. Going from line 1 directly to line 2 skips the space in between!",
+        "fa": "قدم یعنی حرکت از خط به فاصله‌ی بغلش؛ ولی رفتن از خط اول به خط دوم، فاصله‌ی وسط رو رد می‌کنه و پرش حساب می‌شه."
+      }
+    },
+    {
+      "question": {
+        "en": "How do fluent sight-readers read a group of notes like G4–F4–E4–D4–C4?",
+        "fa": "نوازنده‌ها برای اینکه یک رشته نت مثل G4–F4–E4–D4–C4 رو سریع بخونن چیکار می‌کنن؟"
+      },
+      "options": {
+        "en": [
+          "They identify the first note (G4) and see the downward step-by-step shape",
+          "They stop on every note to count up from the bottom of the keyboard",
+          "They guess random keys"
+        ],
+        "fa": [
+          "نت اول (سل) رو می‌شناسن و بقیه رو به شکلِ یک الگوی پله‌پله به سمت پایین می‌بینن",
+          "سرِ هر نت توقف می‌کنن و از اول کیبورد می‌شمارن",
+          "کلیدها رو شانسی می‌زنن"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Reading the starting landmark and following the direction/shape lets your fingers flow without pausing.",
+        "fa": "آفرین! وقتی نت شروع رو بشناسی و جهت و الگوی حرکت رو ببینی، انگشت‌هات بدون مکث جلو می‌رن."
+      },
+      "feedbackWrong": {
+        "en": "Instead of stopping to spell each note, spot the first note (G4) and follow the downward step pattern.",
+        "fa": "به‌جای مکث کردن روی تک‌تک نت‌ها، کافیه نت اول (سل) رو ببینی و الگوی پله‌پله به پایین رو دنبال کنی."
+      }
+    }
+  ],
+  "summary": {
+    "en": "You learned the secret of fluent sight-reading: anchor on the first note, then read the shapes of steps (line-to-space) and skips (line-to-line)!",
+    "fa": "راز نت‌خوانیِ روان رو یاد گرفتی: نت اول رو پیدا کن و بعد شکلِ قدم‌ها (خط به فاصله) و پرش‌ها (خط به خط) رو دنبال کن!"
+  },
+  "tomorrow": {
+    "en": "We will add expression to your playing with dynamics: piano (soft), forte (loud), crescendo, and diminuendo.",
+    "fa": "با علامت‌های دینامیک آشنا می‌شیم تا به نوازندگیت حس و حجم صدا (ضعیف، قوی، اوج و فرود) بدیم."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}

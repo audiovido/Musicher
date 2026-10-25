@@ -1,0 +1,124 @@
+{
+  "id": 33,
+  "chapter": {
+    "en": "Chapter 9: Ear and next steps",
+    "fa": "فصل ۹ «تربیت گوش و گام‌های بعدی»"
+  },
+  "title": {
+    "en": "Ear 1: Direction, steps and skips",
+    "fa": "تربیت گوش ۱: جهت، گام و پرش"
+  },
+  "minutes": 6,
+  "goal": {
+    "en": "Train your ear to tell whether notes move higher or lower, whether two patterns are the same or different, and whether two notes move by step or skip.",
+    "fa": "گوشت رو تمرین می‌دی تا با شنیدن تشخیص بدی نت دوم زیرتره یا بم‌تر، دو الگو یکسانن یا متفاوت، و حرکت نت‌ها گام (همسایه) است یا پرش."
+  },
+  "see": {
+    "en": "Great musicians don't just read with their eyes—they listen with an active ear! When you hear two notes, ask yourself three simple questions: 1) Direction: did the second note go Higher (brighter, to the right on the piano) or Lower (deeper, to the left)? 2) Comparison: if you hear two short phrases, were they the Same or Different? 3) Distance: did the notes move smoothly to the very next neighbor (a Step, like C to D) or jump across a key (a Skip, like C to E)?",
+    "fa": "نوازنده‌های خوب فقط با چشم نت نمی‌خونن، بلکه با «گوشِ فعال» به صداها دقت می‌کنن! وقتی دو تا نت یا الگو رو می‌شنوی، سه تا چیز ساده رو از خودت بپرس: ۱) جهت: نت دوم زیرتر (بالاتر، سمت راست پیانو) شد یا بم‌تر (پایین‌تر، سمت چپ)؟ ۲) مقایسه: آیا دو الگوی کوتاه کاملاً یکسان بودن یا متفاوت؟ ۳) فاصله: آیا دو نت نرم رفتن روی همسایه‌ی بغلی («گام»، مثل دو به ر) یا از روی کلید پریدن («پرش»، مثل دو به می)؟"
+  },
+  "imageUrl": "",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Tap 'Play sound' in the Ear Training card below and close your eyes for a second as you listen.",
+      "In rounds 1–2 listen for Higher vs Lower; in rounds 3–4 listen for Same vs Different; in rounds 5–6 listen for Step vs Skip.",
+      "If you are unsure on any round, tap 'Play again' to compare the pitches before choosing your answer."
+    ],
+    "fa": [
+      "توی کارت «تربیت گوش» پایین، روی «پخش صدا» بزن و موقع شنیدن نت‌ها با تمرکز گوش بده.",
+      "تو مرحله‌ی ۱ و ۲ زیرتر یا بم‌تر بودن، تو مرحله‌ی ۳ و ۴ یکسان یا متفاوت بودن، و تو مرحله‌ی ۵ و ۶ گام یا پرش بودن رو تشخیص بده.",
+      "اگه تو هر مرحله شک داشتی، دوباره روی پخش صدا بزن تا فاصله‌ی نت‌ها رو راحت‌تر مقایسه کنی."
+    ]
+  },
+  "practice": {
+    "type": "ear-choice",
+    "mode": "step-skip",
+    "subModes": ["higher-lower", "same-different", "step-skip"],
+    "rounds": 6
+  },
+  "selfCheck": {
+    "en": [
+      "Did I listen to the full sound of both notes before picking my answer?",
+      "Could I hear the smooth closeness of a neighbor step compared to the wider jump of a skip?"
+    ],
+    "fa": [
+      "قبل از انتخاب گزینه، کامل به صدای هر دو نت گوش دادم؟",
+      "تفاوتِ نزدیکیِ دو نت همسایه (گام) با فاصله‌ی بازترِ پرش رو با گوشم حس کردم؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "When you hear two notes that sit right next to each other in the scale (like C4 to D4), what kind of melodic motion are you hearing?",
+        "fa": "وقتی دو نت که دقیقاً همسایه‌ی هم هستن (مثل C4 به D4) رو پشت سر هم می‌شنوی، چه نوع حرکتی دارن؟"
+      },
+      "options": {
+        "en": [
+          "A step (neighbor motion)",
+          "A skip (jumping over a note)",
+          "A three-note chord"
+        ],
+        "fa": [
+          "گام یا قدم (حرکت به نت همسایه)",
+          "پرش (رد کردن یک یا چند نت)",
+          "آکورد سه‌نتی"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Correct! Moving from one note to its immediate neighbor is a step, which sounds smooth and connected.",
+        "fa": "کاملاً درسته! حرکت از یک نت به همسایه‌ی بلافاصله‌اش «گام» (قدم) نام داره و صدای نرم و پیوسته‌ای می‌ده."
+      },
+      "feedbackWrong": {
+        "en": "Since C4 and D4 are right next to each other with no white key skipped between them, that motion is a step.",
+        "fa": "چون بین دو (C4) و ر (D4) هیچ کلید سفیدی رد نشده و همسایه‌ی هم هستن، این حرکت «گام» (قدم) است."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the best habit if you are unsure whether a second note went higher or lower?",
+        "fa": "اگه موقع شنیدن شک کردی که نت دوم زیرتر شد یا بم‌تر، بهترین کار چیه؟"
+      },
+      "options": {
+        "en": [
+          "Listen again and hum both notes softly—your voice naturally feels whether it moves up or down",
+          "Guess without listening again",
+          "Only look at the rhythm"
+        ],
+        "fa": [
+          "دوباره گوش بدی و دو نت رو خیلی آروم زمزمه کنی؛ حنجره‌ات طبیعی حس می‌کنه صدا رفت بالا یا اومد پایین",
+          "بدون گوش دادنِ دوباره شانسی بزنی",
+          "فقط به سرعت نت‌ها فکر کنی"
+        ]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Spot on! Humming the two notes gently connects your ear to your voice, making higher vs lower immediately clear.",
+        "fa": "آفرین! وقتی دو نت رو آروم زمزمه می‌کنی، ارتباط گوش و صدات باعث می‌شه بالا یا پایین رفتن نت کاملاً مشخص بشه."
+      },
+      "feedbackWrong": {
+        "en": "Replaying the sound and humming the two pitches softly is the easiest way to feel whether the pitch went up or down.",
+        "fa": "دوباره شنیدن و زمزمه‌ی آرومِ دو نت، راحت‌ترین راهه تا حس کنی صدا بالاتر رفته یا پایین‌تر."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Awesome listening! Your ear practiced spotting pitch direction (higher/lower), pattern matching (same/different), and melodic distance (step/skip).",
+    "fa": "عالی گوش دادی! گوشت تشخیصِ جهت صدا (زیرتر/بم‌تر)، مقایسه‌ی الگوها (یکسان/متفاوت) و فاصله‌ی ملودیک (گام/پرش) رو تمرین کرد."
+  },
+  "tomorrow": {
+    "en": "In Ear 2, we will train your ear to distinguish Major and Minor chords by their sound color!",
+    "fa": "تو درس بعدیِ تربیت گوش، تشخیصِ آکوردهای ماژور و مینور رو فقط با شنیدن رنگ صداشون تمرین می‌کنیم!"
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    }
+  }
+}
