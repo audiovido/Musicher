@@ -3169,6 +3169,11 @@
       .mobile-shell { overflow: clip !important; }
       .score-controls-panel { gap: 8px; padding: 10px 14px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); bottom: calc(var(--bottom-nav-height, 68px) + env(safe-area-inset-bottom, 0px)); max-height: 60vh; overflow-y: auto; }
       @media (min-width: 1100px) { .score-controls-panel { bottom: 0; } }
+      .vpiano-instrument-picker { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+
+      .score-loop-chip-row[hidden] { display: none; }
+      .score-loop-chip-row { display: flex; }
+      .score-loop-chip { min-height: 36px; padding: 4px 12px; border-radius: 999px; border: 2px solid #1F1A2E; background: #F2B33D; color: #1F1A2E; font-weight: 800; font-size: 0.86rem; cursor: pointer; }
       .score-controls-more { display: flex; flex-direction: column; gap: 10px; }
       .score-controls-more[hidden] { display: none; }
       .score-more-btn { min-height: 44px; }
@@ -5742,66 +5747,188 @@
         }
       }
 
+      // ---------------------------------------------------------------------------
+      // INSTRUMENT SOUNDS (Web Audio, no audio files): piano / organ / strings.
+      // Every voice has an "envGain" (attack/decay/sustain, never cancelled) and a
+      // "relGain" (release stage), so a key held down keeps sounding as long as the
+      // instrument allows and fades smoothly when released.
+      // ---------------------------------------------------------------------------
+      const INSTRUMENT_IDS = ["piano", "organ", "strings"];
+      let currentInstrument = "piano";
+      try {
+        const saved = localStorage.getItem("musicher_instrument");
+        if (INSTRUMENT_IDS.includes(saved)) currentInstrument = saved;
+      } catch (e) {}
+
+      function setCurrentInstrument(id) {
+        if (!INSTRUMENT_IDS.includes(id)) return;
+        currentInstrument = id;
+        try { localStorage.setItem("musicher_instrument", id); } catch (e) {}
+        document.querySelectorAll("[data-action='set-instrument']").forEach((btn) => {
+          btn.classList.toggle("active", btn.getAttribute("data-inst") === id);
+        });
+      }
+
+      function renderInstrumentPickerHtml() {
+        const items = [
+          ["piano", "🎹", t("piano.instrumentPiano")],
+          ["organ", "⛪", t("piano.instrumentOrgan")],
+          ["strings", "🎻", t("piano.instrumentStrings")]
+        ];
+        return `<span class="vpiano-instrument-picker" role="group" aria-label="${escapeHtml(t("piano.instrumentLabel"))}">` +
+          items.map(([id, icon, label]) =>
+            `<button type="button" class="vpiano-pill-btn ${currentInstrument === id ? "active" : ""}" data-action="set-instrument" data-inst="${id}"><span>${icon} ${escapeHtml(label)}</span></button>`
+          ).join("") + `</span>`;
+      }
+
+      // Builds one voice that starts at `when`. Returns { release(t) }.
+      function createInstrumentVoice(ctx, inst, freq, when) {
+        const envGain = ctx.createGain();
+        const relGain = ctx.createGain();
+        relGain.gain.setValueAtTime(1, when);
+        envGain.connect(relGain);
+        relGain.connect(ctx.destination);
+
+        const oscs = [];
+        const mk = (type, f, detuneCents = 0) => {
+          const o = ctx.createOscillator();
+          o.type = type;
+          o.frequency.setValueAtTime(f, when);
+          if (detuneCents) o.detune.setValueAtTime(detuneCents, when);
+          oscs.push(o);
+          return o;
+        };
+        let relTau = 0.08;
+        let lfo = null;
+
+        if (inst === "organ") {
+          // Drawbar-style harmonics, instant attack, constant sustain while held.
+          envGain.gain.setValueAtTime(0.0001, when);
+          envGain.gain.linearRampToValueAtTime(0.2, when + 0.012);
+          const bars = [[0.5, 0.35], [1, 1], [2, 0.7], [3, 0.38], [4, 0.28], [6, 0.12]];
+          bars.forEach(([mult, amp]) => {
+            const g = ctx.createGain();
+            g.gain.setValueAtTime(amp * 0.5, when);
+            mk("sine", freq * mult).connect(g);
+            g.connect(envGain);
+          });
+          relTau = 0.035;
+        } else if (inst === "strings") {
+          // Ensemble: two detuned saws, slow bow attack, gentle vibrato, filter opens.
+          envGain.gain.setValueAtTime(0.0001, when);
+          envGain.gain.linearRampToValueAtTime(0.1, when + 0.2);
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.Q.setValueAtTime(0.7, when);
+          filter.frequency.setValueAtTime(Math.min(3000, freq * 2), when);
+          filter.frequency.linearRampToValueAtTime(Math.min(6500, freq * 5), when + 0.45);
+          filter.connect(envGain);
+          [-7, 7].forEach((cents) => mk("sawtooth", freq, cents).connect(filter));
+          mk("sine", freq * 0.5).connect(filter);
+          lfo = ctx.createOscillator();
+          lfo.frequency.setValueAtTime(5.4, when);
+          const lfoGain = ctx.createGain();
+          lfoGain.gain.setValueAtTime(0, when);
+          lfoGain.gain.linearRampToValueAtTime(6, when + 0.7); // cents, fades in
+          lfo.connect(lfoGain);
+          oscs.filter((o) => o.detune).forEach((o) => lfoGain.connect(o.detune));
+          oscs.push(lfo);
+          relTau = 0.16;
+        } else {
+          // Piano: percussive attack, natural decay that keeps ringing while the key is held.
+          envGain.gain.setValueAtTime(0.0001, when);
+          envGain.gain.linearRampToValueAtTime(0.32, when + 0.008);
+          envGain.gain.exponentialRampToValueAtTime(0.11, when + 0.18);
+          envGain.gain.exponentialRampToValueAtTime(0.012, when + 6);
+          const filter = ctx.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(Math.min(9000, freq * 6.5), when);
+          filter.frequency.exponentialRampToValueAtTime(Math.max(400, freq * 2.1), when + 0.45);
+          filter.connect(envGain);
+          mk("triangle", freq).connect(filter);
+          const g2 = ctx.createGain();
+          g2.gain.setValueAtTime(0.24, when);
+          g2.gain.exponentialRampToValueAtTime(0.01, when + 3);
+          mk("sine", freq * 2).connect(g2);
+          g2.connect(filter);
+          const g3 = ctx.createGain();
+          g3.gain.setValueAtTime(0.08, when);
+          g3.gain.exponentialRampToValueAtTime(0.001, when + 0.25);
+          mk("sine", freq * 3).connect(g3);
+          g3.connect(filter);
+          relTau = 0.09;
+        }
+
+        oscs.forEach((o) => o.start(when));
+        let released = false;
+        return {
+          release(t) {
+            if (released) return;
+            released = true;
+            const at = Math.max(ctx.currentTime, t);
+            relGain.gain.setTargetAtTime(0.0001, at, relTau);
+            const stopAt = at + relTau * 8 + 0.05;
+            oscs.forEach((o) => { try { o.stop(stopAt); } catch (e) {} });
+          }
+        };
+      }
+
+      function getNoteFrequency(noteName) {
+        const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
+        return keyMeta ? (440 * Math.pow(2, (keyMeta.midi - 69) / 12)) : noteToFreq(noteName);
+      }
+
+      // Timed note (lessons, score playback, demos): sounds for durationSec, then releases.
       function playPianoNoteSound(noteName, durationSec = 1.35, whenTime = null) {
         try {
           unlockPianoAudio();
           const ctx = getOrCreatePianoAudioCtx();
           if (!ctx) return;
-          const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
-          const midi = keyMeta ? keyMeta.midi : 60;
-          const freq = keyMeta ? (440 * Math.pow(2, (midi - 69) / 12)) : noteToFreq(noteName);
           const now = typeof whenTime === "number" ? Math.max(ctx.currentTime, whenTime) : ctx.currentTime;
-
-          const masterGain = ctx.createGain();
-          masterGain.gain.setValueAtTime(0.0001, now);
-          masterGain.gain.linearRampToValueAtTime(0.32, now + 0.008);
-          masterGain.gain.exponentialRampToValueAtTime(0.11, now + 0.18);
-          masterGain.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
-
-          const filter = ctx.createBiquadFilter();
-          filter.type = "lowpass";
-          filter.frequency.setValueAtTime(Math.min(9000, freq * 6.5), now);
-          filter.frequency.exponentialRampToValueAtTime(Math.max(400, freq * 2.1), now + 0.45);
-
-          const osc1 = ctx.createOscillator();
-          osc1.type = "triangle";
-          osc1.frequency.setValueAtTime(freq, now);
-
-          const osc2 = ctx.createOscillator();
-          osc2.type = "sine";
-          osc2.frequency.setValueAtTime(freq * 2, now);
-          const gain2 = ctx.createGain();
-          gain2.gain.setValueAtTime(0.24, now);
-          gain2.gain.exponentialRampToValueAtTime(0.01, now + durationSec * 0.75);
-
-          const osc3 = ctx.createOscillator();
-          osc3.type = "sine";
-          osc3.frequency.setValueAtTime(freq * 3, now);
-          const gain3 = ctx.createGain();
-          gain3.gain.setValueAtTime(0.08, now);
-          gain3.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
-
-          osc1.connect(filter);
-          osc2.connect(gain2);
-          gain2.connect(filter);
-          osc3.connect(gain3);
-          gain3.connect(filter);
-
-          filter.connect(masterGain);
-          masterGain.connect(ctx.destination);
-
-          osc1.start(now);
-          osc2.start(now);
-          osc3.start(now);
-
-          const stopTime = now + durationSec + 0.03;
-          osc1.stop(stopTime);
-          osc2.stop(stopTime);
-          osc3.stop(stopTime);
+          const voice = createInstrumentVoice(ctx, currentInstrument, getNoteFrequency(noteName), now);
+          voice.release(now + Math.max(0.05, durationSec));
         } catch (err) {
           // Ignore synthesis error
         }
       }
+
+      // Held note (live keyboard): keeps sounding until the key is released.
+      const heldPianoVoices = new Map();
+      function startHeldPianoVoice(noteName) {
+        try {
+          unlockPianoAudio();
+          const ctx = getOrCreatePianoAudioCtx();
+          if (!ctx) return;
+          const prev = heldPianoVoices.get(noteName);
+          if (prev) prev.voice.release(ctx.currentTime);
+          const voice = createInstrumentVoice(ctx, currentInstrument, getNoteFrequency(noteName), ctx.currentTime);
+          const safety = setTimeout(() => releaseHeldPianoVoice(noteName), 30000);
+          heldPianoVoices.set(noteName, { voice, safety });
+        } catch (err) {
+          // Ignore synthesis error
+        }
+      }
+
+      function releaseHeldPianoVoice(noteName) {
+        const h = heldPianoVoices.get(noteName);
+        if (!h) return;
+        heldPianoVoices.delete(noteName);
+        clearTimeout(h.safety);
+        try { h.voice.release(getOrCreatePianoAudioCtx().currentTime); } catch (e) {}
+      }
+
+      // Release a held voice as soon as its key stops being "pressed" (mouse, touch or computer keyboard).
+      function reconcileHeldPianoVoices() {
+        heldPianoVoices.forEach((_h, noteName) => {
+          if (!document.querySelector(`.vpiano-key.is-pressed[data-note="${noteName}"]`)) {
+            releaseHeldPianoVoice(noteName);
+          }
+        });
+      }
+      new MutationObserver(reconcileHeldPianoVoices).observe(document.documentElement, {
+        subtree: true, childList: true, attributes: true, attributeFilter: ["class"]
+      });
+      window.addEventListener("blur", () => Array.from(heldPianoVoices.keys()).forEach(releaseHeldPianoVoice));
 
       function formatNoteWithSolfege(noteName) {
         const meta = VPIANO_ALL_BY_NOTE[noteName];
@@ -6240,6 +6367,7 @@
                   <span>🔤</span>
                   <span>${escapeHtml(t("piano.noteLabelsToggle"))}</span>
                 </button>
+                ${renderInstrumentPickerHtml()}
               </div>
             </div>
 
@@ -6287,6 +6415,7 @@
                   <span>🔤</span>
                   <span>${escapeHtml(t("piano.noteLabelsToggle"))}</span>
                 </button>
+                ${renderInstrumentPickerHtml()}
               </div>
             </div>
 
@@ -6380,7 +6509,7 @@
         const keyMeta = VPIANO_ALL_BY_NOTE[noteName];
         if (!noteName || !keyMeta) return;
         const canonicalNote = keyMeta.note;
-        playPianoNoteSound(canonicalNote);
+        startHeldPianoVoice(canonicalNote);
 
         if (ui.screen !== "lesson" || ui.lessonStepIndex !== 0) return;
         const lesson = LESSONS.find((l) => l.id === Number(ui.activeLessonId)) || LESSONS[0];
@@ -8936,6 +9065,13 @@
         const loopEndVal = mount.querySelector(".score-loop-end-val");
         if (loopEndVal) loopEndVal.textContent = sp.loopEndBar || Math.min(4, sp.totalMeasures || 23);
 
+        const chipRow = mount.querySelector(".score-loop-chip-row");
+        if (chipRow) {
+          chipRow.hidden = !sp.loopEnabled;
+          const chipTxt = document.getElementById("score-loop-chip-text");
+          if (chipTxt) chipTxt.textContent = "🔁 " + t("practice.scoreLoopChip", { from: sp.loopStartBar || 1, to: sp.loopEndBar || 1 });
+        }
+
         // 8. Bar status badge
         const barInd = document.getElementById("score-bar-indicator");
         if (barInd) {
@@ -9371,6 +9507,13 @@
         if (sp.loopEnabled) {
           if (!sp.loopStartBar || sp.loopStartBar < 1) sp.loopStartBar = 1;
           if (!sp.loopEndBar || sp.loopEndBar < sp.loopStartBar) sp.loopEndBar = Math.min(4, sp.totalMeasures || 4);
+          if ((sp.isPlaying || sp.isPaused) && sp.currentBar && (sp.currentBar < sp.loopStartBar || sp.currentBar > sp.loopEndBar)) {
+            // Loop switched on while playing outside the range: keep its length, start it here
+            // instead of throwing playback back to an old range.
+            const len = Math.max(0, sp.loopEndBar - sp.loopStartBar);
+            sp.loopStartBar = sp.currentBar;
+            sp.loopEndBar = Math.min(sp.totalMeasures || sp.currentBar, sp.currentBar + len);
+          }
           if (!sp.isPlaying && !sp.isPaused) {
             const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
             advanceScoreCursorToBeat(startBeat);
@@ -9382,7 +9525,6 @@
       function stepScoreLoop(which, delta) {
         const sp = ui.scorePlayer;
         const total = sp.totalMeasures || 23;
-        sp.loopEnabled = true;
         sp.loopSelectingEnd = false;
 
         if (which === "start") {
@@ -9457,11 +9599,14 @@
         const total = sp.totalMeasures || 23;
         const m = Math.min(total, Math.max(1, measureNum));
 
+        // Taps only set a loop while Loop mode is ON. A stray tap on the score must never
+        // start a loop by itself (it used to trap playback in one measure).
+        if (!sp.loopEnabled) return;
+
         // Tap once = start, tap again = end
-        if (!sp.loopEnabled || !sp.loopSelectingEnd) {
+        if (!sp.loopSelectingEnd) {
           sp.loopStartBar = m;
           sp.loopEndBar = m;
-          sp.loopEnabled = true;
           sp.loopSelectingEnd = true;
         } else {
           if (m >= sp.loopStartBar) {
@@ -9755,6 +9900,11 @@
 
             <!-- Controls Panel -->
             <div class="score-controls-panel">
+              <div class="score-loop-chip-row" ${loopActive ? "" : "hidden"}>
+                <button type="button" class="score-loop-chip" data-action="score-clear-loop" aria-label="${escapeHtml(t("practice.scoreLoopClear"))}">
+                  <span id="score-loop-chip-text">🔁 ${escapeHtml(t("practice.scoreLoopChip", { from: loopFrom, to: loopTo }))}</span> <span aria-hidden="true">✕</span>
+                </button>
+              </div>
               <!-- Row 1: Play / Pause / Stop / Metronome / Count-in -->
               <div class="score-controls-row">
                 <div class="score-controls-group">
@@ -9782,6 +9932,7 @@
               </div>
 
               <div class="score-controls-more" ${sp.moreOpen ? "" : "hidden"}>
+              <div class="score-controls-row"><div class="score-controls-group"><span class="score-group-label">${escapeHtml(t("piano.instrumentLabel"))}:</span>${renderInstrumentPickerHtml()}</div></div>
               <!-- Row 2: Speed presets + options -->
               <div class="score-controls-row">
                 <div class="score-controls-group">
@@ -12320,6 +12471,11 @@
 
           case "vpiano-octave-up":
             shiftPianoOctave(1, true);
+            break;
+
+          case "set-instrument":
+            setCurrentInstrument(btn.getAttribute("data-inst"));
+            playPianoNoteSound("C4", 0.9);
             break;
 
           case "vpiano-toggle-labels":
