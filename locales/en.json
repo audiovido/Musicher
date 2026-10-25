@@ -496,6 +496,7 @@
     "scoreLoadError": "Could not load score file. Please verify network and file location.",
     "scoreLoading": "Loading sheet music...",
     "scoreMeasureTapHint": "Tip: Tap on any measure in the score to set your loop range.",
+    "scoreMoreToggle": "More",
     "scoreFollowToggle": "Follow"
   }
 }
