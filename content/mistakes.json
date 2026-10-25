@@ -194,6 +194,103 @@
     "lessonId": 4
   },
   {
+    "id": "steps_vs_skips_confusion",
+    "keywords": [
+      "قدم و پرش",
+      "پرش",
+      "فاصله نت",
+      "کلید جا میفته",
+      "کدوم انگشت برای پرش",
+      "steps and skips",
+      "skip",
+      "step vs skip",
+      "skipping keys"
+    ],
+    "cause": {
+      "en": "Your whole hand is shifting sideways on a skip instead of letting finger 1, 3, or 5 press the key already under it.",
+      "fa": "هنگام پرش، کل دستت رو به چپ و راست جابه‌جا می‌کنی به‌جای این‌که بذاری انگشت‌های ۱، ۳ و ۵ کلید زیر خودشون رو بزنن."
+    },
+    "fix": {
+      "en": "Keep all five fingers resting gently on C–D–E–F–G; use neighbor fingers (1–2–3) for steps and odd fingers (1–3–5) for skips.",
+      "fa": "هر پنج انگشت رو آرام روی دو تا سل نگه دار؛ برای قدم‌ها از انگشت‌های همسایه (۱–۲–۳) و برای پرش‌ها از انگشت‌های فرد (۱–۳–۵) استفاده کن."
+    },
+    "lessonId": 13
+  },
+  {
+    "id": "which_octave_c",
+    "keywords": [
+      "کدوم دو",
+      "دوی وسط",
+      "دوی بم",
+      "دوی زیر",
+      "اکتاو",
+      "C3",
+      "C4",
+      "C5",
+      "middle c",
+      "which c",
+      "high low c",
+      "octave"
+    ],
+    "cause": {
+      "en": "All C keys look the same next to the 2 black keys, so it is easy to lose track of which octave is Middle C (C4).",
+      "fa": "همه‌ی کلیدهای «دو» کنار دسته‌ی ۲تایی سیاه شبیه هم هستن و ممکنه بین دوی بم (C3)، دوی وسط (C4) و دوی زیر (C5) شک کنی."
+    },
+    "fix": {
+      "en": "Find the C nearest the center of the keyboard for Middle C (C4); the C to the left is low C (C3, left hand) and the C to the right is high C (C5, right hand).",
+      "fa": "کلید «دو» در مرکز کیبورد همون دوی وسط (C4) است؛ «دو»ی سمت چپش دوی بم (C3، دست چپ) و «دو»ی سمت راستش دوی زیر (C5، دست راست) است."
+    },
+    "lessonId": 14
+  },
+  {
+    "id": "legato_staccato_touch",
+    "keywords": [
+      "لگاتو",
+      "استاکاتو",
+      "پیوسته",
+      "بریده",
+      "کوتاه و کشیده",
+      "صداها قاطی میشه",
+      "legato",
+      "staccato",
+      "smooth",
+      "detached",
+      "blurry notes"
+    ],
+    "cause": {
+      "en": "In legato the old key is held too long (blurring two notes), or in staccato the wrist stiffens instead of using a light fingertip bounce.",
+      "fa": "در لگاتو کلید قبلی رو دیر رها می‌کنی و دو صدا قاطی می‌شن، یا در استاکاتو به‌جای ضربه‌ی نرم نوک انگشت، مچ دستت رو سفت می‌کنی."
+    },
+    "fix": {
+      "en": "For legato, lift the old finger at the exact instant the next finger goes down; for staccato, keep your wrist loose and let your fingertip bounce lightly off the key.",
+      "fa": "برای لگاتو، انگشت قبلی رو دقیقاً هم‌زمان با پایین رفتن انگشت بعدی بلند کن؛ برای استاکاتو، مچ رو آزاد بذار و با نوک انگشت ضربه‌ای سبک بزن و رها کن."
+    },
+    "lessonId": 15
+  },
+  {
+    "id": "twinkle_reach_a4",
+    "keywords": [
+      "ستاره کوچولو",
+      "چشمک بزن",
+      "نت لا",
+      "انگشت ۵ به لا نمیرسه",
+      "پرش دو به سل",
+      "twinkle",
+      "little star",
+      "reach a",
+      "jump c to g"
+    ],
+    "cause": {
+      "en": "Jumping from C4 up to G4 and A4 surprises your hand because A4 is one white key above the five-finger C–G position.",
+      "fa": "پرش از «دو» به «سل» و «لا» دستت رو غافلگیر می‌کنه چون نت «لا» یک کلید سفید بالاتر از پوزیشن پنج‌انگشتیِ دو تا سل قرار داره."
+    },
+    "fix": {
+      "en": "Keep your thumb near C4, play G4 with finger 4 and A4 with finger 5 (pinky), then walk smoothly down 4–3–2–1 on F–E–D–C.",
+      "fa": "شست رو نزدیک «دو» نگه دار، نت سل رو با انگشت ۴ و لا رو با انگشت ۵ (کوچک) بزن، و بعد روی فا–می–ر–دو با انگشت‌های ۴–۳–۲–۱ نرم پایین بیا."
+    },
+    "lessonId": 16
+  },
+  {
     "id": "bored",
     "keywords": [
       "حوصلهم سر رفت",

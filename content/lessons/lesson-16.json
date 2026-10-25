@@ -1,0 +1,108 @@
+{
+  "id": 16,
+  "chapter": {
+    "en": "Chapter 4: Melody starts moving",
+    "fa": "فصل ۴ «ملودی راه می‌افته»"
+  },
+  "title": {
+    "en": "Piece: Twinkle Little Star",
+    "fa": "قطعه: ستاره‌ی کوچولو (Twinkle Little Star)"
+  },
+  "minutes": 7,
+  "goal": {
+    "en": "Play the opening theme of \"Twinkle Little Star\" (\"Ah! vous dirai-je, maman\") with your right hand in C.",
+    "fa": "بخش اصلی ملودی «ستاره‌ی کوچولو» (آهنگ سنتی فرانسوی Ah! vous dirai-je, maman) رو با دست راست در گام دو می‌نوازی."
+  },
+  "see": {
+    "en": "This beloved 18th-century French folk melody (\"Ah! vous dirai-je, maman\", public domain) brings together everything from Chapter 4: a wide leap from C4 up to G4, a neighbor step up to A4 and back to G4, and then a smooth downward walk step by step: F4, E4, D4, C4. Start with your right thumb (finger 1) on Middle C (C4), play G4 with finger 4 and A4 with finger 5 (pinky), then walk down 4–3–2–1 on F–E–D–C.",
+    "fa": "این ملودی محبوب و سنتی قرن هجدهم فرانسه (<span dir=\"ltr\">Ah! vous dirai-je, maman</span>، مالکیت عمومی) همه‌ی مهارت‌های فصل ۴ رو کنار هم میاره: یک جهش از دوی وسط (<span dir=\"ltr\">C4</span>) به سل (<span dir=\"ltr\">G4</span>)، یک قدم به بالا روی لا (<span dir=\"ltr\">A4</span>) و برگشت به سل، و بعد پایین اومدن قدم‌به‌قدم و پیوسته روی فا، می، ر، دو. شست دست راست (انگشت ۱) رو بذار روی دوی وسط، نت سل رو با انگشت ۴ و لا رو با انگشت ۵ (کوچک) بزن، و بعد روی فا–می–ر–دو با انگشت‌های ۴–۳–۲–۱ نرم پایین بیا."
+  },
+  "imageUrl": "assets/lesson-16.jpeg",
+  "audioUrl": "",
+  "steps": {
+    "en": [
+      "Play the first phrase with your right hand: C4, C4 (finger 1), jump to G4, G4 (finger 4), step to A4, A4 (finger 5), and hold G4 (finger 4) for 2 beats.",
+      "Walk smoothly down for the second phrase: F4, F4 (finger 4), E4, E4 (finger 3), D4, D4 (finger 2), and hold C4 (finger 1) for 2 beats.",
+      "Connect both phrases at a steady tempo of 60 BPM using the practice keyboard below."
+    ],
+    "fa": [
+      "جمله‌ی اول رو با دست راست بزن: دو، دو (انگشت ۱)، پرش به سل، سل (انگشت ۴)، قدم به لا، لا (انگشت ۵) و نگه داشتن سل (انگشت ۴) به اندازه‌ی ۲ ضرب.",
+      "برای جمله‌ی دوم قدم‌به‌قدم و نرم پایین بیا: فا، فا (انگشت ۴)، می، می (انگشت ۳)، ر، ر (انگشت ۲) و نگه داشتن دو (انگشت ۱) به اندازه‌ی ۲ ضرب.",
+      "حالا هر دو جمله رو با ضرب آرام و یکنواخت پشت سر هم روی کیبورد تمرینی پایین اجرا کن."
+    ]
+  },
+  "practice": {
+    "mode": "follow",
+    "tempo": 60,
+    "hand": "right",
+    "notes": ["C4", "C4", "G4", "G4", "A4", "A4", "G4", "F4", "F4", "E4", "E4", "D4", "D4", "C4"]
+  },
+  "selfCheck": {
+    "en": [
+      "Did I reach A4 comfortably with finger 5 (pinky) without tensing my shoulder or wrist?",
+      "Did I hold the seventh note (G4) and the final note (C4) slightly longer so the melody could breathe?"
+    ],
+    "fa": [
+      "نت «لا» (A4) رو راحت با انگشت ۵ (کوچک) و بدون سفت کردن شانه یا مچ زدم؟",
+      "نت هفتم (سل) و نت آخر (دو) رو کمی بیشتر نگه داشتم تا جمله‌ی موسیقی نفس بکشه؟"
+    ]
+  },
+  "quiz": [
+    {
+      "question": {
+        "en": "In \"Twinkle Little Star\" starting on C4, which note comes right after the two G4 notes (\"Twinkle, twinkle, little...\")?",
+        "fa": "در ملودی «ستاره‌ی کوچولو» که از دو شروع می‌شه، بلافاصله بعد از دو بار زدن نت «سل» کدوم نت میاد؟"
+      },
+      "options": {
+        "en": ["A4 (La), one step higher than G4", "F4 (Fa), one step lower than G4", "C5 (Do), an octave higher"],
+        "fa": ["نت لا (A4)، یک قدم بالاتر از سل", "نت فا (F4)، یک قدم پایین‌تر از سل", "نت دوی بالا (C5)"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Bravo! After C–C–G–G, the melody steps up one white key to A4 (La) twice before returning to G4.",
+        "fa": "آفرین! بعد از دو–دو–سل–سل، ملودی یک کلید سفید بالاتر می‌ره و دو بار نت «لا» (A4) رو می‌زنه و بعد به سل برمی‌گرده."
+      },
+      "feedbackWrong": {
+        "en": "Listen to how the melody rises on 'little': from G4 it steps up one white key to A4 (La) before coming back to G4.",
+        "fa": "به بالا رفتن صدا در این بخش دقت کن: ملودی از نت سل یک کلید سفید بالاتر می‌ره یعنی نت «لا» (A4) و بعد به سل برمی‌گرده."
+      }
+    },
+    {
+      "question": {
+        "en": "How does the second half of the melody (F4–F4–E4–E4–D4–D4–C4) move back home to C4?",
+        "fa": "نیمه‌ی دوم ملودی (فا–فا–می–می–ر–ر–دو) چطور به نت پایه‌ی «دو» برمی‌گرده؟"
+      },
+      "options": {
+        "en": ["By stepping down one neighbor white key at a time", "By skipping every other white key", "By jumping straight from F4 to C4"],
+        "fa": ["با پایین اومدن قدم‌به‌قدم روی کلیدهای سفید همسایه", "با پرش یکی‌درمیان از روی کلیدهای سفید", "با پریدن مستقیم از فا به دو"]
+      },
+      "correctIndex": 0,
+      "feedbackRight": {
+        "en": "Exactly right! F, E, D, and C are neighbor white keys walking smoothly down step by step.",
+        "fa": "دقیقاً درسته! نت‌های فا، می، ر و دو کلیدهای سفید همسایه هستن که قدم‌به‌قدم و نرم به سمت پایین حرکت می‌کنن."
+      },
+      "feedbackWrong": {
+        "en": "Look at the keys F4, E4, D4, C4 on the keyboard—each one is the immediate neighbor to the left, so the melody walks down in steps.",
+        "fa": "به کلیدهای فا، می، ر و دو روی کیبورد نگاه کن؛ هرکدوم دقیقاً همسایه‌ی سمت چپِ قبلیه، پس ملودی قدم‌به‌قدم پایین میاد."
+      }
+    }
+  ],
+  "summary": {
+    "en": "Congratulations on finishing Chapter 4! You combined leaps, steps, and smooth phrasing to play \"Twinkle Little Star\".",
+    "fa": "تبریک! فصل چهارم رو تموم کردی و با ترکیب پرش، قدم و جمله‌بندی نرم، قطعه‌ی «ستاره‌ی کوچولو» رو نواختی."
+  },
+  "tomorrow": {
+    "en": "Review your favorite Chapter 4 lessons or practice \"Twinkle Little Star\" in Free-Play Piano.",
+    "fa": "مرور درس‌های محبوب فصل ۴ یا تمرین آزاد «ستاره‌ی کوچولو» در پیانوی آزاد."
+  },
+  "source": {
+    "creator": {
+      "en": "Original MUSICHER content",
+      "fa": "محتوای اختصاصی MUSICHER"
+    },
+    "license": {
+      "en": "Original MUSICHER content; melody: traditional, public domain",
+      "fa": "محتوای اختصاصی MUSICHER؛ ملودی: سنتی، مالکیت عمومی (Public Domain)"
+    }
+  }
+}

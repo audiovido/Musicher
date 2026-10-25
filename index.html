@@ -4298,7 +4298,7 @@
       function renderHomeScreen() {
         const displayName = state.userName ? state.userName : t("home.defaultName");
         const nextLesson = getNextUnlockedLesson();
-        const totalLessons = LESSONS.length || 12;
+        const totalLessons = LESSONS.length || 16;
         const doneCount = state.completedLessons.length;
         const pct = Math.round((doneCount / totalLessons) * 100);
         const currentChapterLesson = nextLesson || LESSONS[LESSONS.length - 1];
@@ -4884,7 +4884,7 @@
 
                   <div style="background:rgba(251,247,240,0.06);border:1px solid rgba(251,247,240,0.16);border-radius:14px;margin-bottom:18px;padding:12px 16px;font-size:0.82rem;color:rgba(251,247,240,0.88);">
                     <div class="saffron-accent" style="font-weight:700;margin-bottom:4px;">${escapeHtml(t("lesson.sourceTitle"))}</div>
-                    <div style="font-weight:600;color:#FBF7F0;">${escapeHtml(t("lesson.originalContentNote"))}</div>
+                    <div style="font-weight:600;color:#FBF7F0;">${escapeHtml(lesson.id === 16 && lesson.source && lesson.source.license ? lField(lesson.source.license) : t("lesson.originalContentNote"))}</div>
                   </div>
 
                   <div style="display:flex;gap:10px;">
@@ -6139,7 +6139,7 @@
           }
           if (mistakesRes.ok) MISTAKES = await mistakesRes.json();
 
-          const lessonPromises = Array.from({ length: 12 }, (_, idx) => {
+          const lessonPromises = Array.from({ length: 16 }, (_, idx) => {
             const num = String(idx + 1).padStart(2, "0");
             return fetch(`content/lessons/lesson-${num}.json`).then((r) => (r.ok ? r.json() : null));
           });
