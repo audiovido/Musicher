@@ -3170,6 +3170,10 @@
       .score-controls-panel { gap: 8px; padding: 10px 14px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); bottom: calc(var(--bottom-nav-height, 68px) + env(safe-area-inset-bottom, 0px)); max-height: 60vh; overflow-y: auto; }
       @media (min-width: 1100px) { .score-controls-panel { bottom: 0; } }
       .vpiano-instrument-picker { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+
+      .score-loop-chip-row[hidden] { display: none; }
+      .score-loop-chip-row { display: flex; }
+      .score-loop-chip { min-height: 36px; padding: 4px 12px; border-radius: 999px; border: 2px solid #1F1A2E; background: #F2B33D; color: #1F1A2E; font-weight: 800; font-size: 0.86rem; cursor: pointer; }
       .score-controls-more { display: flex; flex-direction: column; gap: 10px; }
       .score-controls-more[hidden] { display: none; }
       .score-more-btn { min-height: 44px; }
@@ -9061,6 +9065,13 @@
         const loopEndVal = mount.querySelector(".score-loop-end-val");
         if (loopEndVal) loopEndVal.textContent = sp.loopEndBar || Math.min(4, sp.totalMeasures || 23);
 
+        const chipRow = mount.querySelector(".score-loop-chip-row");
+        if (chipRow) {
+          chipRow.hidden = !sp.loopEnabled;
+          const chipTxt = document.getElementById("score-loop-chip-text");
+          if (chipTxt) chipTxt.textContent = "🔁 " + t("practice.scoreLoopChip", { from: sp.loopStartBar || 1, to: sp.loopEndBar || 1 });
+        }
+
         // 8. Bar status badge
         const barInd = document.getElementById("score-bar-indicator");
         if (barInd) {
@@ -9496,6 +9507,13 @@
         if (sp.loopEnabled) {
           if (!sp.loopStartBar || sp.loopStartBar < 1) sp.loopStartBar = 1;
           if (!sp.loopEndBar || sp.loopEndBar < sp.loopStartBar) sp.loopEndBar = Math.min(4, sp.totalMeasures || 4);
+          if ((sp.isPlaying || sp.isPaused) && sp.currentBar && (sp.currentBar < sp.loopStartBar || sp.currentBar > sp.loopEndBar)) {
+            // Loop switched on while playing outside the range: keep its length, start it here
+            // instead of throwing playback back to an old range.
+            const len = Math.max(0, sp.loopEndBar - sp.loopStartBar);
+            sp.loopStartBar = sp.currentBar;
+            sp.loopEndBar = Math.min(sp.totalMeasures || sp.currentBar, sp.currentBar + len);
+          }
           if (!sp.isPlaying && !sp.isPaused) {
             const startBeat = sp.measureStartBeats[sp.loopStartBar] || 0;
             advanceScoreCursorToBeat(startBeat);
@@ -9507,7 +9525,6 @@
       function stepScoreLoop(which, delta) {
         const sp = ui.scorePlayer;
         const total = sp.totalMeasures || 23;
-        sp.loopEnabled = true;
         sp.loopSelectingEnd = false;
 
         if (which === "start") {
@@ -9582,11 +9599,14 @@
         const total = sp.totalMeasures || 23;
         const m = Math.min(total, Math.max(1, measureNum));
 
+        // Taps only set a loop while Loop mode is ON. A stray tap on the score must never
+        // start a loop by itself (it used to trap playback in one measure).
+        if (!sp.loopEnabled) return;
+
         // Tap once = start, tap again = end
-        if (!sp.loopEnabled || !sp.loopSelectingEnd) {
+        if (!sp.loopSelectingEnd) {
           sp.loopStartBar = m;
           sp.loopEndBar = m;
-          sp.loopEnabled = true;
           sp.loopSelectingEnd = true;
         } else {
           if (m >= sp.loopStartBar) {
@@ -9880,6 +9900,11 @@
 
             <!-- Controls Panel -->
             <div class="score-controls-panel">
+              <div class="score-loop-chip-row" ${loopActive ? "" : "hidden"}>
+                <button type="button" class="score-loop-chip" data-action="score-clear-loop" aria-label="${escapeHtml(t("practice.scoreLoopClear"))}">
+                  <span id="score-loop-chip-text">🔁 ${escapeHtml(t("practice.scoreLoopChip", { from: loopFrom, to: loopTo }))}</span> <span aria-hidden="true">✕</span>
+                </button>
+              </div>
               <!-- Row 1: Play / Pause / Stop / Metronome / Count-in -->
               <div class="score-controls-row">
                 <div class="score-controls-group">
